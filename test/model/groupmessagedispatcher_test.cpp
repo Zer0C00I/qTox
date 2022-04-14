@@ -70,8 +70,8 @@ public:
     void setBlackList(const QStringList& blist) override;
     SIGNAL_IMPL(MockGroupSettings, blackListChanged, QStringList const& blist)
 
-    bool getShowGroupJoinLeaveMessages() const override { return true; };
-    void setShowGroupJoinLeaveMessages(bool newValue) override { std::ignore = newValue; };
+    bool getShowGroupJoinLeaveMessages() const override { return true; }
+    void setShowGroupJoinLeaveMessages(bool newValue) override { std::ignore = newValue; }
     SIGNAL_IMPL(MockGroupSettings, showGroupJoinLeaveMessagesChanged, bool show)
 
 private:

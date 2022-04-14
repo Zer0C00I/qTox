@@ -411,7 +411,7 @@ public:
 
     QString getSmileyPack() const override;
     void setSmileyPack(const QString& value);
-    SIGNAL_IMPL(Settings, smileyPackChanged, const QString& name);
+    SIGNAL_IMPL(Settings, smileyPackChanged, const QString& name)
 
     int getThemeColor() const;
     void setThemeColor(int value);

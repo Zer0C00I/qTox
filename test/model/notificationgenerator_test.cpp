@@ -45,7 +45,7 @@ namespace
         virtual void setNotifySound(bool newValue) override { std::ignore = newValue; }
 
         virtual bool getNotifyHide() const override { return notifyHide; }
-        virtual void setNotifyHide(bool newValue) override { notifyHide = newValue; };
+        virtual void setNotifyHide(bool newValue) override { notifyHide = newValue; }
 
         virtual bool getBusySound() const override { return true; }
         virtual void setBusySound(bool newValue) override { std::ignore = newValue; }

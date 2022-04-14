@@ -1,0 +1,56 @@
+load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library")
+load("//third_party/qt:build_defs.bzl", "qt_lconvert", "qt_rcc")
+load("//tools/project:build_defs.bzl", "project")
+
+package(features = ["layering_check"])
+
+project()
+
+qt_lconvert(
+    name = "qtox_qms",
+    srcs = glob(["translations/*.ts"]),
+)
+
+genrule(
+    name = "translations_qrc",
+    srcs = ["translations/translations.qrc"],
+    outs = ["translations/translations_local.qrc"],
+    cmd = "cp $< $@",
+)
+
+qt_rcc(
+    name = "translations",
+    srcs = [":translations_qrc"],
+    data = [":qtox_qms"],
+)
+
+qt_rcc(
+    name = "res",
+    srcs = [
+        "res.qrc",
+        "smileys/emojione.qrc",
+        "smileys/smileys.qrc",
+    ],
+    data = glob([
+        "img/**/*",
+        "res/**/*",
+        "smileys/*/*",
+        "themes/**/*",
+    ]),
+)
+
+cc_library(
+    name = "res_lib",
+    srcs = [
+        ":res",
+        ":translations",
+    ],
+    visibility = ["//qtox:__subpackages__"],
+    alwayslink = True,
+)
+
+cc_binary(
+    name = "qtox",
+    visibility = ["//qtox:__subpackages__"],
+    deps = ["//qtox/src:main"],
+)

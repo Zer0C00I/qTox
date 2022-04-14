@@ -66,7 +66,7 @@ public:
     ChatLineContent* getContentFromGlobalPos(QPoint pos) const;
     const uint repNameAfter = 5 * 60;
 
-    void setColorizedNames(bool enable) { colorizeNames = enable; };
+    void setColorizedNames(bool enable) { colorizeNames = enable; }
     void jumpToDate(QDate date);
     void jumpToIdx(ChatLogIdx idx);
 

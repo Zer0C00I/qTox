@@ -787,7 +787,7 @@ void ChatWidget::selectAll()
     clearSelection();
 
     selectionMode = SelectionMode::Multi;
-    selFirstRow = chatLineStorage->front();;
+    selFirstRow = chatLineStorage->front();
     selLastRow = chatLineStorage->back();
 
     emit selectionChanged();

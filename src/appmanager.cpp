@@ -28,6 +28,7 @@
 #include "src/nexus.h"
 #include "src/net/toxuri.h"
 #include "src/widget/widget.h"
+#include "src/version.h"
 #include "src/video/camerasource.h"
 
 #if defined(Q_OS_UNIX)

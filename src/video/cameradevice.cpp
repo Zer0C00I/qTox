@@ -348,6 +348,7 @@ QVector<QPair<QString, QString>> CameraDevice::getDeviceList()
 
     devices.append({"none", QObject::tr("None", "No camera device set")});
 
+    qDebug() << "XXX: getting device list";
     if (!getDefaultInputFormat())
         return devices;
 
@@ -364,6 +365,7 @@ QVector<QPair<QString, QString>> CameraDevice::getDeviceList()
 #ifdef Q_OS_OSX
     else if (QString::fromUtf8(iformat->name) == QString("avfoundation"))
         devices += avfoundation::getDeviceList();
+    }
 #endif
     else
         devices += getRawDeviceListGeneric();
@@ -387,6 +389,7 @@ QVector<QPair<QString, QString>> CameraDevice::getDeviceList()
                 QObject::tr("Desktop", "Desktop as a camera input for screen sharing")});
     }
 
+    qDebug() << "XXX: got devices:" << devices;
     return devices;
 }
 
@@ -516,8 +519,10 @@ bool CameraDevice::betterPixelFormat(uint32_t a, uint32_t b)
 bool CameraDevice::getDefaultInputFormat()
 {
     QMutexLocker locker(&iformatLock);
-    if (iformat)
+    if (iformat) {
+        qDebug() << "XXX: input format already done";
         return true;
+    }
 
     avdevice_register_all();
 
@@ -543,6 +548,7 @@ bool CameraDevice::getDefaultInputFormat()
 #endif
 
 #ifdef Q_OS_OSX
+    qDebug() << "XXX: checking for input format";
     if ((iformat = av_find_input_format("avfoundation")))
         return true;
     if ((iformat = av_find_input_format("qtkit")))

@@ -376,7 +376,9 @@ bool Core::checkConnection()
             toxConnected = true;
             connectionName = "the UDP DHT";
             break;
-        qWarning() << "tox_self_get_connection_status returned unknown enum!";
+        default:
+            qWarning() << "tox_self_get_connection_status returned unknown enum!";
+            break;
     }
 
     if (toxConnected && !isConnected) {
@@ -519,7 +521,9 @@ void Core::onConnectionStatusChanged(Tox* tox, uint32_t friendId, Tox_Connection
             friendStatus = Status::Status::Online;
             qDebug() << "Connected to friend" << friendId << "directly with UDP";
             break;
-        qWarning() << "tox_callback_friend_connection_status returned unknown enum!";
+        default:
+            qWarning() << "tox_callback_friend_connection_status returned unknown enum!";
+            break;
     }
 
     // Ignore Online because it will be emited from onUserStatusChanged

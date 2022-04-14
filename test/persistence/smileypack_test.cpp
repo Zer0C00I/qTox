@@ -35,7 +35,7 @@ class MockSettings : public QObject, public ISmileySettings
 Q_OBJECT
 public:
     QString getSmileyPack() const override;
-    SIGNAL_IMPL(MockSettings, smileyPackChanged, const QString& name);
+    SIGNAL_IMPL(MockSettings, smileyPackChanged, const QString& name)
 };
 
 QString MockSettings::getSmileyPack() const
