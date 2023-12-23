@@ -1,8 +1,6 @@
 load("@rules_cc//cc:defs.bzl", "cc_library")
 load("//third_party/qt:build_defs.bzl", "qt_moc", "qt_test")
 
-package(features = ["layering_check"])
-
 qt_moc(
     name = "mock_moc",
     srcs = ["mock/include/mock/mockcoresettings.h"],
