@@ -43,12 +43,14 @@ cc_library(
         ":res",
         ":translations",
     ],
+    tags = ["no-cross"],
     visibility = ["//qtox:__subpackages__"],
     alwayslink = True,
 )
 
 cc_binary(
     name = "qtox",
+    tags = ["no-cross"],
     visibility = ["//qtox:__subpackages__"],
     deps = ["//qtox/src:main"],
 )

@@ -117,6 +117,7 @@ qt_moc(
         "-Iqtox",
         "-Iqtox/util/include",
     ],
+    tags = ["no-cross"],
     deps = [
         "//qtox/util",
         "@qt//:qt_widgets",
@@ -126,6 +127,7 @@ qt_moc(
 qt_uic(
     name = "src_ui",
     srcs = glob(["**/*.ui"]),
+    tags = ["no-cross"],
 )
 
 objc_library(
@@ -220,6 +222,7 @@ cc_library(
         "//tools/config:osx": ["-framework IOKit"],
         "//tools/config:windows": [],
     }),
+    tags = ["no-cross"],
     visibility = ["//qtox:__subpackages__"],
     deps = [
         "//c-toxcore",
@@ -265,6 +268,7 @@ cc_library(
         "//tools/config:osx": [],
         "//tools/config:windows": [],
     }),
+    tags = ["no-cross"],
     visibility = ["//qtox:__subpackages__"],
     deps = [
         ":src",

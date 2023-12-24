@@ -22,6 +22,7 @@ cc_library(
         "UPDATE_CHECK_ENABLED",
     ],
     includes = ["include"],
+    tags = ["no-cross"],
     visibility = ["//qtox:__subpackages__"],
     deps = [
         "//c-toxcore",

@@ -8,6 +8,7 @@ qt_moc(
         "-Iqtox",
         "-Iqtox/util/include",
     ],
+    tags = ["no-cross"],
     deps = [
         "//qtox/src",
         "//qtox/util",
@@ -25,6 +26,7 @@ cc_library(
         "//tools/config:windows": [],
     }),
     includes = ["mock/include"],
+    tags = ["no-cross"],
     deps = ["//qtox/src"],
 )
 
