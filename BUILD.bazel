@@ -7,6 +7,7 @@ project()
 qt_lconvert(
     name = "qtox_qms",
     srcs = glob(["translations/*.ts"]),
+    tags = ["no-cross"],
 )
 
 genrule(
@@ -14,12 +15,14 @@ genrule(
     srcs = ["translations/translations.qrc"],
     outs = ["translations/translations_local.qrc"],
     cmd = "cp $< $@",
+    tags = ["no-cross"],
 )
 
 qt_rcc(
     name = "translations",
     srcs = [":translations_qrc"],
     data = [":qtox_qms"],
+    tags = ["no-cross"],
 )
 
 qt_rcc(
@@ -35,6 +38,7 @@ qt_rcc(
         "smileys/*/*",
         "themes/**/*",
     ]),
+    tags = ["no-cross"],
 )
 
 cc_library(
