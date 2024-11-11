@@ -60,6 +60,9 @@
    <caption>A sample groupchat discussion taking place on qTox</caption>
   </screenshot>
  </screenshots>
+ <developer id="ltd.toktok">
+  <name>TokTok Project</name>
+ </developer>
  <url type="homepage">https://qtox.github.io</url>
  <update_contact>barrdetwix@gmail.com</update_contact>
  <project_group>qTox</project_group>
