@@ -266,3 +266,5 @@ endif()
 add_definitions(
   -DLOG_TO_FILE=1
 )
+
+add_definitions(-DCMAKE_BUILD)

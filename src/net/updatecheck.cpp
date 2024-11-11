@@ -18,7 +18,9 @@
 */
 #include "src/net/updatecheck.h"
 #include "src/persistence/settings.h"
+#ifndef CMAKE_BUILD
 #include "src/version.h"
+#endif
 
 #include <QNetworkAccessManager>
 #include <QDebug>

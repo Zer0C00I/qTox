@@ -8,6 +8,8 @@ bazel-opt_task:
   configure_script:
     - /src/workspace/tools/inject-repo qtox
   test_all_script:
-    - cd /src/workspace && bazel test -k
+    - cd /src/workspace && bazel
+        --max_idle_secs=5
+        test -k
         --remote_http_cache=http://$CIRRUS_HTTP_CACHE_HOST
         //qtox/...

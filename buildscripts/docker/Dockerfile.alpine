@@ -1,0 +1,44 @@
+FROM alpine:3.19
+
+RUN ["apk", "add", \
+ "clang", \
+ "cmake", \
+ "ffmpeg-dev", \
+ "git", \
+ "gzip", \
+ "libexif-dev", \
+ "libqrencode-dev", \
+ "libsodium-dev", \
+ "libvpx-dev", \
+ "libxscrnsaver-dev", \
+ "openal-soft-dev", \
+ "opus-dev", \
+ "qt5-qtbase-dev", \
+ "qt5-qtsvg-dev", \
+ "qt5-qttools", \
+ "qt5-qttools-dev", \
+ "samurai", \
+ "sonnet5-dev", \
+ "sqlcipher-dev"]
+
+RUN git clone --recurse-submodules --depth=1 https://github.com/TokTok/c-toxcore /work/c-toxcore
+WORKDIR /work/c-toxcore
+RUN cmake -B_build -H. -GNinja
+RUN cmake --build _build --target install
+
+RUN git clone --recurse-submodules --depth=1 https://github.com/toxext/toxext /work/toxext
+WORKDIR /work/toxext
+# Tests enable asan unconditionally, which doesn't work on Alpine.
+RUN sed -i -e 's/add_subdirectory(test)/#\1/' CMakeLists.txt
+RUN cmake -B_build -H. -GNinja
+RUN cmake --build _build --target install
+
+RUN git clone --recurse-submodules --depth=1 https://github.com/toxext/tox_extension_messages /work/tox_extension_messages
+WORKDIR /work/tox_extension_messages
+RUN cmake -B_build -H. -GNinja
+RUN cmake --build _build --target install
+
+COPY . /work/qtox
+WORKDIR /work/qtox
+RUN cmake -B_build -H. -GNinja
+RUN cmake --build _build --target install

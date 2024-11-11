@@ -28,7 +28,9 @@
 #include "src/nexus.h"
 #include "src/net/toxuri.h"
 #include "src/widget/widget.h"
+#ifndef CMAKE_BUILD
 #include "src/version.h"
+#endif
 #include "src/video/camerasource.h"
 
 #if defined(Q_OS_UNIX)
