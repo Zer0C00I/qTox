@@ -295,6 +295,7 @@ QVector<QPair<QString, QString>> CameraDevice::getRawDeviceListGeneric()
     }
 
     s->iformat = iformat;
+#if (LIBAVFORMAT_VERSION_MAJOR < 60)
     if (s->iformat->priv_data_size > 0) {
         s->priv_data = av_mallocz(s->iformat->priv_data_size);
         if (!s->priv_data) {
@@ -308,6 +309,7 @@ QVector<QPair<QString, QString>> CameraDevice::getRawDeviceListGeneric()
     } else {
         s->priv_data = nullptr;
     }
+#endif
 
     // List the devices for this context
     AVDeviceInfoList* devlist = nullptr;
