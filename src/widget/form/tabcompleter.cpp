@@ -23,7 +23,7 @@
 #include "tabcompleter.h"
 
 #include <QKeyEvent>
-#include <QRegExp>
+#include <QRegularExpression>
 
 #include "src/model/group.h"
 #include "src/widget/tool/chattextedit.h"
@@ -66,17 +66,17 @@ void TabCompleter::buildCompletionList()
     // section
     QString tabAbbrev = msgEdit->toPlainText()
                             .left(msgEdit->textCursor().position())
-                            .section(QRegExp("[^\\w\\d\\$:@--_\\[\\]{}|`^.\\\\]"), -1, -1);
+                            .section(QRegularExpression("[^\\w\\d\\$:@--_\\[\\]{}|`^.\\\\]"), -1, -1);
     // that section is then used as the completion regex
-    QRegExp regex(QString("^[-_\\[\\]{}|`^.\\\\]*").append(QRegExp::escape(tabAbbrev)),
-                  Qt::CaseInsensitive);
+    QRegularExpression regex(QString("^[-_\\[\\]{}|`^.\\\\]*").append(QRegularExpression::escape(tabAbbrev)),
+                  QRegularExpression::CaseInsensitiveOption);
 
     const QString ownNick = group->getSelfName();
     for (const auto& name : group->getPeerList()) {
         if (name == ownNick) {
             continue;   // don't auto complete own name
         }
-        if (regex.indexIn(name) > -1) {
+        if (regex.match(name).hasMatch()) {
             SortableString lower = SortableString(name.toLower());
             completionMap[lower] = name;
         }

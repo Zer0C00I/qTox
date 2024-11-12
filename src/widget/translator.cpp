@@ -38,7 +38,7 @@ QMutex Translator::lock;
  */
 void Translator::translate(const QString& localeName)
 {
-    QMutexLocker locker{&lock};
+    QMutexLocker<QMutex> locker{&lock};
 
     if (!core_translator)
         core_translator = new QTranslator();
@@ -92,7 +92,7 @@ void Translator::translate(const QString& localeName)
  */
 void Translator::registerHandler(const std::function<void()>& f, void* owner)
 {
-    QMutexLocker locker{&lock};
+    QMutexLocker<QMutex> locker{&lock};
     callbacks.push_back({owner, f});
 }
 
@@ -102,7 +102,7 @@ void Translator::registerHandler(const std::function<void()>& f, void* owner)
  */
 void Translator::unregister(void* owner)
 {
-    QMutexLocker locker{&lock};
+    QMutexLocker<QMutex> locker{&lock};
     callbacks.erase(std::remove_if(begin(callbacks), end(callbacks),
                                    [=](const Callback& c) { return c.first == owner; }),
                     end(callbacks));

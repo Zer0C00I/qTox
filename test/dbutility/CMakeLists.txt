@@ -20,7 +20,7 @@ add_library(dbutility_library STATIC
 
 target_include_directories(dbutility_library PUBLIC include/)
 target_link_libraries(dbutility_library
-  Qt5::Core
-  Qt5::Test
+  Qt6::Core
+  Qt6::Test
   util_library
   qtox::warnings)

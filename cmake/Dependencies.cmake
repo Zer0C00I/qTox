@@ -22,16 +22,16 @@
 
 # This should go into subdirectories later.
 find_package(PkgConfig        REQUIRED)
-find_package(Qt5Concurrent    REQUIRED)
-find_package(Qt5Core          REQUIRED)
-find_package(Qt5Gui           REQUIRED)
-find_package(Qt5LinguistTools REQUIRED)
-find_package(Qt5Network       REQUIRED)
-find_package(Qt5OpenGL        REQUIRED)
-find_package(Qt5Svg           REQUIRED)
-find_package(Qt5Test          REQUIRED)
-find_package(Qt5Widgets       REQUIRED)
-find_package(Qt5Xml           REQUIRED)
+find_package(Qt6Concurrent    REQUIRED)
+find_package(Qt6Core          REQUIRED)
+find_package(Qt6Gui           REQUIRED)
+find_package(Qt6LinguistTools REQUIRED)
+find_package(Qt6Network       REQUIRED)
+find_package(Qt6OpenGL        REQUIRED)
+find_package(Qt6Svg           REQUIRED)
+find_package(Qt6Test          REQUIRED)
+find_package(Qt6Widgets       REQUIRED)
+find_package(Qt6Xml           REQUIRED)
 
 find_package(ToxExt                         REQUIRED)
 find_package(ToxExtensionMessages           REQUIRED)
@@ -42,13 +42,13 @@ endfunction()
 
 # Everything links to these Qt libraries.
 add_dependency(
-  Qt5::Core
-  Qt5::Gui
-  Qt5::Network
-  Qt5::OpenGL
-  Qt5::Svg
-  Qt5::Widgets
-  Qt5::Xml)
+  Qt6::Core
+  Qt6::Gui
+  Qt6::Network
+  Qt6::OpenGL
+  Qt6::Svg
+  Qt6::Widgets
+  Qt6::Xml)
 
 add_dependency(
   ToxExt::ToxExt
@@ -259,7 +259,7 @@ endif()
 
 if (${DESKTOP_NOTIFICATIONS})
     # snorenotify does only provide a cmake find module
-    find_package(LibsnoreQt5 0.7.0 REQUIRED)
+    find_package(LibsnoreQt6 0.7.0 REQUIRED)
     set(ALL_LIBRARIES ${ALL_LIBRARIES} Snore::Libsnore)
 endif()
 

@@ -19,7 +19,6 @@
 
 #include <QApplication>
 #include <QDebug>
-#include <QDesktopWidget>
 #include <QScreen>
 extern "C" {
 #pragma GCC diagnostic push
@@ -520,7 +519,7 @@ bool CameraDevice::betterPixelFormat(uint32_t a, uint32_t b)
  */
 bool CameraDevice::getDefaultInputFormat()
 {
-    QMutexLocker locker(&iformatLock);
+    QMutexLocker<QMutex> locker(&iformatLock);
     if (iformat) {
         qDebug() << "XXX: input format already done";
         return true;

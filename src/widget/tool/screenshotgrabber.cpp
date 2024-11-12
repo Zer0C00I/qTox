@@ -21,7 +21,6 @@
 
 #include <QApplication>
 #include <QDebug>
-#include <QDesktopWidget>
 #include <QGraphicsPixmapItem>
 #include <QGraphicsRectItem>
 #include <QGraphicsSceneMouseEvent>
@@ -203,11 +202,7 @@ void ScreenshotGrabber::chooseHelperTooltipText(QRect rect)
 void ScreenshotGrabber::adjustTooltipPosition()
 {
     QRect recGL = QGuiApplication::primaryScreen()->virtualGeometry();
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
     const auto rec = QGuiApplication::screenAt(QCursor::pos())->geometry();
-#else
-    const auto rec = qApp->desktop()->screenGeometry(QCursor::pos());
-#endif
     const QRectF ttRect = helperToolbox->childrenBoundingRect();
     int x = qAbs(recGL.x()) + rec.x() + ((rec.width() - ttRect.width()) / 2);
     int y = qAbs(recGL.y()) + rec.y();
@@ -228,7 +223,7 @@ QPixmap ScreenshotGrabber::grabScreen()
     QRect rec = screen->virtualGeometry();
 
     // Multiply by devicePixelRatio to get actual desktop size
-    return screen->grabWindow(QApplication::desktop()->winId(), rec.x() * pixRatio,
+    return screen->grabWindow(0, rec.x() * pixRatio,
                               rec.y() * pixRatio, rec.width() * pixRatio, rec.height() * pixRatio);
 }
 

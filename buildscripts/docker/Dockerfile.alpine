@@ -13,12 +13,11 @@ RUN ["apk", "add", \
  "libxscrnsaver-dev", \
  "openal-soft-dev", \
  "opus-dev", \
- "qt5-qtbase-dev", \
- "qt5-qtsvg-dev", \
- "qt5-qttools", \
- "qt5-qttools-dev", \
+ "qt6-qtbase-dev", \
+ "qt6-qtsvg-dev", \
+ "qt6-qttools", \
+ "qt6-qttools-dev", \
  "samurai", \
- "sonnet5-dev", \
  "sqlcipher-dev"]
 
 RUN git clone --recurse-submodules --depth=1 https://github.com/TokTok/c-toxcore /work/c-toxcore

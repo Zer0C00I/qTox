@@ -36,7 +36,6 @@
 #include <QLabel>
 #include <QCloseEvent>
 #include <QPushButton>
-#include <QDesktopWidget>
 
 namespace
 {
@@ -130,7 +129,7 @@ NetCamView::NetCamView(ToxPk friendPk_, CameraSource& cameraSource_,
 
     QHBoxLayout* frameLayout = new QHBoxLayout(selfFrame);
     frameLayout->addWidget(selfVideoSurface);
-    frameLayout->setMargin(0);
+    frameLayout->setContentsMargins(0, 0, 0, 0);
 
     updateRatio();
     connections +=
@@ -261,11 +260,7 @@ void NetCamView::enterFullScreen()
     showFullScreen();
     enterFullScreenButton->hide();
     toggleMessagesButton->hide();
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
     const auto screenSize = QGuiApplication::screenAt(pos())->geometry();
-#else
-    const QRect screenSize = QApplication::desktop()->screenGeometry(this);
-#endif
     buttonPanel->setGeometry((screenSize.width() / 2) - buttonPanel->width() / 2,
             screenSize.height() - BTN_PANEL_HEIGHT - 25, BTN_PANEL_WIDTH, BTN_PANEL_HEIGHT);
     buttonPanel->show();

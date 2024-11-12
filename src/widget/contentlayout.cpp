@@ -96,13 +96,13 @@ void ContentLayout::clear()
 
 void ContentLayout::init()
 {
-    setMargin(0);
+    setContentsMargins(0, 0, 0, 0);
     setSpacing(0);
 
     mainHead = new QWidget();
     mainHead->setLayout(new QVBoxLayout);
     mainHead->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Fixed);
-    mainHead->layout()->setMargin(0);
+    mainHead->layout()->setContentsMargins(0, 0, 0, 0);
     mainHead->layout()->setSpacing(0);
     mainHead->setMouseTracking(true);
 

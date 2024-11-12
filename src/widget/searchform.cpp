@@ -62,7 +62,7 @@ SearchForm::SearchForm(Settings& settings_, Style& style_, QWidget* parent)
     startButton = createButton("startButton", "green");
     startButton->setText(tr("Start"));
 
-    layoutNavigation->setMargin(0);
+    layoutNavigation->setContentsMargins(0, 0, 0, 0);
     layoutNavigation->addWidget(settingsButton);
     layoutNavigation->addWidget(searchLine);
     layoutNavigation->addWidget(startButton);

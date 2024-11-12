@@ -125,7 +125,7 @@ const QChar URI_ENDING_CHARS[] = {
  * @param QRegularExpressionMatch of a word containing a URI
  * @return MatchingUri containing info on the stripped URI
  */
-MatchingUri stripSurroundingChars(const QStringRef wrappedUri, const int startOfBareUri)
+MatchingUri stripSurroundingChars(const QStringView wrappedUri, const int startOfBareUri)
 {
     bool matchFound;
     int curValidationStartPos = 0;
@@ -182,7 +182,7 @@ QString highlight(const QString& message, const QVector<QRegularExpression>& pat
             const QRegularExpressionMatch match = iter.next();
             const int uriWithWrapMatch{0};
             const int uriWithoutWrapMatch{1};
-            MatchingUri matchUri = stripSurroundingChars(match.capturedRef(uriWithWrapMatch),
+            MatchingUri matchUri = stripSurroundingChars(match.capturedView(uriWithWrapMatch),
                    match.capturedStart(uriWithoutWrapMatch) - match.capturedStart(uriWithWrapMatch));
             if (!matchUri.valid) {
                 continue;

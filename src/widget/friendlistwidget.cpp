@@ -120,7 +120,7 @@ FriendListWidget::FriendListWidget(const Core &core_, Widget* parent,
     setLayout(listLayout);
     setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     listLayout->setSpacing(0);
-    listLayout->setMargin(0);
+    listLayout->setContentsMargins(0, 0, 0, 0);
 
     mode = settings.getFriendSortingMode();
 

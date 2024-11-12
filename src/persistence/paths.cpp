@@ -98,7 +98,6 @@ namespace {
         case Portable::Auto:
             if (QFile(portableSettingsPath).exists()) {
                 QSettings ps(portableSettingsPath, QSettings::IniFormat);
-                ps.setIniCodec("UTF-8");
                 ps.beginGroup("Advanced");
                 portable = ps.value("makeToxPortable", false).toBool();
                 ps.endGroup();
@@ -331,12 +330,7 @@ QString Paths::getAppDataDirPath() const
                            + "Application Support" + QDir::separator() + "Tox")
            + QDir::separator();
 #else
-    /*
-     * TODO: Change QStandardPaths::DataLocation to AppDataLocation when upgrate Qt to 5.4+
-     * For now we need support Qt 5.3, so we use deprecated DataLocation
-     * BTW, it's not a big deal since for linux AppDataLocation and DataLocation are equal
-     */
-    return QDir::cleanPath(QStandardPaths::writableLocation(QStandardPaths::DataLocation))
+    return QDir::cleanPath(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation))
            + QDir::separator();
 #endif
 }

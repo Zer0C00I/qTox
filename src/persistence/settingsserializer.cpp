@@ -261,7 +261,7 @@ void SettingsSerializer::save()
     stream.setVersion(QDataStream::Qt_5_0);
 
     // prevent signed overflow and the associated warning
-    int numGroups = std::max(0, groups.size());
+    int numGroups = std::max(QStringList::size_type(0), groups.size());
     for (int g = -1; g < numGroups; ++g) {
         // Save the group name, if any
         if (g != -1) {

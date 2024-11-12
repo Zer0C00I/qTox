@@ -22,6 +22,7 @@
 
 #include <QApplication>
 #include <QPushButton>
+#include <QRegularExpression>
 
 const double SetPasswordDialog::reasonablePasswordLength = 8.;
 
@@ -88,10 +89,10 @@ int SetPasswordDialog::getPasswordStrength(QString pass)
     }
 
     int variations = -1;
-    variations += pass.contains(QRegExp("[0-9]", Qt::CaseSensitive, QRegExp::RegExp)) ? 1 : 0;
-    variations += pass.contains(QRegExp("[a-z]", Qt::CaseSensitive, QRegExp::RegExp)) ? 1 : 0;
-    variations += pass.contains(QRegExp("[A-Z]", Qt::CaseSensitive, QRegExp::RegExp)) ? 1 : 0;
-    variations += pass.contains(QRegExp("[\\W]", Qt::CaseSensitive, QRegExp::RegExp)) ? 1 : 0;
+    variations += pass.contains(QRegularExpression("[0-9]")) ? 1 : 0;
+    variations += pass.contains(QRegularExpression("[a-z]")) ? 1 : 0;
+    variations += pass.contains(QRegularExpression("[A-Z]")) ? 1 : 0;
+    variations += pass.contains(QRegularExpression("[\\W]")) ? 1 : 0;
 
     int score = fscore;
     score += variations * 10;

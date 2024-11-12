@@ -28,7 +28,7 @@ function(auto_test subsystem module extra_res extra_libs)
   target_link_libraries(test_${module}
     ${PROJECT_NAME}_static
     ${CHECK_LIBRARIES}
-    Qt5::Test
+    Qt6::Test
     ${extra_libs})
   add_test(
     NAME test_${module}

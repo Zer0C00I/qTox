@@ -79,9 +79,9 @@ void GenericChatroomWidget::compactChange(bool _compact)
 
     setLayout(mainLayout);
     mainLayout->setSpacing(0);
-    mainLayout->setMargin(0);
+    mainLayout->setContentsMargins(0, 0, 0, 0);
     textLayout->setSpacing(0);
-    textLayout->setMargin(0);
+    textLayout->setContentsMargins(0, 0, 0, 0);
     setLayoutDirection(Qt::LeftToRight); // parent might have set Qt::RightToLeft
 
     // avatar
@@ -181,7 +181,7 @@ void GenericChatroomWidget::mouseReleaseEvent(QMouseEvent* event)
     }
 }
 
-void GenericChatroomWidget::enterEvent(QEvent* event)
+void GenericChatroomWidget::enterEvent(QEnterEvent* event)
 {
     std::ignore = event;
     if (!active)

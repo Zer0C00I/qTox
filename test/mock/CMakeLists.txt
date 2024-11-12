@@ -27,7 +27,7 @@ add_library(mock_library STATIC
 target_include_directories(mock_library PUBLIC include/)
 target_link_libraries(mock_library
   util_library
-  Qt5::Core
-  Qt5::Network
-  Qt5::Gui
+  Qt6::Core
+  Qt6::Network
+  Qt6::Gui
   qtox::warnings)

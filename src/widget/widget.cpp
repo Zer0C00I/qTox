@@ -21,10 +21,10 @@
 
 #include <cassert>
 
+#include <QActionGroup>
 #include <QClipboard>
 #include <QDebug>
 #include <QDesktopServices>
-#include <QDesktopWidget>
 #include <QMessageBox>
 #include <QMouseEvent>
 #include <QPainter>
@@ -384,12 +384,12 @@ void Widget::init()
     // initial request with the sanitized name so there is no work for us to do
 
     // keyboard shortcuts
-    auto* const quitShortcut = new QShortcut(Qt::CTRL + Qt::Key_Q, this);
+    auto* const quitShortcut = new QShortcut(Qt::CTRL | Qt::Key_Q, this);
     connect(quitShortcut, &QShortcut::activated, qApp, &QApplication::quit);
-    new QShortcut(Qt::CTRL + Qt::SHIFT + Qt::Key_Tab, this, SLOT(previousChat()));
-    new QShortcut(Qt::CTRL + Qt::Key_Tab, this, SLOT(nextChat()));
-    new QShortcut(Qt::CTRL + Qt::Key_PageUp, this, SLOT(previousChat()));
-    new QShortcut(Qt::CTRL + Qt::Key_PageDown, this, SLOT(nextChat()));
+    new QShortcut(Qt::CTRL | Qt::SHIFT | Qt::Key_Tab, this, SLOT(previousChat()));
+    new QShortcut(Qt::CTRL | Qt::Key_Tab, this, SLOT(nextChat()));
+    new QShortcut(Qt::CTRL | Qt::Key_PageUp, this, SLOT(previousChat()));
+    new QShortcut(Qt::CTRL | Qt::Key_PageDown, this, SLOT(nextChat()));
     new QShortcut(Qt::Key_F11, this, SLOT(toggleFullscreen()));
 
 #ifdef Q_OS_MAC
@@ -872,7 +872,7 @@ void Widget::setWindowTitle(const QString& title)
     } else {
         QString tmp = title;
         /// <[^>]*> Regexp to remove HTML tags, in case someone used them in title
-        QMainWindow::setWindowTitle(tmp.remove(QRegExp("<[^>]*>")) + QStringLiteral(" - ")
+        QMainWindow::setWindowTitle(tmp.remove(QRegularExpression("<[^>]*>")) + QStringLiteral(" - ")
                                     + QApplication::applicationName());
     }
 }
@@ -1938,7 +1938,7 @@ ContentLayout* Widget::createContentDialog(DialogType type) const
 
     dialog->setObjectName("detached");
     dialog->setLayout(contentLayoutDialog);
-    dialog->layout()->setMargin(0);
+    dialog->layout()->setContentsMargins(0, 0, 0, 0);
     dialog->layout()->setSpacing(0);
     dialog->setMinimumSize(720, 400);
     dialog->setAttribute(Qt::WA_DeleteOnClose);

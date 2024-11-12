@@ -26,5 +26,5 @@ add_library(util_library STATIC
 
 # We need this directory, and users of our library will need it too
 target_include_directories(util_library PUBLIC include/)
-target_link_libraries(util_library PRIVATE Qt5::Core)
+target_link_libraries(util_library PRIVATE Qt6::Core)
 target_link_libraries(util_library PRIVATE qtox::warnings)

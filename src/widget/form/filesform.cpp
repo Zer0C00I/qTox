@@ -207,17 +207,17 @@ namespace FileTransferList
 
             auto insertedIdx = files.size();
 
-            emit rowsAboutToBeInserted(QModelIndex(), insertedIdx, insertedIdx, {});
+            beginInsertRows(QModelIndex(), insertedIdx, insertedIdx);
 
             files.push_back(file);
             idToRow.insert(file.resumeFileId, insertedIdx);
 
-            emit rowsInserted(QModelIndex(), insertedIdx, insertedIdx, {});
+            endInsertRows();
         } else {
             rowIdx = idxIt.value();
             files[rowIdx] = file;
             if (fileTransferFailed(file.status)) {
-                emit rowsAboutToBeRemoved(QModelIndex(), rowIdx, rowIdx, {});
+                beginRemoveRows(QModelIndex(), rowIdx, rowIdx);
 
                 for (auto it = idToRow.begin(); it != idToRow.end(); ++it) {
                     if (it.value() > rowIdx) {
@@ -227,7 +227,7 @@ namespace FileTransferList
                 idToRow.remove(file.resumeFileId);
                 files.erase(files.begin() + rowIdx);
 
-                emit rowsRemoved(QModelIndex(), rowIdx, rowIdx, {});
+                endRemoveRows();
             }
             else {
                 emit dataChanged(index(rowIdx, 0), index(rowIdx, columnCount()));
@@ -521,13 +521,13 @@ void FilesForm::onFileUpdated(const ToxFile& inFile)
 void FilesForm::onSentFileActivated(const QModelIndex& index)
 {
     const auto& filePath = sentModel->data(index, Qt::UserRole).toString();
-    messageBoxManager.confirmExecutableOpen(filePath);
+    messageBoxManager.confirmExecutableOpen(QFileInfo(filePath));
 }
 
 void FilesForm::onReceivedFileActivated(const QModelIndex& index)
 {
     const auto& filePath = recvdModel->data(index, Qt::UserRole).toString();
-    messageBoxManager.confirmExecutableOpen(filePath);
+    messageBoxManager.confirmExecutableOpen(QFileInfo(filePath));
 }
 
 void FilesForm::retranslateUi()

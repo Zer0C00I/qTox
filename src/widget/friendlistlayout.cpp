@@ -40,13 +40,13 @@ FriendListLayout::FriendListLayout(QWidget* parent)
 void FriendListLayout::init()
 {
     setSpacing(0);
-    setMargin(0);
+    setContentsMargins(0, 0, 0, 0);
 
     friendOnlineLayout.getLayout()->setSpacing(0);
-    friendOnlineLayout.getLayout()->setMargin(0);
+    friendOnlineLayout.getLayout()->setContentsMargins(0, 0, 0, 0);
 
     friendOfflineLayout.getLayout()->setSpacing(0);
-    friendOfflineLayout.getLayout()->setMargin(0);
+    friendOfflineLayout.getLayout()->setContentsMargins(0, 0, 0, 0);
 
     addLayout(friendOnlineLayout.getLayout());
     addLayout(friendOfflineLayout.getLayout());

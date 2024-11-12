@@ -29,7 +29,7 @@
 #include <tuple>
 
 namespace {
-void removeDialog(ContentDialog* dialog, QHash<const ChatId&, ContentDialog*>& dialogs)
+void removeDialog(ContentDialog* dialog, QHash<std::reference_wrapper<const ChatId>, ContentDialog*>& dialogs)
 {
     for (auto it = dialogs.begin(); it != dialogs.end();) {
         if (*it == dialog) {
@@ -108,7 +108,7 @@ void ContentDialogManager::focusChat(const ChatId& chatId)
  * @return ContentDialog if found, nullptr otherwise
  */
 ContentDialog* ContentDialogManager::focusDialog(const ChatId& id,
-                                                 const QHash<const ChatId&, ContentDialog*>& list)
+                                                 const QHash<std::reference_wrapper<const ChatId>, ContentDialog*>& list)
 {
     auto iter = list.find(id);
     if (iter == list.end()) {

@@ -36,13 +36,13 @@
 */
 void OfflineMsgEngine::onReceiptReceived(ReceiptNum receipt)
 {
-    QMutexLocker ml(&mutex);
+    QMutexLocker<CompatibleRecursiveMutex> ml(&mutex);
     receiptResolver.notifyReceiptReceived(receipt);
 }
 
 void OfflineMsgEngine::onExtendedReceiptReceived(ExtendedReceiptNum receipt)
 {
-    QMutexLocker ml(&mutex);
+    QMutexLocker<CompatibleRecursiveMutex> ml(&mutex);
     extendedReceiptResolver.notifyReceiptReceived(receipt);
 }
 
@@ -57,7 +57,7 @@ void OfflineMsgEngine::onExtendedReceiptReceived(ExtendedReceiptNum receipt)
 */
 void OfflineMsgEngine::addUnsentMessage(Message const& message, CompletionFn completionCallback)
 {
-    QMutexLocker ml(&mutex);
+    QMutexLocker<CompatibleRecursiveMutex> ml(&mutex);
     unsentMessages.push_back(OfflineMessage{message, std::chrono::steady_clock::now(), completionCallback});
 }
 
@@ -74,14 +74,14 @@ void OfflineMsgEngine::addUnsentMessage(Message const& message, CompletionFn com
 void OfflineMsgEngine::addSentCoreMessage(ReceiptNum receipt, Message const& message,
                                       CompletionFn completionCallback)
 {
-    QMutexLocker ml(&mutex);
+    QMutexLocker<CompatibleRecursiveMutex> ml(&mutex);
     receiptResolver.notifyMessageSent(receipt, {message, std::chrono::steady_clock::now(), completionCallback});
 }
 
 void OfflineMsgEngine::addSentExtendedMessage(ExtendedReceiptNum receipt, Message const& message,
                                       CompletionFn completionCallback)
 {
-    QMutexLocker ml(&mutex);
+    QMutexLocker<CompatibleRecursiveMutex> ml(&mutex);
     extendedReceiptResolver.notifyMessageSent(receipt, {message, std::chrono::steady_clock::now(), completionCallback});
 }
 
@@ -90,7 +90,7 @@ void OfflineMsgEngine::addSentExtendedMessage(ExtendedReceiptNum receipt, Messag
 */
 std::vector<OfflineMsgEngine::RemovedMessage> OfflineMsgEngine::removeAllMessages()
 {
-    QMutexLocker ml(&mutex);
+    QMutexLocker<CompatibleRecursiveMutex> ml(&mutex);
     auto messages = receiptResolver.clear();
     auto extendedMessages = extendedReceiptResolver.clear();
 

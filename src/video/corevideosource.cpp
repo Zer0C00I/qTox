@@ -62,7 +62,7 @@ void CoreVideoSource::pushFrame(const vpx_image_t* vpxframe)
     if (stopped)
         return;
 
-    QMutexLocker locker(&biglock);
+    QMutexLocker<QMutex> locker(&biglock);
 
     std::shared_ptr<VideoFrame> vframe;
     int width = vpxframe->d_w;
@@ -107,7 +107,7 @@ void CoreVideoSource::pushFrame(const vpx_image_t* vpxframe)
 
 void CoreVideoSource::subscribe()
 {
-    QMutexLocker locker(&biglock);
+    QMutexLocker<QMutex> locker(&biglock);
     ++subscribers;
 }
 
@@ -131,7 +131,7 @@ void CoreVideoSource::unsubscribe()
  */
 void CoreVideoSource::setDeleteOnClose(bool newstate)
 {
-    QMutexLocker locker(&biglock);
+    QMutexLocker<QMutex> locker(&biglock);
     deleteOnClose = newstate;
 }
 
@@ -143,13 +143,13 @@ void CoreVideoSource::setDeleteOnClose(bool newstate)
  */
 void CoreVideoSource::stopSource()
 {
-    QMutexLocker locker(&biglock);
+    QMutexLocker<QMutex> locker(&biglock);
     stopped = true;
     emit sourceStopped();
 }
 
 void CoreVideoSource::restartSource()
 {
-    QMutexLocker locker(&biglock);
+    QMutexLocker<QMutex> locker(&biglock);
     stopped = false;
 }

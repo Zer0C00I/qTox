@@ -432,7 +432,7 @@ bool RawDatabase::execNow(const QVector<RawDatabase::Query>& statements)
     trans.done = &done;
     trans.success = &success;
     {
-        QMutexLocker locker{&transactionsMutex};
+        QMutexLocker<QMutex> locker{&transactionsMutex};
         pendingTransactions.enqueue(trans);
     }
 
@@ -469,7 +469,7 @@ void RawDatabase::execLater(const QVector<RawDatabase::Query>& statements)
     Transaction trans;
     trans.queries = statements;
     {
-        QMutexLocker locker{&transactionsMutex};
+        QMutexLocker<QMutex> locker{&transactionsMutex};
         pendingTransactions.enqueue(trans);
     }
 
@@ -745,7 +745,7 @@ void RawDatabase::process()
         // Fetch the next transaction
         Transaction trans;
         {
-            QMutexLocker locker{&transactionsMutex};
+            QMutexLocker<QMutex> locker{&transactionsMutex};
             if (pendingTransactions.isEmpty())
                 return;
             trans = pendingTransactions.dequeue();

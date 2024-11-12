@@ -110,7 +110,7 @@ SmileyPack::SmileyPack(ISmileySettings& settings_)
     , settings{settings_}
 {
     loadingMutex.lock();
-    QtConcurrent::run(this, &SmileyPack::load, settings.getSmileyPack());
+    QThreadPool::globalInstance()->start([this]() { load(settings.getSmileyPack()); });
     settings.connectTo_smileyPackChanged(this,
         [&](const QString&) { onSmileyPackChanged(); });
     connect(cleanupTimer, &QTimer::timeout, this, &SmileyPack::cleanupIconsCache);
@@ -134,7 +134,7 @@ QString SmileyPack::getAsRichText(const QString& key)
 
 void SmileyPack::cleanupIconsCache()
 {
-    QMutexLocker locker(&loadingMutex);
+    QMutexLocker<QMutex> locker(&loadingMutex);
     for (auto it = cachedIcon.begin(); it != cachedIcon.end();) {
         std::shared_ptr<QIcon>& icon = it->second;
         if (icon.use_count() == 1) {
@@ -297,7 +297,7 @@ void SmileyPack::constructRegex()
  */
 QString SmileyPack::smileyfied(const QString& msg)
 {
-    QMutexLocker locker(&loadingMutex);
+    QMutexLocker<QMutex> locker(&loadingMutex);
     QString result(msg);
 
     int replaceDiff = 0;
@@ -319,7 +319,7 @@ QString SmileyPack::smileyfied(const QString& msg)
  */
 QList<QStringList> SmileyPack::getEmoticons() const
 {
-    QMutexLocker locker(&loadingMutex);
+    QMutexLocker<QMutex> locker(&loadingMutex);
     return emoticons;
 }
 
@@ -330,7 +330,7 @@ QList<QStringList> SmileyPack::getEmoticons() const
  */
 std::shared_ptr<QIcon> SmileyPack::getAsIcon(const QString& emoticon) const
 {
-    QMutexLocker locker(&loadingMutex);
+    QMutexLocker<QMutex> locker(&loadingMutex);
     if (cachedIcon.find(emoticon) != cachedIcon.end()) {
         return cachedIcon[emoticon];
     }
@@ -349,5 +349,5 @@ std::shared_ptr<QIcon> SmileyPack::getAsIcon(const QString& emoticon) const
 void SmileyPack::onSmileyPackChanged()
 {
     loadingMutex.lock();
-    QtConcurrent::run(this, &SmileyPack::load, settings.getSmileyPack());
+    QThreadPool::globalInstance()->start([this]() { load(settings.getSmileyPack()); });
 }

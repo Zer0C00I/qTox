@@ -72,7 +72,7 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
         return;
     }
 
-    QRegExp snoreFilter{QStringLiteral("Snore::Notification.*was already closed")};
+    QRegularExpression snoreFilter{QStringLiteral("Snore::Notification.*was already closed")};
     if (type == QtWarningMsg
         && msg.contains(snoreFilter))
     {

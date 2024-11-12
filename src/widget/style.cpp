@@ -68,7 +68,7 @@ const QLatin1String BuiltinThemeDefaultPath{":themes/default/"};
 const QLatin1String BuiltinThemeDarkPath{":themes/dark/"};
 
 // helper functions
-QFont appFont(int pixelSize, int weight)
+QFont appFont(int pixelSize, QFont::Weight weight)
 {
     QFont font;
     font.setPixelSize(pixelSize);

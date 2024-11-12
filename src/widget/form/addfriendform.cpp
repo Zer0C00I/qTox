@@ -400,7 +400,7 @@ void AddFriendForm::addFriendRequestWidget(const QString& friendAddress_, const 
     QWidget* friendWidget = new QWidget(tabWidget);
     QHBoxLayout* friendLayout = new QHBoxLayout(friendWidget);
     QVBoxLayout* horLayout = new QVBoxLayout();
-    horLayout->setMargin(0);
+    horLayout->setContentsMargins(0, 0, 0, 0);
     friendLayout->addLayout(horLayout);
 
     CroppingLabel* friendLabel = new CroppingLabel(friendWidget);

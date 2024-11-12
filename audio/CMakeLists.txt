@@ -36,6 +36,6 @@ add_library(audio_library STATIC ${SOURCE_FILES} resources/audio_res.qrc)
 target_include_directories(audio_library PUBLIC include/)
 
 target_link_libraries(audio_library util_library)
-target_link_libraries(audio_library Qt5::Core)
+target_link_libraries(audio_library Qt6::Core)
 target_link_libraries(audio_library ${OPENAL_LIBRARIES})
 target_link_libraries(audio_library qtox::warnings)

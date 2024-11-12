@@ -126,7 +126,7 @@ private:
     void saveSplitterState();
     QLayout* nextLayout(QLayout* layout, bool forward) const;
     int getCurrentLayout(QLayout*& layout);
-    void focusCommon(const ChatId& id, QHash<const ChatId&, GenericChatroomWidget*> list);
+    void focusCommon(const ChatId& id, QHash<std::reference_wrapper<const ChatId>, GenericChatroomWidget*> list);
 
 private:
     QList<QLayout*> layouts;
@@ -139,8 +139,8 @@ private:
     QSize videoSurfaceSize;
     int videoCount;
 
-    QHash<const ChatId&, GenericChatroomWidget*> chatWidgets;
-    QHash<const ChatId&, GenericChatForm*> chatForms;
+    QHash<std::reference_wrapper<const ChatId>, GenericChatroomWidget*> chatWidgets;
+    QHash<std::reference_wrapper<const ChatId>, GenericChatForm*> chatForms;
 
     QString username;
     Settings& settings;

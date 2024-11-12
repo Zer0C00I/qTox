@@ -36,7 +36,6 @@
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QDebug>
-#include <QDesktopWidget>
 #include <QThread>
 
 #include <vpx/vpx_image.h>

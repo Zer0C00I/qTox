@@ -102,7 +102,7 @@ CallConfirmWidget::CallConfirmWidget(Settings& settings, Style& style,
     connect(buttonBox, &QDialogButtonBox::accepted, this, &CallConfirmWidget::accepted);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &CallConfirmWidget::rejected);
 
-    layout->setMargin(marginSize);
+    layout->setContentsMargins(0, 0, 0, 0);
     layout->addSpacing(spikeH);
     layout->addWidget(callLabel);
     layout->addWidget(buttonBox);
@@ -123,8 +123,8 @@ void CallConfirmWidget::reposition()
     parentWidget()->installEventFilter(this);
 
     QWidget* w = anchor->window();
-    QPoint pos = anchor->mapToGlobal({(anchor->width() - rectW) / 2, anchor->height()})
-                 - w->mapToGlobal({0, 0});
+    QPoint pos = anchor->mapToGlobal(QPoint{(anchor->width() - rectW) / 2, anchor->height()})
+                 - w->mapToGlobal(QPoint{0, 0});
 
     // We don't want the widget to overflow past the right of the screen
     int xOverflow = 0;

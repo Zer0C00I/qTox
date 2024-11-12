@@ -34,7 +34,7 @@ AlSource::AlSource(OpenAL& al)
 
 AlSource::~AlSource()
 {
-    QMutexLocker locker{&killLock};
+    QMutexLocker<CompatibleRecursiveMutex> locker{&killLock};
 
     // unsubscribe only if not already killed
     if (!killed) {
@@ -45,7 +45,7 @@ AlSource::~AlSource()
 
 AlSource::operator bool() const
 {
-    QMutexLocker locker{&killLock};
+    QMutexLocker<CompatibleRecursiveMutex> locker{&killLock};
     return !killed;
 }
 

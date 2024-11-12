@@ -54,4 +54,10 @@ inline uint qHash(const ChatId& id)
     return qHash(id.getByteArray());
 }
 
+inline bool operator==(const std::reference_wrapper<const ChatId> lhs,
+ const std::reference_wrapper<const ChatId> rhs)
+{
+    return lhs.get() == rhs.get();
+}
+
 using ChatIdPtr = std::shared_ptr<const ChatId>;

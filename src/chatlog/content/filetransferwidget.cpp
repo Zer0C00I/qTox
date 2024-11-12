@@ -31,7 +31,6 @@
 #include <QBuffer>
 #include <QDebug>
 #include <QDesktopServices>
-#include <QDesktopWidget>
 #include <QFile>
 #include <QFileDialog>
 #include <QMessageBox>

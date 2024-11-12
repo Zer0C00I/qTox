@@ -15,7 +15,7 @@
 #   along with qTox.  If not, see <http://www.gnu.org/licenses/>
 
 # Edit this list if translations are added
-qt5_add_translation(translations_FILES
+qt6_add_translation(translations_FILES
   ar.ts
   ber.ts
   be.ts

@@ -69,7 +69,7 @@ ContentDialog::ContentDialog(const Core &core, Settings& settings_,
     , groupList{groupList_}
     , profile{profile_}
 {
-    friendLayout->setMargin(0);
+    friendLayout->setContentsMargins(0, 0, 0, 0);
     friendLayout->setSpacing(0);
 
     layouts = {friendLayout->getLayoutOnline(), groupLayout.getLayout(),
@@ -102,7 +102,7 @@ ContentDialog::ContentDialog(const Core &core, Settings& settings_,
     contentWidget->setAutoFillBackground(true);
 
     contentLayout = new ContentLayout(settings, style, contentWidget);
-    contentLayout->setMargin(0);
+    contentLayout->setContentsMargins(0, 0, 0, 0);
     contentLayout->setSpacing(0);
 
     splitter->addWidget(friendScroll);
@@ -111,7 +111,7 @@ ContentDialog::ContentDialog(const Core &core, Settings& settings_,
     splitter->setCollapsible(1, false);
 
     QVBoxLayout* boxLayout = new QVBoxLayout(this);
-    boxLayout->setMargin(0);
+    boxLayout->setContentsMargins(0, 0, 0, 0);
     boxLayout->setSpacing(0);
     boxLayout->addWidget(splitter);
 
@@ -136,11 +136,11 @@ ContentDialog::ContentDialog(const Core &core, Settings& settings_,
 
     reloadTheme();
 
-    new QShortcut(Qt::CTRL + Qt::Key_Q, this, SLOT(close()));
-    new QShortcut(Qt::CTRL + Qt::SHIFT + Qt::Key_Tab, this, SLOT(previousChat()));
-    new QShortcut(Qt::CTRL + Qt::Key_Tab, this, SLOT(nextChat()));
-    new QShortcut(Qt::CTRL + Qt::Key_PageUp, this, SLOT(previousChat()));
-    new QShortcut(Qt::CTRL + Qt::Key_PageDown, this, SLOT(nextChat()));
+    new QShortcut(Qt::CTRL | Qt::Key_Q, this, SLOT(close()));
+    new QShortcut(Qt::CTRL | Qt::SHIFT | Qt::Key_Tab, this, SLOT(previousChat()));
+    new QShortcut(Qt::CTRL | Qt::Key_Tab, this, SLOT(nextChat()));
+    new QShortcut(Qt::CTRL | Qt::Key_PageUp, this, SLOT(previousChat()));
+    new QShortcut(Qt::CTRL | Qt::Key_PageDown, this, SLOT(nextChat()));
 
     connect(&settings, &Settings::groupchatPositionChanged, this, &ContentDialog::onGroupchatPositionChanged);
     connect(splitter, &QSplitter::splitterMoved, this, &ContentDialog::saveSplitterState);
@@ -574,7 +574,7 @@ void ContentDialog::focusChat(const ChatId& chatId)
     focusCommon(chatId, chatWidgets);
 }
 
-void ContentDialog::focusCommon(const ChatId& id, QHash<const ChatId&, GenericChatroomWidget*> list)
+void ContentDialog::focusCommon(const ChatId& id, QHash<std::reference_wrapper<const ChatId>, GenericChatroomWidget*> list)
 {
     auto it = list.find(id);
     if (it == list.end()) {

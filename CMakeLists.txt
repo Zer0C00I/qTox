@@ -85,8 +85,8 @@ if(NOT Qt5Widgets_VERSION VERSION_LESS "5.9")
   set(AUTORCC_OPTIONS ${AUTORCC_OPTIONS} -format-version 1)
 endif()
 
-# Use C++11.
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+# Use C++17.
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-exceptions")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-rtti")
 
@@ -134,7 +134,7 @@ include(Dependencies)
 #
 ################################################################################
 
-qt5_wrap_ui(${PROJECT_NAME}_FORMS
+qt6_wrap_ui(${PROJECT_NAME}_FORMS
   src/chatlog/content/filetransferwidget.ui
   src/loginscreen.ui
   src/mainwindow.ui

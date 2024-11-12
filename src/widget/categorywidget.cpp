@@ -56,7 +56,7 @@ CategoryWidget::CategoryWidget(bool compact_, Settings& settings_, Style& style_
 
     fullLayout = new QVBoxLayout(this);
     fullLayout->setSpacing(0);
-    fullLayout->setMargin(0);
+    fullLayout->setContentsMargins(0, 0, 0, 0);
     fullLayout->addWidget(container);
 
     lineFrame = new QFrame(container);
@@ -252,7 +252,7 @@ void CategoryWidget::onCompactChanged(bool _compact)
 
     topLayout = new QHBoxLayout;
     topLayout->setSpacing(0);
-    topLayout->setMargin(0);
+    topLayout->setContentsMargins(0, 0, 0, 0);
 
     std::ignore = _compact;
     setCompact(true);

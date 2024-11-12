@@ -21,11 +21,11 @@
 #include "ui_userinterfacesettings.h"
 
 #include <QDebug>
-#include <QDesktopWidget>
 #include <QFileDialog>
 #include <QFont>
 #include <QMessageBox>
 #include <QRegularExpressionValidator>
+#include <QScreen>
 #include <QStyleFactory>
 #include <QTime>
 #include <QVector>
@@ -262,10 +262,11 @@ void UserInterfaceForm::reloadSmileys()
     }
 
     // set maximum size of emoji
-    QDesktopWidget desktop;
+    auto geometry = QGuiApplication::primaryScreen()->geometry();
     // 8 is the count of row and column in emoji's in widget
     const int sideSize = 8;
-    int maxSide = qMin(desktop.geometry().height() / sideSize, desktop.geometry().width() / sideSize);
+    int maxSide = qMin(
+        geometry.height() / sideSize, geometry.width() / sideSize);
     QSize maxSize(maxSide, maxSide);
 
     QSize actualSize = emoticonsIcons.first()->actualSize(maxSize);
