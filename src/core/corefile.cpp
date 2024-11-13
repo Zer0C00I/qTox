@@ -509,7 +509,7 @@ void CoreFile::onFileDataCallback(Tox* tox, uint32_t friendId, uint32_t fileId, 
             return;
         }
         file->progress.addSample(file->progress.getBytesSent() + length);
-        file->hashGenerator->addData(reinterpret_cast<const char*>(data.get()), length);
+        file->hashGenerator->addData(QByteArrayView{data.get(), static_cast<qsizetype>(length)});
     }
 
     Tox_Err_File_Send_Chunk err;
@@ -571,7 +571,7 @@ void CoreFile::onFileRecvChunkCallback(Tox* tox, uint32_t friendId, uint32_t fil
         file->file->write(reinterpret_cast<const char*>(data), length);
     }
     file->progress.addSample(file->progress.getBytesSent() + length);
-    file->hashGenerator->addData(reinterpret_cast<const char*>(data), length);
+    file->hashGenerator->addData(QByteArrayView{data, static_cast<qsizetype>(length)});
 
     if (file->fileKind != TOX_FILE_KIND_AVATAR) {
         emit coreFile->fileTransferInfo(*file);

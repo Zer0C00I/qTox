@@ -141,11 +141,10 @@ namespace
 
             return ret;
         }
+        else if (groupNotifications.size() == 1) {
+            return groupNotifications.begin().key()->getPeerList()[sender] + ": " + lastMessage;
+        }
         else {
-            if (groupNotifications.size() == 1) {
-                return groupNotifications.begin().key()->getPeerList()[sender] + ": " + lastMessage;
-            }
-
             return lastMessage;
         }
     }

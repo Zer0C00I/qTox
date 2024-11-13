@@ -175,10 +175,6 @@ AppManager::AppManager(int& argc, char** argv)
 
 void AppManager::preConstructionInitialization()
 {
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 6, 0))
-    QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-    QApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
-#endif
     qInstallMessageHandler(logMessageHandler);
 }
 
@@ -193,9 +189,7 @@ int AppManager::run()
 #endif
 
     qapp->setApplicationName("qTox");
-#if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     qapp->setDesktopFileName("io.github.qtox.qTox");
-#endif
     qapp->setApplicationVersion("\nGit commit: " + QString(GIT_VERSION));
 
     // Install Unicode 6.1 supporting font

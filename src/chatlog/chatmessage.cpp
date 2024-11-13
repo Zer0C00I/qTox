@@ -104,7 +104,7 @@ ChatMessage::Ptr ChatMessage::createChatMessage(const QString& sender, const QSt
         QByteArray hash = QCryptographicHash::hash((sender.toUtf8()), QCryptographicHash::Sha256);
         auto lightness = color.lightnessF();
         // Adapt as good as possible to Light/Dark themes
-        lightness = lightness*0.5 + 0.3;
+        lightness = lightness*0.5f + 0.3f;
 
         // Magic values
         color.setHslF(Identicon::bytesToColor(hash.left(Identicon::IDENTICON_COLOR_BYTES)), 1.0, lightness);

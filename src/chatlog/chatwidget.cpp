@@ -256,7 +256,7 @@ ChatWidget::ChatWidget(IChatLog& chatLog_, const Core& core_, DocumentCache& doc
     addAction(copyAction);
 
     // Ctrl+Insert shortcut
-    QShortcut* copyCtrlInsShortcut = new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Insert), this);
+    QShortcut* copyCtrlInsShortcut = new QShortcut(QKeySequence(Qt::CTRL | Qt::Key_Insert), this);
     connect(copyCtrlInsShortcut, &QShortcut::activated, this, [this]() { copySelectedText(); });
 
     // select all action (ie. Ctrl+A)

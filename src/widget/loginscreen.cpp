@@ -37,7 +37,7 @@ LoginScreen::LoginScreen(Settings& settings_, Style& style,
     const QString& initialProfileName, QWidget* parent)
     : QDialog(parent)
     , ui(new Ui::LoginScreen)
-    , quitShortcut{QKeySequence(Qt::CTRL + Qt::Key_Q), this}
+    , quitShortcut{QKeySequence(Qt::CTRL | Qt::Key_Q), this}
     , settings{settings_}
 {
     ui->setupUi(this);

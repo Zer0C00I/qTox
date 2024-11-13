@@ -455,7 +455,7 @@ void SettingsSerializer::readIni()
             continue;
         if (v.key != "size")
             continue;
-        if (!v.value.canConvert(QVariant::Int))
+        if (!v.value.canConvert(QMetaType::Int))
             continue;
 
         Array a;
@@ -549,7 +549,7 @@ void SettingsSerializer::removeGroup(int group_)
 
 void SettingsSerializer::writePackedVariant(QDataStream& stream, const QVariant& v)
 {
-    assert(v.canConvert(QVariant::String));
+    assert(v.canConvert(QMetaType::QString));
     QString str = v.toString();
     if (str == "true")
         writeStream(stream, QString("1"));
