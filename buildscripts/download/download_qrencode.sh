@@ -18,10 +18,10 @@
 set -euo pipefail
 
 QRENCODE_VERSION=4.1.1
-QRENCODE_HASH=e455d9732f8041cf5b9c388e345a641fd15707860f928e94507b1961256a6923
+QRENCODE_HASH=5385bc1b8c2f20f3b91d258bf8ccc8cf62023935df2d2676b5b67049f31a049c
 
 source "$(dirname "$(realpath "$0")")/common.sh"
 
 download_verify_extract_tarball \
-    "https://fukuchi.org/works/qrencode/qrencode-${QRENCODE_VERSION}.tar.bz2" \
+    "https://github.com/fukuchi/libqrencode/archive/refs/tags/v${QRENCODE_VERSION}.tar.gz" \
     "${QRENCODE_HASH}"

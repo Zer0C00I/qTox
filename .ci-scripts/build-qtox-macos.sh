@@ -29,10 +29,10 @@ parse_arch --arch macos --supported macos --dep macos
 
 if [ "$1" == "user" ]; then
     DEPLOYMENT_TARGET=""
-    PREFIX_PATH="$(brew --prefix qt@5)"
+    PREFIX_PATH="$(brew --prefix qt@6)"
 elif [ "$1" == "dist" ]; then
     DEPLOYMENT_TARGET="-DCMAKE_OSX_DEPLOYMENT_TARGET=$MACOS_MINIMUM_SUPPORTED_VERSION"
-    PREFIX_PATH="$DEP_PREFIX;$(brew --prefix qt@5)"
+    PREFIX_PATH="$DEP_PREFIX;$(brew --prefix qt@6)"
 else
     echo "Unknown arg $1"
     exit 1

@@ -55,12 +55,6 @@ services:
       context: ./buildscripts
       dockerfile: docker/Dockerfile.flatpak_builder
     <<: *shared_params
-  almalinux:
-    image: qtox_almalinux:latest
-    build:
-      context: ./buildscripts
-      dockerfile: docker/Dockerfile.almalinux
-    <<: *shared_params
   fedora:
     image: qtox_fedora:latest
     build:
@@ -82,12 +76,12 @@ services:
         ARCH: x86_64
         WINEARCH: win64
     <<: *shared_params
-  windows_builder.i686:
-    image: qtox_windows_builder.i686:latest
-    build:
-      context: ./buildscripts
-      dockerfile: docker/Dockerfile.windows_builder
-      args:
-        ARCH: i686
-        WINEARCH: win32
-    <<: *shared_params
+  # windows_builder.i686:
+  #   image: qtox_windows_builder.i686:latest
+  #   build:
+  #     context: ./buildscripts
+  #     dockerfile: docker/Dockerfile.windows_builder
+  #     args:
+  #       ARCH: i686
+  #       WINEARCH: win32
+  #   <<: *shared_params

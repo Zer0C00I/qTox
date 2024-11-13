@@ -17,62 +17,39 @@ parse_arch --dep "qt" --supported "win32 win64" "$@"
 OPENSSL_LIBS=$(pkg-config --libs openssl)
 export OPENSSL_LIBS
 
+CROSS_COMPILE="${MINGW_ARCH}-w64-mingw32-"
+"${CROSS_COMPILE}gcc" --version
+
 ./configure -prefix "${DEP_PREFIX}" \
     -release \
     -shared \
-    -device-option "CROSS_COMPILE=${MINGW_ARCH}-w64-mingw32-" \
+    -device-option "CROSS_COMPILE=${CROSS_COMPILE}" \
+    -qt-host-path /usr/lib/x86_64-linux-gnu/cmake \
+    -platform linux-g++ \
     -xplatform win32-g++ \
-    -openssl \
-    "$(pkg-config --cflags openssl)" \
+    -openssl "$(pkg-config --cflags --libs openssl)" \
+    -openssl-linked \
     -opensource -confirm-license \
     -pch \
     -nomake examples \
-    -nomake tools \
     -nomake tests \
-    -skip 3d \
-    -skip activeqt \
-    -skip androidextras \
-    -skip canvas3d \
-    -skip charts \
-    -skip connectivity \
-    -skip datavis3d \
-    -skip declarative \
-    -skip doc \
-    -skip gamepad \
-    -skip graphicaleffects \
-    -skip imageformats \
-    -skip location \
-    -skip macextras \
-    -skip multimedia \
-    -skip networkauth \
-    -skip purchasing \
-    -skip quickcontrols \
-    -skip quickcontrols2 \
-    -skip remoteobjects \
-    -skip script \
-    -skip scxml \
-    -skip sensors \
-    -skip serialbus \
-    -skip serialport \
-    -skip speech \
-    -skip translations \
-    -skip virtualkeyboard \
-    -skip wayland \
-    -skip webchannel \
-    -skip webengine \
-    -skip webglplugin \
-    -skip websockets \
-    -skip webview \
-    -skip x11extras \
-    -skip xmlpatterns \
+    -submodules qtbase,qtsvg,qttools \
+    -skip qtactiveqt \
+    -skip qtdeclarative \
+    -skip qtlanguageserver \
+    -skip qtshadertools \
+    -no-feature-assistant \
+    -no-feature-designer \
     -no-dbus \
     -no-icu \
-    -no-compile-examples \
     -qt-libjpeg \
     -qt-libpng \
     -qt-zlib \
     -qt-pcre \
-    -opengl desktop
+    -opengl desktop \
+    -- \
+    -DCMAKE_TOOLCHAIN_FILE=/build/windows-toolchain.cmake \
+    -DOPENSSL_ROOT_DIR=/windows
 
-make -j "${MAKE_JOBS}"
-make install
+cmake --build .
+cmake --install .

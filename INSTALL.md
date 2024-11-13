@@ -446,7 +446,7 @@ Finally, build qTox.
 ```bash
 mkdir -p _build
 cd _build
-cmake .. -DCMAKE_PREFIX_PATH=$(brew --prefix qt@5)
+cmake .. -DCMAKE_PREFIX_PATH=$(brew --prefix qt@6)
 make -j$(sysctl -n hw.ncpu)
 make install
 ```

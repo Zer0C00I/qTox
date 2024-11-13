@@ -59,7 +59,15 @@ download_verify_extract_tarball()
 
   popd >/dev/null || exit 1
 
-  tar -xf "$TEMPDIR"/* --strip-components=1
+  case "$URL" in
+    *.zip)
+      unzip "$TEMPDIR"/*
+      ;;
+
+    *)
+      tar -xf "$TEMPDIR"/* --strip-components=1
+      ;;
+  esac
 
   rm -fr "$TEMPDIR"
 }

@@ -20,7 +20,7 @@
 #
 ################################################################################
 
-cmake_minimum_required(VERSION 3.7.2)
+cmake_minimum_required(VERSION 3.10)
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 option(PLATFORM_EXTENSIONS "Enable platform specific extensions, requires extra dependencies" ON)
@@ -62,7 +62,7 @@ if(APPLE)
 endif()
 
 execute_process(
-  COMMAND brew --prefix qt@5
+  COMMAND brew --prefix qt@6
   OUTPUT_VARIABLE QT_PREFIX_PATH
   OUTPUT_STRIP_TRAILING_WHITESPACE)
 
@@ -85,8 +85,8 @@ if(NOT Qt5Widgets_VERSION VERSION_LESS "5.9")
   set(AUTORCC_OPTIONS ${AUTORCC_OPTIONS} -format-version 1)
 endif()
 
-# Use C++17.
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
+# Use C++20.
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-exceptions")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-rtti")
 
@@ -581,16 +581,8 @@ else()
     message(STATUS "NOT using update check")
 endif()
 
-if (${DESKTOP_NOTIFICATIONS})
-    add_definitions(-DDESKTOP_NOTIFICATIONS=1)
-    set(${PROJECT_NAME}_SOURCES ${${PROJECT_NAME}_SOURCES}
-        src/platform/desktop_notifications/desktopnotify.cpp
-        src/platform/desktop_notifications/desktopnotify.h)
-    message(STATUS "using desktop notifications")
-else()
-    add_definitions(-DDESKTOP_NOTIFICATIONS=0)
-    message(STATUS "not using desktop notifications")
-endif()
+add_definitions(-DDESKTOP_NOTIFICATIONS=0)
+message(STATUS "not using desktop notifications")
 
 if (MINGW)
   STRING(TOLOWER "${CMAKE_BUILD_TYPE}" CMAKE_BUILD_TYPE_LOWER)

@@ -17,10 +17,11 @@
 
 set -euo pipefail
 
-AITOOL_HASH=effcebc1d81c5e174a48b870cb420f490fb5fb4d
+GLFW_VERSION=3.4
+GLFW_HASH=c038d34200234d071fae9345bc455e4a8f2f544ab60150765d7704e08f3dac01
 
-git clone -b master --single-branch --recursive \
-https://github.com/AppImage/AppImageKit .
+source "$(dirname "$(realpath "$0")")/common.sh"
 
-git checkout "$AITOOL_HASH"
-git submodule update --init --recursive
+download_verify_extract_tarball \
+    "https://github.com/glfw/glfw/archive/refs/tags/$GLFW_VERSION.tar.gz" \
+    "${GLFW_HASH}"

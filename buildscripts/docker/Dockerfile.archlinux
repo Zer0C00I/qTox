@@ -21,16 +21,14 @@ RUN pacman -Syu --noconfirm --needed \
     base-devel \
     cmake \
     libsodium \
-    qt5-base \
-    qt5-tools \
-    qt5-svg \
+    qt6-base \
+    qt6-tools \
+    qt6-svg \
     ffmpeg \
     libexif \
     qrencode \
     sqlcipher \
     openal \
-    sonnet \
-    snorenotify \
     git \
     && \
     rm -fr /var/cache/pacman

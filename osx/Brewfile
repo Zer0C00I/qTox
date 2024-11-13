@@ -1,23 +1,17 @@
-brew "coreutils"
-brew "git"
-brew "libtool"
-brew "cmake"
-brew "pkgconfig"
 brew "check"
-brew "libvpx"
-brew "opus"
-brew "libsodium"
+brew "cmake"
+brew "coreutils"
 brew "ffmpeg"
+brew "git"
 brew "libexif"
-brew "qrencode"
-brew "qt@5"
-brew "sqlcipher"
+brew "libsodium"
+brew "libtool"
+brew "libvpx"
 brew "openal-soft"
+brew "opus"
+brew "pkgconfig"
+brew "qrencode"
+brew "qt@6"
+brew "sqlcipher"
 # accelerate builds with ccache
 brew "ccache"
-
-# brew install  #kf5-sonnet
-
-# needed for kf5-sonnet
-# brew tap kde-mac/kde https://invent.kde.org/packaging/homebrew-kde.git
-# brew "kf5-sonnet"

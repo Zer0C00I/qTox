@@ -19,6 +19,8 @@ set -euo pipefail
 
 readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 
+SUDO=${1:-}
+
 build_toxcore() {
     mkdir -p toxcore
     pushd toxcore >/dev/null || exit 1
@@ -31,7 +33,7 @@ build_toxcore() {
         .
 
     cmake --build . -- -j$(nproc)
-    cmake --build . --target install
+    $SUDO cmake --build . --target install
 
     popd >/dev/null
 }
@@ -44,7 +46,7 @@ build_toxext() {
 
     cmake . -DCMAKE_BUILD_TYPE=Release
     cmake --build . -- -j$(nproc)
-    cmake --build . --target install
+    $SUDO cmake --build . --target install
 
     popd >/dev/null
 }
@@ -57,7 +59,7 @@ build_toxext_messages() {
 
     cmake .  -DCMAKE_BUILD_TYPE=Release
     cmake --build . -- -j$(nproc)
-    cmake --build . --target install
+    $SUDO cmake --build . --target install
 
     popd >/dev/null
 }

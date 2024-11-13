@@ -17,8 +17,8 @@
 
 set -euo pipefail
 
-VPX_VERSION=1.11.0
-VPX_HASH=965e51c91ad9851e2337aebcc0f517440c637c506f3a03948062e3d5ea129a83
+VPX_VERSION=1.15.0
+VPX_HASH=e935eded7d81631a538bfae703fd1e293aad1c7fd3407ba00440c95105d2011e
 
 source "$(dirname "$(realpath "$0")")/common.sh"
 

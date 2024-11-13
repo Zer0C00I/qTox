@@ -33,10 +33,18 @@ fi
 
 "${SCRIPT_DIR}/download/download_vpx.sh"
 
-if [ "${SCRIPT_ARCH}" == "macos" ]; then
-    patch -Np1 < "${SCRIPT_DIR}/patches/vpx-macos.patch"
+# if [ "${SCRIPT_ARCH}" == "macos" ]; then
+#     patch -Np1 < "${SCRIPT_DIR}/patches/vpx-macos.patch"
+# else
+#     patch -Np1 < "${SCRIPT_DIR}/patches/vpx-windows.patch"
+# fi
+
+if [ "${SCRIPT_ARCH}" == "win32" -o "${SCRIPT_ARCH}" == "win64" ]; then
+    ENABLE_STATIC="--enable-static"
+    ENABLE_SHARED="--disable-shared"
 else
-    patch -Np1 < "${SCRIPT_DIR}/patches/vpx-windows.patch"
+    ENABLE_STATIC="--disable-static"
+    ENABLE_SHARED="--enable-shared"
 fi
 
 CFLAGS="${ARCH_FLAGS} ${CROSS_CFLAG}" \
@@ -46,8 +54,8 @@ CROSS="${CROSS_ARG}" \
     ./configure \
         ${TARGET_ARG} \
         "--prefix=${DEP_PREFIX}" \
-        --enable-shared \
-        --disable-static \
+        "$ENABLE_STATIC" \
+        "$ENABLE_SHARED" \
         --enable-runtime-cpu-detect \
         --disable-examples \
         --disable-tools \

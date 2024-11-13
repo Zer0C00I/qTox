@@ -25,7 +25,7 @@ find_package(PkgConfig        REQUIRED)
 find_package(Qt6Concurrent    REQUIRED)
 find_package(Qt6Core          REQUIRED)
 find_package(Qt6Gui           REQUIRED)
-find_package(Qt6LinguistTools REQUIRED)
+find_package(Qt6Linguist      REQUIRED)
 find_package(Qt6Network       REQUIRED)
 find_package(Qt6OpenGL        REQUIRED)
 find_package(Qt6Svg           REQUIRED)
@@ -255,12 +255,6 @@ if (PLATFORM_EXTENSIONS)
     message(WARNING "Not using platform extensions, dependencies not found")
     set(PLATFORM_EXTENSIONS OFF)
   endif()
-endif()
-
-if (${DESKTOP_NOTIFICATIONS})
-    # snorenotify does only provide a cmake find module
-    find_package(LibsnoreQt6 0.7.0 REQUIRED)
-    set(ALL_LIBRARIES ${ALL_LIBRARIES} Snore::Libsnore)
 endif()
 
 add_definitions(

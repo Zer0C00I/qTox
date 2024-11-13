@@ -17,8 +17,8 @@
 
 set -euo pipefail
 
-OPENSSL_VERSION=1.1.1l
-OPENSSL_HASH=0b7a3e5e59c34827fe0c3a74b7ec8baef302b98fa80088d7f9153aa16fa76bd1
+OPENSSL_VERSION=3.4.0
+OPENSSL_HASH=e15dda82fe2fe8139dc2ac21a36d4ca01d5313c75f99f46c4e8a27709b7294bf
 
 source "$(dirname "$(realpath "$0")")/common.sh"
 

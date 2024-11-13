@@ -2,4 +2,25 @@
 restylers:
   - astyle:
       enabled: false
+  - clang-format:
+      # TODO(iphydf): enable
+      enabled: false
+  - shellcheck:
+      # TODO(iphydf): enable
+      enabled: false
+  - shellharden:
+      # TODO(iphydf): enable
+      enabled: false
+  - shfmt:
+      # TODO(iphydf): enable
+      enabled: false
+  - cmake-format:
+      # TODO(iphydf): enable
+      enabled: false
+  - prettier-json:
+      # TODO(iphydf): enable
+      enabled: false
+  - prettier-markdown:
+      # TODO(iphydf): enable
+      enabled: false
   - "*"

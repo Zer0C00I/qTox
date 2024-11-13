@@ -6,7 +6,7 @@
 
 set -euo pipefail
 
-MACOS_MINIMUM_SUPPORTED_VERSION=10.15
+MACOS_MINIMUM_SUPPORTED_VERSION=12.0
 
 usage()
 {
@@ -56,7 +56,7 @@ parse_arch()
         MAKE_JOBS="$(nproc)"
         CMAKE_TOOLCHAIN_FILE="-DCMAKE_TOOLCHAIN_FILE=/build/windows-toolchain.cmake"
     elif [ "${SCRIPT_ARCH}" == "macos" ]; then
-        DEP_PREFIX="$(realpath $(dirname $(realpath ${BASH_SOURCE[0]}))/../local-deps)"
+        DEP_PREFIX="$(realpath $(dirname $(realpath ${BASH_SOURCE[0]}))/..)/local-deps"
         mkdir -p $DEP_PREFIX
         HOST_OPTION=''
         CROSS_LDFLAG="-mmacosx-version-min=$MACOS_MINIMUM_SUPPORTED_VERSION"
@@ -69,5 +69,5 @@ parse_arch()
         usage
         exit 1
     fi
-    export PKG_CONFIG_PATH="${DEP_PREFIX}/lib/pkgconfig"
+    export PKG_CONFIG_PATH="${DEP_PREFIX}/lib/pkgconfig:${DEP_PREFIX}/lib64/pkgconfig"
 }

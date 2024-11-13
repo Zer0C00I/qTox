@@ -221,16 +221,28 @@ GenericChatForm::GenericChatForm(const Core& core_, const Chat* chat, IChatLog& 
     contentLayout->addWidget(chatWidget);
     contentLayout->addLayout(mainFootLayout);
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
     quoteAction = menu.addAction(QIcon(), QString(), QKeySequence(Qt::ALT | Qt::Key_Q), this, SLOT(quoteSelectedText()));
+#else
+    quoteAction = menu.addAction(QIcon(), QString(), this, SLOT(quoteSelectedText()), QKeySequence(Qt::ALT | Qt::Key_Q));
+#endif
     addAction(quoteAction);
     menu.addSeparator();
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
     goToCurrentDateAction = menu.addAction(QIcon(), QString(), QKeySequence(Qt::CTRL | Qt::Key_G), this, SLOT(goToCurrentDate()));
+#else
+    goToCurrentDateAction = menu.addAction(QIcon(), QString(), this, SLOT(goToCurrentDate()), QKeySequence(Qt::CTRL | Qt::Key_G));
+#endif
     addAction(goToCurrentDateAction);
 
     menu.addSeparator();
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
     searchAction = menu.addAction(QIcon(), QString(), QKeySequence(Qt::CTRL | Qt::Key_F), this, SLOT(searchFormShow()));
+#else
+    searchAction = menu.addAction(QIcon(), QString(), this, SLOT(searchFormShow()), QKeySequence(Qt::CTRL | Qt::Key_F));
+#endif
     addAction(searchAction);
 
     menu.addSeparator();
@@ -238,9 +250,14 @@ GenericChatForm::GenericChatForm(const Core& core_, const Chat* chat, IChatLog& 
     menu.addActions(chatWidget->actions());
     menu.addSeparator();
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
     clearAction = menu.addAction(QIcon::fromTheme("edit-clear"), QString(),
                                  QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_L),
                                  this, SLOT(clearChatArea()));
+#else
+    clearAction = menu.addAction(QIcon::fromTheme("edit-clear"), QString(), this, SLOT(clearChatArea()),
+                                 QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_L));
+#endif
     addAction(clearAction);
 
     copyLinkAction = menu.addAction(QIcon(), QString(), this, SLOT(copyLink()));

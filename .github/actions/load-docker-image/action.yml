@@ -6,13 +6,16 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - uses: docker/setup-buildx-action@master
+    - uses: docker/setup-buildx-action@v3
     - name: Setup buildx cache
       uses: actions/cache@v4
       with:
         path: |
           /tmp/.buildx-cache
         key: ${{ runner.os }}-${{ inputs.docker_image_name }}-${{ github.sha }}
+    - name: Install docker-compose
+      shell: bash
+      run: sudo apt-get install -y docker-compose
     - name: Load cached docker images
       shell: bash
       run: docker buildx bake --set *.cache-from=type=local,src=/tmp/.buildx-cache -f docker-compose.yml ${{ inputs.docker_image_name }} --load

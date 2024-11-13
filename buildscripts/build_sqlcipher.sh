@@ -15,7 +15,7 @@ parse_arch --dep "sqlcipher" --supported "win32 win64 macos" "$@"
 "${SCRIPT_DIR}/download/download_sqlcipher.sh"
 
 CFLAGS="-O2 -g0 -DSQLITE_HAS_CODEC -I$DEP_PREFIX/include/ $CROSS_CFLAG"
-LDFLAGS="-lcrypto -L$DEP_PREFIX/lib/ $CROSS_LDFLAG"
+LDFLAGS="-lcrypto -L$DEP_PREFIX/lib/ -L$DEP_PREFIX/lib64/ $CROSS_LDFLAG"
 
 if [ "${SCRIPT_ARCH}" == "macos" ]; then
     LIBS=''
@@ -30,6 +30,7 @@ fi
             "--prefix=${DEP_PREFIX}" \
             --enable-shared \
             --disable-static \
+            --disable-tcl \
             --enable-tempstore=yes \
             "CFLAGS=${CFLAGS} ${CROSS_CFLAG}" \
             "LDFLAGS=${LDFLAGS} ${CROSS_LDFLAG}" \

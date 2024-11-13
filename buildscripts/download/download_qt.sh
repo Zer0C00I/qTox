@@ -17,13 +17,15 @@
 
 set -euo pipefail
 
-QT_MAJOR=5
-QT_MINOR=12
-QT_PATCH=12
-QT_HASH=1979a3233f689cb8b3e2783917f8f98f6a2e1821a70815fb737f020cd4b6ab06
+QT_MAJOR=6
+QT_MINOR=6
+QT_PATCH=2
+QT_HASH=3c1e42b3073ade1f7adbf06863c01e2c59521b7cc2349df2f74ecd7ebfcb922d
 
 source "$(dirname "$(realpath "$0")")/common.sh"
 
+MIRROR=http://master.qt-project.org
+
 download_verify_extract_tarball \
-    https://download.qt.io/official_releases/qt/${QT_MAJOR}.${QT_MINOR}/${QT_MAJOR}.${QT_MINOR}.${QT_PATCH}/single/qt-everywhere-src-${QT_MAJOR}.${QT_MINOR}.${QT_PATCH}.tar.xz \
+    "$MIRROR/archive/qt/${QT_MAJOR}.${QT_MINOR}/${QT_MAJOR}.${QT_MINOR}.${QT_PATCH}/single/qt-everywhere-src-${QT_MAJOR}.${QT_MINOR}.${QT_PATCH}.tar.xz" \
     "${QT_HASH}"
