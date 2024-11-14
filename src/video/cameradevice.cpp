@@ -168,9 +168,11 @@ CameraDevice* CameraDevice::open(QString devName, VideoMode mode)
         qWarning() << "VideoMode could be invalid!";
     }
 
+#if USING_V4L || defined(Q_OS_WIN) || defined(Q_OS_MACOS)
     const std::string videoSize =
         QStringLiteral("%1x%2").arg(mode.width).arg(mode.height).toStdString();
     const std::string framerate = QString{}.setNum(FPS).toStdString();
+#endif
 
     AVDictionary* options = nullptr;
     if (!iformat)
@@ -352,7 +354,6 @@ QVector<QPair<QString, QString>> CameraDevice::getDeviceList()
 
     devices.append({"none", QObject::tr("None", "No camera device set")});
 
-    qDebug() << "XXX: getting device list";
     if (!getDefaultInputFormat())
         return devices;
 
@@ -392,7 +393,6 @@ QVector<QPair<QString, QString>> CameraDevice::getDeviceList()
                 QObject::tr("Desktop", "Desktop as a camera input for screen sharing")});
     }
 
-    qDebug() << "XXX: got devices:" << devices;
     return devices;
 }
 
@@ -523,7 +523,6 @@ bool CameraDevice::getDefaultInputFormat()
 {
     QMutexLocker<QMutex> locker(&iformatLock);
     if (iformat) {
-        qDebug() << "XXX: input format already done";
         return true;
     }
 
@@ -551,7 +550,6 @@ bool CameraDevice::getDefaultInputFormat()
 #endif
 
 #ifdef Q_OS_MACOS
-    qDebug() << "XXX: checking for input format";
     if ((iformat = av_find_input_format("avfoundation")))
         return true;
     if ((iformat = av_find_input_format("qtkit")))

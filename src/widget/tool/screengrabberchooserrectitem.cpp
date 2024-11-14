@@ -24,11 +24,8 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QPainter>
 
-enum
-{
-    HandleSize = 10,
-    MinRectSize = 2,
-};
+static constexpr int HandleSize = 10;
+static constexpr qreal MinRectSize = 2;
 
 ScreenGrabberChooserRectItem::ScreenGrabberChooserRectItem(QGraphicsScene* scene)
 {

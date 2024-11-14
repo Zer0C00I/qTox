@@ -58,7 +58,12 @@ LoginScreen::LoginScreen(Settings& settings_, Style& style, const QString& initi
     connect(ui->loginPassword, &QLineEdit::returnPressed, this, &LoginScreen::onLogin);
     connect(ui->newPass, &QLineEdit::textChanged, this, &LoginScreen::onPasswordEdited);
     connect(ui->newPassConfirm, &QLineEdit::textChanged, this, &LoginScreen::onPasswordEdited);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 7, 0)
+    connect(ui->autoLoginCB, &QCheckBox::checkStateChanged, this,
+            &LoginScreen::onAutoLoginCheckboxChanged);
+#else
     connect(ui->autoLoginCB, &QCheckBox::stateChanged, this, &LoginScreen::onAutoLoginCheckboxChanged);
+#endif
     connect(ui->importButton, &QPushButton::clicked, this, &LoginScreen::onImportProfile);
 
     reset(initialProfileName);
@@ -226,11 +231,18 @@ void LoginScreen::onPasswordEdited()
     ui->passStrengthMeter->setValue(SetPasswordDialog::getPasswordStrength(ui->newPass->text()));
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 7, 0)
+void LoginScreen::onAutoLoginCheckboxChanged(Qt::CheckState state)
+{
+    emit autoLoginChanged(state == Qt::CheckState::Checked);
+}
+#else
 void LoginScreen::onAutoLoginCheckboxChanged(int state)
 {
     auto cstate = static_cast<Qt::CheckState>(state);
     emit autoLoginChanged(cstate == Qt::CheckState::Checked);
 }
+#endif
 
 void LoginScreen::retranslateUi()
 {

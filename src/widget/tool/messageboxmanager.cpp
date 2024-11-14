@@ -163,21 +163,18 @@ void MessageBoxManager::confirmExecutableOpen(const QFileInfo& file)
 void MessageBoxManager::_showInfo(const QString& title, const QString& msg)
 {
     QMessageBox messageBox(QMessageBox::Information, title, msg, QMessageBox::Ok, this);
-    messageBox.setButtonText(QMessageBox::Ok, QApplication::tr("Ok"));
     messageBox.exec();
 }
 
 void MessageBoxManager::_showWarning(const QString& title, const QString& msg)
 {
     QMessageBox messageBox(QMessageBox::Warning, title, msg, QMessageBox::Ok, this);
-    messageBox.setButtonText(QMessageBox::Ok, QApplication::tr("Ok"));
     messageBox.exec();
 }
 
 void MessageBoxManager::_showError(const QString& title, const QString& msg)
 {
     QMessageBox messageBox(QMessageBox::Critical, title, msg, QMessageBox::Ok, this);
-    messageBox.setButtonText(QMessageBox::Ok, QApplication::tr("Ok"));
     messageBox.exec();
 }
 

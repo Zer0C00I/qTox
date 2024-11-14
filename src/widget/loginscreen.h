@@ -55,7 +55,11 @@ public slots:
     void onAutoLoginChanged(bool state);
 
 private slots:
+#if QT_VERSION >= QT_VERSION_CHECK(6, 7, 0)
+    void onAutoLoginCheckboxChanged(Qt::CheckState state);
+#else
     void onAutoLoginCheckboxChanged(int state);
+#endif
     void onLoginUsernameSelected(const QString& name);
     void onPasswordEdited();
     // Buttons to change page

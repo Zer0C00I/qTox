@@ -20,6 +20,7 @@
 
 #include "avfoundation.h"
 #include <QDebug>
+#include <QMutex>
 #include <QObject>
 
 #import <AVFoundation/AVFoundation.h>

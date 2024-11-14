@@ -23,7 +23,7 @@
 #include <QString>
 #include <QVector>
 
-#ifndef Q_OS_MACX
+#ifndef Q_OS_MACOS
 #error "This file is only meant to be compiled for Mac OS X targets"
 #endif
 

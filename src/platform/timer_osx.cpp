@@ -39,7 +39,7 @@ uint32_t Platform::getIdleTime()
 
     if (!service) {
         mach_port_t master;
-        IOMasterPort(MACH_PORT_NULL, &master);
+        IOMainPort(MACH_PORT_NULL, &master);
         service = IOServiceGetMatchingService(master, IOServiceMatching("IOHIDSystem"));
     }
 
