@@ -23,10 +23,10 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <QtCore/qsystemdetection.h>
 #include "src/platform/timer.h"
 #include <CoreFoundation/CoreFoundation.h>
 #include <IOKit/IOKitLib.h>
+#include <QtCore/qsystemdetection.h>
 
 uint32_t Platform::getIdleTime()
 {

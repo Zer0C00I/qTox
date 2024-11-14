@@ -19,7 +19,8 @@
 
 #include "videoframe.h"
 
-extern "C" {
+extern "C"
+{
 #include <libavutil/imgutils.h>
 #include <libswscale/swscale.h>
 }
@@ -300,7 +301,7 @@ const AVFrame* VideoFrame::getAVFrame(QSize frameSize, const int pixelFormat, co
     }
 
     // Since we are retrieving the AVFrame* directly, we merely need to pass the arguement through
-    const std::function<AVFrame*(AVFrame * const)> converter = [](AVFrame* const frame) {
+    const std::function<AVFrame*(AVFrame* const)> converter = [](AVFrame* const frame) {
         return frame;
     };
 
@@ -329,7 +330,7 @@ QImage VideoFrame::toQImage(QSize frameSize)
     }
 
     // Converter function (constructs QImage out of AVFrame*)
-    const std::function<QImage(AVFrame * const)> converter = [&](AVFrame* const frame) {
+    const std::function<QImage(AVFrame* const)> converter = [&](AVFrame* const frame) {
         return QImage{*(frame->data), frameSize.width(), frameSize.height(), *(frame->linesize),
                       QImage::Format_RGB888};
     };
@@ -356,7 +357,7 @@ ToxYUVFrame VideoFrame::toToxYUVFrame(QSize frameSize)
     }
 
     // Converter function (constructs ToxAVFrame out of AVFrame*)
-    const std::function<ToxYUVFrame(AVFrame * const)> converter = [&](AVFrame* const frame) {
+    const std::function<ToxYUVFrame(AVFrame* const)> converter = [&](AVFrame* const frame) {
         ToxYUVFrame ret{static_cast<std::uint16_t>(frameSize.width()),
                         static_cast<std::uint16_t>(frameSize.height()), frame->data[0],
                         frame->data[1], frame->data[2]};
@@ -575,7 +576,8 @@ AVFrame* VideoFrame::generateAVFrame(const QSize& dimensions, const int pixelFor
 
     int bufSize;
 
-    const bool alreadyAligned = dimensions.width() % dataAlignment == 0 && dimensions.height() % dataAlignment == 0;
+    const bool alreadyAligned =
+        dimensions.width() % dataAlignment == 0 && dimensions.height() % dataAlignment == 0;
 
     if (!requireAligned || alreadyAligned) {
         bufSize = av_image_alloc(ret->data, ret->linesize, dimensions.width(), dimensions.height(),
@@ -764,10 +766,11 @@ T VideoFrame::toGenericObject(const QSize& dimensions, const int pixelFormat, co
 // Explicitly specialize VideoFrame::toGenericObject() function
 template QImage VideoFrame::toGenericObject<QImage>(
     const QSize& dimensions, const int pixelFormat, const bool requireAligned,
-    const std::function<QImage(AVFrame* const)> &objectConstructor, const QImage& nullObject);
+    const std::function<QImage(AVFrame* const)>& objectConstructor, const QImage& nullObject);
 template ToxYUVFrame VideoFrame::toGenericObject<ToxYUVFrame>(
     const QSize& dimensions, const int pixelFormat, const bool requireAligned,
-    const std::function<ToxYUVFrame(AVFrame* const)> &objectConstructor, const ToxYUVFrame& nullObject);
+    const std::function<ToxYUVFrame(AVFrame* const)>& objectConstructor,
+    const ToxYUVFrame& nullObject);
 
 /**
  * @brief Returns whether the given ToxYUVFrame represents a valid frame or not.

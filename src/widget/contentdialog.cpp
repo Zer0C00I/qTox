@@ -53,9 +53,9 @@ const QSize minSize(minHeight, minWidget);
 const QSize defaultSize(720, 400);
 } // namespace
 
-ContentDialog::ContentDialog(const Core &core, Settings& settings_,
-    Style& style_, IMessageBoxManager& messageBoxManager_, FriendList& friendList_,
-    GroupList& groupList_, Profile& profile_, QWidget* parent)
+ContentDialog::ContentDialog(const Core& core, Settings& settings_, Style& style_,
+                             IMessageBoxManager& messageBoxManager_, FriendList& friendList_,
+                             GroupList& groupList_, Profile& profile_, QWidget* parent)
     : ActivateDialog(style_, parent, Qt::Window)
     , splitter{new QSplitter(this)}
     , friendLayout{new FriendListLayout(this)}
@@ -142,7 +142,8 @@ ContentDialog::ContentDialog(const Core &core, Settings& settings_,
     new QShortcut(Qt::CTRL | Qt::Key_PageUp, this, SLOT(previousChat()));
     new QShortcut(Qt::CTRL | Qt::Key_PageDown, this, SLOT(nextChat()));
 
-    connect(&settings, &Settings::groupchatPositionChanged, this, &ContentDialog::onGroupchatPositionChanged);
+    connect(&settings, &Settings::groupchatPositionChanged, this,
+            &ContentDialog::onGroupchatPositionChanged);
     connect(splitter, &QSplitter::splitterMoved, this, &ContentDialog::saveSplitterState);
 
     Translator::registerHandler(std::bind(&ContentDialog::retranslateUi, this), this);
@@ -164,8 +165,8 @@ FriendWidget* ContentDialog::addFriend(std::shared_ptr<FriendChatroom> chatroom,
     const auto compact = settings.getCompactLayout();
     auto frnd = chatroom->getFriend();
     const auto& friendPk = frnd->getPublicKey();
-    auto friendWidget = new FriendWidget(chatroom, compact, settings, style,
-        messageBoxManager, profile);
+    auto friendWidget =
+        new FriendWidget(chatroom, compact, settings, style, messageBoxManager, profile);
     emit connectFriendWidget(*friendWidget);
     chatWidgets[friendPk] = friendWidget;
     friendLayout->addFriendWidget(friendWidget, frnd->getStatus());
@@ -574,7 +575,8 @@ void ContentDialog::focusChat(const ChatId& chatId)
     focusCommon(chatId, chatWidgets);
 }
 
-void ContentDialog::focusCommon(const ChatId& id, QHash<std::reference_wrapper<const ChatId>, GenericChatroomWidget*> list)
+void ContentDialog::focusCommon(const ChatId& id,
+                                QHash<std::reference_wrapper<const ChatId>, GenericChatroomWidget*> list)
 {
     auto it = list.find(id);
     if (it == list.end()) {

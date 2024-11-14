@@ -38,7 +38,7 @@ class LoginScreen : public QDialog
 
 public:
     LoginScreen(Settings& settings, Style& style, const QString& initialProfileName = QString(),
-        QWidget* parent = nullptr);
+                QWidget* parent = nullptr);
     ~LoginScreen();
     bool event(QEvent* event) final;
 

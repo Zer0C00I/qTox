@@ -20,7 +20,8 @@
 #include <QApplication>
 #include <QDebug>
 #include <QScreen>
-extern "C" {
+extern "C"
+{
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wold-style-cast"
 #include <libavdevice/avdevice.h>
@@ -167,7 +168,8 @@ CameraDevice* CameraDevice::open(QString devName, VideoMode mode)
         qWarning() << "VideoMode could be invalid!";
     }
 
-    const std::string videoSize = QStringLiteral("%1x%2").arg(mode.width).arg(mode.height).toStdString();
+    const std::string videoSize =
+        QStringLiteral("%1x%2").arg(mode.width).arg(mode.height).toStdString();
     const std::string framerate = QString{}.setNum(FPS).toStdString();
 
     AVDictionary* options = nullptr;
@@ -189,7 +191,8 @@ CameraDevice* CameraDevice::open(QString devName, VideoMode mode)
             screen.setWidth((screen.width() * pixRatio) - 2);
             screen.setHeight((screen.height() * pixRatio) - 2);
         }
-        const std::string screenVideoSize = QStringLiteral("%1x%2").arg(screen.width()).arg(screen.height()).toStdString();
+        const std::string screenVideoSize =
+            QStringLiteral("%1x%2").arg(screen.width()).arg(screen.height()).toStdString();
         av_dict_set(&options, "video_size", screenVideoSize.c_str(), 0);
         devName += QString("+%1,%2").arg(QString().setNum(mode.x), QString().setNum(mode.y));
 
@@ -366,7 +369,6 @@ QVector<QPair<QString, QString>> CameraDevice::getDeviceList()
 #ifdef Q_OS_MACOS
     else if (QString::fromUtf8(iformat->name) == QString("avfoundation"))
         devices += avfoundation::getDeviceList();
-    }
 #endif
     else
         devices += getRawDeviceListGeneric();

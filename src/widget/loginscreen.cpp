@@ -27,14 +27,13 @@
 #include "src/widget/style.h"
 #include "src/widget/tool/profileimporter.h"
 #include "src/widget/translator.h"
-#include "src/persistence/settings.h"
 #include <QDebug>
 #include <QDialog>
 #include <QMessageBox>
 #include <QToolButton>
 
-LoginScreen::LoginScreen(Settings& settings_, Style& style,
-    const QString& initialProfileName, QWidget* parent)
+LoginScreen::LoginScreen(Settings& settings_, Style& style, const QString& initialProfileName,
+                         QWidget* parent)
     : QDialog(parent)
     , ui(new Ui::LoginScreen)
     , quitShortcut{QKeySequence(Qt::CTRL | Qt::Key_Q), this}
