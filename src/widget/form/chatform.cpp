@@ -207,7 +207,7 @@ ChatForm::ChatForm(Profile& profile_, Friend* chatFriend, IChatLog& chatLog_,
 
     // reflect name changes in the header
     connect(headWidget, &ChatFormHeader::nameChanged, this,
-            [=](const QString& newName) { f->setAlias(newName); });
+            [this](const QString& newName) { f->setAlias(newName); });
     connect(headWidget, &ChatFormHeader::callAccepted, this,
             [this] { onAnswerCallTriggered(lastCallIsVideo); });
     connect(headWidget, &ChatFormHeader::callRejected, this, &ChatForm::onRejectCallTriggered);

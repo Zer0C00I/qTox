@@ -358,7 +358,7 @@ FriendListWidget::SortingMode FriendListWidget::getMode() const
 void FriendListWidget::addGroupWidget(GroupWidget* widget)
 {
     Group* g = widget->getGroup();
-    connect(g, &Group::titleChanged, [=](const QString& author, const QString& name) {
+    connect(g, &Group::titleChanged, [this, widget](const QString& author, const QString& name) {
         std::ignore = author;
         renameGroupWidget(widget, name);
     });

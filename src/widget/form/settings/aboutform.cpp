@@ -115,7 +115,7 @@ void AboutForm::replaceVersions()
     qDebug() << "AboutForm not showing updates, qTox built without UPDATE_CHECK";
 #endif
 
-    QString commitLink = "https://github.com/qTox/qTox/commit/" + QString(GIT_VERSION);
+    QString commitLink = "https://github.com/TokTok/qTox/commit/" + QString(GIT_VERSION);
     bodyUI->gitVersion->setText(
         tr("Commit hash: %1").arg(createLink(commitLink, QString(GIT_VERSION))));
 
@@ -138,10 +138,10 @@ void AboutForm::replaceVersions()
                                 "(links, images, etc go here)\n\n"
                                 "----\n\n"
                                 "More information on how to write good bug reports in the wiki: "
-                                "https://github.com/qTox/qTox/wiki/Writing-Useful-Bug-Reports.\n\n"
+                                "https://github.com/TokTok/qTox/wiki/Writing-Useful-Bug-Reports.\n\n"
                                 "Please remove any unnecessary template section before submitting.")
-                            .arg(QSysInfo::prettyProductName(), GIT_DESCRIBE, GIT_VERSION,
-                                 TOXCORE_VERSION, QT_VERSION_STR);
+                            .arg(QSysInfo::prettyProductName()).arg(GIT_DESCRIBE).arg(GIT_VERSION)
+                                 .arg(TOXCORE_VERSION).arg(QT_VERSION_STR);
 
     issueBody.replace("#", "%23").replace(":", "%3A");
 
@@ -153,14 +153,14 @@ void AboutForm::replaceVersions()
 
            "`%1` is replaced by translation of `bug tracker`"
            "\n`%2` is replaced by translation of `Writing Useful Bug Reports`")
-            .arg(createLink("https://github.com/qTox/qTox/issues",
+            .arg(createLink("https://github.com/TokTok/qTox/issues",
                             tr("bug-tracker", "Replaces `%1` in the `A list of all known…`")))
-            .arg(createLink("https://github.com/qTox/qTox/wiki/Writing-Useful-Bug-Reports",
+            .arg(createLink("https://github.com/TokTok/qTox/wiki/Writing-Useful-Bug-Reports",
                             tr("Writing Useful Bug Reports",
                                "Replaces `%2` in the `A list of all known…`"))));
 
     bodyUI->clickToReport->setText(
-        createLink("https://github.com/qTox/qTox/issues/new?body=" + QString::fromUtf8(QUrl(issueBody).toEncoded()),
+        createLink("https://github.com/TokTok/qTox/issues/new?body=" + QString::fromUtf8(QUrl(issueBody).toEncoded()),
                    QString("<b>%1</b>").arg(tr("Click here to report a bug."))));
 
 

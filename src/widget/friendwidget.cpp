@@ -111,7 +111,7 @@ void FriendWidget::onContextMenuCalled(QContextMenuEvent* event)
 
     if (chatroom->possibleToOpenInNewWindow()) {
         const auto openChatWindow = menu.addAction(tr("Open chat in new window"));
-        connect(openChatWindow, &QAction::triggered, [=]() { emit newWindowOpened(this); });
+        connect(openChatWindow, &QAction::triggered, [this]() { emit newWindowOpened(this); });
     }
 
     if (chatroom->canBeRemovedFromWindow()) {
@@ -129,7 +129,7 @@ void FriendWidget::onContextMenuCalled(QContextMenuEvent* event)
 
     for (const auto& group : chatroom->getGroups()) {
         const auto groupAction = inviteMenu->addAction(tr("Invite to group '%1'").arg(group.name));
-        connect(groupAction, &QAction::triggered, [=]() { chatroom->inviteFriend(group.group); });
+        connect(groupAction, &QAction::triggered, [this, group] { chatroom->inviteFriend(group.group); });
     }
 
     const auto circleId = chatroom->getCircleId();
@@ -150,7 +150,7 @@ void FriendWidget::onContextMenuCalled(QContextMenuEvent* event)
 
     for (const auto& circle : chatroom->getOtherCircles()) {
         QAction* action = new QAction(tr("Move to circle \"%1\"").arg(circle.name), circleMenu);
-        connect(action, &QAction::triggered, [=]() { moveToCircle(circle.circleId); });
+        connect(action, &QAction::triggered, [this, circle] { moveToCircle(circle.circleId); });
         circleMenu->addAction(action);
     }
 
@@ -169,7 +169,7 @@ void FriendWidget::onContextMenuCalled(QContextMenuEvent* event)
         const auto friendPk = chatroom->getFriend()->getPublicKey();
         const auto removeAction =
             menu.addAction(tr("Remove friend", "Menu to remove the friend from the friend list"));
-        connect(removeAction, &QAction::triggered, this, [=]() { emit removeFriend(friendPk); },
+        connect(removeAction, &QAction::triggered, this, [this, friendPk] { emit removeFriend(friendPk); },
                 Qt::QueuedConnection);
     }
 

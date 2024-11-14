@@ -84,6 +84,6 @@ void AvatarBroadcaster::enableAutoBroadcast(bool state)
     disconnect(&core, nullptr, this, nullptr);
     if (state) {
         connect(&core, &Core::friendStatusChanged,
-                [=](uint32_t friendId, Status::Status) { sendAvatarTo(friendId); });
+                [this](uint32_t friendId, Status::Status) { sendAvatarTo(friendId); });
     }
 }

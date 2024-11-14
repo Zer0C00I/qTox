@@ -249,12 +249,10 @@ SearchResult SessionChatLog::searchBackward(SearchPos startPos, const QString& p
         const auto& content = item.getContentAsMessage();
         auto match = regexp.globalMatch(content.message.content, 0);
 
-        auto totalMatches = 0;
         auto numMatchesBeforePos = 0;
         QRegularExpressionMatch lastMatch;
         while (match.isValid() && match.hasNext()) {
             auto currentMatch = match.next();
-            totalMatches++;
             if (currentPos.numMatches == 0 || static_cast<int>(currentPos.numMatches) > numMatchesBeforePos) {
                 lastMatch = currentMatch;
                 numMatchesBeforePos++;

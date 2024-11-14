@@ -91,14 +91,7 @@ private:
 
 };
 
-constexpr size_t TestChatLineStorage::initialStartIdx;
-constexpr size_t TestChatLineStorage::initialEndIdx;
-
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
 const QDateTime TestChatLineStorage::initialTimestamp = QDate(2021, 01, 01).startOfDay();
-#else
-const QDateTime TestChatLineStorage::initialTimestamp(QDate(2021, 01, 01));
-#endif
 
 void TestChatLineStorage::init()
 {

@@ -142,7 +142,11 @@ namespace
             return ret;
         }
         else if (groupNotifications.size() == 1) {
-            return groupNotifications.begin().key()->getPeerList()[sender] + ": " + lastMessage;
+            auto it = groupNotifications.begin();
+            if (it == groupNotifications.end()) {
+                qFatal("Concurrency error: group notifications got cleared while reading");
+            }
+            return it.key()->getPeerList()[sender] + ": " + lastMessage;
         }
         else {
             return lastMessage;

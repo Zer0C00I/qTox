@@ -103,38 +103,38 @@ void MovableWidget::mousePressEvent(QMouseEvent* event)
         if (!(mode & Resize))
             mode |= Moving;
 
-        lastPoint = event->globalPos();
+        lastPoint = event->globalPosition().toPoint();
     }
 }
 
 void MovableWidget::mouseMoveEvent(QMouseEvent* event)
 {
     if (mode & Moving) {
-        QPoint moveTo = pos() - (lastPoint - event->globalPos());
+        QPoint moveTo = pos() - (lastPoint - event->globalPosition().toPoint());
         checkBoundary(moveTo);
 
         move(moveTo);
-        lastPoint = event->globalPos();
+        lastPoint = event->globalPosition().toPoint();
 
         actualPos = pos();
     } else {
         if (!(event->buttons() & Qt::LeftButton)) {
-            if (event->x() < 6)
+            if (event->position().x() < 6)
                 mode |= ResizeLeft;
             else
                 mode &= ~ResizeLeft;
 
-            if (event->y() < 6)
+            if (event->position().y() < 6)
                 mode |= ResizeUp;
             else
                 mode &= ~ResizeUp;
 
-            if (event->x() > width() - 6)
+            if (event->position().x() > width() - 6)
                 mode |= ResizeRight;
             else
                 mode &= ~ResizeRight;
 
-            if (event->y() > height() - 6)
+            if (event->position().y() > height() - 6)
                 mode |= ResizeDown;
             else
                 mode &= ~ResizeDown;
@@ -157,7 +157,7 @@ void MovableWidget::mouseMoveEvent(QMouseEvent* event)
 
             if (event->buttons() & Qt::LeftButton) {
                 QPoint lastPosition = pos();
-                QPoint displacement = lastPoint - event->globalPos();
+                QPoint displacement = lastPoint - event->globalPosition().toPoint();
                 QSize lastSize = size();
 
 
@@ -218,7 +218,7 @@ void MovableWidget::mouseMoveEvent(QMouseEvent* event)
 
                 move(lastPosition);
 
-                lastPoint = event->globalPos();
+                lastPoint = event->globalPosition().toPoint();
                 actualSize = size();
                 actualPos = pos();
             }

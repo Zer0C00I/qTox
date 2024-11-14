@@ -24,7 +24,7 @@
 #include <QCoreApplication>
 
 // It isn't needed for OSX, because it shows indicator by default
-#if defined(QTOX_PLATFORM_EXT) && !defined(Q_OS_OSX)
+#if defined(QTOX_PLATFORM_EXT) && !defined(Q_OS_MACOS)
 #define ENABLE_CAPSLOCK_INDICATOR
 #endif
 

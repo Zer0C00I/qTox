@@ -2247,11 +2247,11 @@ Settings::friendProp& Settings::getOrInsertFriendPropRef(const ToxPk& id)
     // No mutex lock, this is a private fn that should only be called by other
     // public functions that already locked the mutex
     auto it = friendLst.find(id.getByteArray());
-    if (it == friendLst.end()) {
-        it = friendLst.insert(id.getByteArray(), friendProp{id.toString()});
+    if (it != friendLst.end()) {
+        return *it;
     }
 
-    return *it;
+    return *friendLst.insert(id.getByteArray(), friendProp{id.toString()});
 }
 
 ICoreSettings::ProxyType Settings::fixInvalidProxyType(ICoreSettings::ProxyType proxyType)

@@ -46,8 +46,8 @@ GroupInviteWidget::GroupInviteWidget(QWidget* parent, const GroupInvite& invite,
     , settings{settings_}
     , core{core_}
 {
-    connect(acceptButton, &QPushButton::clicked, [=]() { emit accepted(inviteInfo); });
-    connect(rejectButton, &QPushButton::clicked, [=]() { emit rejected(inviteInfo); });
+    connect(acceptButton, &QPushButton::clicked, [this] { emit accepted(inviteInfo); });
+    connect(rejectButton, &QPushButton::clicked, [this] { emit rejected(inviteInfo); });
     widgetLayout->addWidget(inviteMessageLabel);
     widgetLayout->addWidget(acceptButton);
     widgetLayout->addWidget(rejectButton);

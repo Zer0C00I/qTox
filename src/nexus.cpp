@@ -138,7 +138,7 @@ void Nexus::start()
     connect(fullscreenAction, &QAction::triggered, this, &Nexus::toggleFullscreen);
 
     minimizeAction = windowMenu->addAction(QString());
-    minimizeAction->setShortcut(Qt::CTRL + Qt::Key_M);
+    minimizeAction->setShortcut(Qt::CTRL | Qt::Key_M);
     connect(minimizeAction, &QAction::triggered, [this]() {
         minimizeAction->setEnabled(false);
         QApplication::focusWindow()->showMinimized();

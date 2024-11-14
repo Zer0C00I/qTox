@@ -58,7 +58,7 @@ void Translator::translate(const QString& localeName)
 
         // System menu translation
         QString s_locale = "qt_" + locale;
-        QString location = QLibraryInfo::location(QLibraryInfo::TranslationsPath);
+        QString location = QLibraryInfo::path(QLibraryInfo::TranslationsPath);
         if (app_translator->load(s_locale, location)) {
             QApplication::installTranslator(app_translator);
             qDebug() << "System translation loaded" << locale;

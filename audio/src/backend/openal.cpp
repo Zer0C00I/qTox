@@ -53,12 +53,9 @@ void applyGain(int16_t* buffer, uint32_t bufferSize, qreal gainFactor)
  * @brief Ideally, we'd auto-detect, but that's a sane default
  */
 
-const unsigned int BUFFER_COUNT = 16;
-const uint32_t AUDIO_CHANNELS = 2;
+constexpr unsigned int BUFFER_COUNT = 16;
+constexpr uint32_t AUDIO_CHANNELS = 2;
 } // namespace
-
-constexpr qreal OpenAL::minInGain;
-constexpr qreal OpenAL::maxInGain;
 
 OpenAL::OpenAL(IAudioSettings& _settings)
     : settings{_settings}

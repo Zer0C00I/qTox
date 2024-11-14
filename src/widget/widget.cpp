@@ -207,7 +207,7 @@ void Widget::init()
     actionLogout->setIcon(prepareIcon(":/img/others/logout-icon.svg", icon_size, icon_size));
 
     actionQuit = new QAction(this);
-#ifndef Q_OS_OSX
+#ifndef Q_OS_MACOS
     actionQuit->setMenuRole(QAction::QuitRole);
 #endif
 
@@ -2144,7 +2144,7 @@ Group* Widget::createGroup(uint32_t groupnumber, const GroupId& groupId)
     assert(newgroup);
 
     if (enabled) {
-        connect(newgroup, &Group::userLeft, [=](const ToxPk& user){
+        connect(newgroup, &Group::userLeft, [this, newgroup](const ToxPk& user){
             CoreAV *av = core->getAv();
             assert(av);
             av->invalidateGroupCallPeerSource(*newgroup, user);
@@ -2203,7 +2203,7 @@ Group* Widget::createGroup(uint32_t groupnumber, const GroupId& groupId)
     auto widgetRemoveGroup = static_cast<void (Widget::*)(const GroupId&)>(&Widget::removeGroup);
 #endif
     connect(widget, &GroupWidget::removeGroup, this, widgetRemoveGroup);
-    connect(widget, &GroupWidget::middleMouseClicked, this, [=]() { removeGroup(groupId); });
+    connect(widget, &GroupWidget::middleMouseClicked, this, [this, groupId]() { removeGroup(groupId); });
     connect(widget, &GroupWidget::chatroomWidgetClicked, form, &ChatForm::focusInput);
     connect(newgroup, &Group::titleChangedByUser, this, &Widget::titleChangedByUser);
     connect(core, &Core::usernameSet, newgroup, &Group::setSelfName);

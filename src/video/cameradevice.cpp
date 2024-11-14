@@ -45,7 +45,7 @@ using AvFindInputFormatRet = decltype(av_find_input_format(""));
 #if USING_V4L
 #include "src/platform/camera/v4l2.h"
 #endif
-#ifdef Q_OS_OSX
+#ifdef Q_OS_MACOS
 #include "src/platform/camera/avfoundation.h"
 #endif
 
@@ -219,7 +219,7 @@ CameraDevice* CameraDevice::open(QString devName, VideoMode mode)
         av_dict_set(&options, "framerate", framerate.c_str(), 0);
     }
 #endif
-#ifdef Q_OS_OSX
+#ifdef Q_OS_MACOS
     else if (QString::fromUtf8(iformat->name) == QString("avfoundation")) {
         if (mode) {
             av_dict_set(&options, "video_size", videoSize.c_str(), 0);
@@ -363,7 +363,7 @@ QVector<QPair<QString, QString>> CameraDevice::getDeviceList()
     else if (QString::fromUtf8(iformat->name) == QString("video4linux2,v4l2"))
         devices += v4l2::getDeviceList();
 #endif
-#ifdef Q_OS_OSX
+#ifdef Q_OS_MACOS
     else if (QString::fromUtf8(iformat->name) == QString("avfoundation"))
         devices += avfoundation::getDeviceList();
     }
@@ -470,7 +470,7 @@ QVector<VideoMode> CameraDevice::getVideoModes(QString devName)
     else if (QString::fromUtf8(iformat->name) == QString("video4linux2,v4l2"))
         return v4l2::getDeviceModes(devName);
 #endif
-#ifdef Q_OS_OSX
+#ifdef Q_OS_MACOS
     else if (QString::fromUtf8(iformat->name) == QString("avfoundation"))
         return avfoundation::getDeviceModes(devName);
 #endif
@@ -548,7 +548,7 @@ bool CameraDevice::getDefaultInputFormat()
         return true;
 #endif
 
-#ifdef Q_OS_OSX
+#ifdef Q_OS_MACOS
     qDebug() << "XXX: checking for input format";
     if ((iformat = av_find_input_format("avfoundation")))
         return true;

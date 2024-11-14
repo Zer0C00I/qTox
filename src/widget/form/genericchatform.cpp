@@ -221,19 +221,16 @@ GenericChatForm::GenericChatForm(const Core& core_, const Chat* chat, IChatLog& 
     contentLayout->addWidget(chatWidget);
     contentLayout->addLayout(mainFootLayout);
 
-    quoteAction = menu.addAction(QIcon(), QString(), this, SLOT(quoteSelectedText()),
-                                 QKeySequence(Qt::ALT | Qt::Key_Q));
+    quoteAction = menu.addAction(QIcon(), QString(), QKeySequence(Qt::ALT | Qt::Key_Q), this, SLOT(quoteSelectedText()));
     addAction(quoteAction);
     menu.addSeparator();
 
-    goToCurrentDateAction = menu.addAction(QIcon(), QString(), this, SLOT(goToCurrentDate()),
-                                  QKeySequence(Qt::CTRL | Qt::Key_G));
+    goToCurrentDateAction = menu.addAction(QIcon(), QString(), QKeySequence(Qt::CTRL | Qt::Key_G), this, SLOT(goToCurrentDate()));
     addAction(goToCurrentDateAction);
 
     menu.addSeparator();
 
-    searchAction = menu.addAction(QIcon(), QString(), this, SLOT(searchFormShow()),
-                                  QKeySequence(Qt::CTRL | Qt::Key_F));
+    searchAction = menu.addAction(QIcon(), QString(), QKeySequence(Qt::CTRL | Qt::Key_F), this, SLOT(searchFormShow()));
     addAction(searchAction);
 
     menu.addSeparator();
@@ -242,8 +239,8 @@ GenericChatForm::GenericChatForm(const Core& core_, const Chat* chat, IChatLog& 
     menu.addSeparator();
 
     clearAction = menu.addAction(QIcon::fromTheme("edit-clear"), QString(),
-                                 this, SLOT(clearChatArea()),
-                                 QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_L));
+                                 QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_L),
+                                 this, SLOT(clearChatArea()));
     addAction(clearAction);
 
     copyLinkAction = menu.addAction(QIcon(), QString(), this, SLOT(copyLink()));
