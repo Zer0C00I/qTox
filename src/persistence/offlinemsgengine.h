@@ -10,8 +10,6 @@
 #include "src/model/message.h"
 #include "src/persistence/db/rawdatabase.h"
 
-#include "util/compatiblerecursivemutex.h"
-
 #include <QDateTime>
 #include <QMap>
 #include <QMutex>
@@ -51,7 +49,7 @@ private:
         CompletionFn completionFn;
     };
 
-    CompatibleRecursiveMutex mutex;
+    QRecursiveMutex mutex;
 
     template <class ReceiptT>
     class ReceiptResolver

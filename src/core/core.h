@@ -17,7 +17,6 @@
 #include "toxpk.h"
 
 #include "src/model/status.h"
-#include "util/compatiblerecursivemutex.h"
 #include "util/strongtype.h"
 #include <tox/tox.h>
 
@@ -67,7 +66,7 @@ public:
 
     CoreFile* getCoreFile() const;
     Tox* getTox() const;
-    CompatibleRecursiveMutex& getCoreLoopLock() const;
+    QRecursiveMutex& getCoreLoopLock() const;
 
     const CoreExt* getExt() const;
     CoreExt* getExt();
@@ -258,7 +257,7 @@ private:
     std::unique_ptr<CoreExt> ext;
     QTimer* toxTimer = nullptr;
     // recursive, since we might call our own functions
-    mutable CompatibleRecursiveMutex coreLoopLock;
+    mutable QRecursiveMutex coreLoopLock;
 
     std::unique_ptr<QThread> coreThread;
     const IBootstrapListGenerator& bootstrapListGenerator;

@@ -17,8 +17,6 @@
 #include "src/persistence/paths.h"
 #include "src/video/ivideosettings.h"
 
-#include "util/compatiblerecursivemutex.h"
-
 #include <QDateTime>
 #include <QFlags>
 #include <QFont>
@@ -697,7 +695,7 @@ private:
 
     int themeColor;
 
-    static CompatibleRecursiveMutex bigLock;
+    static QRecursiveMutex bigLock;
     static const QString globalSettingsFile;
     static QThread* settingsThread;
     Paths paths;

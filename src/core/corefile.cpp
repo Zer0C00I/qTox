@@ -11,7 +11,6 @@
 #include "src/model/status.h"
 #include "src/model/toxclientstandards.h"
 #include "src/persistence/settings.h"
-#include "util/compatiblerecursivemutex.h"
 #include "util/toxcoreerrorparser.h"
 
 #include <QDebug>
@@ -30,7 +29,7 @@
  * @brief Manages the file transfer service of toxcore
  */
 
-CoreFilePtr CoreFile::makeCoreFile(Core* core, Tox* tox, CompatibleRecursiveMutex& coreLoopLock)
+CoreFilePtr CoreFile::makeCoreFile(Core* core, Tox* tox, QRecursiveMutex& coreLoopLock)
 {
     assert(core != nullptr);
     assert(tox != nullptr);
@@ -41,7 +40,7 @@ CoreFilePtr CoreFile::makeCoreFile(Core* core, Tox* tox, CompatibleRecursiveMute
     return result;
 }
 
-CoreFile::CoreFile(Tox* core_, CompatibleRecursiveMutex& coreLoopLock_)
+CoreFile::CoreFile(Tox* core_, QRecursiveMutex& coreLoopLock_)
     : tox{core_}
     , coreLoopLock{&coreLoopLock_}
 {
@@ -82,7 +81,7 @@ void CoreFile::connectCallbacks(Tox& tox)
 
 void CoreFile::sendAvatarFile(uint32_t friendId, const QByteArray& data)
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{coreLoopLock};
+    QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
 
     uint64_t filesize = 0;
     uint8_t* file_id = nullptr;
@@ -120,7 +119,7 @@ void CoreFile::sendAvatarFile(uint32_t friendId, const QByteArray& data)
 
 void CoreFile::sendFile(uint32_t friendId, QString filename, QString filePath, long long filesize)
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{coreLoopLock};
+    QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
 
     ToxString fileName(filename);
     Tox_Err_File_Send sendErr;
@@ -157,7 +156,7 @@ void CoreFile::sendFile(uint32_t friendId, QString filename, QString filePath, l
 
 void CoreFile::pauseResumeFile(uint32_t friendId, uint32_t fileId)
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{coreLoopLock};
+    QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
 
     ToxFile* file = findFile(friendId, fileId);
     if (!file) {
@@ -192,7 +191,7 @@ void CoreFile::pauseResumeFile(uint32_t friendId, uint32_t fileId)
 
 void CoreFile::cancelFileSend(uint32_t friendId, uint32_t fileId)
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{coreLoopLock};
+    QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
 
     ToxFile* file = findFile(friendId, fileId);
     if (!file) {
@@ -212,7 +211,7 @@ void CoreFile::cancelFileSend(uint32_t friendId, uint32_t fileId)
 
 void CoreFile::cancelFileRecv(uint32_t friendId, uint32_t fileId)
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{coreLoopLock};
+    QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
 
     ToxFile* file = findFile(friendId, fileId);
     if (!file) {
@@ -231,7 +230,7 @@ void CoreFile::cancelFileRecv(uint32_t friendId, uint32_t fileId)
 
 void CoreFile::rejectFileRecvRequest(uint32_t friendId, uint32_t fileId)
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{coreLoopLock};
+    QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
 
     ToxFile* file = findFile(friendId, fileId);
     if (!file) {
@@ -250,7 +249,7 @@ void CoreFile::rejectFileRecvRequest(uint32_t friendId, uint32_t fileId)
 
 void CoreFile::acceptFileRecvRequest(uint32_t friendId, uint32_t fileId, QString path)
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{coreLoopLock};
+    QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
 
     ToxFile* file = findFile(friendId, fileId);
     if (!file) {
@@ -273,7 +272,7 @@ void CoreFile::acceptFileRecvRequest(uint32_t friendId, uint32_t fileId, QString
 
 ToxFile* CoreFile::findFile(uint32_t friendId, uint32_t fileId)
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{coreLoopLock};
+    QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
 
     uint64_t key = getFriendKey(friendId, fileId);
     if (fileMap.contains(key)) {

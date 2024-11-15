@@ -6,7 +6,6 @@
 #pragma once
 
 #include "audio/iaudiosource.h"
-#include "util/compatiblerecursivemutex.h"
 #include <QMutex>
 #include <QObject>
 
@@ -29,5 +28,5 @@ public:
 private:
     OpenAL& audio;
     bool killed = false;
-    mutable CompatibleRecursiveMutex killLock;
+    mutable QRecursiveMutex killLock;
 };

@@ -21,8 +21,6 @@
 #endif
 #include "src/ipc.h"
 
-#include "util/compatiblerecursivemutex.h"
-
 #include <QApplication>
 #include <QCryptographicHash>
 #include <QDebug>
@@ -47,7 +45,7 @@
  */
 
 const QString Settings::globalSettingsFile = "qtox.ini";
-CompatibleRecursiveMutex Settings::bigLock;
+QRecursiveMutex Settings::bigLock;
 QThread* Settings::settingsThread{nullptr};
 static constexpr int GLOBAL_SETTINGS_VERSION = 1;
 static constexpr int PERSONAL_SETTINGS_VERSION = 1;
@@ -76,7 +74,7 @@ Settings::~Settings()
 
 void Settings::loadGlobal()
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
 
     if (loaded)
         return;
@@ -257,7 +255,7 @@ void Settings::loadGlobal()
 
 void Settings::updateProfileData(Profile* profile, const QCommandLineParser* parser, bool newProfile)
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
 
     if (profile == nullptr) {
         qWarning() << QString("Could not load new settings (profile change to nullptr)");
@@ -456,7 +454,7 @@ bool Settings::applyCommandLineOptions(const QCommandLineParser& parser)
 
 void Settings::loadPersonal(const Profile& profile, bool newProfile)
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
 
     loadedProfile = &profile;
     QDir dir(paths.getSettingsDirPath());
@@ -601,7 +599,7 @@ void Settings::saveGlobal()
     if (QThread::currentThread() != settingsThread)
         return (void)QMetaObject::invokeMethod(this, "saveGlobal");
 
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     if (!loaded)
         return;
 
@@ -748,7 +746,7 @@ void Settings::savePersonal()
 
 void Settings::savePersonal(QString profileName, const ToxEncrypt* passkey)
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     if (!loaded)
         return;
 
@@ -855,7 +853,7 @@ Paths& Settings::getPaths()
 
 bool Settings::getEnableTestSound() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return enableTestSound;
 }
 
@@ -868,7 +866,7 @@ void Settings::setEnableTestSound(bool newValue)
 
 bool Settings::getEnableIPv6() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return enableIPv6;
 }
 
@@ -881,7 +879,7 @@ void Settings::setEnableIPv6(bool enabled)
 
 bool Settings::getMakeToxPortable() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return paths.isPortable();
 }
 
@@ -889,7 +887,7 @@ void Settings::setMakeToxPortable(bool newValue)
 {
     bool changed = false;
     {
-        QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+        QMutexLocker<QRecursiveMutex> locker{&bigLock};
         auto const oldSettingsPath = paths.getSettingsDirPath() + globalSettingsFile;
         changed = paths.setPortable(newValue);
         if (changed) {
@@ -902,7 +900,7 @@ void Settings::setMakeToxPortable(bool newValue)
 
 bool Settings::getAutorun() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
 
 #ifdef QTOX_PLATFORM_EXT
     return Platform::getAutorun(*this);
@@ -927,13 +925,13 @@ void Settings::setAutorun(bool newValue)
 
 bool Settings::getAutostartInTray() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return autostartInTray;
 }
 
 QString Settings::getStyle() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return style;
 }
 
@@ -946,7 +944,7 @@ void Settings::setStyle(const QString& newStyle)
 
 bool Settings::getShowSystemTray() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return showSystemTray;
 }
 
@@ -966,7 +964,7 @@ void Settings::setUseEmoticons(bool newValue)
 
 bool Settings::getUseEmoticons() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return useEmoticons;
 }
 
@@ -979,7 +977,7 @@ void Settings::setAutoSaveEnabled(bool newValue)
 
 bool Settings::getAutoSaveEnabled() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return autoSaveEnabled;
 }
 
@@ -992,7 +990,7 @@ void Settings::setAutostartInTray(bool newValue)
 
 bool Settings::getCloseToTray() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return closeToTray;
 }
 
@@ -1005,7 +1003,7 @@ void Settings::setCloseToTray(bool newValue)
 
 bool Settings::getMinimizeToTray() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return minimizeToTray;
 }
 
@@ -1018,7 +1016,7 @@ void Settings::setMinimizeToTray(bool newValue)
 
 bool Settings::getLightTrayIcon() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return lightTrayIcon;
 }
 
@@ -1031,7 +1029,7 @@ void Settings::setLightTrayIcon(bool newValue)
 
 bool Settings::getStatusChangeNotificationEnabled() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return statusChangeNotificationEnabled;
 }
 
@@ -1044,7 +1042,7 @@ void Settings::setStatusChangeNotificationEnabled(bool newValue)
 
 bool Settings::getShowGroupJoinLeaveMessages() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return showGroupJoinLeaveMessages;
 }
 
@@ -1057,7 +1055,7 @@ void Settings::setShowGroupJoinLeaveMessages(bool newValue)
 
 bool Settings::getSpellCheckingEnabled() const
 {
-    const QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    const QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return spellCheckingEnabled;
 }
 
@@ -1070,7 +1068,7 @@ void Settings::setSpellCheckingEnabled(bool newValue)
 
 bool Settings::getNotifySound() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return notifySound;
 }
 
@@ -1083,7 +1081,7 @@ void Settings::setNotifySound(bool newValue)
 
 bool Settings::getNotifyHide() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return notifyHide;
 }
 
@@ -1096,7 +1094,7 @@ void Settings::setNotifyHide(bool newValue)
 
 bool Settings::getBusySound() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return busySound;
 }
 
@@ -1109,7 +1107,7 @@ void Settings::setBusySound(bool newValue)
 
 bool Settings::getGroupAlwaysNotify() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return groupAlwaysNotify;
 }
 
@@ -1122,7 +1120,7 @@ void Settings::setGroupAlwaysNotify(bool newValue)
 
 QString Settings::getTranslation() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return translation;
 }
 
@@ -1135,7 +1133,7 @@ void Settings::setTranslation(const QString& newValue)
 
 bool Settings::getForceTCP() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return forceTCP;
 }
 
@@ -1148,7 +1146,7 @@ void Settings::setForceTCP(bool enabled)
 
 bool Settings::getEnableLanDiscovery() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return enableLanDiscovery;
 }
 
@@ -1161,7 +1159,7 @@ void Settings::setEnableLanDiscovery(bool enabled)
 
 QNetworkProxy Settings::getProxy() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
 
     QNetworkProxy proxy;
     switch (Settings::getProxyType()) {
@@ -1187,7 +1185,7 @@ QNetworkProxy Settings::getProxy() const
 
 Settings::ProxyType Settings::getProxyType() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return proxyType;
 }
 
@@ -1200,7 +1198,7 @@ void Settings::setProxyType(ProxyType newValue)
 
 QString Settings::getProxyAddr() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return proxyAddr;
 }
 
@@ -1213,7 +1211,7 @@ void Settings::setProxyAddr(const QString& address)
 
 quint16 Settings::getProxyPort() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return proxyPort;
 }
 
@@ -1226,13 +1224,13 @@ void Settings::setProxyPort(quint16 port)
 
 QString Settings::getCurrentProfile() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return currentProfile;
 }
 
 uint32_t Settings::getCurrentProfileId() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return currentProfileId;
 }
 
@@ -1241,7 +1239,7 @@ void Settings::setCurrentProfile(const QString& profile)
     bool updated = false;
     uint32_t newProfileId = 0;
     {
-        QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+        QMutexLocker<QRecursiveMutex> locker{&bigLock};
 
         if (profile != currentProfile) {
             currentProfile = profile;
@@ -1257,7 +1255,7 @@ void Settings::setCurrentProfile(const QString& profile)
 
 bool Settings::getEnableLogging() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return enableLogging;
 }
 
@@ -1270,7 +1268,7 @@ void Settings::setEnableLogging(bool newValue)
 
 int Settings::getAutoAwayTime() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return autoAwayTime;
 }
 
@@ -1292,7 +1290,7 @@ void Settings::setAutoAwayTime(int newValue)
 
 QString Settings::getAutoAcceptDir(const ToxPk& id) const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
 
     auto it = friendLst.find(id.getByteArray());
     if (it != friendLst.end())
@@ -1305,7 +1303,7 @@ void Settings::setAutoAcceptDir(const ToxPk& id, const QString& dir)
 {
     bool updated = false;
     {
-        QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+        QMutexLocker<QRecursiveMutex> locker{&bigLock};
 
         auto& frnd = getOrInsertFriendPropRef(id);
 
@@ -1321,7 +1319,7 @@ void Settings::setAutoAcceptDir(const ToxPk& id, const QString& dir)
 
 Settings::AutoAcceptCallFlags Settings::getAutoAcceptCall(const ToxPk& id) const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
 
     auto it = friendLst.find(id.getByteArray());
     if (it != friendLst.end())
@@ -1334,7 +1332,7 @@ void Settings::setAutoAcceptCall(const ToxPk& id, AutoAcceptCallFlags accept)
 {
     bool updated = false;
     {
-        QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+        QMutexLocker<QRecursiveMutex> locker{&bigLock};
 
         auto& frnd = getOrInsertFriendPropRef(id);
 
@@ -1350,7 +1348,7 @@ void Settings::setAutoAcceptCall(const ToxPk& id, AutoAcceptCallFlags accept)
 
 bool Settings::getAutoGroupInvite(const ToxPk& id) const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
 
     auto it = friendLst.find(id.getByteArray());
     if (it != friendLst.end()) {
@@ -1364,7 +1362,7 @@ void Settings::setAutoGroupInvite(const ToxPk& id, bool accept)
 {
     bool updated = false;
     {
-        QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+        QMutexLocker<QRecursiveMutex> locker{&bigLock};
 
         auto& frnd = getOrInsertFriendPropRef(id);
 
@@ -1381,7 +1379,7 @@ void Settings::setAutoGroupInvite(const ToxPk& id, bool accept)
 
 QString Settings::getContactNote(const ToxPk& id) const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
 
     auto it = friendLst.find(id.getByteArray());
     if (it != friendLst.end())
@@ -1394,7 +1392,7 @@ void Settings::setContactNote(const ToxPk& id, const QString& note)
 {
     bool updated = false;
     {
-        QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+        QMutexLocker<QRecursiveMutex> locker{&bigLock};
 
         auto& frnd = getOrInsertFriendPropRef(id);
 
@@ -1410,7 +1408,7 @@ void Settings::setContactNote(const ToxPk& id, const QString& note)
 
 QString Settings::getGlobalAutoAcceptDir() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return globalAutoAcceptDir;
 }
 
@@ -1423,7 +1421,7 @@ void Settings::setGlobalAutoAcceptDir(const QString& newValue)
 
 size_t Settings::getMaxAutoAcceptSize() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return autoAcceptMaxSize;
 }
 
@@ -1436,7 +1434,7 @@ void Settings::setMaxAutoAcceptSize(size_t size)
 
 const QFont& Settings::getChatMessageFont() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker(&bigLock);
+    QMutexLocker<QRecursiveMutex> locker(&bigLock);
     return chatMessageFont;
 }
 
@@ -1451,7 +1449,7 @@ void Settings::setWidgetData(const QString& uniqueName, const QByteArray& data)
 {
     bool updated = false;
     {
-        QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+        QMutexLocker<QRecursiveMutex> locker{&bigLock};
 
         if (!widgetSettings.contains(uniqueName) || widgetSettings[uniqueName] != data) {
             widgetSettings[uniqueName] = data;
@@ -1465,13 +1463,13 @@ void Settings::setWidgetData(const QString& uniqueName, const QByteArray& data)
 
 QByteArray Settings::getWidgetData(const QString& uniqueName) const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return widgetSettings.value(uniqueName);
 }
 
 QString Settings::getSmileyPack() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return smileyPack;
 }
 
@@ -1484,7 +1482,7 @@ void Settings::setSmileyPack(const QString& value)
 
 int Settings::getEmojiFontPointSize() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return emojiFontPointSize;
 }
 
@@ -1497,7 +1495,7 @@ void Settings::setEmojiFontPointSize(int value)
 
 const QString& Settings::getTimestampFormat() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return timestampFormat;
 }
 
@@ -1510,7 +1508,7 @@ void Settings::setTimestampFormat(const QString& format)
 
 const QString& Settings::getDateFormat() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return dateFormat;
 }
 
@@ -1523,7 +1521,7 @@ void Settings::setDateFormat(const QString& format)
 
 Settings::StyleType Settings::getStylePreference() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return stylePreference;
 }
 
@@ -1536,7 +1534,7 @@ void Settings::setStylePreference(StyleType newValue)
 
 QByteArray Settings::getWindowGeometry() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return windowGeometry;
 }
 
@@ -1549,7 +1547,7 @@ void Settings::setWindowGeometry(const QByteArray& value)
 
 QByteArray Settings::getWindowState() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return windowState;
 }
 
@@ -1562,7 +1560,7 @@ void Settings::setWindowState(const QByteArray& value)
 
 bool Settings::getCheckUpdates() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return checkUpdates;
 }
 
@@ -1575,7 +1573,7 @@ void Settings::setCheckUpdates(bool newValue)
 
 bool Settings::getNotify() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return notify;
 }
 
@@ -1588,7 +1586,7 @@ void Settings::setNotify(bool newValue)
 
 bool Settings::getShowWindow() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return showWindow;
 }
 
@@ -1601,7 +1599,7 @@ void Settings::setShowWindow(bool newValue)
 
 bool Settings::getDesktopNotify() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return desktopNotify;
 }
 
@@ -1614,7 +1612,7 @@ void Settings::setDesktopNotify(bool enabled)
 
 QByteArray Settings::getSplitterState() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return splitterState;
 }
 
@@ -1627,7 +1625,7 @@ void Settings::setSplitterState(const QByteArray& value)
 
 QByteArray Settings::getDialogGeometry() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return dialogGeometry;
 }
 
@@ -1640,7 +1638,7 @@ void Settings::setDialogGeometry(const QByteArray& value)
 
 QByteArray Settings::getDialogSplitterState() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return dialogSplitterState;
 }
 
@@ -1653,7 +1651,7 @@ void Settings::setDialogSplitterState(const QByteArray& value)
 
 QByteArray Settings::getDialogSettingsGeometry() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return dialogSettingsGeometry;
 }
 
@@ -1666,7 +1664,7 @@ void Settings::setDialogSettingsGeometry(const QByteArray& value)
 
 bool Settings::getMinimizeOnClose() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return minimizeOnClose;
 }
 
@@ -1679,7 +1677,7 @@ void Settings::setMinimizeOnClose(bool newValue)
 
 bool Settings::getTypingNotification() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return typingNotification;
 }
 
@@ -1692,7 +1690,7 @@ void Settings::setTypingNotification(bool enabled)
 
 QStringList Settings::getBlackList() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return blackList;
 }
 
@@ -1705,7 +1703,7 @@ void Settings::setBlackList(const QStringList& blist)
 
 QString Settings::getInDev() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return inDev;
 }
 
@@ -1718,7 +1716,7 @@ void Settings::setInDev(const QString& deviceSpecifier)
 
 bool Settings::getAudioInDevEnabled() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker(&bigLock);
+    QMutexLocker<QRecursiveMutex> locker(&bigLock);
     return audioInDevEnabled;
 }
 
@@ -1731,7 +1729,7 @@ void Settings::setAudioInDevEnabled(bool enabled)
 
 qreal Settings::getAudioInGainDecibel() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return audioInGainDecibel;
 }
 
@@ -1744,7 +1742,7 @@ void Settings::setAudioInGainDecibel(qreal dB)
 
 qreal Settings::getAudioThreshold() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return audioThreshold;
 }
 
@@ -1757,7 +1755,7 @@ void Settings::setAudioThreshold(qreal percent)
 
 QString Settings::getVideoDev() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return videoDev;
 }
 
@@ -1770,7 +1768,7 @@ void Settings::setVideoDev(const QString& deviceSpecifier)
 
 QString Settings::getOutDev() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return outDev;
 }
 
@@ -1783,7 +1781,7 @@ void Settings::setOutDev(const QString& deviceSpecifier)
 
 bool Settings::getAudioOutDevEnabled() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker(&bigLock);
+    QMutexLocker<QRecursiveMutex> locker(&bigLock);
     return audioOutDevEnabled;
 }
 
@@ -1796,7 +1794,7 @@ void Settings::setAudioOutDevEnabled(bool enabled)
 
 int Settings::getOutVolume() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return outVolume;
 }
 
@@ -1809,7 +1807,7 @@ void Settings::setOutVolume(int volume)
 
 int Settings::getAudioBitrate() const
 {
-    const QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    const QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return audioBitrate;
 }
 
@@ -1822,7 +1820,7 @@ void Settings::setAudioBitrate(int bitrate)
 
 QRect Settings::getScreenRegion() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker(&bigLock);
+    QMutexLocker<QRecursiveMutex> locker(&bigLock);
     return screenRegion;
 }
 
@@ -1835,7 +1833,7 @@ void Settings::setScreenRegion(const QRect& value)
 
 bool Settings::getScreenGrabbed() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker(&bigLock);
+    QMutexLocker<QRecursiveMutex> locker(&bigLock);
     return screenGrabbed;
 }
 
@@ -1848,7 +1846,7 @@ void Settings::setScreenGrabbed(bool value)
 
 QRect Settings::getCamVideoRes() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return camVideoRes;
 }
 
@@ -1861,7 +1859,7 @@ void Settings::setCamVideoRes(QRect newValue)
 
 float Settings::getCamVideoFPS() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return camVideoFPS;
 }
 
@@ -1874,7 +1872,7 @@ void Settings::setCamVideoFPS(float newValue)
 
 void Settings::updateFriendAddress(const QString& newAddr)
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     auto key = ToxPk(newAddr);
     auto& frnd = getOrInsertFriendPropRef(key);
     frnd.addr = newAddr;
@@ -1882,7 +1880,7 @@ void Settings::updateFriendAddress(const QString& newAddr)
 
 QString Settings::getFriendAlias(const ToxPk& id) const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     auto it = friendLst.find(id.getByteArray());
     if (it != friendLst.end())
         return it->alias;
@@ -1892,14 +1890,14 @@ QString Settings::getFriendAlias(const ToxPk& id) const
 
 void Settings::setFriendAlias(const ToxPk& id, const QString& alias)
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     auto& frnd = getOrInsertFriendPropRef(id);
     frnd.alias = alias;
 }
 
 int Settings::getFriendCircleID(const ToxPk& id) const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     auto it = friendLst.find(id.getByteArray());
     if (it != friendLst.end())
         return it->circleID;
@@ -1909,14 +1907,14 @@ int Settings::getFriendCircleID(const ToxPk& id) const
 
 void Settings::setFriendCircleID(const ToxPk& id, int circleID)
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     auto& frnd = getOrInsertFriendPropRef(id);
     frnd.circleID = circleID;
 }
 
 QDateTime Settings::getFriendActivity(const ToxPk& id) const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     auto it = friendLst.find(id.getByteArray());
     if (it != friendLst.end())
         return it->activity;
@@ -1926,7 +1924,7 @@ QDateTime Settings::getFriendActivity(const ToxPk& id) const
 
 void Settings::setFriendActivity(const ToxPk& id, const QDateTime& activity)
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     auto& frnd = getOrInsertFriendPropRef(id);
     frnd.activity = activity;
 }
@@ -1939,13 +1937,13 @@ void Settings::saveFriendSettings(const ToxPk& id)
 
 void Settings::removeFriendSettings(const ToxPk& id)
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     friendLst.remove(id.getByteArray());
 }
 
 bool Settings::getCompactLayout() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return compactLayout;
 }
 
@@ -1958,7 +1956,7 @@ void Settings::setCompactLayout(bool value)
 
 Settings::FriendListSortingMode Settings::getFriendSortingMode() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return sortingMode;
 }
 
@@ -1971,7 +1969,7 @@ void Settings::setFriendSortingMode(FriendListSortingMode mode)
 
 bool Settings::getSeparateWindow() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return separateWindow;
 }
 
@@ -1984,7 +1982,7 @@ void Settings::setSeparateWindow(bool value)
 
 bool Settings::getDontGroupWindows() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return dontGroupWindows;
 }
 
@@ -1997,7 +1995,7 @@ void Settings::setDontGroupWindows(bool value)
 
 bool Settings::getGroupchatPosition() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return groupchatPosition;
 }
 
@@ -2010,7 +2008,7 @@ void Settings::setGroupchatPosition(bool value)
 
 bool Settings::getShowIdenticons() const
 {
-    const QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    const QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return showIdenticons;
 }
 
@@ -2023,26 +2021,26 @@ void Settings::setShowIdenticons(bool value)
 
 int Settings::getCircleCount() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return circleLst.size();
 }
 
 QString Settings::getCircleName(int id) const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return circleLst[id].name;
 }
 
 void Settings::setCircleName(int id, const QString& name)
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     circleLst[id].name = name;
     savePersonal();
 }
 
 int Settings::addCircle(const QString& name)
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
 
     circleProp cp;
     cp.expanded = false;
@@ -2059,19 +2057,19 @@ int Settings::addCircle(const QString& name)
 
 bool Settings::getCircleExpanded(int id) const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return circleLst[id].expanded;
 }
 
 void Settings::setCircleExpanded(int id, bool expanded)
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     circleLst[id].expanded = expanded;
 }
 
 bool Settings::addFriendRequest(const QString& friendAddress, const QString& message)
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
 
     for (auto queued : friendRequests) {
         if (queued.address == friendAddress) {
@@ -2092,7 +2090,7 @@ bool Settings::addFriendRequest(const QString& friendAddress, const QString& mes
 
 unsigned int Settings::getUnreadFriendRequests() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     unsigned int unreadFriendRequests = 0;
     for (auto request : friendRequests)
         if (!request.read)
@@ -2103,19 +2101,19 @@ unsigned int Settings::getUnreadFriendRequests() const
 
 Settings::Request Settings::getFriendRequest(int index) const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return friendRequests.at(index);
 }
 
 int Settings::getFriendRequestSize() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return friendRequests.size();
 }
 
 void Settings::clearUnreadFriendRequests()
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
 
     for (auto& request : friendRequests)
         request.read = true;
@@ -2123,13 +2121,13 @@ void Settings::clearUnreadFriendRequests()
 
 void Settings::removeFriendRequest(int index)
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     friendRequests.removeAt(index);
 }
 
 void Settings::readFriendRequest(int index)
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     friendRequests[index].read = true;
 }
 
@@ -2145,7 +2143,7 @@ int Settings::removeCircle(int id)
 
 int Settings::getThemeColor() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return themeColor;
 }
 
@@ -2158,7 +2156,7 @@ void Settings::setThemeColor(int value)
 
 bool Settings::getAutoLogin() const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return autoLogin;
 }
 
@@ -2189,7 +2187,7 @@ bool Settings::getEnableGroupChatsColor() const
  */
 void Settings::createPersonal(const QString& basename) const
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
 
     QString path = paths.getSettingsDirPath() + QDir::separator() + basename + ".ini";
     qDebug() << "Creating new profile settings in " << path;
@@ -2209,7 +2207,7 @@ void Settings::createPersonal(const QString& basename) const
  */
 void Settings::createSettingsDir()
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
 
     QString dir = paths.getSettingsDirPath();
     QDir directory(dir);
@@ -2227,7 +2225,7 @@ void Settings::sync()
         return;
     }
 
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     qApp->processEvents();
 }
 
@@ -2260,7 +2258,7 @@ ICoreSettings::ProxyType Settings::fixInvalidProxyType(ICoreSettings::ProxyType 
 template <typename T>
 bool Settings::setVal(T& savedVal, T newVal)
 {
-    QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
     if (savedVal != newVal) {
         savedVal = newVal;
         return true;

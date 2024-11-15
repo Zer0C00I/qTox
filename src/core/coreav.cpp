@@ -12,7 +12,6 @@
 #include "src/persistence/igroupsettings.h"
 #include "src/video/corevideosource.h"
 #include "src/video/videoframe.h"
-#include "util/compatiblerecursivemutex.h"
 #include "util/toxcoreerrorparser.h"
 
 #include <QCoreApplication>
@@ -61,7 +60,7 @@
  * deadlock.
  */
 
-CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, CompatibleRecursiveMutex& toxCoreLock,
+CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, QRecursiveMutex& toxCoreLock,
                IAudioSettings& audioSettings_, IGroupSettings& groupSettings_,
                CameraSource& cameraSource_)
     : audio{nullptr}
@@ -103,7 +102,7 @@ void CoreAV::connectCallbacks()
  * @param core pointer to the Tox instance
  * @return CoreAV instance on success, {} on failure
  */
-CoreAV::CoreAVPtr CoreAV::makeCoreAV(Tox* core, CompatibleRecursiveMutex& toxCoreLock,
+CoreAV::CoreAVPtr CoreAV::makeCoreAV(Tox* core, QRecursiveMutex& toxCoreLock,
                                      IAudioSettings& audioSettings, IGroupSettings& groupSettings,
                                      CameraSource& cameraSource)
 {
@@ -244,7 +243,7 @@ bool CoreAV::isCallVideoEnabled(const Friend* f) const
 bool CoreAV::answerCall(uint32_t friendNum, bool video)
 {
     QWriteLocker locker{&callsLock};
-    QMutexLocker<CompatibleRecursiveMutex> coreLocker{&coreLock};
+    QMutexLocker<QRecursiveMutex> coreLocker{&coreLock};
 
     qDebug() << QString("Answering call %1").arg(friendNum);
     auto it = calls.find(friendNum);
@@ -268,7 +267,7 @@ bool CoreAV::answerCall(uint32_t friendNum, bool video)
 bool CoreAV::startCall(uint32_t friendNum, bool video)
 {
     QWriteLocker locker{&callsLock};
-    QMutexLocker<CompatibleRecursiveMutex> coreLocker{&coreLock};
+    QMutexLocker<QRecursiveMutex> coreLocker{&coreLock};
 
     qDebug() << QString("Starting call with %1").arg(friendNum);
     auto it = calls.find(friendNum);
@@ -298,7 +297,7 @@ bool CoreAV::startCall(uint32_t friendNum, bool video)
 bool CoreAV::cancelCall(uint32_t friendNum)
 {
     QWriteLocker locker{&callsLock};
-    QMutexLocker<CompatibleRecursiveMutex> coreLocker{&coreLock};
+    QMutexLocker<QRecursiveMutex> coreLocker{&coreLock};
 
     qDebug() << QString("Cancelling call with %1").arg(friendNum);
     Toxav_Err_Call_Control err;
@@ -391,7 +390,7 @@ void CoreAV::sendCallVideo(uint32_t callId, std::shared_ptr<VideoFrame> vframe)
 
     if (call.getNullVideoBitrate()) {
         qDebug() << "Restarting video stream to friend" << callId;
-        QMutexLocker<CompatibleRecursiveMutex> coreLocker{&coreLock};
+        QMutexLocker<QRecursiveMutex> coreLocker{&coreLock};
         Toxav_Err_Bit_Rate_Set err;
         toxav_video_set_bit_rate(toxav.get(), callId, VIDEO_DEFAULT_BITRATE, &err);
         if (!PARSE_ERR(err)) {

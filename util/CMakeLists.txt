@@ -16,7 +16,6 @@
 
 
 add_library(util_library STATIC
-    "include/util/compatiblerecursivemutex.h"
     "include/util/interface.h"
     "include/util/strongtype.h"
     "include/util/display.h"
