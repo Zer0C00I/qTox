@@ -2111,6 +2111,7 @@ Använd en annan bild.</translation>
     </message>
     <message>
         <source>Export profile</source>
+        <extracomment>save dialog title</extracomment>
         <translation>Exportera profil</translation>
     </message>
     <message>

@@ -2102,6 +2102,7 @@ Gebruik een andere afbeelding.</translation>
     </message>
     <message>
         <source>Export profile</source>
+        <extracomment>save dialog title</extracomment>
         <translation>Profiel exporteren</translation>
     </message>
     <message>

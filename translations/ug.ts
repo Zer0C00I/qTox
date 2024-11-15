@@ -2110,6 +2110,7 @@ Please use another image.</source>
     </message>
     <message>
         <source>Export profile</source>
+        <extracomment>save dialog title</extracomment>
         <translation>ئارخىپ چىقىرىش</translation>
     </message>
     <message>

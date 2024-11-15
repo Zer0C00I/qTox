@@ -2123,6 +2123,7 @@ Utilizați o altă imagine.</translation>
     </message>
     <message>
         <source>Export profile</source>
+        <extracomment>save dialog title</extracomment>
         <translation>Exportați profil</translation>
     </message>
     <message>

@@ -2097,6 +2097,7 @@ Please use another image.</source>
     </message>
     <message>
         <source>Export profile</source>
+        <extracomment>save dialog title</extracomment>
         <translation>プロファイルをエクスポート</translation>
     </message>
     <message>

@@ -2106,6 +2106,7 @@ Koristi jednu drugu sliku.</translation>
     </message>
     <message>
         <source>Export profile</source>
+        <extracomment>save dialog title</extracomment>
         <translation>Izvoz profila</translation>
     </message>
     <message>

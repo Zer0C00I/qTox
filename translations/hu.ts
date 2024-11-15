@@ -2098,6 +2098,7 @@ Válasszon egy másik képet.</translation>
     </message>
     <message>
         <source>Export profile</source>
+        <extracomment>save dialog title</extracomment>
         <translation>Profil exportálása</translation>
     </message>
     <message>

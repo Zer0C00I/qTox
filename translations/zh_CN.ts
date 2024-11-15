@@ -2107,6 +2107,7 @@ Please use another image.</source>
     </message>
     <message>
         <source>Export profile</source>
+        <extracomment>save dialog title</extracomment>
         <translation>导出用户档案</translation>
     </message>
     <message>

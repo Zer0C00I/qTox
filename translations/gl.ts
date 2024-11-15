@@ -2110,6 +2110,7 @@ Utilice outra imaxe.</translation>
     </message>
     <message>
         <source>Export profile</source>
+        <extracomment>save dialog title</extracomment>
         <translation>Exportar perfil</translation>
     </message>
     <message>

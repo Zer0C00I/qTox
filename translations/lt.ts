@@ -2117,6 +2117,7 @@ Pasirinkite kitą.</translation>
     </message>
     <message>
         <source>Export profile</source>
+        <extracomment>save dialog title</extracomment>
         <translation>Eksportuoti profilį</translation>
     </message>
     <message>

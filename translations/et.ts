@@ -2113,6 +2113,7 @@ Palun kasuta teist pilti.</translation>
     </message>
     <message>
         <source>Export profile</source>
+        <extracomment>save dialog title</extracomment>
         <translation>Ekspordi profiil</translation>
     </message>
     <message>

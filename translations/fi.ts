@@ -2111,6 +2111,7 @@ Valitse toinen kuva.</translation>
     </message>
     <message>
         <source>Export profile</source>
+        <extracomment>save dialog title</extracomment>
         <translation>Vie profiili</translation>
     </message>
     <message>

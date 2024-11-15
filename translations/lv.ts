@@ -2121,6 +2121,7 @@ Lūdzu, izvēlieties citu attēlu.</translation>
     </message>
     <message>
         <source>Export profile</source>
+        <extracomment>save dialog title</extracomment>
         <translation>Eksportēt profilu</translation>
     </message>
     <message>

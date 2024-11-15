@@ -1,4 +1,7 @@
 ---
+exclude:
+    - "translations/*.ts"
+
 restylers:
   - astyle:
       enabled: false

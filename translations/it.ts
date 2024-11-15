@@ -2111,6 +2111,7 @@ Per favore scegli un&apos;immagine più piccola.</translation>
     </message>
     <message>
         <source>Export profile</source>
+        <extracomment>save dialog title</extracomment>
         <translation>Esporta profilo</translation>
     </message>
     <message>

@@ -2113,6 +2113,7 @@ Velg et annet bilde.</translation>
     </message>
     <message>
         <source>Export profile</source>
+        <extracomment>save dialog title</extracomment>
         <translation>Eksporter profil</translation>
     </message>
     <message>

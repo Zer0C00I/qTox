@@ -2111,6 +2111,7 @@ Veuillez utiliser une autre image.</translation>
     </message>
     <message>
         <source>Export profile</source>
+        <extracomment>save dialog title</extracomment>
         <translation>Exporter le profil</translation>
     </message>
     <message>

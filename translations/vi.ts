@@ -2115,6 +2115,7 @@ Vui lòng sử dụng hình ảnh khác.</translation>
     </message>
     <message>
         <source>Export profile</source>
+        <extracomment>save dialog title</extracomment>
         <translation>Xuất hồ sơ</translation>
     </message>
     <message>

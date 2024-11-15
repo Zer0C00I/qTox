@@ -2120,6 +2120,7 @@ Bitte verwende ein anderes.</translation>
     </message>
     <message>
         <source>Export profile</source>
+        <extracomment>save dialog title</extracomment>
         <translation>Profil exportieren</translation>
     </message>
     <message>

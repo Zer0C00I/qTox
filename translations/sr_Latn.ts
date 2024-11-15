@@ -2115,6 +2115,7 @@ Molimo koristite drugu.</translation>
     </message>
     <message>
         <source>Export profile</source>
+        <extracomment>save dialog title</extracomment>
         <translation>Izvezi profil</translation>
     </message>
     <message>

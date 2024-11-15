@@ -368,7 +368,7 @@ jobs:
       - name: Run
         run: ./.ci-scripts/build-docs.sh
       - name: Deploy
-        if: github.ref == 'refs/heads/master' && github.owner == 'qTox'
+        if: github.ref == 'refs/heads/master' && github.repository_owner == 'qTox'
         env:
           access_key: ${{ secrets.DOXYGEN_DEPLOY_KEY }}
         run: ./.ci-scripts/deploy-docs.sh
