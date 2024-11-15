@@ -112,15 +112,19 @@ private:
 
 protected:
     ChatMessage::Ptr createMessage(const ToxPk& author, const QString& message,
-                                   const QDateTime& datetime, bool isAction, bool isSent, bool colorizeName = false);
+                                   const QDateTime& datetime, bool isAction, bool isSent,
+                                   bool colorizeName = false);
     void adjustFileMenuPosition();
     void hideEvent(QHideEvent* event) override;
     void showEvent(QShowEvent* event) override;
     bool event(QEvent* event) final;
     void resizeEvent(QResizeEvent* event) final;
     bool eventFilter(QObject* object, QEvent* event) final;
-    bool searchInText(const QString& phrase, const ParameterSearch& parameter, SearchDirection direction);
-    std::pair<int, int> indexForSearchInLine(const QString& txt, const QString& phrase, const ParameterSearch& parameter, SearchDirection direction);
+    bool searchInText(const QString& phrase, const ParameterSearch& parameter,
+                      SearchDirection direction);
+    std::pair<int, int> indexForSearchInLine(const QString& txt, const QString& phrase,
+                                             const ParameterSearch& parameter,
+                                             SearchDirection direction);
 
 protected:
     const Core& core;
@@ -148,8 +152,8 @@ protected:
 
     ChatFormHeader* headWidget;
 
-    SearchForm *searchForm;
-    QLabel *dateInfo;
+    SearchForm* searchForm;
+    QLabel* dateInfo;
     ChatWidget* chatWidget;
     ChatTextEdit* msgEdit;
 #ifdef SPELL_CHECKING

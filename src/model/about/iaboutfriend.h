@@ -5,8 +5,8 @@
 
 #pragma once
 
-#include "util/interface.h"
 #include "src/persistence/ifriendsettings.h"
+#include "util/interface.h"
 
 #include <QObject>
 

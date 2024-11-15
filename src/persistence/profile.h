@@ -11,8 +11,8 @@
 
 #include "src/net/avatarbroadcaster.h"
 
-#include "src/persistence/history.h"
 #include "src/net/bootstrapnodeupdater.h"
+#include "src/persistence/history.h"
 
 #include <QByteArray>
 #include <QObject>
@@ -34,9 +34,10 @@ class Profile : public QObject
 public:
     static Profile* loadProfile(const QString& name, const QString& password, Settings& settings,
                                 const QCommandLineParser* parser, CameraSource& cameraSource,
-                                    IMessageBoxManager& messageBoxManager);
+                                IMessageBoxManager& messageBoxManager);
     static Profile* createProfile(const QString& name, const QString& password, Settings& settings,
-                                  const QCommandLineParser* parser, CameraSource& cameraSource, IMessageBoxManager& messageBoxManager);
+                                  const QCommandLineParser* parser, CameraSource& cameraSource,
+                                  IMessageBoxManager& messageBoxManager);
     ~Profile();
 
     Core& getCore() const;
@@ -90,15 +91,17 @@ private slots:
     void removeAvatar(const ToxPk& owner);
     void onSaveToxSave();
     // TODO(sudden6): use ToxPk instead of friendId
-    void onAvatarOfferReceived(uint32_t friendId, uint32_t fileId, const QByteArray& avatarHash, uint64_t filesize);
+    void onAvatarOfferReceived(uint32_t friendId, uint32_t fileId, const QByteArray& avatarHash,
+                               uint64_t filesize);
 
 private:
     Profile(const QString& name_, std::unique_ptr<ToxEncrypt> passkey_, Paths& paths_,
-        Settings &settings_);
+            Settings& settings_);
     static QStringList getFilesByExt(QString extension, Settings& settings);
     QString avatarPath(const ToxPk& owner, bool forceUnencrypted = false);
     bool saveToxSave(QByteArray data);
-    void initCore(const QByteArray& toxsave, Settings &s, bool isNewProfile, CameraSource& cameraSource);
+    void initCore(const QByteArray& toxsave, Settings& s, bool isNewProfile,
+                  CameraSource& cameraSource);
 
 private:
     std::unique_ptr<AvatarBroadcaster> avatarBroadcaster;

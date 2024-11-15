@@ -5,8 +5,8 @@
 
 #pragma once
 
-#include <QString>
 #include <QPixmap>
+#include <QString>
 
 struct NotificationData
 {

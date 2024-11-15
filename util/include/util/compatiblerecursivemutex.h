@@ -5,8 +5,8 @@
 
 #pragma once
 
-#include <QtGlobal>
 #include <QMutex>
+#include <QtGlobal>
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
 class CompatibleRecursiveMutex : public QRecursiveMutex
@@ -17,6 +17,7 @@ class CompatibleRecursiveMutex : public QMutex
 public:
     CompatibleRecursiveMutex()
         : QMutex(QMutex::Recursive)
-    {}
+    {
+    }
 };
 #endif

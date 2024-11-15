@@ -43,8 +43,8 @@ class ContentDialog : public ActivateDialog, public IDialogs
     Q_OBJECT
 public:
     ContentDialog(const Core& core, Settings& settings, Style& style,
-        IMessageBoxManager& messageBoxManager, FriendList& friendList,
-        GroupList& groupList, Profile& profile, QWidget* parent = nullptr);
+                  IMessageBoxManager& messageBoxManager, FriendList& friendList,
+                  GroupList& groupList, Profile& profile, QWidget* parent = nullptr);
     ~ContentDialog() override;
 
     FriendWidget* addFriend(std::shared_ptr<FriendChatroom> chatroom, GenericChatForm* form);
@@ -112,7 +112,8 @@ private:
     void saveSplitterState();
     QLayout* nextLayout(QLayout* layout, bool forward) const;
     int getCurrentLayout(QLayout*& layout);
-    void focusCommon(const ChatId& id, QHash<std::reference_wrapper<const ChatId>, GenericChatroomWidget*> list);
+    void focusCommon(const ChatId& id,
+                     QHash<std::reference_wrapper<const ChatId>, GenericChatroomWidget*> list);
 
 private:
     QList<QLayout*> layouts;

@@ -5,8 +5,8 @@
 
 #pragma once
 
-#include <QObject>
 #include <QDateTime>
+#include <QObject>
 #include <QString>
 
 #include <array>

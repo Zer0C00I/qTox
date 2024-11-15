@@ -11,7 +11,8 @@
 #include <QRect>
 #include <QSize>
 
-extern "C" {
+extern "C"
+{
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wold-style-cast"
 #include <libavcodec/avcodec.h>

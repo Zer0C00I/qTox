@@ -22,7 +22,7 @@ class EmoticonsWidget : public QMenu
     Q_OBJECT
 public:
     EmoticonsWidget(SmileyPack& smileyPack, Settings& settings, Style& style,
-        QWidget* parent = nullptr);
+                    QWidget* parent = nullptr);
 
 signals:
     void insertEmoticon(QString str);

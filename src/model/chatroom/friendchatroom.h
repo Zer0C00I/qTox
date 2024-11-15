@@ -35,7 +35,7 @@ class FriendChatroom : public QObject, public Chatroom
     Q_OBJECT
 public:
     FriendChatroom(Friend* frnd_, IDialogsManager* dialogsManager_, Core& core_,
-        Settings& settings_, GroupList& groupList);
+                   Settings& settings_, GroupList& groupList);
 
     Chat* getChat() override;
 

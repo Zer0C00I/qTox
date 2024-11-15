@@ -31,9 +31,7 @@ struct ColumnFormat
         Right,
     };
 
-    ColumnFormat()
-    {
-    }
+    ColumnFormat() {}
     ColumnFormat(qreal s, Policy p, Align halign = Left)
         : size(s)
         , policy(p)

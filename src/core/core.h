@@ -16,9 +16,9 @@
 #include "toxid.h"
 #include "toxpk.h"
 
-#include "util/strongtype.h"
-#include "util/compatiblerecursivemutex.h"
 #include "src/model/status.h"
+#include "util/compatiblerecursivemutex.h"
+#include "util/strongtype.h"
 #include <tox/tox.h>
 
 #include <QMutex>
@@ -59,7 +59,8 @@ public:
     };
 
     static ToxCorePtr makeToxCore(const QByteArray& savedata, const ICoreSettings& settings,
-                                  IBootstrapListGenerator& bootstrapNodes, ToxCoreErrors* err = nullptr);
+                                  IBootstrapListGenerator& bootstrapNodes,
+                                  ToxCoreErrors* err = nullptr);
     const CoreAV* getAv() const;
     CoreAV* getAv();
     void setAv(CoreAV* coreAv);
@@ -152,7 +153,8 @@ signals:
      * @deprecated prefer signals using ToxPk
      */
 
-    void fileAvatarOfferReceived(uint32_t friendId, uint32_t fileId, const QByteArray& avatarHash, uint64_t filesize);
+    void fileAvatarOfferReceived(uint32_t friendId, uint32_t fileId, const QByteArray& avatarHash,
+                                 uint64_t filesize);
 
     void friendMessageReceived(uint32_t friendId, const QString& message, bool isAction);
     void friendAdded(uint32_t friendId, const ToxPk& friendPk);
@@ -182,7 +184,8 @@ signals:
     void failedToRemoveFriend(uint32_t friendId);
 
 private:
-    Core(QThread* coreThread_, IBootstrapListGenerator& bootstrapListGenerator_, const ICoreSettings& settings_);
+    Core(QThread* coreThread_, IBootstrapListGenerator& bootstrapListGenerator_,
+         const ICoreSettings& settings_);
 
     static void onFriendRequest(Tox* tox, const uint8_t* cFriendPk, const uint8_t* cMessage,
                                 size_t cMessageSize, void* core);
@@ -202,17 +205,18 @@ private:
     static void onGroupMessage(Tox* tox, uint32_t groupId, uint32_t peerId, Tox_Message_Type type,
                                const uint8_t* cMessage, size_t length, void* vCore);
     static void onGroupPeerListChange(Tox* tox, uint32_t groupId, void* core);
-    static void onGroupPeerNameChange(Tox* tox, uint32_t groupId, uint32_t peerId, const uint8_t* name,
-                                      size_t length, void* core);
+    static void onGroupPeerNameChange(Tox* tox, uint32_t groupId, uint32_t peerId,
+                                      const uint8_t* name, size_t length, void* core);
     static void onGroupTitleChange(Tox* tox, uint32_t groupId, uint32_t peerId,
                                    const uint8_t* cTitle, size_t length, void* vCore);
 
-    static void onLosslessPacket(Tox* tox, uint32_t friendId,
-                                   const uint8_t* data, size_t length, void* core);
+    static void onLosslessPacket(Tox* tox, uint32_t friendId, const uint8_t* data, size_t length,
+                                 void* core);
     static void onReadReceiptCallback(Tox* tox, uint32_t friendId, uint32_t receipt, void* core);
 
     void sendGroupMessageWithType(int groupId, const QString& message, Tox_Message_Type type);
-    bool sendMessageWithType(uint32_t friendId, const QString& message, Tox_Message_Type type, ReceiptNum& receipt);
+    bool sendMessageWithType(uint32_t friendId, const QString& message, Tox_Message_Type type,
+                             ReceiptNum& receipt);
     bool checkConnection();
 
     void makeTox(QByteArray savedata, ICoreSettings* s);
@@ -237,14 +241,14 @@ private:
             tox_kill(tox_);
         }
     };
-    /* Using the now commented out statements in checkConnection(), I watched how
-    * many ticks disconnects-after-initial-connect lasted. Out of roughly 15 trials,
-    * 5 disconnected; 4 were DCd for less than 20 ticks, while the 5th was ~50 ticks.
-    * So I set the tolerance here at 25, and initial DCs should be very rare now.
-    * This should be able to go to 50 or 100 without affecting legitimate disconnects'
-    * downtime, but lets be conservative for now. Edit: now ~~40~~ 30.
-    */
-    #define CORE_DISCONNECT_TOLERANCE 30
+/* Using the now commented out statements in checkConnection(), I watched how
+ * many ticks disconnects-after-initial-connect lasted. Out of roughly 15 trials,
+ * 5 disconnected; 4 were DCd for less than 20 ticks, while the 5th was ~50 ticks.
+ * So I set the tolerance here at 25, and initial DCs should be very rare now.
+ * This should be able to go to 50 or 100 without affecting legitimate disconnects'
+ * downtime, but lets be conservative for now. Edit: now ~~40~~ 30.
+ */
+#define CORE_DISCONNECT_TOLERANCE 30
 
     using ToxPtr = std::unique_ptr<Tox, ToxDeleter>;
     ToxPtr tox;

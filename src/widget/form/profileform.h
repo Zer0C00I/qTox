@@ -43,7 +43,7 @@ class ProfileForm : public QWidget
     Q_OBJECT
 public:
     ProfileForm(IProfileInfo* profileInfo_, Settings& settings, Style& style,
-        IMessageBoxManager& messageBoxManager, QWidget* parent = nullptr);
+                IMessageBoxManager& messageBoxManager, QWidget* parent = nullptr);
     ~ProfileForm();
     void show(ContentLayout* contentLayout);
     bool isShown() const;

@@ -31,8 +31,8 @@ class ChatWidget : public QGraphicsView
     Q_OBJECT
 public:
     ChatWidget(IChatLog& chatLog_, const Core& core_, DocumentCache& documentCache,
-        SmileyPack& smileyPack, Settings& settings, Style& style,
-        IMessageBoxManager& messageBoxManager, QWidget* parent = nullptr);
+               SmileyPack& smileyPack, Settings& settings, Style& style,
+               IMessageBoxManager& messageBoxManager, QWidget* parent = nullptr);
     virtual ~ChatWidget();
 
     void insertChatlines(std::map<ChatLogIdx, ChatLine::Ptr> chatLines);
@@ -52,7 +52,10 @@ public:
     ChatLineContent* getContentFromGlobalPos(QPoint pos) const;
     const uint repNameAfter = 5 * 60;
 
-    void setColorizedNames(bool enable) { colorizeNames = enable; }
+    void setColorizedNames(bool enable)
+    {
+        colorizeNames = enable;
+    }
     void jumpToDate(QDate date);
     void jumpToIdx(ChatLogIdx idx);
 
@@ -86,6 +89,7 @@ private slots:
 
     void onRenderFinished();
     void onScrollValueChanged(int value);
+
 protected:
     QRectF calculateSceneRect() const;
     QRect getVisibleRect() const;
@@ -112,7 +116,7 @@ protected:
     void hideEvent(QHideEvent* event) final;
     void focusInEvent(QFocusEvent* ev) final;
     void focusOutEvent(QFocusEvent* ev) final;
-    void wheelEvent(QWheelEvent *event) final;
+    void wheelEvent(QWheelEvent* event) final;
 
     void updateMultiSelectionRect();
     void updateTypingNotification();
@@ -134,11 +138,14 @@ private:
     void moveMultiSelectionDown(int offset);
     void setTypingNotification();
 
-    void renderItem(const ChatLogItem &item, bool hideName, bool colorizeNames_, ChatLine::Ptr &chatMessage);
-    void renderFile(QString displayName, ToxFile file, bool isSelf, QDateTime timestamp, ChatLine::Ptr &chatMessage);
+    void renderItem(const ChatLogItem& item, bool hideName, bool colorizeNames_,
+                    ChatLine::Ptr& chatMessage);
+    void renderFile(QString displayName, ToxFile file, bool isSelf, QDateTime timestamp,
+                    ChatLine::Ptr& chatMessage);
     bool needsToHideName(ChatLogIdx idx, bool prevIdxRendered) const;
     bool shouldRenderMessage(ChatLogIdx idx) const;
     void disableSearchText();
+
 private:
     enum class SelectionMode
     {

@@ -14,10 +14,11 @@
 class Paths
 {
 public:
-    enum class Portable {
-        Auto,           /** Auto detect if portable or non-portable */
-        Portable,       /** Force portable mode */
-        NonPortable     /** Force non-portable mode */
+    enum class Portable
+    {
+        Auto,       /** Auto detect if portable or non-portable */
+        Portable,   /** Force portable mode */
+        NonPortable /** Force non-portable mode */
     };
 
     Paths(Portable mode = Portable::Auto);

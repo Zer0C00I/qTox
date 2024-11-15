@@ -22,7 +22,7 @@ public:
     };
 
     NotificationEdgeWidget(Position position, Settings& settings, Style& style,
-        QWidget* parent = nullptr);
+                           QWidget* parent = nullptr);
     void updateNotificationCount(int count);
 
 signals:

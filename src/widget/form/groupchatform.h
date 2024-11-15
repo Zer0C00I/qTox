@@ -33,10 +33,9 @@ class GroupChatForm : public GenericChatForm
     Q_OBJECT
 public:
     GroupChatForm(Core& core_, Group* chatGroup, IChatLog& chatLog_,
-        IMessageDispatcher& messageDispatcher_, Settings& settings_,
-        DocumentCache& documentCache, SmileyPack& smileyPack, Style& style,
-            IMessageBoxManager& messageBoxManager, FriendList& friendList,
-            GroupList& groupList);
+                  IMessageDispatcher& messageDispatcher_, Settings& settings_,
+                  DocumentCache& documentCache, SmileyPack& smileyPack, Style& style,
+                  IMessageBoxManager& messageBoxManager, FriendList& friendList, GroupList& groupList);
     ~GroupChatForm();
 
     void peerAudioPlaying(ToxPk peerPk);

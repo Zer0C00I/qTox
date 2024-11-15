@@ -12,36 +12,33 @@
 
 class ToxPk;
 
-namespace DbTo11
-{
-    bool dbSchema10to11(RawDatabase& db);
-    bool appendDeduplicatePeersQueries(RawDatabase& db, QVector<RawDatabase::Query>& upgradeQueries);
-    bool getInvalidPeers(RawDatabase& db, std::vector<DbUpgrader::BadEntry>& badPeers);
-    bool appendSplitPeersQueries(RawDatabase& db, QVector<RawDatabase::Query>& upgradeQueries);
+namespace DbTo11 {
+bool dbSchema10to11(RawDatabase& db);
+bool appendDeduplicatePeersQueries(RawDatabase& db, QVector<RawDatabase::Query>& upgradeQueries);
+bool getInvalidPeers(RawDatabase& db, std::vector<DbUpgrader::BadEntry>& badPeers);
+bool appendSplitPeersQueries(RawDatabase& db, QVector<RawDatabase::Query>& upgradeQueries);
 
 
-namespace PeersToAuthors
-{
-    bool appendPeersToAuthorsQueries(RawDatabase& db, QVector<RawDatabase::Query>& upgradeQueries);
-    void appendCreateNewTablesQueries(QVector<RawDatabase::Query>& upgradeQueries);
-    bool appendPopulateAuthorQueries(RawDatabase& db, QVector<RawDatabase::Query>& upgradeQueries);
-    bool appendUpdateAliasesFkQueries(RawDatabase& db, QVector<RawDatabase::Query>& upgradeQueries);
-    void appendReplaceOldTablesQueries(QVector<RawDatabase::Query>& upgradeQueries);
+namespace PeersToAuthors {
+bool appendPeersToAuthorsQueries(RawDatabase& db, QVector<RawDatabase::Query>& upgradeQueries);
+void appendCreateNewTablesQueries(QVector<RawDatabase::Query>& upgradeQueries);
+bool appendPopulateAuthorQueries(RawDatabase& db, QVector<RawDatabase::Query>& upgradeQueries);
+bool appendUpdateAliasesFkQueries(RawDatabase& db, QVector<RawDatabase::Query>& upgradeQueries);
+void appendReplaceOldTablesQueries(QVector<RawDatabase::Query>& upgradeQueries);
 } // namespace PeersToAuthors
 
-namespace PeersToChats
-{
-    bool appendPeersToChatsQueries(RawDatabase& db, QVector<RawDatabase::Query>& upgradeQueries);
-    void appendCreateNewTablesQueries(QVector<RawDatabase::Query>& upgradeQueries);
-    bool appendPopulateChatsQueries(RawDatabase& db, QVector<RawDatabase::Query>& upgradeQueries);
-    bool appendUpdateHistoryFkQueries(RawDatabase& db, QVector<RawDatabase::Query>& upgradeQueries);
-    void appendReplaceOldTablesQueries(QVector<RawDatabase::Query>& upgradeQueries);
-    void appendUpdateSystemMessagesFkQueries(QVector<RawDatabase::Query>& upgradeQueries);
-    void appendUpdateBrokenMessagesFkQueries(QVector<RawDatabase::Query>& upgradeQueries);
-    void appendUpdateFauxOfflinePendingFkQueries(QVector<RawDatabase::Query>& upgradeQueries);
+namespace PeersToChats {
+bool appendPeersToChatsQueries(RawDatabase& db, QVector<RawDatabase::Query>& upgradeQueries);
+void appendCreateNewTablesQueries(QVector<RawDatabase::Query>& upgradeQueries);
+bool appendPopulateChatsQueries(RawDatabase& db, QVector<RawDatabase::Query>& upgradeQueries);
+bool appendUpdateHistoryFkQueries(RawDatabase& db, QVector<RawDatabase::Query>& upgradeQueries);
+void appendReplaceOldTablesQueries(QVector<RawDatabase::Query>& upgradeQueries);
+void appendUpdateSystemMessagesFkQueries(QVector<RawDatabase::Query>& upgradeQueries);
+void appendUpdateBrokenMessagesFkQueries(QVector<RawDatabase::Query>& upgradeQueries);
+void appendUpdateFauxOfflinePendingFkQueries(QVector<RawDatabase::Query>& upgradeQueries);
 } // namespace PeersToChats
 
-    void appendUpdateTextMessagesFkQueries(QVector<RawDatabase::Query>& upgradeQueries);
-    void appendUpdateFileTransfersFkQueries(QVector<RawDatabase::Query>& upgradeQueries);
-    void appendDropPeersQueries(QVector<RawDatabase::Query>& upgradeQueries);
+void appendUpdateTextMessagesFkQueries(QVector<RawDatabase::Query>& upgradeQueries);
+void appendUpdateFileTransfersFkQueries(QVector<RawDatabase::Query>& upgradeQueries);
+void appendDropPeersQueries(QVector<RawDatabase::Query>& upgradeQueries);
 } // namespace DbTo11

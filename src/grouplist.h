@@ -19,8 +19,8 @@ class FriendList;
 class GroupList
 {
 public:
-    Group* addGroup(Core& core, int groupNum, const GroupId& persistentGroupId,
-        const QString& name, bool isAvGroupchat, const QString& selfName, FriendList& friendList);
+    Group* addGroup(Core& core, int groupNum, const GroupId& persistentGroupId, const QString& name,
+                    bool isAvGroupchat, const QString& selfName, FriendList& friendList);
     Group* findGroup(const GroupId& groupId);
     const GroupId& id2Key(uint32_t groupNum);
     void removeGroup(const GroupId& groupId, bool fake = false);

@@ -21,6 +21,7 @@ public:
 
     QTextDocument* pop();
     void push(QTextDocument* doc);
+
 private:
     QStack<QTextDocument*> documents;
     SmileyPack& smileyPack;

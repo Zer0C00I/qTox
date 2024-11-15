@@ -7,9 +7,8 @@
 
 #include <QString>
 
-namespace TextFormatter
-{
-    QString highlightURI(const QString& message);
+namespace TextFormatter {
+QString highlightURI(const QString& message);
 
-    QString applyMarkdown(const QString& message, bool showFormattingSymbols);
+QString applyMarkdown(const QString& message, bool showFormattingSymbols);
 } // namespace TextFormatter

@@ -41,17 +41,20 @@ public:
     HistMessageContent(QString message)
         : data(std::make_shared<QString>(std::move(message)))
         , type(HistMessageContentType::message)
-    {}
+    {
+    }
 
     HistMessageContent(ToxFile file)
         : data(std::make_shared<ToxFile>(std::move(file)))
         , type(HistMessageContentType::file)
-    {}
+    {
+    }
 
     HistMessageContent(SystemMessage systemMessage)
         : data(std::make_shared<SystemMessage>(std::move(systemMessage)))
         , type(HistMessageContentType::system)
-    {}
+    {
+    }
 
     HistMessageContentType getType() const
     {
@@ -126,8 +129,8 @@ class History : public QObject, public std::enable_shared_from_this<History>
 public:
     struct HistMessage
     {
-        HistMessage(RowId id_, MessageState state_, ExtensionSet extensionSet_, QDateTime timestamp_, std::unique_ptr<ChatId> chat_, QString dispName_,
-                    ToxPk sender_, QString message)
+        HistMessage(RowId id_, MessageState state_, ExtensionSet extensionSet_, QDateTime timestamp_,
+                    std::unique_ptr<ChatId> chat_, QString dispName_, ToxPk sender_, QString message)
             : chat{std::move(chat_)}
             , sender{sender_}
             , dispName{dispName_}
@@ -136,10 +139,11 @@ public:
             , state{state_}
             , extensionSet(extensionSet_)
             , content(std::move(message))
-        {}
+        {
+        }
 
-        HistMessage(RowId id_, MessageState state_, QDateTime timestamp_, std::unique_ptr<ChatId> chat_, QString dispName_,
-                    ToxPk sender_, ToxFile file)
+        HistMessage(RowId id_, MessageState state_, QDateTime timestamp_,
+                    std::unique_ptr<ChatId> chat_, QString dispName_, ToxPk sender_, ToxFile file)
             : chat{std::move(chat_)}
             , sender{sender_}
             , dispName{dispName_}
@@ -147,15 +151,18 @@ public:
             , id{id_}
             , state{state_}
             , content(std::move(file))
-        {}
+        {
+        }
 
-        HistMessage(RowId id_, QDateTime timestamp_, std::unique_ptr<ChatId> chat_, SystemMessage systemMessage)
+        HistMessage(RowId id_, QDateTime timestamp_, std::unique_ptr<ChatId> chat_,
+                    SystemMessage systemMessage)
             : chat{std::move(chat_)}
             , timestamp{timestamp_}
             , id{id_}
             , state(MessageState::complete)
             , content(std::move(systemMessage))
-        {}
+        {
+        }
 
         HistMessage(const History::HistMessage& other)
             : chat{other.chat->clone()}
@@ -166,7 +173,8 @@ public:
             , state{other.state}
             , extensionSet{other.extensionSet}
             , content{other.content}
-        {}
+        {
+        }
 
         HistMessage& operator=(const HistMessage& other)
         {
@@ -211,13 +219,14 @@ public:
                        const QDateTime& time, bool isDelivered, ExtensionSet extensions,
                        QString dispName, const std::function<void(RowId)>& insertIdCallback = {});
 
-    void addNewFileMessage(const ChatId& chatId, const QByteArray& fileId,
-                           const QString& fileName, const QString& filePath, int64_t size,
-                           const ToxPk& sender, const QDateTime& time, QString const& dispName);
+    void addNewFileMessage(const ChatId& chatId, const QByteArray& fileId, const QString& fileName,
+                           const QString& filePath, int64_t size, const ToxPk& sender,
+                           const QDateTime& time, QString const& dispName);
 
     void addNewSystemMessage(const ChatId& chatId, const SystemMessage& systemMessage);
 
-    void setFileFinished(const QByteArray& fileId, bool success, const QString& filePath, const QByteArray& fileHash);
+    void setFileFinished(const QByteArray& fileId, bool success, const QString& filePath,
+                         const QByteArray& fileHash);
     size_t getNumMessagesForChat(const ChatId& chatId);
     size_t getNumMessagesForChatBeforeDate(const ChatId& chatId, const QDateTime& date);
     QList<HistMessage> getMessagesForChat(const ChatId& chatId, size_t firstIdx, size_t lastIdx);
@@ -225,7 +234,7 @@ public:
     QDateTime getDateWhereFindPhrase(const ChatId& chatId, const QDateTime& from, QString phrase,
                                      const ParameterSearch& parameter);
     QList<DateIdx> getNumMessagesForChatBeforeDateBoundaries(const ChatId& chatId,
-                                                               const QDate& from, size_t maxNum);
+                                                             const QDate& from, size_t maxNum);
 
     void markAsDelivered(RowId messageId);
     void markAsBroken(RowId messageId, BrokenMessageReason reason);
@@ -241,8 +250,8 @@ private:
     generateNewFileTransferQueries(const ChatId& chatId, const ToxPk& sender, const QDateTime& time,
                                    const QString& dispName, const FileDbInsertionData& insertionData);
     bool historyAccessBlocked();
-    static RawDatabase::Query generateFileFinished(RowId fileId, bool success,
-                                                   const QString& filePath, const QByteArray& fileHash);
+    static RawDatabase::Query generateFileFinished(RowId fileId, bool success, const QString& filePath,
+                                                   const QByteArray& fileHash);
 
     std::shared_ptr<RawDatabase> db;
 

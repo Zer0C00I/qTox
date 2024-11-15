@@ -20,8 +20,7 @@ public:
     Spinner(const QString& img, QSize size, qreal speed);
 
     QRectF boundingRect() const override;
-    void paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
-                       QWidget* widget) override;
+    void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) override;
     void setWidth(float width) override;
     qreal getAscent() const override;
 

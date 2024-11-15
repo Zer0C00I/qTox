@@ -5,8 +5,8 @@
 
 #pragma once
 
-#include "../chatlinecontent.h"
 #include "src/widget/style.h"
+#include "../chatlinecontent.h"
 
 #include <QFont>
 
@@ -27,12 +27,11 @@ public:
     };
 
     Text(DocumentCache& documentCache, Settings& settings, Style& style, const QColor& custom,
-        const QString& txt = "", const QFont& font = QFont(),
-        bool enableElide = false, const QString& rawText = QString(),
-        const TextType& type = NORMAL);
-    Text(DocumentCache& documentCache, Settings& settings, Style& style, const QString& txt = "", const QFont& font = QFont(),
-        bool enableElide = false, const QString& rawText = QString(),
-        const TextType& type = NORMAL);
+         const QString& txt = "", const QFont& font = QFont(), bool enableElide = false,
+         const QString& rawText = QString(), const TextType& type = NORMAL);
+    Text(DocumentCache& documentCache, Settings& settings, Style& style, const QString& txt = "",
+         const QFont& font = QFont(), bool enableElide = false, const QString& rawText = QString(),
+         const TextType& type = NORMAL);
     virtual ~Text();
 
     void setText(const QString& txt);

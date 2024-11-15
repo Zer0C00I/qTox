@@ -16,8 +16,8 @@ public:
     virtual void showWarning(const QString& title, const QString& msg) = 0;
     virtual void showError(const QString& title, const QString& msg) = 0;
     virtual bool askQuestion(const QString& title, const QString& msg, bool defaultAns = false,
-            bool warning = true, bool yesno = true) = 0;
+                             bool warning = true, bool yesno = true) = 0;
     virtual bool askQuestion(const QString& title, const QString& msg, const QString& button1,
-            const QString& button2, bool defaultAns = false, bool warning = true) = 0;
+                             const QString& button2, bool defaultAns = false, bool warning = true) = 0;
     virtual void confirmExecutableOpen(const QFileInfo& file) = 0;
 };

@@ -16,9 +16,7 @@ public:
     static PixmapCache& getInstance();
 
 protected:
-    PixmapCache()
-    {
-    }
+    PixmapCache() {}
     PixmapCache(PixmapCache&) = delete;
     PixmapCache& operator=(const PixmapCache&) = delete;
 

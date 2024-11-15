@@ -6,9 +6,9 @@
 #pragma once
 
 #include <QByteArray>
+#include <QHash>
 #include <QString>
 #include <cstdint>
-#include <QHash>
 #include <memory>
 
 class ChatId
@@ -41,7 +41,7 @@ inline uint qHash(const ChatId& id)
 }
 
 inline bool operator==(const std::reference_wrapper<const ChatId> lhs,
- const std::reference_wrapper<const ChatId> rhs)
+                       const std::reference_wrapper<const ChatId> rhs)
 {
     return lhs.get() == rhs.get();
 }

@@ -6,10 +6,10 @@
 #pragma once
 
 #include "chat.h"
+#include "src/core/chatid.h"
 #include "src/core/core.h"
 #include "src/core/extension.h"
 #include "src/core/toxpk.h"
-#include "src/core/chatid.h"
 #include "src/model/status.h"
 #include <QObject>
 #include <QString>
@@ -18,7 +18,8 @@ class Friend : public Chat
 {
     Q_OBJECT
 public:
-    Friend(uint32_t friendId_, const ToxPk& friendPk_, const QString& userAlias_ = {}, const QString& userName_ = {});
+    Friend(uint32_t friendId_, const ToxPk& friendPk_, const QString& userAlias_ = {},
+           const QString& userName_ = {});
     Friend(const Friend& other) = delete;
     Friend& operator=(const Friend& other) = delete;
 
@@ -56,6 +57,7 @@ signals:
 
 public slots:
     void onNegotiationComplete();
+
 private:
     QString userName;
     QString userAlias;

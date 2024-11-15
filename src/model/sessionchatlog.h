@@ -19,10 +19,9 @@ class SessionChatLog : public IChatLog
 {
     Q_OBJECT
 public:
-    SessionChatLog(const ICoreIdHandler& coreIdHandler_, FriendList& friendList,
-        GroupList& groupList);
+    SessionChatLog(const ICoreIdHandler& coreIdHandler_, FriendList& friendList, GroupList& groupList);
     SessionChatLog(ChatLogIdx initialIdx, const ICoreIdHandler& coreIdHandler_,
-        FriendList& friendList, GroupList& groupList);
+                   FriendList& friendList, GroupList& groupList);
 
     ~SessionChatLog();
     const ChatLogItem& at(ChatLogIdx idx) const override;
@@ -41,7 +40,8 @@ public:
                                       const ChatLogMessage& message, DispatchedMessageId dispatchId);
     void insertBrokenMessageAtIdx(ChatLogIdx idx, const ToxPk& sender, QString senderName,
                                   const ChatLogMessage& message);
-    void insertFileAtIdx(ChatLogIdx idx, const ToxPk& sender, QString senderName, const ChatLogFile& file);
+    void insertFileAtIdx(ChatLogIdx idx, const ToxPk& sender, QString senderName,
+                         const ChatLogFile& file);
     void insertSystemMessageAtIdx(ChatLogIdx idx, SystemMessage message);
 
 public slots:
@@ -56,7 +56,7 @@ public slots:
 
 
 private:
-    QString resolveSenderNameFromSender(const ToxPk &sender);
+    QString resolveSenderNameFromSender(const ToxPk& sender);
 
 
 private:

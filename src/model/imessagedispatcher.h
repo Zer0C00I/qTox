@@ -5,9 +5,9 @@
 
 #pragma once
 
+#include "src/model/brokenmessagereason.h"
 #include "src/model/friend.h"
 #include "src/model/message.h"
-#include "src/model/brokenmessagereason.h"
 
 #include <QObject>
 #include <QString>

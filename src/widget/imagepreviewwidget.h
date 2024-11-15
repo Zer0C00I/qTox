@@ -5,8 +5,8 @@
 
 #pragma once
 
-#include <QPushButton>
 #include <QPixmap>
+#include <QPushButton>
 #include <QString>
 
 class ImagePreviewButton : public QPushButton
@@ -14,7 +14,8 @@ class ImagePreviewButton : public QPushButton
 public:
     ImagePreviewButton(QWidget* parent = nullptr)
         : QPushButton(parent)
-    {}
+    {
+    }
     ~ImagePreviewButton();
     ImagePreviewButton(const ImagePreviewButton&) = delete;
     ImagePreviewButton& operator=(const ImagePreviewButton&) = delete;
@@ -23,6 +24,7 @@ public:
 
     void setIconFromFile(const QString& filename);
     void setIconFromPixmap(const QPixmap& pixmap);
+
 private:
     void initialize(const QPixmap& image);
 };

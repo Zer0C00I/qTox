@@ -6,27 +6,26 @@
 #pragma once
 
 
-#include "notificationdata.h"
 #include "friend.h"
 #include "group.h"
+#include "notificationdata.h"
 
 #include "src/persistence/inotificationsettings.h"
 #include "src/persistence/profile.h"
 
-#include <QObject>
 #include <QHash>
+#include <QObject>
 
 class NotificationGenerator : public QObject
 {
     Q_OBJECT
 
 public:
-    NotificationGenerator(
-        INotificationSettings const& notificationSettings_,
-        // Optional profile input to lookup avatars. Avatar lookup is not
-        // currently mockable so we allow profile to be nullptr for unit
-        // testing
-        Profile* profile_);
+    NotificationGenerator(INotificationSettings const& notificationSettings_,
+                          // Optional profile input to lookup avatars. Avatar lookup is not
+                          // currently mockable so we allow profile to be nullptr for unit
+                          // testing
+                          Profile* profile_);
     virtual ~NotificationGenerator();
     NotificationGenerator(const NotificationGenerator&) = delete;
     NotificationGenerator& operator=(const NotificationGenerator&) = delete;
@@ -34,8 +33,10 @@ public:
     NotificationGenerator& operator=(NotificationGenerator&&) = delete;
 
     NotificationData friendMessageNotification(const Friend* f, const QString& message);
-    NotificationData groupMessageNotification(const Group* g, const ToxPk& sender, const QString& message);
-    NotificationData fileTransferNotification(const Friend* f, const QString& filename, size_t fileSize);
+    NotificationData groupMessageNotification(const Group* g, const ToxPk& sender,
+                                              const QString& message);
+    NotificationData fileTransferNotification(const Friend* f, const QString& filename,
+                                              size_t fileSize);
     NotificationData groupInvitationNotification(const Friend* from);
     NotificationData friendRequestNotification(const ToxPk& sender, const QString& message);
 

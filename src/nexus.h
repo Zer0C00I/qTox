@@ -36,8 +36,8 @@ class Nexus : public QObject
 {
     Q_OBJECT
 public:
-    Nexus(Settings& settings, IMessageBoxManager& messageBoxManager,
-        CameraSource& cameraSource, IPC& ipc, QObject* parent = nullptr);
+    Nexus(Settings& settings, IMessageBoxManager& messageBoxManager, CameraSource& cameraSource,
+          IPC& ipc, QObject* parent = nullptr);
     ~Nexus();
     void start();
     void showMainGUI();

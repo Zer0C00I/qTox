@@ -28,8 +28,8 @@ class FileTransferWidget : public QWidget
     Q_OBJECT
 
 public:
-    FileTransferWidget(QWidget* parent, CoreFile& _coreFile, ToxFile file,
-        Settings& settings, Style& style, IMessageBoxManager& messageBoxManager);
+    FileTransferWidget(QWidget* parent, CoreFile& _coreFile, ToxFile file, Settings& settings,
+                       Style& style, IMessageBoxManager& messageBoxManager);
     virtual ~FileTransferWidget();
     bool isActive() const;
     void onFileTransferUpdate(ToxFile file);
@@ -60,7 +60,7 @@ private slots:
     void onPreviewButtonClicked();
 
 private:
-    static bool tryRemoveFile(const QString &filepath);
+    static bool tryRemoveFile(const QString& filepath);
 
     void updateWidget(ToxFile const& file);
     void updateBackgroundColor(const ToxFile::FileStatus status);

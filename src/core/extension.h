@@ -10,7 +10,8 @@
 // Do not use enum class because we use these as indexes frequently (see ExtensionSet)
 struct ExtensionType
 {
-    enum {
+    enum
+    {
         messages,
         max
     };

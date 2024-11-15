@@ -60,7 +60,8 @@ public:
         SharedParams(uint64_t maxCoreMessageSize_, uint64_t maxExtendedMessageSize_)
             : maxCoreMessageSize(maxCoreMessageSize_)
             , maxExtendedMessageSize(maxExtendedMessageSize_)
-        {}
+        {
+        }
 
         QRegularExpression getNameMention() const
         {
@@ -97,7 +98,8 @@ public:
 
     MessageProcessor(const SharedParams& sharedParams_);
 
-    std::vector<Message> processOutgoingMessage(bool isAction, const QString& content, ExtensionSet extensions);
+    std::vector<Message> processOutgoingMessage(bool isAction, const QString& content,
+                                                ExtensionSet extensions);
     Message processIncomingCoreMessage(bool isAction, const QString& message);
     Message processIncomingExtMessage(const QString& content);
 

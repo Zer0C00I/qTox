@@ -9,8 +9,8 @@
 #include "src/core/toxcall.h"
 #include "util/compatiblerecursivemutex.h"
 
-#include <QObject>
 #include <QMutex>
+#include <QObject>
 #include <QReadWriteLock>
 #include <atomic>
 #include <memory>
@@ -104,7 +104,7 @@ private:
         }
     };
 
-    CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, CompatibleRecursiveMutex &toxCoreLock,
+    CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, CompatibleRecursiveMutex& toxCoreLock,
            IAudioSettings& audioSettings_, IGroupSettings& groupSettings_, CameraSource& cameraSource);
     void connectCallbacks();
 

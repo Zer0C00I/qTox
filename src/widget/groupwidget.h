@@ -7,9 +7,9 @@
 
 #include "genericchatroomwidget.h"
 
+#include "src/core/groupid.h"
 #include "src/model/chatroom/groupchatroom.h"
 #include "src/model/friendlist/ifriendlistitem.h"
-#include "src/core/groupid.h"
 
 #include <memory>
 
@@ -21,7 +21,7 @@ class GroupWidget final : public GenericChatroomWidget, public IFriendListItem
     Q_OBJECT
 public:
     GroupWidget(std::shared_ptr<GroupChatroom> chatroom_, bool compact, Settings& settings,
-        Style& style);
+                Style& style);
     ~GroupWidget();
     void setAsInactiveChatroom() final;
     void setAsActiveChatroom() final;

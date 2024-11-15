@@ -114,8 +114,8 @@ private:
     };
 
 public:
-    Widget(Profile& profile_, IAudioControl& audio_, CameraSource& cameraSource,
-        Settings& settings, Style& style, IPC& ipc, Nexus& nexus, QWidget* parent = nullptr);
+    Widget(Profile& profile_, IAudioControl& audio_, CameraSource& cameraSource, Settings& settings,
+           Style& style, IPC& ipc, Nexus& nexus, QWidget* parent = nullptr);
     ~Widget() override;
     void init();
     void setCentralWidget(QWidget* widget, const QString& widgetName);
@@ -278,7 +278,7 @@ private:
     void openDialog(GenericChatroomWidget* widget, bool newWindow);
     void playNotificationSound(IAudioSink::Sound sound, bool loop = false);
     void cleanupNotificationSound();
-    void acceptFileTransfer(const ToxFile &file, const QString &path);
+    void acceptFileTransfer(const ToxFile& file, const QString& path);
     void formatWindowTitle(const QString& content);
 
 private:

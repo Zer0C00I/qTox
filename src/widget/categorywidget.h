@@ -52,12 +52,8 @@ protected:
     void emitChatroomWidget(QLayout* layout, int index);
 
 private:
-    virtual void onSetName()
-    {
-    }
-    virtual void onExpand()
-    {
-    }
+    virtual void onSetName() {}
+    virtual void onExpand() {}
     virtual void onAddFriendWidget(FriendWidget* widget)
     {
         std::ignore = widget;

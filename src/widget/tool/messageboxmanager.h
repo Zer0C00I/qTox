@@ -14,7 +14,7 @@ class QFileInfo;
 
 class MessageBoxManager : public QWidget, public IMessageBoxManager
 {
-Q_OBJECT
+    Q_OBJECT
 public:
     explicit MessageBoxManager(QWidget* parent);
     ~MessageBoxManager() override = default;
@@ -22,9 +22,9 @@ public:
     void showWarning(const QString& title, const QString& msg) override;
     void showError(const QString& title, const QString& msg) override;
     bool askQuestion(const QString& title, const QString& msg, bool defaultAns = false,
-                            bool warning = true, bool yesno = true) override;
+                     bool warning = true, bool yesno = true) override;
     bool askQuestion(const QString& title, const QString& msg, const QString& button1,
-                            const QString& button2, bool defaultAns = false, bool warning = true) override;
+                     const QString& button2, bool defaultAns = false, bool warning = true) override;
     void confirmExecutableOpen(const QFileInfo& file) override;
 
 private slots:

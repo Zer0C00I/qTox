@@ -21,8 +21,8 @@ class CircleWidget final : public CategoryWidget
     Q_OBJECT
 public:
     CircleWidget(const Core& core_, FriendListWidget* parent, int id_, Settings& settings,
-        Style& style, IMessageBoxManager& messageboxManager, FriendList& friendList,
-        GroupList& groupList, Profile& profile);
+                 Style& style, IMessageBoxManager& messageboxManager, FriendList& friendList,
+                 GroupList& groupList, Profile& profile);
     ~CircleWidget();
 
     void editName();

@@ -11,11 +11,11 @@
 #include <QMutex>
 #include <QPair>
 #include <QQueue>
+#include <QRegularExpression>
 #include <QString>
 #include <QThread>
 #include <QVariant>
 #include <QVector>
-#include <QRegularExpression>
 
 #include <atomic>
 #include <cassert>
@@ -61,7 +61,7 @@ public:
         {
         }
         Query(QString query_, QVector<QByteArray> blobs_,
-            const std::function<void(const QVector<QVariant>&)>& rowCallback_)
+              const std::function<void(const QVector<QVariant>&)>& rowCallback_)
             : query{query_.toUtf8()}
             , blobs{blobs_}
             , rowCallback{rowCallback_}
@@ -80,12 +80,14 @@ public:
     };
 
 public:
-    enum class SqlCipherParams {
+    enum class SqlCipherParams
+    {
         // keep these sorted in upgrade order
         p3_0, // SQLCipher 3.0 default encryption params
-        // SQLCipher 4.0 default params where SQLCipher 3.0 supports them, but 3.0 params where not possible.
-        // We accidentally got to this state when attemption to update all databases to 4.0 defaults even when using
-        // SQLCipher 3.x, but might as well keep using these for people with SQLCipher 3.x.
+              // SQLCipher 4.0 default params where SQLCipher 3.0 supports them, but 3.0 params
+              // where not possible. We accidentally got to this state when attemption to update all
+              // databases to 4.0 defaults even when using SQLCipher 3.x, but might as well keep
+              // using these for people with SQLCipher 3.x.
         halfUpgradedTo4,
         p4_0 // SQLCipher 4.0 default encryption params
     };
@@ -106,8 +108,7 @@ public:
 
     static QString toString(SqlCipherParams params)
     {
-        switch (params)
-        {
+        switch (params) {
         case SqlCipherParams::p3_0:
             return "3.0 default";
         case SqlCipherParams::halfUpgradedTo4:
@@ -151,7 +152,8 @@ protected:
     static void regexpSensitive(sqlite3_context* ctx, int argc, sqlite3_value** argv);
 
 private:
-    static void regexp(sqlite3_context* ctx, int argc, sqlite3_value** argv, const QRegularExpression::PatternOptions cs);
+    static void regexp(sqlite3_context* ctx, int argc, sqlite3_value** argv,
+                       const QRegularExpression::PatternOptions cs);
 
     struct Transaction
     {

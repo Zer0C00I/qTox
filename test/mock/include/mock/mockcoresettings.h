@@ -28,19 +28,28 @@ public:
     {
         return false;
     }
-    void setEnableIPv6(bool enable) override { std::ignore = enable; }
+    void setEnableIPv6(bool enable) override
+    {
+        std::ignore = enable;
+    }
 
     bool getForceTCP() const override
     {
         return false;
     }
-    void setForceTCP(bool force) override { std::ignore = force; }
+    void setForceTCP(bool force) override
+    {
+        std::ignore = force;
+    }
 
     bool getEnableLanDiscovery() const override
     {
         return false;
     }
-    void setEnableLanDiscovery(bool enable) override { std::ignore = enable; }
+    void setEnableLanDiscovery(bool enable) override
+    {
+        std::ignore = enable;
+    }
 
     QString getProxyAddr() const override
     {

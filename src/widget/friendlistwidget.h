@@ -37,8 +37,8 @@ class FriendListWidget : public QWidget
 public:
     using SortingMode = Settings::FriendListSortingMode;
     FriendListWidget(const Core& core, Widget* parent, Settings& settings, Style& style,
-        IMessageBoxManager& messageBoxManager, FriendList& friendList, GroupList& groupList,
-        Profile& profile, bool groupsOnTop = true);
+                     IMessageBoxManager& messageBoxManager, FriendList& friendList,
+                     GroupList& groupList, Profile& profile, bool groupsOnTop = true);
     ~FriendListWidget();
     void setMode(SortingMode mode);
     SortingMode getMode() const;
@@ -82,7 +82,7 @@ private:
     void sortByMode();
     void cleanMainLayout();
     QWidget* getNextWidgetForName(IFriendListItem* currentPos, bool forward) const;
-    QVector<std::shared_ptr<IFriendListItem> > getItemsFromCircle(CircleWidget* circle) const;
+    QVector<std::shared_ptr<IFriendListItem>> getItemsFromCircle(CircleWidget* circle) const;
 
     SortingMode mode;
     QVBoxLayout* listLayout = nullptr;

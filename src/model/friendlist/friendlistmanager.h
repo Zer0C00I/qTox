@@ -18,7 +18,7 @@ class FriendListManager : public QObject
 public:
     using IFriendListItemPtr = std::shared_ptr<IFriendListItem>;
 
-    explicit FriendListManager(int countContacts_, QObject *parent = nullptr);
+    explicit FriendListManager(int countContacts_, QObject* parent = nullptr);
 
     QVector<IFriendListItemPtr> getItems() const;
     bool needHideCircles() const;
@@ -31,8 +31,7 @@ public:
     void sortByName();
     void sortByActivity();
     void resetParents();
-    void setFilter(const QString& searchString, bool hideOnline,
-                   bool hideOffline, bool hideGroups);
+    void setFilter(const QString& searchString, bool hideOnline, bool hideOffline, bool hideGroups);
     void applyFilter();
     void updatePositions();
     void setSortRequired();
@@ -43,7 +42,8 @@ signals:
     void itemsChanged();
 
 private:
-    struct FilterParams {
+    struct FilterParams
+    {
         QString searchString = "";
         bool hideOnline = false;
         bool hideOffline = false;
@@ -62,5 +62,4 @@ private:
     QVector<IFriendListItemPtr> items;
     // At startup, while the size of items is less than countContacts, the view will not be processed to improve performance
     int countContacts = 0;
-
 };

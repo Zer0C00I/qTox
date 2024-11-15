@@ -27,8 +27,10 @@ public:
     using CompletionFn = std::function<void(bool)>;
     OfflineMsgEngine() = default;
     void addUnsentMessage(Message const& message, CompletionFn completionCallback);
-    void addSentCoreMessage(ReceiptNum receipt, Message const& message, CompletionFn completionCallback);
-    void addSentExtendedMessage(ExtendedReceiptNum receipt, Message const& message, CompletionFn completionCallback);
+    void addSentCoreMessage(ReceiptNum receipt, Message const& message,
+                            CompletionFn completionCallback);
+    void addSentExtendedMessage(ExtendedReceiptNum receipt, Message const& message,
+                                CompletionFn completionCallback);
 
     struct RemovedMessage
     {
@@ -57,8 +59,8 @@ private:
     public:
         void notifyMessageSent(ReceiptT receipt, OfflineMessage const& message)
         {
-            auto receivedReceiptIt = std::find(
-                    receivedReceipts.begin(), receivedReceipts.end(), receipt);
+            auto receivedReceiptIt =
+                std::find(receivedReceipts.begin(), receivedReceipts.end(), receipt);
 
             if (receivedReceiptIt != receivedReceipts.end()) {
                 receivedReceipts.erase(receivedReceiptIt);
@@ -84,12 +86,11 @@ private:
         std::vector<OfflineMessage> clear()
         {
             auto ret = std::vector<OfflineMessage>();
-            std::transform(
-                std::make_move_iterator(unAckedMessages.begin()), std::make_move_iterator(unAckedMessages.end()),
-                std::back_inserter(ret),
-                [] (const std::pair<ReceiptT, OfflineMessage>& pair) {
-                    return std::move(pair.second);
-                });
+            std::transform(std::make_move_iterator(unAckedMessages.begin()),
+                           std::make_move_iterator(unAckedMessages.end()), std::back_inserter(ret),
+                           [](const std::pair<ReceiptT, OfflineMessage>& pair) {
+                               return std::move(pair.second);
+                           });
 
             receivedReceipts.clear();
             unAckedMessages.clear();

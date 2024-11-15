@@ -7,7 +7,6 @@
 
 #include "src/core/toxid.h"
 
-#include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QLineEdit>
@@ -36,7 +35,7 @@ public:
     };
 
     AddFriendForm(ToxId ownId_, Settings& settings, Style& style,
-        IMessageBoxManager& messageBoxManager, Core& core);
+                  IMessageBoxManager& messageBoxManager, Core& core);
     AddFriendForm(const AddFriendForm&) = delete;
     AddFriendForm& operator=(const AddFriendForm&) = delete;
     ~AddFriendForm();

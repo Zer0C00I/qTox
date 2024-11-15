@@ -11,6 +11,6 @@ class Settings;
 namespace Platform {
 bool setAutorun(const Settings& settings, bool on);
 bool getAutorun(const Settings& settings);
-}
+} // namespace Platform
 
 #endif // QTOX_PLATFORM_EXT

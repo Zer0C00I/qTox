@@ -19,7 +19,10 @@ public:
     void resetSpeed();
 
     uint64_t getBytesSent() const;
-    uint64_t getFileSize() const { return filesize; }
+    uint64_t getFileSize() const
+    {
+        return filesize;
+    }
     double getProgress() const;
     double getSpeed() const;
     double getTimeLeftSeconds() const;

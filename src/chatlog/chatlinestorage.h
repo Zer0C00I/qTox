@@ -10,8 +10,8 @@
 
 #include <QDateTime>
 
-#include <vector>
 #include <map>
+#include <vector>
 
 /**
  * Helper class to keep track of what we're currently rendering and in what order
@@ -61,29 +61,59 @@ public:
     iterator insertChatMessage(ChatLogIdx idx, QDateTime timestamp, ChatLine::Ptr line);
     iterator insertDateLine(QDateTime timestamp, ChatLine::Ptr line);
 
-    ChatLogIdx firstIdx() const { return idxInfoMap.begin()->first; }
+    ChatLogIdx firstIdx() const
+    {
+        return idxInfoMap.begin()->first;
+    }
 
-    ChatLogIdx lastIdx() const { return idxInfoMap.rbegin()->first; }
+    ChatLogIdx lastIdx() const
+    {
+        return idxInfoMap.rbegin()->first;
+    }
 
-    bool contains(ChatLogIdx idx) const { return idxInfoMap.find(idx) != idxInfoMap.end(); }
+    bool contains(ChatLogIdx idx) const
+    {
+        return idxInfoMap.find(idx) != idxInfoMap.end();
+    }
 
     bool contains(QDateTime timestamp) const;
 
     iterator find(ChatLogIdx idx);
     iterator find(ChatLine::Ptr line);
 
-    const_reference operator[](size_type idx) const { return lines[idx]; }
+    const_reference operator[](size_type idx) const
+    {
+        return lines[idx];
+    }
 
-    const_reference operator[](ChatLogIdx idx) const { return lines[idxInfoMap.at(idx).linePos]; }
+    const_reference operator[](ChatLogIdx idx) const
+    {
+        return lines[idxInfoMap.at(idx).linePos];
+    }
 
-    size_type size() const { return lines.size(); }
+    size_type size() const
+    {
+        return lines.size();
+    }
 
-    iterator begin() { return lines.begin(); }
-    iterator end() { return lines.end(); }
+    iterator begin()
+    {
+        return lines.begin();
+    }
+    iterator end()
+    {
+        return lines.end();
+    }
 
-    bool empty() const { return lines.empty(); }
+    bool empty() const
+    {
+        return lines.empty();
+    }
 
-    bool hasIndexedMessage() const { return !idxInfoMap.empty(); }
+    bool hasIndexedMessage() const
+    {
+        return !idxInfoMap.empty();
+    }
 
     void clear()
     {
@@ -92,8 +122,14 @@ public:
         return lines.clear();
     }
 
-    reference front() { return lines.front(); }
-    reference back() { return lines.back(); }
+    reference front()
+    {
+        return lines.front();
+    }
+    reference back()
+    {
+        return lines.back();
+    }
 
     void erase(ChatLogIdx idx);
     iterator erase(iterator it);

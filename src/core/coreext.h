@@ -5,11 +5,11 @@
 
 #pragma once
 
-#include "src/model/status.h"
 #include "icoreextpacket.h"
+#include "src/model/status.h"
 
-#include <QObject>
 #include <QMap>
+#include <QObject>
 
 #include <bitset>
 #include <memory>
@@ -29,9 +29,10 @@ class CoreExt : public QObject, public ICoreExtPacketAllocator
     Q_OBJECT
 private:
     // PassKey idiom to prevent others from making PacketBuilders
-    struct PacketPassKey {};
-public:
+    struct PacketPassKey
+    {};
 
+public:
     /**
      * @brief Creates a CoreExt instance. Using a pointer here makes our
      *  registrations with extensions significantly easier to manage
@@ -69,12 +70,8 @@ public:
         /**
          * @brief Internal constructor for a packet.
          */
-        Packet(
-            ToxExtPacketList* packetList,
-            ToxExtensionMessages* toxExtMessages,
-            uint32_t friendId,
-            std::mutex* toxext_mutex,
-            PacketPassKey passKey);
+        Packet(ToxExtPacketList* packetList, ToxExtensionMessages* toxExtMessages,
+               uint32_t friendId, std::mutex* toxext_mutex, PacketPassKey passKey);
 
         // Delete copy constructor, we shouldn't be able to copy
         Packet(Packet const& other) = delete;
@@ -96,6 +93,7 @@ public:
         uint64_t addExtendedMessage(QString message) override;
 
         bool send() override;
+
     private:
         std::mutex* toxext_mutex;
         bool hasBeenSent = false;
@@ -119,16 +117,17 @@ public slots:
     void onFriendStatusChanged(uint32_t friendId, Status::Status status);
 
 private:
-
-    static void onExtendedMessageReceived(uint32_t friendId, const uint8_t* data, size_t size, void* userData);
+    static void onExtendedMessageReceived(uint32_t friendId, const uint8_t* data, size_t size,
+                                          void* userData);
     static void onExtendedMessageReceipt(uint32_t friendId, uint64_t receiptId, void* userData);
-    static void onExtendedMessageNegotiation(uint32_t friendId, bool compatible, uint64_t maxMessageSize, void* userData);
+    static void onExtendedMessageNegotiation(uint32_t friendId, bool compatible,
+                                             uint64_t maxMessageSize, void* userData);
 
     // A little extra cost to hide the deleters, but this lets us fwd declare
     // and prevent any extension headers from leaking out to the rest of the
     // system
     template <class T>
-    using ExtensionPtr = std::unique_ptr<T, void(*)(T*)>;
+    using ExtensionPtr = std::unique_ptr<T, void (*)(T*)>;
 
     CoreExt(ExtensionPtr<ToxExt> toxExt);
 

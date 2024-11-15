@@ -7,10 +7,11 @@
 
 #include "util/interface.h"
 
-#include <QString>
 #include <QRect>
+#include <QString>
 
-class IVideoSettings {
+class IVideoSettings
+{
 public:
     IVideoSettings() = default;
     virtual ~IVideoSettings();

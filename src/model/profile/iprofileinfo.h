@@ -14,16 +14,29 @@ class ToxId;
 class IProfileInfo
 {
 public:
-    enum class RenameResult {
-        OK, EmptyName, ProfileAlreadyExists, Error
+    enum class RenameResult
+    {
+        OK,
+        EmptyName,
+        ProfileAlreadyExists,
+        Error
     };
 
-    enum class SaveResult {
-        OK, EmptyPath, NoWritePermission, Error
+    enum class SaveResult
+    {
+        OK,
+        EmptyPath,
+        NoWritePermission,
+        Error
     };
 
-    enum class SetAvatarResult {
-        OK, EmptyPath, CanNotOpen, CanNotRead, TooLarge
+    enum class SetAvatarResult
+    {
+        OK,
+        EmptyPath,
+        CanNotOpen,
+        CanNotRead,
+        TooLarge
     };
 
     IProfileInfo() = default;

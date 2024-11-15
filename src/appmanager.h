@@ -28,6 +28,7 @@ public:
 
 private slots:
     void cleanup();
+
 private:
     void preConstructionInitialization();
     std::unique_ptr<QApplication> qapp;

@@ -7,8 +7,8 @@
 
 #include "util/interface.h"
 
-#include <QObject>
 #include <QFlag>
+#include <QObject>
 
 class ToxPk;
 

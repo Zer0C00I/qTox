@@ -10,11 +10,11 @@
 #include "src/core/icoresettings.h"
 #include "src/core/toxencrypt.h"
 #include "src/core/toxfile.h"
-#include "src/persistence/paths.h"
 #include "src/persistence/ifriendsettings.h"
 #include "src/persistence/igroupsettings.h"
 #include "src/persistence/inotificationsettings.h"
 #include "src/persistence/ismileysettings.h"
+#include "src/persistence/paths.h"
 #include "src/video/ivideosettings.h"
 
 #include "util/compatiblerecursivemutex.h"
@@ -673,7 +673,8 @@ private:
         friendProp() = delete;
         friendProp(QString addr_)
             : addr(addr_)
-        {}
+        {
+        }
         QString alias = "";
         QString addr = "";
         QString autoAcceptDir = "";

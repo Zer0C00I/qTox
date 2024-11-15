@@ -19,8 +19,7 @@ class GroupChatroom : public QObject, public Chatroom
 {
     Q_OBJECT
 public:
-    GroupChatroom(Group* group_, IDialogsManager* dialogsManager_, Core& core_,
-        FriendList& friendList);
+    GroupChatroom(Group* group_, IDialogsManager* dialogsManager_, Core& core_, FriendList& friendList);
 
     Chat* getChat() override;
 

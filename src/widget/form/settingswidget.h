@@ -35,10 +35,9 @@ class SettingsWidget : public QWidget
 {
     Q_OBJECT
 public:
-    SettingsWidget(UpdateCheck* updateCheck, IAudioControl& audio, Core *core,
-        SmileyPack& smileyPack, CameraSource& cameraSource, Settings& settings,
-        Style& style, IMessageBoxManager& messageBoxManager, Profile& profile,
-        Widget* parent = nullptr);
+    SettingsWidget(UpdateCheck* updateCheck, IAudioControl& audio, Core* core, SmileyPack& smileyPack,
+                   CameraSource& cameraSource, Settings& settings, Style& style,
+                   IMessageBoxManager& messageBoxManager, Profile& profile, Widget* parent = nullptr);
     ~SettingsWidget();
 
     bool isShown() const;

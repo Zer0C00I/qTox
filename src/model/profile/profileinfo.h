@@ -5,10 +5,10 @@
 
 #pragma once
 
-#include <QObject>
 #include "iprofileinfo.h"
 #include "src/core/toxpk.h"
 #include "util/interface.h"
+#include <QObject>
 
 class Core;
 class QFile;

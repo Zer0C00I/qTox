@@ -5,9 +5,9 @@
 
 #pragma once
 
-#include <QWidget>
-#include <QLineEdit>
 #include "searchtypes.h"
+#include <QLineEdit>
+#include <QWidget>
 
 class QPushButton;
 class QLabel;
@@ -20,10 +20,11 @@ class SearchForm final : public QWidget
 {
     Q_OBJECT
 public:
-    enum class ToolButtonState {
-        Disabled = 0,    // Grey
-        Common = 1,      // Green
-        Active = 2,      // Red
+    enum class ToolButtonState
+    {
+        Disabled = 0, // Grey
+        Common = 1,   // Green
+        Active = 2,   // Red
     };
 
     SearchForm(Settings& settings, Style& style, QWidget* parent = nullptr);
@@ -31,7 +32,7 @@ public:
     QString getSearchPhrase() const;
     ParameterSearch getParameterSearch();
     void setFocusEditor();
-    void insertEditor(const QString &text);
+    void insertEditor(const QString& text);
 
 protected:
     void showEvent(QShowEvent* event) final;

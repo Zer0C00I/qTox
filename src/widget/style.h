@@ -16,7 +16,7 @@ class Settings;
 
 class Style : public QObject
 {
-Q_OBJECT
+    Q_OBJECT
 public:
     enum class ColorPalette
     {
@@ -67,7 +67,8 @@ public:
     static QPixmap scaleSvgImage(const QString& path, uint32_t width, uint32_t height);
 
     Style() = default;
-    const QString getStylesheet(const QString& filename, Settings& settings, const QFont& baseFont = QFont());
+    const QString getStylesheet(const QString& filename, Settings& settings,
+                                const QFont& baseFont = QFont());
     const QString getImagePath(const QString& filename, Settings& settings);
     QColor getColor(ColorPalette entry);
     const QString resolve(const QString& filename, Settings& settings, const QFont& baseFont = QFont());
