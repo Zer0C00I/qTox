@@ -25,13 +25,8 @@ SearchSettingsForm::SearchSettingsForm(Settings& settings_, Style& style_, QWidg
 
     reloadTheme();
 
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
-    connect(ui->startSearchComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
-#else
-    connect(ui->startSearchComboBox,
-            static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-#endif
-            this, &SearchSettingsForm::onStartSearchSelected);
+    connect(ui->startSearchComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this,
+            &SearchSettingsForm::onStartSearchSelected);
     connect(ui->registerCheckBox, &QCheckBox::clicked, this, &SearchSettingsForm::onRegisterClicked);
     connect(ui->wordsOnlyRadioButton, &QCheckBox::clicked, this,
             &SearchSettingsForm::onWordsOnlyClicked);

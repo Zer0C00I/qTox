@@ -754,11 +754,7 @@ QDateTime History::getDateWhereFindPhrase(const ChatId& chatId, const QDateTime&
 
     if (parameter.period == PeriodSearch::AfterDate || parameter.period == PeriodSearch::BeforeDate) {
 
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
         date = parameter.date.startOfDay();
-#else
-        date = QDateTime(parameter.date);
-#endif
     }
 
     QString period;
@@ -849,11 +845,7 @@ QList<History::DateIdx> History::getNumMessagesForChatBeforeDateBoundaries(const
                                           "GROUP by day "
                                           "%3;")
                                .arg(countMessagesForFriend)
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
                                .arg(QDateTime(from.startOfDay()).toMSecsSinceEpoch())
-#else
-                               .arg(QDateTime(from).toMSecsSinceEpoch())
-#endif
                                .arg(limitString),
                            {chatId.getByteArray(), chatId.getByteArray()}, rowCallback);
 

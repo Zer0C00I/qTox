@@ -103,11 +103,7 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
     fwrite(LogMsgBytes.constData(), 1, LogMsgBytes.size(), stderr);
 
 #ifdef LOG_TO_FILE
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
     FILE* logFilePtr = logFileFile.loadRelaxed(); // atomically load the file pointer
-#else
-    FILE* logFilePtr = logFileFile.load(); // atomically load the file pointer
-#endif
     if (!logFilePtr) {
         logBufferMutex->lock();
         if (logBuffer)
@@ -258,11 +254,7 @@ int AppManager::run()
     if (!mainLogFilePtr)
         qCritical() << "Couldn't open logfile" << logfile;
 
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
     logFileFile.storeRelaxed(mainLogFilePtr); // atomically set the logFile
-#else
-    logFileFile.store(mainLogFilePtr); // atomically set the logFile
-#endif
 #endif
 
     // Windows platform plugins DLL hell fix
@@ -399,18 +391,10 @@ void AppManager::cleanup()
     qDebug() << "Cleanup success";
 
 #ifdef LOG_TO_FILE
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
     FILE* f = logFileFile.loadRelaxed();
-#else
-    FILE* f = logFileFile.load();
-#endif
     if (f != nullptr) {
         fclose(f);
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
         logFileFile.storeRelaxed(nullptr); // atomically disable logging to file
-#else
-        logFileFile.store(nullptr); // atomically disable logging to file
-#endif
     }
 #endif
 }

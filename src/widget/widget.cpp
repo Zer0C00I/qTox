@@ -1470,11 +1470,7 @@ void Widget::addFriendDialog(const Friend* frnd, ContentDialog* dialog)
 
     friendWidget->setStatusMsg(widget->getStatusMsg());
 
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 7, 0))
     auto widgetRemoveFriend = QOverload<const ToxPk&>::of(&Widget::removeFriend);
-#else
-    auto widgetRemoveFriend = static_cast<void (Widget::*)(const ToxPk&)>(&Widget::removeFriend);
-#endif
     connect(friendWidget, &FriendWidget::removeFriend, this, widgetRemoveFriend);
     connect(friendWidget, &FriendWidget::middleMouseClicked, dialog,
             [=]() { dialog->removeFriend(friendPk); });
@@ -1523,11 +1519,7 @@ void Widget::addGroupDialog(const Group* group, ContentDialog* dialog)
     auto chatroom = groupChatrooms[groupId];
     auto groupWidget = contentDialogManager->addGroupToDialog(dialog, chatroom, chatForm);
 
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 7, 0))
     auto removeGroup = QOverload<const GroupId&>::of(&Widget::removeGroup);
-#else
-    auto removeGroup = static_cast<void (Widget::*)(const GroupId&)>(&Widget::removeGroup);
-#endif
     connect(groupWidget, &GroupWidget::removeGroup, this, removeGroup);
     connect(groupWidget, &GroupWidget::chatroomWidgetClicked, chatForm, &GroupChatForm::focusInput);
     connect(groupWidget, &GroupWidget::middleMouseClicked, dialog,
@@ -2187,11 +2179,7 @@ Group* Widget::createGroup(uint32_t groupnumber, const GroupId& groupId)
 
     connect(widget, &GroupWidget::chatroomWidgetClicked, this, &Widget::onChatroomWidgetClicked);
     connect(widget, &GroupWidget::newWindowOpened, this, &Widget::openNewDialog);
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 7, 0))
     auto widgetRemoveGroup = QOverload<const GroupId&>::of(&Widget::removeGroup);
-#else
-    auto widgetRemoveGroup = static_cast<void (Widget::*)(const GroupId&)>(&Widget::removeGroup);
-#endif
     connect(widget, &GroupWidget::removeGroup, this, widgetRemoveGroup);
     connect(widget, &GroupWidget::middleMouseClicked, this,
             [this, groupId]() { removeGroup(groupId); });

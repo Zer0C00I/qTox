@@ -62,11 +62,7 @@ ContentDialog::ContentDialog(const Core& core, Settings& settings_, Style& style
                friendLayout->getLayoutOffline()};
 
     if (settings.getGroupchatPosition()) {
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 13, 0))
         layouts.swapItemsAt(0, 1);
-#else
-        layouts.swap(0, 1);
-#endif
     }
 
     QWidget* friendWidget = new QWidget();
@@ -403,12 +399,7 @@ void ContentDialog::reorderLayouts(bool newGroupOnTop)
 {
     bool oldGroupOnTop = layouts.first() == groupLayout.getLayout();
     if (newGroupOnTop != oldGroupOnTop) {
-        // Kriby: Maintain backwards compatibility
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 13, 0))
         layouts.swapItemsAt(0, 1);
-#else
-        layouts.swap(0, 1);
-#endif
     }
 }
 

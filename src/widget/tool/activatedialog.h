@@ -13,11 +13,7 @@ class ActivateDialog : public QDialog
 {
     Q_OBJECT
 public:
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
     ActivateDialog(Style& style, QWidget* parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
-#else
-    ActivateDialog(Style& style, QWidget* parent = nullptr, Qt::WindowFlags f = nullptr);
-#endif
     bool event(QEvent* event) override;
 
 public slots:
