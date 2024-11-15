@@ -231,6 +231,13 @@ RUN mkdir -p /src/libexpat && \
   /build/build_libexpat_windows.sh --arch ${SCRIPT_ARCH} && \
   rm -fr /src/libexpat
 
+COPY download/download_mpfr.sh /build/download/download_mpfr.sh
+COPY build_mpfr_windows.sh /build/build_mpfr_windows.sh
+RUN  mkdir -p /src/mpfr && \
+  cd /src/mpfr && \
+  /build/build_mpfr_windows.sh --arch ${SCRIPT_ARCH} && \
+  rm -fr /src/mpfr
+
 COPY download/download_gdb.sh /build/download/download_gdb.sh
 COPY build_gdb_windows.sh /build/build_gdb_windows.sh
 RUN mkdir -p /src/gdb && \

@@ -17,8 +17,8 @@
 
 set -euo pipefail
 
-GDB_VERSION="11.1"
-GDB_HASH="cccfcc407b20d343fb320d4a9a2110776dd3165118ffd41f4b1b162340333f94"
+GDB_VERSION="15.2"
+GDB_HASH="83350ccd35b5b5a0cba6b334c41294ea968158c573940904f00b92f76345314d"
 
 source "$(dirname "$(realpath "$0")")/common.sh"
 

@@ -17,11 +17,11 @@
 
 set -euo pipefail
 
-OPUS_VERSION=1.5.2
-OPUS_HASH=65c1d2f78b9f2fb20082c38cbe47c951ad5839345876e46941612ee87f9a7ce1
+MPFR_VERSION=4.2.1
+MPFR_HASH=116715552bd966c85b417c424db1bbdf639f53836eb361549d1f8d6ded5cb4c6
 
 source "$(dirname "$(realpath "$0")")/common.sh"
 
 download_verify_extract_tarball \
-    "https://github.com/xiph/opus/releases/download/v$OPUS_VERSION/opus-$OPUS_VERSION.tar.gz" \
-    "${OPUS_HASH}"
+    "https://www.mpfr.org/mpfr-current/mpfr-${MPFR_VERSION}.tar.gz" \
+    "${MPFR_HASH}"

@@ -17,8 +17,8 @@
 
 set -euo pipefail
 
-GMP_VERSION=6.2.1
-GMP_HASH=fd4829912cddd12f84181c3451cc752be224643e87fac497b69edddadc49b4f2
+GMP_VERSION=6.3.0
+GMP_HASH=a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898
 
 source "$(dirname "$(realpath "$0")")/common.sh"
 

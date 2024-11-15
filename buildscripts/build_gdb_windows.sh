@@ -17,7 +17,10 @@ parse_arch --dep "gdb" --supported "win32 win64" "$@"
 CFLAGS="-O2 -g0" ./configure "${HOST_OPTION}" \
                                 --prefix="${DEP_PREFIX}" \
                                 --enable-static \
-                                --disable-shared
+                                --disable-shared \
+                                CFLAGS="-I/windows/include" \
+                                LDFLAGS="-L/windows/lib" \
+                                || (cat config.log && false)
 
 make -j "${MAKE_JOBS}"
 make install
