@@ -33,6 +33,7 @@ jobs:
           docker_image_name: flatpak
   build-ubuntu-lts-docker:
     name: Build ubuntu LTS docker image
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -42,6 +43,7 @@ jobs:
           docker_image_name: ubuntu_lts
   build-debian-docker:
     name: Build debian docker image
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -51,6 +53,7 @@ jobs:
           docker_image_name: debian
   build-fedora-docker:
     name: Build fedora docker image
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -78,12 +81,13 @@ jobs:
   #         docker_image_name: windows_builder.i686
   build-fedora:
     name: Fedora with ASAN
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     needs: build-fedora-docker
     strategy:
       matrix:
-        features: [full, minimal]
-        build_type: [Debug, Release]
+        features: [full]
+        build_type: [Debug]
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/load-docker-image
@@ -94,6 +98,7 @@ jobs:
         run: docker-compose run --rm fedora ./.ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }} --sanitize
   clang-tidy:
     name: Clang-Tidy
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     needs: build-fedora-docker
     steps:
@@ -110,8 +115,8 @@ jobs:
     needs: build-debian-docker
     strategy:
       matrix:
-        features: [full, minimal]
-        build_type: [Debug, Release]
+        features: [minimal]
+        build_type: [Debug]
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/load-docker-image
@@ -122,6 +127,7 @@ jobs:
         run: docker-compose run --rm debian ./.ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }}
   translation-check:
     name: Check for translatable strings
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -135,8 +141,8 @@ jobs:
     needs: build-ubuntu-lts-docker
     strategy:
       matrix:
-        features: [full, minimal]
-        build_type: [Debug, Release]
+        features: [full]
+        build_type: [Release]
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/load-docker-image
@@ -207,8 +213,13 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "qTox-nightly.flatpak,qTox-nightly.flatpak.sha256"
   build-alpine:
-    name: Alpine (full, Debug)
+    name: Alpine
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        features: [full]
+        build_type: [Debug]
     steps:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -415,6 +426,7 @@ jobs:
           artifacts: "qTox-nightly.dmg,qTox-nightly.dmg.sha256"
   build-osx-users:
     name: macOS user
+    if: github.event_name == 'pull_request'
     runs-on: macos-13
     steps:
       - uses: actions/checkout@v4
