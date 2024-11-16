@@ -605,7 +605,9 @@ void Widget::updateIcons()
 
 Widget::~Widget()
 {
+#ifndef ANDROID
     ipc.unregisterEventHandler(activateHandlerKey);
+#endif
 
     QWidgetList windowList = QApplication::topLevelWidgets();
 

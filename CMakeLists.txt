@@ -631,13 +631,14 @@ target_link_libraries(${PROJECT_NAME}_static util_library)
 target_link_libraries(${PROJECT_NAME}_static audio_library)
 target_link_libraries(${PROJECT_NAME}_static translations_library)
 
-add_executable(${PROJECT_NAME}
+qt_add_executable(${PROJECT_NAME}
   WIN32
   MACOSX_BUNDLE
   ${${PROJECT_NAME}_RESOURCES}
   ${SMILEY_RESOURCES}
   src/main.cpp)
 target_link_libraries(${PROJECT_NAME}
+  PRIVATE
   ${PROJECT_NAME}_static
   ${CMAKE_REQUIRED_LIBRARIES}
   ${ALL_LIBRARIES})

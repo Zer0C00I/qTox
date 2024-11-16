@@ -20,7 +20,7 @@ extern "C"
 // no longer needed when avformat version < 59 is no longer supported
 using AvFindInputFormatRet = decltype(av_find_input_format(""));
 
-#if defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD)
+#if (defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD)) && !defined(ANDROID)
 #define USING_V4L 1
 #else
 #define USING_V4L 0
@@ -147,6 +147,7 @@ CameraDevice* CameraDevice::open(QString devName, VideoMode mode)
         return nullptr;
     }
 
+#if USING_V4L || defined(Q_OS_WIN) || defined(Q_OS_MACOS)
     float FPS = 5;
     if (mode.FPS > 0.0f) {
         FPS = mode.FPS;
@@ -154,7 +155,6 @@ CameraDevice* CameraDevice::open(QString devName, VideoMode mode)
         qWarning() << "VideoMode could be invalid!";
     }
 
-#if USING_V4L || defined(Q_OS_WIN) || defined(Q_OS_MACOS)
     const std::string videoSize =
         QStringLiteral("%1x%2").arg(mode.width).arg(mode.height).toStdString();
     const std::string framerate = QString{}.setNum(FPS).toStdString();

@@ -22,6 +22,16 @@ jobs:
       - name: Move nightly tag to head for nightly release
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: git tag -f nightly && git push origin nightly -f
+  build-android-docker:
+    name: Build Android docker image
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/build-docker-image
+        name: "Build docker image"
+        with:
+          docker_image_name: android_builder
   build-flatpak-docker:
     name: Build flatpak docker
     runs-on: ubuntu-latest
@@ -153,6 +163,25 @@ jobs:
             # Upload report to codecov.io
             bash <(curl -s https://codecov.io/bash) -f coverage.info || echo "Codecov did not collect coverage reports"
           fi
+  build-android:
+    name: Android
+    runs-on: ubuntu-latest
+    needs: [build-android-docker, update-nightly-tag]
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/load-docker-image
+        name: Load docker image
+        with:
+          docker_image_name: android_builder
+      - name: Run build
+        run: docker-compose run --rm android_builder ./android/cross-compile/build.sh
+      - name: Upload Android apk
+        uses: actions/upload-artifact@v4
+        with:
+          name: qTox-${{ github.sha }}.arm64-v8a.apk
+          path: _build/android-build//build/outputs/apk/release/android-build-release-signed.apk
   build-flatpak:
     name: Flatpak
     runs-on: ubuntu-latest

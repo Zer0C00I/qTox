@@ -17,6 +17,7 @@
 #endif
 
 namespace {
+#ifndef ANDROID
 #ifdef Q_OS_WIN
 const char* getCurUsername()
 {
@@ -38,6 +39,7 @@ QString getIpcKey()
     }
     return QString("qtox-" IPC_PROTOCOL_VERSION "-") + QString::fromUtf8(user);
 }
+#endif
 } // namespace
 
 /**
@@ -55,7 +57,9 @@ QString getIpcKey()
 
 IPC::IPC(uint32_t profileId_)
     : profileId{profileId_}
+#ifndef ANDROID
     , globalMemory{getIpcKey()}
+#endif
 {
     qRegisterMetaType<IPCEventHandler>("IPCEventHandler");
 
@@ -76,6 +80,9 @@ IPC::IPC(uint32_t profileId_)
     std::uniform_int_distribution<uint64_t> distribution;
     globalId = distribution(rng);
     qDebug() << "Our global IPC ID is " << globalId;
+#ifdef ANDROID
+    return;
+#else
     if (globalMemory.create(sizeof(IPCMemory))) {
         if (globalMemory.lock()) {
             IPCMemory* mem = global();
@@ -93,12 +100,14 @@ IPC::IPC(uint32_t profileId_)
                  << globalMemory.error();
         return; // We won't be able to do any IPC without being attached, let's get outta here
     }
+#endif
 
     processEvents();
 }
 
 IPC::~IPC()
 {
+#ifndef ANDROID
     if (!globalMemory.lock()) {
         qWarning() << "Failed to lock in ~IPC";
         return;
@@ -108,6 +117,7 @@ IPC::~IPC()
         global()->globalId = 0;
     }
     globalMemory.unlock();
+#endif
 }
 
 /**
@@ -128,6 +138,10 @@ time_t IPC::postEvent(const QString& name, const QByteArray& data, uint32_t dest
         return 0;
     }
 
+#ifdef ANDROID
+    std::ignore = dest;
+    return 0;
+#else
     if (!globalMemory.lock()) {
         qDebug() << "Failed to lock in postEvent()";
         return 0;
@@ -155,10 +169,14 @@ time_t IPC::postEvent(const QString& name, const QByteArray& data, uint32_t dest
 
     globalMemory.unlock();
     return result;
+#endif
 }
 
 bool IPC::isCurrentOwner()
 {
+#ifdef ANDROID
+    return false;
+#else
     if (globalMemory.lock()) {
         const bool isOwner = isCurrentOwnerNoLock();
         globalMemory.unlock();
@@ -167,6 +185,7 @@ bool IPC::isCurrentOwner()
         qWarning() << "isCurrentOwner failed to lock, returning false";
         return false;
     }
+#endif
 }
 
 /**
@@ -187,6 +206,10 @@ void IPC::unregisterEventHandler(const QString& name)
 
 bool IPC::isEventAccepted(time_t time)
 {
+#ifdef ANDROID
+    std::ignore = time;
+    return false;
+#else
     bool result = false;
     if (!globalMemory.lock()) {
         return result;
@@ -204,6 +227,7 @@ bool IPC::isEventAccepted(time_t time)
     globalMemory.unlock();
 
     return result;
+#endif
 }
 
 bool IPC::waitUntilAccepted(time_t postTime, int32_t timeout /*=-1*/)
@@ -225,7 +249,11 @@ bool IPC::waitUntilAccepted(time_t postTime, int32_t timeout /*=-1*/)
 
 bool IPC::isAttached() const
 {
+#ifdef ANDROID
+    return false;
+#else
     return globalMemory.isAttached();
+#endif
 }
 
 void IPC::setProfileId(uint32_t profileId_)
@@ -276,6 +304,10 @@ bool IPC::runEventHandler(IPCEventHandler handler, const QByteArray& arg, void* 
 
 void IPC::processEvents()
 {
+#ifdef ANDROID
+    timer.start();
+    return;
+#else
     if (!globalMemory.lock()) {
         timer.start();
         return;
@@ -326,6 +358,7 @@ void IPC::processEvents()
 
     globalMemory.unlock();
     timer.start();
+#endif
 }
 
 /**
@@ -334,15 +367,23 @@ void IPC::processEvents()
  */
 bool IPC::isCurrentOwnerNoLock()
 {
+#ifdef ANDROID
+    return false;
+#else
     const void* const data = globalMemory.data();
     if (!data) {
         qWarning() << "isCurrentOwnerNoLock failed to access the memory, returning false";
         return false;
     }
     return (*static_cast<const uint64_t*>(data) == globalId);
+#endif
 }
 
 IPC::IPCMemory* IPC::global()
 {
+#ifdef ANDROID
+    return nullptr;
+#else
     return static_cast<IPCMemory*>(globalMemory.data());
+#endif
 }

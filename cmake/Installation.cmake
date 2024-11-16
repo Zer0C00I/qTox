@@ -38,7 +38,7 @@ if(APPLE)
   execute_process(COMMAND ${CMAKE_SOURCE_DIR}/osx/macfixrpath ${BUNDLE_PATH})
   " COMPONENT Runtime
   )
-  
+
   install(FILES img/icons/qtox.icns DESTINATION ${BUNDLE_PATH}/Contents/Resources/)
   install(FILES img/icons/qtox_profile.icns DESTINATION ${BUNDLE_PATH}/Contents/Resources/)
 
@@ -50,7 +50,7 @@ if(APPLE)
 else()
   include( GNUInstallDirs )
   # follow the xdg-desktop specification
-  install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}")
+  install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}" LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}")
   install(FILES "res/io.github.qtox.qTox.appdata.xml" DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/metainfo")
   install(FILES "io.github.qtox.qTox.desktop" DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/applications")
 

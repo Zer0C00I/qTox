@@ -160,7 +160,17 @@ endif()
 
 search_dependency(OPENAL              PACKAGE openal)
 
-if (PLATFORM_EXTENSIONS AND UNIX AND NOT APPLE)
+if (ANDROID)
+  find_library(OPENSL_LIBRARY NAMES OpenSLES)
+
+  if(NOT OPENSL_LIBRARY)
+    message(FATAL_ERROR "OpenSLES library not found")
+  endif()
+
+  add_dependency(${OPENSL_LIBRARY})
+endif()
+
+if (PLATFORM_EXTENSIONS AND UNIX AND NOT APPLE AND NOT ANDROID)
   # Automatic auto-away support. (X11 also using for capslock detection)
   search_dependency(X11               PACKAGE x11 OPTIONAL)
   search_dependency(XSS               PACKAGE xscrnsaver OPTIONAL)

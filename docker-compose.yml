@@ -67,6 +67,12 @@ services:
       context: ./buildscripts
       dockerfile: docker/Dockerfile.opensuse
     <<: *shared_params
+  android_builder:
+    image: qtox_android_builder:latest
+    build:
+      context: ./buildscripts
+      dockerfile: docker/Dockerfile.android_builder
+    <<: *shared_params
   windows_builder.x86_64:
     image: qtox_windows_builder.x86_64:latest
     build:
