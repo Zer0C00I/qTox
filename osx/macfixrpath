@@ -14,7 +14,7 @@ my $prefix = `brew --prefix`;
 chomp $prefix;
 $prefix .= "/Cellar/";
 
-my @libs = <$BUNDLE_PATH/Contents/Frameworks/*.framework/Versions/5/Qt*>;
+my @libs = <$BUNDLE_PATH/Contents/Frameworks/*.framework/Versions/6/Qt*>;
 find sub {
    /\.dylib$/ or return;
    push @libs, $File::Find::name;
