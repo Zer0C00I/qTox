@@ -24,7 +24,6 @@ jobs:
         run: git tag -f nightly && git push origin nightly -f
   build-android-docker:
     name: Build Android docker image
-    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -182,6 +181,40 @@ jobs:
         with:
           name: qTox-${{ github.sha }}.arm64-v8a.apk
           path: _build/android-build//build/outputs/apk/release/android-build-release-signed.apk
+      - name: Get tag name for Android release file name
+        if: contains(github.ref, 'refs/tags/v')
+        id: get_version
+        run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
+      - name: Rename Android for release upload
+        if: contains(github.ref, 'refs/tags/v')
+        run: |
+          cp qtox.apk qTox-${{ steps.get_version.outputs.VERSION }}.arm64-v8a.apk
+          sha256sum qTox-${{ steps.get_version.outputs.VERSION }}.arm64-v8a.apk > qTox-${{ steps.get_version.outputs.VERSION }}.arm64-v8a.apk.sha256
+      - name: Upload to versioned release
+        if: contains(github.ref, 'refs/tags/v')
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: true
+          draft: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifacts: "qTox-${{ steps.get_version.outputs.VERSION }}.arm64-v8a.apk,qTox-${{ steps.get_version.outputs.VERSION }}.arm64-v8a.apk.sha256"
+      - name: Rename artifact for nightly upload
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        run: |
+          cp qtox.apk qTox-nightly.apk
+          sha256sum qTox-nightly.apk > qTox-nightly.apk.sha256
+      - name: Upload to nightly release
+        uses: ncipollo/release-action@v1
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        with:
+          allowUpdates: true
+          tag: nightly
+          omitBodyDuringUpdate: true
+          omitNameDuringUpdate: true
+          prerelease: true
+          replacesArtifacts: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifacts: "qTox-nightly.apk,qTox-nightly.apk.sha256"
   build-flatpak:
     name: Flatpak
     runs-on: ubuntu-latest
