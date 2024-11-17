@@ -24,6 +24,7 @@
 #include <tox/toxav.h>
 
 #include <cassert>
+#include <memory>
 
 /**
  * @fn void CoreAV::avInvite(uint32_t friendId, bool video)
@@ -283,7 +284,7 @@ bool CoreAV::startCall(uint32_t friendNum, bool video)
     // Audio backend must be set before making a call
     assert(audio != nullptr);
     ToxFriendCallPtr call =
-        ToxFriendCallPtr(new ToxFriendCall(friendNum, video, *this, *audio, cameraSource));
+        std::make_unique<ToxFriendCall>(friendNum, video, *this, *audio, cameraSource);
     // Call object must be owned by this thread or there will be locking problems with Audio
     call->moveToThread(thread());
     assert(call != nullptr);
@@ -560,7 +561,7 @@ void CoreAV::joinConferenceCall(const Conference& conference)
     assert(audio != nullptr);
 
     ToxConferenceCallPtr conferencecall =
-        ToxConferenceCallPtr(new ToxConferenceCall{conference, *this, *audio});
+        std::make_unique<ToxConferenceCall>(conference, *this, *audio);
     // Call Objects must be owned by CoreAV or there will be locking problems with Audio
     conferencecall->moveToThread(thread());
     assert(conferencecall != nullptr);
@@ -737,7 +738,7 @@ void CoreAV::callCallback(ToxAV* toxav, uint32_t friendNum, bool audio, bool vid
     // Audio backend must be set before receiving a call
     assert(self->audio != nullptr);
     ToxFriendCallPtr call =
-        ToxFriendCallPtr(new ToxFriendCall{friendNum, video, *self, *self->audio, self->cameraSource});
+        std::make_unique<ToxFriendCall>(friendNum, video, *self, *self->audio, self->cameraSource);
     // Call object must be owned by CoreAV thread or there will be locking problems with Audio
     call->moveToThread(self->thread());
     assert(call != nullptr);

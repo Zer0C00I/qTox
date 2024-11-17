@@ -18,6 +18,7 @@
 #include <QString>
 #include <QSvgRenderer>
 #include <QWindow>
+#include <memory>
 #ifdef Q_OS_MAC
 #include <QMenuBar>
 #include <QSignalMapper>
@@ -257,7 +258,8 @@ void Widget::init()
 
     core = &profile.getCore();
 
-    sharedMessageProcessorParams.reset(new MessageProcessor::SharedParams(core->getMaxMessageSize()));
+    sharedMessageProcessorParams =
+        std::make_unique<MessageProcessor::SharedParams>(core->getMaxMessageSize());
 
     chatListWidget =
         new FriendListWidget(*core, this, settings, style, *messageBoxManager, *friendList,
@@ -2275,7 +2277,7 @@ void Widget::onTryCreateTrayIcon()
     static int32_t tries = 15;
     if (!icon && tries--) {
         if (QSystemTrayIcon::isSystemTrayAvailable()) {
-            icon = std::unique_ptr<QSystemTrayIcon>(new QSystemTrayIcon(this));
+            icon = std::make_unique<QSystemTrayIcon>(this);
             updateIcons();
             trayMenu = new QMenu(this);
 

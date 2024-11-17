@@ -15,7 +15,7 @@
 #include <QPushButton>
 #include <QRadioButton>
 
-#include <math.h>
+#include <cmath>
 
 EmoticonsWidget::EmoticonsWidget(SmileyPack& smileyPack, Settings& settings, Style& style,
                                  QWidget* parent)
@@ -37,7 +37,7 @@ EmoticonsWidget::EmoticonsWidget(SmileyPack& smileyPack, Settings& settings, Sty
 
     const QList<QStringList>& emoticons = smileyPack.getEmoticons();
     int itemCount = emoticons.size();
-    int pageCount = ceil(float(itemCount) / float(itemsPerPage));
+    int pageCount = std::ceil(float(itemCount) / float(itemsPerPage));
     int currPage = 0;
     int currItem = 0;
     int row = 0;

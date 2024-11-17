@@ -139,7 +139,7 @@ private:
 
 void TestDbSchema::init()
 {
-    testDatabaseFile = std::unique_ptr<QTemporaryFile>(new QTemporaryFile());
+    testDatabaseFile = std::make_unique<QTemporaryFile>();
     // fileName is only defined once the file is opened. Since RawDatabase
     // will be opening the file itself not using QFile, open and close it now.
     QVERIFY(testDatabaseFile->open());

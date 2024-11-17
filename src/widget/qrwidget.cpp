@@ -11,7 +11,7 @@
 #include <QPainter>
 #include <qrencode.h>
 
-#include <errno.h>
+#include <cerrno>
 
 /**
  * @file qrwidget.cpp

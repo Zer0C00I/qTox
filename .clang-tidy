@@ -1,6 +1,9 @@
 Checks: "-*
 , modernize-avoid-bind
+, modernize-deprecated-headers
 , modernize-loop-convert
+, modernize-make-shared
+, modernize-make-unique
 , modernize-return-braced-init-list
 , modernize-use-bool-literals
 , modernize-use-emplace

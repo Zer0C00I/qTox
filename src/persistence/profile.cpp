@@ -12,6 +12,7 @@
 #include <QThread>
 
 #include <cassert>
+#include <memory>
 #include <sodium.h>
 
 #include "profile.h"
@@ -228,8 +229,7 @@ void Profile::initCore(const QByteArray& toxSave, Settings& s, bool isNewProfile
         emit failedToStart();
     }
 
-    bootstrapNodes =
-        std::unique_ptr<BootstrapNodeUpdater>(new BootstrapNodeUpdater(s.getProxy(), paths));
+    bootstrapNodes = std::make_unique<BootstrapNodeUpdater>(s.getProxy(), paths);
 
     Core::ToxCoreErrors err;
     core = Core::makeToxCore(toxSave, s, *bootstrapNodes, &err);
@@ -274,7 +274,7 @@ void Profile::initCore(const QByteArray& toxSave, Settings& s, bool isNewProfile
     connect(core.get(), &Core::fileAvatarOfferReceived, this, &Profile::onAvatarOfferReceived,
             Qt::ConnectionType::QueuedConnection);
     // broadcast our own avatar
-    avatarBroadcaster = std::unique_ptr<AvatarBroadcaster>(new AvatarBroadcaster(*core));
+    avatarBroadcaster = std::make_unique<AvatarBroadcaster>(*core);
 }
 
 Profile::Profile(const QString& name_, std::unique_ptr<ToxEncrypt> passkey_, Paths& paths_,
@@ -629,7 +629,7 @@ void Profile::loadDatabase(QString password, IMessageBoxManager& messageBoxManag
     // the history, and if it fails we can't change the setting now, but we keep a nullptr
     database = RawDatabase::open(getDbPath(name, settings.getPaths()), password, salt);
     if (database && database->isOpen()) {
-        history.reset(new History(database, settings, messageBoxManager));
+        history = std::make_shared<History>(database, settings, messageBoxManager);
     } else {
         qWarning() << "Failed to open database for profile" << name;
         messageBoxManager

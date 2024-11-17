@@ -12,6 +12,7 @@
 #include <QByteArray>
 #include <QTemporaryFile>
 #include <QTest>
+#include <memory>
 
 namespace {
 const auto selfPk = ToxPk{QByteArray(32, 0)};
