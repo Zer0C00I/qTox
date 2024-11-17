@@ -506,7 +506,7 @@ void Widget::init()
     reloadTheme();
     updateIcons();
     retranslateUi();
-    Translator::registerHandler(std::bind(&Widget::retranslateUi, this), this);
+    Translator::registerHandler([this] { retranslateUi(); }, this);
 
     if (!settings.getShowSystemTray()) {
         show();
@@ -1851,7 +1851,7 @@ ContentLayout* Widget::createContentDialog(DialogType type) const
             , style{style_}
         {
             restoreGeometry(settings.getDialogSettingsGeometry());
-            Translator::registerHandler(std::bind(&Dialog::retranslateUi, this), this);
+            Translator::registerHandler([this] { retranslateUi(); }, this);
             retranslateUi();
             setWindowIcon(QIcon(":/img/icons/qtox.svg"));
             reloadTheme();

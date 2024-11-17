@@ -133,7 +133,7 @@ ConferenceForm::ConferenceForm(Core& core_, Conference* chatConference, IChatLog
 
     updateUserNames();
     setAcceptDrops(true);
-    Translator::registerHandler(std::bind(&ConferenceForm::retranslateUi, this), this);
+    Translator::registerHandler([this] { retranslateUi(); }, this);
 }
 
 ConferenceForm::~ConferenceForm()

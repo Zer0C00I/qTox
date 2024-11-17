@@ -38,7 +38,7 @@ DebugWidget::DebugWidget(Paths& paths, Style& style, Widget* parent)
 
     connect(debugWidgets, &QTabWidget::currentChanged, this, &DebugWidget::onTabChanged);
 
-    Translator::registerHandler(std::bind(&DebugWidget::retranslateUi, this), this);
+    Translator::registerHandler([this] { retranslateUi(); }, this);
 }
 
 DebugWidget::~DebugWidget()

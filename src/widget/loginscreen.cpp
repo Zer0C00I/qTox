@@ -56,7 +56,7 @@ LoginScreen::LoginScreen(Paths& paths_, Style& style, int themeColor,
     setStyleSheet(style.getStylesheet("loginScreen/loginScreen.qss", themeColor));
 
     retranslateUi();
-    Translator::registerHandler(std::bind(&LoginScreen::retranslateUi, this), this);
+    Translator::registerHandler([this] { retranslateUi(); }, this);
 }
 
 LoginScreen::~LoginScreen()

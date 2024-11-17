@@ -1,4 +1,5 @@
 Checks: "-*
+, modernize-avoid-bind
 , modernize-loop-convert
 , modernize-return-braced-init-list
 , modernize-use-bool-literals

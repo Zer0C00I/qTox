@@ -64,7 +64,7 @@ ConferenceInviteForm::ConferenceInviteForm(Settings& settings_, Core& core_)
     headLayout->addWidget(headLabel);
 
     retranslateUi();
-    Translator::registerHandler(std::bind(&ConferenceInviteForm::retranslateUi, this), this);
+    Translator::registerHandler([this] { retranslateUi(); }, this);
 }
 
 ConferenceInviteForm::~ConferenceInviteForm()

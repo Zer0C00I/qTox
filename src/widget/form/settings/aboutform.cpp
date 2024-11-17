@@ -61,7 +61,7 @@ AboutForm::AboutForm(UpdateCheck& updateCheck_, QString contactInfo_, Style& sty
         bodyUI->gitVersion->setOpenExternalLinks(false);
 
     eventsInit();
-    Translator::registerHandler(std::bind(&AboutForm::retranslateUi, this), this);
+    Translator::registerHandler([this] { retranslateUi(); }, this);
 }
 
 /**

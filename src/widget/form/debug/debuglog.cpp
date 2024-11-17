@@ -85,7 +85,7 @@ DebugLogForm::DebugLogForm(Paths& paths, Style& style, QWidget* parent)
         ui_->debugLog->scrollTo(debugLogModel_->index(originalIndex));
     });
 
-    Translator::registerHandler(std::bind(&DebugLogForm::retranslateUi, this), this);
+    Translator::registerHandler([this] { retranslateUi(); }, this);
 }
 
 DebugLogForm::~DebugLogForm()

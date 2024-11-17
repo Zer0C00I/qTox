@@ -46,7 +46,7 @@ ConferenceWidget::ConferenceWidget(std::shared_ptr<ConferenceRoom> chatroom_, bo
     connect(c, &Conference::titleChanged, this, &ConferenceWidget::updateTitle);
     connect(c, &Conference::numPeersChanged, this, &ConferenceWidget::updateUserCount);
     connect(nameLabel, &CroppingLabel::editFinished, c, &Conference::setName);
-    Translator::registerHandler(std::bind(&ConferenceWidget::retranslateUi, this), this);
+    Translator::registerHandler([this] { retranslateUi(); }, this);
 }
 
 ConferenceWidget::~ConferenceWidget()
