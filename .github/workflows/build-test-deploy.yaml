@@ -185,10 +185,10 @@ jobs:
         if: contains(github.ref, 'refs/tags/v')
         id: get_version
         run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
-      - name: Rename Android for release upload
+      - name: Rename Android APK for release upload
         if: contains(github.ref, 'refs/tags/v')
         run: |
-          cp qtox.apk qTox-${{ steps.get_version.outputs.VERSION }}.arm64-v8a.apk
+          cp _build/android-build//build/outputs/apk/release/android-build-release-signed.apk qTox-${{ steps.get_version.outputs.VERSION }}.arm64-v8a.apk
           sha256sum qTox-${{ steps.get_version.outputs.VERSION }}.arm64-v8a.apk > qTox-${{ steps.get_version.outputs.VERSION }}.arm64-v8a.apk.sha256
       - name: Upload to versioned release
         if: contains(github.ref, 'refs/tags/v')
@@ -198,10 +198,10 @@ jobs:
           draft: true
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "qTox-${{ steps.get_version.outputs.VERSION }}.arm64-v8a.apk,qTox-${{ steps.get_version.outputs.VERSION }}.arm64-v8a.apk.sha256"
-      - name: Rename artifact for nightly upload
+      - name: Rename Android APK for nightly upload
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: |
-          cp qtox.apk qTox-nightly.apk
+          cp _build/android-build//build/outputs/apk/release/android-build-release-signed.apk qTox-nightly.apk
           sha256sum qTox-nightly.apk > qTox-nightly.apk.sha256
       - name: Upload to nightly release
         uses: ncipollo/release-action@v1
@@ -251,7 +251,7 @@ jobs:
           draft: true
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "qTox-${{ steps.get_version.outputs.VERSION }}.x86_64.flatpak,qTox-${{ steps.get_version.outputs.VERSION }}.x86_64.flatpak.sha256"
-      - name: Rename artifact for nightly upload
+      - name: Rename flatpak for nightly upload
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: |
           cp qtox.flatpak qTox-nightly.flatpak
