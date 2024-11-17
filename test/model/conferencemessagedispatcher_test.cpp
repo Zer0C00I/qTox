@@ -12,8 +12,8 @@
 #include "src/persistence/settings.h"
 #include "util/interface.h"
 
-#include "mock/mockcoreidhandler.h"
 #include "mock/mockconferencequery.h"
+#include "mock/mockcoreidhandler.h"
 
 #include <QObject>
 #include <QtTest/QtTest>
@@ -55,7 +55,7 @@ class MockConferenceSettings : public QObject, public IConferenceSettings
 public:
     QStringList getBlackList() const override;
     void setBlackList(const QStringList& blist) override;
-    SIGNAL_IMPL(MockConferenceSettings, blackListChanged, QStringList const& blist)
+    SIGNAL_IMPL(MockConferenceSettings, blackListChanged, const QStringList& blist)
 
     bool getShowConferenceJoinLeaveMessages() const override
     {
@@ -144,15 +144,15 @@ void TestConferenceMessageDispatcher::init()
     conferenceSettings = std::unique_ptr<MockConferenceSettings>(new MockConferenceSettings());
     conferenceQuery = std::unique_ptr<MockConferenceQuery>(new MockConferenceQuery());
     coreIdHandler = std::unique_ptr<MockCoreIdHandler>(new MockCoreIdHandler());
-    g = std::unique_ptr<Conference>(new Conference(0, ConferenceId(), "TestConference", false, "me", *conferenceQuery,
-                                         *coreIdHandler, *friendList));
+    g = std::unique_ptr<Conference>(new Conference(0, ConferenceId(), "TestConference", false, "me",
+                                                   *conferenceQuery, *coreIdHandler, *friendList));
     messageSender = std::unique_ptr<MockConferenceMessageSender>(new MockConferenceMessageSender());
     sharedProcessorParams = std::unique_ptr<MessageProcessor::SharedParams>(
         new MessageProcessor::SharedParams(tox_max_message_length(), 10 * 1024 * 1024));
     messageProcessor = std::unique_ptr<MessageProcessor>(new MessageProcessor(*sharedProcessorParams));
     conferenceMessageDispatcher = std::unique_ptr<ConferenceMessageDispatcher>(
         new ConferenceMessageDispatcher(*g, *messageProcessor, *coreIdHandler, *messageSender,
-                                   *conferenceSettings));
+                                        *conferenceSettings));
 
     connect(conferenceMessageDispatcher.get(), &ConferenceMessageDispatcher::messageSent, this,
             &TestConferenceMessageDispatcher::onMessageSent);
@@ -205,8 +205,8 @@ void TestConferenceMessageDispatcher::testMessageSending()
 }
 
 /**
- * @brief Tests that if we are the only member in a conference we do _not_ send messages to core. Toxcore
- * isn't too happy if we send messages and we're the only one in the conference
+ * @brief Tests that if we are the only member in a conference we do _not_ send messages to core.
+ * Toxcore isn't too happy if we send messages and we're the only one in the conference
  */
 void TestConferenceMessageDispatcher::testEmptyConference()
 {

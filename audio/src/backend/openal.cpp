@@ -218,7 +218,7 @@ std::unique_ptr<IAudioSink> OpenAL::makeSink()
     ALuint sid;
     alGenSources(1, &sid);
 
-    auto const sink = new AlSink(*this, sid);
+    const auto sink = new AlSink(*this, sid);
     if (sink == nullptr) {
         return {};
     }
@@ -276,7 +276,7 @@ std::unique_ptr<IAudioSource> OpenAL::makeSource()
         return {};
     }
 
-    auto const source = new AlSource(*this);
+    const auto source = new AlSource(*this);
     if (source == nullptr) {
         return {};
     }

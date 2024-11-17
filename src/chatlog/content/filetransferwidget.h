@@ -35,12 +35,12 @@ public:
     void onFileTransferUpdate(ToxFile file);
 
 protected:
-    void updateWidgetColor(ToxFile const& file);
-    void updateWidgetText(ToxFile const& file);
-    void updateFileProgress(ToxFile const& file);
-    void updateSignals(ToxFile const& file);
-    void updatePreview(ToxFile const& file);
-    void setupButtons(ToxFile const& file);
+    void updateWidgetColor(const ToxFile& file);
+    void updateWidgetText(const ToxFile& file);
+    void updateFileProgress(const ToxFile& file);
+    void updateSignals(const ToxFile& file);
+    void updatePreview(const ToxFile& file);
+    void setupButtons(const ToxFile& file);
     void handleButton(QPushButton* btn);
     void showPreview(const QString& filename);
     void acceptTransfer(const QString& filepath);
@@ -62,7 +62,7 @@ private slots:
 private:
     static bool tryRemoveFile(const QString& filepath);
 
-    void updateWidget(ToxFile const& file);
+    void updateWidget(const ToxFile& file);
     void updateBackgroundColor(const ToxFile::FileStatus status);
 
 private:

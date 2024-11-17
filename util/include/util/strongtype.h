@@ -10,32 +10,32 @@
 template <typename T>
 struct Addable
 {
-    T operator+(T const& other) const
+    T operator+(const T& other) const
     {
-        return static_cast<T const&>(*this).get() + other.get();
+        return static_cast<const T&>(*this).get() + other.get();
     };
 };
 
 template <typename T, typename Underlying>
 struct UnderlyingAddable
 {
-    T operator+(Underlying const& other) const
+    T operator+(const Underlying& other) const
     {
-        return T(static_cast<T const&>(*this).get() + other);
+        return T(static_cast<const T&>(*this).get() + other);
     };
 };
 
 template <typename T, typename Underlying>
 struct UnitlessDifferencable
 {
-    T operator-(Underlying const& other) const
+    T operator-(const Underlying& other) const
     {
-        return T(static_cast<T const&>(*this).get() - other);
+        return T(static_cast<const T&>(*this).get() - other);
     };
 
-    Underlying operator-(T const& other) const
+    Underlying operator-(const T& other) const
     {
-        return static_cast<T const&>(*this).get() - other.get();
+        return static_cast<const T&>(*this).get() - other.get();
     }
 };
 
@@ -51,7 +51,7 @@ struct Incrementable
 
     T operator++(int)
     {
-        auto ret = T(static_cast<T const&>(*this));
+        auto ret = T(static_cast<const T&>(*this));
         ++(*this);
         return ret;
     }
@@ -63,11 +63,11 @@ struct EqualityComparible
 {
     bool operator==(const T& other) const
     {
-        return static_cast<T const&>(*this).get() == other.get();
+        return static_cast<const T&>(*this).get() == other.get();
     };
     bool operator!=(const T& other) const
     {
-        return static_cast<T const&>(*this).get() != other.get();
+        return static_cast<const T&>(*this).get() != other.get();
     };
 };
 
@@ -76,7 +76,7 @@ struct Hashable
 {
     friend uint qHash(const Hashable<T, Underlying>& key, uint seed = 0)
     {
-        return qHash(static_cast<T const&>(*key).get(), seed);
+        return qHash(static_cast<const T&>(*key).get(), seed);
     }
 };
 
@@ -85,19 +85,19 @@ struct Orderable : EqualityComparible<T, Underlying>
 {
     bool operator<(const T& rhs) const
     {
-        return static_cast<T const&>(*this).get() < rhs.get();
+        return static_cast<const T&>(*this).get() < rhs.get();
     }
     bool operator>(const T& rhs) const
     {
-        return static_cast<T const&>(*this).get() > rhs.get();
+        return static_cast<const T&>(*this).get() > rhs.get();
     }
     bool operator>=(const T& rhs) const
     {
-        return static_cast<T const&>(*this).get() >= rhs.get();
+        return static_cast<const T&>(*this).get() >= rhs.get();
     }
     bool operator<=(const T& rhs) const
     {
-        return static_cast<T const&>(*this).get() <= rhs.get();
+        return static_cast<const T&>(*this).get() <= rhs.get();
     }
 };
 
@@ -119,7 +119,7 @@ public:
     using UnderlyingType = T;
 
     NamedType() {}
-    explicit NamedType(T const& value)
+    explicit NamedType(const T& value)
         : value_(value)
     {
     }
@@ -127,7 +127,7 @@ public:
     {
         return value_;
     }
-    T const& get() const
+    const T& get() const
     {
         return value_;
     }

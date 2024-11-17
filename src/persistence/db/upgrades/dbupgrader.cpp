@@ -247,7 +247,7 @@ bool DbUpgrader::dbSchemaUpgrade(std::shared_ptr<RawDatabase>& db, IMessageBoxMa
     assert(upgradeFns.size() == SCHEMA_VERSION);
 
     for (int64_t i = databaseSchemaVersion; i < static_cast<int>(upgradeFns.size()); ++i) {
-        auto const newDbVersion = i + 1;
+        const auto newDbVersion = i + 1;
         if (!upgradeFns[i](*db)) {
             qCritical() << "Failed to upgrade db to schema version " << newDbVersion << " aborting";
             return false;

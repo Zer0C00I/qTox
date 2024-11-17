@@ -43,9 +43,9 @@ public:
     static std::unique_ptr<CoreExt> makeCoreExt(Tox* core);
 
     // We do registration with our own pointer, need to ensure we're in a stable location
-    CoreExt(CoreExt const& other) = delete;
+    CoreExt(const CoreExt& other) = delete;
     CoreExt(CoreExt&& other) = delete;
-    CoreExt& operator=(CoreExt const& other) = delete;
+    CoreExt& operator=(const CoreExt& other) = delete;
     CoreExt& operator=(CoreExt&& other) = delete;
 
     /**
@@ -74,7 +74,7 @@ public:
                uint32_t friendId, std::mutex* toxext_mutex, PacketPassKey passKey);
 
         // Delete copy constructor, we shouldn't be able to copy
-        Packet(Packet const& other) = delete;
+        Packet(const Packet& other) = delete;
 
         Packet(Packet&& other)
         {

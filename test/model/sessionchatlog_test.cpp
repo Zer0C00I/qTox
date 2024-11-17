@@ -69,7 +69,8 @@ void TestSessionChatLog::init()
 {
     friendList = std::unique_ptr<FriendList>(new FriendList());
     conferenceList = std::unique_ptr<ConferenceList>(new ConferenceList());
-    chatLog = std::unique_ptr<SessionChatLog>(new SessionChatLog(idHandler, *friendList, *conferenceList));
+    chatLog =
+        std::unique_ptr<SessionChatLog>(new SessionChatLog(idHandler, *friendList, *conferenceList));
 }
 
 /**

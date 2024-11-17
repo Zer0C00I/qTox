@@ -21,7 +21,7 @@ class NotificationGenerator : public QObject
     Q_OBJECT
 
 public:
-    NotificationGenerator(INotificationSettings const& notificationSettings_,
+    NotificationGenerator(const INotificationSettings& notificationSettings_,
                           // Optional profile input to lookup avatars. Avatar lookup is not
                           // currently mockable so we allow profile to be nullptr for unit
                           // testing
@@ -44,7 +44,7 @@ public slots:
     void onNotificationActivated();
 
 private:
-    INotificationSettings const& notificationSettings;
+    const INotificationSettings& notificationSettings;
     Profile* profile;
     QHash<const Friend*, size_t> friendNotifications;
     QHash<const Conference*, size_t> conferenceNotifications;

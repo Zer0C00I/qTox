@@ -221,7 +221,7 @@ public:
 
     void addNewFileMessage(const ChatId& chatId, const QByteArray& fileId, const QString& fileName,
                            const QString& filePath, int64_t size, const ToxPk& sender,
-                           const QDateTime& time, QString const& dispName);
+                           const QDateTime& time, const QString& dispName);
 
     void addNewSystemMessage(const ChatId& chatId, const SystemMessage& systemMessage);
 

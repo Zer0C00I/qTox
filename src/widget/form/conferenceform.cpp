@@ -125,7 +125,7 @@ ConferenceForm::ConferenceForm(Core& core_, Conference* chatConference, IChatLog
     connect(conference, &Conference::userLeft, this, &ConferenceForm::onUserLeft);
     connect(conference, &Conference::peerNameChanged, this, &ConferenceForm::onPeerNameChanged);
     connect(conference, &Conference::numPeersChanged, this, &ConferenceForm::updateUserCount);
-    settings.connectTo_blackListChanged(this, [this](QStringList const&) { updateUserNames(); });
+    settings.connectTo_blackListChanged(this, [this](const QStringList&) { updateUserNames(); });
 
     if (settings.getShowConferenceJoinLeaveMessages()) {
         addSystemInfoMessage(QDateTime::currentDateTime(), SystemMessageType::selfJoinedConference, {});

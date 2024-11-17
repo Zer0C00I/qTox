@@ -523,9 +523,9 @@ void ChatWidget::insertChatlines(std::map<ChatLogIdx, ChatLine::Ptr> chatLines)
     QGraphicsScene::ItemIndexMethod oldIndexMeth = scene->itemIndexMethod();
     scene->setItemIndexMethod(QGraphicsScene::NoIndex);
 
-    for (auto const& chatLine : chatLines) {
+    for (const auto& chatLine : chatLines) {
         auto idx = chatLine.first;
-        auto const& l = chatLine.second;
+        const auto& l = chatLine.second;
 
         chatLineStorage->insertChatMessage(idx, chatLog.at(idx).getTimestamp(), l);
 

@@ -23,10 +23,10 @@ class OfflineMsgEngine : public QObject
 public:
     using CompletionFn = std::function<void(bool)>;
     OfflineMsgEngine() = default;
-    void addUnsentMessage(Message const& message, CompletionFn completionCallback);
-    void addSentCoreMessage(ReceiptNum receipt, Message const& message,
+    void addUnsentMessage(const Message& message, CompletionFn completionCallback);
+    void addSentCoreMessage(ReceiptNum receipt, const Message& message,
                             CompletionFn completionCallback);
-    void addSentExtendedMessage(ExtendedReceiptNum receipt, Message const& message,
+    void addSentExtendedMessage(ExtendedReceiptNum receipt, const Message& message,
                                 CompletionFn completionCallback);
 
     struct RemovedMessage
@@ -54,7 +54,7 @@ private:
     class ReceiptResolver
     {
     public:
-        void notifyMessageSent(ReceiptT receipt, OfflineMessage const& message)
+        void notifyMessageSent(ReceiptT receipt, const OfflineMessage& message)
         {
             auto receivedReceiptIt =
                 std::find(receivedReceipts.begin(), receivedReceipts.end(), receipt);

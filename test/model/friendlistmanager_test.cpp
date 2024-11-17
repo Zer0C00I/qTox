@@ -564,10 +564,16 @@ void TestFriendListManager::testSetConferencesOnTop()
     FriendItemsBuilder listBuilder;
     auto manager = createManagerWithItems(
         listBuilder.addOfflineFriends()->addOnlineFriends()->addConferences()->buildUnsorted());
-    auto sortedVecOnlineOnTop =
-        listBuilder.addOfflineFriends()->addOnlineFriends()->addConferences()->setConferencesOnTop(false)->buildSortedByName();
-    auto sortedVecConferencesOnTop =
-        listBuilder.addOfflineFriends()->addOnlineFriends()->addConferences()->setConferencesOnTop(true)->buildSortedByName();
+    auto sortedVecOnlineOnTop = listBuilder.addOfflineFriends()
+                                    ->addOnlineFriends()
+                                    ->addConferences()
+                                    ->setConferencesOnTop(false)
+                                    ->buildSortedByName();
+    auto sortedVecConferencesOnTop = listBuilder.addOfflineFriends()
+                                         ->addOnlineFriends()
+                                         ->addConferences()
+                                         ->setConferencesOnTop(true)
+                                         ->buildSortedByName();
 
     manager->setConferencesOnTop(false);
     manager->sortByName();

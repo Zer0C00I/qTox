@@ -27,11 +27,11 @@ public:
                                 const IConferenceSettings& conferenceSettings);
 
     std::pair<DispatchedMessageId, DispatchedMessageId> sendMessage(bool isAction,
-                                                                    QString const& content) override;
+                                                                    const QString& content) override;
 
     std::pair<DispatchedMessageId, DispatchedMessageId>
     sendExtendedMessage(const QString& content, ExtensionSet extensions) override;
-    void onMessageReceived(ToxPk const& sender, bool isAction, QString const& content);
+    void onMessageReceived(const ToxPk& sender, bool isAction, const QString& content);
 
 private:
     Conference& conference;

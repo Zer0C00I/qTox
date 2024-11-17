@@ -69,7 +69,7 @@ MessageProcessor::MessageProcessor(const MessageProcessor::SharedParams& sharedP
 /**
  * @brief Converts an outgoing message into one (or many) sanitized Message(s)
  */
-std::vector<Message> MessageProcessor::processOutgoingMessage(bool isAction, QString const& content,
+std::vector<Message> MessageProcessor::processOutgoingMessage(bool isAction, const QString& content,
                                                               ExtensionSet extensions)
 {
     std::vector<Message> ret;
@@ -102,7 +102,7 @@ std::vector<Message> MessageProcessor::processOutgoingMessage(bool isAction, QSt
 /**
  * @brief Converts an incoming message into a sanitized Message
  */
-Message MessageProcessor::processIncomingCoreMessage(bool isAction, QString const& message)
+Message MessageProcessor::processIncomingCoreMessage(bool isAction, const QString& message)
 {
     QDateTime timestamp = QDateTime::currentDateTime();
     auto ret = Message{};
@@ -115,7 +115,7 @@ Message MessageProcessor::processIncomingCoreMessage(bool isAction, QString cons
         auto sanitizedNameMention = sharedParams.getSanitizedNameMention();
         auto pubKeyMention = sharedParams.getPublicKeyMention();
 
-        for (auto const& mention : {nameMention, sanitizedNameMention, pubKeyMention}) {
+        for (const auto& mention : {nameMention, sanitizedNameMention, pubKeyMention}) {
             auto matchIt = mention.globalMatch(ret.content);
             if (!matchIt.hasNext()) {
                 continue;

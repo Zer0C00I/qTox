@@ -186,7 +186,7 @@ void DbUtility::createSchemaAtVersion(std::shared_ptr<RawDatabase> db,
                                       const std::vector<DbUtility::SqliteMasterEntry>& schema)
 {
     QVector<RawDatabase::Query> queries;
-    for (auto const& entry : schema) {
+    for (const auto& entry : schema) {
         queries += entry.sql;
     }
     QVERIFY(db->execNow(queries));

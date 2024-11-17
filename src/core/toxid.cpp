@@ -168,7 +168,7 @@ const uint8_t* ToxId::getBytes() const
  */
 ToxPk ToxId::getPublicKey() const
 {
-    auto const pkBytes = toxId.left(ToxPk::size);
+    const auto pkBytes = toxId.left(ToxPk::size);
     if (pkBytes.isEmpty()) {
         return ToxPk{};
     } else {

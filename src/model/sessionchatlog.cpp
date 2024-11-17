@@ -86,7 +86,7 @@ std::map<ChatLogIdx, ChatLogItem>::const_iterator
 firstItemAfterDate(QDate date, const std::map<ChatLogIdx, ChatLogItem>& items)
 {
     return std::lower_bound(items.begin(), items.end(), date.startOfDay(),
-                            [](const MessageDateAdaptor& a, MessageDateAdaptor const& b) {
+                            [](const MessageDateAdaptor& a, const MessageDateAdaptor& b) {
                                 return a.timestamp.date() < b.timestamp.date();
                             });
 }

@@ -124,7 +124,7 @@ QPixmap getSenderAvatar(Profile* profile, const ToxPk& sender)
 }
 } // namespace
 
-NotificationGenerator::NotificationGenerator(INotificationSettings const& notificationSettings_,
+NotificationGenerator::NotificationGenerator(const INotificationSettings& notificationSettings_,
                                              Profile* profile_)
     : notificationSettings(notificationSettings_)
     , profile(profile_)

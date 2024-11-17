@@ -43,21 +43,21 @@ void addChatIdSubQuery(QString& queryString, QVector<QByteArray>& boundParams, c
     queryString += "(SELECT id FROM chats WHERE uuid = ?)";
 }
 
-RawDatabase::Query generateEnsurePkInChats(ChatId const& id)
+RawDatabase::Query generateEnsurePkInChats(const ChatId& id)
 {
     return RawDatabase::Query{QStringLiteral("INSERT OR IGNORE INTO chats (uuid) "
                                              "VALUES (?)"),
                               {id.getByteArray()}};
 }
 
-RawDatabase::Query generateEnsurePkInAuthors(ToxPk const& pk)
+RawDatabase::Query generateEnsurePkInAuthors(const ToxPk& pk)
 {
     return RawDatabase::Query{QStringLiteral("INSERT OR IGNORE INTO authors (public_key) "
                                              "VALUES (?)"),
                               {pk.getByteArray()}};
 }
 
-RawDatabase::Query generateUpdateAlias(ToxPk const& pk, QString const& dispName)
+RawDatabase::Query generateUpdateAlias(const ToxPk& pk, const QString& dispName)
 {
     QVector<QByteArray> boundParams;
     QString queryString =
@@ -418,7 +418,7 @@ RawDatabase::Query History::generateFileFinished(RowId id, bool success, const Q
 
 void History::addNewFileMessage(const ChatId& chatId, const QByteArray& fileId,
                                 const QString& fileName, const QString& filePath, int64_t size,
-                                const ToxPk& sender, const QDateTime& time, QString const& dispName)
+                                const ToxPk& sender, const QDateTime& time, const QString& dispName)
 {
     if (historyAccessBlocked()) {
         return;

@@ -113,7 +113,7 @@ MatchingUri stripSurroundingChars(const QStringView wrappedUri, const int startO
     int curValidationEndPos = wrappedUri.length();
     do {
         matchFound = false;
-        for (auto const& surroundChars : URI_WRAPPING_CHARS) {
+        for (const auto& surroundChars : URI_WRAPPING_CHARS) {
             const int openingCharLength = surroundChars.first.length();
             const int closingCharLength = surroundChars.second.length();
             if (surroundChars.first == wrappedUri.mid(curValidationStartPos, openingCharLength)
@@ -125,7 +125,7 @@ MatchingUri stripSurroundingChars(const QStringView wrappedUri, const int startO
                 break;
             }
         }
-        for (QChar const endChar : URI_ENDING_CHARS) {
+        for (const QChar endChar : URI_ENDING_CHARS) {
             const int charLength = 1;
             if (endChar == wrappedUri.at(curValidationEndPos - charLength)) {
                 curValidationEndPos -= charLength;

@@ -22,12 +22,12 @@ ConferenceMessageDispatcher::ConferenceMessageDispatcher(Conference& g_, Message
 }
 
 std::pair<DispatchedMessageId, DispatchedMessageId>
-ConferenceMessageDispatcher::sendMessage(bool isAction, QString const& content)
+ConferenceMessageDispatcher::sendMessage(bool isAction, const QString& content)
 {
     const auto firstMessageId = nextMessageId;
     auto lastMessageId = firstMessageId;
 
-    for (auto const& message : processor.processOutgoingMessage(isAction, content, ExtensionSet())) {
+    for (const auto& message : processor.processOutgoingMessage(isAction, content, ExtensionSet())) {
         auto messageId = nextMessageId++;
         lastMessageId = messageId;
         if (conference.getPeersCount() != 1) {
@@ -70,7 +70,7 @@ ConferenceMessageDispatcher::sendExtendedMessage(const QString& content, Extensi
  * @param[in] content Message content
  */
 void ConferenceMessageDispatcher::onMessageReceived(const ToxPk& sender, bool isAction,
-                                                    QString const& content)
+                                                    const QString& content)
 {
     bool isSelf = sender == idHandler.getSelfPublicKey();
 

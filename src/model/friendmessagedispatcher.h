@@ -37,11 +37,11 @@ private slots:
     void onFriendOnlineOfflineChanged(const ToxPk& friendPk, bool isOnline);
 
 private:
-    void sendProcessedMessage(Message const& message,
+    void sendProcessedMessage(const Message& message,
                               OfflineMsgEngine::CompletionFn onOfflineMsgComplete);
-    void sendExtendedProcessedMessage(Message const& message,
+    void sendExtendedProcessedMessage(const Message& message,
                                       OfflineMsgEngine::CompletionFn onOfflineMsgComplete);
-    void sendCoreProcessedMessage(Message const& message,
+    void sendCoreProcessedMessage(const Message& message,
                                   OfflineMsgEngine::CompletionFn onOfflineMsgComplete);
     OfflineMsgEngine::CompletionFn getCompletionFn(DispatchedMessageId messageId);
 

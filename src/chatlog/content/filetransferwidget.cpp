@@ -227,7 +227,7 @@ void FileTransferWidget::reloadTheme()
     updateBackgroundColor(lastStatus);
 }
 
-void FileTransferWidget::updateWidgetColor(ToxFile const& file)
+void FileTransferWidget::updateWidgetColor(const ToxFile& file)
 {
     if (lastStatus == file.status) {
         return;
@@ -236,7 +236,7 @@ void FileTransferWidget::updateWidgetColor(ToxFile const& file)
     updateBackgroundColor(file.status);
 }
 
-void FileTransferWidget::updateWidgetText(ToxFile const& file)
+void FileTransferWidget::updateWidgetText(const ToxFile& file)
 {
     if (lastStatus == file.status && file.status != ToxFile::PAUSED) {
         return;
@@ -273,7 +273,7 @@ void FileTransferWidget::updateWidgetText(ToxFile const& file)
     }
 }
 
-void FileTransferWidget::updatePreview(ToxFile const& file)
+void FileTransferWidget::updatePreview(const ToxFile& file)
 {
     if (lastStatus == file.status) {
         return;
@@ -298,7 +298,7 @@ void FileTransferWidget::updatePreview(ToxFile const& file)
     }
 }
 
-void FileTransferWidget::updateFileProgress(ToxFile const& file)
+void FileTransferWidget::updateFileProgress(const ToxFile& file)
 {
     switch (file.status) {
     case ToxFile::INITIALIZING:
@@ -338,7 +338,7 @@ void FileTransferWidget::updateFileProgress(ToxFile const& file)
     }
 }
 
-void FileTransferWidget::updateSignals(ToxFile const& file)
+void FileTransferWidget::updateSignals(const ToxFile& file)
 {
     if (lastStatus == file.status) {
         return;
@@ -361,7 +361,7 @@ void FileTransferWidget::updateSignals(ToxFile const& file)
     }
 }
 
-void FileTransferWidget::setupButtons(ToxFile const& file)
+void FileTransferWidget::setupButtons(const ToxFile& file)
 {
     if (lastStatus == file.status && file.status != ToxFile::PAUSED) {
         return;
@@ -497,7 +497,7 @@ void FileTransferWidget::onPreviewButtonClicked()
     handleButton(ui->previewButton);
 }
 
-void FileTransferWidget::updateWidget(ToxFile const& file)
+void FileTransferWidget::updateWidget(const ToxFile& file)
 {
     assert(file == fileInfo);
 

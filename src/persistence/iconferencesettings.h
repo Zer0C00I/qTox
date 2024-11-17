@@ -25,6 +25,6 @@ public:
     virtual bool getShowConferenceJoinLeaveMessages() const = 0;
     virtual void setShowConferenceJoinLeaveMessages(bool newValue) = 0;
 
-    DECLARE_SIGNAL(blackListChanged, QStringList const& blist);
+    DECLARE_SIGNAL(blackListChanged, const QStringList& blist);
     DECLARE_SIGNAL(showConferenceJoinLeaveMessagesChanged, bool show);
 };

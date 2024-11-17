@@ -36,11 +36,11 @@ void TestOfflineMsgEngine::testReceiptBeforeMessage()
 
     Message msg{false, QString(), QDateTime(), {}, {}};
 
-    auto const receipt = ReceiptNum(0);
+    const auto receipt = ReceiptNum(0);
     offlineMsgEngine.onReceiptReceived(receipt);
     offlineMsgEngine.addSentCoreMessage(receipt, Message(), completionFn);
 
-    auto const removedMessages = offlineMsgEngine.removeAllMessages();
+    const auto removedMessages = offlineMsgEngine.removeAllMessages();
 
     QVERIFY(removedMessages.empty());
 }
@@ -49,11 +49,11 @@ void TestOfflineMsgEngine::testReceiptAfterMessage()
 {
     OfflineMsgEngine offlineMsgEngine;
 
-    auto const receipt = ReceiptNum(0);
+    const auto receipt = ReceiptNum(0);
     offlineMsgEngine.addSentCoreMessage(receipt, Message(), completionFn);
     offlineMsgEngine.onReceiptReceived(receipt);
 
-    auto const removedMessages = offlineMsgEngine.removeAllMessages();
+    const auto removedMessages = offlineMsgEngine.removeAllMessages();
 
     QVERIFY(removedMessages.empty());
 }
@@ -62,7 +62,7 @@ void TestOfflineMsgEngine::testResendWorkflow()
 {
     OfflineMsgEngine offlineMsgEngine;
 
-    auto const receipt = ReceiptNum(0);
+    const auto receipt = ReceiptNum(0);
     offlineMsgEngine.addSentCoreMessage(receipt, Message(), completionFn);
     auto messagesToResend = offlineMsgEngine.removeAllMessages();
 
@@ -74,7 +74,7 @@ void TestOfflineMsgEngine::testResendWorkflow()
     messagesToResend = offlineMsgEngine.removeAllMessages();
     QVERIFY(messagesToResend.size() == 0);
 
-    auto const nullMsg = Message();
+    const auto nullMsg = Message();
     auto msg2 = Message();
     auto msg3 = Message();
     msg2.content = "msg2";

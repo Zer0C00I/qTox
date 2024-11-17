@@ -77,4 +77,7 @@ AllowShortFunctionsOnASingleLine: Empty
 # Set pointer format
 DerivePointerAlignment: false
 PointerAlignment: Left
+
+# "const X" instead of "X const"
+QualifierAlignment: Left
 ...

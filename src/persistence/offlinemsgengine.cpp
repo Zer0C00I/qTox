@@ -41,7 +41,7 @@ void OfflineMsgEngine::onExtendedReceiptReceived(ExtendedReceiptNum receipt)
  * @param[in] messageID   database RowId of the message, used to eventually mark messages as received in history
  * @param[in] msg         chat message line in the chatlog, used to eventually set the message's receieved timestamp
  */
-void OfflineMsgEngine::addUnsentMessage(Message const& message, CompletionFn completionCallback)
+void OfflineMsgEngine::addUnsentMessage(const Message& message, CompletionFn completionCallback)
 {
     QMutexLocker<QRecursiveMutex> ml(&mutex);
     unsentMessages.push_back(
@@ -58,7 +58,7 @@ void OfflineMsgEngine::addUnsentMessage(Message const& message, CompletionFn com
  * @param[in] messageID   database RowId of the message, used to eventually mark messages as received in history
  * @param[in] msg         chat message line in the chatlog, used to eventually set the message's receieved timestamp
  */
-void OfflineMsgEngine::addSentCoreMessage(ReceiptNum receipt, Message const& message,
+void OfflineMsgEngine::addSentCoreMessage(ReceiptNum receipt, const Message& message,
                                           CompletionFn completionCallback)
 {
     QMutexLocker<QRecursiveMutex> ml(&mutex);
@@ -66,7 +66,7 @@ void OfflineMsgEngine::addSentCoreMessage(ReceiptNum receipt, Message const& mes
                                                 completionCallback});
 }
 
-void OfflineMsgEngine::addSentExtendedMessage(ExtendedReceiptNum receipt, Message const& message,
+void OfflineMsgEngine::addSentExtendedMessage(ExtendedReceiptNum receipt, const Message& message,
                                               CompletionFn completionCallback)
 {
     QMutexLocker<QRecursiveMutex> ml(&mutex);

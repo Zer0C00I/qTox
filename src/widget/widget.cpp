@@ -1257,11 +1257,11 @@ void Widget::onCoreFriendStatusChanged(int friendId, Status::Status status)
         return;
     }
 
-    auto const oldStatus = f->getStatus();
+    const auto oldStatus = f->getStatus();
     f->setStatus(status);
-    auto const newStatus = f->getStatus();
+    const auto newStatus = f->getStatus();
 
-    auto const startedNegotiating =
+    const auto startedNegotiating =
         (newStatus == Status::Status::Negotiating && oldStatus != newStatus);
     if (startedNegotiating) {
         constexpr auto negotiationTimeoutMs = 1000;

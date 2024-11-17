@@ -452,7 +452,7 @@ public:
 
     QStringList getBlackList() const override;
     void setBlackList(const QStringList& blist) override;
-    SIGNAL_IMPL(Settings, blackListChanged, QStringList const& blist)
+    SIGNAL_IMPL(Settings, blackListChanged, const QStringList& blist)
 
     bool getShowConferenceJoinLeaveMessages() const override;
     void setShowConferenceJoinLeaveMessages(bool newValue) override;

@@ -6,8 +6,8 @@
 #include "src/friendlist.h"
 #include "src/model/notificationgenerator.h"
 
-#include "mock/mockcoreidhandler.h"
 #include "mock/mockconferencequery.h"
+#include "mock/mockcoreidhandler.h"
 
 #include <QObject>
 #include <QtTest/QtTest>
@@ -169,7 +169,8 @@ void TestNotificationGenerator::testNotificationClear()
 
 void TestNotificationGenerator::testConferenceMessage()
 {
-    Conference g(0, ConferenceId(0), "conferenceName", false, "selfName", *conferenceQuery, *coreIdHandler, *friendList);
+    Conference g(0, ConferenceId(0), "conferenceName", false, "selfName", *conferenceQuery,
+                 *coreIdHandler, *friendList);
     auto sender = conferenceQuery->getConferencePeerPk(0, 0);
     g.updateUsername(sender, "sender1");
 
@@ -180,7 +181,8 @@ void TestNotificationGenerator::testConferenceMessage()
 
 void TestNotificationGenerator::testMultipleConferenceMessages()
 {
-    Conference g(0, ConferenceId(0), "conferenceName", false, "selfName", *conferenceQuery, *coreIdHandler, *friendList);
+    Conference g(0, ConferenceId(0), "conferenceName", false, "selfName", *conferenceQuery,
+                 *coreIdHandler, *friendList);
 
     auto sender = conferenceQuery->getConferencePeerPk(0, 0);
     g.updateUsername(sender, "sender1");
@@ -212,10 +214,10 @@ void TestNotificationGenerator::testMultipleFriendSourceMessages()
 
 void TestNotificationGenerator::testMultipleConferenceSourceMessages()
 {
-    Conference g(0, ConferenceId(QByteArray(32, 0)), "conferenceName", false, "selfName", *conferenceQuery,
-            *coreIdHandler, *friendList);
-    Conference g2(1, ConferenceId(QByteArray(32, 1)), "conferenceName2", false, "selfName", *conferenceQuery,
-             *coreIdHandler, *friendList);
+    Conference g(0, ConferenceId(QByteArray(32, 0)), "conferenceName", false, "selfName",
+                 *conferenceQuery, *coreIdHandler, *friendList);
+    Conference g2(1, ConferenceId(QByteArray(32, 1)), "conferenceName2", false, "selfName",
+                  *conferenceQuery, *coreIdHandler, *friendList);
 
     auto sender = conferenceQuery->getConferencePeerPk(0, 0);
     g.updateUsername(sender, "sender1");
@@ -232,8 +234,8 @@ void TestNotificationGenerator::testMixedSourceMessages()
     Friend f(0, ToxPk());
     f.setName("friend");
 
-    Conference g(0, ConferenceId(QByteArray(32, 0)), "conference", false, "selfName", *conferenceQuery, *coreIdHandler,
-            *friendList);
+    Conference g(0, ConferenceId(QByteArray(32, 0)), "conference", false, "selfName",
+                 *conferenceQuery, *coreIdHandler, *friendList);
 
     auto sender = conferenceQuery->getConferencePeerPk(0, 0);
     g.updateUsername(sender, "sender1");
@@ -350,7 +352,8 @@ void TestNotificationGenerator::testSimpleFileTransfer()
 
 void TestNotificationGenerator::testSimpleConferenceMessage()
 {
-    Conference g(0, ConferenceId(0), "conferenceName", false, "selfName", *conferenceQuery, *coreIdHandler, *friendList);
+    Conference g(0, ConferenceId(0), "conferenceName", false, "selfName", *conferenceQuery,
+                 *coreIdHandler, *friendList);
     auto sender = conferenceQuery->getConferencePeerPk(0, 0);
     g.updateUsername(sender, "sender1");
 

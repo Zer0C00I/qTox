@@ -888,7 +888,7 @@ void Settings::setMakeToxPortable(bool newValue)
     bool changed = false;
     {
         QMutexLocker<QRecursiveMutex> locker{&bigLock};
-        auto const oldSettingsPath = paths.getSettingsDirPath() + globalSettingsFile;
+        const auto oldSettingsPath = paths.getSettingsDirPath() + globalSettingsFile;
         changed = paths.setPortable(newValue);
         if (changed) {
             QFile(oldSettingsPath).remove();

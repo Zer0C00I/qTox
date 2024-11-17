@@ -51,7 +51,7 @@ bool PersonalSettingsUpgrader::doUpgrade(SettingsSerializer& settingsSerializer,
     assert(toVer == static_cast<int>(upgradeFns.size()));
 
     for (int i = fromVer; i < static_cast<int>(upgradeFns.size()); ++i) {
-        auto const newSettingsVersion = i + 1;
+        const auto newSettingsVersion = i + 1;
         if (!upgradeFns[i](settingsSerializer)) {
             qCritical() << "Failed to upgrade settings to version " << newSettingsVersion
                         << " aborting";

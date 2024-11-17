@@ -100,7 +100,7 @@ void FriendMessageDispatcher::onFriendOnlineOfflineChanged(const ToxPk& friendPk
     std::ignore = friendPk;
     if (isOnline) {
         auto messagesToResend = offlineMsgEngine.removeAllMessages();
-        for (auto const& message : messagesToResend) {
+        for (const auto& message : messagesToResend) {
             sendProcessedMessage(message.message, message.callback);
         }
     }
@@ -115,7 +115,7 @@ void FriendMessageDispatcher::clearOutgoingMessages()
 }
 
 
-void FriendMessageDispatcher::sendProcessedMessage(Message const& message,
+void FriendMessageDispatcher::sendProcessedMessage(const Message& message,
                                                    OfflineMsgEngine::CompletionFn onOfflineMsgComplete)
 {
     if (!Status::isOnline(f.getStatus())) {
@@ -132,7 +132,7 @@ void FriendMessageDispatcher::sendProcessedMessage(Message const& message,
 
 
 void FriendMessageDispatcher::sendExtendedProcessedMessage(
-    Message const& message, OfflineMsgEngine::CompletionFn onOfflineMsgComplete)
+    const Message& message, OfflineMsgEngine::CompletionFn onOfflineMsgComplete)
 {
     assert(!message.isAction); // Actions not supported with extensions
 
@@ -159,7 +159,7 @@ void FriendMessageDispatcher::sendExtendedProcessedMessage(
     }
 }
 
-void FriendMessageDispatcher::sendCoreProcessedMessage(Message const& message,
+void FriendMessageDispatcher::sendCoreProcessedMessage(const Message& message,
                                                        OfflineMsgEngine::CompletionFn onOfflineMsgComplete)
 {
     auto receipt = ReceiptNum();

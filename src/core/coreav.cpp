@@ -344,7 +344,7 @@ bool CoreAV::sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, 
         return false;
     }
 
-    ToxFriendCall const& call = *it->second;
+    const ToxFriendCall& call = *it->second;
 
     if (call.getMuteMic() || !call.isActive()
         || !(call.getState() & TOXAV_FRIEND_CALL_STATE_ACCEPTING_A)) {
