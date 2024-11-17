@@ -10,6 +10,8 @@
 #include <QTest>
 #include <limits>
 
+#include <tox/tox.h> // TOX_FILE_KIND_*
+
 class TestFileTransferList : public QObject
 {
     Q_OBJECT

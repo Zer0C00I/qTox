@@ -6,30 +6,30 @@
 #pragma once
 
 #include "genericchatitemlayout.h"
-#include "src/core/core.h"
 #include "src/model/status.h"
 #include "src/persistence/settings.h"
 
 #include <QWidget>
 
-class QVBoxLayout;
+class CategoryWidget;
+class CircleWidget;
+class Core;
+class Friend;
+class FriendList;
+class FriendListManager;
+class FriendWidget;
+class GenericChatroomWidget;
+class GroupList;
+class GroupWidget;
+class IFriendListItem;
+class IMessageBoxManager;
+class Profile;
 class QGridLayout;
 class QPixmap;
-class Widget;
-class FriendWidget;
-class GroupWidget;
-class CircleWidget;
-class FriendListManager;
-class GenericChatroomWidget;
-class CategoryWidget;
-class Friend;
-class IFriendListItem;
+class QVBoxLayout;
 class Settings;
 class Style;
-class IMessageBoxManager;
-class FriendList;
-class GroupList;
-class Profile;
+class Widget;
 
 class FriendListWidget : public QWidget
 {

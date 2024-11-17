@@ -6,7 +6,7 @@
 #pragma once
 
 #include "src/chatlog/chatmessage.h"
-#include "src/core/core.h"
+#include "src/core/receiptnum.h"
 #include "src/model/message.h"
 #include "src/persistence/db/rawdatabase.h"
 
@@ -16,7 +16,6 @@
 #include <QObject>
 #include <QSet>
 #include <chrono>
-
 
 class OfflineMsgEngine : public QObject
 {

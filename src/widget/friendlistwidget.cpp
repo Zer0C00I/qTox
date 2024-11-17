@@ -8,6 +8,7 @@
 #include "friendwidget.h"
 #include "groupwidget.h"
 #include "widget.h"
+#include "src/core/core.h"
 #include "src/friendlist.h"
 #include "src/model/friend.h"
 #include "src/model/friendlist/friendlistmanager.h"

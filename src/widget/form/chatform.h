@@ -11,7 +11,6 @@
 #include <QTimer>
 
 #include "genericchatform.h"
-#include "src/core/core.h"
 #include "src/model/ichatlog.h"
 #include "src/model/imessagedispatcher.h"
 #include "src/model/status.h"
@@ -20,23 +19,24 @@
 #include "src/widget/tool/screenshotgrabber.h"
 
 class CallConfirmWidget;
+class ContentDialogManager;
+class Core;
+class DocumentCache;
 class FileTransferInstance;
 class Friend;
-class History;
-class OfflineMsgEngine;
-class QPixmap;
-class QHideEvent;
-class QMoveEvent;
-class ImagePreviewButton;
-class DocumentCache;
-class SmileyPack;
-class Settings;
-class Style;
-class Profile;
-class IMessageBoxManager;
-class ContentDialogManager;
 class FriendList;
 class GroupList;
+class History;
+class ImagePreviewButton;
+class IMessageBoxManager;
+class OfflineMsgEngine;
+class Profile;
+class QHideEvent;
+class QMoveEvent;
+class QPixmap;
+class Settings;
+class SmileyPack;
+class Style;
 
 class ChatForm : public GenericChatForm
 {

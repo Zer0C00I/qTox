@@ -4,6 +4,7 @@
  */
 
 #include "src/model/chatroom/friendchatroom.h"
+#include "src/core/core.h"
 #include "src/grouplist.h"
 #include "src/model/dialogs/idialogsmanager.h"
 #include "src/model/friend.h"

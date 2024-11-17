@@ -6,7 +6,6 @@
 #pragma once
 
 #include "genericchatitemlayout.h"
-#include "src/core/core.h"
 #include "src/model/status.h"
 #include <QBoxLayout>
 

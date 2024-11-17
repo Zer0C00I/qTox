@@ -6,7 +6,8 @@
 #include <QDebug>
 #include <cassert>
 
-#include "history.h"
+#include <tox/tox.h>
+
 #include "profile.h"
 #include "settings.h"
 #include "db/rawdatabase.h"

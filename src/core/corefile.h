@@ -6,10 +6,9 @@
 
 #pragma once
 
-#include <tox/tox.h>
+#include <tox/tox.h> // Tox_File_Control
 
 #include "toxfile.h"
-#include "src/core/core.h"
 #include "src/core/toxpk.h"
 #include "src/model/status.h"
 
@@ -23,6 +22,7 @@
 #include <memory>
 
 struct Tox;
+class Core;
 class CoreFile;
 
 using CoreFilePtr = std::unique_ptr<CoreFile>;

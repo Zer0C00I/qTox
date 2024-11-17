@@ -6,11 +6,8 @@
 
 #pragma once
 
-#include "src/core/core.h"
 #include "src/core/toxencrypt.h"
-
 #include "src/net/avatarbroadcaster.h"
-
 #include "src/net/bootstrapnodeupdater.h"
 #include "src/persistence/history.h"
 
@@ -21,11 +18,13 @@
 #include <QVector>
 #include <memory>
 
-class Settings;
-class QCommandLineParser;
-class ToxPk;
 class CameraSource;
+class Core;
+class CoreAV;
 class IMessageBoxManager;
+class QCommandLineParser;
+class Settings;
+class ToxPk;
 
 class Profile : public QObject
 {

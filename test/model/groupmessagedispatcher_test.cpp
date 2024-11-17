@@ -21,6 +21,7 @@
 #include <deque>
 #include <set>
 
+#include <tox/tox.h> // tox_max_message_length
 
 class MockGroupMessageSender : public ICoreGroupMessageSender
 {

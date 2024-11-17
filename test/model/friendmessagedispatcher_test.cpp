@@ -14,6 +14,8 @@
 #include <deque>
 #include <set>
 
+#include <tox/tox.h> // tox_max_message_length
+
 namespace {
 constexpr uint64_t testMaxExtendedMessageSize = 10 * 1024 * 1024;
 }

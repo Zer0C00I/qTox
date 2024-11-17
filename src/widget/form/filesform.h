@@ -5,7 +5,6 @@
 
 #pragma once
 
-#include "src/core/corefile.h"
 #include "src/core/toxfile.h"
 
 #include <QAbstractTableModel>
@@ -19,12 +18,13 @@
 #include <QVBoxLayout>
 
 class ContentLayout;
+class CoreFile;
+class FriendList;
+class IMessageBoxManager;
+class QFileInfo;
 class QTableView;
 class Settings;
 class Style;
-class QFileInfo;
-class IMessageBoxManager;
-class FriendList;
 
 namespace FileTransferList {
 

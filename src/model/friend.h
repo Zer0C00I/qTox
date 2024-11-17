@@ -7,7 +7,6 @@
 
 #include "chat.h"
 #include "src/core/chatid.h"
-#include "src/core/core.h"
 #include "src/core/extension.h"
 #include "src/core/toxpk.h"
 #include "src/model/status.h"
