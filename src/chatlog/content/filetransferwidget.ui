@@ -443,12 +443,12 @@
   <customwidget>
    <class>CroppingLabel</class>
    <extends>QLabel</extends>
-   <header location="global">src/widget/tool/croppinglabel.h</header>
+   <header>src/widget/tool/croppinglabel.h</header>
   </customwidget>
   <customwidget>
    <class>ImagePreviewButton</class>
    <extends>QPushButton</extends>
-   <header location="global">src/widget/imagepreviewwidget.h</header>
+   <header>src/widget/imagepreviewwidget.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

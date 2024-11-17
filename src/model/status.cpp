@@ -3,7 +3,7 @@
  * Copyright © 2024 The TokTok team.
  */
 
-#include <src/model/status.h>
+#include "status.h"
 
 #include <QDebug>
 #include <QObject>

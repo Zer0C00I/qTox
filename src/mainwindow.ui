@@ -1076,12 +1076,12 @@
   <customwidget>
    <class>CroppingLabel</class>
    <extends>QLabel</extends>
-   <header location="global">src/widget/tool/croppinglabel.h</header>
+   <header>src/widget/tool/croppinglabel.h</header>
   </customwidget>
   <customwidget>
    <class>NotificationScrollArea</class>
    <extends>QScrollArea</extends>
-   <header location="global">src/widget/notificationscrollarea.h</header>
+   <header>src/widget/notificationscrollarea.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
