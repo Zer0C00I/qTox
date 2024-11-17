@@ -37,6 +37,7 @@ RUN dnf --nodocs -y install dnf-plugins-core && \
         libexif-devel \
         qrencode-devel \
         openal-soft-devel \
+        kf6-sonnet-devel \
         libXScrnSaver-devel \
         patch \
         sqlite-devel \

@@ -35,14 +35,14 @@ apt_install() {
         libopenal-dev
         libopus-dev
         libqrencode-dev
-        libqt5opengl5-dev
-        libqt5svg5-dev
+        libqt6opengl5-dev
+        libqt6svg5-dev
         libsodium-dev
         libtool
         libvpx-dev
         libxss-dev
         qrencode
-        qt5-default
+        qt6-default
         qttools5-dev
         qttools5-dev-tools
         libsqlcipher-dev
@@ -61,7 +61,7 @@ pacman_install() {
         openal
         opus
         qrencode
-        qt5
+        qt6
         sqlcipher
     )
     sudo pacman -S --needed "${pacman_packages[@]}"
@@ -87,7 +87,7 @@ dnf_install() {
         git
         glib2-devel
         gtk2-devel
-        kf5-sonnet-devel
+        kf6-sonnet-devel
         libconfig-devel
         libexif-devel
         libsodium-devel
@@ -97,12 +97,12 @@ dnf_install() {
         openssl-devel
         opus-devel
         qrencode-devel
-        qt5-devel
-        qt5-qtdoc
-        qt5-qtsvg
-        qt5-qtsvg-devel
-        qt5-qttools-devel
-        qtsingleapplication-qt5
+        qt6-devel
+        qt6-qtdoc
+        qt6-qtsvg
+        qt6-qtsvg-devel
+        qt6-qttools-devel
+        qtsingleapplication-qt6
         readline-devel
         sqlcipher-devel
         sqlite-devel
@@ -137,15 +137,15 @@ zypper_install() {
         libavdevice-devel
         libopus-devel
         libexif-devel
-        libQt5Concurrent-devel
-        libqt5-linguist
-        libqt5-linguist-devel
-        libQt5Network-devel
-        libQt5OpenGL-devel
-        libqt5-qtbase-common-devel
-        libqt5-qtsvg-devel
-        libQt5Test-devel
-        libQt5Xml-devel
+        libQt6Concurrent-devel
+        libqt6-linguist
+        libqt6-linguist-devel
+        libQt6Network-devel
+        libQt6OpenGL-devel
+        libqt6-qtbase-common-devel
+        libqt6-qtsvg-devel
+        libQt6Test-devel
+        libQt6Xml-devel
         libsodium-devel
         libvpx-devel
         libXScrnSaver-devel
