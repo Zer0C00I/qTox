@@ -11,7 +11,7 @@ FriendMessageDispatcher::FriendMessageDispatcher(Friend& f_, MessageProcessor pr
                                                  ICoreFriendMessageSender& messageSender_)
     : f(f_)
     , messageSender(messageSender_)
-    , processor(std::move(processor_))
+    , processor(processor_)
 {
     connect(&f, &Friend::onlineOfflineChanged, this,
             &FriendMessageDispatcher::onFriendOnlineOfflineChanged);

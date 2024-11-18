@@ -1178,9 +1178,10 @@ void Widget::addFriend(uint32_t friendId, const ToxPk& friendPk)
     connectFriendWidget(*widget);
     auto history = profile.getHistory();
 
-    auto messageProcessor = MessageProcessor(*sharedMessageProcessorParams);
     auto friendMessageDispatcher =
-        std::make_shared<FriendMessageDispatcher>(*newFriend, std::move(messageProcessor), *core);
+        std::make_shared<FriendMessageDispatcher>(*newFriend,
+                                                  MessageProcessor(*sharedMessageProcessorParams),
+                                                  *core);
 
     // Note: We do not have to connect the message dispatcher signals since
     // ChatHistory hooks them up in a very specific order
@@ -2123,9 +2124,9 @@ Conference* Widget::createConference(uint32_t conferencenumber, const Conference
 
     const auto compact = settings.getCompactLayout();
     auto widget = new ConferenceWidget(chatroom, compact, settings, style);
-    auto messageProcessor = MessageProcessor(*sharedMessageProcessorParams);
     auto messageDispatcher =
-        std::make_shared<ConferenceMessageDispatcher>(*newConference, std::move(messageProcessor),
+        std::make_shared<ConferenceMessageDispatcher>(*newConference,
+                                                      MessageProcessor(*sharedMessageProcessorParams),
                                                       *core, *core, settings);
 
     auto history = profile.getHistory();

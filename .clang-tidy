@@ -12,6 +12,7 @@ Checks: "-*
 , modernize-use-equals-*
 , modernize-use-nullptr
 , modernize-use-override
+, performance-move-const-arg
 , readability-container-*
 , readability-else-after-return
 , readability-make-member-function-const

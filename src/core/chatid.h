@@ -31,7 +31,7 @@ public:
 
 protected:
     ChatId();
-    explicit ChatId(const QByteArray& rawId);
+    explicit ChatId(QByteArray rawId);
     QByteArray id;
 };
 

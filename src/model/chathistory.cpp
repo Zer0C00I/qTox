@@ -5,6 +5,7 @@
 
 #include "chathistory.h"
 #include "src/core/chatid.h"
+#include "src/core/icoreidhandler.h"
 #include "src/persistence/settings.h"
 #include "src/widget/form/chatform.h"
 

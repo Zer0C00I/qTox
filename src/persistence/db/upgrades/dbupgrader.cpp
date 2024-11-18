@@ -212,12 +212,17 @@ bool DbUpgrader::dbSchemaUpgrade(std::shared_ptr<RawDatabase>& db, IMessageBoxMa
 
     // Otherwise we have to do upgrades from our current version to the latest version
 
-    int64_t databaseSchemaVersion;
+    int64_t databaseSchemaVersion = -1;
 
     if (!db->execNow(RawDatabase::Query("PRAGMA user_version", [&](const QVector<QVariant>& row) {
             databaseSchemaVersion = row[0].toLongLong();
         }))) {
         qCritical() << "History failed to read user_version";
+        return false;
+    }
+
+    if (databaseSchemaVersion < 0) {
+        qCritical() << "Failed to read database schema version";
         return false;
     }
 

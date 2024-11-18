@@ -12,19 +12,16 @@
 /**
  * @brief The default constructor. Creates an empty id.
  */
-ChatId::ChatId()
-    : id()
-{
-}
+ChatId::ChatId() = default;
 ChatId::~ChatId() = default;
 
 /**
  * @brief Constructs a ChatId from bytes.
  * @param rawId The bytes to construct the ChatId from.
  */
-ChatId::ChatId(const QByteArray& rawId)
+ChatId::ChatId(QByteArray rawId)
+    : id(std::move(rawId))
 {
-    id = rawId;
 }
 
 /**

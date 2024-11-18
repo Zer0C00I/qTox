@@ -5,14 +5,9 @@
 
 #pragma once
 
-#include "message.h"
 #include "src/conferencelist.h"
-#include "src/core/toxfile.h"
-#include "src/core/toxpk.h"
 #include "src/friendlist.h"
 #include "src/model/chatlogitem.h"
-#include "src/model/conference.h"
-#include "src/model/friend.h"
 #include "src/model/systemmessage.h"
 #include "src/widget/searchtypes.h"
 #include "util/strongtype.h"

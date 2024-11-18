@@ -92,7 +92,7 @@ public:
     /**
      * @brief Enables mention detection in the processor
      */
-    inline void enableMentions()
+    void enableMentions()
     {
         detectingMentions = true;
     }
@@ -100,7 +100,7 @@ public:
     /**
      * @brief Disables mention detection in the processor
      */
-    inline void disableMentions()
+    void disableMentions()
     {
         detectingMentions = false;
     }

@@ -6,6 +6,7 @@
 #include "sessionchatlog.h"
 #include "src/conferencelist.h"
 #include "src/friendlist.h"
+#include "src/model/conference.h"
 
 #include <QDebug>
 #include <QtGlobal>
@@ -283,11 +284,7 @@ std::vector<IChatLog::DateChatLogIdxPair> SessionChatLog::getDateIdxs(const QDat
             break;
         }
 
-        DateChatLogIdxPair pair;
-        pair.date = dateIt;
-        pair.idx = it->first;
-
-        ret.push_back(std::move(pair));
+        ret.emplace_back(DateChatLogIdxPair{dateIt, it->first});
 
         dateIt = dateIt.addDays(1);
         if (startDate.daysTo(dateIt) > static_cast<long>(maxDates) && maxDates != 0) {

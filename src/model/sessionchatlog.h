@@ -12,6 +12,7 @@
 #include <QObject>
 
 struct SessionChatLogMetadata;
+class ICoreIdHandler;
 class FriendList;
 class ConferenceList;
 
