@@ -1,5 +1,6 @@
 Checks: "-*
 , modernize-loop-convert
+, modernize-return-braced-init-list
 , modernize-use-bool-literals
 , modernize-use-emplace
 , modernize-use-equals-*

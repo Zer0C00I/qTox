@@ -125,7 +125,7 @@ int DebugLogModel::rowCount(const QModelIndex& parent) const
 QVariant DebugLogModel::data(const QModelIndex& index, int role) const
 {
     if (!index.isValid()) {
-        return QVariant();
+        return {};
     }
 
     if (role == Qt::DisplayRole) {
@@ -147,7 +147,7 @@ QVariant DebugLogModel::data(const QModelIndex& index, int role) const
         }
     }
 
-    return QVariant();
+    return {};
 }
 
 void DebugLogModel::reload(const QStringList& newLogs)

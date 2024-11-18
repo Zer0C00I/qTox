@@ -151,7 +151,7 @@ ParameterSearch SearchForm::getAndCheckParameterSearch()
         return sendParam;
     }
 
-    return ParameterSearch();
+    return {};
 }
 
 void SearchForm::setStateName(QPushButton* btn, ToolButtonState state)

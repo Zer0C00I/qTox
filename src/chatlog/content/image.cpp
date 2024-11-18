@@ -16,7 +16,7 @@ Image::Image(QSize Size, const QString& filename)
 
 QRectF Image::boundingRect() const
 {
-    return QRectF(QPointF(-size.width() / 2.0, -size.height() / 2.0), size);
+    return {{-size.width() / 2.0, -size.height() / 2.0}, size};
 }
 
 qreal Image::getAscent() const

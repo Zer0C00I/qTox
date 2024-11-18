@@ -85,7 +85,7 @@ RawDatabase::Query generateHistoryTableInsertion(char type, const QDateTime& tim
             .arg(time.toMSecsSinceEpoch());
     addChatIdSubQuery(queryString, boundParams, chatId);
     queryString += ");";
-    return RawDatabase::Query(queryString, boundParams);
+    return {queryString, boundParams};
 }
 
 /**
@@ -420,22 +420,24 @@ RawDatabase::Query History::generateFileFinished(RowId id, bool success, const Q
 {
     auto file_state = success ? ToxFile::FINISHED : ToxFile::CANCELED;
     if (filePath.length()) {
-        return RawDatabase::Query( //
-            QStringLiteral(        //
+        return {
+            QStringLiteral( //
                 "UPDATE file_transfers "
                 "SET file_state = %1, file_path = ?, file_hash = ?"
                 "WHERE id = %2")
                 .arg(file_state)
                 .arg(id.get()),
-            {filePath.toUtf8(), fileHash});
+            QVector<QByteArray>{filePath.toUtf8(), fileHash},
+        };
     } else {
-        return RawDatabase::Query( //
-            QStringLiteral(        //
+        return {
+            QStringLiteral( //
                 "UPDATE file_transfers "
                 "SET file_state = %1 "
                 "WHERE id = %2")
                 .arg(file_state)
-                .arg(id.get()));
+                .arg(id.get()),
+        };
     }
 }
 
@@ -752,7 +754,7 @@ QDateTime History::getDateWhereFindPhrase(const ChatId& chatId, const QDateTime&
                                           QString phrase, const ParameterSearch& parameter)
 {
     if (historyAccessBlocked()) {
-        return QDateTime();
+        return {};
     }
 
     QDateTime result;

@@ -205,7 +205,7 @@ QString v4l2::getPixelFormatString(uint32_t pixel_format)
 {
     if (pixFmtToName.find(pixel_format) == pixFmtToName.end()) {
         qWarning() << "Pixel format not found";
-        return QString("invalid");
+        return QStringLiteral("invalid");
     }
     return pixFmtToName.at(pixel_format);
 }
@@ -214,7 +214,8 @@ bool v4l2::betterPixelFormat(uint32_t a, uint32_t b)
 {
     if (pixFmtToQuality.find(a) == pixFmtToQuality.end()) {
         return false;
-    } else if (pixFmtToQuality.find(b) == pixFmtToQuality.end()) {
+    }
+    if (pixFmtToQuality.find(b) == pixFmtToQuality.end()) {
         return true;
     }
     return pixFmtToQuality.at(a) > pixFmtToQuality.at(b);

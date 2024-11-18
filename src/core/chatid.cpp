@@ -24,7 +24,7 @@ ChatId::~ChatId() = default;
  */
 ChatId::ChatId(const QByteArray& rawId)
 {
-    id = QByteArray(rawId);
+    id = rawId;
 }
 
 /**
@@ -86,7 +86,7 @@ const uint8_t* ChatId::getData() const
  */
 QByteArray ChatId::getByteArray() const
 {
-    return QByteArray(id); // TODO: Is a copy really necessary?
+    return id;
 }
 
 /**

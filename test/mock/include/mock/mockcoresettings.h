@@ -5,10 +5,7 @@
 
 #pragma once
 
-#include "src/core/dhtserver.h"
 #include "src/core/icoresettings.h"
-#include "src/core/toxpk.h"
-#include "src/model/status.h"
 
 #include <QList>
 #include <QObject>
@@ -80,7 +77,7 @@ public:
 
     QNetworkProxy getProxy() const override
     {
-        return QNetworkProxy(QNetworkProxy::ProxyType::NoProxy);
+        return {QNetworkProxy::ProxyType::NoProxy};
     }
 
     SIGNAL_IMPL(MockSettings, enableIPv6Changed, bool enabled)

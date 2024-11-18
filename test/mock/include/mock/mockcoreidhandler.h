@@ -20,7 +20,7 @@ public:
     ToxId getSelfId() const override
     {
         std::terminate();
-        return ToxId();
+        return {};
     }
 
     ToxPk getSelfPublicKey() const override

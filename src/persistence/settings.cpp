@@ -1281,7 +1281,7 @@ QString Settings::getAutoAcceptDir(const ToxPk& id) const
     if (it != friendLst.end())
         return it->autoAcceptDir;
 
-    return QString();
+    return {};
 }
 
 void Settings::setAutoAcceptDir(const ToxPk& id, const QString& dir)
@@ -1310,7 +1310,7 @@ Settings::AutoAcceptCallFlags Settings::getAutoAcceptCall(const ToxPk& id) const
     if (it != friendLst.end())
         return it->autoAcceptCall;
 
-    return Settings::AutoAcceptCallFlags();
+    return {};
 }
 
 void Settings::setAutoAcceptCall(const ToxPk& id, AutoAcceptCallFlags accept)
@@ -1370,7 +1370,7 @@ QString Settings::getContactNote(const ToxPk& id) const
     if (it != friendLst.end())
         return it->note;
 
-    return QString();
+    return {};
 }
 
 void Settings::setContactNote(const ToxPk& id, const QString& note)
@@ -1883,7 +1883,7 @@ QString Settings::getFriendAlias(const ToxPk& id) const
     if (it != friendLst.end())
         return it->alias;
 
-    return QString();
+    return {};
 }
 
 void Settings::setFriendAlias(const ToxPk& id, const QString& alias)
@@ -1917,7 +1917,7 @@ QDateTime Settings::getFriendActivity(const ToxPk& id) const
     if (it != friendLst.end())
         return it->activity;
 
-    return QDateTime();
+    return {};
 }
 
 void Settings::setFriendActivity(const ToxPk& id, const QDateTime& activity)

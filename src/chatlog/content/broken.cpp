@@ -17,7 +17,7 @@ Broken::Broken(const QString& img, QSize size_)
 
 QRectF Broken::boundingRect() const
 {
-    return QRectF(QPointF(-size.width() / 2.0, -size.height() / 2.0), size);
+    return {{-size.width() / 2.0, -size.height() / 2.0}, size};
 }
 
 void Broken::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget)

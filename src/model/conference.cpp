@@ -185,7 +185,7 @@ QString Conference::resolveToxPk(const ToxPk& id) const
         return *it;
     }
 
-    return QString();
+    return {};
 }
 
 void Conference::setSelfName(const QString& name)

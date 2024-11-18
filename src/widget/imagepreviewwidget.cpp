@@ -27,12 +27,12 @@ QPixmap pixmapFromFile(const QString& filename)
     };
 
     if (!previewExtensions.contains(QFileInfo(filename).suffix().toLower())) {
-        return QPixmap();
+        return {};
     }
 
     QFile imageFile(filename);
     if (!imageFile.open(QIODevice::ReadOnly)) {
-        return QPixmap();
+        return {};
     }
 
     const QByteArray imageFileData = imageFile.readAll();

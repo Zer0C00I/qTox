@@ -32,7 +32,7 @@ public:
         case 2:
             return QString::number(address, 16);
         default:
-            return QVariant();
+            return {};
         }
     }
 

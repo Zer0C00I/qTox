@@ -202,7 +202,7 @@ void Text::fontChanged(const QFont& font)
 
 QRectF Text::boundingRect() const
 {
-    return QRectF(QPointF(0, 0), size);
+    return {{0, 0}, size};
 }
 
 void Text::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget)
@@ -445,7 +445,7 @@ QString Text::extractImgTooltip(int pos) const
         }
     }
 
-    return QString();
+    return {};
 }
 
 void Text::selectText(QTextCursor& cursor, const std::pair<int, int>& point)

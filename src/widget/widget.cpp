@@ -52,7 +52,6 @@
 #include "src/model/status.h"
 #include "src/net/updatecheck.h"
 #include "src/nexus.h"
-#include "src/persistence/offlinemsgengine.h"
 #include "src/persistence/profile.h"
 #include "src/persistence/settings.h"
 #include "src/persistence/smileypack.h"
@@ -1642,7 +1641,7 @@ QString Widget::fromDialogType(DialogType type)
     }
 
     assert(false);
-    return QString();
+    return {};
 }
 
 bool Widget::newMessageAlert(QWidget* currentWindow, bool isActive, bool sound, bool notify)
@@ -2492,7 +2491,7 @@ inline QIcon Widget::prepareIcon(QString path, int w, int h)
             QPainter painter(&pm);
             renderer.render(&painter, pm.rect());
 
-            return QIcon(pm);
+            return pm;
         }
     }
 #else
