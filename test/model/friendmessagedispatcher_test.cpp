@@ -215,7 +215,7 @@ void TestFriendMessageDispatcher::testOfflineMessages()
 
     QVERIFY(messageSender->numSentActions == 1);
     QVERIFY(messageSender->numSentMessages == 2);
-    QVERIFY(outgoingMessages.size() == 0);
+    QVERIFY(outgoingMessages.empty());
 }
 
 /**

@@ -172,7 +172,7 @@ VideoFrame::~VideoFrame()
 bool VideoFrame::isValid()
 {
     QReadLocker frameLockReadLocker(&frameLock);
-    return frameBuffer.size() > 0;
+    return !frameBuffer.empty();
 }
 
 std::shared_ptr<VideoFrame> VideoFrame::fromAVFrameUntracked(IDType sourceID, AVFrame* sourceFrame,
@@ -194,7 +194,7 @@ std::shared_ptr<VideoFrame> VideoFrame::fromAVFrame(IDType sourceID, AVFrame* so
     // Add frame to tracked reference list
     refsLock.lockForRead();
 
-    if (refsMap.count(sourceID) == 0) {
+    if (!refsMap.contains(sourceID)) {
         // We need to add a new source to our reference map, obtain write lock
         refsLock.unlock();
         refsLock.lockForWrite();
@@ -484,14 +484,14 @@ AVFrame* VideoFrame::retrieveAVFrame(const QSize& dimensions, const int pixelFor
          */
         FrameBufferKey frameKey = getFrameKey(dimensions, pixelFormat, false);
 
-        if (frameBuffer.count(frameKey) > 0) {
+        if (frameBuffer.contains(frameKey)) {
             return frameBuffer[frameKey];
         }
     }
 
     FrameBufferKey frameKey = getFrameKey(dimensions, pixelFormat, true);
 
-    if (frameBuffer.count(frameKey) > 0) {
+    if (frameBuffer.contains(frameKey)) {
         return frameBuffer[frameKey];
     } else {
         return nullptr;
@@ -599,7 +599,7 @@ AVFrame* VideoFrame::storeAVFrame(AVFrame* frame, const QSize& dimensions, const
     FrameBufferKey frameKey = getFrameKey(dimensions, pixelFormat, frame->linesize[0]);
 
     // We check the presence of the frame in case of double-computation
-    if (frameBuffer.count(frameKey) > 0) {
+    if (frameBuffer.contains(frameKey)) {
         AVFrame* old_ret = frameBuffer[frameKey];
 
         // Free new frame

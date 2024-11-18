@@ -91,7 +91,7 @@ QString generateContent(const QHash<const Friend*, size_t>& friendNotifications,
             displayNames.push_back(it.key()->getDisplayedName());
         }
 
-        assert(displayNames.size() > 0);
+        assert(!displayNames.empty());
 
         // Lexicographically sort all display names to ensure consistent formatting
         QCollator collator;
