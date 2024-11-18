@@ -64,8 +64,8 @@ UserInterfaceForm::UserInterfaceForm(SmileyPack& smileyPack_, Settings& settings
 
     bodyUI->notify->setChecked(settings.getNotify());
     // Note: UI is boolean inversed from settings to maintain setting file backwards compatibility
-    bodyUI->groupOnlyNotfiyWhenMentioned->setChecked(!settings.getGroupAlwaysNotify());
-    bodyUI->groupOnlyNotfiyWhenMentioned->setEnabled(settings.getNotify());
+    bodyUI->groupOnlyNotifyWhenMentioned->setChecked(!settings.getGroupAlwaysNotify());
+    bodyUI->groupOnlyNotifyWhenMentioned->setEnabled(settings.getNotify());
     bodyUI->notifySound->setChecked(settings.getNotifySound());
     bodyUI->notifyHide->setChecked(settings.getNotifyHide());
     bodyUI->notifySound->setEnabled(settings.getNotify());
@@ -262,7 +262,7 @@ void UserInterfaceForm::on_notify_stateChanged()
 {
     const bool notify = bodyUI->notify->isChecked();
     settings.setNotify(notify);
-    bodyUI->groupOnlyNotfiyWhenMentioned->setEnabled(notify);
+    bodyUI->groupOnlyNotifyWhenMentioned->setEnabled(notify);
     bodyUI->notifySound->setEnabled(notify);
     bodyUI->busySound->setEnabled(notify && bodyUI->notifySound->isChecked());
     bodyUI->desktopNotify->setEnabled(notify);
@@ -291,10 +291,10 @@ void UserInterfaceForm::on_showWindow_stateChanged()
     settings.setShowWindow(bodyUI->showWindow->isChecked());
 }
 
-void UserInterfaceForm::on_groupOnlyNotfiyWhenMentioned_stateChanged()
+void UserInterfaceForm::on_groupOnlyNotifyWhenMentioned_stateChanged()
 {
     // Note: UI is boolean inversed from settings to maintain setting file backwards compatibility
-    settings.setGroupAlwaysNotify(!bodyUI->groupOnlyNotfiyWhenMentioned->isChecked());
+    settings.setGroupAlwaysNotify(!bodyUI->groupOnlyNotifyWhenMentioned->isChecked());
 }
 
 void UserInterfaceForm::on_cbCompactLayout_stateChanged()

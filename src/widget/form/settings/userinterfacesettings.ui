@@ -184,7 +184,7 @@
              <number>40</number>
             </property>
             <item>
-             <widget class="QCheckBox" name="groupOnlyNotfiyWhenMentioned">
+             <widget class="QCheckBox" name="groupOnlyNotifyWhenMentioned">
               <property name="toolTip">
                <string comment="toolTip for Group chats only notify when mentioned">Only notify about new messages in group chats when mentioned.</string>
               </property>
@@ -615,7 +615,7 @@
   <tabstop>txtChatFontSize</tabstop>
   <tabstop>textStyleComboBox</tabstop>
   <tabstop>notify</tabstop>
-  <tabstop>groupOnlyNotfiyWhenMentioned</tabstop>
+  <tabstop>groupOnlyNotifyWhenMentioned</tabstop>
   <tabstop>notifySound</tabstop>
   <tabstop>busySound</tabstop>
   <tabstop>showWindow</tabstop>
