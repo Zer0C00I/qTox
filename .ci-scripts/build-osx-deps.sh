@@ -18,16 +18,16 @@
 set -euo pipefail
 
 readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+git clone --depth=1 https://github.com/TokTok/dockerfiles "$SCRIPT_DIR/dockerfiles"
 
-install_deps()
-{
-    for dep in $@; do
-        mkdir -p _build-dep
-        pushd _build-dep
-        "${SCRIPT_DIR}/../buildscripts/${dep}" --arch macos
-        popd
-        rm -rf _build-dep
-    done
+install_deps() {
+  for dep in "$@"; do
+    mkdir -p _build-dep
+    pushd _build-dep
+    "$SCRIPT_DIR/dockerfiles/qtox/$dep" --arch macos
+    popd
+    rm -rf _build-dep
+  done
 }
 
 install_deps \

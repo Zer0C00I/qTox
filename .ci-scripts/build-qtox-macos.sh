@@ -21,8 +21,11 @@ set -eu -o pipefail
 readonly BIN_NAME="qTox.dmg"
 
 SCRIPT_DIR=$(dirname $(realpath "$0"))
+if [ ! -d "$SCRIPT_DIR/dockerfiles" ]; then
+    git clone --depth=1 https://github.com/TokTok/dockerfiles "$SCRIPT_DIR/dockerfiles"
+fi
 
-source "${SCRIPT_DIR}/../buildscripts/build_utils.sh"
+source "${SCRIPT_DIR}/dockerfiles/qtox/build_utils.sh"
 
 # kind of a hack.. but we want to extract DEP_PREFIX from it
 parse_arch --arch macos --supported macos --dep macos

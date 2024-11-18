@@ -22,91 +22,47 @@ jobs:
       - name: Move nightly tag to head for nightly release
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: git tag -f nightly && git push origin nightly -f
-  build-flatpak-docker:
-    name: Build flatpak docker
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/build-docker-image
-        name: "Build docker image"
-        with:
-          docker_image_name: flatpak
-  build-ubuntu-lts-docker:
-    name: Build ubuntu LTS docker image
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/build-docker-image
-        name: "Build docker image"
-        with:
-          docker_image_name: ubuntu_lts
-  build-debian-docker:
-    name: Build debian docker image
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/build-docker-image
-        name: "Build docker image"
-        with:
-          docker_image_name: debian
-  build-fedora-docker:
-    name: Build fedora docker image
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/build-docker-image
-        name: "Build docker image"
-        with:
-          docker_image_name: fedora
+
   build-fedora:
     name: Fedora with ASAN
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
-    needs: build-fedora-docker
     strategy:
       matrix:
         features: [full]
         build_type: [Debug]
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/load-docker-image
-        name: Load docker image
-        with:
-          docker_image_name: fedora
+      - name: Install docker-compose
+        run: sudo apt-get install -y docker-compose
       - name: Run build
         run: docker-compose run --rm fedora ./.ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }} --sanitize
+
   clang-tidy:
     name: Clang-Tidy
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
-    needs: build-fedora-docker
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/load-docker-image
-        name: Load docker image
-        with:
-          docker_image_name: fedora
+      - name: Install docker-compose
+        run: sudo apt-get install -y docker-compose
       - name: Run build
         run: docker-compose run --rm fedora ./.ci-scripts/build-qtox-linux.sh --build-type Release --full --tidy
+
   build-debian:
     name: Debian
     runs-on: ubuntu-latest
-    needs: build-debian-docker
     strategy:
       matrix:
         features: [minimal]
         build_type: [Debug]
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/load-docker-image
-        name: Load docker image
-        with:
-          docker_image_name: debian
+      - name: Install docker-compose
+        run: sudo apt-get install -y docker-compose
       - name: Run build
         run: docker-compose run --rm debian ./.ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }}
+
   translation-check:
     name: Check for translatable strings
     if: github.event_name == 'pull_request'
@@ -114,23 +70,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install deps
-        run: sudo apt-get update && sudo apt-get install qttools5-dev
+        run: sudo apt-get update && sudo apt-get install qt6-l10n-tools
       - name: Test for modified translatable strings
-        run: ./tools/update-translation-files.sh ALL && git diff --exit-code
+        run: PATH="/usr/lib/qt6/bin:$PATH"
+          ./tools/update-translation-files.sh ALL &&
+          git diff --exit-code
+
   build-ubuntu:
     name: Ubuntu LTS
     runs-on: ubuntu-latest
-    needs: build-ubuntu-lts-docker
     strategy:
       matrix:
         features: [full]
         build_type: [Release]
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/load-docker-image
-        name: Load docker image
-        with:
-          docker_image_name: ubuntu_lts
+      - name: Install docker-compose
+        run: sudo apt-get install -y docker-compose
       - name: Run build
         run: docker-compose run --rm ubuntu_lts ./.ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }}
       - name: Code coverage
@@ -141,6 +97,7 @@ jobs:
             # Upload report to codecov.io
             bash <(curl -s https://codecov.io/bash) -f coverage.info || echo "Codecov did not collect coverage reports"
           fi
+
   build-android:
     name: Android
     runs-on: ubuntu-latest
@@ -192,18 +149,17 @@ jobs:
           replacesArtifacts: true
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "qTox-nightly.apk,qTox-nightly.apk.sha256"
+
   build-flatpak:
     name: Flatpak
     runs-on: ubuntu-latest
-    needs: [build-flatpak-docker, update-nightly-tag]
+    needs: [update-nightly-tag]
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/load-docker-image
-        name: Load docker image
-        with:
-          docker_image_name: flatpak
+      - name: Install docker-compose
+        run: sudo apt-get install -y docker-compose
       - name: Run build
         run: docker-compose run --rm flatpak ./flatpak/build.sh
       - name: Upload flatpak
@@ -245,21 +201,21 @@ jobs:
           replacesArtifacts: true
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "qTox-nightly.flatpak,qTox-nightly.flatpak.sha256"
+
   build-alpine:
     name: Alpine
-    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     strategy:
       matrix:
         features: [full]
         build_type: [Debug]
     steps:
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-      - name: Build
-        uses: docker/build-push-action@v5
-        with:
-          file: buildscripts/docker/Dockerfile.alpine
+      - uses: actions/checkout@v4
+      - name: Install docker-compose
+        run: sudo apt-get install -y docker-compose
+      - name: Run build
+        run: docker-compose run --rm alpine ./.ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }}
+
   build-windows:
     name: Windows
     runs-on: ubuntu-latest
@@ -334,6 +290,7 @@ jobs:
           replacesArtifacts: true
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "qtox-nightly-${{ matrix.arch }}-${{ matrix.build_type }}.exe,qtox-nightly-${{ matrix.arch }}-${{ matrix.build_type }}.exe.sha256"
+
   build-osx-distributable:
     name: macOS distributable
     runs-on: macos-13
@@ -343,7 +300,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Homebrew dependencies to build dependencies
-        run: brew update && brew upgrade && brew bundle --file ./osx/Brewfile-DepBuildDeps
+        run: brew bundle --file ./osx/Brewfile-DepBuildDeps
       - name: Build dependencies
         run: ./.ci-scripts/build-osx-deps.sh
       - name: Build qTox
@@ -381,6 +338,7 @@ jobs:
           replacesArtifacts: true
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "qTox-nightly.dmg,qTox-nightly.dmg.sha256"
+
   build-osx-users:
     name: macOS user
     if: github.event_name == 'pull_request'
@@ -388,11 +346,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Homebrew
-        run: brew update && brew upgrade && brew bundle --file ./osx/Brewfile
+        run: brew bundle --file ./osx/Brewfile
       - name: Install toxcore and toxext
-        run: buildscripts/build_toxcore_linux.sh sudo
+        run: |
+          git clone --depth=1 https://github.com/TokTok/dockerfiles
+          dockerfiles/qtox/build_toxcore_linux.sh sudo
       - name: Build qTox
         run: ./.ci-scripts/build-qtox-macos.sh user
+
   build-docs:
     name: Docs
     runs-on: ubuntu-latest

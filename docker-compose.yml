@@ -11,8 +11,8 @@ x-shared-params: &shared_params
     - /dev/fuse:/dev/fuse
   # X11 stuff
   environment:
-    DISPLAY: $DISPLAY
-    XAUTHORITY: $XAUTHORITY
+    DISPLAY: ${DISPLAY:-:0}
+    XAUTHORITY: ${XAUTHORITY:-/root/.Xauthority}
   volumes:
     - .:/qtox
     - /tmp/.X11-unix:/tmp/.X11-unix
@@ -21,58 +21,29 @@ x-shared-params: &shared_params
   network_mode: host
 
 services:
-  archlinux:
-    image: qtox_archlinux:latest
-    build:
-      context: ./buildscripts
-      dockerfile: docker/Dockerfile.archlinux
-    <<: *shared_params
-  debian_old:
-    image: qtox_debian_old:latest
-    build:
-      context: ./buildscripts
-      dockerfile: docker/Dockerfile.debian_old
-    <<: *shared_params
-  debian:
-    image: qtox_debian:latest
-    build:
-      context: ./buildscripts
-      dockerfile: docker/Dockerfile.debian
-      args:
-        DEBIAN_VERSION: stable
-    <<: *shared_params
-  ubuntu_lts:
-    image: qtox_ubuntu:latest
-    build:
-      context: ./buildscripts
-      dockerfile: docker/Dockerfile.ubuntu_lts
-    <<: *shared_params
-  flatpak:
-    image: qtox_flatpak:latest
-    # Flatpak build uses pivot_root() in tcl build
-    privileged: true
-    build:
-      context: ./buildscripts
-      dockerfile: docker/Dockerfile.flatpak_builder
-    <<: *shared_params
-  fedora:
-    image: qtox_fedora:latest
-    build:
-      context: ./buildscripts
-      dockerfile: docker/Dockerfile.fedora
-    <<: *shared_params
-  opensuse:
-    image: qtox_opensuse:latest
-    build:
-      context: ./buildscripts
-      dockerfile: docker/Dockerfile.opensuse
+  alpine:
+    image: toxchat/qtox:alpine
     <<: *shared_params
   android_builder:
-    image: toxchat/qtox-android-builder:latest
+    image: toxchat/qtox:android-builder
+    <<: *shared_params
+  debian:
+    image: toxchat/qtox:debian
+    <<: *shared_params
+  fedora:
+    image: toxchat/qtox:fedora
+    <<: *shared_params
+  flatpak:
+    image: toxchat/qtox:flatpak-builder
+    # Flatpak build uses pivot_root() in tcl build
+    privileged: true
+    <<: *shared_params
+  ubuntu_lts:
+    image: toxchat/qtox:ubuntu-lts
     <<: *shared_params
   windows_builder.i686:
-    image: toxchat/qtox-windows-builder.i686:latest
+    image: toxchat/qtox:windows-builder.i686
     <<: *shared_params
   windows_builder.x86_64:
-    image: toxchat/qtox-windows-builder.x86_64:latest
+    image: toxchat/qtox:windows-builder.x86_64
     <<: *shared_params
