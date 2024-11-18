@@ -121,7 +121,10 @@ QSize FlowLayout::minimumSize() const
 //! [9]
 int FlowLayout::doLayout(const QRect& rect, bool testOnly) const
 {
-    int left, top, right, bottom;
+    int left;
+    int top;
+    int right;
+    int bottom;
     getContentsMargins(&left, &top, &right, &bottom);
     const QRect effectiveRect = rect.adjusted(+left, +top, -right, -bottom);
     int x = effectiveRect.x();
