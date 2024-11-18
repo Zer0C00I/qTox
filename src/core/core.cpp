@@ -10,14 +10,12 @@
 
 #include "src/core/dhtserver.h"
 #include "src/core/icoresettings.h"
-#include "src/core/toxlogger.h"
 #include "src/core/toxoptions.h"
 #include "src/core/toxstring.h"
 #include "src/model/conferenceinvite.h"
 #include "src/model/ibootstraplistgenerator.h"
 #include "src/model/status.h"
 #include "src/persistence/profile.h"
-#include "util/strongtype.h"
 #include "util/toxcoreerrorparser.h"
 
 #include <QCoreApplication>
@@ -664,10 +662,7 @@ bool Core::sendMessageWithType(uint32_t friendId, const QString& message, Tox_Me
     Tox_Err_Friend_Send_Message error;
     receipt = ReceiptNum{tox_friend_send_message(tox.get(), friendId, type, cMessage.data(),
                                                  cMessage.size(), &error)};
-    if (PARSE_ERR(error)) {
-        return true;
-    }
-    return false;
+    return PARSE_ERR(error);
 }
 
 bool Core::sendMessage(uint32_t friendId, const QString& message, ReceiptNum& receipt)

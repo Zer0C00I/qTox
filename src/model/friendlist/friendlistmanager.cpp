@@ -4,7 +4,8 @@
  */
 
 #include "friendlistmanager.h"
-#include "src/widget/genericchatroomwidget.h"
+
+#include <QWidget>
 
 FriendListManager::FriendListManager(int countContacts_, QObject* parent)
     : QObject(parent)
@@ -116,11 +117,7 @@ void FriendListManager::applyFilter()
         }
     }
 
-    if (filterParams.hideOnline && filterParams.hideOffline) {
-        hideCircles = true;
-    } else {
-        hideCircles = false;
-    }
+    hideCircles = filterParams.hideOnline && filterParams.hideOffline;
 }
 
 void FriendListManager::updatePositions()

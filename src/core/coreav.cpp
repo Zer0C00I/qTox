@@ -566,7 +566,7 @@ void CoreAV::joinConferenceCall(const Conference& conference)
     conferencecall->moveToThread(thread());
     assert(conferencecall != nullptr);
     auto ret = conferenceCalls.emplace(conference.getId(), std::move(conferencecall));
-    if (ret.second == false) {
+    if (!ret.second) {
         qWarning() << "This conference call already exists, not joining!";
         return;
     }
@@ -744,7 +744,7 @@ void CoreAV::callCallback(ToxAV* toxav, uint32_t friendNum, bool audio, bool vid
     assert(call != nullptr);
 
     auto it = self->calls.emplace(friendNum, std::move(call));
-    if (it.second == false) {
+    if (!it.second) {
         qWarning() << QString("Rejecting call invite from %1, we're already in that call!").arg(friendNum);
         Toxav_Err_Call_Control err;
         toxav_call_control(toxav, friendNum, TOXAV_CALL_CONTROL_CANCEL, &err);
