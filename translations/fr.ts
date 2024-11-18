@@ -1084,6 +1084,10 @@ afin que vous puissiez enregistrer le fichier sur windows.</translation>
         <comment>popup title</comment>
         <translation>Sélectionner un répertoire d&apos;acceptation automatique</translation>
     </message>
+    <message>
+        <source>%1 (no fonts)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

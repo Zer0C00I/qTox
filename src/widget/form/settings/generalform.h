@@ -19,7 +19,7 @@ class GeneralForm : public GenericForm
 {
     Q_OBJECT
 public:
-    GeneralForm(SettingsWidget* parent, Settings& settings, Style& style);
+    GeneralForm(Settings& settings, Style& style);
     ~GeneralForm();
     QString getFormName() final
     {
@@ -49,7 +49,6 @@ private:
     void retranslateUi();
 
 private:
-    Ui::GeneralSettings* bodyUI;
-    SettingsWidget* parent;
+    const std::unique_ptr<Ui::GeneralSettings> bodyUI;
     Settings& settings;
 };

@@ -1091,6 +1091,10 @@ de forma que você possa salvar o arquivo no Windows.</translation>
         <comment>popup title</comment>
         <translation>Escolher um diretório para aceitar arquivos automaticamente</translation>
     </message>
+    <message>
+        <source>%1 (no fonts)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

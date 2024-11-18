@@ -1078,6 +1078,10 @@ so you can save the file on Windows.</source>
         <source>General</source>
         <translation>一般</translation>
     </message>
+    <message>
+        <source>%1 (no fonts)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

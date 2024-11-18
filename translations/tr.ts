@@ -1087,6 +1087,10 @@ geçersiz karakterler _ olarak değiştirildi.</translation>
         <source>General</source>
         <translation>Genel</translation>
     </message>
+    <message>
+        <source>%1 (no fonts)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

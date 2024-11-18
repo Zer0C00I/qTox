@@ -1085,6 +1085,10 @@ so you can save the file on Windows.</source>
         <comment>popup title</comment>
         <translation type="unfinished">자동받기 폴더 선택</translation>
     </message>
+    <message>
+        <source>%1 (no fonts)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

@@ -1085,6 +1085,10 @@ para que puedas guardar el archivo en windows.</translation>
         <comment>popup title</comment>
         <translation>Elige un directorio para transferencias automáticas</translation>
     </message>
+    <message>
+        <source>%1 (no fonts)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

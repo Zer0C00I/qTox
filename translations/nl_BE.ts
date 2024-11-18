@@ -1086,6 +1086,10 @@ so you can save the file on Windows.</source>
         <comment>popup title</comment>
         <translation>Kies een map voor automatisch aanvaarde bestanden in op te slaan</translation>
     </message>
+    <message>
+        <source>%1 (no fonts)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

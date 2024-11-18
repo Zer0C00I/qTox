@@ -1085,6 +1085,10 @@ så att du kan spara filen i Windows.</translation>
         <comment>popup title</comment>
         <translation>Välj en acceptera-automatiskt-katalog</translation>
     </message>
+    <message>
+        <source>%1 (no fonts)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

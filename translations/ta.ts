@@ -1087,6 +1087,10 @@ so you can save the file on Windows.</source>
         <comment>popup title</comment>
         <translation type="unfinished">தன்னிச்சையேற்புக்கான கோப்பகத்தைத் தேர்வு செய்க</translation>
     </message>
+    <message>
+        <source>%1 (no fonts)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

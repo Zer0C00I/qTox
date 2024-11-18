@@ -1092,6 +1092,10 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
         <comment>popup title</comment>
         <translation>Alegeți un director de acceptare automată</translation>
     </message>
+    <message>
+        <source>%1 (no fonts)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

@@ -1084,6 +1084,10 @@ de forma que possa guardar o ficheiro no Windows.</translation>
         <comment>popup title</comment>
         <translation>Escolher uma pasta para onde aceitar ficheiros automaticamente</translation>
     </message>
+    <message>
+        <source>%1 (no fonts)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

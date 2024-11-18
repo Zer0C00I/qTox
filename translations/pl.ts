@@ -1096,6 +1096,10 @@ więc możesz zapisać ten plik na systemie Windows.</translation>
         <translatorcomment>better translation?</translatorcomment>
         <translation>Wybierz domyślną ścieżkę dla plików</translation>
     </message>
+    <message>
+        <source>%1 (no fonts)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

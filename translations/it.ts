@@ -1084,6 +1084,10 @@ in modo da poter salvare il file su Windows.</translation>
         <comment>popup title</comment>
         <translation>Scegli dove salvare i file accettati automaticamente</translation>
     </message>
+    <message>
+        <source>%1 (no fonts)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

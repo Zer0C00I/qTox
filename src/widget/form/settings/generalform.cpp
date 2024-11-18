@@ -7,6 +7,7 @@
 #include "ui_generalsettings.h"
 
 #include <QFileDialog>
+#include <QFontDatabase>
 #include <cmath>
 
 #include "src/core/core.h"
@@ -75,6 +76,71 @@ QStringList locales = {
     "zh_TW"
 };
 // clang-format on
+
+QFontDatabase::WritingSystem writingSystem(QLocale::Script script)
+{
+    switch (script) {
+    case QLocale::Script::AnyScript:
+        return QFontDatabase::WritingSystem::Any;
+    case QLocale::Script::ArabicScript:
+        return QFontDatabase::WritingSystem::Arabic;
+    case QLocale::Script::ArmenianScript:
+        return QFontDatabase::WritingSystem::Armenian;
+    case QLocale::Script::BengaliScript:
+        return QFontDatabase::WritingSystem::Bengali;
+    case QLocale::Script::CyrillicScript:
+        return QFontDatabase::WritingSystem::Cyrillic;
+    case QLocale::Script::DevanagariScript:
+        return QFontDatabase::WritingSystem::Devanagari;
+    case QLocale::Script::GeorgianScript:
+        return QFontDatabase::WritingSystem::Georgian;
+    case QLocale::Script::GreekScript:
+        return QFontDatabase::WritingSystem::Greek;
+    case QLocale::Script::GujaratiScript:
+        return QFontDatabase::WritingSystem::Gujarati;
+    case QLocale::Script::GurmukhiScript:
+        return QFontDatabase::WritingSystem::Gurmukhi;
+    case QLocale::Script::HebrewScript:
+        return QFontDatabase::WritingSystem::Hebrew;
+    case QLocale::Script::JapaneseScript:
+        return QFontDatabase::WritingSystem::Japanese;
+    case QLocale::Script::KannadaScript:
+        return QFontDatabase::WritingSystem::Kannada;
+    case QLocale::Script::KhmerScript:
+        return QFontDatabase::WritingSystem::Khmer;
+    case QLocale::Script::KoreanScript:
+        return QFontDatabase::WritingSystem::Korean;
+    case QLocale::Script::LaoScript:
+        return QFontDatabase::WritingSystem::Lao;
+    case QLocale::Script::LatinScript:
+        return QFontDatabase::WritingSystem::Latin;
+    case QLocale::Script::MalayalamScript:
+        return QFontDatabase::WritingSystem::Malayalam;
+    case QLocale::Script::MyanmarScript:
+        return QFontDatabase::WritingSystem::Myanmar;
+    case QLocale::Script::OriyaScript:
+        return QFontDatabase::WritingSystem::Oriya;
+    case QLocale::Script::SinhalaScript:
+        return QFontDatabase::WritingSystem::Sinhala;
+    case QLocale::Script::TamilScript:
+        return QFontDatabase::WritingSystem::Tamil;
+    case QLocale::Script::TeluguScript:
+        return QFontDatabase::WritingSystem::Telugu;
+    case QLocale::Script::ThaiScript:
+        return QFontDatabase::WritingSystem::Thai;
+    case QLocale::Script::TibetanScript:
+        return QFontDatabase::WritingSystem::Tibetan;
+    case QLocale::Script::SimplifiedChineseScript:
+        return QFontDatabase::WritingSystem::SimplifiedChinese;
+    case QLocale::Script::TraditionalChineseScript:
+        return QFontDatabase::WritingSystem::TraditionalChinese;
+
+    default:
+        qWarning() << "Unknown script" << script;
+        return QFontDatabase::WritingSystem::Any;
+    }
+}
+
 } // namespace
 
 /**
@@ -82,13 +148,11 @@ QStringList locales = {
  *
  * This form contains all settings that are not suited to other forms
  */
-GeneralForm::GeneralForm(SettingsWidget* myParent, Settings& settings_, Style& style)
+GeneralForm::GeneralForm(Settings& settings_, Style& style)
     : GenericForm(QPixmap(":/img/settings/general.png"), style)
-    , bodyUI(new Ui::GeneralSettings)
+    , bodyUI{new Ui::GeneralSettings}
     , settings{settings_}
 {
-    parent = myParent;
-
     bodyUI->setupUi(this);
 
     // block all child signals during initialization
@@ -107,16 +171,20 @@ GeneralForm::GeneralForm(SettingsWidget* myParent, Settings& settings_, Style& s
     for (int i = 0; i < locales.size(); ++i) {
         QString langName;
 
-        if (locales[i].startsWith(QLatin1String("eo"))) // QTBUG-57802
-            langName = QLocale::languageToString(QLocale::Esperanto);
-        else if (locales[i].startsWith(QLatin1String("jbo")))
+        if (locales[i].startsWith(QLatin1String("jbo")))
             langName = QLatin1String("Lojban");
         else if (locales[i].startsWith(QLatin1String("pr")))
             langName = QLatin1String("Pirate");
-        else if (locales[i] == (QLatin1String("pt"))) // QTBUG-47891
-            langName = QStringLiteral("português");
-        else
-            langName = QLocale(locales[i]).nativeLanguageName();
+        else {
+            const QLocale locale{locales[i]};
+            if (!QFontDatabase::families(writingSystem(locale.script())).isEmpty())
+                langName = locale.nativeLanguageName();
+            else
+                langName = tr("%1 (no fonts)").arg(QLocale::languageToString(locale.language()));
+            if (langName.isEmpty()) {
+                langName = QLocale::languageToString(locale.language());
+            }
+        }
 
         bodyUI->transComboBox->insertItem(i, langName);
     }
@@ -146,7 +214,6 @@ GeneralForm::GeneralForm(SettingsWidget* myParent, Settings& settings_, Style& s
                                           / 1024 / 1024);
     bodyUI->autoacceptFiles->setChecked(settings.getAutoSaveEnabled());
 
-
 #ifndef QTOX_PLATFORM_EXT
     bodyUI->autoAwayLabel->setEnabled(false); // these don't seem to change the appearance of the widgets,
     bodyUI->autoAwaySpinBox->setEnabled(false); // though they are unusable
@@ -159,7 +226,6 @@ GeneralForm::GeneralForm(SettingsWidget* myParent, Settings& settings_, Style& s
 GeneralForm::~GeneralForm()
 {
     Translator::unregister(this);
-    delete bodyUI;
 }
 
 void GeneralForm::on_transComboBox_currentIndexChanged(int index)

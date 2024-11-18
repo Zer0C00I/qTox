@@ -1092,6 +1092,10 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
         <comment>popup title</comment>
         <translation>Izvēlieties automātiskās pieņemšanas mapi</translation>
     </message>
+    <message>
+        <source>%1 (no fonts)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

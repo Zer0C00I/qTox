@@ -1087,6 +1087,10 @@ so you can save the file on Windows.</source>
         <comment>popup title</comment>
         <translation>Изаберите фасциклу за самостални пријем</translation>
     </message>
+    <message>
+        <source>%1 (no fonts)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

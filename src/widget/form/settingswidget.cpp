@@ -45,7 +45,7 @@ SettingsWidget::SettingsWidget(UpdateCheck* updateCheck, IAudioControl& audio, C
     settingsWidgets->setTabPosition(QTabWidget::North);
     bodyLayout->addWidget(settingsWidgets.get());
 
-    std::unique_ptr<GeneralForm> gfrm(new GeneralForm(this, settings, style));
+    std::unique_ptr<GeneralForm> gfrm(new GeneralForm(settings, style));
     connect(gfrm.get(), &GeneralForm::updateIcons, parent, &Widget::updateIcons);
 
     std::unique_ptr<UserInterfaceForm> uifrm(new UserInterfaceForm(smileyPack, settings, style, this));

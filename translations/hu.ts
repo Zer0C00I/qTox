@@ -1078,6 +1078,10 @@ so you can save the file on Windows.</source>
         <comment>popup title</comment>
         <translation>Válasszon egy mappát az automatikus elfogadáshoz</translation>
     </message>
+    <message>
+        <source>%1 (no fonts)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

@@ -1084,6 +1084,10 @@ joten voit tallentaa tiedoston Windowsissa.</translation>
         <comment>popup title</comment>
         <translation>Valitse hakemisto automaattisesti hyväksyttäville tiedostoille</translation>
     </message>
+    <message>
+        <source>%1 (no fonts)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

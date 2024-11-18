@@ -1085,6 +1085,10 @@ ja sa saad seda faili nüüd Windowsis salvestada.</translation>
         <source>General</source>
         <translation>Üldine</translation>
     </message>
+    <message>
+        <source>%1 (no fonts)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

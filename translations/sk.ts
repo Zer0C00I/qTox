@@ -1092,6 +1092,10 @@ so you can save the file on Windows.</translation>
         <comment>popup title</comment>
         <translation>Zvoľte priečinok pre automatické prijímanie</translation>
     </message>
+    <message>
+        <source>%1 (no fonts)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

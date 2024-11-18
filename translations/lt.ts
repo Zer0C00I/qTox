@@ -1085,6 +1085,10 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
         <comment>popup title</comment>
         <translation>Pasirinkite priimamų failų katalogą</translation>
     </message>
+    <message>
+        <source>%1 (no fonts)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

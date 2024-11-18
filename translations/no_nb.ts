@@ -1086,6 +1086,10 @@ slik at du kan lagre filen på Windows.</translation>
         <comment>popup title</comment>
         <translation>Velg en mappe for auto-aksepterte filer</translation>
     </message>
+    <message>
+        <source>%1 (no fonts)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

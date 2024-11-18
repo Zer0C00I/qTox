@@ -1091,6 +1091,10 @@ um sie in Windows speichern zu können.</translation>
         <comment>popup title</comment>
         <translation>Speicherort für empfangenen Dateien wählen</translation>
     </message>
+    <message>
+        <source>%1 (no fonts)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

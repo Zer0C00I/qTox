@@ -1085,6 +1085,10 @@ so you can save the file on Windows.</source>
         <comment>popup title</comment>
         <translation>یک پوشه برای دریافت فایلها به شکل خودکار انتخاب کنید</translation>
     </message>
+    <message>
+        <source>%1 (no fonts)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

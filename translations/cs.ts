@@ -1085,6 +1085,10 @@ takže můžete soubor uložit i v systému Windows.</translation>
         <source>General</source>
         <translation>Obecné</translation>
     </message>
+    <message>
+        <source>%1 (no fonts)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>
