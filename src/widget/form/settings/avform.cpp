@@ -289,9 +289,7 @@ void AVForm::fillCameraModesComboBox()
     bool previouslyBlocked = videoModesComboBox->blockSignals(true);
     videoModesComboBox->clear();
 
-    for (int i = 0; i < videoModes.size(); ++i) {
-        VideoMode mode = videoModes[i];
-
+    for (auto mode : videoModes) {
         QString str;
         std::string pixelFormat = CameraDevice::getPixelFormatString(mode.pixel_format).toStdString();
         qDebug("width: %d, height: %d, fps: %f, pixel format: %s", mode.width, mode.height,
