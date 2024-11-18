@@ -17,12 +17,12 @@ class RemoveChatDialog : public QDialog
 public:
     explicit RemoveChatDialog(QWidget* parent, const Chat& contact);
 
-    inline bool removeHistory()
+    bool removeHistory() const
     {
         return ui.removeHistory->isChecked();
     }
 
-    inline bool accepted()
+    bool accepted() const
     {
         return _accepted;
     }

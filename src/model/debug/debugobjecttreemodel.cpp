@@ -52,7 +52,7 @@ public:
         qFatal("Parent tree item does not contain this item");
     }
 
-    TreeItem* parentItem()
+    TreeItem* parentItem() const
     {
         return parent;
     }

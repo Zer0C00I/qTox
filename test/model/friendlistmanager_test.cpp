@@ -204,7 +204,7 @@ public:
         return this;
     }
 
-    bool getConferencesOnTop()
+    bool getConferencesOnTop() const
     {
         return conferencesOnTop;
     }

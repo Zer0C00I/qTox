@@ -15,10 +15,17 @@ class ScopedAVDictionary
 {
     AVDictionary* options = nullptr;
 
-    struct Setter
+    class Setter
     {
-        AVDictionary** dict;
-        const char* key;
+        AVDictionary** dict_;
+        const char* key_;
+
+    public:
+        Setter(AVDictionary** dict, const char* key)
+            : dict_(dict)
+            , key_(key)
+        {
+        }
 
         void operator=(const char* value);
         void operator=(const QString& value);

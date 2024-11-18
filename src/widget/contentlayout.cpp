@@ -65,7 +65,7 @@ void ContentLayout::reloadTheme()
 #endif
 }
 
-void ContentLayout::clear()
+void ContentLayout::clear() const
 {
     QLayoutItem* item;
     while ((item = mainHead->layout()->takeAt(0)) != nullptr) {

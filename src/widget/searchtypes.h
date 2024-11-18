@@ -40,12 +40,12 @@ struct ParameterSearch
     QDate date;
     bool isUpdate{false};
 
-    bool operator==(const ParameterSearch& other)
+    bool operator==(const ParameterSearch& other) const
     {
         return filter == other.filter && period == other.period && date == other.date;
     }
 
-    bool operator!=(const ParameterSearch& other)
+    bool operator!=(const ParameterSearch& other) const
     {
         return !(*this == other);
     }

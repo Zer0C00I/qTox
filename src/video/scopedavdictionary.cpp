@@ -12,7 +12,7 @@ extern "C"
 
 void ScopedAVDictionary::Setter::operator=(const char* value)
 {
-    av_dict_set(dict, key, value, 0);
+    av_dict_set(dict_, key_, value, 0);
 }
 
 void ScopedAVDictionary::Setter::operator=(const QString& value)
@@ -22,7 +22,7 @@ void ScopedAVDictionary::Setter::operator=(const QString& value)
 
 void ScopedAVDictionary::Setter::operator=(std::int64_t value)
 {
-    av_dict_set_int(dict, key, value, 0);
+    av_dict_set_int(dict_, key_, value, 0);
 }
 
 ScopedAVDictionary::~ScopedAVDictionary()

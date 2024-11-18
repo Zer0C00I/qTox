@@ -18,7 +18,7 @@ public:
     explicit ContentLayout(Settings& settings, Style& style, QWidget* parent);
     ~ContentLayout() override;
 
-    void clear();
+    void clear() const;
 
     QFrame mainHLine;
     QHBoxLayout mainHLineLayout;
