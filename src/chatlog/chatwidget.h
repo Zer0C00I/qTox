@@ -33,7 +33,7 @@ public:
     ChatWidget(IChatLog& chatLog_, const Core& core_, DocumentCache& documentCache,
                SmileyPack& smileyPack, Settings& settings, Style& style,
                IMessageBoxManager& messageBoxManager, QWidget* parent = nullptr);
-    virtual ~ChatWidget();
+    ~ChatWidget() override;
 
     void insertChatlines(std::map<ChatLogIdx, ChatLine::Ptr> chatLines);
     void clearSelection();

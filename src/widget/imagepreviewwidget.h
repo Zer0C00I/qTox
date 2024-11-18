@@ -16,7 +16,7 @@ public:
         : QPushButton(parent)
     {
     }
-    ~ImagePreviewButton();
+    ~ImagePreviewButton() override;
     ImagePreviewButton(const ImagePreviewButton&) = delete;
     ImagePreviewButton& operator=(const ImagePreviewButton&) = delete;
     ImagePreviewButton(ImagePreviewButton&&) = delete;

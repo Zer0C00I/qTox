@@ -21,7 +21,7 @@ class PrivacyForm : public GenericForm
     Q_OBJECT
 public:
     PrivacyForm(Core* core_, Settings& settings, Style& style, Profile& profile);
-    ~PrivacyForm();
+    ~PrivacyForm() override;
     QString getFormName() final
     {
         return tr("Privacy");

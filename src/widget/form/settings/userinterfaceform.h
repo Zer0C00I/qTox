@@ -23,7 +23,7 @@ class UserInterfaceForm : public GenericForm
 public:
     UserInterfaceForm(SmileyPack& smileyPack, Settings& settings, Style& style,
                       SettingsWidget* myParent);
-    ~UserInterfaceForm();
+    ~UserInterfaceForm() override;
     QString getFormName() final
     {
         return tr("User Interface");

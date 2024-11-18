@@ -21,7 +21,7 @@ class LoadHistoryDialog : public QDialog
 public:
     explicit LoadHistoryDialog(const IChatLog* chatLog_, QWidget* parent = nullptr);
     explicit LoadHistoryDialog(QWidget* parent = nullptr);
-    ~LoadHistoryDialog();
+    ~LoadHistoryDialog() override;
 
     QDateTime getFromDate();
     void setTitle(const QString& title);

@@ -14,7 +14,7 @@ class MockConferenceQuery : public ICoreConferenceQuery
 {
 public:
     MockConferenceQuery() = default;
-    virtual ~MockConferenceQuery();
+    ~MockConferenceQuery() override;
     MockConferenceQuery(const MockConferenceQuery&) = default;
     MockConferenceQuery& operator=(const MockConferenceQuery&) = default;
     MockConferenceQuery(MockConferenceQuery&&) = default;
@@ -23,7 +23,7 @@ public:
     ConferenceId getConferencePersistentId(uint32_t conferenceNumber) const override
     {
         std::ignore = conferenceNumber;
-        return ConferenceId(0);
+        return ConferenceId(nullptr);
     }
 
     uint32_t getConferenceNumberPeers(int conferenceId) const override

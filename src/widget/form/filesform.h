@@ -34,7 +34,7 @@ class FilesForm : public QObject
 public:
     FilesForm(CoreFile& coreFile, Settings& settings, Style& style,
               IMessageBoxManager& messageBoxManager, FriendList& friendList);
-    ~FilesForm();
+    ~FilesForm() override;
 
     bool isShown() const;
     void show(ContentLayout* contentLayout);

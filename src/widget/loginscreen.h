@@ -24,7 +24,7 @@ class LoginScreen : public QDialog
 public:
     LoginScreen(Paths& paths, Style& style, int themeColor,
                 const QString& initialProfileName = QString(), QWidget* parent = nullptr);
-    ~LoginScreen();
+    ~LoginScreen() override;
     bool event(QEvent* event) final;
 
 signals:

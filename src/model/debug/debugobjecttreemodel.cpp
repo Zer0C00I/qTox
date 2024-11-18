@@ -89,7 +89,7 @@ DebugObjectTreeModel::DebugObjectTreeModel(QObject* parent)
     reload();
 }
 
-DebugObjectTreeModel::~DebugObjectTreeModel() {}
+DebugObjectTreeModel::~DebugObjectTreeModel() = default;
 
 void DebugObjectTreeModel::reload()
 {

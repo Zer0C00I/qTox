@@ -12,7 +12,7 @@ class ScreenGrabberChooserRectItem final : public QObject, public QGraphicsItemG
     Q_OBJECT
 public:
     explicit ScreenGrabberChooserRectItem(QGraphicsScene* scene);
-    ~ScreenGrabberChooserRectItem();
+    ~ScreenGrabberChooserRectItem() override;
 
     QRectF boundingRect() const final;
     void beginResize(QPointF mousePos);

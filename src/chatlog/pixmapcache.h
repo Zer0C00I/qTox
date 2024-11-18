@@ -15,10 +15,11 @@ public:
     QPixmap get(const QString& filename, QSize size);
     static PixmapCache& getInstance();
 
-protected:
-    PixmapCache() {}
     PixmapCache(PixmapCache&) = delete;
     PixmapCache& operator=(const PixmapCache&) = delete;
+
+protected:
+    PixmapCache() = default;
 
 private:
     QHash<QString, QIcon> cache;

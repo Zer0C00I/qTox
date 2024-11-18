@@ -37,7 +37,7 @@ public:
                    DocumentCache& documentCache, SmileyPack& smileyPack, Style& style,
                    IMessageBoxManager& messageBoxManager, FriendList& friendList,
                    ConferenceList& conferenceList);
-    ~ConferenceForm();
+    ~ConferenceForm() override;
 
     void peerAudioPlaying(ToxPk peerPk);
 

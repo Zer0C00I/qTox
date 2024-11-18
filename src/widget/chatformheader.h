@@ -47,7 +47,7 @@ public:
     };
 
     ChatFormHeader(Settings& settings, Style& style, QWidget* parent = nullptr);
-    ~ChatFormHeader();
+    ~ChatFormHeader() override;
 
     void setName(const QString& newName);
     void setMode(Mode mode_);

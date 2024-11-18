@@ -15,11 +15,11 @@ class PasswordEdit : public QLineEdit
     Q_OBJECT
 public:
     explicit PasswordEdit(QWidget* parent);
-    ~PasswordEdit();
+    ~PasswordEdit() override;
 
 protected:
-    virtual void showEvent(QShowEvent* event);
-    virtual void hideEvent(QHideEvent* event);
+    void showEvent(QShowEvent* event) override;
+    void hideEvent(QHideEvent* event) override;
 
 private:
     class EventHandler : QObject
@@ -28,9 +28,9 @@ private:
         QVector<QAction*> actions;
 
         EventHandler();
-        ~EventHandler();
+        ~EventHandler() override;
         void updateActions();
-        bool eventFilter(QObject* obj, QEvent* event);
+        bool eventFilter(QObject* obj, QEvent* event) override;
     };
 
     void registerHandler();

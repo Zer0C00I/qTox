@@ -17,7 +17,6 @@
 #include "toxpk.h"
 
 #include "src/model/status.h"
-#include "util/strongtype.h"
 #include <tox/tox.h>
 
 #include <QMutex>
@@ -25,7 +24,6 @@
 #include <QThread>
 #include <QTimer>
 
-#include <functional>
 #include <memory>
 
 class CoreAV;
@@ -67,7 +65,7 @@ public:
     Tox* getTox() const;
     QRecursiveMutex& getCoreLoopLock() const;
 
-    ~Core();
+    ~Core() override;
 
     static const QString TOX_EXT;
     uint64_t getMaxMessageSize() const;

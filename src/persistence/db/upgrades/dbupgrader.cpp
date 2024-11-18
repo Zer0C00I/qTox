@@ -64,7 +64,7 @@ struct DuplicateAlias
         , badAliasRows{badAliasRows_}
     {
     }
-    DuplicateAlias() {}
+    DuplicateAlias() = default;
     RowId goodAliasRow{-1};
     std::vector<RowId> badAliasRows;
 };

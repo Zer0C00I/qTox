@@ -12,7 +12,7 @@ class ChatTextEdit final : public QTextEdit
     Q_OBJECT
 public:
     explicit ChatTextEdit(QWidget* parent = nullptr);
-    ~ChatTextEdit();
+    ~ChatTextEdit() override;
     void setLastMessage(QString lm);
     void sendKeyEvent(QKeyEvent* event);
 

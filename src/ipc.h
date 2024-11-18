@@ -30,7 +30,7 @@ protected:
 
 public:
     explicit IPC(uint32_t profileId_);
-    ~IPC();
+    ~IPC() override;
 
     struct IPCEvent
     {

@@ -24,7 +24,7 @@ class AppManager : public QObject
 
 public:
     AppManager(int& argc, char** argv);
-    ~AppManager();
+    ~AppManager() override;
     int run();
 
 private:

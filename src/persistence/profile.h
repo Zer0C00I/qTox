@@ -38,7 +38,7 @@ public:
                                   const QCommandLineParser* parser, CameraSource& cameraSource,
                                   IMessageBoxManager& messageBoxManager);
     void save();
-    ~Profile();
+    ~Profile() override;
 
     Core& getCore() const;
     QString getName() const;

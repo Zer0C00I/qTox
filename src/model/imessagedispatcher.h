@@ -22,7 +22,7 @@ class IMessageDispatcher : public QObject
 {
     Q_OBJECT
 public:
-    virtual ~IMessageDispatcher();
+    ~IMessageDispatcher() override;
 
     /**
      * @brief Sends message to associated chat

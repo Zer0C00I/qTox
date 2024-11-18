@@ -30,11 +30,11 @@ class ToxCall : public QObject
     Q_OBJECT
 
 protected:
-    ToxCall() = delete;
     ToxCall(bool VideoEnabled, CoreAV& av, IAudioControl& audio);
-    ~ToxCall();
+    ~ToxCall() override;
 
 public:
+    ToxCall() = delete;
     ToxCall(const ToxCall& other) = delete;
     ToxCall(ToxCall&& other) = delete;
 
@@ -82,7 +82,7 @@ public:
                   CameraSource& cameraSource);
     ToxFriendCall(ToxFriendCall&& other) = delete;
     ToxFriendCall& operator=(ToxFriendCall&& other) = delete;
-    ~ToxFriendCall();
+    ~ToxFriendCall() override;
 
     TOXAV_FRIEND_CALL_STATE getState() const;
     void setState(const TOXAV_FRIEND_CALL_STATE& value);
@@ -109,7 +109,7 @@ public:
     ToxConferenceCall() = delete;
     ToxConferenceCall(const Conference& conference_, CoreAV& av_, IAudioControl& audio_);
     ToxConferenceCall(ToxConferenceCall&& other) = delete;
-    ~ToxConferenceCall();
+    ~ToxConferenceCall() override;
 
     ToxConferenceCall& operator=(ToxConferenceCall&& other) = delete;
     void removePeer(ToxPk peerId);

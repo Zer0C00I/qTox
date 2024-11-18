@@ -14,7 +14,7 @@ class Chat : public QObject
 {
     Q_OBJECT
 public:
-    virtual ~Chat() = 0;
+    ~Chat() override;
 
     virtual void setName(const QString& name) = 0;
     virtual QString getDisplayedName() const = 0;

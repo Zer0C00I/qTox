@@ -14,7 +14,7 @@ class QRWidget : public QWidget
 
 public:
     explicit QRWidget(QWidget* parent = nullptr);
-    ~QRWidget();
+    ~QRWidget() override;
     void setQRData(const QString& data_);
     QImage* getImage();
     bool saveImage(QString path);

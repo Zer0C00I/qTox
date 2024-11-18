@@ -32,7 +32,7 @@ class NetCamView : public QWidget
 public:
     NetCamView(ToxPk friendPk_, CameraSource& cameraSource, Settings& settings, Style& style,
                Profile& profile, QWidget* parent = nullptr);
-    ~NetCamView();
+    ~NetCamView() override;
 
     virtual void show(VideoSource* source, const QString& title);
     virtual void hide();
@@ -42,7 +42,7 @@ public:
     QSize getSurfaceMinSize();
 
 protected:
-    void showEvent(QShowEvent* event);
+    void showEvent(QShowEvent* event) override;
     QVBoxLayout* verLayout;
     VideoSurface* videoSurface;
     QPushButton* enterFullScreenButton = nullptr;
@@ -71,8 +71,8 @@ private:
     void toggleVideoPreview();
     void toggleButtonState(QPushButton* btn);
     void updateButtonState(QPushButton* btn, bool active);
-    void keyPressEvent(QKeyEvent* event);
-    void closeEvent(QCloseEvent* event);
+    void keyPressEvent(QKeyEvent* event) override;
+    void closeEvent(QCloseEvent* event) override;
     VideoSurface* selfVideoSurface;
     MovableWidget* selfFrame;
     ToxPk friendPk;

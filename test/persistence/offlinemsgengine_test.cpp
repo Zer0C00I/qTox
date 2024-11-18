@@ -3,9 +3,6 @@
  * Copyright © 2024-2025 The TokTok team.
  */
 
-#include "src/core/core.h"
-#include "src/model/friend.h"
-#include "src/model/status.h"
 #include "src/persistence/offlinemsgengine.h"
 
 #include <QtTest/QtTest>
@@ -128,7 +125,6 @@ void TestOfflineMsgEngine::testCallback()
     size_t numCallbacks = 0;
     auto callback = [&numCallbacks](bool) { numCallbacks++; };
     Message msg{false, QString(), QDateTime(), {}};
-    ReceiptNum receipt;
 
     offlineMsgEngine.addSentCoreMessage(ReceiptNum(1), Message(), callback);
     offlineMsgEngine.addSentCoreMessage(ReceiptNum(2), Message(), callback);

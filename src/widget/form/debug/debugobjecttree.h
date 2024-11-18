@@ -22,7 +22,7 @@ class DebugObjectTree : public GenericForm
 
 public:
     explicit DebugObjectTree(Style& style, QWidget* parent = nullptr);
-    ~DebugObjectTree();
+    ~DebugObjectTree() override;
 
     QString getFormName() final
     {

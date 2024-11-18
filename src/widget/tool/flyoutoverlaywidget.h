@@ -16,7 +16,7 @@ class FlyoutOverlayWidget : public QWidget
     Q_PROPERTY(qreal flyoutPercent READ flyoutPercent WRITE setFlyoutPercent)
 public:
     explicit FlyoutOverlayWidget(QWidget* parent = nullptr);
-    ~FlyoutOverlayWidget();
+    ~FlyoutOverlayWidget() override;
 
     int animationDuration() const;
     void setAnimationDuration(int timeMs);

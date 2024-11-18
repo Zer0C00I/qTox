@@ -20,7 +20,7 @@ class GeneralForm final : public GenericForm
     Q_OBJECT
 public:
     GeneralForm(Settings& settings, Style& style);
-    ~GeneralForm();
+    ~GeneralForm() override;
     QString getFormName() final
     {
         return tr("General");

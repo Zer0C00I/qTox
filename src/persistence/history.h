@@ -202,7 +202,7 @@ public:
 
 public:
     History(std::shared_ptr<RawDatabase> db, Settings& settings, IMessageBoxManager& messageBoxManager);
-    ~History();
+    ~History() override;
 
     bool isValid();
 

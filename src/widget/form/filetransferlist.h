@@ -42,7 +42,7 @@ class Model : public QAbstractTableModel
     Q_OBJECT
 public:
     Model(FriendList& friendList, QObject* parent = nullptr);
-    ~Model() = default;
+    ~Model() override = default;
 
     void onFileUpdated(const ToxFile& file);
 
@@ -82,6 +82,6 @@ class View : public QTableView
 {
 public:
     View(QAbstractItemModel* model, Settings& settings, Style& style, QWidget* parent = nullptr);
-    ~View();
+    ~View() override;
 };
 } // namespace FileTransferList

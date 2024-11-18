@@ -135,7 +135,7 @@ public:
 
 public:
     explicit Settings(IMessageBoxManager& messageBoxManager);
-    ~Settings();
+    ~Settings() override;
     Settings(Settings& settings) = delete;
     Settings& operator=(const Settings&) = delete;
 

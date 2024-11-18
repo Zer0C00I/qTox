@@ -44,7 +44,7 @@ class ProfileForm : public QWidget
 public:
     ProfileForm(IProfileInfo* profileInfo_, Settings& settings, Style& style,
                 IMessageBoxManager& messageBoxManager, QWidget* parent = nullptr);
-    ~ProfileForm();
+    ~ProfileForm() override;
     void show(ContentLayout* contentLayout);
     bool isShown() const;
 
@@ -71,7 +71,7 @@ private slots:
 private:
     void retranslateUi();
     void prFileLabelUpdate();
-    bool eventFilter(QObject* object, QEvent* event);
+    bool eventFilter(QObject* object, QEvent* event) override;
     void refreshProfiles();
     static QString getSupportedImageFilter();
 

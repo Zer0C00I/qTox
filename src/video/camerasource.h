@@ -24,7 +24,7 @@ class CameraSource : public VideoSource
 
 public:
     explicit CameraSource(Settings& settings);
-    ~CameraSource();
+    ~CameraSource() override;
     void setupDefault();
     bool isNone() const;
 

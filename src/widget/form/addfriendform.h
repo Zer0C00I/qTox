@@ -38,7 +38,7 @@ public:
                   IMessageBoxManager& messageBoxManager, Core& core);
     AddFriendForm(const AddFriendForm&) = delete;
     AddFriendForm& operator=(const AddFriendForm&) = delete;
-    ~AddFriendForm();
+    ~AddFriendForm() override;
 
     bool isShown() const;
     void show(ContentLayout* contentLayout);

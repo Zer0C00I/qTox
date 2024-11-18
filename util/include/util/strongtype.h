@@ -123,7 +123,7 @@ class NamedType : public Properties<NamedType<T, Tag, Properties...>, T>...
 public:
     using UnderlyingType = T;
 
-    NamedType() {}
+    NamedType() = default;
     explicit NamedType(const T& value)
         : value_(value)
     {

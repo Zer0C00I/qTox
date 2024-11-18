@@ -38,7 +38,7 @@ class Nexus : public QObject
 public:
     Nexus(Settings& settings, IMessageBoxManager& messageBoxManager, CameraSource& cameraSource,
           IPC& ipc, QObject* parent = nullptr);
-    ~Nexus();
+    ~Nexus() override;
     void start();
     void showMainGUI();
     void setParser(QCommandLineParser* parser_);

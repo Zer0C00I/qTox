@@ -13,10 +13,9 @@ class Paths;
 
 class ProfileLocker
 {
-private:
+public:
     ProfileLocker() = delete;
 
-public:
     static bool isLockable(QString profile, Paths& paths);
     static bool lock(QString profile, Paths& paths);
     static void unlock();

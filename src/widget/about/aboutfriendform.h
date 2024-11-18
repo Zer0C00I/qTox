@@ -27,7 +27,7 @@ class AboutFriendForm : public QDialog
 public:
     AboutFriendForm(std::unique_ptr<IAboutFriend> about, Settings& settings, Style& style,
                     IMessageBoxManager& messageBoxManager, QWidget* parent = nullptr);
-    ~AboutFriendForm();
+    ~AboutFriendForm() override;
 
 private:
     Ui::AboutFriendForm* ui;

@@ -32,7 +32,7 @@ public:
     Text(DocumentCache& documentCache, Settings& settings, Style& style, const QString& txt = "",
          const QFont& font = QFont(), bool enableElide = false, const QString& rawText = QString(),
          const TextType& type = NORMAL);
-    virtual ~Text();
+    ~Text() override;
 
     void setText(const QString& txt);
     void selectText(const QString& txt, const std::pair<int, int>& point);

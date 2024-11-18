@@ -22,7 +22,7 @@ public:
     };
     Q_ENUM(UserSignal)
 
-    ~PosixSignalNotifier();
+    ~PosixSignalNotifier() override;
 
     static void watchSignal(int signum);
     static void watchSignals(std::initializer_list<int> signalSet);

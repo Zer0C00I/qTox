@@ -23,7 +23,7 @@ public:
     CircleWidget(const Core& core_, FriendListWidget* parent, int id_, Settings& settings,
                  Style& style, IMessageBoxManager& messageboxManager, FriendList& friendList,
                  ConferenceList& conferenceList, Profile& profile);
-    ~CircleWidget();
+    ~CircleWidget() override;
 
     void editName();
     static CircleWidget* getFromID(int id);

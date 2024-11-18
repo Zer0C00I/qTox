@@ -16,7 +16,7 @@ class ContentLayout : public QVBoxLayout
 public:
     ContentLayout(Settings& settings, Style& style);
     explicit ContentLayout(Settings& settings, Style& style, QWidget* parent);
-    ~ContentLayout();
+    ~ContentLayout() override;
 
     void clear();
 

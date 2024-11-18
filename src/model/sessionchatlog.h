@@ -24,7 +24,7 @@ public:
     SessionChatLog(ChatLogIdx initialIdx, const ICoreIdHandler& coreIdHandler_,
                    FriendList& friendList, ConferenceList& conferenceList);
 
-    ~SessionChatLog();
+    ~SessionChatLog() override;
     const ChatLogItem& at(ChatLogIdx idx) const override;
     SearchResult searchForward(SearchPos startPos, const QString& phrase,
                                const ParameterSearch& parameter) const override;

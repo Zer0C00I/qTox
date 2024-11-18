@@ -41,7 +41,7 @@ public:
     void setAudio(IAudioControl& newAudio);
     IAudioControl* getAudio();
 
-    ~CoreAV();
+    ~CoreAV() override;
 
     bool isCallStarted(const Friend* f) const;
     bool isCallStarted(const Conference* c) const;

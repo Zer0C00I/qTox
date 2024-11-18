@@ -21,7 +21,7 @@ class DebugWidget : public QWidget
     Q_OBJECT
 public:
     DebugWidget(Paths& paths, Style& style, Widget* parent = nullptr);
-    ~DebugWidget();
+    ~DebugWidget() override;
 
     bool isShown() const;
     void show(ContentLayout* contentLayout);

@@ -28,7 +28,7 @@ class ConferenceInviteForm : public QWidget
     Q_OBJECT
 public:
     ConferenceInviteForm(Settings& settings, Core& core);
-    ~ConferenceInviteForm();
+    ~ConferenceInviteForm() override;
 
     void show(ContentLayout* contentLayout);
     bool addConferenceInvite(const ConferenceInvite& inviteInfo);

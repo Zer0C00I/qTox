@@ -22,7 +22,7 @@ class DebugLogForm final : public GenericForm
     Q_OBJECT
 public:
     DebugLogForm(Paths& paths, Style& style, QWidget* parent);
-    ~DebugLogForm();
+    ~DebugLogForm() override;
     QString getFormName() final
     {
         return tr("Debug Log");

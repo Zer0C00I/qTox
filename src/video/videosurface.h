@@ -17,7 +17,7 @@ class VideoSurface : public QWidget
 public:
     VideoSurface(const QPixmap& avatar_, QWidget* parent = nullptr, bool expanding_ = false);
     VideoSurface(const QPixmap& avatar_, VideoSource* source_, QWidget* parent = nullptr);
-    ~VideoSurface();
+    ~VideoSurface() override;
 
     bool isExpanding() const;
     void setSource(VideoSource* src);

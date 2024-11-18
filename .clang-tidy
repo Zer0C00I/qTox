@@ -1,6 +1,9 @@
 Checks: "-*
 , modernize-use-bool-literals
 , modernize-use-emplace
+, modernize-use-equals-*
+, modernize-use-nullptr
+, modernize-use-override
 , readability-named-parameter
 , readability-inconsistent-declaration-parameter-name
 "

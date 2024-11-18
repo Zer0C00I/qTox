@@ -29,7 +29,7 @@ class DesktopNotify : public QObject
 
 public:
     DesktopNotify(INotificationSettings& settings, QObject* parent);
-    ~DesktopNotify();
+    ~DesktopNotify() override;
 
     void setIcon(QSystemTrayIcon* icon);
 

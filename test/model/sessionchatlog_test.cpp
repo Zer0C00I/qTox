@@ -47,7 +47,7 @@ class TestSessionChatLog : public QObject
     Q_OBJECT
 
 public:
-    TestSessionChatLog() {}
+    TestSessionChatLog() = default;
 
 private slots:
     void init();

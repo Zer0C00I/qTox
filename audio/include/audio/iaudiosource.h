@@ -19,7 +19,7 @@ class IAudioSource : public QObject
 {
     Q_OBJECT
 public:
-    virtual ~IAudioSource() = default;
+    ~IAudioSource() override = default;
 
     virtual operator bool() const = 0;
 

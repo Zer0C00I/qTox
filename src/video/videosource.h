@@ -27,7 +27,7 @@ public:
     {
     }
 
-    virtual ~VideoSource() = default;
+    ~VideoSource() override = default;
     /**
      * @brief If subscribe successfully opens the source, it will start emitting frameAvailable
      * signals.

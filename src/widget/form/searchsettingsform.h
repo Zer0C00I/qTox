@@ -20,7 +20,7 @@ class SearchSettingsForm : public QWidget
 
 public:
     SearchSettingsForm(Settings& settings, Style& style, QWidget* parent = nullptr);
-    ~SearchSettingsForm();
+    ~SearchSettingsForm() override;
 
     ParameterSearch getParameterSearch();
     void reloadTheme();

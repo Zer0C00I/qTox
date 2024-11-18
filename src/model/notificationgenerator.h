@@ -26,7 +26,7 @@ public:
                           // currently mockable so we allow profile to be nullptr for unit
                           // testing
                           Profile* profile_);
-    virtual ~NotificationGenerator();
+    ~NotificationGenerator() override;
     NotificationGenerator(const NotificationGenerator&) = delete;
     NotificationGenerator& operator=(const NotificationGenerator&) = delete;
     NotificationGenerator(NotificationGenerator&&) = delete;

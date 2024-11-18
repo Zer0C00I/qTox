@@ -30,7 +30,7 @@ class FileTransferWidget : public QWidget
 public:
     FileTransferWidget(QWidget* parent, CoreFile& _coreFile, ToxFile file, Settings& settings,
                        Style& style, IMessageBoxManager& messageBoxManager);
-    virtual ~FileTransferWidget();
+    ~FileTransferWidget() override;
     bool isActive() const;
     void onFileTransferUpdate(ToxFile file);
 

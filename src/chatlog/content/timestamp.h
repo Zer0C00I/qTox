@@ -23,7 +23,7 @@ public:
     QDateTime getTime();
 
 protected:
-    QSizeF idealSize();
+    QSizeF idealSize() override;
 
 private:
     QDateTime time;

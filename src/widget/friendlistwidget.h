@@ -39,7 +39,7 @@ public:
     FriendListWidget(const Core& core, Widget* parent, Settings& settings, Style& style,
                      IMessageBoxManager& messageBoxManager, FriendList& friendList,
                      ConferenceList& conferenceList, Profile& profile, bool conferencesOnTop = true);
-    ~FriendListWidget();
+    ~FriendListWidget() override;
     void setMode(SortingMode mode);
     SortingMode getMode() const;
 

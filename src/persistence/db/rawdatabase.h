@@ -104,7 +104,7 @@ public:
     };
 
     RawDatabase(const QString& path_, const QString& password, const QByteArray& salt);
-    ~RawDatabase();
+    ~RawDatabase() override;
     bool isOpen();
 
     bool execNow(const QString& statement);

@@ -39,7 +39,7 @@ public:
     };
 
     ChatMessage(DocumentCache& documentCache, Settings& settings, Style& style);
-    ~ChatMessage();
+    ~ChatMessage() override;
     ChatMessage(const ChatMessage&) = default;
     ChatMessage(ChatMessage&&) = default;
 

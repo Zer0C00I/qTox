@@ -22,7 +22,7 @@ public:
     AlSink& operator=(const AlSink&) = delete;
     AlSink(AlSink&& other) = delete;
     AlSink& operator=(AlSink&& other) = delete;
-    ~AlSink();
+    ~AlSink() override;
 
     void playAudioBuffer(const int16_t* data, int samples, unsigned channels,
                          int sampleRate) const override;

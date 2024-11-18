@@ -19,9 +19,9 @@ public:
     AlSource& operator=(const AlSource&) = delete;
     AlSource(AlSource&& other) = delete;
     AlSource& operator=(AlSource&& other) = delete;
-    ~AlSource();
+    ~AlSource() override;
 
-    operator bool() const;
+    operator bool() const override;
 
     void kill();
 

@@ -25,7 +25,7 @@ class AboutForm : public GenericForm
     Q_OBJECT
 public:
     AboutForm(UpdateCheck& updateCheck_, QString contactInfo_, Style& style_);
-    ~AboutForm();
+    ~AboutForm() override;
     QString getFormName() final
     {
         return tr("About");

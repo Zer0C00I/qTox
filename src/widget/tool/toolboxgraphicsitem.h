@@ -15,7 +15,7 @@ class ToolBoxGraphicsItem final : public QObject, public QGraphicsItemGroup
     Q_PROPERTY(qreal opacity READ opacity WRITE setOpacity)
 public:
     ToolBoxGraphicsItem();
-    ~ToolBoxGraphicsItem();
+    ~ToolBoxGraphicsItem() override;
 
     void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) final;
 

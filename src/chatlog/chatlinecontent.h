@@ -39,8 +39,8 @@ public:
 
     virtual qreal getAscent() const;
 
-    virtual QRectF boundingRect() const = 0;
-    virtual void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) = 0;
+    QRectF boundingRect() const override = 0;
+    void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) override = 0;
 
     virtual void visibilityChanged(bool visible);
     virtual void reloadTheme();

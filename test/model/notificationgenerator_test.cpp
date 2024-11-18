@@ -15,75 +15,75 @@
 namespace {
 class MockNotificationSettings : public INotificationSettings
 {
-    virtual bool getNotify() const override
+    bool getNotify() const override
     {
         return true;
     }
 
-    virtual void setNotify(bool newValue) override
+    void setNotify(bool newValue) override
     {
         std::ignore = newValue;
     }
 
-    virtual bool getShowWindow() const override
+    bool getShowWindow() const override
     {
         return true;
     }
-    virtual void setShowWindow(bool newValue) override
+    void setShowWindow(bool newValue) override
     {
         std::ignore = newValue;
     }
 
-    virtual bool getDesktopNotify() const override
+    bool getDesktopNotify() const override
     {
         return true;
     }
-    virtual void setDesktopNotify(bool newValue) override
+    void setDesktopNotify(bool enabled) override
     {
-        std::ignore = newValue;
+        std::ignore = enabled;
     }
 
-    virtual bool getNotifySystemBackend() const override
+    bool getNotifySystemBackend() const override
     {
         return true;
     }
-    virtual void setNotifySystemBackend(bool newValue) override
+    void setNotifySystemBackend(bool newValue) override
     {
         std::ignore = newValue;
     }
 
-    virtual bool getNotifySound() const override
+    bool getNotifySound() const override
     {
         return true;
     }
-    virtual void setNotifySound(bool newValue) override
+    void setNotifySound(bool newValue) override
     {
         std::ignore = newValue;
     }
 
-    virtual bool getNotifyHide() const override
+    bool getNotifyHide() const override
     {
         return notifyHide;
     }
-    virtual void setNotifyHide(bool newValue) override
+    void setNotifyHide(bool newValue) override
     {
         notifyHide = newValue;
     }
 
-    virtual bool getBusySound() const override
+    bool getBusySound() const override
     {
         return true;
     }
-    virtual void setBusySound(bool newValue) override
+    void setBusySound(bool newValue) override
     {
         std::ignore = newValue;
     }
 
-    virtual bool getConferenceAlwaysNotify() const override
+    bool getConferenceAlwaysNotify() const override
     {
         return true;
     }
-    virtual void setConferenceAlwaysNotify(bool newValue) override
+    void setConferenceAlwaysNotify(bool newValue) override
     {
         std::ignore = newValue;
     }
@@ -178,7 +178,7 @@ void TestNotificationGenerator::testNotificationClear()
 
 void TestNotificationGenerator::testConferenceMessage()
 {
-    Conference g(0, ConferenceId(0), "conferenceName", false, "selfName", *conferenceQuery,
+    Conference g(0, ConferenceId(nullptr), "conferenceName", false, "selfName", *conferenceQuery,
                  *coreIdHandler, *friendList);
     auto sender = conferenceQuery->getConferencePeerPk(0, 0);
     g.updateUsername(sender, "sender1");
@@ -190,7 +190,7 @@ void TestNotificationGenerator::testConferenceMessage()
 
 void TestNotificationGenerator::testMultipleConferenceMessages()
 {
-    Conference g(0, ConferenceId(0), "conferenceName", false, "selfName", *conferenceQuery,
+    Conference g(0, ConferenceId(nullptr), "conferenceName", false, "selfName", *conferenceQuery,
                  *coreIdHandler, *friendList);
 
     auto sender = conferenceQuery->getConferencePeerPk(0, 0);
@@ -361,7 +361,7 @@ void TestNotificationGenerator::testSimpleFileTransfer()
 
 void TestNotificationGenerator::testSimpleConferenceMessage()
 {
-    Conference g(0, ConferenceId(0), "conferenceName", false, "selfName", *conferenceQuery,
+    Conference g(0, ConferenceId(nullptr), "conferenceName", false, "selfName", *conferenceQuery,
                  *coreIdHandler, *friendList);
     auto sender = conferenceQuery->getConferencePeerPk(0, 0);
     g.updateUsername(sender, "sender1");

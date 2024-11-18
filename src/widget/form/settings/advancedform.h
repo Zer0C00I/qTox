@@ -21,7 +21,7 @@ class AdvancedForm : public GenericForm
     Q_OBJECT
 public:
     AdvancedForm(Settings& settings, Style& style, IMessageBoxManager& messageBoxManager);
-    ~AdvancedForm();
+    ~AdvancedForm() override;
     QString getFormName() final
     {
         return tr("Advanced");

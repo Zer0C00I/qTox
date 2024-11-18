@@ -20,4 +20,4 @@ DebugObjectTree::DebugObjectTree(Style& style, QWidget* parent)
     connect(ui_->btnReload, &QPushButton::clicked, model_, &DebugObjectTreeModel::reload);
 }
 
-DebugObjectTree::~DebugObjectTree() {}
+DebugObjectTree::~DebugObjectTree() = default;

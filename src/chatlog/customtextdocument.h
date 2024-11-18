@@ -21,7 +21,7 @@ public:
     CustomTextDocument(SmileyPack& smileyPack, Settings& settings, QObject* parent = nullptr);
 
 protected:
-    virtual QVariant loadResource(int type, const QUrl& name);
+    QVariant loadResource(int type, const QUrl& name) override;
 
 private:
     QList<std::shared_ptr<QIcon>> emoticonIcons;

@@ -22,7 +22,7 @@ public:
         Q_INIT_RESOURCE(res);
     }
 
-    ~MockSettings();
+    ~MockSettings() override;
 
     bool getEnableIPv6() const override
     {

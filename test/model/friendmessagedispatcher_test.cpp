@@ -105,7 +105,7 @@ private:
     std::deque<Message> receivedMessages;
 };
 
-TestFriendMessageDispatcher::TestFriendMessageDispatcher() {}
+TestFriendMessageDispatcher::TestFriendMessageDispatcher() = default;
 
 /**
  * @brief Test initialization. Resets all member variables for a fresh test state

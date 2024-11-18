@@ -23,7 +23,7 @@ public:
         Tertiary
     };
     explicit SetPasswordDialog(QString body_, QString extraButton, QWidget* parent = nullptr);
-    ~SetPasswordDialog();
+    ~SetPasswordDialog() override;
     QString getPassword();
     static int getPasswordStrength(QString pass);
 

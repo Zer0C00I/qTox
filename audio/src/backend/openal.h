@@ -38,42 +38,42 @@ class OpenAL : public IAudioControl
 
 public:
     explicit OpenAL(IAudioSettings& _settings);
-    virtual ~OpenAL();
+    ~OpenAL() override;
 
-    qreal maxOutputVolume() const
+    qreal maxOutputVolume() const override
     {
         return 1;
     }
-    qreal minOutputVolume() const
+    qreal minOutputVolume() const override
     {
         return 0;
     }
-    void setOutputVolume(qreal volume);
+    void setOutputVolume(qreal volume) override;
 
-    qreal minInputGain() const;
-    qreal maxInputGain() const;
+    qreal minInputGain() const override;
+    qreal maxInputGain() const override;
 
-    qreal inputGain() const;
-    void setInputGain(qreal dB);
+    qreal inputGain() const override;
+    void setInputGain(qreal dB) override;
 
-    qreal minInputThreshold() const;
-    qreal maxInputThreshold() const;
+    qreal minInputThreshold() const override;
+    qreal maxInputThreshold() const override;
 
-    qreal getInputThreshold() const;
-    void setInputThreshold(qreal normalizedThreshold);
+    qreal getInputThreshold() const override;
+    void setInputThreshold(qreal normalizedThreshold) override;
 
-    void reinitInput(const QString& inDevDesc);
-    bool reinitOutput(const QString& outDevDesc);
+    void reinitInput(const QString& inDevDesc) override;
+    bool reinitOutput(const QString& outDevDesc) override;
 
-    bool isOutputReady() const;
+    bool isOutputReady() const override;
 
-    QStringList outDeviceNames();
-    QStringList inDeviceNames();
+    QStringList outDeviceNames() override;
+    QStringList inDeviceNames() override;
 
-    std::unique_ptr<IAudioSink> makeSink();
+    std::unique_ptr<IAudioSink> makeSink() override;
     void destroySink(AlSink& sink);
 
-    std::unique_ptr<IAudioSource> makeSource();
+    std::unique_ptr<IAudioSource> makeSource() override;
     void destroySource(AlSource& source);
 
     void startLoop(uint sourceId);

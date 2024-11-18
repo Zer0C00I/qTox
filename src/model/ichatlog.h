@@ -69,7 +69,7 @@ class IChatLog : public QObject
 {
     Q_OBJECT
 public:
-    virtual ~IChatLog() = default;
+    ~IChatLog() override = default;
 
     /**
      * @brief Returns reference to item at idx
