@@ -23,6 +23,8 @@
 #include "src/platform/posixsignalnotifier.h"
 #endif
 
+#include <filesystem>
+
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QDir>
@@ -39,12 +41,50 @@ QList<QByteArray>* logBuffer = new QList<QByteArray>(); // Store log messages un
 QMutex* logBufferMutex = new QMutex();
 #endif
 
+// Clean up the file path to avoid leaking the user's username or build directory structure.
+QString canonicalLogFilePath(const char* filename)
+{
+    QString file = QString::fromUtf8(filename);
+    // We're not using QT_MESSAGELOG_FILE here, because that can be 0, NULL, or
+    // nullptr in release builds.
+    const QString srcPath =
+        QString::fromStdString(std::filesystem::path(__FILE__).parent_path().parent_path().string());
+    if (file.startsWith(srcPath)) {
+        file = file.mid(srcPath.length() + 1);
+    }
+
+    // The file path is outside of the project directory, but if it's in the user's $HOME, we should
+    // still strip the path to prevent leaking the user's username.
+    if (file.startsWith("/")) {
+        const auto home = QDir::homePath();
+        if (file.startsWith(home)) {
+            file = QStringLiteral("~") + file.mid(home.length());
+        }
+    }
+
+    return file;
+}
+
+// Replace the user's home with "~" to prevent leaking the user's username in log messages.
+QString canonicalLogMessage(const QString& msg)
+{
+    QString message = msg;
+
+    // Replace the user's home with "~" to prevent leaking the user's username in log messages.
+    const auto home = QDir::homePath();
+    if (message.contains(home)) {
+        message.replace(home, QStringLiteral("~"));
+    }
+
+    return message;
+}
+
 void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QString& msg)
 {
     // Silence qWarning spam due to bug in QTextBrowser (trying to open a file for base64 images)
     if (QString::fromUtf8(ctxt.function)
-            == QString("virtual bool QFSFileEngine::open(QIODevice::OpenMode)")
-        && msg == QString("QFSFileEngine::open: No file name specified")) {
+            == QStringLiteral("virtual bool QFSFileEngine::open(QIODevice::OpenMode)")
+        && msg == QStringLiteral("QFSFileEngine::open: No file name specified")) {
         return;
     }
     if (msg.startsWith("Unable to find any suggestion for")) {
@@ -52,32 +92,19 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
         return;
     }
 
-    if (msg == QString("attempted to send message with network family 10 (probably IPv6) on IPv4 socket")) {
+    if (msg
+        == QStringLiteral(
+            "attempted to send message with network family 10 (probably IPv6) on IPv4 socket")) {
         // non-stop c-toxcore spam for IPv4 users: https://github.com/TokTok/c-toxcore/issues/1432
         return;
     }
 
-    QRegularExpression snoreFilter{QStringLiteral("Snore::Notification.*was already closed")};
-    if (type == QtWarningMsg && msg.contains(snoreFilter)) {
-        // snorenotify logs this when we call requestCloseNotification correctly. The behaviour
-        // still works, so we'll just mask the warning for now. The issue has been reported
-        // upstream: https://github.com/qTox/qTox/pull/6073#pullrequestreview-420748519
-        return;
-    }
-
-    QString file = QString::fromUtf8(ctxt.file);
-    // We're not using QT_MESSAGELOG_FILE here, because that can be 0, NULL, or
-    // nullptr in release builds.
-    QString path = QString(__FILE__);
-    path = path.left(path.lastIndexOf('/') + 1);
-    if (file.startsWith(path)) {
-        file = file.mid(path.length());
-    }
+    const QString file = canonicalLogFilePath(ctxt.file);
 
     // Time should be in UTC to save user privacy on log sharing
     QTime time = QDateTime::currentDateTime().toUTC().time();
     QString LogMsg =
-        QString("[%1 UTC] %2:%3 : ").arg(time.toString("HH:mm:ss.zzz")).arg(file).arg(ctxt.line);
+        QStringLiteral("[%1 UTC] %2:%3 : ").arg(time.toString("HH:mm:ss.zzz")).arg(file).arg(ctxt.line);
     switch (type) {
     case QtDebugMsg:
         LogMsg += "Debug";
@@ -98,8 +125,8 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
         break;
     }
 
-    LogMsg += ": " + msg + "\n";
-    QByteArray LogMsgBytes = LogMsg.toUtf8();
+    LogMsg += ": " + canonicalLogMessage(msg) + "\n";
+    const QByteArray LogMsgBytes = LogMsg.toUtf8();
     fwrite(LogMsgBytes.constData(), 1, LogMsgBytes.size(), stderr);
 
 #ifdef LOG_TO_FILE
