@@ -13,7 +13,7 @@ class ConferenceInvite
 {
 public:
     ConferenceInvite() = default;
-    ConferenceInvite(uint32_t friendId_, uint8_t inviteType, const QByteArray& data);
+    ConferenceInvite(uint32_t friendId_, uint8_t inviteType, QByteArray data);
     bool operator==(const ConferenceInvite& other) const;
 
     uint32_t getFriendId() const;

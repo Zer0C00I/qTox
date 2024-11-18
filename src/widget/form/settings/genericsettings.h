@@ -13,7 +13,7 @@ class GenericForm : public QWidget
 {
     Q_OBJECT
 public:
-    GenericForm(const QPixmap& icon, Style& style, QWidget* parent = nullptr);
+    GenericForm(QPixmap icon, Style& style, QWidget* parent = nullptr);
     ~GenericForm() override = default;
 
     virtual QString getFormName() = 0;

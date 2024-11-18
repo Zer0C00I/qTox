@@ -25,6 +25,7 @@
 #include <QNetworkProxy>
 #include <QObject>
 #include <QPixmap>
+#include <utility>
 
 class Profile;
 class QCommandLineParser;
@@ -685,7 +686,7 @@ private:
     {
         friendProp() = delete;
         friendProp(QString addr_)
-            : addr(addr_)
+            : addr(std::move(addr_))
         {
         }
         QString alias = "";

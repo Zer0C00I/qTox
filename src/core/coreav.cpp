@@ -188,7 +188,7 @@ void CoreAV::process()
 bool CoreAV::isCallStarted(const Friend* f) const
 {
     QReadLocker locker{&callsLock};
-    return f && (calls.find(f->getId()) != calls.end());
+    return f && calls.contains(f->getId());
 }
 
 /**
@@ -199,7 +199,7 @@ bool CoreAV::isCallStarted(const Friend* f) const
 bool CoreAV::isCallStarted(const Conference* c) const
 {
     QReadLocker locker{&callsLock};
-    return c && (conferenceCalls.find(c->getId()) != conferenceCalls.end());
+    return c && conferenceCalls.contains(c->getId());
 }
 
 /**

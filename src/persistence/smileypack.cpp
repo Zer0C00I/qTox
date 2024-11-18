@@ -323,7 +323,7 @@ QList<QStringList> SmileyPack::getEmoticons() const
 std::shared_ptr<QIcon> SmileyPack::getAsIcon(const QString& emoticon) const
 {
     QMutexLocker<QMutex> locker(&loadingMutex);
-    if (cachedIcon.find(emoticon) != cachedIcon.end()) {
+    if (cachedIcon.contains(emoticon)) {
         return cachedIcon[emoticon];
     }
 

@@ -13,6 +13,7 @@
 #include <cassert>
 #include <cstdint>
 #include <tox/toxencryptsave.h>
+#include <utility>
 
 #include "src/core/toxfile.h"
 #include "src/core/toxpk.h"
@@ -131,9 +132,9 @@ public:
         HistMessage(RowId id_, MessageState state_, QDateTime timestamp_,
                     std::unique_ptr<ChatId> chat_, QString dispName_, ToxPk sender_, QString message)
             : chat{std::move(chat_)}
-            , sender{sender_}
-            , dispName{dispName_}
-            , timestamp{timestamp_}
+            , sender{std::move(sender_)}
+            , dispName{std::move(dispName_)}
+            , timestamp{std::move(timestamp_)}
             , id{id_}
             , state{state_}
             , content(std::move(message))
@@ -143,9 +144,9 @@ public:
         HistMessage(RowId id_, MessageState state_, QDateTime timestamp_,
                     std::unique_ptr<ChatId> chat_, QString dispName_, ToxPk sender_, ToxFile file)
             : chat{std::move(chat_)}
-            , sender{sender_}
-            , dispName{dispName_}
-            , timestamp{timestamp_}
+            , sender{std::move(sender_)}
+            , dispName{std::move(dispName_)}
+            , timestamp{std::move(timestamp_)}
             , id{id_}
             , state{state_}
             , content(std::move(file))
@@ -155,7 +156,7 @@ public:
         HistMessage(RowId id_, QDateTime timestamp_, std::unique_ptr<ChatId> chat_,
                     SystemMessage systemMessage)
             : chat{std::move(chat_)}
-            , timestamp{timestamp_}
+            , timestamp{std::move(timestamp_)}
             , id{id_}
             , state(MessageState::complete)
             , content(std::move(systemMessage))

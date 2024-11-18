@@ -10,6 +10,7 @@
 #include <QComboBox>
 #include <QEvent>
 #include <QSpinBox>
+#include <utility>
 
 /**
  * @class GenericForm
@@ -18,9 +19,9 @@
  * It provides correct behaviour of controls for settings forms.
  */
 
-GenericForm::GenericForm(const QPixmap& icon, Style& style, QWidget* parent)
+GenericForm::GenericForm(QPixmap icon, Style& style, QWidget* parent)
     : QWidget(parent)
-    , formIcon(icon)
+    , formIcon(std::move(icon))
 {
     connect(&style, &Style::themeReload, this, &GenericForm::reloadTheme);
 }

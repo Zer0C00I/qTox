@@ -6,6 +6,7 @@
 #pragma once
 
 #include <memory>
+#include <utility>
 
 #include "src/persistence/db/rawdatabase.h"
 
@@ -32,7 +33,7 @@ struct BadEntry
 {
     BadEntry(int64_t row_, QString toxId_)
         : row{row_}
-        , toxId{toxId_}
+        , toxId{std::move(toxId_)}
     {
     }
     RowId row;

@@ -13,6 +13,7 @@
 #include <QDebug>
 #include <QString>
 #include <QTranslator>
+#include <utility>
 
 namespace {
 constexpr int SCHEMA_VERSION = 11;
@@ -61,7 +62,7 @@ struct DuplicateAlias
 {
     DuplicateAlias(RowId goodAliasRow_, std::vector<RowId> badAliasRows_)
         : goodAliasRow{goodAliasRow_}
-        , badAliasRows{badAliasRows_}
+        , badAliasRows{std::move(badAliasRows_)}
     {
     }
     DuplicateAlias() = default;

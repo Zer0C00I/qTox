@@ -203,7 +203,7 @@ QVector<QPair<QString, QString>> v4l2::getDeviceList()
 
 QString v4l2::getPixelFormatString(uint32_t pixel_format)
 {
-    if (pixFmtToName.find(pixel_format) == pixFmtToName.end()) {
+    if (!pixFmtToName.contains(pixel_format)) {
         qWarning() << "Pixel format not found";
         return QStringLiteral("invalid");
     }
@@ -212,10 +212,10 @@ QString v4l2::getPixelFormatString(uint32_t pixel_format)
 
 bool v4l2::betterPixelFormat(uint32_t a, uint32_t b)
 {
-    if (pixFmtToQuality.find(a) == pixFmtToQuality.end()) {
+    if (!pixFmtToQuality.contains(a)) {
         return false;
     }
-    if (pixFmtToQuality.find(b) == pixFmtToQuality.end()) {
+    if (!pixFmtToQuality.contains(b)) {
         return true;
     }
     return pixFmtToQuality.at(a) > pixFmtToQuality.at(b);

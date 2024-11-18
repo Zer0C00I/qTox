@@ -70,7 +70,7 @@ public:
         p4_0 // SQLCipher 4.0 default encryption params
     };
 
-    RawDatabaseImpl(const QString& path_, const QString& password, const QByteArray& salt);
+    RawDatabaseImpl(QString path_, const QString& password, QByteArray salt);
     ~RawDatabaseImpl() override;
     bool isOpen() override;
 

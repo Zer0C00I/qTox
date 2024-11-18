@@ -5,16 +5,18 @@
 
 #include "conferenceinvite.h"
 
+#include <utility>
+
 /**
  * @class ConferenceInvite
  *
  * @brief This class contains information needed to create a conference invite
  */
 
-ConferenceInvite::ConferenceInvite(uint32_t friendId_, uint8_t inviteType, const QByteArray& data)
+ConferenceInvite::ConferenceInvite(uint32_t friendId_, uint8_t inviteType, QByteArray data)
     : friendId{friendId_}
     , type{inviteType}
-    , invite{data}
+    , invite{std::move(data)}
     , date{QDateTime::currentDateTime()}
 {
 }

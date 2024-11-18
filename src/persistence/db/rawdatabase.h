@@ -12,6 +12,7 @@
 #include <QVector>
 
 #include <functional>
+#include <utility>
 #include <vector>
 
 struct sqlite3_stmt;
@@ -48,7 +49,7 @@ public:
         Query(QString query_, QVector<QByteArray> blobs_ = {},
               const std::function<void(RowId)>& insertCallback_ = {})
             : query{query_.toUtf8()}
-            , blobs{blobs_}
+            , blobs{std::move(blobs_)}
             , insertCallback{insertCallback_}
         {
         }
@@ -65,7 +66,7 @@ public:
         Query(QString query_, QVector<QByteArray> blobs_,
               const std::function<void(const QVector<QVariant>&)>& rowCallback_)
             : query{query_.toUtf8()}
-            , blobs{blobs_}
+            , blobs{std::move(blobs_)}
             , rowCallback{rowCallback_}
         {
         }

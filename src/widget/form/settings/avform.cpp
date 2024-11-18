@@ -240,7 +240,7 @@ void AVForm::selectBestModes(QVector<VideoMode>& allVideoModes)
             if (mode.norm(idealMode) > idealMode.tolerance())
                 continue;
 
-            if (bestModeIndices.find(res) == bestModeIndices.end()) {
+            if (!bestModeIndices.contains(res)) {
                 bestModeIndices[res] = i;
                 continue;
             }

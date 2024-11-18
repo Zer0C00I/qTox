@@ -73,7 +73,7 @@ public:
 
     bool contains(ChatLogIdx idx) const
     {
-        return idxInfoMap.find(idx) != idxInfoMap.end();
+        return idxInfoMap.contains(idx);
     }
 
     bool contains(QDateTime timestamp) const;

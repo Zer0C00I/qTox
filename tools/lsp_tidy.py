@@ -130,18 +130,29 @@ class Preprocessor:
         # Preprocess all files.
         self._hashes = {}
         for filename in loaded_files.keys():
-            self._hashes[filename] = self._sha256(filename, includes)
+            self._hashes[filename] = self._sha256(loaded_files, includes,
+                                                  filename)
 
-    def _sha256(self, filename: str, includes: dict[str, list[str]]) -> str:
+    def _sha256(
+        self,
+        loaded_files: dict[str, str],
+        includes: dict[str, list[str]],
+        filename: str,
+    ) -> str:
         """Recursively resolve all includes, hash the result."""
         if filename not in includes:
             raise ValueError(f"File not found: {filename}")
-        return hashlib.sha256("".join(
-            self._sha256(include, includes)
-            for include in includes[filename]).encode()).hexdigest()
+        hashable = [loaded_files[filename]]
+        hashable.extend(
+            self._sha256(loaded_files, includes, include)
+            for include in includes[filename])
+        return hashlib.sha256("".join(hashable).encode()).hexdigest()
 
     def sha256(self, file: File) -> str:
         return self._hashes[os.path.basename(file.path)]
+
+    def identifier(self, file: File) -> str:
+        return f"{file.path}@{self.sha256(file)}"
 
     @property
     def sources(self) -> tuple[File, ...]:
@@ -402,9 +413,9 @@ class CachingClangd:
             self,
             file: File) -> AsyncGenerator[tuple[File, list[Diagnostic]], None]:
         async with self._sem:
-            print(f"Analyzing {file.path}", flush=True)
-            sha = self._pp.sha256(file)
+            sha = self._pp.identifier(file)
             if sha not in self._cache:
+                print(f"Analyzing {file.path}", flush=True)
                 self._clangd.open(file)
             else:
                 yield file, self._cache[sha]
@@ -416,7 +427,7 @@ class CachingClangd:
             file = todo.get(uri, None)
             if not file:
                 continue
-            self._cache[self._pp.sha256(file)] = diags
+            self._cache[self._pp.identifier(file)] = diags
             self._save()
             yield file, diags
 

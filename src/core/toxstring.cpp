@@ -12,6 +12,7 @@
 
 #include <cassert>
 #include <climits>
+#include <utility>
 
 /**
  * @class ToxString
@@ -31,8 +32,8 @@ ToxString::ToxString(const QString& text)
  * @brief Creates a ToxString from bytes in a QByteArray.
  * @param text Input text.
  */
-ToxString::ToxString(const QByteArray& text)
-    : string(text)
+ToxString::ToxString(QByteArray text)
+    : string(std::move(text))
 {
 }
 

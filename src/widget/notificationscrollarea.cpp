@@ -19,7 +19,7 @@ NotificationScrollArea::NotificationScrollArea(QWidget* parent)
 
 void NotificationScrollArea::trackWidget(Settings& settings, Style& style, GenericChatroomWidget* widget)
 {
-    if (trackedWidgets.find(widget) != trackedWidgets.end())
+    if (trackedWidgets.contains(widget))
         return;
 
     Visibility visibility = widgetVisible(widget);

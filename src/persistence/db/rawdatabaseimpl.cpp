@@ -13,6 +13,7 @@
 #include <QFile>
 #include <QMetaObject>
 #include <QMutexLocker>
+#include <utility>
 
 /**
  * @brief Tries to open a database.
@@ -20,11 +21,11 @@
  * @param password If empty, the database will be opened unencrypted.
  * Otherwise we will use toxencryptsave to derive a key and encrypt the database.
  */
-RawDatabaseImpl::RawDatabaseImpl(const QString& path_, const QString& password, const QByteArray& salt)
+RawDatabaseImpl::RawDatabaseImpl(QString path_, const QString& password, QByteArray salt)
     : workerThread{new QThread}
-    , path{path_}
-    , currentSalt{salt} // we need the salt later if a new password should be set
-    , currentHexKey{deriveKey(password, salt)}
+    , path{std::move(path_)}
+    , currentSalt{std::move(salt)} // we need the salt later if a new password should be set
+    , currentHexKey{deriveKey(password, currentSalt)}
 {
     workerThread->setObjectName("qTox Database");
     moveToThread(workerThread.get());

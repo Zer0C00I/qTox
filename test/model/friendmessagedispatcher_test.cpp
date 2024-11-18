@@ -147,7 +147,7 @@ void TestFriendMessageDispatcher::testSignals()
 
     // We should have received some message ids in our callbacks
     QVERIFY(sentIds.first == sentIds.second);
-    QVERIFY(outgoingMessages.find(sentIds.first) != outgoingMessages.end());
+    QVERIFY(outgoingMessages.contains(sentIds.first));
     QVERIFY(startReceiptNum.get() != endReceiptNum.get());
     QVERIFY(outgoingMessages.size() == 1);
 

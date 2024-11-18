@@ -11,6 +11,7 @@
 #include <QSettings>
 #include <QString>
 #include <QVector>
+#include <utility>
 
 class SettingsSerializer
 {
@@ -56,8 +57,8 @@ private:
             : group{group_}
             , array{array_}
             , arrayIndex{arrayIndex_}
-            , key{key_}
-            , value{value_}
+            , key{std::move(key_)}
+            , value{std::move(value_)}
         {
         }
         qint64 group;

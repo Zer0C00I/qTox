@@ -10,6 +10,7 @@
 #include "src/widget/tool/chattextedit.h"
 #include <QMap>
 #include <QString>
+#include <utility>
 
 class TabCompleter : public QObject
 {
@@ -24,8 +25,8 @@ public slots:
 private:
     struct SortableString
     {
-        explicit SortableString(const QString& n)
-            : contents{n}
+        explicit SortableString(QString n)
+            : contents{std::move(n)}
         {
         }
         bool operator<(const SortableString& other) const;

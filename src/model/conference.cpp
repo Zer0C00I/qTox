@@ -13,19 +13,19 @@
 #include <cassert>
 
 #include <QDebug>
+#include <utility>
 
 namespace {
 const int MAX_CONFERENCE_TITLE_LENGTH = 128;
 } // namespace
 
-Conference::Conference(int conferenceId_, const ConferenceId persistentConferenceId,
-                       const QString& name, bool isAvConference, const QString& selfName_,
-                       ICoreConferenceQuery& conferenceQuery_, ICoreIdHandler& idHandler_,
-                       FriendList& friendList_)
+Conference::Conference(int conferenceId_, const ConferenceId persistentConferenceId, QString name,
+                       bool isAvConference, QString selfName_, ICoreConferenceQuery& conferenceQuery_,
+                       ICoreIdHandler& idHandler_, FriendList& friendList_)
     : conferenceQuery(conferenceQuery_)
     , idHandler(idHandler_)
-    , selfName{selfName_}
-    , title{name}
+    , selfName{std::move(selfName_)}
+    , title{std::move(name)}
     , toxConferenceNum(conferenceId_)
     , conferenceId{persistentConferenceId}
     , avConference{isAvConference}

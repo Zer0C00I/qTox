@@ -19,6 +19,7 @@
 #include <QDesktopServices>
 #include <QPushButton>
 #include <QTimer>
+#include <utility>
 
 // index of UI in the QStackedWidget
 enum class updateIndex
@@ -43,7 +44,7 @@ AboutForm::AboutForm(UpdateCheck& updateCheck_, QString contactInfo_, Style& sty
     , bodyUI(new Ui::AboutSettings)
     , progressTimer(new QTimer(this))
     , updateCheck(updateCheck_)
-    , contactInfo{contactInfo_}
+    , contactInfo{std::move(contactInfo_)}
     , style{style_}
 {
     bodyUI->setupUi(this);

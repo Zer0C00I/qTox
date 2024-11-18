@@ -12,18 +12,17 @@
 #include <QDebug>
 
 #include <cassert>
-#include <memory>
+#include <utility>
 
-Friend::Friend(uint32_t friendId_, const ToxPk& friendPk_, const QString& userAlias_,
-               const QString& userName_)
-    : userName{userName_}
-    , userAlias{userAlias_}
-    , friendPk{friendPk_}
+Friend::Friend(uint32_t friendId_, ToxPk friendPk_, QString userAlias_, QString userName_)
+    : userName{std::move(userName_)}
+    , userAlias{std::move(userAlias_)}
+    , friendPk{std::move(friendPk_)}
     , friendId{friendId_}
     , hasNewEvents{false}
     , friendStatus{Status::Status::Offline}
 {
-    if (userName_.isEmpty()) {
+    if (userName.isEmpty()) {
         userName = friendPk.toString();
     }
 }

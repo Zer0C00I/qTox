@@ -29,12 +29,10 @@ ToxPk::ToxPk()
  * @param rawId The bytes to construct the ToxPk from. The length must be exactly
  *              ToxPk::size, else the ToxPk will be empty.
  */
-ToxPk::ToxPk(const QByteArray& rawId)
-    : ChatId([&rawId]() {
-        assert(rawId.length() == size);
-        return rawId;
-    }())
+ToxPk::ToxPk(QByteArray rawId)
+    : ChatId(std::move(rawId))
 {
+    assert(rawId.length() == size);
 }
 
 /**
@@ -43,7 +41,7 @@ ToxPk::ToxPk(const QByteArray& rawId)
  * ToxPk::size from the specified buffer.
  */
 ToxPk::ToxPk(const uint8_t* rawId)
-    : ChatId(QByteArray(reinterpret_cast<const char*>(rawId), size))
+    : ToxPk(QByteArray(reinterpret_cast<const char*>(rawId), size))
 {
 }
 
@@ -55,12 +53,12 @@ ToxPk::ToxPk(const uint8_t* rawId)
  * @param pk Tox Pk string to convert to ToxPk object
  */
 ToxPk::ToxPk(const QString& pk)
-    : ChatId([&pk]() {
-        if (pk.length() == numHexChars) {
-            return QByteArray::fromHex(pk.toLatin1());
+    : ToxPk([&pk]() {
+        if (pk.length() != numHexChars) {
+            assert(!"ToxPk constructed with invalid length string");
+            return QByteArray(); // invalid pk string
         }
-        assert(!"ToxPk constructed with invalid length string");
-        return QByteArray(); // invalid pk string
+        return QByteArray::fromHex(pk.toLatin1());
     }())
 {
 }

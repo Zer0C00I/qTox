@@ -10,7 +10,7 @@
 ChatLineStorage::iterator ChatLineStorage::insertChatMessage(ChatLogIdx idx, QDateTime timestamp,
                                                              ChatLine::Ptr line)
 {
-    if (idxInfoMap.find(idx) != idxInfoMap.end()) {
+    if (idxInfoMap.contains(idx)) {
         qWarning() << "Index is already rendered, not updating";
         return lines.end();
     }
@@ -200,9 +200,9 @@ void ChatLineStorage::decrementLinePosAfter(IdxInfoMap_t::iterator inputIt)
 
 bool ChatLineStorage::shouldRemovePreviousLine(iterator prevIt, iterator it)
 {
-    return prevIt != lines.end() &&                  // Previous iterator is valid
-           dateMap.find(*prevIt) != dateMap.end() && // Previous iterator is a date line
-           (it == lines.end() ||                     // Previous iterator is the last line
-            dateMap.find(*it) != dateMap.end()       // Adjacent date lines
+    return prevIt != lines.end() &&     // Previous iterator is valid
+           dateMap.contains(*prevIt) && // Previous iterator is a date line
+           (it == lines.end() ||        // Previous iterator is the last line
+            dateMap.contains(*it)       // Adjacent date lines
            );
 }
