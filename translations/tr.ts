@@ -233,7 +233,7 @@ bu da video görüşmelerinde sorunlara yol açabilir.</translation>
         <translation>Ses + Görüntü</translation>
     </message>
     <message>
-        <source>Automatically accept group chat invitations from this contact if set.</source>
+        <source>Automatically accept conference invitations from this contact if set.</source>
         <translation>Ayarlıysa bu kişiden gelen grup sohbeti davetlerini sormadan kabul et.</translation>
     </message>
     <message>
@@ -285,7 +285,7 @@ bu da video görüşmelerinde sorunlara yol açabilir.</translation>
         <translation>Aramayı otomatik olarak kabul et:</translation>
     </message>
     <message>
-        <source>Auto-accept group invites</source>
+        <source>Auto-accept conference invites</source>
         <translation>Grup davetlerini otomatik kabul et</translation>
     </message>
     <message>
@@ -810,7 +810,7 @@ geçersiz karakterler _ olarak değiştirildi.</translation>
         <translation>/me arkadaşlık öneriyor, &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Groupchat %1</source>
+        <source>Conference %1</source>
         <translation>Grup sohbeti %1</translation>
     </message>
     <message>
@@ -994,8 +994,8 @@ geçersiz karakterler _ olarak değiştirildi.</translation>
         <translation>Sohbeti bu pencereden kaldır</translation>
     </message>
     <message>
-        <source>Invite to group</source>
-        <comment>Menu to invite a friend to a groupchat</comment>
+        <source>Invite to conference</source>
+        <comment>Menu to invite a friend to a conference</comment>
         <translation>Gruba davet et</translation>
     </message>
     <message>
@@ -1047,11 +1047,11 @@ geçersiz karakterler _ olarak değiştirildi.</translation>
         <translation>Çevrimdışı</translation>
     </message>
     <message>
-        <source>To new group</source>
+        <source>To new conference</source>
         <translation>Yeni gruba</translation>
     </message>
     <message>
-        <source>Invite to group &apos;%1&apos;</source>
+        <source>Invite to conference &apos;%1&apos;</source>
         <translation>&apos;%1&apos; grubuna davet et</translation>
     </message>
     <message>
@@ -1208,7 +1208,7 @@ tamamen kapanmak yerine tepsiye kapanacak.</translation>
         <translation>Bunu, her bir arkadaşa sağ tıklayarak arkadaş temelinde ayarlayabilirsiniz.</translation>
     </message>
     <message>
-        <source>Add a chat message when a user joins or leaves a group</source>
+        <source>Add a chat message when a user joins or leaves a conference</source>
         <translation>Bir kullanıcı gruba katıldığında veya gruptan ayrıldığında sohbet iletisi ekle</translation>
     </message>
 </context>
@@ -1272,7 +1272,7 @@ tamamen kapanmak yerine tepsiye kapanacak.</translation>
     </message>
 </context>
 <context>
-    <name>GroupChatForm</name>
+    <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
@@ -1290,22 +1290,22 @@ tamamen kapanmak yerine tepsiye kapanacak.</translation>
     </message>
 </context>
 <context>
-    <name>GroupInviteForm</name>
+    <name>ConferenceInviteForm</name>
     <message>
-        <source>Groups</source>
+        <source>Conferences</source>
         <translation>Gruplar</translation>
     </message>
     <message>
-        <source>Create new group</source>
+        <source>Create new conference</source>
         <translation>Yeni grup oluştur</translation>
     </message>
     <message>
-        <source>Group invites</source>
+        <source>Conference invites</source>
         <translation>Grup davetleri</translation>
     </message>
 </context>
 <context>
-    <name>GroupInviteWidget</name>
+    <name>ConferenceInviteWidget</name>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
         <translation>%1, %2 %3 tarihinde davet etti.</translation>
@@ -1320,7 +1320,7 @@ tamamen kapanmak yerine tepsiye kapanacak.</translation>
     </message>
 </context>
 <context>
-    <name>GroupWidget</name>
+    <name>ConferenceWidget</name>
     <message>
         <source>Open chat in new window</source>
         <translation>Sohbeti yeni pencerede aç</translation>
@@ -1334,8 +1334,8 @@ tamamen kapanmak yerine tepsiye kapanacak.</translation>
         <translation>Başlık ayarla...</translation>
     </message>
     <message>
-        <source>Quit group</source>
-        <comment>Menu to quit a groupchat</comment>
+        <source>Quit conference</source>
+        <comment>Menu to quit a conference</comment>
         <translation>Gruptan çık</translation>
     </message>
     <message numerus="yes">
@@ -1682,7 +1682,7 @@ Lütfen aynı parolayı iki kez girdiğinizden emin olun.</translation>
         <translation>Arkadaş ekle</translation>
     </message>
     <message>
-        <source>Create a group chat</source>
+        <source>Create a conference</source>
         <translation>Grup sohbeti oluştur</translation>
     </message>
     <message>
@@ -1742,11 +1742,11 @@ Lütfen aynı parolayı iki kez girdiğinizden emin olun.</translation>
         <translation>Arkadaş ekle sayfasını aç</translation>
     </message>
     <message>
-        <source>Groupchat</source>
+        <source>Conference</source>
         <translation>Grup sohbeti</translation>
     </message>
     <message>
-        <source>Open groupchat management page</source>
+        <source>Open conference management page</source>
         <translation>Grup sohbeti yönetim sayfasını aç</translation>
     </message>
     <message>
@@ -1865,7 +1865,7 @@ Lütfen aynı parolayı iki kez girdiğinizden emin olun.</translation>
         <translation>Yeni ileti</translation>
     </message>
     <message>
-        <source>New group message</source>
+        <source>New conference message</source>
         <translation>Yeni grup mesajı</translation>
     </message>
     <message>
@@ -1878,11 +1878,11 @@ Lütfen aynı parolayı iki kez girdiğinizden emin olun.</translation>
         <translation>%1 - dosya aktarımı</translation>
     </message>
     <message>
-        <source>Group invite received</source>
+        <source>Conference invite received</source>
         <translation>Grup daveti alındı</translation>
     </message>
     <message>
-        <source>%1 invites you to join a group.</source>
+        <source>%1 invites you to join a conference.</source>
         <translation>%1 sizi bir gruba katılmaya davet ediyor.</translation>
     </message>
     <message>
@@ -1970,7 +1970,7 @@ Arkadaşlık istemleriyle rahatsız ediliyorsanız, NoSpam&apos;ı değiştirin.
         <translation>KaraListe</translation>
     </message>
     <message>
-        <source>Filter group messages by group members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation>Grup iletilerini grup üyelerinin açık anahtarlarına göre filtreleyin. Açık anahtarları her satıra bir tane olacak şekilde buraya koyun.</translation>
     </message>
 </context>
@@ -2397,11 +2397,11 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
         <translation>&quot;%1&quot; dosyası gönderilemedi</translation>
     </message>
     <message>
-        <source>%1 has joined the group</source>
+        <source>%1 has joined the conference</source>
         <translation>%1 gruba katıldı</translation>
     </message>
     <message>
-        <source>%1 has left the group</source>
+        <source>%1 has left the conference</source>
         <translation>%1 gruptan ayrıldı</translation>
     </message>
     <message>
@@ -2498,11 +2498,11 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
         <translation>Denetim</translation>
     </message>
     <message>
-        <source>You have joined the group</source>
+        <source>You have joined the conference</source>
         <translation>Gruba katıldınız</translation>
     </message>
     <message>
-        <source>You have left the group</source>
+        <source>You have left the conference</source>
         <translation>Gruptan ayrıldınız</translation>
     </message>
     <message>
@@ -2790,7 +2790,7 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
         <translation>Kişi listesi</translation>
     </message>
     <message>
-        <source>Place groupchats at top of friend list</source>
+        <source>Place conferences at top of friend list</source>
         <translation>Grup sohbetlerini arkadaş listesinin en üstüne yerleştir</translation>
     </message>
     <message>
@@ -2860,7 +2860,7 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
         <translation>Bildir</translation>
     </message>
     <message>
-        <source>Group chats only notify when mentioned</source>
+        <source>Conferences only notify when mentioned</source>
         <translation>Grup sohbetleri yalnızca söz edildiğinde bildirir</translation>
     </message>
     <message>
@@ -2880,17 +2880,17 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
         <translation>Mesaj göndereni ve içeriğini gizle</translation>
     </message>
     <message>
-        <source>Use colored nicknames in group chats</source>
+        <source>Use colored nicknames in conferences</source>
         <translation>Grup sohbetlerinde renkli takma adlar kullan</translation>
     </message>
     <message>
-        <source>Only notify about new messages in group chats when mentioned.</source>
-        <comment>toolTip for Group chats only notify when mentioned</comment>
+        <source>Only notify about new messages in conferences when mentioned.</source>
+        <comment>toolTip for Conferences only notify when mentioned</comment>
         <translation>Grup sohbetlerindeki yeni iletileri yalnızca söz edildiğinde bildir.</translation>
     </message>
     <message>
-        <source>If checked, group chats will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
-        <comment>toolTip for groupchat positioning</comment>
+        <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
+        <comment>toolTip for conference positioning</comment>
         <translation>İşaretlenirse, grup sohbetleri arkadaş listesinin en üstüne yerleştirilir, aksi takdirde çevrim içi arkadaşların altına yerleştirilir.</translation>
     </message>
     <message>
@@ -2943,7 +2943,7 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
         <translation>Arkadaşlar</translation>
     </message>
     <message>
-        <source>Groups</source>
+        <source>Conferences</source>
         <translation>Gruplar</translation>
     </message>
     <message>
@@ -2987,11 +2987,11 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
         <translation>Kişiler</translation>
     </message>
     <message>
-        <source>Groupchat #%1</source>
+        <source>Conference #%1</source>
         <translation>Grup sohbeti #%1</translation>
     </message>
     <message>
-        <source>Create new group...</source>
+        <source>Create new conference...</source>
         <translation>Yeni grup oluştur...</translation>
     </message>
     <message>
@@ -3005,7 +3005,7 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
         <translation>Arkadaş ekle</translation>
     </message>
     <message>
-        <source>Group invites</source>
+        <source>Conference invites</source>
         <comment>title of the window</comment>
         <translation>Grup davetleri</translation>
     </message>
@@ -3044,7 +3044,7 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
         </translation>
     </message>
     <message numerus="yes">
-        <source>%n new group invite(s)</source>
+        <source>%n new conference invite(s)</source>
         <translation>
             <numerusform>%n yeni grup daveti</numerusform>
         </translation>

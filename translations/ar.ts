@@ -228,7 +228,7 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">الصوت + التسجيل المرئي</translation>
     </message>
     <message>
-        <source>Automatically accept group chat invitations from this contact if set.</source>
+        <source>Automatically accept conference invitations from this contact if set.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -280,7 +280,7 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Auto-accept group invites</source>
+        <source>Auto-accept conference invites</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -807,7 +807,7 @@ so you can save the file on Windows.</source>
         <translation>/me طلب إضافة, &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Groupchat %1</source>
+        <source>Conference %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -991,8 +991,8 @@ so you can save the file on Windows.</source>
         <translation>ازالة المحادثة من هذه النافذة</translation>
     </message>
     <message>
-        <source>Invite to group</source>
-        <comment>Menu to invite a friend to a groupchat</comment>
+        <source>Invite to conference</source>
+        <comment>Menu to invite a friend to a conference</comment>
         <translation>دعوة لمجموعة</translation>
     </message>
     <message>
@@ -1047,11 +1047,11 @@ so you can save the file on Windows.</source>
         <translation>غير متصل</translation>
     </message>
     <message>
-        <source>To new group</source>
+        <source>To new conference</source>
         <translation>إلى مجموعة جديدة</translation>
     </message>
     <message>
-        <source>Invite to group &apos;%1&apos;</source>
+        <source>Invite to conference &apos;%1&apos;</source>
         <translation>إضافة إلى مجموعة &apos;%1&apos;</translation>
     </message>
     <message>
@@ -1202,7 +1202,7 @@ instead of closing entirely.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Add a chat message when a user joins or leaves a group</source>
+        <source>Add a chat message when a user joins or leaves a conference</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1266,7 +1266,7 @@ instead of closing entirely.</source>
     </message>
 </context>
 <context>
-    <name>GroupChatForm</name>
+    <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
@@ -1289,22 +1289,22 @@ instead of closing entirely.</source>
     </message>
 </context>
 <context>
-    <name>GroupInviteForm</name>
+    <name>ConferenceInviteForm</name>
     <message>
-        <source>Groups</source>
+        <source>Conferences</source>
         <translation>المجموعات</translation>
     </message>
     <message>
-        <source>Create new group</source>
+        <source>Create new conference</source>
         <translation>إنشاء مجموعة جديدة</translation>
     </message>
     <message>
-        <source>Group invites</source>
+        <source>Conference invites</source>
         <translation>إضافات المجموعة</translation>
     </message>
 </context>
 <context>
-    <name>GroupInviteWidget</name>
+    <name>ConferenceInviteWidget</name>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
         <translation>تمت دعوتهم بنسبة %1 على %2 في %3.</translation>
@@ -1319,7 +1319,7 @@ instead of closing entirely.</source>
     </message>
 </context>
 <context>
-    <name>GroupWidget</name>
+    <name>ConferenceWidget</name>
     <message>
         <source>Open chat in new window</source>
         <translation>فتح المحادثة في نافذة مستقلة</translation>
@@ -1333,8 +1333,8 @@ instead of closing entirely.</source>
         <translation>ضع عنواناً...</translation>
     </message>
     <message>
-        <source>Quit group</source>
-        <comment>Menu to quit a groupchat</comment>
+        <source>Quit conference</source>
+        <comment>Menu to quit a conference</comment>
         <translation>الخروج من المجموعة</translation>
     </message>
     <message numerus="yes">
@@ -1684,7 +1684,7 @@ Please make sure to enter the same password twice.</source>
         <translation>إضافة أصدقاء</translation>
     </message>
     <message>
-        <source>Create a group chat</source>
+        <source>Create a conference</source>
         <translation>إنشاء محادثة جماعية</translation>
     </message>
     <message>
@@ -1744,11 +1744,11 @@ Please make sure to enter the same password twice.</source>
         <translation>فتح صفحة اضافة اصدقاء</translation>
     </message>
     <message>
-        <source>Groupchat</source>
+        <source>Conference</source>
         <translation>دردشة جماعية</translation>
     </message>
     <message>
-        <source>Open groupchat management page</source>
+        <source>Open conference management page</source>
         <translation>فتح صفحة ادارة الدردشة الجماعية</translation>
     </message>
     <message>
@@ -1872,7 +1872,7 @@ Please make sure to enter the same password twice.</source>
         <translation type="unfinished">رسالة جديدة</translation>
     </message>
     <message>
-        <source>New group message</source>
+        <source>New conference message</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1885,11 +1885,11 @@ Please make sure to enter the same password twice.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Group invite received</source>
+        <source>Conference invite received</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 invites you to join a group.</source>
+        <source>%1 invites you to join a conference.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1977,7 +1977,7 @@ If you are getting spammed with friend requests, change the NoSpam.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Filter group messages by group members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2401,11 +2401,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished">فشل ارسال الملف &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>%1 has joined the group</source>
+        <source>%1 has joined the conference</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 has left the group</source>
+        <source>%1 has left the conference</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2502,11 +2502,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You have joined the group</source>
+        <source>You have joined the conference</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You have left the group</source>
+        <source>You have left the conference</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2794,7 +2794,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>قائمة الإتصال</translation>
     </message>
     <message>
-        <source>Place groupchats at top of friend list</source>
+        <source>Place conferences at top of friend list</source>
         <translation>ضع المحادثات الجماعية اعلى قائمه الاصدقاء</translation>
     </message>
     <message>
@@ -2864,7 +2864,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Group chats only notify when mentioned</source>
+        <source>Conferences only notify when mentioned</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2884,17 +2884,17 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Use colored nicknames in group chats</source>
+        <source>Use colored nicknames in conferences</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Only notify about new messages in group chats when mentioned.</source>
-        <comment>toolTip for Group chats only notify when mentioned</comment>
+        <source>Only notify about new messages in conferences when mentioned.</source>
+        <comment>toolTip for Conferences only notify when mentioned</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>If checked, group chats will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
-        <comment>toolTip for groupchat positioning</comment>
+        <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
+        <comment>toolTip for conference positioning</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2947,7 +2947,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>الأصدقاء</translation>
     </message>
     <message>
-        <source>Groups</source>
+        <source>Conferences</source>
         <translation>المجموعات</translation>
     </message>
     <message>
@@ -2991,11 +2991,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>جهات الاتصال</translation>
     </message>
     <message>
-        <source>Groupchat #%1</source>
+        <source>Conference #%1</source>
         <translation>محادثة جماعية #%1</translation>
     </message>
     <message>
-        <source>Create new group...</source>
+        <source>Create new conference...</source>
         <translation>إنشاء مجموعة جديدة...</translation>
     </message>
     <message>
@@ -3009,7 +3009,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>إضافة صديق</translation>
     </message>
     <message>
-        <source>Group invites</source>
+        <source>Conference invites</source>
         <comment>title of the window</comment>
         <translation>دعوات المجموعة</translation>
     </message>
@@ -3053,7 +3053,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         </translation>
     </message>
     <message numerus="yes">
-        <source>%n new group invite(s)</source>
+        <source>%n new conference invite(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
             <numerusform></numerusform>

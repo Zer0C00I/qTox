@@ -60,12 +60,12 @@ UserInterfaceForm::UserInterfaceForm(SmileyPack& smileyPack_, Settings& settings
     bodyUI->txtChatFont->setCurrentFont(chatBaseFont);
     int index = static_cast<int>(settings.getStylePreference());
     bodyUI->textStyleComboBox->setCurrentIndex(index);
-    bodyUI->useNameColors->setChecked(settings.getEnableGroupChatsColor());
+    bodyUI->useNameColors->setChecked(settings.getEnableConferencesColor());
 
     bodyUI->notify->setChecked(settings.getNotify());
     // Note: UI is boolean inversed from settings to maintain setting file backwards compatibility
-    bodyUI->groupOnlyNotifyWhenMentioned->setChecked(!settings.getGroupAlwaysNotify());
-    bodyUI->groupOnlyNotifyWhenMentioned->setEnabled(settings.getNotify());
+    bodyUI->conferenceOnlyNotifyWhenMentioned->setChecked(!settings.getConferenceAlwaysNotify());
+    bodyUI->conferenceOnlyNotifyWhenMentioned->setEnabled(settings.getNotify());
     bodyUI->notifySound->setChecked(settings.getNotifySound());
     bodyUI->notifyHide->setChecked(settings.getNotifyHide());
     bodyUI->notifySound->setEnabled(settings.getNotify());
@@ -80,7 +80,7 @@ UserInterfaceForm::UserInterfaceForm(SmileyPack& smileyPack_, Settings& settings
 
     bodyUI->showWindow->setChecked(settings.getShowWindow());
 
-    bodyUI->cbGroupchatPosition->setChecked(settings.getGroupchatPosition());
+    bodyUI->cbConferencePosition->setChecked(settings.getConferencePosition());
     bodyUI->cbCompactLayout->setChecked(settings.getCompactLayout());
     bodyUI->cbSeparateWindow->setChecked(settings.getSeparateWindow());
     bodyUI->cbDontGroupWindows->setChecked(settings.getDontGroupWindows());
@@ -262,7 +262,7 @@ void UserInterfaceForm::on_notify_stateChanged()
 {
     const bool notify = bodyUI->notify->isChecked();
     settings.setNotify(notify);
-    bodyUI->groupOnlyNotifyWhenMentioned->setEnabled(notify);
+    bodyUI->conferenceOnlyNotifyWhenMentioned->setEnabled(notify);
     bodyUI->notifySound->setEnabled(notify);
     bodyUI->busySound->setEnabled(notify && bodyUI->notifySound->isChecked());
     bodyUI->desktopNotify->setEnabled(notify);
@@ -291,10 +291,10 @@ void UserInterfaceForm::on_showWindow_stateChanged()
     settings.setShowWindow(bodyUI->showWindow->isChecked());
 }
 
-void UserInterfaceForm::on_groupOnlyNotifyWhenMentioned_stateChanged()
+void UserInterfaceForm::on_conferenceOnlyNotifyWhenMentioned_stateChanged()
 {
     // Note: UI is boolean inversed from settings to maintain setting file backwards compatibility
-    settings.setGroupAlwaysNotify(!bodyUI->groupOnlyNotifyWhenMentioned->isChecked());
+    settings.setConferenceAlwaysNotify(!bodyUI->conferenceOnlyNotifyWhenMentioned->isChecked());
 }
 
 void UserInterfaceForm::on_cbCompactLayout_stateChanged()
@@ -314,9 +314,9 @@ void UserInterfaceForm::on_cbDontGroupWindows_stateChanged()
     settings.setDontGroupWindows(bodyUI->cbDontGroupWindows->isChecked());
 }
 
-void UserInterfaceForm::on_cbGroupchatPosition_stateChanged()
+void UserInterfaceForm::on_cbConferencePosition_stateChanged()
 {
-    settings.setGroupchatPosition(bodyUI->cbGroupchatPosition->isChecked());
+    settings.setConferencePosition(bodyUI->cbConferencePosition->isChecked());
 }
 
 void UserInterfaceForm::on_cbShowIdenticons_stateChanged()
@@ -377,7 +377,7 @@ void UserInterfaceForm::on_txtChatFontSize_valueChanged(int px)
 
 void UserInterfaceForm::on_useNameColors_stateChanged(int value)
 {
-    settings.setEnableGroupChatsColor(value);
+    settings.setEnableConferencesColor(value);
 }
 
 void UserInterfaceForm::on_notifyHide_stateChanged(int value)
