@@ -40,9 +40,8 @@ QString generateSingleChatTitle(const QHash<T, size_t> numNotifications, T conta
         return QObject::tr("%1 message(s) from %2")
             .arg(numNotifications[contact])
             .arg(contact->getDisplayedName());
-    } else {
-        return contact->getDisplayedName();
     }
+    return contact->getDisplayedName();
 }
 
 QString generateTitle(const QHash<const Friend*, size_t>& friendNotifications,
@@ -52,9 +51,8 @@ QString generateTitle(const QHash<const Friend*, size_t>& friendNotifications,
     if (numChats > 1) {
         return generateMultiChatTitle(numChats,
                                       getNumMessages(friendNotifications, conferenceNotifications));
-    } else {
-        return generateSingleChatTitle(friendNotifications, f);
     }
+    return generateSingleChatTitle(friendNotifications, f);
 }
 
 QString generateTitle(const QHash<const Friend*, size_t>& friendNotifications,
@@ -65,9 +63,8 @@ QString generateTitle(const QHash<const Friend*, size_t>& friendNotifications,
     if (numChats > 1) {
         return generateMultiChatTitle(numChats,
                                       getNumMessages(friendNotifications, conferenceNotifications));
-    } else {
-        return generateSingleChatTitle(conferenceNotifications, c);
     }
+    return generateSingleChatTitle(conferenceNotifications, c);
 }
 
 QString generateContent(const QHash<const Friend*, size_t>& friendNotifications,
@@ -107,15 +104,15 @@ QString generateContent(const QHash<const Friend*, size_t>& friendNotifications,
         }
 
         return ret;
-    } else if (conferenceNotifications.size() == 1) {
+    }
+    if (conferenceNotifications.size() == 1) {
         auto it = conferenceNotifications.begin();
         if (it == conferenceNotifications.end()) {
             qFatal("Concurrency error: conference notifications got cleared while reading");
         }
         return it.key()->getPeerList()[sender] + ": " + lastMessage;
-    } else {
-        return lastMessage;
     }
+    return lastMessage;
 }
 
 QPixmap getSenderAvatar(Profile* profile, const ToxPk& sender)

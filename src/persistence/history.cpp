@@ -429,16 +429,15 @@ RawDatabase::Query History::generateFileFinished(RowId id, bool success, const Q
                 .arg(id.get()),
             QVector<QByteArray>{filePath.toUtf8(), fileHash},
         };
-    } else {
-        return {
-            QStringLiteral( //
-                "UPDATE file_transfers "
-                "SET file_state = %1 "
-                "WHERE id = %2")
-                .arg(file_state)
-                .arg(id.get()),
-        };
     }
+    return {
+        QStringLiteral( //
+            "UPDATE file_transfers "
+            "SET file_state = %1 "
+            "WHERE id = %2")
+            .arg(file_state)
+            .arg(id.get()),
+    };
 }
 
 void History::addNewFileMessage(const ChatId& chatId, const QByteArray& fileId,

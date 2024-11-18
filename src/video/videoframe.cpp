@@ -493,9 +493,8 @@ AVFrame* VideoFrame::retrieveAVFrame(const QSize& dimensions, const int pixelFor
 
     if (frameBuffer.contains(frameKey)) {
         return frameBuffer[frameKey];
-    } else {
-        return nullptr;
     }
+    return nullptr;
 }
 
 /**
@@ -610,11 +609,10 @@ AVFrame* VideoFrame::storeAVFrame(AVFrame* frame, const QSize& dimensions, const
         av_frame_free(&frame);
 
         return old_ret;
-    } else {
-        frameBuffer[frameKey] = frame;
-
-        return frame;
     }
+    frameBuffer[frameKey] = frame;
+
+    return frame;
 }
 
 /**

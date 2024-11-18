@@ -286,9 +286,9 @@ void Nexus::setProfile(Profile* p)
         emit profileLoadFailed();
         // Warnings are issued during respective createNew/load calls
         return;
-    } else {
-        emit profileLoaded();
     }
+    emit profileLoaded();
+
 
     emit currentProfileChanged(p);
 }

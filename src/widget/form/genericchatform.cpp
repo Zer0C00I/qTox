@@ -524,9 +524,8 @@ QDateTime GenericChatForm::getTime(const ChatLine::Ptr& chatLine) const
 
         if (timestamp) {
             return timestamp->getTime();
-        } else {
-            return {};
         }
+        return {};
     }
 
     return {};

@@ -195,18 +195,16 @@ const QString Style::getImagePath(const QString& filename, int themeColor)
     if (QFileInfo::exists(fullPath)) {
         existingImagesCache << fullPath;
         return fullPath;
-    } else {
-        qWarning() << "Failed to open file (using defaults):" << fullPath;
-
-        fullPath = getThemePath(themeColor) % filename;
-
-        if (QFileInfo::exists(fullPath)) {
-            return fullPath;
-        } else {
-            qWarning() << "Failed to open default file:" << fullPath;
-            return {};
-        }
     }
+    qWarning() << "Failed to open file (using defaults):" << fullPath;
+
+    fullPath = getThemePath(themeColor) % filename;
+
+    if (QFileInfo::exists(fullPath)) {
+        return fullPath;
+    }
+    qWarning() << "Failed to open default file:" << fullPath;
+    return {};
 }
 
 QColor Style::getColor(ColorPalette entry)

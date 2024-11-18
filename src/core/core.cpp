@@ -1054,10 +1054,9 @@ ConferenceId Core::getConferencePersistentId(uint32_t conferenceNumber) const
     std::vector<uint8_t> idBuff(tox_conference_id_size());
     if (tox_conference_get_id(tox.get(), conferenceNumber, idBuff.data())) {
         return ConferenceId{idBuff.data()};
-    } else {
-        qCritical() << "Failed to get conference ID of conference" << conferenceNumber;
-        return {};
     }
+    qCritical() << "Failed to get conference ID of conference" << conferenceNumber;
+    return {};
 }
 
 /**
@@ -1232,10 +1231,10 @@ int Core::createConference(uint8_t type)
             emit saveRequest();
             emit emptyConferenceCreated(conferenceId, getConferencePersistentId(conferenceId));
             return conferenceId;
-        } else {
-            return std::numeric_limits<uint32_t>::max();
         }
-    } else if (type == TOX_CONFERENCE_TYPE_AV) {
+        return std::numeric_limits<uint32_t>::max();
+    }
+    if (type == TOX_CONFERENCE_TYPE_AV) {
         // unlike tox_conference_new, toxav_add_av_groupchat does not have an error enum, so -1
         // conference number is our only indication of an error
         int conferenceId = toxav_add_av_groupchat(tox.get(), CoreAV::conferenceCallCallback, this);
@@ -1246,10 +1245,9 @@ int Core::createConference(uint8_t type)
             qCritical() << "Unknown error creating AV conference";
         }
         return conferenceId;
-    } else {
-        qWarning() << "createConference: Unknown type" << type;
-        return -1;
     }
+    qWarning() << "createConference: Unknown type" << type;
+    return -1;
 }
 
 /**

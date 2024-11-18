@@ -115,8 +115,14 @@ fi
 cmake --build "$BUILD_DIR"
 
 if [ ! -z "${TIDY+x}" ]; then
-  run-clang-tidy -quiet -fix -format -p "$BUILD_DIR" -header-filter=.* src/ audio/src/ audio/include test/src/ \
-    test/include util/src/ util/include/
+  run-clang-tidy -quiet -fix -format -p "$BUILD_DIR" \
+    audio/include \
+    audio/src/ \
+    src/ \
+    test/include \
+    test/src/ \
+    util/include/ \
+    util/src/
 else
   ctest -j"$(nproc)" --test-dir "$BUILD_DIR" --output-on-failure
 fi
