@@ -64,7 +64,7 @@ QFont appFont(int pixelSize, QFont::Weight weight)
 
 QString qssifyFont(QFont font)
 {
-    return QString("%1 %2px \"%3\"").arg(font.weight() * 8).arg(font.pixelSize()).arg(font.family());
+    return QString("%1 %2px \"%3\"").arg(font.weight()).arg(font.pixelSize()).arg(font.family());
 }
 
 using MainTheme = Style::MainTheme;
