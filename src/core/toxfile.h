@@ -33,8 +33,8 @@ struct ToxFile
     // current form (can add fields though as db representation is an int)
     enum FileDirection : bool
     {
-        SENDING = 0,
-        RECEIVING = 1,
+        SENDING = false,
+        RECEIVING = true,
     };
 
     ToxFile();

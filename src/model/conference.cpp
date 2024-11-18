@@ -34,8 +34,8 @@ Conference::Conference(int conferenceId_, const ConferenceId persistentConferenc
     // in conferences, we only notify on messages containing your name <-- dumb
     // sound notifications should be on all messages, but system popup notification
     // on naming is appropriate
-    hasNewMessages = 0;
-    userWasMentioned = 0;
+    hasNewMessages = false;
+    userWasMentioned = false;
     regeneratePeerList();
 }
 

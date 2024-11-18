@@ -1,4 +1,5 @@
 Checks: "-*
+, modernize-use-bool-literals
 , modernize-use-emplace
 , readability-named-parameter
 , readability-inconsistent-declaration-parameter-name
