@@ -32,7 +32,7 @@ public:
 private slots:
     void on_smileyPackBrowser_currentIndexChanged(int index);
     void on_emoticonSize_editingFinished();
-    void on_styleBrowser_currentIndexChanged(QString textStyle);
+    void on_styleBrowser_currentTextChanged(QString textStyle);
     void on_timestamp_editTextChanged(const QString& format);
     void on_dateFormats_editTextChanged(const QString& format);
     void on_textStyleComboBox_currentTextChanged();
