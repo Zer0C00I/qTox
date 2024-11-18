@@ -68,26 +68,11 @@ services:
       dockerfile: docker/Dockerfile.opensuse
     <<: *shared_params
   android_builder:
-    image: qtox_android_builder:latest
-    build:
-      context: ./buildscripts
-      dockerfile: docker/Dockerfile.android_builder
-    <<: *shared_params
-  windows_builder.x86_64:
-    image: qtox_windows_builder.x86_64:latest
-    build:
-      context: ./buildscripts
-      dockerfile: docker/Dockerfile.windows_builder
-      args:
-        ARCH: x86_64
-        WINEARCH: win64
+    image: toxchat/qtox-android-builder:latest
     <<: *shared_params
   windows_builder.i686:
-    image: qtox_windows_builder.i686:latest
-    build:
-      context: ./buildscripts
-      dockerfile: docker/Dockerfile.windows_builder
-      args:
-        ARCH: i686
-        WINEARCH: win32
+    image: toxchat/qtox-windows-builder.i686:latest
+    <<: *shared_params
+  windows_builder.x86_64:
+    image: toxchat/qtox-windows-builder.x86_64:latest
     <<: *shared_params
