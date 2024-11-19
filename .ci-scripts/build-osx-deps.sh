@@ -18,7 +18,9 @@
 set -euo pipefail
 
 readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
-git clone --depth=1 https://github.com/TokTok/dockerfiles "$SCRIPT_DIR/dockerfiles"
+if [ ! -d "$SCRIPT_DIR/dockerfiles" ]; then
+  git clone --depth=1 https://github.com/TokTok/dockerfiles "$SCRIPT_DIR/dockerfiles"
+fi
 
 install_deps() {
   for dep in "$@"; do

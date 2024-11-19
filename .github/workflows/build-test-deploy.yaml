@@ -299,9 +299,18 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+      - name: Fetch build scripts
+        run: git clone --depth=1 https://github.com/TokTok/dockerfiles ".ci-scripts/dockerfiles"
       - name: Homebrew dependencies to build dependencies
         run: brew bundle --file ./osx/Brewfile-DepBuildDeps
+      - name: Cache dependencies
+        id: cache-deps
+        uses: actions/cache@v4
+        with:
+          path: ".ci-scripts/dockerfiles/local-deps"
+          key: ${{ runner.os }}-local-deps
       - name: Build dependencies
+        if: steps.cache-deps.outputs.cache-hit != 'true'
         run: ./.ci-scripts/build-osx-deps.sh
       - name: Build qTox
         run: ./.ci-scripts/build-qtox-macos.sh dist
@@ -345,6 +354,8 @@ jobs:
     runs-on: macos-13
     steps:
       - uses: actions/checkout@v4
+      - name: Fetch build scripts
+        run: git clone --depth=1 https://github.com/TokTok/dockerfiles ".ci-scripts/dockerfiles"
       - name: Homebrew
         run: brew bundle --file ./osx/Brewfile
       - name: Install toxcore and toxext
