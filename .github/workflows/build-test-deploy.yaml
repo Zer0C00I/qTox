@@ -299,6 +299,8 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+      - name: Set up ccache
+        uses: hendrikmuhs/ccache-action@v1.2
       - name: Fetch build scripts
         run: git clone --depth=1 https://github.com/TokTok/dockerfiles ".ci-scripts/dockerfiles"
       - name: Homebrew dependencies to build dependencies
@@ -354,6 +356,8 @@ jobs:
     runs-on: macos-13
     steps:
       - uses: actions/checkout@v4
+      - name: Set up ccache
+        uses: hendrikmuhs/ccache-action@v1.2
       - name: Fetch build scripts
         run: git clone --depth=1 https://github.com/TokTok/dockerfiles ".ci-scripts/dockerfiles"
       - name: Homebrew
