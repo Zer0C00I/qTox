@@ -5,14 +5,14 @@
 
 #include "friendlistwidget.h"
 #include "circlewidget.h"
-#include "friendwidget.h"
 #include "conferencewidget.h"
+#include "friendwidget.h"
 #include "widget.h"
 #include "src/core/core.h"
 #include "src/friendlist.h"
+#include "src/model/conference.h"
 #include "src/model/friend.h"
 #include "src/model/friendlist/friendlistmanager.h"
-#include "src/model/conference.h"
 #include "src/model/status.h"
 #include "src/persistence/settings.h"
 #include "src/widget/categorywidget.h"
@@ -608,8 +608,8 @@ CircleWidget* FriendListWidget::createCircleWidget(int id)
         return CircleWidget::getFromID(id);
     }
 
-    CircleWidget* circleWidget = new CircleWidget(core, this, id, settings, style,
-                                                  messageBoxManager, friendList, conferenceList, profile);
+    CircleWidget* circleWidget = new CircleWidget(core, this, id, settings, style, messageBoxManager,
+                                                  friendList, conferenceList, profile);
     emit connectCircleWidget(*circleWidget);
     connect(this, &FriendListWidget::onCompactChanged, circleWidget, &CircleWidget::onCompactChanged);
     connect(circleWidget, &CircleWidget::renameRequested, this, &FriendListWidget::renameCircleWidget);

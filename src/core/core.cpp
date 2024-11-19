@@ -521,7 +521,7 @@ void Core::onConnectionStatusChanged(Tox* tox, uint32_t friendId, Tox_Connection
 }
 
 void Core::onConferenceInvite(Tox* tox, uint32_t friendId, Tox_Conference_Type type,
-                         const uint8_t* cookie, size_t length, void* vCore)
+                              const uint8_t* cookie, size_t length, void* vCore)
 {
     std::ignore = tox;
     Core* core = static_cast<Core*>(vCore);
@@ -544,7 +544,7 @@ void Core::onConferenceInvite(Tox* tox, uint32_t friendId, Tox_Conference_Type t
 }
 
 void Core::onConferenceMessage(Tox* tox, uint32_t conferenceId, uint32_t peerId, Tox_Message_Type type,
-                          const uint8_t* cMessage, size_t length, void* vCore)
+                               const uint8_t* cMessage, size_t length, void* vCore)
 {
     std::ignore = tox;
     Core* core = static_cast<Core*>(vCore);
@@ -562,8 +562,8 @@ void Core::onConferencePeerListChange(Tox* tox, uint32_t conferenceId, void* vCo
     emit core->conferencePeerlistChanged(conferenceId);
 }
 
-void Core::onConferencePeerNameChange(Tox* tox, uint32_t conferenceId, uint32_t peerId, const uint8_t* name,
-                                 size_t length, void* vCore)
+void Core::onConferencePeerNameChange(Tox* tox, uint32_t conferenceId, uint32_t peerId,
+                                      const uint8_t* name, size_t length, void* vCore)
 {
     std::ignore = tox;
     const auto newName = ToxString(name, length).getQString();
@@ -573,8 +573,8 @@ void Core::onConferencePeerNameChange(Tox* tox, uint32_t conferenceId, uint32_t 
     emit core->conferencePeerNameChanged(conferenceId, peerPk, newName);
 }
 
-void Core::onConferenceTitleChange(Tox* tox, uint32_t conferenceId, uint32_t peerId, const uint8_t* cTitle,
-                              size_t length, void* vCore)
+void Core::onConferenceTitleChange(Tox* tox, uint32_t conferenceId, uint32_t peerId,
+                                   const uint8_t* cTitle, size_t length, void* vCore)
 {
     std::ignore = tox;
     Core* core = static_cast<Core*>(vCore);
@@ -1040,7 +1040,8 @@ void Core::loadConferences()
             name = defaultName;
         }
         if (getConferenceAvEnabled(conferenceNumber)) {
-            if (toxav_groupchat_enable_av(tox.get(), conferenceNumber, CoreAV::conferenceCallCallback, this)) {
+            if (toxav_groupchat_enable_av(tox.get(), conferenceNumber,
+                                          CoreAV::conferenceCallCallback, this)) {
                 qCritical() << "Failed to enable audio on loaded conference" << conferenceNumber;
             }
         }
@@ -1224,7 +1225,7 @@ uint32_t Core::joinConference(const ConferenceInvite& inviteInfo)
     case TOX_CONFERENCE_TYPE_AV: {
         qDebug() << QString("Trying to join AV conference invite sent by friend %1").arg(friendId);
         conferenceNum = toxav_join_av_groupchat(tox.get(), friendId, cookie, cookieLength,
-                                           CoreAV::conferenceCallCallback, this);
+                                                CoreAV::conferenceCallCallback, this);
         break;
     }
     default:

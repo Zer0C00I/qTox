@@ -8,18 +8,18 @@
 #include "tabcompleter.h"
 #include "src/chatlog/chatwidget.h"
 #include "src/chatlog/content/text.h"
+#include "src/core/conferenceid.h"
 #include "src/core/core.h"
 #include "src/core/coreav.h"
-#include "src/core/conferenceid.h"
 #include "src/friendlist.h"
-#include "src/model/friend.h"
 #include "src/model/conference.h"
+#include "src/model/friend.h"
 #include "src/persistence/iconferencesettings.h"
 #include "src/persistence/settings.h"
 #include "src/widget/chatformheader.h"
+#include "src/widget/conferencewidget.h"
 #include "src/widget/flowlayout.h"
 #include "src/widget/form/chatform.h"
-#include "src/widget/conferencewidget.h"
 #include "src/widget/maskablepixmapwidget.h"
 #include "src/widget/style.h"
 #include "src/widget/tool/croppinglabel.h"
@@ -69,12 +69,12 @@ QString editName(const QString& name)
  */
 
 ConferenceForm::ConferenceForm(Core& core_, Conference* chatConference, IChatLog& chatLog_,
-                             IMessageDispatcher& messageDispatcher_, Settings& settings_,
-                             DocumentCache& documentCache_, SmileyPack& smileyPack_, Style& style_,
-                             IMessageBoxManager& messageBoxManager, FriendList& friendList_,
-                             ConferenceList& conferenceList_)
-    : GenericChatForm(core_, chatConference, chatLog_, messageDispatcher_, documentCache_, smileyPack_,
-                      settings_, style_, messageBoxManager, friendList_, conferenceList_)
+                               IMessageDispatcher& messageDispatcher_, Settings& settings_,
+                               DocumentCache& documentCache_, SmileyPack& smileyPack_,
+                               Style& style_, IMessageBoxManager& messageBoxManager,
+                               FriendList& friendList_, ConferenceList& conferenceList_)
+    : GenericChatForm(core_, chatConference, chatLog_, messageDispatcher_, documentCache_,
+                      smileyPack_, settings_, style_, messageBoxManager, friendList_, conferenceList_)
     , core{core_}
     , conference(chatConference)
     , inCall(false)
@@ -101,7 +101,8 @@ ConferenceForm::ConferenceForm(Core& core_, Conference* chatConference, IChatLog
     retranslateUi();
 
     const QSize& size = headWidget->getAvatarSize();
-    headWidget->setAvatar(Style::scaleSvgImage(":/img/conference_dark.svg", size.width(), size.height()));
+    headWidget->setAvatar(
+        Style::scaleSvgImage(":/img/conference_dark.svg", size.width(), size.height()));
 
     msgEdit->setObjectName("conference");
 
@@ -233,7 +234,8 @@ void ConferenceForm::onUserJoined(const ToxPk& user, const QString& name)
 {
     std::ignore = user;
     if (settings.getShowConferenceJoinLeaveMessages()) {
-        addSystemInfoMessage(QDateTime::currentDateTime(), SystemMessageType::userJoinedConference, {name});
+        addSystemInfoMessage(QDateTime::currentDateTime(), SystemMessageType::userJoinedConference,
+                             {name});
     }
     updateUserNames();
 }
@@ -242,7 +244,8 @@ void ConferenceForm::onUserLeft(const ToxPk& user, const QString& name)
 {
     std::ignore = user;
     if (settings.getShowConferenceJoinLeaveMessages()) {
-        addSystemInfoMessage(QDateTime::currentDateTime(), SystemMessageType::userLeftConference, {name});
+        addSystemInfoMessage(QDateTime::currentDateTime(), SystemMessageType::userLeftConference,
+                             {name});
     }
     updateUserNames();
 }

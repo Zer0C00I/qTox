@@ -19,7 +19,8 @@ class ConferenceRoom : public QObject, public Chatroom
 {
     Q_OBJECT
 public:
-    ConferenceRoom(Conference* conference_, IDialogsManager* dialogsManager_, Core& core_, FriendList& friendList);
+    ConferenceRoom(Conference* conference_, IDialogsManager* dialogsManager_, Core& core_,
+                   FriendList& friendList);
 
     Chat* getChat() override;
 

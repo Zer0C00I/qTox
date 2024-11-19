@@ -23,9 +23,9 @@ class Conference : public Chat
 {
     Q_OBJECT
 public:
-    Conference(int conferenceId_, const ConferenceId persistentConferenceId, const QString& name, bool isAvConference,
-          const QString& selfName_, ICoreConferenceQuery& conferenceQuery_, ICoreIdHandler& idHandler_,
-          FriendList& friendList);
+    Conference(int conferenceId_, const ConferenceId persistentConferenceId, const QString& name,
+               bool isAvConference, const QString& selfName_, ICoreConferenceQuery& conferenceQuery_,
+               ICoreIdHandler& idHandler_, FriendList& friendList);
     bool isAvConference() const;
     uint32_t getId() const override;
     const ConferenceId& getPersistentId() const override;

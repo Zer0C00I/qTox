@@ -22,7 +22,7 @@
  */
 
 ConferenceInviteWidget::ConferenceInviteWidget(QWidget* parent, const ConferenceInvite& invite,
-                                     Settings& settings_, Core& core_)
+                                               Settings& settings_, Core& core_)
     : QWidget(parent)
     , acceptButton(new QPushButton(this))
     , rejectButton(new QPushButton(this))

@@ -33,9 +33,10 @@ class ConferenceForm : public GenericChatForm
     Q_OBJECT
 public:
     ConferenceForm(Core& core_, Conference* chatConference, IChatLog& chatLog_,
-                  IMessageDispatcher& messageDispatcher_, Settings& settings_,
-                  DocumentCache& documentCache, SmileyPack& smileyPack, Style& style,
-                  IMessageBoxManager& messageBoxManager, FriendList& friendList, ConferenceList& conferenceList);
+                   IMessageDispatcher& messageDispatcher_, Settings& settings_,
+                   DocumentCache& documentCache, SmileyPack& smileyPack, Style& style,
+                   IMessageBoxManager& messageBoxManager, FriendList& friendList,
+                   ConferenceList& conferenceList);
     ~ConferenceForm();
 
     void peerAudioPlaying(ToxPk peerPk);

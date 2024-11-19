@@ -8,14 +8,14 @@
 #include "src/core/core.h"
 #include "src/core/toxpk.h"
 #include "src/friendlist.h"
+#include "src/model/conference.h"
 #include "src/model/dialogs/idialogsmanager.h"
 #include "src/model/friend.h"
-#include "src/model/conference.h"
 #include "src/model/status.h"
 #include "src/persistence/settings.h"
 
-ConferenceRoom::ConferenceRoom(Conference* conference_, IDialogsManager* dialogsManager_, Core& core_,
-                             FriendList& friendList_)
+ConferenceRoom::ConferenceRoom(Conference* conference_, IDialogsManager* dialogsManager_,
+                               Core& core_, FriendList& friendList_)
     : conference{conference_}
     , dialogsManager{dialogsManager_}
     , core{core_}

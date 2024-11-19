@@ -25,29 +25,29 @@
 #endif
 
 #include "circlewidget.h"
+#include "conferencewidget.h"
 #include "contentdialog.h"
 #include "contentlayout.h"
 #include "friendlistwidget.h"
 #include "friendwidget.h"
-#include "conferencewidget.h"
 #include "maskablepixmapwidget.h"
 #include "splitterrestorer.h"
 #include "audio/audio.h"
 #include "form/conferenceform.h"
 #include "src/chatlog/content/filetransferwidget.h"
 #include "src/chatlog/documentcache.h"
+#include "src/conferencelist.h"
 #include "src/core/core.h"
 #include "src/core/coreav.h"
 #include "src/core/corefile.h"
 #include "src/friendlist.h"
-#include "src/conferencelist.h"
 #include "src/ipc.h"
 #include "src/model/chathistory.h"
-#include "src/model/chatroom/friendchatroom.h"
 #include "src/model/chatroom/conferenceroom.h"
-#include "src/model/friend.h"
+#include "src/model/chatroom/friendchatroom.h"
 #include "src/model/conference.h"
 #include "src/model/conferenceinvite.h"
+#include "src/model/friend.h"
 #include "src/model/profile/profileinfo.h"
 #include "src/model/status.h"
 #include "src/net/updatecheck.h"
@@ -61,8 +61,8 @@
 #include "src/widget/contentdialogmanager.h"
 #include "src/widget/form/addfriendform.h"
 #include "src/widget/form/chatform.h"
-#include "src/widget/form/filesform.h"
 #include "src/widget/form/conferenceinviteform.h"
+#include "src/widget/form/filesform.h"
 #include "src/widget/form/profileform.h"
 #include "src/widget/form/settingswidget.h"
 #include "src/widget/style.h"
@@ -259,8 +259,9 @@ void Widget::init()
         new MessageProcessor::SharedParams(core->getMaxMessageSize(),
                                            coreExt->getMaxExtendedMessageSize()));
 
-    chatListWidget = new FriendListWidget(*core, this, settings, style, *messageBoxManager, *friendList,
-                                          *conferenceList, profile, settings.getConferencePosition());
+    chatListWidget =
+        new FriendListWidget(*core, this, settings, style, *messageBoxManager, *friendList,
+                             *conferenceList, profile, settings.getConferencePosition());
     connect(chatListWidget, &FriendListWidget::searchCircle, this, &Widget::searchCircle);
     connect(chatListWidget, &FriendListWidget::connectCircleWidget, this, &Widget::connectCircleWidget);
     ui->friendList->setWidget(chatListWidget);
@@ -325,7 +326,8 @@ void Widget::init()
     connect(ui->statusLabel, &CroppingLabel::editFinished, this, &Widget::onStatusMessageChanged);
     connect(ui->mainSplitter, &QSplitter::splitterMoved, this, &Widget::onSplitterMoved);
     connect(addFriendForm, &AddFriendForm::friendRequested, this, &Widget::friendRequested);
-    connect(conferenceInviteForm, &ConferenceInviteForm::conferenceCreate, core, &Core::createConference);
+    connect(conferenceInviteForm, &ConferenceInviteForm::conferenceCreate, core,
+            &Core::createConference);
     connect(timer, &QTimer::timeout, this, &Widget::onUserAwayCheck);
     connect(timer, &QTimer::timeout, this, &Widget::onEventIconTick);
     connect(timer, &QTimer::timeout, this, &Widget::onTryCreateTrayIcon);
@@ -489,7 +491,8 @@ void Widget::init()
     connect(addFriendForm, &AddFriendForm::friendRequested, this, &Widget::friendRequestsUpdate);
     connect(addFriendForm, &AddFriendForm::friendRequestsSeen, this, &Widget::friendRequestsUpdate);
     connect(addFriendForm, &AddFriendForm::friendRequestAccepted, this, &Widget::friendRequestAccepted);
-    connect(conferenceInviteForm, &ConferenceInviteForm::conferenceInvitesSeen, this, &Widget::conferenceInvitesClear);
+    connect(conferenceInviteForm, &ConferenceInviteForm::conferenceInvitesSeen, this,
+            &Widget::conferenceInvitesClear);
     connect(conferenceInviteForm, &ConferenceInviteForm::conferenceInviteAccepted, this,
             &Widget::onConferenceInviteAccepted);
 
@@ -1175,9 +1178,10 @@ void Widget::addFriend(uint32_t friendId, const ToxPk& friendPk)
     auto chatHistory =
         std::make_shared<ChatHistory>(*newfriend, history, *core, settings,
                                       *friendMessageDispatcher, *friendList, *conferenceList);
-    auto friendForm = new ChatForm(profile, newfriend, *chatHistory, *friendMessageDispatcher,
-                                   *documentCache, *smileyPack, cameraSource, settings, style,
-                                   *messageBoxManager, *contentDialogManager, *friendList, *conferenceList);
+    auto friendForm =
+        new ChatForm(profile, newfriend, *chatHistory, *friendMessageDispatcher, *documentCache,
+                     *smileyPack, cameraSource, settings, style, *messageBoxManager,
+                     *contentDialogManager, *friendList, *conferenceList);
     connect(friendForm, &ChatForm::updateFriendActivity, this, &Widget::updateFriendActivity);
 
     friendMessageDispatchers[friendPk] = friendMessageDispatcher;
@@ -1523,10 +1527,12 @@ void Widget::addConferenceDialog(const Conference* conference, ContentDialog* di
 
     auto removeConference = QOverload<const ConferenceId&>::of(&Widget::removeConference);
     connect(conferenceWidget, &ConferenceWidget::removeConference, this, removeConference);
-    connect(conferenceWidget, &ConferenceWidget::chatroomWidgetClicked, chatForm, &ConferenceForm::focusInput);
+    connect(conferenceWidget, &ConferenceWidget::chatroomWidgetClicked, chatForm,
+            &ConferenceForm::focusInput);
     connect(conferenceWidget, &ConferenceWidget::middleMouseClicked, dialog,
             [=]() { dialog->removeConference(conferenceId); });
-    connect(conferenceWidget, &ConferenceWidget::chatroomWidgetClicked, chatForm, &ChatForm::focusInput);
+    connect(conferenceWidget, &ConferenceWidget::chatroomWidgetClicked, chatForm,
+            &ChatForm::focusInput);
     connect(conferenceWidget, &ConferenceWidget::newWindowOpened, this, &Widget::openNewDialog);
 
     // Signal transmission from the created `conferenceWidget` (which shown in
@@ -1610,7 +1616,7 @@ bool Widget::newFriendMessageAlert(const ToxPk& friendId, const QString& text, b
 }
 
 bool Widget::newConferenceMessageAlert(const ConferenceId& conferenceId, const ToxPk& authorPk,
-                                  const QString& message, bool notify)
+                                       const QString& message, bool notify)
 {
     bool hasActive;
     QWidget* currentWindow;
@@ -1846,7 +1852,8 @@ void Widget::registerContentDialog(ContentDialog& contentDialog) const
 {
     contentDialogManager->addContentDialog(contentDialog);
     connect(&contentDialog, &ContentDialog::friendDialogShown, this, &Widget::onFriendDialogShown);
-    connect(&contentDialog, &ContentDialog::conferenceDialogShown, this, &Widget::onConferenceDialogShown);
+    connect(&contentDialog, &ContentDialog::conferenceDialogShown, this,
+            &Widget::onConferenceDialogShown);
     connect(core, &Core::usernameSet, &contentDialog, &ContentDialog::setUsername);
     connect(&settings, &Settings::conferencePositionChanged, &contentDialog,
             &ContentDialog::reorderLayouts);
@@ -1991,8 +1998,8 @@ void Widget::onConferenceInviteAccepted(const ConferenceInvite& inviteInfo)
     }
 }
 
-void Widget::onConferenceMessageReceived(int conferencenumber, int peernumber, const QString& message,
-                                    bool isAction)
+void Widget::onConferenceMessageReceived(int conferencenumber, int peernumber,
+                                         const QString& message, bool isAction)
 {
     const ConferenceId& conferenceId = conferenceList->id2Key(conferencenumber);
     assert(conferenceList->findConference(conferenceId));
@@ -2010,7 +2017,8 @@ void Widget::onConferencePeerlistChanged(uint32_t conferencenumber)
     c->regeneratePeerList();
 }
 
-void Widget::onConferencePeerNameChanged(uint32_t conferencenumber, const ToxPk& peerPk, const QString& newName)
+void Widget::onConferencePeerNameChanged(uint32_t conferencenumber, const ToxPk& peerPk,
+                                         const QString& newName)
 {
     const ConferenceId& conferenceId = conferenceList->id2Key(conferencenumber);
     Conference* c = conferenceList->findConference(conferenceId);
@@ -2020,7 +2028,8 @@ void Widget::onConferencePeerNameChanged(uint32_t conferencenumber, const ToxPk&
     c->updateUsername(peerPk, newName);
 }
 
-void Widget::onConferenceTitleChanged(uint32_t conferencenumber, const QString& author, const QString& title)
+void Widget::onConferenceTitleChanged(uint32_t conferencenumber, const QString& author,
+                                      const QString& title)
 {
     const ConferenceId& conferenceId = conferenceList->id2Key(conferencenumber);
     Conference* c = conferenceList->findConference(conferenceId);
@@ -2071,7 +2080,8 @@ void Widget::removeConference(Conference* c, bool fake)
     const auto conferencenumber = c->getId();
     auto conferenceWidgetIt = conferenceWidgets.find(conferenceId);
     if (conferenceWidgetIt == conferenceWidgets.end()) {
-        qWarning() << "Tried to remove conference" << conferencenumber << "but ConferenceWidget doesn't exist";
+        qWarning() << "Tried to remove conference" << conferencenumber
+                   << "but ConferenceWidget doesn't exist";
         return;
     }
     auto widget = conferenceWidgetIt.value();
@@ -2095,7 +2105,8 @@ void Widget::removeConference(Conference* c, bool fake)
     conferenceWidgets.remove(conferenceId);
     auto conferenceFormIt = conferenceForms.find(conferenceId);
     if (conferenceFormIt == conferenceForms.end()) {
-        qWarning() << "Tried to remove conference" << conferencenumber << "but ConferenceForm doesn't exist";
+        qWarning() << "Tried to remove conference" << conferencenumber
+                   << "but ConferenceForm doesn't exist";
         return;
     }
     conferenceForms.erase(conferenceFormIt);
@@ -2124,8 +2135,9 @@ Conference* Widget::createConference(uint32_t conferencenumber, const Conference
 
     const auto conferenceName = tr("Conference #%1").arg(conferencenumber);
     const bool enabled = core->getConferenceAvEnabled(conferencenumber);
-    Conference* newconference = conferenceList->addConference(*core, conferencenumber, conferenceId, conferenceName, enabled,
-                                          core->getUsername(), *friendList);
+    Conference* newconference =
+        conferenceList->addConference(*core, conferencenumber, conferenceId, conferenceName,
+                                      enabled, core->getUsername(), *friendList);
     assert(newconference);
 
     if (enabled) {
@@ -2135,15 +2147,16 @@ Conference* Widget::createConference(uint32_t conferencenumber, const Conference
             av->invalidateConferenceCallPeerSource(*newconference, user);
         });
     }
-    auto rawChatroom = new ConferenceRoom(newconference, contentDialogManager.get(), *core, *friendList);
+    auto rawChatroom =
+        new ConferenceRoom(newconference, contentDialogManager.get(), *core, *friendList);
     std::shared_ptr<ConferenceRoom> chatroom(rawChatroom);
 
     const auto compact = settings.getCompactLayout();
     auto widget = new ConferenceWidget(chatroom, compact, settings, style);
     auto messageProcessor = MessageProcessor(*sharedMessageProcessorParams);
     auto messageDispatcher =
-        std::make_shared<ConferenceMessageDispatcher>(*newconference, std::move(messageProcessor), *core,
-                                                 *core, settings);
+        std::make_shared<ConferenceMessageDispatcher>(*newconference, std::move(messageProcessor),
+                                                      *core, *core, settings);
 
     auto history = profile.getHistory();
     // Note: We do not have to connect the message dispatcher signals since
@@ -2157,7 +2170,7 @@ Conference* Widget::createConference(uint32_t conferencenumber, const Conference
                                           return metadata.type == MessageMetadataType::selfMention;
                                       });
         newConferenceMessageAlert(conferenceId, author, message.content,
-                             isTargeted || settings.getConferenceAlwaysNotify());
+                                  isTargeted || settings.getConferenceAlwaysNotify());
     };
 
     auto notifyReceivedConnection =
@@ -2165,8 +2178,8 @@ Conference* Widget::createConference(uint32_t conferencenumber, const Conference
     conferenceAlertConnections.insert(conferenceId, notifyReceivedConnection);
 
     auto form = new ConferenceForm(*core, newconference, *chatHistory, *messageDispatcher, settings,
-                                  *documentCache, *smileyPack, style, *messageBoxManager,
-                                  *friendList, *conferenceList);
+                                   *documentCache, *smileyPack, style, *messageBoxManager,
+                                   *friendList, *conferenceList);
     connect(&settings, &Settings::nameColorsChanged, form, &GenericChatForm::setColorizedNames);
     form->setColorizedNames(settings.getEnableConferencesColor());
     conferenceMessageDispatchers[conferenceId] = messageDispatcher;
@@ -2192,7 +2205,8 @@ Conference* Widget::createConference(uint32_t conferencenumber, const Conference
     return newconference;
 }
 
-void Widget::onEmptyConferenceCreated(uint32_t conferencenumber, const ConferenceId& conferenceId, const QString& title)
+void Widget::onEmptyConferenceCreated(uint32_t conferencenumber, const ConferenceId& conferenceId,
+                                      const QString& title)
 {
     Conference* conference = createConference(conferencenumber, conferenceId);
     if (!conference) {

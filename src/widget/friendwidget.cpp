@@ -6,16 +6,16 @@
 #include "friendwidget.h"
 
 #include "circlewidget.h"
-#include "friendlistwidget.h"
 #include "conferencewidget.h"
+#include "friendlistwidget.h"
 #include "maskablepixmapwidget.h"
 
 #include "src/core/core.h"
 #include "src/friendlist.h"
 #include "src/model/about/aboutfriend.h"
 #include "src/model/chatroom/friendchatroom.h"
-#include "src/model/friend.h"
 #include "src/model/conference.h"
+#include "src/model/friend.h"
 #include "src/model/status.h"
 #include "src/persistence/settings.h"
 #include "src/widget/about/aboutfriendform.h"
@@ -110,11 +110,13 @@ void FriendWidget::onContextMenuCalled(QContextMenuEvent* event)
         menu.addMenu(tr("Invite to conference", "Menu to invite a friend to a conference"));
     inviteMenu->setEnabled(chatroom->canBeInvited());
     const auto newConferenceAction = inviteMenu->addAction(tr("To new conference"));
-    connect(newConferenceAction, &QAction::triggered, chatroom.get(), &FriendChatroom::inviteToNewConference);
+    connect(newConferenceAction, &QAction::triggered, chatroom.get(),
+            &FriendChatroom::inviteToNewConference);
     inviteMenu->addSeparator();
 
     for (const auto& conference : chatroom->getConferences()) {
-        const auto conferenceAction = inviteMenu->addAction(tr("Invite to conference '%1'").arg(conference.name));
+        const auto conferenceAction =
+            inviteMenu->addAction(tr("Invite to conference '%1'").arg(conference.name));
         connect(conferenceAction, &QAction::triggered,
                 [this, conference] { chatroom->inviteFriend(conference.conference); });
     }

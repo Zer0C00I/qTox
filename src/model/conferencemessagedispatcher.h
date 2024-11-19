@@ -23,8 +23,8 @@ class ConferenceMessageDispatcher : public IMessageDispatcher
     Q_OBJECT
 public:
     ConferenceMessageDispatcher(Conference& g_, MessageProcessor processor, ICoreIdHandler& idHandler,
-                           ICoreConferenceMessageSender& messageSender,
-                           const IConferenceSettings& conferenceSettings);
+                                ICoreConferenceMessageSender& messageSender,
+                                const IConferenceSettings& conferenceSettings);
 
     std::pair<DispatchedMessageId, DispatchedMessageId> sendMessage(bool isAction,
                                                                     QString const& content) override;

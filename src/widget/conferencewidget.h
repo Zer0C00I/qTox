@@ -21,7 +21,7 @@ class ConferenceWidget final : public GenericChatroomWidget, public IFriendListI
     Q_OBJECT
 public:
     ConferenceWidget(std::shared_ptr<ConferenceRoom> chatroom_, bool compact, Settings& settings,
-                Style& style);
+                     Style& style);
     ~ConferenceWidget();
     void setAsInactiveChatroom() final;
     void setAsActiveChatroom() final;

@@ -14,19 +14,19 @@
 #include <QShortcut>
 #include <QSplitter>
 
+#include "src/conferencelist.h"
 #include "src/core/core.h"
 #include "src/friendlist.h"
-#include "src/conferencelist.h"
 #include "src/model/chatroom/friendchatroom.h"
-#include "src/model/friend.h"
 #include "src/model/conference.h"
+#include "src/model/friend.h"
 #include "src/model/status.h"
 #include "src/persistence/settings.h"
+#include "src/widget/conferencewidget.h"
 #include "src/widget/contentlayout.h"
 #include "src/widget/form/chatform.h"
 #include "src/widget/friendlistlayout.h"
 #include "src/widget/friendwidget.h"
-#include "src/widget/conferencewidget.h"
 #include "src/widget/style.h"
 #include "src/widget/tool/adjustingscrollarea.h"
 #include "src/widget/translator.h"
@@ -165,7 +165,8 @@ FriendWidget* ContentDialog::addFriend(std::shared_ptr<FriendChatroom> chatroom,
     return friendWidget;
 }
 
-ConferenceWidget* ContentDialog::addConference(std::shared_ptr<ConferenceRoom> chatroom, GenericChatForm* form)
+ConferenceWidget* ContentDialog::addConference(std::shared_ptr<ConferenceRoom> chatroom,
+                                               GenericChatForm* form)
 {
     const auto g = chatroom->getConference();
     const auto& conferenceId = g->getPersistentId();

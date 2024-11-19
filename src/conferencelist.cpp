@@ -9,16 +9,18 @@
 #include <QDebug>
 #include <QHash>
 
-Conference* ConferenceList::addConference(Core& core, int conferenceNum, const ConferenceId& conferenceId, const QString& name,
-                           bool isAvConference, const QString& selfName, FriendList& friendList)
+Conference* ConferenceList::addConference(Core& core, int conferenceNum,
+                                          const ConferenceId& conferenceId, const QString& name,
+                                          bool isAvConference, const QString& selfName,
+                                          FriendList& friendList)
 {
     auto checker = conferenceList.find(conferenceId);
     if (checker != conferenceList.end()) {
         qWarning() << "addConference: conferenceId already taken";
     }
 
-    Conference* newConference =
-        new Conference(conferenceNum, conferenceId, name, isAvConference, selfName, core, core, friendList);
+    Conference* newConference = new Conference(conferenceNum, conferenceId, name, isAvConference,
+                                               selfName, core, core, friendList);
     conferenceList[conferenceId] = newConference;
     id2key[conferenceNum] = conferenceId;
     return newConference;

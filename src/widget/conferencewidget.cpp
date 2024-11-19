@@ -15,11 +15,11 @@
 
 #include "maskablepixmapwidget.h"
 #include "form/conferenceform.h"
+#include "src/conferencelist.h"
 #include "src/core/core.h"
 #include "src/friendlist.h"
-#include "src/conferencelist.h"
-#include "src/model/friend.h"
 #include "src/model/conference.h"
+#include "src/model/friend.h"
 #include "src/model/status.h"
 #include "src/widget/friendwidget.h"
 #include "src/widget/style.h"
@@ -28,7 +28,7 @@
 #include "tool/croppinglabel.h"
 
 ConferenceWidget::ConferenceWidget(std::shared_ptr<ConferenceRoom> chatroom_, bool compact_,
-                         Settings& settings_, Style& style_)
+                                   Settings& settings_, Style& style_)
     : GenericChatroomWidget(compact_, settings_, style_)
     , conferenceId{chatroom_->getConference()->getPersistentId()}
     , chatroom{chatroom_}
@@ -144,7 +144,8 @@ void ConferenceWidget::updateUserCount(int numPeers)
 void ConferenceWidget::setAsActiveChatroom()
 {
     setActive(true);
-    avatar->setPixmap(Style::scaleSvgImage(":img/conference_dark.svg", avatar->width(), avatar->height()));
+    avatar->setPixmap(
+        Style::scaleSvgImage(":img/conference_dark.svg", avatar->width(), avatar->height()));
 }
 
 void ConferenceWidget::setAsInactiveChatroom()

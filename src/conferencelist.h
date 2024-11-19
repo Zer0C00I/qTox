@@ -19,8 +19,9 @@ class FriendList;
 class ConferenceList
 {
 public:
-    Conference* addConference(Core& core, int conferenceNum, const ConferenceId& persistentConferenceId, const QString& name,
-                    bool isAvConference, const QString& selfName, FriendList& friendList);
+    Conference* addConference(Core& core, int conferenceNum,
+                              const ConferenceId& persistentConferenceId, const QString& name,
+                              bool isAvConference, const QString& selfName, FriendList& friendList);
     Conference* findConference(const ConferenceId& conferenceId);
     const ConferenceId& id2Key(uint32_t conferenceNum);
     void removeConference(const ConferenceId& conferenceId, bool fake = false);

@@ -5,12 +5,12 @@
 
 #include "contentdialogmanager.h"
 
-#include "src/friendlist.h"
 #include "src/conferencelist.h"
-#include "src/model/friend.h"
+#include "src/friendlist.h"
 #include "src/model/conference.h"
-#include "src/widget/friendwidget.h"
+#include "src/model/friend.h"
 #include "src/widget/conferencewidget.h"
+#include "src/widget/friendwidget.h"
 
 #include <tuple>
 
@@ -65,8 +65,8 @@ FriendWidget* ContentDialogManager::addFriendToDialog(ContentDialog* dialog,
 }
 
 ConferenceWidget* ContentDialogManager::addConferenceToDialog(ContentDialog* dialog,
-                                                    std::shared_ptr<ConferenceRoom> chatroom,
-                                                    GenericChatForm* form)
+                                                              std::shared_ptr<ConferenceRoom> chatroom,
+                                                              GenericChatForm* form)
 {
     auto conferenceWidget = dialog->addConference(chatroom, form);
     const auto& conferenceId = conferenceWidget->getConference()->getPersistentId();

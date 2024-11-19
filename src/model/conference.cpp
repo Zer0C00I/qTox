@@ -18,9 +18,10 @@ namespace {
 const int MAX_CONFERENCE_TITLE_LENGTH = 128;
 } // namespace
 
-Conference::Conference(int conferenceId_, const ConferenceId persistentConferenceId, const QString& name, bool isAvConference,
-             const QString& selfName_, ICoreConferenceQuery& conferenceQuery_, ICoreIdHandler& idHandler_,
-             FriendList& friendList_)
+Conference::Conference(int conferenceId_, const ConferenceId persistentConferenceId,
+                       const QString& name, bool isAvConference, const QString& selfName_,
+                       ICoreConferenceQuery& conferenceQuery_, ICoreIdHandler& idHandler_,
+                       FriendList& friendList_)
     : conferenceQuery(conferenceQuery_)
     , idHandler(idHandler_)
     , selfName{selfName_}

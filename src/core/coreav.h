@@ -51,8 +51,8 @@ public:
     bool sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, uint8_t chans,
                        uint32_t rate) const;
     void sendCallVideo(uint32_t callId, std::shared_ptr<VideoFrame> frame);
-    bool sendConferenceCallAudio(int conferenceNum, const int16_t* pcm, size_t samples, uint8_t chans,
-                            uint32_t rate) const;
+    bool sendConferenceCallAudio(int conferenceNum, const int16_t* pcm, size_t samples,
+                                 uint8_t chans, uint32_t rate) const;
 
     VideoSource* getVideoSourceFromCall(int friendNum) const;
     void sendNoVideo();
@@ -68,9 +68,9 @@ public:
     bool isCallOutputMuted(const Friend* f) const;
     void toggleMuteCallInput(const Friend* f);
     void toggleMuteCallOutput(const Friend* f);
-    static void conferenceCallCallback(void* tox, uint32_t conference, uint32_t peer, const int16_t* data,
-                                  unsigned samples, uint8_t channels, uint32_t sample_rate,
-                                  void* core);
+    static void conferenceCallCallback(void* tox, uint32_t conference, uint32_t peer,
+                                       const int16_t* data, unsigned samples, uint8_t channels,
+                                       uint32_t sample_rate, void* core);
     void invalidateConferenceCallPeerSource(const Conference& conference, ToxPk peerPk);
 
 public slots:
@@ -103,7 +103,8 @@ private:
     };
 
     CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, QRecursiveMutex& toxCoreLock,
-           IAudioSettings& audioSettings_, IConferenceSettings& conferenceSettings_, CameraSource& cameraSource);
+           IAudioSettings& audioSettings_, IConferenceSettings& conferenceSettings_,
+           CameraSource& cameraSource);
     void connectCallbacks();
 
     void process();

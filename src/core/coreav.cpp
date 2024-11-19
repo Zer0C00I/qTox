@@ -7,8 +7,8 @@
 #include "coreav.h"
 #include "core.h"
 #include "audio/iaudiosettings.h"
-#include "src/model/friend.h"
 #include "src/model/conference.h"
+#include "src/model/friend.h"
 #include "src/persistence/iconferencesettings.h"
 #include "src/video/corevideosource.h"
 #include "src/video/videoframe.h"
@@ -103,7 +103,8 @@ void CoreAV::connectCallbacks()
  * @return CoreAV instance on success, {} on failure
  */
 CoreAV::CoreAVPtr CoreAV::makeCoreAV(Tox* core, QRecursiveMutex& toxCoreLock,
-                                     IAudioSettings& audioSettings, IConferenceSettings& conferenceSettings,
+                                     IAudioSettings& audioSettings,
+                                     IConferenceSettings& conferenceSettings,
                                      CameraSource& cameraSource)
 {
     Toxav_Err_New err;
@@ -467,8 +468,9 @@ void CoreAV::toggleMuteCallOutput(const Friend* f)
  * @param[in] sample_rate  the audio sample rate
  * @param[in] core         the qTox Core class
  */
-void CoreAV::conferenceCallCallback(void* tox, uint32_t conference, uint32_t peer, const int16_t* data,
-                               unsigned samples, uint8_t channels, uint32_t sample_rate, void* core)
+void CoreAV::conferenceCallCallback(void* tox, uint32_t conference, uint32_t peer,
+                                    const int16_t* data, unsigned samples, uint8_t channels,
+                                    uint32_t sample_rate, void* core)
 {
     /*
      * Currently conference call audio decoding is handled in the Tox thread by c-toxcore,
@@ -554,7 +556,8 @@ void CoreAV::joinConferenceCall(const Conference& conference)
     // Audio backend must be set before starting a call
     assert(audio != nullptr);
 
-    ToxConferenceCallPtr conferencecall = ToxConferenceCallPtr(new ToxConferenceCall{conference, *this, *audio});
+    ToxConferenceCallPtr conferencecall =
+        ToxConferenceCallPtr(new ToxConferenceCall{conference, *this, *audio});
     // Call Objects must be owned by CoreAV or there will be locking problems with Audio
     conferencecall->moveToThread(thread());
     assert(conferencecall != nullptr);
@@ -580,8 +583,8 @@ void CoreAV::leaveConferenceCall(int conferenceNum)
     conferenceCalls.erase(conferenceNum);
 }
 
-bool CoreAV::sendConferenceCallAudio(int conferenceNum, const int16_t* pcm, size_t samples, uint8_t chans,
-                                uint32_t rate) const
+bool CoreAV::sendConferenceCallAudio(int conferenceNum, const int16_t* pcm, size_t samples,
+                                     uint8_t chans, uint32_t rate) const
 {
     QReadLocker locker{&callsLock};
 
@@ -594,7 +597,8 @@ bool CoreAV::sendConferenceCallAudio(int conferenceNum, const int16_t* pcm, size
         return true;
     }
 
-    if (toxav_group_send_audio(toxav_get_tox(toxav.get()), conferenceNum, pcm, samples, chans, rate) != 0)
+    if (toxav_group_send_audio(toxav_get_tox(toxav.get()), conferenceNum, pcm, samples, chans, rate)
+        != 0)
         qDebug() << "toxav_group_send_audio error";
 
     return true;

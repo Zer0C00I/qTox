@@ -9,9 +9,9 @@
 #include <QtCore>
 
 ConferenceMessageDispatcher::ConferenceMessageDispatcher(Conference& g_, MessageProcessor processor_,
-                                               ICoreIdHandler& idHandler_,
-                                               ICoreConferenceMessageSender& messageSender_,
-                                               const IConferenceSettings& conferenceSettings_)
+                                                         ICoreIdHandler& idHandler_,
+                                                         ICoreConferenceMessageSender& messageSender_,
+                                                         const IConferenceSettings& conferenceSettings_)
     : conference(g_)
     , processor(processor_)
     , idHandler(idHandler_)
@@ -69,7 +69,8 @@ ConferenceMessageDispatcher::sendExtendedMessage(const QString& content, Extensi
  * @param[in] isAction True if is action
  * @param[in] content Message content
  */
-void ConferenceMessageDispatcher::onMessageReceived(const ToxPk& sender, bool isAction, QString const& content)
+void ConferenceMessageDispatcher::onMessageReceived(const ToxPk& sender, bool isAction,
+                                                    QString const& content)
 {
     bool isSelf = sender == idHandler.getSelfPublicKey();
 

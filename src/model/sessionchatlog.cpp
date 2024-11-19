@@ -4,8 +4,8 @@
  */
 
 #include "sessionchatlog.h"
-#include "src/friendlist.h"
 #include "src/conferencelist.h"
+#include "src/friendlist.h"
 
 #include <QDebug>
 #include <QtGlobal>

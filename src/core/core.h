@@ -7,9 +7,9 @@
 #pragma once
 
 #include "conferenceid.h"
-#include "icorefriendmessagesender.h"
 #include "icoreconferencemessagesender.h"
 #include "icoreconferencequery.h"
+#include "icorefriendmessagesender.h"
 #include "icoreidhandler.h"
 #include "receiptnum.h"
 #include "toxfile.h"
@@ -166,9 +166,11 @@ signals:
     void friendRemoved(uint32_t friendId);
     void friendLastSeenChanged(uint32_t friendId, const QDateTime& dateTime);
 
-    void emptyConferenceCreated(int conferencenumber, const ConferenceId conferenceId, const QString& title = QString());
+    void emptyConferenceCreated(int conferencenumber, const ConferenceId conferenceId,
+                                const QString& title = QString());
     void conferenceInviteReceived(const ConferenceInvite& inviteInfo);
-    void conferenceMessageReceived(int conferencenumber, int peernumber, const QString& message, bool isAction);
+    void conferenceMessageReceived(int conferencenumber, int peernumber, const QString& message,
+                                   bool isAction);
     void conferenceNamelistChanged(int conferencenumber, int peernumber, uint8_t change);
     void conferencePeerlistChanged(int conferencenumber);
     void conferencePeerNameChanged(int conferencenumber, const ToxPk& peerPk, const QString& newName);
@@ -200,14 +202,15 @@ private:
     static void onConnectionStatusChanged(Tox* tox, uint32_t friendId, Tox_Connection status,
                                           void* vCore);
     static void onConferenceInvite(Tox* tox, uint32_t friendId, Tox_Conference_Type type,
-                              const uint8_t* cookie, size_t length, void* vCore);
-    static void onConferenceMessage(Tox* tox, uint32_t conferenceId, uint32_t peerId, Tox_Message_Type type,
-                               const uint8_t* cMessage, size_t length, void* vCore);
+                                   const uint8_t* cookie, size_t length, void* vCore);
+    static void onConferenceMessage(Tox* tox, uint32_t conferenceId, uint32_t peerId,
+                                    Tox_Message_Type type, const uint8_t* cMessage, size_t length,
+                                    void* vCore);
     static void onConferencePeerListChange(Tox* tox, uint32_t conferenceId, void* core);
     static void onConferencePeerNameChange(Tox* tox, uint32_t conferenceId, uint32_t peerId,
-                                      const uint8_t* name, size_t length, void* core);
+                                           const uint8_t* name, size_t length, void* core);
     static void onConferenceTitleChange(Tox* tox, uint32_t conferenceId, uint32_t peerId,
-                                   const uint8_t* cTitle, size_t length, void* vCore);
+                                        const uint8_t* cTitle, size_t length, void* vCore);
 
     static void onLosslessPacket(Tox* tox, uint32_t friendId, const uint8_t* data, size_t length,
                                  void* core);

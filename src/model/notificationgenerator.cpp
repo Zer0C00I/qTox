@@ -14,7 +14,8 @@ size_t getNumMessages(const QHash<const Friend*, size_t>& friendNotifications,
                       const QHash<const Conference*, size_t>& conferenceNotifications)
 {
     auto numMessages = std::accumulate(friendNotifications.begin(), friendNotifications.end(), 0);
-    numMessages = std::accumulate(conferenceNotifications.begin(), conferenceNotifications.end(), numMessages);
+    numMessages =
+        std::accumulate(conferenceNotifications.begin(), conferenceNotifications.end(), numMessages);
 
     return numMessages;
 }
@@ -57,7 +58,8 @@ QString generateTitle(const QHash<const Friend*, size_t>& friendNotifications,
 }
 
 QString generateTitle(const QHash<const Friend*, size_t>& friendNotifications,
-                      const QHash<const Conference*, size_t>& conferenceNotifications, const Conference* c)
+                      const QHash<const Conference*, size_t>& conferenceNotifications,
+                      const Conference* c)
 {
     auto numChats = getNumChats(friendNotifications, conferenceNotifications);
     if (numChats > 1) {
@@ -69,8 +71,8 @@ QString generateTitle(const QHash<const Friend*, size_t>& friendNotifications,
 }
 
 QString generateContent(const QHash<const Friend*, size_t>& friendNotifications,
-                        const QHash<const Conference*, size_t>& conferenceNotifications, QString lastMessage,
-                        const ToxPk& sender)
+                        const QHash<const Conference*, size_t>& conferenceNotifications,
+                        QString lastMessage, const ToxPk& sender)
 {
     assert(friendNotifications.size() > 0 || conferenceNotifications.size() > 0);
 
@@ -143,14 +145,16 @@ NotificationData NotificationGenerator::friendMessageNotification(const Friend* 
     }
 
     ret.title = generateTitle(friendNotifications, conferenceNotifications, f);
-    ret.message = generateContent(friendNotifications, conferenceNotifications, message, f->getPublicKey());
+    ret.message =
+        generateContent(friendNotifications, conferenceNotifications, message, f->getPublicKey());
     ret.pixmap = getSenderAvatar(profile, f->getPublicKey());
 
     return ret;
 }
 
-NotificationData NotificationGenerator::conferenceMessageNotification(const Conference* c, const ToxPk& sender,
-                                                                 const QString& message)
+NotificationData NotificationGenerator::conferenceMessageNotification(const Conference* c,
+                                                                      const ToxPk& sender,
+                                                                      const QString& message)
 {
     conferenceNotifications[c]++;
 

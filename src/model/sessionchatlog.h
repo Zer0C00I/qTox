@@ -19,7 +19,8 @@ class SessionChatLog : public IChatLog
 {
     Q_OBJECT
 public:
-    SessionChatLog(const ICoreIdHandler& coreIdHandler_, FriendList& friendList, ConferenceList& conferenceList);
+    SessionChatLog(const ICoreIdHandler& coreIdHandler_, FriendList& friendList,
+                   ConferenceList& conferenceList);
     SessionChatLog(ChatLogIdx initialIdx, const ICoreIdHandler& coreIdHandler_,
                    FriendList& friendList, ConferenceList& conferenceList);
 

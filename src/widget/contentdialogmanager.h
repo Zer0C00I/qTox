@@ -35,8 +35,9 @@ public:
 
     FriendWidget* addFriendToDialog(ContentDialog* dialog, std::shared_ptr<FriendChatroom> chatroom,
                                     GenericChatForm* form);
-    ConferenceWidget* addConferenceToDialog(ContentDialog* dialog, std::shared_ptr<ConferenceRoom> chatroom,
-                                  GenericChatForm* form);
+    ConferenceWidget* addConferenceToDialog(ContentDialog* dialog,
+                                            std::shared_ptr<ConferenceRoom> chatroom,
+                                            GenericChatForm* form);
 
     void addContentDialog(ContentDialog& dialog);
 

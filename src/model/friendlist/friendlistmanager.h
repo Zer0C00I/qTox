@@ -31,7 +31,8 @@ public:
     void sortByName();
     void sortByActivity();
     void resetParents();
-    void setFilter(const QString& searchString, bool hideOnline, bool hideOffline, bool hideConferences);
+    void setFilter(const QString& searchString, bool hideOnline, bool hideOffline,
+                   bool hideConferences);
     void applyFilter();
     void updatePositions();
     void setSortRequired();

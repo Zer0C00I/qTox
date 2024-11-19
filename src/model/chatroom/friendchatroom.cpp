@@ -4,11 +4,11 @@
  */
 
 #include "src/model/chatroom/friendchatroom.h"
-#include "src/core/core.h"
 #include "src/conferencelist.h"
+#include "src/core/core.h"
+#include "src/model/conference.h"
 #include "src/model/dialogs/idialogsmanager.h"
 #include "src/model/friend.h"
-#include "src/model/conference.h"
 #include "src/model/status.h"
 #include "src/persistence/settings.h"
 #include "src/widget/contentdialog.h"

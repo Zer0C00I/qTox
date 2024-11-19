@@ -21,8 +21,8 @@
 #include "src/core/toxfile.h"
 #include "src/core/toxid.h"
 #include "src/core/toxpk.h"
-#include "src/model/friendmessagedispatcher.h"
 #include "src/model/conferencemessagedispatcher.h"
+#include "src/model/friendmessagedispatcher.h"
 #if DESKTOP_NOTIFICATIONS
 #include "src/model/notificationgenerator.h"
 #include "src/platform/desktop_notifications/desktopnotify.h"
@@ -126,8 +126,8 @@ public:
     void addConferenceDialog(const Conference* conference, ContentDialog* dialog);
     bool newFriendMessageAlert(const ToxPk& friendId, const QString& text, bool sound = true,
                                QString filename = QString(), size_t filesize = 0);
-    bool newConferenceMessageAlert(const ConferenceId& conferenceId, const ToxPk& authorPk, const QString& message,
-                              bool notify);
+    bool newConferenceMessageAlert(const ConferenceId& conferenceId, const ToxPk& authorPk,
+                                   const QString& message, bool notify);
     bool getIsWindowMinimized();
     void updateIcons();
 
@@ -176,14 +176,18 @@ public slots:
     void onExtReceiptReceived(uint32_t friendNumber, uint64_t receiptId);
     void onFriendRequestReceived(const ToxPk& friendPk, const QString& message);
     void onFileReceiveRequested(const ToxFile& file);
-    void onEmptyConferenceCreated(uint32_t conferencenumber, const ConferenceId& conferenceId, const QString& title);
+    void onEmptyConferenceCreated(uint32_t conferencenumber, const ConferenceId& conferenceId,
+                                  const QString& title);
     void onConferenceJoined(int conferenceNum, const ConferenceId& conferenceId);
     void onConferenceInviteReceived(const ConferenceInvite& inviteInfo);
     void onConferenceInviteAccepted(const ConferenceInvite& inviteInfo);
-    void onConferenceMessageReceived(int conferencenumber, int peernumber, const QString& message, bool isAction);
+    void onConferenceMessageReceived(int conferencenumber, int peernumber, const QString& message,
+                                     bool isAction);
     void onConferencePeerlistChanged(uint32_t conferencenumber);
-    void onConferencePeerNameChanged(uint32_t conferencenumber, const ToxPk& peerPk, const QString& newName);
-    void onConferenceTitleChanged(uint32_t conferencenumber, const QString& author, const QString& title);
+    void onConferencePeerNameChanged(uint32_t conferencenumber, const ToxPk& peerPk,
+                                     const QString& newName);
+    void onConferenceTitleChanged(uint32_t conferencenumber, const QString& author,
+                                  const QString& title);
     void titleChangedByUser(const QString& title);
     void onConferencePeerAudioPlaying(int conferencenumber, ToxPk peerPk);
     void onConferenceSendFailed(uint32_t conferencenumber);

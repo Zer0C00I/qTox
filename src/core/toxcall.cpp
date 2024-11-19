@@ -286,7 +286,7 @@ void ToxConferenceCall::clearPeers()
 }
 
 void ToxConferenceCall::playAudioBuffer(const ToxPk& peer, const int16_t* data, int samples,
-                                   unsigned channels, int sampleRate)
+                                        unsigned channels, int sampleRate)
 {
     if (!havePeer(peer)) {
         addPeer(peer);

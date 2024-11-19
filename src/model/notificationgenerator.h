@@ -6,8 +6,8 @@
 #pragma once
 
 
-#include "friend.h"
 #include "conference.h"
+#include "friend.h"
 #include "notificationdata.h"
 
 #include "src/persistence/inotificationsettings.h"
@@ -34,7 +34,7 @@ public:
 
     NotificationData friendMessageNotification(const Friend* f, const QString& message);
     NotificationData conferenceMessageNotification(const Conference* c, const ToxPk& sender,
-                                              const QString& message);
+                                                   const QString& message);
     NotificationData fileTransferNotification(const Friend* f, const QString& filename,
                                               size_t fileSize);
     NotificationData conferenceInvitationNotification(const Friend* from);
