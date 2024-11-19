@@ -65,6 +65,7 @@ QMessageBox
 QCheckBox
 {
     color: black;
+    background-color: #fcfcfc;
 }
 
 QCheckBox:disabled
