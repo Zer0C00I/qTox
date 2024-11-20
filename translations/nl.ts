@@ -101,7 +101,7 @@ wat tot problemen kan leiden met videogesprekken.</translation>
     </message>
     <message>
         <source>Use slider to set the volume of your speakers.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik de schuifregelaar om het volume in te stellen.</translation>
     </message>
     <message>
         <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to reduce bandwidth usage.</source>
