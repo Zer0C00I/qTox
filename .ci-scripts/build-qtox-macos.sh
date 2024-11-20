@@ -42,16 +42,21 @@ else
 fi
 
 build_qtox() {
-    cmake -DUPDATE_CHECK=ON \
+    # Explicitly include with -isystem to avoid warnings from system headers.
+    # CMake will use -I instead of -isystem, so we need to set it manually.
+    cmake \
+        -DCMAKE_CXX_FLAGS="-isystem/usr/local/include" \
+        -DUPDATE_CHECK=ON \
         -DSPELL_CHECK=OFF \
         -DSTRICT_OPTIONS=ON \
         -DCMAKE_BUILD_TYPE=Release \
         "${DEPLOYMENT_TARGET}" \
-        "-DCMAKE_PREFIX_PATH=${PREFIX_PATH}" .
-    make -j$(sysctl -n hw.ncpu)
-    export CTEST_OUTPUT_ON_FAILURE=1
-    ctest -j$(sysctl -n hw.ncpu)
-    make install
+        -DCMAKE_PREFIX_PATH="${PREFIX_PATH}" \
+        -GNinja \
+        .
+    cmake --build .
+    ctest --output-on-failure --parallel "$(sysctl -n hw.ncpu)"
+    cmake --build . --target install
 }
 
 check() {
