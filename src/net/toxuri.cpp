@@ -3,7 +3,8 @@
  * Copyright © 2024 The TokTok team.
  */
 
-#include "src/net/toxuri.h"
+#include "toxuri.h"
+
 #include "src/core/core.h"
 #include "src/widget/tool/imessageboxmanager.h"
 #include <QByteArray>

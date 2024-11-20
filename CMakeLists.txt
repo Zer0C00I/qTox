@@ -406,6 +406,7 @@ set(${PROJECT_NAME}_SOURCES
   src/widget/form/chatform.h
   src/widget/form/filesform.cpp
   src/widget/form/filesform.h
+  src/widget/form/filetransferlist.h
   src/widget/form/genericchatform.cpp
   src/widget/form/genericchatform.h
   src/widget/form/conferenceform.cpp

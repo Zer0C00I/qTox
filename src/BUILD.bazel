@@ -70,6 +70,7 @@ qt_moc(
         "widget/form/conferenceinviteform.h",
         "widget/form/conferenceinvitewidget.h",
         "widget/form/filesform.h",
+        "widget/form/filetransferlist.h",
         "widget/form/genericchatform.h",
         "widget/form/loadhistorydialog.h",
         "widget/form/profileform.h",

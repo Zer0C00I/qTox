@@ -4,6 +4,7 @@
  */
 
 #include "filesform.h"
+
 #include "src/core/corefile.h"
 #include "src/core/toxfile.h"
 #include "src/friendlist.h"
