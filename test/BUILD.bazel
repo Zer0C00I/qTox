@@ -1,6 +1,13 @@
 load("@rules_cc//cc:defs.bzl", "cc_library")
 load("//third_party/qt:build_defs.bzl", "qt_moc", "qt_test")
 
+COPTS = ["-Iqtox"] + select({
+    "//tools/config:freebsd": [],
+    "//tools/config:linux": ["-fPIC"],
+    "//tools/config:osx": [],
+    "//tools/config:windows": [],
+})
+
 qt_moc(
     name = "mock_moc",
     srcs = ["mock/include/mock/mockcoresettings.h"],
@@ -16,15 +23,24 @@ qt_moc(
 )
 
 cc_library(
+    name = "dbutility",
+    testonly = True,
+    srcs = ["dbutility/src/dbutility.cpp"],
+    hdrs = ["dbutility/include/dbutility/dbutility.h"],
+    copts = COPTS,
+    strip_include_prefix = "dbutility/include",
+    deps = [
+        "//qtox/src",
+        "@qt//:qt_core",
+        "@qt//:qt_test",
+    ],
+)
+
+cc_library(
     name = "mock",
     srcs = [":mock_moc"] + glob(["mock/src/*.cpp"]),
     hdrs = glob(["mock/include/mock/*.h"]),
-    copts = ["-Iqtox"] + select({
-        "//tools/config:freebsd": [],
-        "//tools/config:linux": ["-fPIC"],
-        "//tools/config:osx": [],
-        "//tools/config:windows": [],
-    }),
+    copts = COPTS,
     includes = ["mock/include"],
     tags = ["no-cross"],
     deps = ["//qtox/src"],
@@ -34,14 +50,10 @@ cc_library(
     name = src[src.rindex("/") + 1:-4],
     size = "small",
     src = src,
-    copts = ["-Iqtox"] + select({
-        "//tools/config:freebsd": [],
-        "//tools/config:linux": ["-fPIC"],
-        "//tools/config:osx": [],
-        "//tools/config:windows": [],
-    }),
+    copts = COPTS,
     mocopts = ["-Iqtox"],
     deps = [
+        ":dbutility",
         ":mock",
         "//c-toxcore",
         "//qtox:res_lib",
@@ -49,6 +61,6 @@ cc_library(
         "//qtox/util",
     ],
 ) for src in glob(
-    ["*/*_test.cpp"],
+    ["**/*_test.cpp"],
     exclude = ["persistence/dbschema_test.cpp"],
 )]

@@ -61,6 +61,7 @@ auto_test(model sessionchatlog "" "")
 auto_test(model exiftransform "" "")
 auto_test(model notificationgenerator "" "mock_library")
 auto_test(widget filesform "" "")
+auto_test(widget/form/settings generalform "" "")
 
 if (UNIX)
   auto_test(platform posixsignalnotifier "" "")

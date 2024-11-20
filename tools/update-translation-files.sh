@@ -2,6 +2,7 @@
 
 #   Copyright © 2016 Zetok Zalbavar <zetok@openmailbox.org>
 #   Copyright © 2019 by The qTox Project Contributors
+#   Copyright © 2024 The TokTok team.
 #
 #   This file is part of qTox, a Qt-based graphical interface for Tox.
 #   qTox is libre software: you can redistribute it and/or modify
@@ -39,3 +40,11 @@ then
 else
     $LUPDATE_CMD "$@"
 fi
+
+echo '<RCC>' >translations/translations.qrc
+echo '    <qresource prefix="/translations">' >>translations/translations.qrc
+for translation in translations/*.ts; do
+    echo "        <file>$(basename "$translation" .ts).qm</file>" >>translations/translations.qrc
+done
+echo '    </qresource>' >>translations/translations.qrc
+echo '</RCC>' >>translations/translations.qrc

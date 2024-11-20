@@ -4,6 +4,7 @@
         <file>be.qm</file>
         <file>ber.qm</file>
         <file>bg.qm</file>
+        <file>bn.qm</file>
         <file>cs.qm</file>
         <file>da.qm</file>
         <file>de.qm</file>
@@ -26,21 +27,23 @@
         <file>kn.qm</file>
         <file>ko.qm</file>
         <file>lt.qm</file>
+        <file>lv.qm</file>
         <file>mk.qm</file>
         <file>nl.qm</file>
+        <file>nl_BE.qm</file>
         <file>no_nb.qm</file>
         <file>pl.qm</file>
         <file>pr.qm</file>
-        <file>pt_BR.qm</file>
         <file>pt.qm</file>
+        <file>pt_BR.qm</file>
         <file>ro.qm</file>
         <file>ru.qm</file>
         <file>si.qm</file>
         <file>sk.qm</file>
         <file>sl.qm</file>
         <file>sq.qm</file>
-        <file>sr_Latn.qm</file>
         <file>sr.qm</file>
+        <file>sr_Latn.qm</file>
         <file>sv.qm</file>
         <file>sw.qm</file>
         <file>ta.qm</file>
@@ -48,6 +51,7 @@
         <file>ug.qm</file>
         <file>uk.qm</file>
         <file>ur.qm</file>
+        <file>vi.qm</file>
         <file>zh_CN.qm</file>
         <file>zh_TW.qm</file>
     </qresource>

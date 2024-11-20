@@ -22,60 +22,62 @@
 #include "src/widget/widget.h"
 
 namespace {
-// clang-format off
-QStringList locales = {
-    "ar",
-    "be",
-    "ber",
-    "bg",
-    "cs",
-    "da",
-    "de",
-    "el",
-    "en",
-    "eo",
-    "es",
-    "et",
-    "fa",
-    "fi",
-    "fr",
-    "gl",
-    "he",
-    "hr",
-    "hu",
-    "is",
-    "it",
-    "ja",
-    "jbo",
-    "kn",
-    "ko",
-    "lt",
-    "mk",
-    "nl",
-    "no_nb",
-    "pl",
-    "pr",
-    "pt",
-    "pt_BR",
-    "ro",
-    "ru",
-    "si",
-    "sk",
-    "sl",
-    "sq",
-    "sr",
-    "sr_Latn",
-    "sv",
-    "sw",
-    "ta",
-    "tr",
-    "ug",
-    "uk",
-    "ur",
-    "zh_CN",
-    "zh_TW"
+const QStringList locales = {
+    "ar",      // Arabic
+    "be",      // Belarusian
+    "ber",     // Berber
+    "bg",      // Bulgarian
+    "bn",      // Bengali
+    "cs",      // Czech
+    "da",      // Danish
+    "de",      // German
+    "el",      // Greek
+    "en",      // English
+    "eo",      // Esperanto
+    "es",      // Spanish
+    "et",      // Estonian
+    "fa",      // Persian
+    "fi",      // Finnish
+    "fr",      // French
+    "gl",      // Galician
+    "he",      // Hebrew
+    "hr",      // Croatian
+    "hu",      // Hungarian
+    "is",      // Icelandic
+    "it",      // Italian
+    "ja",      // Japanese
+    "jbo",     // Lojban
+    "kn",      // Kannada
+    "ko",      // Korean
+    "lt",      // Lithuanian
+    "lv",      // Latvian
+    "mk",      // Macedonian
+    "nl",      // Dutch
+    "nl_BE",   // Flemish
+    "no_nb",   // Norwegian Bokmål
+    "pl",      // Polish
+    "pr",      // Pirate
+    "pt",      // Portuguese
+    "pt_BR",   // Brazilian Portuguese
+    "ro",      // Romanian
+    "ru",      // Russian
+    "si",      // Sinhala
+    "sk",      // Slovak
+    "sl",      // Slovenian
+    "sq",      // Albanian
+    "sr",      // Serbian
+    "sr_Latn", // Serbian (Latin)
+    "sv",      // Swedish
+    "sw",      // Swahili
+    "ta",      // Tamil
+    "tr",      // Turkish
+    "ug",      // Uyghur
+    "uk",      // Ukrainian
+    "ur",      // Urdu
+    "vi",      // Vietnamese
+    "zh_CN",   // Simplified Chinese
+    "zh_TW",   // Traditional Chinese
 };
-// clang-format on
 
 QFontDatabase::WritingSystem writingSystem(QLocale::Script script)
 {
@@ -88,6 +90,8 @@ QFontDatabase::WritingSystem writingSystem(QLocale::Script script)
         return QFontDatabase::WritingSystem::Armenian;
     case QLocale::Script::BengaliScript:
         return QFontDatabase::WritingSystem::Bengali;
+    case QLocale::Script::CanadianAboriginalScript:
+        return QFontDatabase::WritingSystem::Devanagari;
     case QLocale::Script::CyrillicScript:
         return QFontDatabase::WritingSystem::Cyrillic;
     case QLocale::Script::DevanagariScript:
@@ -142,6 +146,11 @@ QFontDatabase::WritingSystem writingSystem(QLocale::Script script)
 }
 
 } // namespace
+
+const QStringList& GeneralForm::getLocales()
+{
+    return locales;
+}
 
 /**
  * @class GeneralForm
