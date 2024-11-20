@@ -229,7 +229,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation>اگر تنظیم شده است به شکل خودکار دعوت به گروه ها را از این مخاطب قبول کن.</translation>
+        <translation type="unfinished">اگر تنظیم شده است به شکل خودکار دعوت به گروه ها را از این مخاطب قبول کن.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -818,15 +818,15 @@ so you can save the file on Windows.</source>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>گروه ها</translation>
+        <translation type="unfinished">گروه ها</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>ساخت یک گروه جدید</translation>
+        <translation type="unfinished">ساخت یک گروه جدید</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>دعوت به گروه ها</translation>
+        <translation type="unfinished">دعوت به گروه ها</translation>
     </message>
 </context>
 <context>
@@ -887,7 +887,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation>گفت‌و‌گوی گروهی %1</translation>
+        <translation type="unfinished">گفت‌و‌گوی گروهی %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -1094,11 +1094,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>به یک گروه جدید</translation>
+        <translation type="unfinished">به یک گروه جدید</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>دعوت به گروه «%1»</translation>
+        <translation type="unfinished">دعوت به گروه «%1»</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1678,7 +1678,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>ایجاد یک چت گروهی</translation>
+        <translation type="unfinished">ایجاد یک چت گروهی</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1738,11 +1738,11 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Conference</source>
-        <translation>چت گروهی</translation>
+        <translation type="unfinished">چت گروهی</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation>باز کردن صفحه مدیریت چت گروهی</translation>
+        <translation type="unfinished">باز کردن صفحه مدیریت چت گروهی</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -2783,7 +2783,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation>گفت‌و‌گوهای گروهی را بالای لیست دوستان قرار بده</translation>
+        <translation type="unfinished">گفت‌و‌گوهای گروهی را بالای لیست دوستان قرار بده</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode.</source>
@@ -2853,7 +2853,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation>در گفت‌و‌گو‌های گروهی تنهای هنگام نام بردن اطلاع بده</translation>
+        <translation type="unfinished">در گفت‌و‌گو‌های گروهی تنهای هنگام نام بردن اطلاع بده</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -2944,7 +2944,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>ساخت یک گروه جدید...</translation>
+        <translation type="unfinished">ساخت یک گروه جدید...</translation>
     </message>
     <message>
         <source>Add new circle...</source>
@@ -2977,7 +2977,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conferences</source>
-        <translation>گروه ها</translation>
+        <translation type="unfinished">گروه ها</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -2985,7 +2985,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation>چت گروهی #%1</translation>
+        <translation type="unfinished">چت گروهی #%1</translation>
     </message>
     <message>
         <source>Show</source>

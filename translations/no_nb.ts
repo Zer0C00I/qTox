@@ -233,7 +233,7 @@ noe som kan forårsake problemer i videosamtaler.</translation>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation>Godta gruppesamtaleinvitasjoner fra denne kontakten automatisk hvis valgt.</translation>
+        <translation type="unfinished">Godta gruppesamtaleinvitasjoner fra denne kontakten automatisk hvis valgt.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -285,7 +285,7 @@ noe som kan forårsake problemer i videosamtaler.</translation>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation>Godta gruppeinvitasjoner automatisk</translation>
+        <translation type="unfinished">Godta gruppeinvitasjoner automatisk</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
@@ -826,15 +826,15 @@ slik at du kan lagre filen på Windows.</translation>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>Grupper</translation>
+        <translation type="unfinished">Grupper</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>Opprett ny gruppe</translation>
+        <translation type="unfinished">Opprett ny gruppe</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>Gruppeinvitasjoner</translation>
+        <translation type="unfinished">Gruppeinvitasjoner</translation>
     </message>
 </context>
 <context>
@@ -896,7 +896,7 @@ slik at du kan lagre filen på Windows.</translation>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation>Gruppesludring %1</translation>
+        <translation type="unfinished">Gruppesludring %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -1132,11 +1132,11 @@ slik at du kan lagre filen på Windows.</translation>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>Til ny gruppe</translation>
+        <translation type="unfinished">Til ny gruppe</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>Inviter til gruppen &quot;%1&quot;</translation>
+        <translation type="unfinished">Inviter til gruppen &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Show details</source>
@@ -1293,7 +1293,7 @@ istedenfor å lukke seg helt.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
-        <translation>Legg til en sludremelding når en bruker tar del eller forlater en gruppe</translation>
+        <translation type="unfinished">Legg til en sludremelding når en bruker tar del eller forlater en gruppe</translation>
     </message>
 </context>
 <context>
@@ -1684,7 +1684,7 @@ Skriv inn samme passord to ganger.</translation>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>Lag en gruppesamtale</translation>
+        <translation type="unfinished">Lag en gruppesamtale</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1744,11 +1744,11 @@ Skriv inn samme passord to ganger.</translation>
     </message>
     <message>
         <source>Conference</source>
-        <translation>Gruppesludring</translation>
+        <translation type="unfinished">Gruppesludring</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation>Åpne behandlingssiden gruppesludring</translation>
+        <translation type="unfinished">Åpne behandlingssiden gruppesludring</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -1973,7 +1973,7 @@ Endringer av lagringsformat er mulig, som kan forårsake data tap.</translation>
     </message>
     <message>
         <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation>Filtrer gruppemeldinger etter gruppemedlemmers offentlige nøkler. Legg inn offentlige nøkler her, én på hver linje.</translation>
+        <translation type="unfinished">Filtrer gruppemeldinger etter gruppemedlemmers offentlige nøkler. Legg inn offentlige nøkler her, én på hver linje.</translation>
     </message>
 </context>
 <context>
@@ -2501,11 +2501,11 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
     </message>
     <message>
         <source>You have joined the conference</source>
-        <translation>Du har tatt del i gruppen</translation>
+        <translation type="unfinished">Du har tatt del i gruppen</translation>
     </message>
     <message>
         <source>You have left the conference</source>
-        <translation>Du har forlatt gruppen</translation>
+        <translation type="unfinished">Du har forlatt gruppen</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
@@ -2793,7 +2793,7 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation>Plasser gruppe-sludringer på toppen av kontaktlisten</translation>
+        <translation type="unfinished">Plasser gruppe-sludringer på toppen av kontaktlisten</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode.</source>
@@ -2863,7 +2863,7 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation>Gruppesludringer varsler kun når nevnt</translation>
+        <translation type="unfinished">Gruppesludringer varsler kun når nevnt</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -2883,7 +2883,7 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
-        <translation>Bruk fargede kallenavn i gruppesludringer</translation>
+        <translation type="unfinished">Bruk fargede kallenavn i gruppesludringer</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when mentioned.</source>
@@ -2953,7 +2953,7 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
     </message>
     <message>
         <source>Conferences</source>
-        <translation>Grupper</translation>
+        <translation type="unfinished">Grupper</translation>
     </message>
     <message>
         <source>File</source>
@@ -2985,11 +2985,11 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation>Gruppesludring #%1</translation>
+        <translation type="unfinished">Gruppesludring #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>Opprett ny gruppe…</translation>
+        <translation type="unfinished">Opprett ny gruppe…</translation>
     </message>
     <message>
         <source>Logout</source>
@@ -3048,7 +3048,7 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform>%n ny gruppeinvitasjon</numerusform>
             <numerusform>%n nye gruppeinvitasjoner</numerusform>
         </translation>

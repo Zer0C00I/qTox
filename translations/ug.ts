@@ -229,7 +229,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation>ئالاقىداشلارنىڭ توپ تەكلىپىنى ئاپتۇماتىك قۇبۇل قىلىش.</translation>
+        <translation type="unfinished">ئالاقىداشلارنىڭ توپ تەكلىپىنى ئاپتۇماتىك قۇبۇل قىلىش.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -820,15 +820,15 @@ so you can save the file on Windows.</source>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>توپ</translation>
+        <translation type="unfinished">توپ</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>توپ قۇرۇش</translation>
+        <translation type="unfinished">توپ قۇرۇش</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>توپ تەكلىپى</translation>
+        <translation type="unfinished">توپ تەكلىپى</translation>
     </message>
 </context>
 <context>
@@ -1097,11 +1097,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>يېڭى توپ</translation>
+        <translation type="unfinished">يېڭى توپ</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>&apos;%1&apos; توپقا تەكلىپ قىلىش</translation>
+        <translation type="unfinished">&apos;%1&apos; توپقا تەكلىپ قىلىش</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1681,7 +1681,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>توپ قۇرۇش</translation>
+        <translation type="unfinished">توپ قۇرۇش</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1741,11 +1741,11 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Conference</source>
-        <translation>توپ</translation>
+        <translation type="unfinished">توپ</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation>توپ باشقۇرۇش بېتىنى ئېچىش</translation>
+        <translation type="unfinished">توپ باشقۇرۇش بېتىنى ئېچىش</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -2787,7 +2787,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation>توپنى چوقىلاش</translation>
+        <translation type="unfinished">توپنى چوقىلاش</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode.</source>
@@ -2948,7 +2948,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>توپ قۇرۇش...</translation>
+        <translation type="unfinished">توپ قۇرۇش...</translation>
     </message>
     <message>
         <source>Add new circle...</source>
@@ -2981,7 +2981,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conferences</source>
-        <translation>توپلار</translation>
+        <translation type="unfinished">توپلار</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -2989,7 +2989,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation>توپ سۆھبەت #%1</translation>
+        <translation type="unfinished">توپ سۆھبەت #%1</translation>
     </message>
     <message>
         <source>Show</source>

@@ -233,7 +233,7 @@ mikä voi johtaa ongelmiin videopuheluissa.</translation>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation>Hyväksy ryhmäkutsut tältä käyttäjältä automaattisesti jos valittu.</translation>
+        <translation type="unfinished">Hyväksy ryhmäkutsut tältä käyttäjältä automaattisesti jos valittu.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -285,7 +285,7 @@ mikä voi johtaa ongelmiin videopuheluissa.</translation>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation>Hyväksy automaattisesti ryhmäkutsut</translation>
+        <translation type="unfinished">Hyväksy automaattisesti ryhmäkutsut</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
@@ -824,15 +824,15 @@ joten voit tallentaa tiedoston Windowsissa.</translation>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>Ryhmät</translation>
+        <translation type="unfinished">Ryhmät</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>Luo uusi ryhmä</translation>
+        <translation type="unfinished">Luo uusi ryhmä</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>Ryhmäkutsut</translation>
+        <translation type="unfinished">Ryhmäkutsut</translation>
     </message>
 </context>
 <context>
@@ -894,7 +894,7 @@ joten voit tallentaa tiedoston Windowsissa.</translation>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation>Ryhmäkeskustelu %1</translation>
+        <translation type="unfinished">Ryhmäkeskustelu %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -1134,11 +1134,11 @@ joten voit tallentaa tiedoston Windowsissa.</translation>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>Uuteen ryhmään</translation>
+        <translation type="unfinished">Uuteen ryhmään</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>Kutsu ryhmään &apos;%1&apos;</translation>
+        <translation type="unfinished">Kutsu ryhmään &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
@@ -1682,7 +1682,7 @@ Varmista, että syötät saman salasanan kahdesti.</translation>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>Luo keskusteluryhmä</translation>
+        <translation type="unfinished">Luo keskusteluryhmä</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1742,11 +1742,11 @@ Varmista, että syötät saman salasanan kahdesti.</translation>
     </message>
     <message>
         <source>Conference</source>
-        <translation>Ryhmäkeskustelu</translation>
+        <translation type="unfinished">Ryhmäkeskustelu</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation>Avaa ryhmäkeskustelun hallinta -sivu</translation>
+        <translation type="unfinished">Avaa ryhmäkeskustelun hallinta -sivu</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -1866,7 +1866,7 @@ Varmista, että syötät saman salasanan kahdesti.</translation>
     </message>
     <message>
         <source>New conference message</source>
-        <translation>Uusi ryhmäviesti</translation>
+        <translation type="unfinished">Uusi ryhmäviesti</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
@@ -1879,11 +1879,11 @@ Varmista, että syötät saman salasanan kahdesti.</translation>
     </message>
     <message>
         <source>Conference invite received</source>
-        <translation>Ryhmäkutsu saatu</translation>
+        <translation type="unfinished">Ryhmäkutsu saatu</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
-        <translation>%1 kutsuu sinut liittymään ryhmään.</translation>
+        <translation type="unfinished">%1 kutsuu sinut liittymään ryhmään.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -1971,7 +1971,7 @@ Tallennusformaatin muutokset ovat mahdollisia, mitkä saattavat johtaa tiedon me
     </message>
     <message>
         <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation>Lajittele ryhmäviestit ryhmän jäsenten julkisten avainten mukaan. Laita julkiset avaimet tänne. Yksi avain yhdelle linjalle.</translation>
+        <translation type="unfinished">Lajittele ryhmäviestit ryhmän jäsenten julkisten avainten mukaan. Laita julkiset avaimet tänne. Yksi avain yhdelle linjalle.</translation>
     </message>
 </context>
 <context>
@@ -2791,7 +2791,7 @@ Tämä ID sisältää spammin estävän koodin(joka on sinisellä), ja tarkistus
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation>Näytä ryhmäkeskustelut kontaktilistan yläpäässä</translation>
+        <translation type="unfinished">Näytä ryhmäkeskustelut kontaktilistan yläpäässä</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode.</source>
@@ -2861,7 +2861,7 @@ Tämä ID sisältää spammin estävän koodin(joka on sinisellä), ja tarkistus
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation>Näytä ilmoitukset ryhmächatista vain, jos minut mainitaan</translation>
+        <translation type="unfinished">Näytä ilmoitukset ryhmächatista vain, jos minut mainitaan</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -2881,7 +2881,7 @@ Tämä ID sisältää spammin estävän koodin(joka on sinisellä), ja tarkistus
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
-        <translation>Käytä värillisiä käyttäjänimiä ryhmächateissa</translation>
+        <translation type="unfinished">Käytä värillisiä käyttäjänimiä ryhmächateissa</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when mentioned.</source>
@@ -2959,7 +2959,7 @@ Tämä ID sisältää spammin estävän koodin(joka on sinisellä), ja tarkistus
     </message>
     <message>
         <source>Conferences</source>
-        <translation>Ryhmät</translation>
+        <translation type="unfinished">Ryhmät</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -2988,11 +2988,11 @@ Tämä ID sisältää spammin estävän koodin(joka on sinisellä), ja tarkistus
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation>Ryhmäkeskustelu #%1</translation>
+        <translation type="unfinished">Ryhmäkeskustelu #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>Luo uusi ryhmä...</translation>
+        <translation type="unfinished">Luo uusi ryhmä...</translation>
     </message>
     <message>
         <source>Show</source>
@@ -3046,7 +3046,7 @@ Tämä ID sisältää spammin estävän koodin(joka on sinisellä), ja tarkistus
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform>%n uusi ryhmäkutsu</numerusform>
             <numerusform>%n uusia ryhmäkutsuja</numerusform>
         </translation>

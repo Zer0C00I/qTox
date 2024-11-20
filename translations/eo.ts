@@ -815,7 +815,7 @@ so you can save the file on Windows.</source>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>Grupoj</translation>
+        <translation type="unfinished">Grupoj</translation>
     </message>
     <message>
         <source>Create new conference</source>
@@ -823,7 +823,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>Grupo-invitoj</translation>
+        <translation type="unfinished">Grupo-invitoj</translation>
     </message>
 </context>
 <context>
@@ -1074,11 +1074,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>Al nova grupo</translation>
+        <translation type="unfinished">Al nova grupo</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>Inviti al la grupo &apos;%1&apos;</translation>
+        <translation type="unfinished">Inviti al la grupo &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1666,7 +1666,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>Krei grupbabilejon</translation>
+        <translation type="unfinished">Krei grupbabilejon</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -2892,11 +2892,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation>Grupbabilejo #%1</translation>
+        <translation type="unfinished">Grupbabilejo #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>Krei novan grupon...</translation>
+        <translation type="unfinished">Krei novan grupon...</translation>
     </message>
     <message>
         <source>Add new circle...</source>
@@ -2928,7 +2928,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conferences</source>
-        <translation>Grupoj</translation>
+        <translation type="unfinished">Grupoj</translation>
     </message>
     <message>
         <source>Search Contacts</source>

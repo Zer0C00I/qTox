@@ -233,7 +233,7 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation>Akzeptiere automatisch Gruppenchat-Einladungen von diesem Kontakt, falls festgelegt.</translation>
+        <translation type="unfinished">Akzeptiere automatisch Gruppenchat-Einladungen von diesem Kontakt, falls festgelegt.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -285,7 +285,7 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation>Gruppeneinladungen automatisch annehmen</translation>
+        <translation type="unfinished">Gruppeneinladungen automatisch annehmen</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
@@ -825,15 +825,15 @@ um sie in Windows speichern zu können.</translation>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>Gruppen</translation>
+        <translation type="unfinished">Gruppen</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>Neue Gruppe erstellen</translation>
+        <translation type="unfinished">Neue Gruppe erstellen</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>Gruppeneinladungen</translation>
+        <translation type="unfinished">Gruppeneinladungen</translation>
     </message>
 </context>
 <context>
@@ -895,7 +895,7 @@ um sie in Windows speichern zu können.</translation>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation>Gruppenchat %1</translation>
+        <translation type="unfinished">Gruppenchat %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -1102,11 +1102,11 @@ um sie in Windows speichern zu können.</translation>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>Zu einer neuen Gruppe</translation>
+        <translation type="unfinished">Zu einer neuen Gruppe</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>In Gruppe „%1“ einladen</translation>
+        <translation type="unfinished">In Gruppe „%1“ einladen</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1298,7 +1298,7 @@ anstatt ganz zu schließen.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
-        <translation>Hinzufügen einer Chat-Nachricht, wenn ein Benutzer einer Gruppe beitritt oder sie verlässt</translation>
+        <translation type="unfinished">Hinzufügen einer Chat-Nachricht, wenn ein Benutzer einer Gruppe beitritt oder sie verlässt</translation>
     </message>
 </context>
 <context>
@@ -1690,7 +1690,7 @@ Bitte gib in beide Felder das gleiche Passwort ein.</translation>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>Einen Gruppenchat eröffnen</translation>
+        <translation type="unfinished">Einen Gruppenchat eröffnen</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1750,11 +1750,11 @@ Bitte gib in beide Felder das gleiche Passwort ein.</translation>
     </message>
     <message>
         <source>Conference</source>
-        <translation>Gruppenchat</translation>
+        <translation type="unfinished">Gruppenchat</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation>Gruppenchat-Verwaltung öffnen</translation>
+        <translation type="unfinished">Gruppenchat-Verwaltung öffnen</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -1874,7 +1874,7 @@ Bitte gib in beide Felder das gleiche Passwort ein.</translation>
     </message>
     <message>
         <source>New conference message</source>
-        <translation>Neue Gruppennachricht</translation>
+        <translation type="unfinished">Neue Gruppennachricht</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
@@ -1887,11 +1887,11 @@ Bitte gib in beide Felder das gleiche Passwort ein.</translation>
     </message>
     <message>
         <source>Conference invite received</source>
-        <translation>Gruppeneinladung erhalten</translation>
+        <translation type="unfinished">Gruppeneinladung erhalten</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
-        <translation>%1 hat dich in eine Gruppe eingeladen.</translation>
+        <translation type="unfinished">%1 hat dich in eine Gruppe eingeladen.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -1980,7 +1980,7 @@ Die Sicherung des Verlaufs ist noch in Entwicklung. Formatierungsänderungen bei
     </message>
     <message>
         <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation>Filtere Gruppennachricht nach öffentlichem Schlüssel des Gruppenmitglieds. Füge öffentlichen Schlüssel hier ein, einen pro Zeile.</translation>
+        <translation type="unfinished">Filtere Gruppennachricht nach öffentlichem Schlüssel des Gruppenmitglieds. Füge öffentlichen Schlüssel hier ein, einen pro Zeile.</translation>
     </message>
 </context>
 <context>
@@ -2407,11 +2407,11 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     </message>
     <message>
         <source>%1 has joined the conference</source>
-        <translation>%1 ist der Gruppe beigetreten</translation>
+        <translation type="unfinished">%1 ist der Gruppe beigetreten</translation>
     </message>
     <message>
         <source>%1 has left the conference</source>
-        <translation>%1 hat die Gruppe verlassen</translation>
+        <translation type="unfinished">%1 hat die Gruppe verlassen</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
@@ -2800,7 +2800,7 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation>Gruppenchats an erster Stelle der Kontaktliste anzeigen</translation>
+        <translation type="unfinished">Gruppenchats an erster Stelle der Kontaktliste anzeigen</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode.</source>
@@ -2870,7 +2870,7 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation>Gruppenchats benachrichtigen nur, wenn du darin erwähnt wirst</translation>
+        <translation type="unfinished">Gruppenchats benachrichtigen nur, wenn du darin erwähnt wirst</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -2890,7 +2890,7 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
-        <translation>Farbige Spitznamen in Gruppenchats verwenden</translation>
+        <translation type="unfinished">Farbige Spitznamen in Gruppenchats verwenden</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when mentioned.</source>
@@ -2961,7 +2961,7 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>Neue Gruppe erstellen...</translation>
+        <translation type="unfinished">Neue Gruppe erstellen...</translation>
     </message>
     <message>
         <source>Add new circle...</source>
@@ -2994,7 +2994,7 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     </message>
     <message>
         <source>Conferences</source>
-        <translation>Gruppen</translation>
+        <translation type="unfinished">Gruppen</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -3002,7 +3002,7 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation>Gruppenchat #%1</translation>
+        <translation type="unfinished">Gruppenchat #%1</translation>
     </message>
     <message>
         <source>Show</source>
@@ -3056,7 +3056,7 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform>%n neue Gruppeneinladung</numerusform>
             <numerusform>%n neue Gruppeneinladungen</numerusform>
         </translation>

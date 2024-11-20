@@ -233,7 +233,7 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation>Tự động chấp nhận lời mời trò chuyện nhóm từ liên hệ này nếu được đặt.</translation>
+        <translation type="unfinished">Tự động chấp nhận lời mời trò chuyện nhóm từ liên hệ này nếu được đặt.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -285,7 +285,7 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation>Tự động chấp nhận lời mời nhóm</translation>
+        <translation type="unfinished">Tự động chấp nhận lời mời nhóm</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
@@ -823,15 +823,15 @@ so you can save the file on Windows.</source>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>Nhóm</translation>
+        <translation type="unfinished">Nhóm</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>Tạo nhóm mới</translation>
+        <translation type="unfinished">Tạo nhóm mới</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>Lời mời nhóm</translation>
+        <translation type="unfinished">Lời mời nhóm</translation>
     </message>
 </context>
 <context>
@@ -892,7 +892,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation>Nhómchat %1</translation>
+        <translation type="unfinished">Nhómchat %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -1099,11 +1099,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>Đến nhóm mới</translation>
+        <translation type="unfinished">Đến nhóm mới</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>Mời vào nhóm &apos;%1&apos;</translation>
+        <translation type="unfinished">Mời vào nhóm &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1295,7 +1295,7 @@ thay vì đóng hoàn toàn.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
-        <translation>Thêm tin nhắn trò chuyện khi người dùng tham gia hoặc rời khỏi nhóm</translation>
+        <translation type="unfinished">Thêm tin nhắn trò chuyện khi người dùng tham gia hoặc rời khỏi nhóm</translation>
     </message>
 </context>
 <context>
@@ -1687,7 +1687,7 @@ Hãy đảm bảo nhập cùng một mật khẩu hai lần.</translation>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>Tạo cuộc trò chuyện nhóm</translation>
+        <translation type="unfinished">Tạo cuộc trò chuyện nhóm</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1747,11 +1747,11 @@ Hãy đảm bảo nhập cùng một mật khẩu hai lần.</translation>
     </message>
     <message>
         <source>Conference</source>
-        <translation>Trò chuyện nhóm</translation>
+        <translation type="unfinished">Trò chuyện nhóm</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation>Mở trang quản lý trò chuyện nhóm</translation>
+        <translation type="unfinished">Mở trang quản lý trò chuyện nhóm</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -1870,7 +1870,7 @@ Hãy đảm bảo nhập cùng một mật khẩu hai lần.</translation>
     </message>
     <message>
         <source>New conference message</source>
-        <translation>Tin nhắn nhóm mới</translation>
+        <translation type="unfinished">Tin nhắn nhóm mới</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
@@ -1883,11 +1883,11 @@ Hãy đảm bảo nhập cùng một mật khẩu hai lần.</translation>
     </message>
     <message>
         <source>Conference invite received</source>
-        <translation>Đã nhận được lời mời nhóm</translation>
+        <translation type="unfinished">Đã nhận được lời mời nhóm</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
-        <translation>%1 mời bạn tham gia một nhóm.</translation>
+        <translation type="unfinished">%1 mời bạn tham gia một nhóm.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -1975,7 +1975,7 @@ Có thể thay đổi định dạng lưu, điều này có thể làm mất d�
     </message>
     <message>
         <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation>Lọc tin nhắn nhóm theo khóa công khai của thành viên nhóm. Đặt các khóa công khai ở đây, một khóa trên mỗi dòng.</translation>
+        <translation type="unfinished">Lọc tin nhắn nhóm theo khóa công khai của thành viên nhóm. Đặt các khóa công khai ở đây, một khóa trên mỗi dòng.</translation>
     </message>
 </context>
 <context>
@@ -2402,11 +2402,11 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
     </message>
     <message>
         <source>%1 has joined the conference</source>
-        <translation>%1 đã tham gia nhóm</translation>
+        <translation type="unfinished">%1 đã tham gia nhóm</translation>
     </message>
     <message>
         <source>%1 has left the conference</source>
-        <translation>%1 đã rời khỏi nhóm</translation>
+        <translation type="unfinished">%1 đã rời khỏi nhóm</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
@@ -2503,11 +2503,11 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
     </message>
     <message>
         <source>You have joined the conference</source>
-        <translation>Bạn đã tham gia nhóm</translation>
+        <translation type="unfinished">Bạn đã tham gia nhóm</translation>
     </message>
     <message>
         <source>You have left the conference</source>
-        <translation>Bạn đã rời nhóm</translation>
+        <translation type="unfinished">Bạn đã rời nhóm</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
@@ -2795,7 +2795,7 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation>Đặt các trò chuyện nhóm ở đầu danh sách bạn bè</translation>
+        <translation type="unfinished">Đặt các trò chuyện nhóm ở đầu danh sách bạn bè</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode.</source>
@@ -2865,7 +2865,7 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation>Trò chuyện nhóm chỉ thông báo khi được nhắc đến</translation>
+        <translation type="unfinished">Trò chuyện nhóm chỉ thông báo khi được nhắc đến</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -2885,7 +2885,7 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
-        <translation>Sử dụng biệt hiệu màu trong các cuộc trò chuyện nhóm</translation>
+        <translation type="unfinished">Sử dụng biệt hiệu màu trong các cuộc trò chuyện nhóm</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when mentioned.</source>
@@ -2956,7 +2956,7 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>Tạo nhóm mới...</translation>
+        <translation type="unfinished">Tạo nhóm mới...</translation>
     </message>
     <message>
         <source>Add new circle...</source>
@@ -2989,7 +2989,7 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
     </message>
     <message>
         <source>Conferences</source>
-        <translation>Nhóm</translation>
+        <translation type="unfinished">Nhóm</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -2997,7 +2997,7 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation>Nhómchat #%1</translation>
+        <translation type="unfinished">Nhómchat #%1</translation>
     </message>
     <message>
         <source>Show</source>
@@ -3050,7 +3050,7 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform>%n lời mời nhóm mới</numerusform>
         </translation>
     </message>

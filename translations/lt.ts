@@ -233,7 +233,7 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation>Jei nustatyta, automatiškai priimti grupės pokalbio pakvietimus nuo šio kontakto.</translation>
+        <translation type="unfinished">Jei nustatyta, automatiškai priimti grupės pokalbio pakvietimus nuo šio kontakto.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -285,7 +285,7 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation>Automatiškai priimti grupių pakvietimus</translation>
+        <translation type="unfinished">Automatiškai priimti grupių pakvietimus</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
@@ -826,15 +826,15 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>Grupės</translation>
+        <translation type="unfinished">Grupės</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>Sukurti naują grupės pokalbį</translation>
+        <translation type="unfinished">Sukurti naują grupės pokalbį</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>Pakvietimai į grupes</translation>
+        <translation type="unfinished">Pakvietimai į grupes</translation>
     </message>
 </context>
 <context>
@@ -897,7 +897,7 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation>Grupės pokalbis %1</translation>
+        <translation type="unfinished">Grupės pokalbis %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -1137,11 +1137,11 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>Į naują grupės pokalbį</translation>
+        <translation type="unfinished">Į naują grupės pokalbį</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>Pakviesti į grupės pokalbį „%1“</translation>
+        <translation type="unfinished">Pakviesti į grupės pokalbį „%1“</translation>
     </message>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
@@ -1685,7 +1685,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>Sukurti grupės pokalbį</translation>
+        <translation type="unfinished">Sukurti grupės pokalbį</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1745,11 +1745,11 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Conference</source>
-        <translation>Grupės pokalbis</translation>
+        <translation type="unfinished">Grupės pokalbis</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation>Atverti grupės pokalbio tvarkymo puslapį</translation>
+        <translation type="unfinished">Atverti grupės pokalbio tvarkymo puslapį</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -1872,7 +1872,7 @@ Plural:10–20,30,40,..</translatorcomment>
     </message>
     <message>
         <source>New conference message</source>
-        <translation>Nauja grupės žinutė</translation>
+        <translation type="unfinished">Nauja grupės žinutė</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
@@ -1885,11 +1885,11 @@ Plural:10–20,30,40,..</translatorcomment>
     </message>
     <message>
         <source>Conference invite received</source>
-        <translation>Gautas pakvietimas į grupę</translation>
+        <translation type="unfinished">Gautas pakvietimas į grupę</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
-        <translation>%1 kviečia jus prisijungti prie grupės.</translation>
+        <translation type="unfinished">%1 kviečia jus prisijungti prie grupės.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -1977,7 +1977,7 @@ Failo formatas dar gali pasikeisti, todėl galite prarasti sukauptus duomenis.</
     </message>
     <message>
         <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation>Filtruoti grupės pranešimus pagal grupės narių viešuosius raktus. Čia įrašykite viešuosius raktus, po vieną kiekvienoje eilutėje.</translation>
+        <translation type="unfinished">Filtruoti grupės pranešimus pagal grupės narių viešuosius raktus. Čia įrašykite viešuosius raktus, po vieną kiekvienoje eilutėje.</translation>
     </message>
 </context>
 <context>
@@ -2797,7 +2797,7 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation>Rodyti grupių pokalbius kontaktų sąrašo viršuje</translation>
+        <translation type="unfinished">Rodyti grupių pokalbius kontaktų sąrašo viršuje</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode.</source>
@@ -2867,7 +2867,7 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation>Rodyti grupės pokalbio pranešimus tik tuomet, kai kas nors jus paminėjo</translation>
+        <translation type="unfinished">Rodyti grupės pokalbio pranešimus tik tuomet, kai kas nors jus paminėjo</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -2887,7 +2887,7 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
-        <translation>Grupės pokalbiuose naudoti spalvotus slapyvardžius</translation>
+        <translation type="unfinished">Grupės pokalbiuose naudoti spalvotus slapyvardžius</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when mentioned.</source>
@@ -2942,7 +2942,7 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     </message>
     <message>
         <source>Conferences</source>
-        <translation>Grupės</translation>
+        <translation type="unfinished">Grupės</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -2994,11 +2994,11 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation>Grupės pokalbis Nr. %1</translation>
+        <translation type="unfinished">Grupės pokalbis Nr. %1</translation>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>Sukurti naują grupę...</translation>
+        <translation type="unfinished">Sukurti naują grupę...</translation>
     </message>
     <message>
         <source>Show</source>
@@ -3053,7 +3053,7 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform>%n naujas grupės kvietimas</numerusform>
             <numerusform>%n nauji grupių kvietimai</numerusform>
             <numerusform>%n naujų grupių kvietimų</numerusform>

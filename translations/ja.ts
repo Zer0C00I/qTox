@@ -229,7 +229,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation>設定した場合、この連絡先からのグループチャットの招待を自動的に承認します。</translation>
+        <translation type="unfinished">設定した場合、この連絡先からのグループチャットの招待を自動的に承認します。</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -817,15 +817,15 @@ so you can save the file on Windows.</source>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>グループ</translation>
+        <translation type="unfinished">グループ</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>新しいグループを作成</translation>
+        <translation type="unfinished">新しいグループを作成</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>グループ招待</translation>
+        <translation type="unfinished">グループ招待</translation>
     </message>
 </context>
 <context>
@@ -1075,11 +1075,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>新しいグループへ</translation>
+        <translation type="unfinished">新しいグループへ</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>グループ &apos;%1&apos; に招待</translation>
+        <translation type="unfinished">グループ &apos;%1&apos; に招待</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1669,7 +1669,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>グループチャットを作成</translation>
+        <translation type="unfinished">グループチャットを作成</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1729,11 +1729,11 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Conference</source>
-        <translation>グループチャット</translation>
+        <translation type="unfinished">グループチャット</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation>グループチャットメッセージページを開く</translation>
+        <translation type="unfinished">グループチャットメッセージページを開く</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -2774,7 +2774,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation>友達リストの一番上にグループチャットを表示</translation>
+        <translation type="unfinished">友達リストの一番上にグループチャットを表示</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode.</source>
@@ -2899,11 +2899,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation>グループチャット #%1</translation>
+        <translation type="unfinished">グループチャット #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>新しいグループを作成…</translation>
+        <translation type="unfinished">新しいグループを作成…</translation>
     </message>
     <message>
         <source>Add new circle...</source>
@@ -2935,7 +2935,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conferences</source>
-        <translation>グループ</translation>
+        <translation type="unfinished">グループ</translation>
     </message>
     <message>
         <source>Search Contacts</source>

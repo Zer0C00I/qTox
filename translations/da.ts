@@ -823,11 +823,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>Opret ny gruppe</translation>
+        <translation type="unfinished">Opret ny gruppe</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>Gruppeinvitationer</translation>
+        <translation type="unfinished">Gruppeinvitationer</translation>
     </message>
 </context>
 <context>
@@ -1135,7 +1135,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>Til ny gruppe</translation>
+        <translation type="unfinished">Til ny gruppe</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
@@ -1737,7 +1737,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Conference</source>
-        <translation>Gruppechat</translation>
+        <translation type="unfinished">Gruppechat</translation>
     </message>
     <message>
         <source>Open conference management page</source>
@@ -2968,7 +2968,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conferences</source>
-        <translation>Grupper</translation>
+        <translation type="unfinished">Grupper</translation>
     </message>
     <message>
         <source>Search Contacts</source>

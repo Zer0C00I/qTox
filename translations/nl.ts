@@ -229,7 +229,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation>Indien ingesteld groepsgespreksuitnodigingen van dit contact automatisch aanvaarden.</translation>
+        <translation type="unfinished">Indien ingesteld groepsgespreksuitnodigingen van dit contact automatisch aanvaarden.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -819,15 +819,15 @@ so you can save the file on Windows.</source>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>Groepen</translation>
+        <translation type="unfinished">Groepen</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>Nieuwe groep aanmaken</translation>
+        <translation type="unfinished">Nieuwe groep aanmaken</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>Groepsuitnodigingen</translation>
+        <translation type="unfinished">Groepsuitnodigingen</translation>
     </message>
 </context>
 <context>
@@ -889,7 +889,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation>Groepschat %1</translation>
+        <translation type="unfinished">Groepschat %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -1125,11 +1125,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>Naar nieuwe groep</translation>
+        <translation type="unfinished">Naar nieuwe groep</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>Uitnodigen voor groep ‘%1’</translation>
+        <translation type="unfinished">Uitnodigen voor groep ‘%1’</translation>
     </message>
     <message>
         <source>Show details</source>
@@ -1673,7 +1673,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>Groepschat aanmaken</translation>
+        <translation type="unfinished">Groepschat aanmaken</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1733,11 +1733,11 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Conference</source>
-        <translation>Groepschat</translation>
+        <translation type="unfinished">Groepschat</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation>Groepschat-beheerpagina openen</translation>
+        <translation type="unfinished">Groepschat-beheerpagina openen</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -2779,7 +2779,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation>Groepsgesprekken bovenaan vriendenlijst plaatsen</translation>
+        <translation type="unfinished">Groepsgesprekken bovenaan vriendenlijst plaatsen</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode.</source>
@@ -2849,7 +2849,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation>Groepchats alleen melden als je genoemd wordt</translation>
+        <translation type="unfinished">Groepchats alleen melden als je genoemd wordt</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -2959,7 +2959,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conferences</source>
-        <translation>Groepen</translation>
+        <translation type="unfinished">Groepen</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -2971,11 +2971,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation>Groepsgesprek #%1</translation>
+        <translation type="unfinished">Groepsgesprek #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>Nieuwe groep aanmaken…</translation>
+        <translation type="unfinished">Nieuwe groep aanmaken…</translation>
     </message>
     <message>
         <source>Logout</source>

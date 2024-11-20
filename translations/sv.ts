@@ -233,7 +233,7 @@ vilket kan leda till problem med videosamtal.</translation>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation>Acceptera gruppchattsinbjudningar automatiskt från denna kontakt om angivet.</translation>
+        <translation type="unfinished">Acceptera gruppchattsinbjudningar automatiskt från denna kontakt om angivet.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -285,7 +285,7 @@ vilket kan leda till problem med videosamtal.</translation>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation>Acceptera gruppinbjudningar automatiskt</translation>
+        <translation type="unfinished">Acceptera gruppinbjudningar automatiskt</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
@@ -824,15 +824,15 @@ så att du kan spara filen i Windows.</translation>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>Grupper</translation>
+        <translation type="unfinished">Grupper</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>Skapa ny grupp</translation>
+        <translation type="unfinished">Skapa ny grupp</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>Gruppinbjudningar</translation>
+        <translation type="unfinished">Gruppinbjudningar</translation>
     </message>
 </context>
 <context>
@@ -894,7 +894,7 @@ så att du kan spara filen i Windows.</translation>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation>Gruppchatt %1</translation>
+        <translation type="unfinished">Gruppchatt %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -1098,11 +1098,11 @@ så att du kan spara filen i Windows.</translation>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>Till ny grupp</translation>
+        <translation type="unfinished">Till ny grupp</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>Bjud in till grupp &apos;%1&apos;</translation>
+        <translation type="unfinished">Bjud in till grupp &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1677,7 +1677,7 @@ Vänligen se till att du skriver samma lösenord två gånger.</translation>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>Skapa en chattgrupp</translation>
+        <translation type="unfinished">Skapa en chattgrupp</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1742,11 +1742,11 @@ Vänligen se till att du skriver samma lösenord två gånger.</translation>
     </message>
     <message>
         <source>Conference</source>
-        <translation>Gruppchatt</translation>
+        <translation type="unfinished">Gruppchatt</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation>Öppna gruppchatt-hanteringssidan</translation>
+        <translation type="unfinished">Öppna gruppchatt-hanteringssidan</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -1866,7 +1866,7 @@ Vänligen se till att du skriver samma lösenord två gånger.</translation>
     </message>
     <message>
         <source>New conference message</source>
-        <translation>Nytt gruppmeddelande</translation>
+        <translation type="unfinished">Nytt gruppmeddelande</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
@@ -1879,11 +1879,11 @@ Vänligen se till att du skriver samma lösenord två gånger.</translation>
     </message>
     <message>
         <source>Conference invite received</source>
-        <translation>Gruppinbjudan mottagen</translation>
+        <translation type="unfinished">Gruppinbjudan mottagen</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
-        <translation>%1 bjuder in dig till en grupp.</translation>
+        <translation type="unfinished">%1 bjuder in dig till en grupp.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -1971,7 +1971,7 @@ Om du blir spammad med vänförfrågningar, ändra NoSpam.</translation>
     </message>
     <message>
         <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation>Filtrera gruppmeddelanden efter gruppmedlemmars offentliga nycklar. Sätt offentliga nycklar här, en per rad.</translation>
+        <translation type="unfinished">Filtrera gruppmeddelanden efter gruppmedlemmars offentliga nycklar. Sätt offentliga nycklar här, en per rad.</translation>
     </message>
 </context>
 <context>
@@ -2791,7 +2791,7 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation>Placera gruppchattar högst upp i vänlistan</translation>
+        <translation type="unfinished">Placera gruppchattar högst upp i vänlistan</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode.</source>
@@ -2861,7 +2861,7 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation>Gruppchattar aviserar endast vid omnämnande</translation>
+        <translation type="unfinished">Gruppchattar aviserar endast vid omnämnande</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -2931,11 +2931,11 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation>Gruppchatt #%1</translation>
+        <translation type="unfinished">Gruppchatt #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>Skapa ny grupp...</translation>
+        <translation type="unfinished">Skapa ny grupp...</translation>
     </message>
     <message>
         <source>Add new circle...</source>
@@ -2967,7 +2967,7 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
     </message>
     <message>
         <source>Conferences</source>
-        <translation>Grupper</translation>
+        <translation type="unfinished">Grupper</translation>
     </message>
     <message>
         <source>Search Contacts</source>

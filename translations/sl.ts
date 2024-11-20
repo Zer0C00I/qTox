@@ -229,7 +229,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation>Sprejmi samodejno skupinski klepet za ta kontakt (če nastavljen).</translation>
+        <translation type="unfinished">Sprejmi samodejno skupinski klepet za ta kontakt (če nastavljen).</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -823,15 +823,15 @@ so you can save the file on Windows.</source>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>Skupine</translation>
+        <translation type="unfinished">Skupine</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>Ustvari novo skupino</translation>
+        <translation type="unfinished">Ustvari novo skupino</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>Vabila na skupine</translation>
+        <translation type="unfinished">Vabila na skupine</translation>
     </message>
 </context>
 <context>
@@ -1098,11 +1098,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>V novi skupini</translation>
+        <translation type="unfinished">V novi skupini</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>Povabi v skupino &apos;%1&apos;</translation>
+        <translation type="unfinished">Povabi v skupino &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1676,7 +1676,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>Ustvari skupen pogovor</translation>
+        <translation type="unfinished">Ustvari skupen pogovor</translation>
     </message>
     <message>
         <source>View completed file transfers</source>

@@ -233,7 +233,7 @@ Rýchlosť vášho pripojenia nemusí byť vždy dostačujúca pre vyššiu kval
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation>Ak je zaškrtnuté, automaticky prijímať pozvánky do skupín od tohto kontaktu.</translation>
+        <translation type="unfinished">Ak je zaškrtnuté, automaticky prijímať pozvánky do skupín od tohto kontaktu.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -285,7 +285,7 @@ Rýchlosť vášho pripojenia nemusí byť vždy dostačujúca pre vyššiu kval
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation>Automaticky prijať pozvánky do skupín</translation>
+        <translation type="unfinished">Automaticky prijať pozvánky do skupín</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
@@ -827,15 +827,15 @@ so you can save the file on Windows.</translation>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>Skupiny</translation>
+        <translation type="unfinished">Skupiny</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>Vytvoriť novú skupinu</translation>
+        <translation type="unfinished">Vytvoriť novú skupinu</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>Pozvánky do skupín</translation>
+        <translation type="unfinished">Pozvánky do skupín</translation>
     </message>
 </context>
 <context>
@@ -898,7 +898,7 @@ so you can save the file on Windows.</translation>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation>Skupinový chat %1</translation>
+        <translation type="unfinished">Skupinový chat %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -1105,11 +1105,11 @@ so you can save the file on Windows.</translation>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>Do novej skupiny</translation>
+        <translation type="unfinished">Do novej skupiny</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>Pozvať do skupiny &apos;%1&apos;</translation>
+        <translation type="unfinished">Pozvať do skupiny &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1301,7 +1301,7 @@ namiesto toho, že by sa zavrel úplne.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
-        <translation>Pridať správu, keď sa užívateľ pridá alebo opustí skupinu</translation>
+        <translation type="unfinished">Pridať správu, keď sa užívateľ pridá alebo opustí skupinu</translation>
     </message>
 </context>
 <context>
@@ -1693,7 +1693,7 @@ Prosím, uistite sa, že ste zadali to isté heslo dvakrát.</translation>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>Vytvorenie skupinového chatu</translation>
+        <translation type="unfinished">Vytvorenie skupinového chatu</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1753,11 +1753,11 @@ Prosím, uistite sa, že ste zadali to isté heslo dvakrát.</translation>
     </message>
     <message>
         <source>Conference</source>
-        <translation>Skupinový chat</translation>
+        <translation type="unfinished">Skupinový chat</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation>Otvoriť stránku na správu skupinového chatu</translation>
+        <translation type="unfinished">Otvoriť stránku na správu skupinového chatu</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -1878,7 +1878,7 @@ Prosím, uistite sa, že ste zadali to isté heslo dvakrát.</translation>
     </message>
     <message>
         <source>New conference message</source>
-        <translation>Nová skupinová správa</translation>
+        <translation type="unfinished">Nová skupinová správa</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
@@ -1891,11 +1891,11 @@ Prosím, uistite sa, že ste zadali to isté heslo dvakrát.</translation>
     </message>
     <message>
         <source>Conference invite received</source>
-        <translation>Pozvánka do skupiny prijatá</translation>
+        <translation type="unfinished">Pozvánka do skupiny prijatá</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
-        <translation>%1 vás pozýva, aby ste sa pridali do skupiny.</translation>
+        <translation type="unfinished">%1 vás pozýva, aby ste sa pridali do skupiny.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -1983,7 +1983,7 @@ Sú možné zmeny formátu, ktoré môžu spôsobiť stratu dát.</translation>
     </message>
     <message>
         <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation>Filtrovať skupinové správy podľa verejných kľúčov členov skupín. Vložte sem verejné kľúče, jeden kľúč na riadok.</translation>
+        <translation type="unfinished">Filtrovať skupinové správy podľa verejných kľúčov členov skupín. Vložte sem verejné kľúče, jeden kľúč na riadok.</translation>
     </message>
 </context>
 <context>
@@ -2410,11 +2410,11 @@ Toto ID obsahuje kód NoSpam (modrou) a kontrolný súčet (šedou).</translatio
     </message>
     <message>
         <source>%1 has joined the conference</source>
-        <translation>%1 sa pridal/a do skupiny</translation>
+        <translation type="unfinished">%1 sa pridal/a do skupiny</translation>
     </message>
     <message>
         <source>%1 has left the conference</source>
-        <translation>%1 opustil/a skupinu</translation>
+        <translation type="unfinished">%1 opustil/a skupinu</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
@@ -2511,11 +2511,11 @@ Toto ID obsahuje kód NoSpam (modrou) a kontrolný súčet (šedou).</translatio
     </message>
     <message>
         <source>You have joined the conference</source>
-        <translation>Pridali ste sa do skupiny</translation>
+        <translation type="unfinished">Pridali ste sa do skupiny</translation>
     </message>
     <message>
         <source>You have left the conference</source>
-        <translation>Opustili ste skupinu</translation>
+        <translation type="unfinished">Opustili ste skupinu</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
@@ -2803,7 +2803,7 @@ Toto ID obsahuje kód NoSpam (modrou) a kontrolný súčet (šedou).</translatio
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation>Skupinové chaty zobraziť na začiatku zoznamu priateľov</translation>
+        <translation type="unfinished">Skupinové chaty zobraziť na začiatku zoznamu priateľov</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode.</source>
@@ -2873,7 +2873,7 @@ Toto ID obsahuje kód NoSpam (modrou) a kontrolný súčet (šedou).</translatio
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation>Skupinové chaty upozornia len, keď vás spomenú</translation>
+        <translation type="unfinished">Skupinové chaty upozornia len, keď vás spomenú</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -2893,7 +2893,7 @@ Toto ID obsahuje kód NoSpam (modrou) a kontrolný súčet (šedou).</translatio
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
-        <translation>Používať farebné prezývky v skupinových chatoch</translation>
+        <translation type="unfinished">Používať farebné prezývky v skupinových chatoch</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when mentioned.</source>
@@ -2964,7 +2964,7 @@ Toto ID obsahuje kód NoSpam (modrou) a kontrolný súčet (šedou).</translatio
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>Vytvoriť novú skupinu...</translation>
+        <translation type="unfinished">Vytvoriť novú skupinu...</translation>
     </message>
     <message>
         <source>Add new circle...</source>
@@ -2997,7 +2997,7 @@ Toto ID obsahuje kód NoSpam (modrou) a kontrolný súčet (šedou).</translatio
     </message>
     <message>
         <source>Conferences</source>
-        <translation>Skupiny</translation>
+        <translation type="unfinished">Skupiny</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -3005,7 +3005,7 @@ Toto ID obsahuje kód NoSpam (modrou) a kontrolný súčet (šedou).</translatio
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation>Skupinový chat %1</translation>
+        <translation type="unfinished">Skupinový chat %1</translation>
     </message>
     <message>
         <source>Show</source>
@@ -3060,7 +3060,7 @@ Toto ID obsahuje kód NoSpam (modrou) a kontrolný súčet (šedou).</translatio
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform>%n nová pozvánka do skupiny</numerusform>
             <numerusform>%n nové pozvánky do skupiny</numerusform>
             <numerusform>%n nových pozvánok do skupiny</numerusform>

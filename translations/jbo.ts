@@ -3022,7 +3022,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conferences</source>
-        <translation>girzu</translation>
+        <translation type="unfinished">girzu</translation>
     </message>
     <message>
         <source>Search Contacts</source>

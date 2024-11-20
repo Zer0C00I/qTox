@@ -229,7 +229,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation>Αυτόματη αποδοχή προσκλήσεων ομαδικής συνομιλίας από αυτήν την επαφή, εάν είναι επιλεγμένο.</translation>
+        <translation type="unfinished">Αυτόματη αποδοχή προσκλήσεων ομαδικής συνομιλίας από αυτήν την επαφή, εάν είναι επιλεγμένο.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -819,15 +819,15 @@ so you can save the file on Windows.</source>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>Ομάδες</translation>
+        <translation type="unfinished">Ομάδες</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>Δημιουργία νέας ομάδας</translation>
+        <translation type="unfinished">Δημιουργία νέας ομάδας</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>Ομαδικές προσκλήσεις</translation>
+        <translation type="unfinished">Ομαδικές προσκλήσεις</translation>
     </message>
 </context>
 <context>
@@ -1125,11 +1125,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>Σε νέα ομάδα</translation>
+        <translation type="unfinished">Σε νέα ομάδα</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>Πρόσκληση στην ομάδα &apos;%1&apos;</translation>
+        <translation type="unfinished">Πρόσκληση στην ομάδα &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Show details</source>
@@ -1665,7 +1665,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>Δημιουργήστε μια ομάδα συνομιλίας</translation>
+        <translation type="unfinished">Δημιουργήστε μια ομάδα συνομιλίας</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1733,11 +1733,11 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Conference</source>
-        <translation>Ομαδική συνομιλία</translation>
+        <translation type="unfinished">Ομαδική συνομιλία</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation>Άνοιγμα σελίδας διαχείρισης ομαδικής συνομιλίας</translation>
+        <translation type="unfinished">Άνοιγμα σελίδας διαχείρισης ομαδικής συνομιλίας</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -2779,7 +2779,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation>Τοποθέτηση των ομαδικών συνομιλιών στην κορυφή της λίστας φίλων</translation>
+        <translation type="unfinished">Τοποθέτηση των ομαδικών συνομιλιών στην κορυφή της λίστας φίλων</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode.</source>
@@ -2932,7 +2932,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conferences</source>
-        <translation>Ομάδες</translation>
+        <translation type="unfinished">Ομάδες</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -2971,11 +2971,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation>Ομαδική συνομιλία #%1</translation>
+        <translation type="unfinished">Ομαδική συνομιλία #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>Δημιουργία νέας ομάδας...</translation>
+        <translation type="unfinished">Δημιουργία νέας ομάδας...</translation>
     </message>
     <message>
         <source>Logout</source>

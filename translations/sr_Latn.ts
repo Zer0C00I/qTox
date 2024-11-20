@@ -229,7 +229,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation>Ukoliko je zadano, automatski prihavti pozive za grupno ćaskanje od ovog kontakta.</translation>
+        <translation type="unfinished">Ukoliko je zadano, automatski prihavti pozive za grupno ćaskanje od ovog kontakta.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -822,15 +822,15 @@ so you can save the file on Windows.</source>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>Grupe</translation>
+        <translation type="unfinished">Grupe</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>Napravi novu grupu</translation>
+        <translation type="unfinished">Napravi novu grupu</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>Pozivnice u grupu</translation>
+        <translation type="unfinished">Pozivnice u grupu</translation>
     </message>
 </context>
 <context>
@@ -1101,11 +1101,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>U novu grupu</translation>
+        <translation type="unfinished">U novu grupu</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>Pozovi u grupu „%1“</translation>
+        <translation type="unfinished">Pozovi u grupu „%1“</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1685,7 +1685,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>Napravi grupno ćaskanje</translation>
+        <translation type="unfinished">Napravi grupno ćaskanje</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1745,11 +1745,11 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Conference</source>
-        <translation>Grupno ćaskanje</translation>
+        <translation type="unfinished">Grupno ćaskanje</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation>Otvori stranicu upravljanja grupnim ćaskanjem</translation>
+        <translation type="unfinished">Otvori stranicu upravljanja grupnim ćaskanjem</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -2792,7 +2792,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation>Postavi grupna ćaskanja na vrh spiska prijatelja</translation>
+        <translation type="unfinished">Postavi grupna ćaskanja na vrh spiska prijatelja</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode.</source>
@@ -2953,7 +2953,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>Napravi novu grupu...</translation>
+        <translation type="unfinished">Napravi novu grupu...</translation>
     </message>
     <message>
         <source>Add new circle...</source>
@@ -2986,7 +2986,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conferences</source>
-        <translation>Grupe</translation>
+        <translation type="unfinished">Grupe</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -2994,7 +2994,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation>Grupno ćaskanje #%1</translation>
+        <translation type="unfinished">Grupno ćaskanje #%1</translation>
     </message>
     <message>
         <source>Show</source>

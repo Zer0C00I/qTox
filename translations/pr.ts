@@ -1015,11 +1015,11 @@ so you can save the file on windows.</source>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>Ta new ship</translation>
+        <translation type="unfinished">Ta new ship</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>Invite aboard ship &quot;%1&quot;</translation>
+        <translation type="unfinished">Invite aboard ship &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -3034,7 +3034,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation>Crew #%1</translation>
+        <translation type="unfinished">Crew #%1</translation>
     </message>
     <message>
         <source>Show</source>

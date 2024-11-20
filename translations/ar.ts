@@ -827,15 +827,15 @@ so you can save the file on Windows.</source>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>المجموعات</translation>
+        <translation type="unfinished">المجموعات</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>إنشاء مجموعة جديدة</translation>
+        <translation type="unfinished">إنشاء مجموعة جديدة</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>إضافات المجموعة</translation>
+        <translation type="unfinished">إضافات المجموعة</translation>
     </message>
 </context>
 <context>
@@ -1141,11 +1141,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>إلى مجموعة جديدة</translation>
+        <translation type="unfinished">إلى مجموعة جديدة</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>إضافة إلى مجموعة &apos;%1&apos;</translation>
+        <translation type="unfinished">إضافة إلى مجموعة &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
@@ -1685,7 +1685,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>إنشاء محادثة جماعية</translation>
+        <translation type="unfinished">إنشاء محادثة جماعية</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1745,11 +1745,11 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Conference</source>
-        <translation>دردشة جماعية</translation>
+        <translation type="unfinished">دردشة جماعية</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation>فتح صفحة ادارة الدردشة الجماعية</translation>
+        <translation type="unfinished">فتح صفحة ادارة الدردشة الجماعية</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -2795,7 +2795,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation>ضع المحادثات الجماعية اعلى قائمه الاصدقاء</translation>
+        <translation type="unfinished">ضع المحادثات الجماعية اعلى قائمه الاصدقاء</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode.</source>
@@ -2948,7 +2948,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conferences</source>
-        <translation>المجموعات</translation>
+        <translation type="unfinished">المجموعات</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -2992,11 +2992,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation>محادثة جماعية #%1</translation>
+        <translation type="unfinished">محادثة جماعية #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>إنشاء مجموعة جديدة...</translation>
+        <translation type="unfinished">إنشاء مجموعة جديدة...</translation>
     </message>
     <message>
         <source>Show</source>

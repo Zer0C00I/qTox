@@ -229,7 +229,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation>Acepta automaticamente invitacións a grupos de charla se está activado.</translation>
+        <translation type="unfinished">Acepta automaticamente invitacións a grupos de charla se está activado.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -820,15 +820,15 @@ so you can save the file on Windows.</source>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>Grupos</translation>
+        <translation type="unfinished">Grupos</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>Crear un novo grupo</translation>
+        <translation type="unfinished">Crear un novo grupo</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>Invitacións a grupos</translation>
+        <translation type="unfinished">Invitacións a grupos</translation>
     </message>
 </context>
 <context>
@@ -890,7 +890,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation>Grupo %1</translation>
+        <translation type="unfinished">Grupo %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -1097,11 +1097,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>A novo grupo</translation>
+        <translation type="unfinished">A novo grupo</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>Convidar a grupo &apos;%1&apos;</translation>
+        <translation type="unfinished">Convidar a grupo &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1681,7 +1681,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>Crear un grupo de charla</translation>
+        <translation type="unfinished">Crear un grupo de charla</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1741,11 +1741,11 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Conference</source>
-        <translation>Chat de grupo</translation>
+        <translation type="unfinished">Chat de grupo</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation>Abrir a páxina de xestión de charlas de grupo</translation>
+        <translation type="unfinished">Abrir a páxina de xestión de charlas de grupo</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -2787,7 +2787,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation>Coloque os grupos de charla na parte superior da lista de amigos</translation>
+        <translation type="unfinished">Coloque os grupos de charla na parte superior da lista de amigos</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode.</source>
@@ -2857,7 +2857,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation>Os charlas de grupo só se notifican cando se menciona</translation>
+        <translation type="unfinished">Os charlas de grupo só se notifican cando se menciona</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -2948,7 +2948,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>Crear un grupo novo ...</translation>
+        <translation type="unfinished">Crear un grupo novo ...</translation>
     </message>
     <message>
         <source>Add new circle...</source>
@@ -2981,7 +2981,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conferences</source>
-        <translation>Grupos</translation>
+        <translation type="unfinished">Grupos</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -2989,7 +2989,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation>Grupo de charla #%1</translation>
+        <translation type="unfinished">Grupo de charla #%1</translation>
     </message>
     <message>
         <source>Show</source>

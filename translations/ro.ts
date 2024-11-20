@@ -233,7 +233,7 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation>Acceptați automat invitațiile discuției de grup de la acest contact dacă este setat.</translation>
+        <translation type="unfinished">Acceptați automat invitațiile discuției de grup de la acest contact dacă este setat.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -285,7 +285,7 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation>Acceptați automat invitațiile de grup</translation>
+        <translation type="unfinished">Acceptați automat invitațiile de grup</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
@@ -827,15 +827,15 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>Grupuri</translation>
+        <translation type="unfinished">Grupuri</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>Creați un grup nou</translation>
+        <translation type="unfinished">Creați un grup nou</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>Grupul invită</translation>
+        <translation type="unfinished">Grupul invită</translation>
     </message>
 </context>
 <context>
@@ -898,7 +898,7 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation>Discuții de grup</translation>
+        <translation type="unfinished">Discuții de grup</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -1105,11 +1105,11 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>În grupul nou</translation>
+        <translation type="unfinished">În grupul nou</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>Invitați la grup &apos;%1&apos;</translation>
+        <translation type="unfinished">Invitați la grup &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1693,7 +1693,7 @@ Vă rugăm să vă asigurați că introduceți aceeași parolă de două ori.</t
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>Creați un grup de discuții</translation>
+        <translation type="unfinished">Creați un grup de discuții</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1753,11 +1753,11 @@ Vă rugăm să vă asigurați că introduceți aceeași parolă de două ori.</t
     </message>
     <message>
         <source>Conference</source>
-        <translation>Grup de discuții</translation>
+        <translation type="unfinished">Grup de discuții</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation>Deschideți pagina de gestionare a discuțiilor de grup</translation>
+        <translation type="unfinished">Deschideți pagina de gestionare a discuțiilor de grup</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -1878,7 +1878,7 @@ Vă rugăm să vă asigurați că introduceți aceeași parolă de două ori.</t
     </message>
     <message>
         <source>New conference message</source>
-        <translation>Mesaj de grup nou</translation>
+        <translation type="unfinished">Mesaj de grup nou</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
@@ -1891,11 +1891,11 @@ Vă rugăm să vă asigurați că introduceți aceeași parolă de două ori.</t
     </message>
     <message>
         <source>Conference invite received</source>
-        <translation>Invitație de grup primită</translation>
+        <translation type="unfinished">Invitație de grup primită</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
-        <translation>%1 vă invită să vă alăturați unui grup.</translation>
+        <translation type="unfinished">%1 vă invită să vă alăturați unui grup.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -1983,7 +1983,7 @@ Salvarea modificărilor formatelor este posibilă, ceea ce poate duce la pierder
     </message>
     <message>
         <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation>Filtrează mesajele de grup după cheile publice ale membrilor grupului. Puneți aici cheile publice, câte una pe fiecare rând.</translation>
+        <translation type="unfinished">Filtrează mesajele de grup după cheile publice ale membrilor grupului. Puneți aici cheile publice, câte una pe fiecare rând.</translation>
     </message>
 </context>
 <context>
@@ -2803,7 +2803,7 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation>Puneți grupurile de discuții deasupra listei de prieteni</translation>
+        <translation type="unfinished">Puneți grupurile de discuții deasupra listei de prieteni</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode.</source>
@@ -2873,7 +2873,7 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation>Conversațiile de grup se notifică numai atunci când sunt menționate</translation>
+        <translation type="unfinished">Conversațiile de grup se notifică numai atunci când sunt menționate</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -2893,7 +2893,7 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
-        <translation>Utilizați porecle colorate în discuțiile de grup</translation>
+        <translation type="unfinished">Utilizați porecle colorate în discuțiile de grup</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when mentioned.</source>
@@ -2964,7 +2964,7 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>Creați un grup nou...</translation>
+        <translation type="unfinished">Creați un grup nou...</translation>
     </message>
     <message>
         <source>Add new circle...</source>
@@ -2997,7 +2997,7 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
     <message>
         <source>Conferences</source>
-        <translation>Grupuri</translation>
+        <translation type="unfinished">Grupuri</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -3005,7 +3005,7 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation>Grup discuții #%1</translation>
+        <translation type="unfinished">Grup discuții #%1</translation>
     </message>
     <message>
         <source>Show</source>
@@ -3060,7 +3060,7 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform>%n invitație de grup nouă</numerusform>
             <numerusform>%n invitații de grup noi</numerusform>
             <numerusform>%n invitații de grup noi</numerusform>

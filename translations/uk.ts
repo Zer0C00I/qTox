@@ -229,7 +229,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation>Автоматично приймати запрошення в груповий чат від цього контакту якщо встановлено.</translation>
+        <translation type="unfinished">Автоматично приймати запрошення в груповий чат від цього контакту якщо встановлено.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -821,15 +821,15 @@ so you can save the file on Windows.</source>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>Групи</translation>
+        <translation type="unfinished">Групи</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>Створити нову групу</translation>
+        <translation type="unfinished">Створити нову групу</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>Групові запрошення</translation>
+        <translation type="unfinished">Групові запрошення</translation>
     </message>
 </context>
 <context>
@@ -1132,11 +1132,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>До нової групи</translation>
+        <translation type="unfinished">До нової групи</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>Запросити до групи &apos;%1&apos;</translation>
+        <translation type="unfinished">Запросити до групи &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
@@ -1681,7 +1681,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>Створити груповий чат</translation>
+        <translation type="unfinished">Створити груповий чат</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1741,11 +1741,11 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Conference</source>
-        <translation>Груповий чат</translation>
+        <translation type="unfinished">Груповий чат</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation>Відкрити сторінку керування груповим чатом</translation>
+        <translation type="unfinished">Відкрити сторінку керування груповим чатом</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -2951,7 +2951,7 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     </message>
     <message>
         <source>Conferences</source>
-        <translation>Групи</translation>
+        <translation type="unfinished">Групи</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -2988,11 +2988,11 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation>Груповий чат #%1</translation>
+        <translation type="unfinished">Груповий чат #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>Створити нову групу...</translation>
+        <translation type="unfinished">Створити нову групу...</translation>
     </message>
     <message>
         <source>Show</source>

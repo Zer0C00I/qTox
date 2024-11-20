@@ -233,7 +233,7 @@ mis võib põhjustada probleeme videokõnedega.</translation>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation>Kui on valitud, siis nõustu automaatselt grupivestluste kutsetega sellelt kontaktilt.</translation>
+        <translation type="unfinished">Kui on valitud, siis nõustu automaatselt grupivestluste kutsetega sellelt kontaktilt.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -285,7 +285,7 @@ mis võib põhjustada probleeme videokõnedega.</translation>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation>Vasta rühmakutsetele automaatselt</translation>
+        <translation type="unfinished">Vasta rühmakutsetele automaatselt</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
@@ -824,15 +824,15 @@ ja sa saad seda faili nüüd Windowsis salvestada.</translation>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>Grupid</translation>
+        <translation type="unfinished">Grupid</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>Loo uus grupp</translation>
+        <translation type="unfinished">Loo uus grupp</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>Grupikutsed</translation>
+        <translation type="unfinished">Grupikutsed</translation>
     </message>
 </context>
 <context>
@@ -895,7 +895,7 @@ ja sa saad seda faili nüüd Windowsis salvestada.</translation>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation>Grupivestlus %1</translation>
+        <translation type="unfinished">Grupivestlus %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -1135,11 +1135,11 @@ ja sa saad seda faili nüüd Windowsis salvestada.</translation>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>Uude gruppi</translation>
+        <translation type="unfinished">Uude gruppi</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>Kutsu gruppi „%1“</translation>
+        <translation type="unfinished">Kutsu gruppi „%1“</translation>
     </message>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
@@ -1683,7 +1683,7 @@ Palun vaata, et sa mõlemal korral sisestad sama salasõna.</translation>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>Loo grupivestllus</translation>
+        <translation type="unfinished">Loo grupivestllus</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1743,11 +1743,11 @@ Palun vaata, et sa mõlemal korral sisestad sama salasõna.</translation>
     </message>
     <message>
         <source>Conference</source>
-        <translation>Grupivestlus</translation>
+        <translation type="unfinished">Grupivestlus</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation>Ava grupivestluste haldamise leht</translation>
+        <translation type="unfinished">Ava grupivestluste haldamise leht</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -1868,7 +1868,7 @@ Palun vaata, et sa mõlemal korral sisestad sama salasõna.</translation>
     </message>
     <message>
         <source>New conference message</source>
-        <translation>Uus grupisõnum</translation>
+        <translation type="unfinished">Uus grupisõnum</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
@@ -1881,11 +1881,11 @@ Palun vaata, et sa mõlemal korral sisestad sama salasõna.</translation>
     </message>
     <message>
         <source>Conference invite received</source>
-        <translation>Grupikutse vastu võetud</translation>
+        <translation type="unfinished">Grupikutse vastu võetud</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
-        <translation>%1 kustub sind grupiga liituma.</translation>
+        <translation type="unfinished">%1 kustub sind grupiga liituma.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -1973,7 +1973,7 @@ Kui saad hulgaliselt soovimatuid sõbrakutseid, muuda seda väärtust.</translat
     </message>
     <message>
         <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation>Filtreeri grupisõnumeid vastvalt grupi liikmete avalikele võtmetele. Pane avalikud võtmed, üks igal real, siia.</translation>
+        <translation type="unfinished">Filtreeri grupisõnumeid vastvalt grupi liikmete avalikele võtmetele. Pane avalikud võtmed, üks igal real, siia.</translation>
     </message>
 </context>
 <context>
@@ -2793,7 +2793,7 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation>Aseta grupivestlused sõbranimekirja algusesse</translation>
+        <translation type="unfinished">Aseta grupivestlused sõbranimekirja algusesse</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode.</source>
@@ -2863,7 +2863,7 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation>Grupivestluses teavita vaid siis, kui mind mainitakse</translation>
+        <translation type="unfinished">Grupivestluses teavita vaid siis, kui mind mainitakse</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -2883,7 +2883,7 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
-        <translation>Rühmavestlustes kasuta värvitud hüüdnimesid</translation>
+        <translation type="unfinished">Rühmavestlustes kasuta värvitud hüüdnimesid</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when mentioned.</source>
@@ -2946,7 +2946,7 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
     </message>
     <message>
         <source>Conferences</source>
-        <translation>Grupid</translation>
+        <translation type="unfinished">Grupid</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -2990,11 +2990,11 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation>Grupivestlus #%1</translation>
+        <translation type="unfinished">Grupivestlus #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>Loo uus grupp...</translation>
+        <translation type="unfinished">Loo uus grupp...</translation>
     </message>
     <message>
         <source>Show</source>
@@ -3048,7 +3048,7 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform>%n uus rühmavestluse kutse</numerusform>
             <numerusform>%n uut rühmavestluse kutset</numerusform>
         </translation>

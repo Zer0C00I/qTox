@@ -2936,7 +2936,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>새 그룹 만들기...</translation>
+        <translation type="unfinished">새 그룹 만들기...</translation>
     </message>
     <message>
         <source>Add new circle...</source>
@@ -2969,7 +2969,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conferences</source>
-        <translation>그룹</translation>
+        <translation type="unfinished">그룹</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -2977,7 +2977,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation>그룹채팅 #%1</translation>
+        <translation type="unfinished">그룹채팅 #%1</translation>
     </message>
     <message>
         <source>Show</source>

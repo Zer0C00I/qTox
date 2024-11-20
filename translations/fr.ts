@@ -233,7 +233,7 @@ ce qui peut entraîner des problèmes lors des appels vidéo.</translation>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation>Si activé, accepte automatiquement les invitations de ce contact à des discussions de groupe.</translation>
+        <translation type="unfinished">Si activé, accepte automatiquement les invitations de ce contact à des discussions de groupe.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -285,7 +285,7 @@ ce qui peut entraîner des problèmes lors des appels vidéo.</translation>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation>Accepter automatiquement les invitations de groupe</translation>
+        <translation type="unfinished">Accepter automatiquement les invitations de groupe</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
@@ -824,15 +824,15 @@ afin que vous puissiez enregistrer le fichier sur windows.</translation>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>Groupes</translation>
+        <translation type="unfinished">Groupes</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>Créer un nouveau groupe</translation>
+        <translation type="unfinished">Créer un nouveau groupe</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>Invitations de groupe</translation>
+        <translation type="unfinished">Invitations de groupe</translation>
     </message>
 </context>
 <context>
@@ -894,7 +894,7 @@ afin que vous puissiez enregistrer le fichier sur windows.</translation>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation>Conversation de groupe %1</translation>
+        <translation type="unfinished">Conversation de groupe %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -1130,11 +1130,11 @@ afin que vous puissiez enregistrer le fichier sur windows.</translation>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>Vers un nouveau groupe</translation>
+        <translation type="unfinished">Vers un nouveau groupe</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>Inviter au groupe &apos;%1&apos;</translation>
+        <translation type="unfinished">Inviter au groupe &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Show details</source>
@@ -1291,7 +1291,7 @@ au lieu de fermer entièrement.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
-        <translation>Afficher un message quand quelqu&apos;un rejoint ou quitte un groupe</translation>
+        <translation type="unfinished">Afficher un message quand quelqu&apos;un rejoint ou quitte un groupe</translation>
     </message>
 </context>
 <context>
@@ -1682,7 +1682,7 @@ Veuillez vous assurer d&apos;entrer deux fois le même mot de passe.</translatio
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>Créer un groupe de discussion instantanée</translation>
+        <translation type="unfinished">Créer un groupe de discussion instantanée</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1742,11 +1742,11 @@ Veuillez vous assurer d&apos;entrer deux fois le même mot de passe.</translatio
     </message>
     <message>
         <source>Conference</source>
-        <translation>Discussion de groupe</translation>
+        <translation type="unfinished">Discussion de groupe</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation>Ouvrir la page de gestion du groupe de discussion</translation>
+        <translation type="unfinished">Ouvrir la page de gestion du groupe de discussion</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -1866,7 +1866,7 @@ Veuillez vous assurer d&apos;entrer deux fois le même mot de passe.</translatio
     </message>
     <message>
         <source>New conference message</source>
-        <translation>Nouveau message de groupe</translation>
+        <translation type="unfinished">Nouveau message de groupe</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
@@ -1879,11 +1879,11 @@ Veuillez vous assurer d&apos;entrer deux fois le même mot de passe.</translatio
     </message>
     <message>
         <source>Conference invite received</source>
-        <translation>Invitation de groupe reçue</translation>
+        <translation type="unfinished">Invitation de groupe reçue</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
-        <translation>%1 vous invite à rejoindre un groupe.</translation>
+        <translation type="unfinished">%1 vous invite à rejoindre un groupe.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -1971,7 +1971,7 @@ Les changements de format de sauvegarde sont possibles, ce qui pourrait entraine
     </message>
     <message>
         <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation>Filtrer le message de groupe par clé publique du membre du groupe. Mettre la clé publique ici, une par ligne.</translation>
+        <translation type="unfinished">Filtrer le message de groupe par clé publique du membre du groupe. Mettre la clé publique ici, une par ligne.</translation>
     </message>
 </context>
 <context>
@@ -2398,11 +2398,11 @@ Cet identifiant comprend le code NoSpam (en bleu) et la somme de contrôle (en g
     </message>
     <message>
         <source>%1 has joined the conference</source>
-        <translation>%1 a rejoint le groupe</translation>
+        <translation type="unfinished">%1 a rejoint le groupe</translation>
     </message>
     <message>
         <source>%1 has left the conference</source>
-        <translation>%1 a quitté le groupe</translation>
+        <translation type="unfinished">%1 a quitté le groupe</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
@@ -2499,11 +2499,11 @@ Cet identifiant comprend le code NoSpam (en bleu) et la somme de contrôle (en g
     </message>
     <message>
         <source>You have joined the conference</source>
-        <translation>Vous avez rejoint le groupe</translation>
+        <translation type="unfinished">Vous avez rejoint le groupe</translation>
     </message>
     <message>
         <source>You have left the conference</source>
-        <translation>Vous avez quitté le groupe</translation>
+        <translation type="unfinished">Vous avez quitté le groupe</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
@@ -2791,7 +2791,7 @@ Cet identifiant comprend le code NoSpam (en bleu) et la somme de contrôle (en g
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation>Positionner les groupes de discussions en haut de la liste des contacts</translation>
+        <translation type="unfinished">Positionner les groupes de discussions en haut de la liste des contacts</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode.</source>
@@ -2861,7 +2861,7 @@ Cet identifiant comprend le code NoSpam (en bleu) et la somme de contrôle (en g
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation>Ne notifier des discussions de groupe que lorsque vous êtes mentionné</translation>
+        <translation type="unfinished">Ne notifier des discussions de groupe que lorsque vous êtes mentionné</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -2881,7 +2881,7 @@ Cet identifiant comprend le code NoSpam (en bleu) et la somme de contrôle (en g
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
-        <translation>Utiliser des pseudonymes colorés dans les chats de groupe</translation>
+        <translation type="unfinished">Utiliser des pseudonymes colorés dans les chats de groupe</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when mentioned.</source>
@@ -2975,7 +2975,7 @@ Cet identifiant comprend le code NoSpam (en bleu) et la somme de contrôle (en g
     </message>
     <message>
         <source>Conferences</source>
-        <translation>Groupes</translation>
+        <translation type="unfinished">Groupes</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -2988,11 +2988,11 @@ Cet identifiant comprend le code NoSpam (en bleu) et la somme de contrôle (en g
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation>Groupe de discussion #%1</translation>
+        <translation type="unfinished">Groupe de discussion #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>Créer un nouveau groupe...</translation>
+        <translation type="unfinished">Créer un nouveau groupe...</translation>
     </message>
     <message>
         <source>Show</source>
@@ -3046,7 +3046,7 @@ Cet identifiant comprend le code NoSpam (en bleu) et la somme de contrôle (en g
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform>%n nouvelle invitation à un groupe</numerusform>
             <numerusform>%n nouvelles invitations à un groupe</numerusform>
         </translation>

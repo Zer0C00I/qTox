@@ -233,7 +233,7 @@ může dojít během video hovoru k výpadkům či jiným problémům.</translat
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation>Pokud je povoleno, budou automaticky přijímány pozvání ke skupinovým konverzacím od tohoto kontaktu.</translation>
+        <translation type="unfinished">Pokud je povoleno, budou automaticky přijímány pozvání ke skupinovým konverzacím od tohoto kontaktu.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -285,7 +285,7 @@ může dojít během video hovoru k výpadkům či jiným problémům.</translat
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation>Přijímat pozvánky do skupinových konverzací automaticky</translation>
+        <translation type="unfinished">Přijímat pozvánky do skupinových konverzací automaticky</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
@@ -826,15 +826,15 @@ takže můžete soubor uložit i v systému Windows.</translation>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>Skupiny</translation>
+        <translation type="unfinished">Skupiny</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>Vytvořit novou skupinu</translation>
+        <translation type="unfinished">Vytvořit novou skupinu</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>Seznam pozvánek do skupin</translation>
+        <translation type="unfinished">Seznam pozvánek do skupin</translation>
     </message>
 </context>
 <context>
@@ -897,7 +897,7 @@ takže můžete soubor uložit i v systému Windows.</translation>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation>Skupinová konverzace %1</translation>
+        <translation type="unfinished">Skupinová konverzace %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -1133,11 +1133,11 @@ takže můžete soubor uložit i v systému Windows.</translation>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>Do nové skupiny</translation>
+        <translation type="unfinished">Do nové skupiny</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>Pozvat do skupiny &apos;%1&apos;</translation>
+        <translation type="unfinished">Pozvat do skupiny &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Show details</source>
@@ -1685,7 +1685,7 @@ Ujistěte se, že zadáváte stejné heslo dvakrát.</translation>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>Vytvořit skupinovou konverzaci</translation>
+        <translation type="unfinished">Vytvořit skupinovou konverzaci</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1745,11 +1745,11 @@ Ujistěte se, že zadáváte stejné heslo dvakrát.</translation>
     </message>
     <message>
         <source>Conference</source>
-        <translation>Skupinový chat</translation>
+        <translation type="unfinished">Skupinový chat</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation>Otevřít stránku nastavení skupiny</translation>
+        <translation type="unfinished">Otevřít stránku nastavení skupiny</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -1870,7 +1870,7 @@ Ujistěte se, že zadáváte stejné heslo dvakrát.</translation>
     </message>
     <message>
         <source>New conference message</source>
-        <translation>Nová skupinová zpráva</translation>
+        <translation type="unfinished">Nová skupinová zpráva</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
@@ -1883,11 +1883,11 @@ Ujistěte se, že zadáváte stejné heslo dvakrát.</translation>
     </message>
     <message>
         <source>Conference invite received</source>
-        <translation>Přijata pozvánka do skupinové konverzace</translation>
+        <translation type="unfinished">Přijata pozvánka do skupinové konverzace</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
-        <translation>%1 Vás zve do skupinové konverzace.</translation>
+        <translation type="unfinished">%1 Vás zve do skupinové konverzace.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -1975,7 +1975,7 @@ Pokud jste obtěžováni žádostmi o přidání, měli byste si změnit vaše N
     </message>
     <message>
         <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation>Filtrujte skupinové zprávy podle veřejných klíčů členů skupiny. Sem vložte veřejné klíče, jeden na řádek.</translation>
+        <translation type="unfinished">Filtrujte skupinové zprávy podle veřejných klíčů členů skupiny. Sem vložte veřejné klíče, jeden na řádek.</translation>
     </message>
 </context>
 <context>
@@ -2795,7 +2795,7 @@ ID zahrnuje kód NoSpam (modře) a kontrolní součet (šedě).</translation>
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation>Zobrazit skupinové konverzace na začátku seznamu</translation>
+        <translation type="unfinished">Zobrazit skupinové konverzace na začátku seznamu</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode.</source>
@@ -2865,7 +2865,7 @@ ID zahrnuje kód NoSpam (modře) a kontrolní součet (šedě).</translation>
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation>Skupinové chatování upozorní pouze tehdy, když je uvedeno</translation>
+        <translation type="unfinished">Skupinové chatování upozorní pouze tehdy, když je uvedeno</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -2885,7 +2885,7 @@ ID zahrnuje kód NoSpam (modře) a kontrolní součet (šedě).</translation>
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
-        <translation>Barevně rozlišit jména ve skupinovém chatu</translation>
+        <translation type="unfinished">Barevně rozlišit jména ve skupinovém chatu</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when mentioned.</source>
@@ -2960,7 +2960,7 @@ ID zahrnuje kód NoSpam (modře) a kontrolní součet (šedě).</translation>
     </message>
     <message>
         <source>Conferences</source>
-        <translation>Skupiny</translation>
+        <translation type="unfinished">Skupiny</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -2987,11 +2987,11 @@ ID zahrnuje kód NoSpam (modře) a kontrolní součet (šedě).</translation>
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation>Skupinová konverzace #%1</translation>
+        <translation type="unfinished">Skupinová konverzace #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>Vytvořit novou skupinu...</translation>
+        <translation type="unfinished">Vytvořit novou skupinu...</translation>
     </message>
     <message>
         <source>Logout</source>
@@ -3051,7 +3051,7 @@ ID zahrnuje kód NoSpam (modře) a kontrolní součet (šedě).</translation>
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform>%n nová pozvánka do skupinové konverzace</numerusform>
             <numerusform>%n nové pozvánky do skupinové konverzace</numerusform>
             <numerusform>%n nových pozvánek do skupinové konverzace</numerusform>

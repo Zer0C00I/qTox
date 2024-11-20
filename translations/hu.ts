@@ -229,7 +229,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation>Csoportmeghívások automatikus fogadása ettől az ismerőstől.</translation>
+        <translation type="unfinished">Csoportmeghívások automatikus fogadása ettől az ismerőstől.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -817,15 +817,15 @@ so you can save the file on Windows.</source>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>Csoportok</translation>
+        <translation type="unfinished">Csoportok</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>Új csoport létrehozása</translation>
+        <translation type="unfinished">Új csoport létrehozása</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>Csoport meghívások</translation>
+        <translation type="unfinished">Csoport meghívások</translation>
     </message>
 </context>
 <context>
@@ -886,7 +886,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation>Csoportos chat %1</translation>
+        <translation type="unfinished">Csoportos chat %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -1089,11 +1089,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>Új csoportba</translation>
+        <translation type="unfinished">Új csoportba</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>Meghívás a(z) &apos;%1&apos; csoportba</translation>
+        <translation type="unfinished">Meghívás a(z) &apos;%1&apos; csoportba</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1666,7 +1666,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>Csoportos chat létrehozása</translation>
+        <translation type="unfinished">Csoportos chat létrehozása</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1730,11 +1730,11 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Conference</source>
-        <translation>Csoportos chat</translation>
+        <translation type="unfinished">Csoportos chat</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation>Csoportos chat menedzselési oldal megnyitása</translation>
+        <translation type="unfinished">Csoportos chat menedzselési oldal megnyitása</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -2775,7 +2775,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation>Csoportos beszélgetések elhelyezése a partnerlista tetejére</translation>
+        <translation type="unfinished">Csoportos beszélgetések elhelyezése a partnerlista tetejére</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode.</source>
@@ -2845,7 +2845,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation>A csoportbeszélgetésekről csak akkor értesít, ha Önt megemlítik</translation>
+        <translation type="unfinished">A csoportbeszélgetésekről csak akkor értesít, ha Önt megemlítik</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -2915,11 +2915,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation>#%1. csoport</translation>
+        <translation type="unfinished">#%1. csoport</translation>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>Új csoport létrehozása...</translation>
+        <translation type="unfinished">Új csoport létrehozása...</translation>
     </message>
     <message>
         <source>Add new circle...</source>
@@ -2951,7 +2951,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conferences</source>
-        <translation>Csoportok</translation>
+        <translation type="unfinished">Csoportok</translation>
     </message>
     <message>
         <source>Search Contacts</source>

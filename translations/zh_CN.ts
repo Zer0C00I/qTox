@@ -233,7 +233,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation>如果设置此项则自动接受来自该联系人的群聊邀请。</translation>
+        <translation type="unfinished">如果设置此项则自动接受来自该联系人的群聊邀请。</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -285,7 +285,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation>自动接受组邀请</translation>
+        <translation type="unfinished">自动接受组邀请</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
@@ -822,15 +822,15 @@ so you can save the file on Windows.</source>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>群组</translation>
+        <translation type="unfinished">群组</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>创建聊天群组</translation>
+        <translation type="unfinished">创建聊天群组</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>群组邀请</translation>
+        <translation type="unfinished">群组邀请</translation>
     </message>
 </context>
 <context>
@@ -891,7 +891,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation>群聊 %1</translation>
+        <translation type="unfinished">群聊 %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -1114,11 +1114,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>到新建群组</translation>
+        <translation type="unfinished">到新建群组</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>邀请进入群聊 &apos;%1&apos;</translation>
+        <translation type="unfinished">邀请进入群聊 &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1288,7 +1288,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
-        <translation>当用户加入或离开一个群组时，添加一则聊天消息</translation>
+        <translation type="unfinished">当用户加入或离开一个群组时，添加一则聊天消息</translation>
     </message>
 </context>
 <context>
@@ -1679,7 +1679,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>创建聊天群组</translation>
+        <translation type="unfinished">创建聊天群组</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1739,11 +1739,11 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Conference</source>
-        <translation>群聊</translation>
+        <translation type="unfinished">群聊</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation>打开群聊管理页面</translation>
+        <translation type="unfinished">打开群聊管理页面</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -1862,7 +1862,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>New conference message</source>
-        <translation>新群组消息</translation>
+        <translation type="unfinished">新群组消息</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
@@ -1875,11 +1875,11 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Conference invite received</source>
-        <translation>收到了群组邀请</translation>
+        <translation type="unfinished">收到了群组邀请</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
-        <translation>%1 邀请您加入群组。</translation>
+        <translation type="unfinished">%1 邀请您加入群组。</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -1967,7 +1967,7 @@ If you are getting spammed with friend requests, change the NoSpam.</source>
     </message>
     <message>
         <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation>按群组成员的公钥过滤群组消息。在这里放置公钥，每行一个。</translation>
+        <translation type="unfinished">按群组成员的公钥过滤群组消息。在这里放置公钥，每行一个。</translation>
     </message>
 </context>
 <context>
@@ -2394,11 +2394,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>%1 has joined the conference</source>
-        <translation>%1 加入了群组</translation>
+        <translation type="unfinished">%1 加入了群组</translation>
     </message>
     <message>
         <source>%1 has left the conference</source>
-        <translation>%1 离开了群</translation>
+        <translation type="unfinished">%1 离开了群</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
@@ -2495,11 +2495,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>You have joined the conference</source>
-        <translation>你已加入该群</translation>
+        <translation type="unfinished">你已加入该群</translation>
     </message>
     <message>
         <source>You have left the conference</source>
-        <translation>你已离开该群</translation>
+        <translation type="unfinished">你已离开该群</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
@@ -2787,7 +2787,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation>将群聊置顶</translation>
+        <translation type="unfinished">将群聊置顶</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode.</source>
@@ -2857,7 +2857,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation>群聊消息只有在被提到时才通知</translation>
+        <translation type="unfinished">群聊消息只有在被提到时才通知</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -2877,7 +2877,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
-        <translation>在群组聊天中使用彩色昵称</translation>
+        <translation type="unfinished">在群组聊天中使用彩色昵称</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when mentioned.</source>
@@ -2931,7 +2931,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conferences</source>
-        <translation>群组</translation>
+        <translation type="unfinished">群组</translation>
     </message>
     <message>
         <source>Logout</source>
@@ -2944,11 +2944,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation>群聊 #%1</translation>
+        <translation type="unfinished">群聊 #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>创建新群聊...</translation>
+        <translation type="unfinished">创建新群聊...</translation>
     </message>
     <message>
         <source>Add new circle...</source>
@@ -3041,7 +3041,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform>%n 个新群组邀请</numerusform>
         </translation>
     </message>

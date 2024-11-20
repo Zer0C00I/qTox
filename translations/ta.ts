@@ -821,15 +821,15 @@ so you can save the file on Windows.</source>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>தோழர்க்குழுக்கள்</translation>
+        <translation type="unfinished">தோழர்க்குழுக்கள்</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>புதிய தோழர்க்குழுவை உருவாக்கு</translation>
+        <translation type="unfinished">புதிய தோழர்க்குழுவை உருவாக்கு</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>தோழர்க்குழு அழைப்புகள்</translation>
+        <translation type="unfinished">தோழர்க்குழு அழைப்புகள்</translation>
     </message>
 </context>
 <context>
@@ -1098,11 +1098,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>வேறு தோழர்க்குழுவிற்கு</translation>
+        <translation type="unfinished">வேறு தோழர்க்குழுவிற்கு</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>&apos;%1&apos; தோழர்க்குழுவில் சேர அழைப்பளி</translation>
+        <translation type="unfinished">&apos;%1&apos; தோழர்க்குழுவில் சேர அழைப்பளி</translation>
     </message>
     <message>
         <source>Set alias...</source>

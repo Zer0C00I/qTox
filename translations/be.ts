@@ -229,7 +229,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation>Аўтаматычна прымаць запрашэнні ў групавы чат ад гэтага кантакта.</translation>
+        <translation type="unfinished">Аўтаматычна прымаць запрашэнні ў групавы чат ад гэтага кантакта.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -822,15 +822,15 @@ so you can save the file on Windows.</source>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>Групы</translation>
+        <translation type="unfinished">Групы</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>Стварыць новую групу</translation>
+        <translation type="unfinished">Стварыць новую групу</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>Запрашэнні ў групу</translation>
+        <translation type="unfinished">Запрашэнні ў групу</translation>
     </message>
 </context>
 <context>
@@ -1100,11 +1100,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>У новую групу</translation>
+        <translation type="unfinished">У новую групу</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>Запрасіць у групу «%1»</translation>
+        <translation type="unfinished">Запрасіць у групу «%1»</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1684,7 +1684,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>Стварыць групавы чат</translation>
+        <translation type="unfinished">Стварыць групавы чат</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1744,11 +1744,11 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Conference</source>
-        <translation>Групавы чат</translation>
+        <translation type="unfinished">Групавы чат</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation>Адкрыць старонку кіравання групавым чатам</translation>
+        <translation type="unfinished">Адкрыць старонку кіравання групавым чатам</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -2791,7 +2791,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation>Размясціць групавыя чаты наверсе спісу сяброў</translation>
+        <translation type="unfinished">Размясціць групавыя чаты наверсе спісу сяброў</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode.</source>
@@ -2861,7 +2861,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation>Групавыя чаты апавяшчаюцца, толькі калі ўзгадваемся</translation>
+        <translation type="unfinished">Групавыя чаты апавяшчаюцца, толькі калі ўзгадваемся</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -2952,7 +2952,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>Ставарыць новую групу…</translation>
+        <translation type="unfinished">Ставарыць новую групу…</translation>
     </message>
     <message>
         <source>Add new circle...</source>
@@ -2985,7 +2985,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conferences</source>
-        <translation>Групы</translation>
+        <translation type="unfinished">Групы</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -2993,7 +2993,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation>Групавы чат № %1</translation>
+        <translation type="unfinished">Групавы чат № %1</translation>
     </message>
     <message>
         <source>Show</source>

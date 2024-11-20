@@ -233,7 +233,7 @@ kas var radīt video zvanu problēmas.</translation>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation>Automātiski pieņemt grupas tērzēšanas ielūgumus no šī kontakta.</translation>
+        <translation type="unfinished">Automātiski pieņemt grupas tērzēšanas ielūgumus no šī kontakta.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -285,7 +285,7 @@ kas var radīt video zvanu problēmas.</translation>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation>Automātiski pieņemt grupas ielūgumus</translation>
+        <translation type="unfinished">Automātiski pieņemt grupas ielūgumus</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
@@ -827,15 +827,15 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>Grupas</translation>
+        <translation type="unfinished">Grupas</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>Izveidot jaunu grupu</translation>
+        <translation type="unfinished">Izveidot jaunu grupu</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>Grupas uzaicinājums</translation>
+        <translation type="unfinished">Grupas uzaicinājums</translation>
     </message>
 </context>
 <context>
@@ -898,7 +898,7 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation>Grupu čats %1</translation>
+        <translation type="unfinished">Grupu čats %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -1105,11 +1105,11 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>Uz jaunu grupu</translation>
+        <translation type="unfinished">Uz jaunu grupu</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>Uzaicināt uz grupu &apos;%1&apos;</translation>
+        <translation type="unfinished">Uzaicināt uz grupu &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1691,7 +1691,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>Izveidot grupas tērzēšanu</translation>
+        <translation type="unfinished">Izveidot grupas tērzēšanu</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1751,11 +1751,11 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Conference</source>
-        <translation>Grupas tērzēšana</translation>
+        <translation type="unfinished">Grupas tērzēšana</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation>Atvērt grupas tērzēšanas iestatījumu lapu</translation>
+        <translation type="unfinished">Atvērt grupas tērzēšanas iestatījumu lapu</translation>
     </message>
     <message>
         <source>File transfers history</source>

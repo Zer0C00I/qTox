@@ -229,7 +229,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation>Ако је постављено, сам ће прихватати позиве за групно ћаскање од овог контакта.</translation>
+        <translation type="unfinished">Ако је постављено, сам ће прихватати позиве за групно ћаскање од овог контакта.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -822,15 +822,15 @@ so you can save the file on Windows.</source>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>Групе</translation>
+        <translation type="unfinished">Групе</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>Направи нову групу</translation>
+        <translation type="unfinished">Направи нову групу</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>Позивнице у групу</translation>
+        <translation type="unfinished">Позивнице у групу</translation>
     </message>
 </context>
 <context>
@@ -893,7 +893,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation>Групни разговор %1</translation>
+        <translation type="unfinished">Групни разговор %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -1100,11 +1100,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>У нову групу</translation>
+        <translation type="unfinished">У нову групу</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>Позови у групу „%1“</translation>
+        <translation type="unfinished">Позови у групу „%1“</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1684,7 +1684,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>Направи групно ћаскање</translation>
+        <translation type="unfinished">Направи групно ћаскање</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1744,11 +1744,11 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Conference</source>
-        <translation>Групно ћаскање</translation>
+        <translation type="unfinished">Групно ћаскање</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation>Отворите страницу управљања групним ћаскањем</translation>
+        <translation type="unfinished">Отворите страницу управљања групним ћаскањем</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -2791,7 +2791,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation>Постави групна ћаскања на врх списка пријатеља</translation>
+        <translation type="unfinished">Постави групна ћаскања на врх списка пријатеља</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode.</source>
@@ -2861,7 +2861,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation>Групни разговор обавештава само када је поменут</translation>
+        <translation type="unfinished">Групни разговор обавештава само када је поменут</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -2952,7 +2952,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>Направи нову групу...</translation>
+        <translation type="unfinished">Направи нову групу...</translation>
     </message>
     <message>
         <source>Add new circle...</source>
@@ -2985,7 +2985,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conferences</source>
-        <translation>Групе</translation>
+        <translation type="unfinished">Групе</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -2993,7 +2993,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation>Групно ћаскање #%1</translation>
+        <translation type="unfinished">Групно ћаскање #%1</translation>
     </message>
     <message>
         <source>Show</source>

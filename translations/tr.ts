@@ -234,7 +234,7 @@ bu da video görüşmelerinde sorunlara yol açabilir.</translation>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation>Ayarlıysa bu kişiden gelen grup sohbeti davetlerini sormadan kabul et.</translation>
+        <translation type="unfinished">Ayarlıysa bu kişiden gelen grup sohbeti davetlerini sormadan kabul et.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -286,7 +286,7 @@ bu da video görüşmelerinde sorunlara yol açabilir.</translation>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation>Grup davetlerini otomatik kabul et</translation>
+        <translation type="unfinished">Grup davetlerini otomatik kabul et</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
@@ -825,15 +825,15 @@ geçersiz karakterler _ olarak değiştirildi.</translation>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>Gruplar</translation>
+        <translation type="unfinished">Gruplar</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>Yeni grup oluştur</translation>
+        <translation type="unfinished">Yeni grup oluştur</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>Grup davetleri</translation>
+        <translation type="unfinished">Grup davetleri</translation>
     </message>
 </context>
 <context>
@@ -894,7 +894,7 @@ geçersiz karakterler _ olarak değiştirildi.</translation>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation>Grup sohbeti %1</translation>
+        <translation type="unfinished">Grup sohbeti %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -1131,11 +1131,11 @@ geçersiz karakterler _ olarak değiştirildi.</translation>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>Yeni gruba</translation>
+        <translation type="unfinished">Yeni gruba</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>&apos;%1&apos; grubuna davet et</translation>
+        <translation type="unfinished">&apos;%1&apos; grubuna davet et</translation>
     </message>
     <message>
         <source>Show details</source>
@@ -1292,7 +1292,7 @@ tamamen kapanmak yerine tepsiye kapanacak.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
-        <translation>Bir kullanıcı gruba katıldığında veya gruptan ayrıldığında sohbet iletisi ekle</translation>
+        <translation type="unfinished">Bir kullanıcı gruba katıldığında veya gruptan ayrıldığında sohbet iletisi ekle</translation>
     </message>
 </context>
 <context>
@@ -1683,7 +1683,7 @@ Lütfen aynı parolayı iki kez girdiğinizden emin olun.</translation>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>Grup sohbeti oluştur</translation>
+        <translation type="unfinished">Grup sohbeti oluştur</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1743,11 +1743,11 @@ Lütfen aynı parolayı iki kez girdiğinizden emin olun.</translation>
     </message>
     <message>
         <source>Conference</source>
-        <translation>Grup sohbeti</translation>
+        <translation type="unfinished">Grup sohbeti</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation>Grup sohbeti yönetim sayfasını aç</translation>
+        <translation type="unfinished">Grup sohbeti yönetim sayfasını aç</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -1866,7 +1866,7 @@ Lütfen aynı parolayı iki kez girdiğinizden emin olun.</translation>
     </message>
     <message>
         <source>New conference message</source>
-        <translation>Yeni grup mesajı</translation>
+        <translation type="unfinished">Yeni grup mesajı</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
@@ -1879,11 +1879,11 @@ Lütfen aynı parolayı iki kez girdiğinizden emin olun.</translation>
     </message>
     <message>
         <source>Conference invite received</source>
-        <translation>Grup daveti alındı</translation>
+        <translation type="unfinished">Grup daveti alındı</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
-        <translation>%1 sizi bir gruba katılmaya davet ediyor.</translation>
+        <translation type="unfinished">%1 sizi bir gruba katılmaya davet ediyor.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -1971,7 +1971,7 @@ Arkadaşlık istemleriyle rahatsız ediliyorsanız, NoSpam&apos;ı değiştirin.
     </message>
     <message>
         <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation>Grup iletilerini grup üyelerinin açık anahtarlarına göre filtreleyin. Açık anahtarları her satıra bir tane olacak şekilde buraya koyun.</translation>
+        <translation type="unfinished">Grup iletilerini grup üyelerinin açık anahtarlarına göre filtreleyin. Açık anahtarları her satıra bir tane olacak şekilde buraya koyun.</translation>
     </message>
 </context>
 <context>
@@ -2398,11 +2398,11 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
     </message>
     <message>
         <source>%1 has joined the conference</source>
-        <translation>%1 gruba katıldı</translation>
+        <translation type="unfinished">%1 gruba katıldı</translation>
     </message>
     <message>
         <source>%1 has left the conference</source>
-        <translation>%1 gruptan ayrıldı</translation>
+        <translation type="unfinished">%1 gruptan ayrıldı</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
@@ -2499,11 +2499,11 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
     </message>
     <message>
         <source>You have joined the conference</source>
-        <translation>Gruba katıldınız</translation>
+        <translation type="unfinished">Gruba katıldınız</translation>
     </message>
     <message>
         <source>You have left the conference</source>
-        <translation>Gruptan ayrıldınız</translation>
+        <translation type="unfinished">Gruptan ayrıldınız</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
@@ -2791,7 +2791,7 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation>Grup sohbetlerini arkadaş listesinin en üstüne yerleştir</translation>
+        <translation type="unfinished">Grup sohbetlerini arkadaş listesinin en üstüne yerleştir</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode.</source>
@@ -2861,7 +2861,7 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation>Grup sohbetleri yalnızca söz edildiğinde bildirir</translation>
+        <translation type="unfinished">Grup sohbetleri yalnızca söz edildiğinde bildirir</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -2881,7 +2881,7 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
-        <translation>Grup sohbetlerinde renkli takma adlar kullan</translation>
+        <translation type="unfinished">Grup sohbetlerinde renkli takma adlar kullan</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when mentioned.</source>
@@ -2944,7 +2944,7 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
     </message>
     <message>
         <source>Conferences</source>
-        <translation>Gruplar</translation>
+        <translation type="unfinished">Gruplar</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -2988,11 +2988,11 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation>Grup sohbeti #%1</translation>
+        <translation type="unfinished">Grup sohbeti #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>Yeni grup oluştur...</translation>
+        <translation type="unfinished">Yeni grup oluştur...</translation>
     </message>
     <message>
         <source>Show</source>
@@ -3045,7 +3045,7 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform>%n yeni grup daveti</numerusform>
         </translation>
     </message>

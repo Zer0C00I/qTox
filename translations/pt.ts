@@ -233,7 +233,7 @@ o que pode levar a problemas com as vídeo-chamadas.</translation>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation>Se ativado, aceita automaticamente os convites de conversação em grupo desse contacto.</translation>
+        <translation type="unfinished">Se ativado, aceita automaticamente os convites de conversação em grupo desse contacto.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -285,7 +285,7 @@ o que pode levar a problemas com as vídeo-chamadas.</translation>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation>Aceitar automaticamente convites de grupos</translation>
+        <translation type="unfinished">Aceitar automaticamente convites de grupos</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
@@ -824,15 +824,15 @@ de forma que possa guardar o ficheiro no Windows.</translation>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>Grupos</translation>
+        <translation type="unfinished">Grupos</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>Criar um novo grupo</translation>
+        <translation type="unfinished">Criar um novo grupo</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>Convites a grupos</translation>
+        <translation type="unfinished">Convites a grupos</translation>
     </message>
 </context>
 <context>
@@ -894,7 +894,7 @@ de forma que possa guardar o ficheiro no Windows.</translation>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation>Conversa no grupo %1</translation>
+        <translation type="unfinished">Conversa no grupo %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -1130,11 +1130,11 @@ de forma que possa guardar o ficheiro no Windows.</translation>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>Para um novo grupo</translation>
+        <translation type="unfinished">Para um novo grupo</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>Convidar para o grupo &apos;%1&apos;</translation>
+        <translation type="unfinished">Convidar para o grupo &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Show details</source>
@@ -1682,7 +1682,7 @@ Certifique-se de introduziu a mesma palavra-passe duas vezes.</translation>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>Criar uma conversa em grupo</translation>
+        <translation type="unfinished">Criar uma conversa em grupo</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1742,11 +1742,11 @@ Certifique-se de introduziu a mesma palavra-passe duas vezes.</translation>
     </message>
     <message>
         <source>Conference</source>
-        <translation>Conversa em grupo</translation>
+        <translation type="unfinished">Conversa em grupo</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation>Abrir a página de gestão de conversa em grupo</translation>
+        <translation type="unfinished">Abrir a página de gestão de conversa em grupo</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -1866,7 +1866,7 @@ Certifique-se de introduziu a mesma palavra-passe duas vezes.</translation>
     </message>
     <message>
         <source>New conference message</source>
-        <translation>Nova mensagem de grupo</translation>
+        <translation type="unfinished">Nova mensagem de grupo</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
@@ -1879,11 +1879,11 @@ Certifique-se de introduziu a mesma palavra-passe duas vezes.</translation>
     </message>
     <message>
         <source>Conference invite received</source>
-        <translation>Convite para grupo recebido</translation>
+        <translation type="unfinished">Convite para grupo recebido</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
-        <translation>%1 convida-o a juntar-se a um grupo.</translation>
+        <translation type="unfinished">%1 convida-o a juntar-se a um grupo.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -1971,7 +1971,7 @@ Por isso podem ocorrer alterações no formato do ficheiro guardado, o que pode 
     </message>
     <message>
         <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation>Filtrar as mensagens de grupo por chaves públicas dos membros do grupo. Ponha aqui as chaves públicas, uma por linha.</translation>
+        <translation type="unfinished">Filtrar as mensagens de grupo por chaves públicas dos membros do grupo. Ponha aqui as chaves públicas, uma por linha.</translation>
     </message>
 </context>
 <context>
@@ -2791,7 +2791,7 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation>Colocar conversas de grupo no topo da lista de contactos</translation>
+        <translation type="unfinished">Colocar conversas de grupo no topo da lista de contactos</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode.</source>
@@ -2861,7 +2861,7 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation>Apenas notificar quando for mencionado em conversas de grupo</translation>
+        <translation type="unfinished">Apenas notificar quando for mencionado em conversas de grupo</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -2881,7 +2881,7 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
-        <translation>Usar apelidos coloridos em conversas de grupo</translation>
+        <translation type="unfinished">Usar apelidos coloridos em conversas de grupo</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when mentioned.</source>
@@ -2936,7 +2936,7 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
     </message>
     <message>
         <source>Conferences</source>
-        <translation>Grupos</translation>
+        <translation type="unfinished">Grupos</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -2983,11 +2983,11 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation>Conversa em grupo #%1</translation>
+        <translation type="unfinished">Conversa em grupo #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>Criar novo grupo...</translation>
+        <translation type="unfinished">Criar novo grupo...</translation>
     </message>
     <message>
         <source>Logout</source>
@@ -3046,7 +3046,7 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform>%n novo convite de grupo</numerusform>
             <numerusform>%n novos convites de grupo</numerusform>
         </translation>
