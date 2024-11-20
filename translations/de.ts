@@ -1178,7 +1178,7 @@ um sie in Windows speichern zu können.</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (keine Schriftarten)</translation>
     </message>
 </context>
 <context>
@@ -1521,7 +1521,7 @@ Teilen Sie Ihre ID mit Ihren Freunden um mit ihnen zu chatten.</translation>
     </message>
     <message>
         <source>Load history from:</source>
-        <translation type="unfinished"></translation>
+        <translation>Chatverlauf laden von:</translation>
     </message>
 </context>
 <context>
@@ -2452,11 +2452,11 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     </message>
     <message>
         <source>Initializing</source>
-        <translation type="unfinished"></translation>
+        <translation>Initialisierung</translation>
     </message>
     <message>
         <source>Transmitting</source>
-        <translation type="unfinished"></translation>
+        <translation>Übertragung</translation>
     </message>
     <message>
         <source>Finished</source>
@@ -2464,11 +2464,11 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     </message>
     <message>
         <source>Broken</source>
-        <translation type="unfinished"></translation>
+        <translation>Störung</translation>
     </message>
     <message>
         <source>Canceled</source>
-        <translation type="unfinished"></translation>
+        <translation>Abgebrochen</translation>
     </message>
     <message>
         <source>Paused</source>
@@ -2508,19 +2508,19 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     </message>
     <message>
         <source>You have joined the conference</source>
-        <translation type="unfinished"></translation>
+        <translation>Du bist der Konferenz beigetreten</translation>
     </message>
     <message>
         <source>You have left the conference</source>
-        <translation type="unfinished"></translation>
+        <translation>Du bist aus der Konferenz ausgestiegen</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
-        <translation type="unfinished"></translation>
+        <translation>Chatverlauf konnte nicht geladen werden</translation>
     </message>
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation>Datenbank Version (%1) ist neuer als wir unterstützen (%2). Bitte aktualisiere qTox.</translation>
     </message>
 </context>
 <context>
@@ -2687,15 +2687,15 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     </message>
     <message>
         <source>Failed to load personal settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Persönliche Einstellungen konnten nicht geladen werden</translation>
     </message>
     <message>
         <source>Unable to upgrade settings from version %1 to version %2. Cannot start qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen von Version %1 konnten nicht auf Version %2 aktualisiert werden. qTox kann nicht gestartet werden.</translation>
     </message>
     <message>
         <source>Failed to load global settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Globale Einstellungen konnten nicht geladen werden</translation>
     </message>
 </context>
 <context>
