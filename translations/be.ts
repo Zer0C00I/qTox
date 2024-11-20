@@ -799,6 +799,93 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>ConferenceForm</name>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>%n карыстальнік у чаце</numerusform>
+            <numerusform>%n карыстальнікі ў чаце</numerusform>
+            <numerusform>%n карыстальнікаў у чаце</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation>прыглушыць</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation>уключаць</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteForm</name>
+    <message>
+        <source>Conferences</source>
+        <translation>Групы</translation>
+    </message>
+    <message>
+        <source>Create new conference</source>
+        <translation>Стварыць новую групу</translation>
+    </message>
+    <message>
+        <source>Conference invites</source>
+        <translation>Запрашэнні ў групу</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteWidget</name>
+    <message>
+        <source>Invited by %1 on %2 at %3.</source>
+        <translation>Запрошыны %1 у %2 %3.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation>Далучыцца</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation>Адмовіцца</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceWidget</name>
+    <message>
+        <source>Set title...</source>
+        <translation>Усталяваць назву…</translation>
+    </message>
+    <message>
+        <source>Open chat in new window</source>
+        <translation>Адкрыць чат у новым акне</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation>Выдаліць чат з гэтага вакна</translation>
+    </message>
+    <message>
+        <source>Quit conference</source>
+        <comment>Menu to quit a conference</comment>
+        <translation>Пакінуць групу</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>%n карыстальнік у чаце</numerusform>
+            <numerusform>%n карыстальнікі ў чаце</numerusform>
+            <numerusform>%n карыстальнікаў у чаце</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New Message</source>
+        <translation>Новае паведамленне</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation>У сеціве</translation>
+    </message>
+</context>
+<context>
     <name>Core</name>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
@@ -1267,93 +1354,6 @@ instead of closing entirely.</source>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceForm</name>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>
-            <numerusform>%n карыстальнік у чаце</numerusform>
-            <numerusform>%n карыстальнікі ў чаце</numerusform>
-            <numerusform>%n карыстальнікаў у чаце</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>mute</source>
-        <translation>прыглушыць</translation>
-    </message>
-    <message>
-        <source>unmute</source>
-        <translation>уключаць</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteForm</name>
-    <message>
-        <source>Conferences</source>
-        <translation>Групы</translation>
-    </message>
-    <message>
-        <source>Create new conference</source>
-        <translation>Стварыць новую групу</translation>
-    </message>
-    <message>
-        <source>Conference invites</source>
-        <translation>Запрашэнні ў групу</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteWidget</name>
-    <message>
-        <source>Invited by %1 on %2 at %3.</source>
-        <translation>Запрошыны %1 у %2 %3.</translation>
-    </message>
-    <message>
-        <source>Join</source>
-        <translation>Далучыцца</translation>
-    </message>
-    <message>
-        <source>Decline</source>
-        <translation>Адмовіцца</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceWidget</name>
-    <message>
-        <source>Set title...</source>
-        <translation>Усталяваць назву…</translation>
-    </message>
-    <message>
-        <source>Open chat in new window</source>
-        <translation>Адкрыць чат у новым акне</translation>
-    </message>
-    <message>
-        <source>Remove chat from this window</source>
-        <translation>Выдаліць чат з гэтага вакна</translation>
-    </message>
-    <message>
-        <source>Quit conference</source>
-        <comment>Menu to quit a conference</comment>
-        <translation>Пакінуць групу</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>
-            <numerusform>%n карыстальнік у чаце</numerusform>
-            <numerusform>%n карыстальнікі ў чаце</numerusform>
-            <numerusform>%n карыстальнікаў у чаце</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>New Message</source>
-        <translation>Новае паведамленне</translation>
-    </message>
-    <message>
-        <source>Online</source>
-        <translation>У сеціве</translation>
     </message>
 </context>
 <context>

@@ -804,6 +804,91 @@ slik at du kan lagre filen på Windows.</translation>
     </message>
 </context>
 <context>
+    <name>ConferenceForm</name>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n bruker i sludringen</numerusform>
+            <numerusform>%n brukere i sludringen</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation>forstum</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation>opphev forstumming</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteForm</name>
+    <message>
+        <source>Conferences</source>
+        <translation>Grupper</translation>
+    </message>
+    <message>
+        <source>Create new conference</source>
+        <translation>Opprett ny gruppe</translation>
+    </message>
+    <message>
+        <source>Conference invites</source>
+        <translation>Gruppeinvitasjoner</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteWidget</name>
+    <message>
+        <source>Invited by %1 on %2 at %3.</source>
+        <translation>Invitert av %1 den %2 klokken %3.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation>Ta del</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation>Avslå</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceWidget</name>
+    <message>
+        <source>Set title...</source>
+        <translation>Velg tittel...</translation>
+    </message>
+    <message>
+        <source>Quit conference</source>
+        <comment>Menu to quit a conference</comment>
+        <translation>Avslutt gruppe</translation>
+    </message>
+    <message>
+        <source>Open chat in new window</source>
+        <translation>Åpne sludring i nytt vindu</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation>Fjern sludring fra dette vinduet</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n bruker i sludringen</numerusform>
+            <numerusform>%n brukere i sludringen</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New Message</source>
+        <translation>Ny melding</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation>Pålogget</translation>
+    </message>
+</context>
+<context>
     <name>Core</name>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
@@ -1268,91 +1353,6 @@ istedenfor å lukke seg helt.</translation>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation type="unfinished">Fjern alle viste meldinger?</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceForm</name>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation type="unfinished">
-            <numerusform>%n bruker i sludringen</numerusform>
-            <numerusform>%n brukere i sludringen</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>mute</source>
-        <translation>forstum</translation>
-    </message>
-    <message>
-        <source>unmute</source>
-        <translation>opphev forstumming</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteForm</name>
-    <message>
-        <source>Conferences</source>
-        <translation>Grupper</translation>
-    </message>
-    <message>
-        <source>Create new conference</source>
-        <translation>Opprett ny gruppe</translation>
-    </message>
-    <message>
-        <source>Conference invites</source>
-        <translation>Gruppeinvitasjoner</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteWidget</name>
-    <message>
-        <source>Invited by %1 on %2 at %3.</source>
-        <translation>Invitert av %1 den %2 klokken %3.</translation>
-    </message>
-    <message>
-        <source>Join</source>
-        <translation>Ta del</translation>
-    </message>
-    <message>
-        <source>Decline</source>
-        <translation>Avslå</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceWidget</name>
-    <message>
-        <source>Set title...</source>
-        <translation>Velg tittel...</translation>
-    </message>
-    <message>
-        <source>Quit conference</source>
-        <comment>Menu to quit a conference</comment>
-        <translation>Avslutt gruppe</translation>
-    </message>
-    <message>
-        <source>Open chat in new window</source>
-        <translation>Åpne sludring i nytt vindu</translation>
-    </message>
-    <message>
-        <source>Remove chat from this window</source>
-        <translation>Fjern sludring fra dette vinduet</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation type="unfinished">
-            <numerusform>%n bruker i sludringen</numerusform>
-            <numerusform>%n brukere i sludringen</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>New Message</source>
-        <translation>Ny melding</translation>
-    </message>
-    <message>
-        <source>Online</source>
-        <translation>Pålogget</translation>
     </message>
 </context>
 <context>

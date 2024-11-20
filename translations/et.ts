@@ -802,6 +802,91 @@ ja sa saad seda faili nüüd Windowsis salvestada.</translation>
     </message>
 </context>
 <context>
+    <name>ConferenceForm</name>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>vestlemas on %n kasutaja</numerusform>
+            <numerusform>vestlemas on %n kasutajat</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation>vaigista</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation>lülita heli sisse</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteForm</name>
+    <message>
+        <source>Conferences</source>
+        <translation>Grupid</translation>
+    </message>
+    <message>
+        <source>Create new conference</source>
+        <translation>Loo uus grupp</translation>
+    </message>
+    <message>
+        <source>Conference invites</source>
+        <translation>Grupikutsed</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteWidget</name>
+    <message>
+        <source>Invited by %1 on %2 at %3.</source>
+        <translation>Kutse edastas %1 kuupäeval %2 kl %3.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation>Ühine</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation>Keeldu</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation>Ava vestlus uues aknas</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation>Haagi vestlus sellest aknast lahti</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation>Sea pealkiri...</translation>
+    </message>
+    <message>
+        <source>Quit conference</source>
+        <comment>Menu to quit a conference</comment>
+        <translation>Lahku grupivestlusest</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>vestlemas on %n kasutaja</numerusform>
+            <numerusform>vestlemas on %n kasutajat</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New Message</source>
+        <translation>Uus sõnum</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation>Vestlusvalmis</translation>
+    </message>
+</context>
+<context>
     <name>Core</name>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
@@ -1267,91 +1352,6 @@ jätab ta tööle teavituste alal.</translation>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation>Kas sa kindlasti soovid eemaldada kõik kuvatud sõnumid?</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceForm</name>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>
-            <numerusform>vestlemas on %n kasutaja</numerusform>
-            <numerusform>vestlemas on %n kasutajat</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>mute</source>
-        <translation>vaigista</translation>
-    </message>
-    <message>
-        <source>unmute</source>
-        <translation>lülita heli sisse</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteForm</name>
-    <message>
-        <source>Conferences</source>
-        <translation>Grupid</translation>
-    </message>
-    <message>
-        <source>Create new conference</source>
-        <translation>Loo uus grupp</translation>
-    </message>
-    <message>
-        <source>Conference invites</source>
-        <translation>Grupikutsed</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteWidget</name>
-    <message>
-        <source>Invited by %1 on %2 at %3.</source>
-        <translation>Kutse edastas %1 kuupäeval %2 kl %3.</translation>
-    </message>
-    <message>
-        <source>Join</source>
-        <translation>Ühine</translation>
-    </message>
-    <message>
-        <source>Decline</source>
-        <translation>Keeldu</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceWidget</name>
-    <message>
-        <source>Open chat in new window</source>
-        <translation>Ava vestlus uues aknas</translation>
-    </message>
-    <message>
-        <source>Remove chat from this window</source>
-        <translation>Haagi vestlus sellest aknast lahti</translation>
-    </message>
-    <message>
-        <source>Set title...</source>
-        <translation>Sea pealkiri...</translation>
-    </message>
-    <message>
-        <source>Quit conference</source>
-        <comment>Menu to quit a conference</comment>
-        <translation>Lahku grupivestlusest</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>
-            <numerusform>vestlemas on %n kasutaja</numerusform>
-            <numerusform>vestlemas on %n kasutajat</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>New Message</source>
-        <translation>Uus sõnum</translation>
-    </message>
-    <message>
-        <source>Online</source>
-        <translation>Vestlusvalmis</translation>
     </message>
 </context>
 <context>

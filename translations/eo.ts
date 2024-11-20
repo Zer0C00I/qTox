@@ -793,6 +793,91 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>ConferenceForm</name>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteForm</name>
+    <message>
+        <source>Conferences</source>
+        <translation>Grupoj</translation>
+    </message>
+    <message>
+        <source>Create new conference</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Conference invites</source>
+        <translation>Grupo-invitoj</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteWidget</name>
+    <message>
+        <source>Invited by %1 on %2 at %3.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation>Malfermi babilejon en nova fenestro</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation>Titoli...</translation>
+    </message>
+    <message>
+        <source>Quit conference</source>
+        <comment>Menu to quit a conference</comment>
+        <translation>Eliri grupon</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New Message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Core</name>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
@@ -1254,91 +1339,6 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceForm</name>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>mute</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>unmute</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteForm</name>
-    <message>
-        <source>Conferences</source>
-        <translation>Grupoj</translation>
-    </message>
-    <message>
-        <source>Create new conference</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Conference invites</source>
-        <translation>Grupo-invitoj</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteWidget</name>
-    <message>
-        <source>Invited by %1 on %2 at %3.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Join</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Decline</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceWidget</name>
-    <message>
-        <source>Open chat in new window</source>
-        <translation>Malfermi babilejon en nova fenestro</translation>
-    </message>
-    <message>
-        <source>Remove chat from this window</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Set title...</source>
-        <translation>Titoli...</translation>
-    </message>
-    <message>
-        <source>Quit conference</source>
-        <comment>Menu to quit a conference</comment>
-        <translation>Eliri grupon</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>New Message</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Online</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

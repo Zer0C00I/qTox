@@ -802,6 +802,91 @@ joten voit tallentaa tiedoston Windowsissa.</translation>
     </message>
 </context>
 <context>
+    <name>ConferenceForm</name>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>%n käyttäjä keskustelussa</numerusform>
+            <numerusform>%n käyttäjää keskustelussa</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation>mykistä</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation>poista mykistys</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteForm</name>
+    <message>
+        <source>Conferences</source>
+        <translation>Ryhmät</translation>
+    </message>
+    <message>
+        <source>Create new conference</source>
+        <translation>Luo uusi ryhmä</translation>
+    </message>
+    <message>
+        <source>Conference invites</source>
+        <translation>Ryhmäkutsut</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteWidget</name>
+    <message>
+        <source>Invited by %1 on %2 at %3.</source>
+        <translation>Kutsu henkilöltä %1, %2 na kello %3.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation>Liity</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation>Kieltäydy</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation>Avaa keskustelu uudessa ikkunassa</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation>Poista keskustelu tästä ikkunasta</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation>Aseta otsikko...</translation>
+    </message>
+    <message>
+        <source>Quit conference</source>
+        <comment>Menu to quit a conference</comment>
+        <translation>Sulje ryhmä</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>%n käyttäjä keskustelussa</numerusform>
+            <numerusform>%n käyttäjää keskustelussa</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New Message</source>
+        <translation>Uusi viesti</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation>Paikalla</translation>
+    </message>
+</context>
+<context>
     <name>Core</name>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
@@ -1266,91 +1351,6 @@ eikä sulkeudu kokonaan.</translation>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation>Oletko varma, että haluat tyhjentää kaikki näytetyt viestit?</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceForm</name>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>
-            <numerusform>%n käyttäjä keskustelussa</numerusform>
-            <numerusform>%n käyttäjää keskustelussa</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>mute</source>
-        <translation>mykistä</translation>
-    </message>
-    <message>
-        <source>unmute</source>
-        <translation>poista mykistys</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteForm</name>
-    <message>
-        <source>Conferences</source>
-        <translation>Ryhmät</translation>
-    </message>
-    <message>
-        <source>Create new conference</source>
-        <translation>Luo uusi ryhmä</translation>
-    </message>
-    <message>
-        <source>Conference invites</source>
-        <translation>Ryhmäkutsut</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteWidget</name>
-    <message>
-        <source>Invited by %1 on %2 at %3.</source>
-        <translation>Kutsu henkilöltä %1, %2 na kello %3.</translation>
-    </message>
-    <message>
-        <source>Join</source>
-        <translation>Liity</translation>
-    </message>
-    <message>
-        <source>Decline</source>
-        <translation>Kieltäydy</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceWidget</name>
-    <message>
-        <source>Open chat in new window</source>
-        <translation>Avaa keskustelu uudessa ikkunassa</translation>
-    </message>
-    <message>
-        <source>Remove chat from this window</source>
-        <translation>Poista keskustelu tästä ikkunasta</translation>
-    </message>
-    <message>
-        <source>Set title...</source>
-        <translation>Aseta otsikko...</translation>
-    </message>
-    <message>
-        <source>Quit conference</source>
-        <comment>Menu to quit a conference</comment>
-        <translation>Sulje ryhmä</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>
-            <numerusform>%n käyttäjä keskustelussa</numerusform>
-            <numerusform>%n käyttäjää keskustelussa</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>New Message</source>
-        <translation>Uusi viesti</translation>
-    </message>
-    <message>
-        <source>Online</source>
-        <translation>Paikalla</translation>
     </message>
 </context>
 <context>

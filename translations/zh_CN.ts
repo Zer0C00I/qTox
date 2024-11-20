@@ -801,6 +801,89 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>ConferenceForm</name>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>%n 位用户正在聊天</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation>静音</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation>取消静音</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteForm</name>
+    <message>
+        <source>Conferences</source>
+        <translation>群组</translation>
+    </message>
+    <message>
+        <source>Create new conference</source>
+        <translation>创建聊天群组</translation>
+    </message>
+    <message>
+        <source>Conference invites</source>
+        <translation>群组邀请</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteWidget</name>
+    <message>
+        <source>Invited by %1 on %2 at %3.</source>
+        <translation>%1 于 %2 %3 邀请。</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation>加入</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation>拒绝</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceWidget</name>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation>从这个窗口中删除会话</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation>设置名称...</translation>
+    </message>
+    <message>
+        <source>Quit conference</source>
+        <comment>Menu to quit a conference</comment>
+        <translation>退出群组</translation>
+    </message>
+    <message>
+        <source>Open chat in new window</source>
+        <translation>在新窗口打开会话</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>%n 位用户正在聊天</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New Message</source>
+        <translation>新消息</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation>在线</translation>
+    </message>
+</context>
+<context>
     <name>Core</name>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
@@ -1265,89 +1348,6 @@ instead of closing entirely.</source>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation>是否确实要清除所有显示的消息？</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceForm</name>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>
-            <numerusform>%n 位用户正在聊天</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>mute</source>
-        <translation>静音</translation>
-    </message>
-    <message>
-        <source>unmute</source>
-        <translation>取消静音</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteForm</name>
-    <message>
-        <source>Conferences</source>
-        <translation>群组</translation>
-    </message>
-    <message>
-        <source>Create new conference</source>
-        <translation>创建聊天群组</translation>
-    </message>
-    <message>
-        <source>Conference invites</source>
-        <translation>群组邀请</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteWidget</name>
-    <message>
-        <source>Invited by %1 on %2 at %3.</source>
-        <translation>%1 于 %2 %3 邀请。</translation>
-    </message>
-    <message>
-        <source>Join</source>
-        <translation>加入</translation>
-    </message>
-    <message>
-        <source>Decline</source>
-        <translation>拒绝</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceWidget</name>
-    <message>
-        <source>Remove chat from this window</source>
-        <translation>从这个窗口中删除会话</translation>
-    </message>
-    <message>
-        <source>Set title...</source>
-        <translation>设置名称...</translation>
-    </message>
-    <message>
-        <source>Quit conference</source>
-        <comment>Menu to quit a conference</comment>
-        <translation>退出群组</translation>
-    </message>
-    <message>
-        <source>Open chat in new window</source>
-        <translation>在新窗口打开会话</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>
-            <numerusform>%n 位用户正在聊天</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>New Message</source>
-        <translation>新消息</translation>
-    </message>
-    <message>
-        <source>Online</source>
-        <translation>在线</translation>
     </message>
 </context>
 <context>

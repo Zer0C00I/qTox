@@ -802,6 +802,91 @@ så att du kan spara filen i Windows.</translation>
     </message>
 </context>
 <context>
+    <name>ConferenceForm</name>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>%n användare i chatten</numerusform>
+            <numerusform>%n användare i chatten</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation>tysta</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation>slå på ljud</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteForm</name>
+    <message>
+        <source>Conferences</source>
+        <translation>Grupper</translation>
+    </message>
+    <message>
+        <source>Create new conference</source>
+        <translation>Skapa ny grupp</translation>
+    </message>
+    <message>
+        <source>Conference invites</source>
+        <translation>Gruppinbjudningar</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteWidget</name>
+    <message>
+        <source>Invited by %1 on %2 at %3.</source>
+        <translation>Inbjuden av %1 den %2 kl. %3.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation>Gå med</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation>Avböj</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceWidget</name>
+    <message>
+        <source>Set title...</source>
+        <translation>Ange titel...</translation>
+    </message>
+    <message>
+        <source>Quit conference</source>
+        <comment>Menu to quit a conference</comment>
+        <translation>Lämna grupp</translation>
+    </message>
+    <message>
+        <source>Open chat in new window</source>
+        <translation>Öppna chatt i nytt fönster</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation>Ta bort chatt från detta fönster</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>%n användare i chatten</numerusform>
+            <numerusform>%n användare i chatten</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New Message</source>
+        <translation>Nytt meddelande</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation>Tillgänglig</translation>
+    </message>
+</context>
+<context>
     <name>Core</name>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
@@ -1265,91 +1350,6 @@ instead of closing entirely.</source>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation>Är du säker på att du vill rensa alla visade meddelanden?</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceForm</name>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>
-            <numerusform>%n användare i chatten</numerusform>
-            <numerusform>%n användare i chatten</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>mute</source>
-        <translation>tysta</translation>
-    </message>
-    <message>
-        <source>unmute</source>
-        <translation>slå på ljud</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteForm</name>
-    <message>
-        <source>Conferences</source>
-        <translation>Grupper</translation>
-    </message>
-    <message>
-        <source>Create new conference</source>
-        <translation>Skapa ny grupp</translation>
-    </message>
-    <message>
-        <source>Conference invites</source>
-        <translation>Gruppinbjudningar</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteWidget</name>
-    <message>
-        <source>Invited by %1 on %2 at %3.</source>
-        <translation>Inbjuden av %1 den %2 kl. %3.</translation>
-    </message>
-    <message>
-        <source>Join</source>
-        <translation>Gå med</translation>
-    </message>
-    <message>
-        <source>Decline</source>
-        <translation>Avböj</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceWidget</name>
-    <message>
-        <source>Set title...</source>
-        <translation>Ange titel...</translation>
-    </message>
-    <message>
-        <source>Quit conference</source>
-        <comment>Menu to quit a conference</comment>
-        <translation>Lämna grupp</translation>
-    </message>
-    <message>
-        <source>Open chat in new window</source>
-        <translation>Öppna chatt i nytt fönster</translation>
-    </message>
-    <message>
-        <source>Remove chat from this window</source>
-        <translation>Ta bort chatt från detta fönster</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>
-            <numerusform>%n användare i chatten</numerusform>
-            <numerusform>%n användare i chatten</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>New Message</source>
-        <translation>Nytt meddelande</translation>
-    </message>
-    <message>
-        <source>Online</source>
-        <translation>Tillgänglig</translation>
     </message>
 </context>
 <context>

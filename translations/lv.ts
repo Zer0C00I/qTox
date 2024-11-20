@@ -804,6 +804,93 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     </message>
 </context>
 <context>
+    <name>ConferenceForm</name>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation>izslēgt skaņu</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation>ieslēgt skaņu</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteForm</name>
+    <message>
+        <source>Conferences</source>
+        <translation>Grupas</translation>
+    </message>
+    <message>
+        <source>Create new conference</source>
+        <translation>Izveidot jaunu grupu</translation>
+    </message>
+    <message>
+        <source>Conference invites</source>
+        <translation>Grupas uzaicinājums</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteWidget</name>
+    <message>
+        <source>Invited by %1 on %2 at %3.</source>
+        <translation>Uzaicinājis %1 ap %2 vietnē %3.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation>Pievienoties</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation>Atteikties</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceWidget</name>
+    <message>
+        <source>Set title...</source>
+        <translation>Uzstādīt nosaukumu ...</translation>
+    </message>
+    <message>
+        <source>Open chat in new window</source>
+        <translation>Atvērt tērzēšanu jaunā logā</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation>Noņemt tērzēšanu no šī loga</translation>
+    </message>
+    <message>
+        <source>Quit conference</source>
+        <comment>Menu to quit a conference</comment>
+        <translation>Iziet no grupas</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New Message</source>
+        <translation>Jauns ziņojums</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation>Tiešsaistē</translation>
+    </message>
+</context>
+<context>
     <name>Core</name>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
@@ -1274,93 +1361,6 @@ vietā pilnīgi aizveroties.</translation>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceForm</name>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>mute</source>
-        <translation>izslēgt skaņu</translation>
-    </message>
-    <message>
-        <source>unmute</source>
-        <translation>ieslēgt skaņu</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteForm</name>
-    <message>
-        <source>Conferences</source>
-        <translation>Grupas</translation>
-    </message>
-    <message>
-        <source>Create new conference</source>
-        <translation>Izveidot jaunu grupu</translation>
-    </message>
-    <message>
-        <source>Conference invites</source>
-        <translation>Grupas uzaicinājums</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteWidget</name>
-    <message>
-        <source>Invited by %1 on %2 at %3.</source>
-        <translation>Uzaicinājis %1 ap %2 vietnē %3.</translation>
-    </message>
-    <message>
-        <source>Join</source>
-        <translation>Pievienoties</translation>
-    </message>
-    <message>
-        <source>Decline</source>
-        <translation>Atteikties</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceWidget</name>
-    <message>
-        <source>Set title...</source>
-        <translation>Uzstādīt nosaukumu ...</translation>
-    </message>
-    <message>
-        <source>Open chat in new window</source>
-        <translation>Atvērt tērzēšanu jaunā logā</translation>
-    </message>
-    <message>
-        <source>Remove chat from this window</source>
-        <translation>Noņemt tērzēšanu no šī loga</translation>
-    </message>
-    <message>
-        <source>Quit conference</source>
-        <comment>Menu to quit a conference</comment>
-        <translation>Iziet no grupas</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>New Message</source>
-        <translation>Jauns ziņojums</translation>
-    </message>
-    <message>
-        <source>Online</source>
-        <translation>Tiešsaistē</translation>
     </message>
 </context>
 <context>

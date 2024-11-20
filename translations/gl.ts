@@ -798,6 +798,91 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>ConferenceForm</name>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>%1 usuario na conversa</numerusform>
+            <numerusform>%1 usuarios na conversa</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation>silenciar</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation>non silenciar</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteForm</name>
+    <message>
+        <source>Conferences</source>
+        <translation>Grupos</translation>
+    </message>
+    <message>
+        <source>Create new conference</source>
+        <translation>Crear un novo grupo</translation>
+    </message>
+    <message>
+        <source>Conference invites</source>
+        <translation>Invitacións a grupos</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteWidget</name>
+    <message>
+        <source>Invited by %1 on %2 at %3.</source>
+        <translation>Invitado por %1 no %2 en %3.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation>Entrar</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation>Declinar</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceWidget</name>
+    <message>
+        <source>Set title...</source>
+        <translation>Axustar título...</translation>
+    </message>
+    <message>
+        <source>Open chat in new window</source>
+        <translation>Abrir conversa en nova xanela</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation>Eliminar conversa de esta xanela</translation>
+    </message>
+    <message>
+        <source>Quit conference</source>
+        <comment>Menu to quit a conference</comment>
+        <translation>Saír do grupo</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>%n usuario na conversa</numerusform>
+            <numerusform>%n usuarios na conversa</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New Message</source>
+        <translation>Nova Mensaxe</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation>En liña</translation>
+    </message>
+</context>
+<context>
     <name>Core</name>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
@@ -1266,91 +1351,6 @@ instead of closing entirely.</source>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceForm</name>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>
-            <numerusform>%1 usuario na conversa</numerusform>
-            <numerusform>%1 usuarios na conversa</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>mute</source>
-        <translation>silenciar</translation>
-    </message>
-    <message>
-        <source>unmute</source>
-        <translation>non silenciar</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteForm</name>
-    <message>
-        <source>Conferences</source>
-        <translation>Grupos</translation>
-    </message>
-    <message>
-        <source>Create new conference</source>
-        <translation>Crear un novo grupo</translation>
-    </message>
-    <message>
-        <source>Conference invites</source>
-        <translation>Invitacións a grupos</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteWidget</name>
-    <message>
-        <source>Invited by %1 on %2 at %3.</source>
-        <translation>Invitado por %1 no %2 en %3.</translation>
-    </message>
-    <message>
-        <source>Join</source>
-        <translation>Entrar</translation>
-    </message>
-    <message>
-        <source>Decline</source>
-        <translation>Declinar</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceWidget</name>
-    <message>
-        <source>Set title...</source>
-        <translation>Axustar título...</translation>
-    </message>
-    <message>
-        <source>Open chat in new window</source>
-        <translation>Abrir conversa en nova xanela</translation>
-    </message>
-    <message>
-        <source>Remove chat from this window</source>
-        <translation>Eliminar conversa de esta xanela</translation>
-    </message>
-    <message>
-        <source>Quit conference</source>
-        <comment>Menu to quit a conference</comment>
-        <translation>Saír do grupo</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>
-            <numerusform>%n usuario na conversa</numerusform>
-            <numerusform>%n usuarios na conversa</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>New Message</source>
-        <translation>Nova Mensaxe</translation>
-    </message>
-    <message>
-        <source>Online</source>
-        <translation>En liña</translation>
     </message>
 </context>
 <context>

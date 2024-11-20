@@ -802,6 +802,89 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>ConferenceForm</name>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>%n người dùng trong cuộc trò chuyện</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation>tắt tiếng</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation>bỏ tắt tiếng</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteForm</name>
+    <message>
+        <source>Conferences</source>
+        <translation>Nhóm</translation>
+    </message>
+    <message>
+        <source>Create new conference</source>
+        <translation>Tạo nhóm mới</translation>
+    </message>
+    <message>
+        <source>Conference invites</source>
+        <translation>Lời mời nhóm</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteWidget</name>
+    <message>
+        <source>Invited by %1 on %2 at %3.</source>
+        <translation>Được %1 mời trên %2 tại %3.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation>Tham gia</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation>Từ chối</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceWidget</name>
+    <message>
+        <source>Set title...</source>
+        <translation>Đặt tiêu đề...</translation>
+    </message>
+    <message>
+        <source>Open chat in new window</source>
+        <translation>Mở trò chuyện trong cửa sổ mới</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation>Xóa trò chuyện khỏi cửa sổ này</translation>
+    </message>
+    <message>
+        <source>Quit conference</source>
+        <comment>Menu to quit a conference</comment>
+        <translation>Rời nhóm</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>%n người dùng trong cuộc trò chuyện</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New Message</source>
+        <translation>Tin nhắn mới</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation>Trực tuyến</translation>
+    </message>
+</context>
+<context>
     <name>Core</name>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
@@ -1272,89 +1355,6 @@ thay vì đóng hoàn toàn.</translation>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation>Bạn có chắc chắn muốn xóa tất cả các tin nhắn được hiển thị không?</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceForm</name>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>
-            <numerusform>%n người dùng trong cuộc trò chuyện</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>mute</source>
-        <translation>tắt tiếng</translation>
-    </message>
-    <message>
-        <source>unmute</source>
-        <translation>bỏ tắt tiếng</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteForm</name>
-    <message>
-        <source>Conferences</source>
-        <translation>Nhóm</translation>
-    </message>
-    <message>
-        <source>Create new conference</source>
-        <translation>Tạo nhóm mới</translation>
-    </message>
-    <message>
-        <source>Conference invites</source>
-        <translation>Lời mời nhóm</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteWidget</name>
-    <message>
-        <source>Invited by %1 on %2 at %3.</source>
-        <translation>Được %1 mời trên %2 tại %3.</translation>
-    </message>
-    <message>
-        <source>Join</source>
-        <translation>Tham gia</translation>
-    </message>
-    <message>
-        <source>Decline</source>
-        <translation>Từ chối</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceWidget</name>
-    <message>
-        <source>Set title...</source>
-        <translation>Đặt tiêu đề...</translation>
-    </message>
-    <message>
-        <source>Open chat in new window</source>
-        <translation>Mở trò chuyện trong cửa sổ mới</translation>
-    </message>
-    <message>
-        <source>Remove chat from this window</source>
-        <translation>Xóa trò chuyện khỏi cửa sổ này</translation>
-    </message>
-    <message>
-        <source>Quit conference</source>
-        <comment>Menu to quit a conference</comment>
-        <translation>Rời nhóm</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>
-            <numerusform>%n người dùng trong cuộc trò chuyện</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>New Message</source>
-        <translation>Tin nhắn mới</translation>
-    </message>
-    <message>
-        <source>Online</source>
-        <translation>Trực tuyến</translation>
     </message>
 </context>
 <context>

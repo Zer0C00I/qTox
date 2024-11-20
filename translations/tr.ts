@@ -804,6 +804,89 @@ geçersiz karakterler _ olarak değiştirildi.</translation>
     </message>
 </context>
 <context>
+    <name>ConferenceForm</name>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>%n kullanıcı sohbette</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation>sesi kapat</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation>sesi aç</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteForm</name>
+    <message>
+        <source>Conferences</source>
+        <translation>Gruplar</translation>
+    </message>
+    <message>
+        <source>Create new conference</source>
+        <translation>Yeni grup oluştur</translation>
+    </message>
+    <message>
+        <source>Conference invites</source>
+        <translation>Grup davetleri</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteWidget</name>
+    <message>
+        <source>Invited by %1 on %2 at %3.</source>
+        <translation>%1, %2 %3 tarihinde davet etti.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation>Katıl</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation>Reddet</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation>Sohbeti yeni pencerede aç</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation>Sohbeti bu pencereden kaldır</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation>Başlık ayarla...</translation>
+    </message>
+    <message>
+        <source>Quit conference</source>
+        <comment>Menu to quit a conference</comment>
+        <translation>Gruptan çık</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>%n kullanıcı sohbette</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New Message</source>
+        <translation>Yeni İleti</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation>Çevrimiçi</translation>
+    </message>
+</context>
+<context>
     <name>Core</name>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
@@ -1269,89 +1352,6 @@ tamamen kapanmak yerine tepsiye kapanacak.</translation>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation>Görüntülenen tüm iletileri temizlemek istediğinizden emin misiniz?</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceForm</name>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>
-            <numerusform>%n kullanıcı sohbette</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>mute</source>
-        <translation>sesi kapat</translation>
-    </message>
-    <message>
-        <source>unmute</source>
-        <translation>sesi aç</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteForm</name>
-    <message>
-        <source>Conferences</source>
-        <translation>Gruplar</translation>
-    </message>
-    <message>
-        <source>Create new conference</source>
-        <translation>Yeni grup oluştur</translation>
-    </message>
-    <message>
-        <source>Conference invites</source>
-        <translation>Grup davetleri</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteWidget</name>
-    <message>
-        <source>Invited by %1 on %2 at %3.</source>
-        <translation>%1, %2 %3 tarihinde davet etti.</translation>
-    </message>
-    <message>
-        <source>Join</source>
-        <translation>Katıl</translation>
-    </message>
-    <message>
-        <source>Decline</source>
-        <translation>Reddet</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceWidget</name>
-    <message>
-        <source>Open chat in new window</source>
-        <translation>Sohbeti yeni pencerede aç</translation>
-    </message>
-    <message>
-        <source>Remove chat from this window</source>
-        <translation>Sohbeti bu pencereden kaldır</translation>
-    </message>
-    <message>
-        <source>Set title...</source>
-        <translation>Başlık ayarla...</translation>
-    </message>
-    <message>
-        <source>Quit conference</source>
-        <comment>Menu to quit a conference</comment>
-        <translation>Gruptan çık</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>
-            <numerusform>%n kullanıcı sohbette</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>New Message</source>
-        <translation>Yeni İleti</translation>
-    </message>
-    <message>
-        <source>Online</source>
-        <translation>Çevrimiçi</translation>
     </message>
 </context>
 <context>

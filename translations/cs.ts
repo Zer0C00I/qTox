@@ -803,6 +803,93 @@ takže můžete soubor uložit i v systému Windows.</translation>
     </message>
 </context>
 <context>
+    <name>ConferenceForm</name>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>%n uživatel v chatu</numerusform>
+            <numerusform>%n uživatelé v chatu</numerusform>
+            <numerusform>počet uživatelů v chatu je: %n</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation>ztlumit</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation>nahlas</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteForm</name>
+    <message>
+        <source>Conferences</source>
+        <translation>Skupiny</translation>
+    </message>
+    <message>
+        <source>Create new conference</source>
+        <translation>Vytvořit novou skupinu</translation>
+    </message>
+    <message>
+        <source>Conference invites</source>
+        <translation>Seznam pozvánek do skupin</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteWidget</name>
+    <message>
+        <source>Invited by %1 on %2 at %3.</source>
+        <translation>Pozvání od %1 na %2 v %3.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation>Připojit se</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation>Odmítnout</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceWidget</name>
+    <message>
+        <source>Set title...</source>
+        <translation>Nastavit jméno...</translation>
+    </message>
+    <message>
+        <source>Quit conference</source>
+        <comment>Menu to quit a conference</comment>
+        <translation>Opustit skupinu</translation>
+    </message>
+    <message>
+        <source>Open chat in new window</source>
+        <translation>Otevřít konverzaci v novém okně</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation>Odstranit konverzaci z tohoto okna</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>%n uživatel v chatu</numerusform>
+            <numerusform>%n uživatelé v chatu</numerusform>
+            <numerusform>uživatelů v chatu %n</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New Message</source>
+        <translation>Nová zpráva</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation>Online</translation>
+    </message>
+</context>
+<context>
     <name>Core</name>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
@@ -1267,93 +1354,6 @@ nedojde k jeho úplnému ukončení.</translation>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation>Opravdu chcete vymazat všechny zobrazené zprávy?</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceForm</name>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>
-            <numerusform>%n uživatel v chatu</numerusform>
-            <numerusform>%n uživatelé v chatu</numerusform>
-            <numerusform>počet uživatelů v chatu je: %n</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>mute</source>
-        <translation>ztlumit</translation>
-    </message>
-    <message>
-        <source>unmute</source>
-        <translation>nahlas</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteForm</name>
-    <message>
-        <source>Conferences</source>
-        <translation>Skupiny</translation>
-    </message>
-    <message>
-        <source>Create new conference</source>
-        <translation>Vytvořit novou skupinu</translation>
-    </message>
-    <message>
-        <source>Conference invites</source>
-        <translation>Seznam pozvánek do skupin</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteWidget</name>
-    <message>
-        <source>Invited by %1 on %2 at %3.</source>
-        <translation>Pozvání od %1 na %2 v %3.</translation>
-    </message>
-    <message>
-        <source>Join</source>
-        <translation>Připojit se</translation>
-    </message>
-    <message>
-        <source>Decline</source>
-        <translation>Odmítnout</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceWidget</name>
-    <message>
-        <source>Set title...</source>
-        <translation>Nastavit jméno...</translation>
-    </message>
-    <message>
-        <source>Quit conference</source>
-        <comment>Menu to quit a conference</comment>
-        <translation>Opustit skupinu</translation>
-    </message>
-    <message>
-        <source>Open chat in new window</source>
-        <translation>Otevřít konverzaci v novém okně</translation>
-    </message>
-    <message>
-        <source>Remove chat from this window</source>
-        <translation>Odstranit konverzaci z tohoto okna</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>
-            <numerusform>%n uživatel v chatu</numerusform>
-            <numerusform>%n uživatelé v chatu</numerusform>
-            <numerusform>uživatelů v chatu %n</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>New Message</source>
-        <translation>Nová zpráva</translation>
-    </message>
-    <message>
-        <source>Online</source>
-        <translation>Online</translation>
     </message>
 </context>
 <context>

@@ -804,6 +804,93 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
     </message>
 </context>
 <context>
+    <name>ConferenceForm</name>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>%n utilizator în conversație</numerusform>
+            <numerusform>%n utilizatori în conversație</numerusform>
+            <numerusform>%n utilizatori în conversație</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation>mut</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation>cu sunet</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteForm</name>
+    <message>
+        <source>Conferences</source>
+        <translation>Grupuri</translation>
+    </message>
+    <message>
+        <source>Create new conference</source>
+        <translation>Creați un grup nou</translation>
+    </message>
+    <message>
+        <source>Conference invites</source>
+        <translation>Grupul invită</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteWidget</name>
+    <message>
+        <source>Invited by %1 on %2 at %3.</source>
+        <translation>Invitat de %1 pe %2 la %3.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation>Aderă</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation>Refuză</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceWidget</name>
+    <message>
+        <source>Set title...</source>
+        <translation>Setați titlul...</translation>
+    </message>
+    <message>
+        <source>Open chat in new window</source>
+        <translation>Deschideți discuția în fereastră nouă</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation>Eliminați discuția din această fereastră</translation>
+    </message>
+    <message>
+        <source>Quit conference</source>
+        <comment>Menu to quit a conference</comment>
+        <translation>Închideți grup</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>%n utilizator(i) în conversație</numerusform>
+            <numerusform>%n utilizatori în conversație</numerusform>
+            <numerusform>%n utilizatori în conversație</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New Message</source>
+        <translation>Mesaj nou</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation>Conectat</translation>
+    </message>
+</context>
+<context>
     <name>Core</name>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
@@ -1274,93 +1361,6 @@ instead of closing entirely.</source>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation>Sigur doriți să ștergeți toate mesajele afișate?</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceForm</name>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>
-            <numerusform>%n utilizator în conversație</numerusform>
-            <numerusform>%n utilizatori în conversație</numerusform>
-            <numerusform>%n utilizatori în conversație</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>mute</source>
-        <translation>mut</translation>
-    </message>
-    <message>
-        <source>unmute</source>
-        <translation>cu sunet</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteForm</name>
-    <message>
-        <source>Conferences</source>
-        <translation>Grupuri</translation>
-    </message>
-    <message>
-        <source>Create new conference</source>
-        <translation>Creați un grup nou</translation>
-    </message>
-    <message>
-        <source>Conference invites</source>
-        <translation>Grupul invită</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteWidget</name>
-    <message>
-        <source>Invited by %1 on %2 at %3.</source>
-        <translation>Invitat de %1 pe %2 la %3.</translation>
-    </message>
-    <message>
-        <source>Join</source>
-        <translation>Aderă</translation>
-    </message>
-    <message>
-        <source>Decline</source>
-        <translation>Refuză</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceWidget</name>
-    <message>
-        <source>Set title...</source>
-        <translation>Setați titlul...</translation>
-    </message>
-    <message>
-        <source>Open chat in new window</source>
-        <translation>Deschideți discuția în fereastră nouă</translation>
-    </message>
-    <message>
-        <source>Remove chat from this window</source>
-        <translation>Eliminați discuția din această fereastră</translation>
-    </message>
-    <message>
-        <source>Quit conference</source>
-        <comment>Menu to quit a conference</comment>
-        <translation>Închideți grup</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>
-            <numerusform>%n utilizator(i) în conversație</numerusform>
-            <numerusform>%n utilizatori în conversație</numerusform>
-            <numerusform>%n utilizatori în conversație</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>New Message</source>
-        <translation>Mesaj nou</translation>
-    </message>
-    <message>
-        <source>Online</source>
-        <translation>Conectat</translation>
     </message>
 </context>
 <context>

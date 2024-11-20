@@ -796,6 +796,89 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>ConferenceForm</name>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation>némítás</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation>némítás kikapcsolása</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteForm</name>
+    <message>
+        <source>Conferences</source>
+        <translation>Csoportok</translation>
+    </message>
+    <message>
+        <source>Create new conference</source>
+        <translation>Új csoport létrehozása</translation>
+    </message>
+    <message>
+        <source>Conference invites</source>
+        <translation>Csoport meghívások</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteWidget</name>
+    <message>
+        <source>Invited by %1 on %2 at %3.</source>
+        <translation>%1 meghívta őt ekkor: %2, %3.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation>Csatlakozás</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation>Elutasítás</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceWidget</name>
+    <message>
+        <source>Set title...</source>
+        <translation>Cím beállítása...</translation>
+    </message>
+    <message>
+        <source>Quit conference</source>
+        <comment>Menu to quit a conference</comment>
+        <translation>Kilépés a csoportból</translation>
+    </message>
+    <message>
+        <source>Open chat in new window</source>
+        <translation>Chat megnyitása új ablakban</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation>Chat eltávolítása ebből az ablakból</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New Message</source>
+        <translation>Új üzenet</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation>Elérhető</translation>
+    </message>
+</context>
+<context>
     <name>Core</name>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
@@ -1258,89 +1341,6 @@ instead of closing entirely.</source>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceForm</name>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>mute</source>
-        <translation>némítás</translation>
-    </message>
-    <message>
-        <source>unmute</source>
-        <translation>némítás kikapcsolása</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteForm</name>
-    <message>
-        <source>Conferences</source>
-        <translation>Csoportok</translation>
-    </message>
-    <message>
-        <source>Create new conference</source>
-        <translation>Új csoport létrehozása</translation>
-    </message>
-    <message>
-        <source>Conference invites</source>
-        <translation>Csoport meghívások</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteWidget</name>
-    <message>
-        <source>Invited by %1 on %2 at %3.</source>
-        <translation>%1 meghívta őt ekkor: %2, %3.</translation>
-    </message>
-    <message>
-        <source>Join</source>
-        <translation>Csatlakozás</translation>
-    </message>
-    <message>
-        <source>Decline</source>
-        <translation>Elutasítás</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceWidget</name>
-    <message>
-        <source>Set title...</source>
-        <translation>Cím beállítása...</translation>
-    </message>
-    <message>
-        <source>Quit conference</source>
-        <comment>Menu to quit a conference</comment>
-        <translation>Kilépés a csoportból</translation>
-    </message>
-    <message>
-        <source>Open chat in new window</source>
-        <translation>Chat megnyitása új ablakban</translation>
-    </message>
-    <message>
-        <source>Remove chat from this window</source>
-        <translation>Chat eltávolítása ebből az ablakból</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>New Message</source>
-        <translation>Új üzenet</translation>
-    </message>
-    <message>
-        <source>Online</source>
-        <translation>Elérhető</translation>
     </message>
 </context>
 <context>

@@ -797,6 +797,89 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>ConferenceForm</name>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation>بی‌صدا</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation>رفع حالت بی‌صدا</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteForm</name>
+    <message>
+        <source>Conferences</source>
+        <translation>گروه ها</translation>
+    </message>
+    <message>
+        <source>Create new conference</source>
+        <translation>ساخت یک گروه جدید</translation>
+    </message>
+    <message>
+        <source>Conference invites</source>
+        <translation>دعوت به گروه ها</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteWidget</name>
+    <message>
+        <source>Invited by %1 on %2 at %3.</source>
+        <translation>توسط %1 در %2 به %3 دعوت شدید.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation>ملحق شدن</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation>رد کردن</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceWidget</name>
+    <message>
+        <source>Set title...</source>
+        <translation>تخصیص عنوان...</translation>
+    </message>
+    <message>
+        <source>Open chat in new window</source>
+        <translation>باز کردن گفت و گو در یک پنجره جدید</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation>حذف چت از این پنجره</translation>
+    </message>
+    <message>
+        <source>Quit conference</source>
+        <comment>Menu to quit a conference</comment>
+        <translation>جدا شدن از گروه</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New Message</source>
+        <translation>پیام جدید</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation>آنلاین</translation>
+    </message>
+</context>
+<context>
     <name>Core</name>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
@@ -1265,89 +1348,6 @@ instead of closing entirely.</source>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceForm</name>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>mute</source>
-        <translation>بی‌صدا</translation>
-    </message>
-    <message>
-        <source>unmute</source>
-        <translation>رفع حالت بی‌صدا</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteForm</name>
-    <message>
-        <source>Conferences</source>
-        <translation>گروه ها</translation>
-    </message>
-    <message>
-        <source>Create new conference</source>
-        <translation>ساخت یک گروه جدید</translation>
-    </message>
-    <message>
-        <source>Conference invites</source>
-        <translation>دعوت به گروه ها</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteWidget</name>
-    <message>
-        <source>Invited by %1 on %2 at %3.</source>
-        <translation>توسط %1 در %2 به %3 دعوت شدید.</translation>
-    </message>
-    <message>
-        <source>Join</source>
-        <translation>ملحق شدن</translation>
-    </message>
-    <message>
-        <source>Decline</source>
-        <translation>رد کردن</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceWidget</name>
-    <message>
-        <source>Set title...</source>
-        <translation>تخصیص عنوان...</translation>
-    </message>
-    <message>
-        <source>Open chat in new window</source>
-        <translation>باز کردن گفت و گو در یک پنجره جدید</translation>
-    </message>
-    <message>
-        <source>Remove chat from this window</source>
-        <translation>حذف چت از این پنجره</translation>
-    </message>
-    <message>
-        <source>Quit conference</source>
-        <comment>Menu to quit a conference</comment>
-        <translation>جدا شدن از گروه</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>New Message</source>
-        <translation>پیام جدید</translation>
-    </message>
-    <message>
-        <source>Online</source>
-        <translation>آنلاین</translation>
     </message>
 </context>
 <context>

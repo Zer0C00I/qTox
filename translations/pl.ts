@@ -811,6 +811,94 @@ więc możesz zapisać ten plik na systemie Windows.</translation>
     </message>
 </context>
 <context>
+    <name>ConferenceForm</name>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>%n użytkownik na czacie</numerusform>
+            <numerusform>%n użytkowników na czacie</numerusform>
+            <numerusform>%n użytkowników na czacie</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation>wycisz</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation>wyłącz wyciszenie</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteForm</name>
+    <message>
+        <source>Conferences</source>
+        <translation>Grupy</translation>
+    </message>
+    <message>
+        <source>Create new conference</source>
+        <translation>Utwórz nową grupę</translation>
+    </message>
+    <message>
+        <source>Conference invites</source>
+        <translation>Zaproszenia do grup</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceInviteWidget</name>
+    <message>
+        <source>Invited by %1 on %2 at %3.</source>
+        <translation>Zaproszony przez %1 na %2 przy %3.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation>Dołącz</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation>Odmów</translation>
+    </message>
+</context>
+<context>
+    <name>ConferenceWidget</name>
+    <message>
+        <source>Set title...</source>
+        <translatorcomment>better translation? (I have considered translating this as &apos;tytuł&apos;, but it doesn&apos;t look well along with other things IMHO)</translatorcomment>
+        <translation>Zmień nazwę...</translation>
+    </message>
+    <message>
+        <source>Open chat in new window</source>
+        <translation>Otwórz rozmowę w nowym oknie</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation>Usuń rozmowę z tego okna</translation>
+    </message>
+    <message>
+        <source>Quit conference</source>
+        <comment>Menu to quit a conference</comment>
+        <translation>Opuść grupę</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>%n użytkownik na czacie</numerusform>
+            <numerusform>%n użytkowników na czacie</numerusform>
+            <numerusform>%n użytkowników na czacie</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New Message</source>
+        <translation>Nowa Wiadomość</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation>Online</translation>
+    </message>
+</context>
+<context>
     <name>Core</name>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
@@ -1281,94 +1369,6 @@ zamiast zostać całkowicie zamknięty.</translation>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation>Czy na pewno chcesz wyczyścić wszystkie wyświetlone wiadomości?</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceForm</name>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>
-            <numerusform>%n użytkownik na czacie</numerusform>
-            <numerusform>%n użytkowników na czacie</numerusform>
-            <numerusform>%n użytkowników na czacie</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>mute</source>
-        <translation>wycisz</translation>
-    </message>
-    <message>
-        <source>unmute</source>
-        <translation>wyłącz wyciszenie</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteForm</name>
-    <message>
-        <source>Conferences</source>
-        <translation>Grupy</translation>
-    </message>
-    <message>
-        <source>Create new conference</source>
-        <translation>Utwórz nową grupę</translation>
-    </message>
-    <message>
-        <source>Conference invites</source>
-        <translation>Zaproszenia do grup</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceInviteWidget</name>
-    <message>
-        <source>Invited by %1 on %2 at %3.</source>
-        <translation>Zaproszony przez %1 na %2 przy %3.</translation>
-    </message>
-    <message>
-        <source>Join</source>
-        <translation>Dołącz</translation>
-    </message>
-    <message>
-        <source>Decline</source>
-        <translation>Odmów</translation>
-    </message>
-</context>
-<context>
-    <name>ConferenceWidget</name>
-    <message>
-        <source>Set title...</source>
-        <translatorcomment>better translation? (I have considered translating this as &apos;tytuł&apos;, but it doesn&apos;t look well along with other things IMHO)</translatorcomment>
-        <translation>Zmień nazwę...</translation>
-    </message>
-    <message>
-        <source>Open chat in new window</source>
-        <translation>Otwórz rozmowę w nowym oknie</translation>
-    </message>
-    <message>
-        <source>Remove chat from this window</source>
-        <translation>Usuń rozmowę z tego okna</translation>
-    </message>
-    <message>
-        <source>Quit conference</source>
-        <comment>Menu to quit a conference</comment>
-        <translation>Opuść grupę</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n user(s) in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>
-            <numerusform>%n użytkownik na czacie</numerusform>
-            <numerusform>%n użytkowników na czacie</numerusform>
-            <numerusform>%n użytkowników na czacie</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>New Message</source>
-        <translation>Nowa Wiadomość</translation>
-    </message>
-    <message>
-        <source>Online</source>
-        <translation>Online</translation>
     </message>
 </context>
 <context>
