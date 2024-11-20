@@ -2200,7 +2200,7 @@ bool Settings::getEnableConferencesColor() const
  *
  * @note If basename is "profile", settings will be saved in profile.ini
  */
-void Settings::createPersonal(const QString& basename) const
+void Settings::createPersonal(const Paths& paths, const QString& basename)
 {
     QMutexLocker<QRecursiveMutex> locker{&bigLock};
 

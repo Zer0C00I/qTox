@@ -141,7 +141,7 @@ public:
 
     Paths& getPaths();
     void createSettingsDir();
-    void createPersonal(const QString& basename) const;
+    static void createPersonal(const Paths& paths, const QString& basename);
 
     void savePersonal();
 

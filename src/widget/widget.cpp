@@ -282,7 +282,8 @@ void Widget::init()
     // Disable some widgets until we're connected to the DHT
     ui->statusButton->setEnabled(false);
 
-    style.setThemeColor(settings, settings.getThemeColor());
+    style.setThemeColor(settings.getThemeColor(), settings.getThemeColor());
+    const QString getImagePath(const QString& filename, const Settings& settings);
 
     CoreFile* coreFile = core->getCoreFile();
     filesForm = new FilesForm(*coreFile, settings, style, *messageBoxManager, *friendList);

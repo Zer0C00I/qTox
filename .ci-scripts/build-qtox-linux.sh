@@ -18,7 +18,7 @@
 set -euo pipefail
 
 usage() {
-  echo "$0 [--minimal|--full] --build-type [Debug|Release]"
+  echo "$0 [--minimal|--full] --build-type [Debug|Release] [--with-gui-tests] [--sanitize] [--tidy]"
   echo "Build script to build/test qtox from a CI environment."
   echo "--minimal or --full are required, --build-type is required."
 }
@@ -45,6 +45,10 @@ while (($# > 0)); do
       BUILD_TYPE="$2"
       shift 2
       ;;
+    --with-gui-tests)
+      GUI_TESTS=1
+      shift
+      ;;
     --help | -h)
       usage
       exit 1
@@ -69,17 +73,19 @@ if [ -z "${BUILD_TYPE+x}" ]; then
   exit 1
 fi
 
-SANITIZE_ARGS=()
+CMAKE_ARGS=()
 if [ ! -z "${SANITIZE+x}" ]; then
-  SANITIZE_ARGS+=("-DASAN=ON")
+  CMAKE_ARGS+=("-DASAN=ON")
+fi
+
+if [ ! -z "${GUI_TESTS+x}" ]; then
+  CMAKE_ARGS+=("-DGUI_TESTS=ON")
 fi
 
 if [ ! -z "${TIDY+x}" ]; then
   export CXX=clang++
   export CC=clang
-  COMPILE_COMMANDS=("-DCMAKE_EXPORT_COMPILE_COMMANDS=ON")
-else
-  COMPILE_COMMANDS=()
+  CMAKE_ARGS+=("-DCMAKE_EXPORT_COMPILE_COMMANDS=ON")
 fi
 
 SRCDIR=/qtox
@@ -93,8 +99,7 @@ if [ "$MINIMAL" -eq 1 ]; then
     -DSTRICT_OPTIONS=ON \
     -DSPELL_CHECK=OFF \
     -GNinja \
-    "${COMPILE_COMMANDS[@]}" \
-    "${SANITIZE_ARGS[@]}"
+    "${CMAKE_ARGS[@]}"
 else
   cmake "$SRCDIR" \
     -DCMAKE_BUILD_TYPE="$BUILD_TYPE" \
@@ -103,8 +108,7 @@ else
     -DCODE_COVERAGE=ON \
     -DDESKTOP_NOTIFICATIONS=ON \
     -GNinja \
-    "${COMPILE_COMMANDS[@]}" \
-    "${SANITIZE_ARGS[@]}"
+    "${CMAKE_ARGS[@]}"
 fi
 
 cmake --build .

@@ -153,7 +153,7 @@ int Nexus::showLogin(const QString& profileName)
     delete profile;
     profile = nullptr;
 
-    LoginScreen loginScreen{settings, *style, profileName};
+    LoginScreen loginScreen{settings.getPaths(), *style, settings.getThemeColor(), profileName};
     connectLoginScreen(loginScreen);
 
     QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);

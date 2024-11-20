@@ -3,15 +3,14 @@
  * Copyright © 2024 The TokTok team.
  */
 
-
 #pragma once
 
 #include <QDialog>
 #include <QShortcut>
 #include <QToolButton>
 
+class Paths;
 class Profile;
-class Settings;
 class Style;
 
 namespace Ui {
@@ -23,13 +22,12 @@ class LoginScreen : public QDialog
     Q_OBJECT
 
 public:
-    LoginScreen(Settings& settings, Style& style, const QString& initialProfileName = QString(),
-                QWidget* parent = nullptr);
+    LoginScreen(Paths& paths, Style& style, int themeColor,
+                const QString& initialProfileName = QString(), QWidget* parent = nullptr);
     ~LoginScreen();
     bool event(QEvent* event) final;
 
 signals:
-
     void windowStateChanged(Qt::WindowStates states);
     void autoLoginChanged(bool state);
     void createNewProfile(QString name, const QString& pass);
@@ -66,5 +64,5 @@ private:
 private:
     Ui::LoginScreen* ui;
     QShortcut quitShortcut;
-    Settings& settings;
+    Paths& paths;
 };

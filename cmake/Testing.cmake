@@ -26,6 +26,8 @@ endfunction()
 add_subdirectory(test/mock)
 add_subdirectory(test/dbutility)
 
+set(TEST_RESOURCES test/resources/test_data.qrc ${${PROJECT_NAME}_RESOURCES})
+
 auto_test(core core "${${PROJECT_NAME}_RESOURCES}" "mock_library")
 auto_test(core chatid "" "")
 auto_test(core toxid "" "")
@@ -50,6 +52,14 @@ auto_test(model exiftransform "" "")
 auto_test(model notificationgenerator "" "mock_library")
 auto_test(widget filesform "" "")
 auto_test(widget/form/settings generalform "" "")
+
+# GUI tests, run only when requested using the offscreen platform.
+# These are heavily dependent on specific Qt versions to be pixel-perfect, so
+# if they fail with new versions, it's not necessarily a bug.
+# TODO(iphydf): Add an easier way to regenerate golden images.
+if (GUI_TESTS)
+  auto_test(widget loginscreen "${TEST_RESOURCES}" "")
+endif()
 
 if (UNIX)
   auto_test(platform posixsignalnotifier "" "")

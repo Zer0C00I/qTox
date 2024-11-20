@@ -327,7 +327,7 @@ void UserInterfaceForm::on_cbShowIdenticons_stateChanged()
 void UserInterfaceForm::on_themeColorCBox_currentIndexChanged(int index)
 {
     settings.setThemeColor(index);
-    style.setThemeColor(settings, index);
+    style.setThemeColor(settings.getThemeColor(), index);
     style.applyTheme();
 }
 

@@ -6,18 +6,18 @@
 #pragma once
 
 #include <QWidget>
-class Settings;
+class Paths;
 
 class ProfileImporter : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit ProfileImporter(Settings& settings, QWidget* parent = nullptr);
+    explicit ProfileImporter(Paths& paths, QWidget* parent = nullptr);
     bool importProfile(const QString& path);
     bool importProfile();
 
 private:
     bool askQuestion(QString title, QString message);
-    Settings& settings;
+    Paths& paths;
 };

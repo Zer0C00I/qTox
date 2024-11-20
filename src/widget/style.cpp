@@ -74,17 +74,18 @@ struct ThemeNameColor
     QString name;
     QColor color;
 };
-const QList<ThemeNameColor> themeNameColors =
-    {{MainTheme::Light, QObject::tr("Default"), QColor()},
-     {MainTheme::Light, QObject::tr("Blue"), QColor("#004aa4")},
-     {MainTheme::Light, QObject::tr("Olive"), QColor("#97ba00")},
-     {MainTheme::Light, QObject::tr("Red"), QColor("#c23716")},
-     {MainTheme::Light, QObject::tr("Violet"), QColor("#4617b5")},
-     {MainTheme::Dark, QObject::tr("Dark"), QColor()},
-     {MainTheme::Dark, QObject::tr("Dark blue"), QColor("#00336d")},
-     {MainTheme::Dark, QObject::tr("Dark olive"), QColor("#4d5f00")},
-     {MainTheme::Dark, QObject::tr("Dark red"), QColor("#7a210d")},
-     {MainTheme::Dark, QObject::tr("Dark violet"), QColor("#280d6c")}};
+const QList<ThemeNameColor> themeNameColors = {
+    {MainTheme::Light, QObject::tr("Default"), QColor()},
+    {MainTheme::Light, QObject::tr("Blue"), QColor("#004aa4")},
+    {MainTheme::Light, QObject::tr("Olive"), QColor("#97ba00")},
+    {MainTheme::Light, QObject::tr("Red"), QColor("#c23716")},
+    {MainTheme::Light, QObject::tr("Violet"), QColor("#4617b5")},
+    {MainTheme::Dark, QObject::tr("Dark"), QColor()},
+    {MainTheme::Dark, QObject::tr("Dark blue"), QColor("#00336d")},
+    {MainTheme::Dark, QObject::tr("Dark olive"), QColor("#4d5f00")},
+    {MainTheme::Dark, QObject::tr("Dark red"), QColor("#7a210d")},
+    {MainTheme::Dark, QObject::tr("Dark violet"), QColor("#280d6c")},
+};
 
 using ColorPalette = Style::ColorPalette;
 const QMap<ColorPalette, QString> aliasColors = {
@@ -128,7 +129,7 @@ QString Style::getThemeName()
     return QStringLiteral("default");
 }
 
-QString Style::getThemeFolder(Settings& settings)
+QString Style::getThemeFolder(int themeColor)
 {
     const QString themeName = getThemeName();
     const QString themeFolder = ThemeSubFolder % themeName;
@@ -137,15 +138,21 @@ QString Style::getThemeFolder(Settings& settings)
 
     // No themes available, fallback to builtin
     if (fullPath.isEmpty()) {
-        return getThemePath(settings);
+        return getThemePath(themeColor);
     }
 
     return fullPath % QDir::separator();
 }
 
-const QString Style::getStylesheet(const QString& filename, Settings& settings, const QFont& baseFont)
+const QString Style::getStylesheet(const QString& filename, const Settings& settings,
+                                   const QFont& baseFont)
 {
-    const QString fullPath = getThemeFolder(settings) + filename;
+    return getStylesheet(filename, settings.getThemeColor(), baseFont);
+}
+
+const QString Style::getStylesheet(const QString& filename, int themeColor, const QFont& baseFont)
+{
+    const QString fullPath = getThemeFolder(themeColor) + filename;
     const std::pair<const QString, const QFont> cacheKey(fullPath, baseFont);
     auto it = stylesheetsCache.find(cacheKey);
     if (it != stylesheetsCache.end()) {
@@ -153,14 +160,19 @@ const QString Style::getStylesheet(const QString& filename, Settings& settings, 
         return it->second;
     }
     // cache miss, new styleSheet, read it from file and add to cache
-    const QString newStylesheet = resolve(filename, settings, baseFont);
+    const QString newStylesheet = resolve(filename, themeColor, baseFont);
     stylesheetsCache.insert(std::make_pair(cacheKey, newStylesheet));
     return newStylesheet;
 }
 
-const QString Style::getImagePath(const QString& filename, Settings& settings)
+const QString Style::getImagePath(const QString& filename, const Settings& settings)
 {
-    QString fullPath = getThemeFolder(settings) + filename;
+    return getImagePath(filename, settings.getThemeColor());
+}
+
+const QString Style::getImagePath(const QString& filename, int themeColor)
+{
+    QString fullPath = getThemeFolder(themeColor) + filename;
 
     // search for image in cache
     if (existingImagesCache.contains(fullPath)) {
@@ -174,7 +186,7 @@ const QString Style::getImagePath(const QString& filename, Settings& settings)
     } else {
         qWarning() << "Failed to open file (using defaults):" << fullPath;
 
-        fullPath = getThemePath(settings) % filename;
+        fullPath = getThemePath(themeColor) % filename;
 
         if (QFileInfo::exists(fullPath)) {
             return fullPath;
@@ -210,9 +222,9 @@ QFont Style::getFont(Font font)
     return fonts.at(font);
 }
 
-const QString Style::resolve(const QString& filename, Settings& settings, const QFont& baseFont)
+const QString Style::resolve(const QString& filename, int themeColor, const QFont& baseFont)
 {
-    QString themePath = getThemeFolder(settings);
+    QString themePath = getThemeFolder(themeColor);
     QString fullPath = themePath + filename;
     QString qss;
 
@@ -222,7 +234,7 @@ const QString Style::resolve(const QString& filename, Settings& settings, const 
     } else {
         qWarning() << "Failed to open file:" << fullPath;
 
-        fullPath = getThemePath(settings);
+        fullPath = getThemePath(themeColor);
         QFile defaultFile{fullPath};
 
         if (defaultFile.open(QFile::ReadOnly | QFile::Text)) {
@@ -234,7 +246,7 @@ const QString Style::resolve(const QString& filename, Settings& settings, const 
     }
 
     if (palette.isEmpty()) {
-        initPalette(settings);
+        initPalette(themeColor);
     }
 
     if (dictColor.isEmpty()) {
@@ -242,16 +254,17 @@ const QString Style::resolve(const QString& filename, Settings& settings, const 
     }
 
     if (dictFont.isEmpty()) {
-        dictFont = {{"@baseFont", QString::fromUtf8("'%1' %2px")
-                                      .arg(baseFont.family())
-                                      .arg(QFontInfo(baseFont).pixelSize())},
-                    {"@extraBig", qssifyFont(Style::getFont(Font::ExtraBig))},
-                    {"@big", qssifyFont(Style::getFont(Font::Big))},
-                    {"@bigBold", qssifyFont(Style::getFont(Font::BigBold))},
-                    {"@medium", qssifyFont(Style::getFont(Font::Medium))},
-                    {"@mediumBold", qssifyFont(Style::getFont(Font::MediumBold))},
-                    {"@small", qssifyFont(Style::getFont(Font::Small))},
-                    {"@smallLight", qssifyFont(Style::getFont(Font::SmallLight))}};
+        dictFont = {
+            {"@baseFont",
+             QString::fromUtf8("'%1' %2px").arg(baseFont.family()).arg(QFontInfo(baseFont).pixelSize())},
+            {"@extraBig", qssifyFont(Style::getFont(Font::ExtraBig))},
+            {"@big", qssifyFont(Style::getFont(Font::Big))},
+            {"@bigBold", qssifyFont(Style::getFont(Font::BigBold))},
+            {"@medium", qssifyFont(Style::getFont(Font::Medium))},
+            {"@mediumBold", qssifyFont(Style::getFont(Font::MediumBold))},
+            {"@small", qssifyFont(Style::getFont(Font::Small))},
+            {"@smallLight", qssifyFont(Style::getFont(Font::SmallLight))},
+        };
     }
 
     for (const QString& key : dictColor.keys()) {
@@ -278,14 +291,14 @@ const QString Style::resolve(const QString& filename, Settings& settings, const 
         path.remove(QStringLiteral("@getImagePath("));
         path.chop(1);
 
-        QString fullImagePath = getThemeFolder(settings) + path;
+        QString fullImagePath = getThemeFolder(themeColor) + path;
         // image not in cache
         if (!existingImagesCache.contains(fullPath)) {
             if (QFileInfo::exists(fullImagePath)) {
                 existingImagesCache << fullImagePath;
             } else {
                 qWarning() << "Failed to open file (using defaults):" << fullImagePath;
-                fullImagePath = getThemePath(settings) % path;
+                fullImagePath = getThemePath(themeColor) % path;
             }
         }
 
@@ -309,12 +322,12 @@ void Style::repolish(QWidget* w)
     }
 }
 
-void Style::setThemeColor(Settings& settings, int color)
+void Style::setThemeColor(int themeColor, int color)
 {
     stylesheetsCache.clear(); // clear stylesheet cache which includes color info
     palette.clear();
     dictColor.clear();
-    initPalette(settings);
+    initPalette(themeColor);
     initDictColor();
     if (color < 0 || color >= themeNameColors.size())
         setThemeColor(QColor());
@@ -370,9 +383,9 @@ QPixmap Style::scaleSvgImage(const QString& path, uint32_t width, uint32_t heigh
     return pixmap;
 }
 
-void Style::initPalette(Settings& settings)
+void Style::initPalette(int themeColor)
 {
-    QSettings colourSettings(getThemePath(settings) % "palette.ini", QSettings::IniFormat);
+    QSettings colourSettings(getThemePath(themeColor) % "palette.ini", QSettings::IniFormat);
 
     auto keys = aliasColors.keys();
 
@@ -405,10 +418,9 @@ void Style::initDictColor()
                  {"@selectText", Style::getColor(ColorPalette::SelectText).name()}};
 }
 
-QString Style::getThemePath(Settings& settings)
+QString Style::getThemePath(int themeColor)
 {
-    const int num = settings.getThemeColor();
-    if (themeNameColors[num].type == MainTheme::Dark) {
+    if (themeNameColors[themeColor].type == MainTheme::Dark) {
         return BuiltinThemeDarkPath;
     }
 

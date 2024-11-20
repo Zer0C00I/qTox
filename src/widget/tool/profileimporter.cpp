@@ -11,7 +11,7 @@
 #include <QPushButton>
 
 #include "src/core/core.h"
-#include "src/persistence/settings.h"
+#include "src/persistence/paths.h"
 
 /**
  * @class ProfileImporter
@@ -20,10 +20,9 @@
  * consequently it can't use @a GUI class. Therefore it should use QMessageBox
  * to create dialog forms.
  */
-
-ProfileImporter::ProfileImporter(Settings& settings_, QWidget* parent)
+ProfileImporter::ProfileImporter(Paths& paths_, QWidget* parent)
     : QWidget(parent)
-    , settings{settings_}
+    , paths{paths_}
 {
 }
 
@@ -92,7 +91,7 @@ bool ProfileImporter::importProfile(const QString& path)
         return false; // ingore importing non-tox file
     }
 
-    QString settingsPath = settings.getPaths().getSettingsDirPath();
+    QString settingsPath = paths.getSettingsDirPath();
     QString profilePath = QDir(settingsPath).filePath(profile + Core::TOX_EXT);
 
     if (QFileInfo(profilePath).exists()) {

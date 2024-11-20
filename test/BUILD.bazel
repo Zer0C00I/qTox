@@ -1,5 +1,13 @@
 load("@rules_cc//cc:defs.bzl", "cc_library")
-load("//third_party/qt:build_defs.bzl", "qt_moc", "qt_test")
+load("//third_party/qt:build_defs.bzl", "qt_moc", "qt_rcc", "qt_test")
+
+qt_rcc(
+    name = "test_data",
+    testonly = True,
+    srcs = ["resources/test_data.qrc"],
+    data = glob(["resources/**/*.png"]),
+    tags = ["no-cross"],
+)
 
 COPTS = ["-Iqtox"] + select({
     "//tools/config:freebsd": [],
@@ -10,6 +18,7 @@ COPTS = ["-Iqtox"] + select({
 
 qt_moc(
     name = "mock_moc",
+    testonly = True,
     srcs = ["mock/include/mock/mockcoresettings.h"],
     mocopts = [
         "-Iqtox",
@@ -38,7 +47,11 @@ cc_library(
 
 cc_library(
     name = "mock",
-    srcs = [":mock_moc"] + glob(["mock/src/*.cpp"]),
+    testonly = True,
+    srcs = [
+        ":mock_moc",
+        ":test_data",
+    ] + glob(["mock/src/*.cpp"]),
     hdrs = glob(["mock/include/mock/*.h"]),
     copts = COPTS,
     includes = ["mock/include"],

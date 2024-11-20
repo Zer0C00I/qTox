@@ -46,6 +46,6 @@ bool ToxSave::toxSaveEventHandler(const QByteArray& eventData, void* userData)
  */
 bool ToxSave::handleToxSave(const QString& path)
 {
-    ProfileImporter importer(settings, parent);
+    ProfileImporter importer(settings.getPaths(), parent);
     return importer.importProfile(path);
 }

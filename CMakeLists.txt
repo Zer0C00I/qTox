@@ -20,6 +20,8 @@ option(ASAN "Compile with AddressSanitizer" OFF)
 option(TSAN "Compile with ThreadSanitizer" OFF)
 option(DESKTOP_NOTIFICATIONS "Use libnotify for desktop notifications" OFF)
 option(STRICT_OPTIONS "Error on compile warning, used by CI" OFF)
+option(GUI_TESTS
+       "Enable GUI rendering tests, likely tied to a specific Qt version" OFF)
 
 # process generated files if cmake >= 3.10
 if(POLICY CMP0071)

@@ -59,7 +59,7 @@ public:
     };
 
     static QStringList getThemeColorNames();
-    static QString getThemeFolder(Settings& settings);
+    static QString getThemeFolder(int themeColor);
     static QString getThemeName();
     static QFont getFont(Font font);
     static void repolish(QWidget* w);
@@ -67,16 +67,19 @@ public:
     static QPixmap scaleSvgImage(const QString& path, uint32_t width, uint32_t height);
 
     Style() = default;
-    const QString getStylesheet(const QString& filename, Settings& settings,
+    const QString getStylesheet(const QString& filename, const Settings& settings,
                                 const QFont& baseFont = QFont());
-    const QString getImagePath(const QString& filename, Settings& settings);
+    const QString getStylesheet(const QString& filename, int themeColor,
+                                const QFont& baseFont = QFont());
+    const QString getImagePath(const QString& filename, const Settings& settings);
+    const QString getImagePath(const QString& filename, int themeColor);
     QColor getColor(ColorPalette entry);
-    const QString resolve(const QString& filename, Settings& settings, const QFont& baseFont = QFont());
-    void setThemeColor(Settings& settings, int color);
+    const QString resolve(const QString& filename, int themeColor, const QFont& baseFont = QFont());
+    void setThemeColor(int themeColor, int color);
     void setThemeColor(const QColor& color);
-    void initPalette(Settings& settings);
+    void initPalette(int themeColor);
     void initDictColor();
-    static QString getThemePath(Settings& settings);
+    static QString getThemePath(int themeColor);
 
 signals:
     void themeReload();

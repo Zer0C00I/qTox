@@ -357,7 +357,7 @@ Profile* Profile::createProfile(const QString& name, const QString& password, Se
         return nullptr;
     }
 
-    settings.createPersonal(name);
+    Settings::createPersonal(paths, name);
     Profile* p = new Profile(name, std::move(tmpKey), paths, settings);
 
     constexpr bool isNewProfile = true;
@@ -387,9 +387,9 @@ Profile::~Profile()
  * @param extension Raw extension, e.g. "jpeg" not ".jpeg".
  * @return Vector of filenames.
  */
-QStringList Profile::getFilesByExt(QString extension, Settings& settings)
+QStringList Profile::getFilesByExt(QString extension, Paths& paths)
 {
-    QDir dir(settings.getPaths().getSettingsDirPath());
+    QDir dir(paths.getSettingsDirPath());
     QStringList out;
     dir.setFilter(QDir::Files | QDir::NoDotAndDotDot);
     dir.setNameFilters(QStringList("*." + extension));
@@ -406,13 +406,13 @@ QStringList Profile::getFilesByExt(QString extension, Settings& settings)
  * @brief Scan for profile, automatically importing them if needed.
  * @warning NOT thread-safe.
  */
-const QStringList Profile::getAllProfileNames(Settings& settings)
+const QStringList Profile::getAllProfileNames(Paths& paths)
 {
     profiles.clear();
-    QStringList toxfiles = getFilesByExt("tox", settings), inifiles = getFilesByExt("ini", settings);
+    QStringList toxfiles = getFilesByExt("tox", paths), inifiles = getFilesByExt("ini", paths);
     for (const QString& toxfile : toxfiles) {
         if (!inifiles.contains(toxfile)) {
-            settings.createPersonal(toxfile);
+            Settings::createPersonal(paths, toxfile);
         }
 
         profiles.append(toxfile);

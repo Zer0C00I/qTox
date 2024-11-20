@@ -62,7 +62,7 @@ public:
 
     bool rename(QString newName);
 
-    static const QStringList getAllProfileNames(Settings& settings);
+    static const QStringList getAllProfileNames(Paths& paths);
 
     static bool exists(QString name, Paths& paths);
     static bool isEncrypted(QString name, Paths& paths);
@@ -96,7 +96,7 @@ private slots:
 private:
     Profile(const QString& name_, std::unique_ptr<ToxEncrypt> passkey_, Paths& paths_,
             Settings& settings_);
-    static QStringList getFilesByExt(QString extension, Settings& settings);
+    static QStringList getFilesByExt(QString extension, Paths& paths);
     QString avatarPath(const ToxPk& owner, bool forceUnencrypted = false);
     bool saveToxSave(QByteArray data);
     void initCore(const QByteArray& toxsave, Settings& s, bool isNewProfile,
