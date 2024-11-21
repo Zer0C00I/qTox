@@ -53,7 +53,7 @@ LoginScreen::LoginScreen(Paths& paths_, Style& style, int themeColor,
     connect(ui->importButton, &QPushButton::clicked, this, &LoginScreen::onImportProfile);
 
     reset(initialProfileName);
-    setStyleSheet(style.getStylesheet("loginScreen/loginScreen.css", themeColor));
+    setStyleSheet(style.getStylesheet("loginScreen/loginScreen.qss", themeColor));
 
     retranslateUi();
     Translator::registerHandler(std::bind(&LoginScreen::retranslateUi, this), this);
