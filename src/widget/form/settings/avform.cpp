@@ -335,7 +335,7 @@ void AVForm::fillScreenModesComboBox()
     for (int i = 0; i < videoModes.size(); ++i) {
         VideoMode mode = videoModes[i];
         std::string pixelFormat = CameraDevice::getPixelFormatString(mode.pixel_format).toStdString();
-        qDebug("%dx%d+%d,%d FPS: %f, pixel format: %s\n", mode.width, mode.height, mode.x, mode.y,
+        qDebug("%dx%d+%d,%d FPS: %f, pixel format: %s", mode.width, mode.height, mode.x, mode.y,
                static_cast<double>(mode.FPS), pixelFormat.c_str());
 
         QString name;
