@@ -131,7 +131,7 @@ void CoreFile::sendFile(uint32_t friendId, QString filename, QString filePath, l
         emit fileSendFailed(friendId, fileName.getQString());
         return;
     }
-    qDebug() << QString("sendFile: Created file sender %1 with friend %2").arg(fileNum).arg(friendId);
+    qDebug("sendFile: Created file sender %d with friend %d", fileNum, friendId);
 
     ToxFile file{fileNum,
                  friendId,
@@ -147,7 +147,7 @@ void CoreFile::sendFile(uint32_t friendId, QString filename, QString filePath, l
         return;
     }
     if (!file.open(false)) {
-        qWarning() << QString("sendFile: Can't open file, error: %1").arg(file.file->errorString());
+        qWarning() << "sendFile: Can't open file, error:" << file.file->errorString();
     }
 
     addFile(friendId, fileNum, file);
@@ -326,7 +326,7 @@ void CoreFile::onFileReceiveCallback(Tox* tox, uint32_t friendId, uint32_t fileI
 
     if (kind == TOX_FILE_KIND_AVATAR) {
         if (!filesize) {
-            qDebug() << QString("Received empty avatar request %1:%2").arg(friendId).arg(fileId);
+            qDebug("Received empty avatar request %d:%d", friendId, fileId);
             // Avatars of size 0 means explicitely no avatar
             Tox_Err_File_Control err;
             tox_file_control(tox, friendId, fileId, TOX_FILE_CONTROL_CANCEL, &err);
@@ -335,10 +335,10 @@ void CoreFile::onFileReceiveCallback(Tox* tox, uint32_t friendId, uint32_t fileI
             return;
         }
         if (!ToxClientStandards::IsValidAvatarSize(filesize)) {
-            qWarning() << QString("Received avatar request from %1 with size %2.").arg(friendId).arg(filesize)
-                              + QString(
-                                    " The max size allowed for avatars is %3. Cancelling transfer.")
-                                    .arg(ToxClientStandards::MaxAvatarSize);
+            qWarning("Received avatar request from %d with size %lu."
+                     " The max size allowed for avatars is %lu. Cancelling transfer.",
+                     friendId, static_cast<unsigned long>(filesize),
+                     static_cast<unsigned long>(ToxClientStandards::MaxAvatarSize));
             Tox_Err_File_Control err;
             tox_file_control(tox, friendId, fileId, TOX_FILE_CONTROL_CANCEL, &err);
             PARSE_ERR(err);
@@ -358,14 +358,14 @@ void CoreFile::onFileReceiveCallback(Tox* tox, uint32_t friendId, uint32_t fileI
 #ifdef Q_OS_WIN
     const auto cleanFileName = CoreFile::getCleanFileName(filename.getQString());
     if (cleanFileName != filename.getQString()) {
-        qDebug() << QStringLiteral("Cleaned filename");
+        qDebug() << "Cleaned filename";
         filename = ToxString(cleanFileName);
         emit coreFile->fileNameChanged(friendPk);
     } else {
-        qDebug() << QStringLiteral("filename already clean");
+        qDebug() << "filename already clean";
     }
 #endif
-    qDebug() << QString("Received file request %1:%2 kind %3").arg(friendId).arg(fileId).arg(kind);
+    qDebug("Received file request %d:%d kind %d", friendId, fileId, kind);
 
     ToxFile file{fileId, friendId, filename.getQString(), "", filesize, ToxFile::RECEIVING};
     file.fileKind = kind;
@@ -387,9 +387,7 @@ void CoreFile::handleAvatarOffer(uint32_t friendId, uint32_t fileId, bool accept
 {
     if (!accept) {
         // If it's an avatar but we already have it cached, cancel
-        qDebug() << QString("Received avatar request %1:%2. Rejected since it is in cache.")
-                        .arg(friendId)
-                        .arg(fileId);
+        qDebug("Received avatar request %d:%d. Rejected since it is in cache.", friendId, fileId);
         Tox_Err_File_Control err;
         tox_file_control(tox, friendId, fileId, TOX_FILE_CONTROL_CANCEL, &err);
         PARSE_ERR(err);
@@ -402,7 +400,7 @@ void CoreFile::handleAvatarOffer(uint32_t friendId, uint32_t fileId, bool accept
         return;
     }
     // It's an avatar and we don't have it, autoaccept the transfer
-    qDebug() << QString("Received avatar request %1:%2. Accepted.").arg(friendId).arg(fileId);
+    qDebug("Received avatar request %d:%d. Accepted.", friendId, fileId);
 
     ToxFile file{fileId, friendId, "<avatar>", "", filesize, ToxFile::RECEIVING};
     file.fileKind = TOX_FILE_KIND_AVATAR;

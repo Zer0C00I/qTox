@@ -243,7 +243,7 @@ bool CoreAV::answerCall(uint32_t friendNum, bool video)
     QWriteLocker locker{&callsLock};
     QMutexLocker<QRecursiveMutex> coreLocker{&coreLock};
 
-    qDebug() << QString("Answering call %1").arg(friendNum);
+    qDebug() << "Answering call" << friendNum;
     auto it = calls.find(friendNum);
     assert(it != calls.end());
     Toxav_Err_Answer err;
@@ -267,7 +267,7 @@ bool CoreAV::startCall(uint32_t friendNum, bool video)
     QWriteLocker locker{&callsLock};
     QMutexLocker<QRecursiveMutex> coreLocker{&coreLock};
 
-    qDebug() << QString("Starting call with %1").arg(friendNum);
+    qDebug() << "Starting call with" << friendNum;
     auto it = calls.find(friendNum);
     if (it != calls.end()) {
         qWarning() << QString("Can't start call with %1, we're already in this call!").arg(friendNum);
@@ -297,7 +297,7 @@ bool CoreAV::cancelCall(uint32_t friendNum)
     QWriteLocker locker{&callsLock};
     QMutexLocker<QRecursiveMutex> coreLocker{&coreLock};
 
-    qDebug() << QString("Cancelling call with %1").arg(friendNum);
+    qDebug() << "Cancelling call with" << friendNum;
     Toxav_Err_Call_Control err;
     toxav_call_control(toxav.get(), friendNum, TOXAV_CALL_CONTROL_CANCEL, &err);
     if (!PARSE_ERR(err)) {
@@ -548,7 +548,7 @@ void CoreAV::joinConferenceCall(const Conference& conference)
 {
     QWriteLocker locker{&callsLock};
 
-    qDebug() << QString("Joining conference call %1").arg(conference.getId());
+    qDebug() << "Joining conference call" << conference.getId();
 
     // Audio backend must be set before starting a call
     assert(audio != nullptr);
@@ -575,7 +575,7 @@ void CoreAV::leaveConferenceCall(int conferenceNum)
 {
     QWriteLocker locker{&callsLock};
 
-    qDebug() << QString("Leaving conference call %1").arg(conferenceNum);
+    qDebug() << "Leaving conference call" << conferenceNum;
 
     conferenceCalls.erase(conferenceNum);
 }
@@ -744,7 +744,7 @@ void CoreAV::callCallback(ToxAV* toxav, uint32_t friendNum, bool audio, bool vid
         PARSE_ERR(err);
         return;
     }
-    qDebug() << QString("Received call invite from %1").arg(friendNum);
+    qDebug() << "Received call invite from" << friendNum;
 
     // We don't get a state callback when answering, so fill the state ourselves in advance
     int state = 0;

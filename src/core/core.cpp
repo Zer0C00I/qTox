@@ -513,12 +513,12 @@ void Core::onConferenceInvite(Tox* tox, uint32_t friendId, Tox_Conference_Type t
     const ConferenceInvite inviteInfo(friendId, type, data);
     switch (type) {
     case TOX_CONFERENCE_TYPE_TEXT:
-        qDebug() << QString("Text conference invite by %1").arg(friendId);
+        qDebug() << "Text conference invite by" << friendId;
         emit core->conferenceInviteReceived(inviteInfo);
         break;
 
     case TOX_CONFERENCE_TYPE_AV:
-        qDebug() << QString("AV conference invite by %1").arg(friendId);
+        qDebug() << "AV conference invite by" << friendId;
         emit core->conferenceInviteReceived(inviteInfo);
         break;
 
@@ -541,7 +541,7 @@ void Core::onConferencePeerListChange(Tox* tox, uint32_t conferenceId, void* vCo
 {
     std::ignore = tox;
     const auto core = static_cast<Core*>(vCore);
-    qDebug() << QString("Conference %1 peerlist changed").arg(conferenceId);
+    qDebug("Conference %d peerlist changed", conferenceId);
     // no saveRequest, this callback is called on every connection to conference peer, not just on brand new peers
     emit core->conferencePeerlistChanged(conferenceId);
 }
@@ -551,7 +551,7 @@ void Core::onConferencePeerNameChange(Tox* tox, uint32_t conferenceId, uint32_t 
 {
     std::ignore = tox;
     const auto newName = ToxString(name, length).getQString();
-    qDebug() << QString("Conference %1, peer %2, name changed to %3").arg(conferenceId).arg(peerId).arg(newName);
+    qDebug().nospace() << "Conference " << conferenceId << ", peer " << peerId << ", name " << newName;
     auto* core = static_cast<Core*>(vCore);
     auto peerPk = core->getConferencePeerPk(conferenceId, peerId);
     emit core->conferencePeerNameChanged(conferenceId, peerPk, newName);
@@ -1189,7 +1189,7 @@ uint32_t Core::joinConference(const ConferenceInvite& inviteInfo)
     uint32_t conferenceNum{std::numeric_limits<uint32_t>::max()};
     switch (confType) {
     case TOX_CONFERENCE_TYPE_TEXT: {
-        qDebug() << QString("Trying to accept invite for text conference sent by friend %1").arg(friendId);
+        qDebug() << "Trying to accept invite for text conference sent by friend" << friendId;
         Tox_Err_Conference_Join error;
         conferenceNum = tox_conference_join(tox.get(), friendId, cookie, cookieLength, &error);
         if (!PARSE_ERR(error)) {
@@ -1198,7 +1198,7 @@ uint32_t Core::joinConference(const ConferenceInvite& inviteInfo)
         break;
     }
     case TOX_CONFERENCE_TYPE_AV: {
-        qDebug() << QString("Trying to join AV conference invite sent by friend %1").arg(friendId);
+        qDebug() << "Trying to join AV conference invite sent by friend" << friendId;
         conferenceNum = toxav_join_av_groupchat(tox.get(), friendId, cookie, cookieLength,
                                                 CoreAV::conferenceCallCallback, this);
         break;

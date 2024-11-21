@@ -386,11 +386,11 @@ bool Settings::applyCommandLineOptions(const QCommandLineParser& parser)
 
     if (parser.isSet("I")) {
         enableIPv6 = IPv6Setting == ON;
-        qDebug() << QString("Setting IPv6 %1.").arg(IPv6Setting);
+        qDebug() << "Setting IPv6 to" << IPv6Setting;
     }
 
     if (parser.isSet("P")) {
-        qDebug() << QString("Setting proxy type to %1.").arg(proxySettings[0]);
+        qDebug() << "Setting proxy type to" << proxySettings[0];
 
         quint16 portNumber = 0;
         QString address = "";
@@ -416,9 +416,9 @@ bool Settings::applyCommandLineOptions(const QCommandLineParser& parser)
 
 
         proxyAddr = address;
-        qDebug() << QString("Setting proxy address to %1.").arg(address);
+        qDebug() << "Setting proxy address to" << address;
         proxyPort = portNumber;
-        qDebug() << QString("Setting port number to %1.").arg(portNumber);
+        qDebug() << "Setting port number to" << portNumber;
     }
 
     if (parser.isSet("U")) {
@@ -427,7 +427,7 @@ bool Settings::applyCommandLineOptions(const QCommandLineParser& parser)
             qDebug() << "Cannot use UDP with proxy; disable proxy explicitly with '-P none'.";
         } else {
             forceTCP = shouldForceTCP;
-            qDebug() << QString("Setting UDP %1.").arg(UDPSetting);
+            qDebug() << "Setting UDP" << UDPSetting;
         }
 
         // LANSetting == ON is caught by verifyProxySettings, the OFF check removes needless debug
@@ -447,7 +447,7 @@ bool Settings::applyCommandLineOptions(const QCommandLineParser& parser)
             qDebug() << "Cannot use LAN discovery without UDP; enable UDP explicitly with '-U on'.";
         } else {
             enableLanDiscovery = shouldEnableLAN;
-            qDebug() << QString("Setting LAN Discovery %1.").arg(LANSetting);
+            qDebug() << "Setting LAN Discovery" << LANSetting;
         }
     }
     return true;
