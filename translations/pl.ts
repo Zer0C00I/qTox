@@ -287,7 +287,7 @@ co może powodować problemy z rozmowami wideo.</translation>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation type="unfinished">Automatycznie akceptuj zaproszenia do grup</translation>
+        <translation>Automatycznie akceptuj zaproszenia do konferencji</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
@@ -834,7 +834,7 @@ więc możesz zapisać ten plik na systemie Windows.</translation>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished">Grupy</translation>
+        <translation>Konferencje</translation>
     </message>
     <message>
         <source>Create new conference</source>
@@ -842,7 +842,7 @@ więc możesz zapisać ten plik na systemie Windows.</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation type="unfinished">Zaproszenia do grup</translation>
+        <translation>Zaproszenia do konferencji</translation>
     </message>
 </context>
 <context>
@@ -906,7 +906,7 @@ więc możesz zapisać ten plik na systemie Windows.</translation>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation type="unfinished">Czat grupowy %1</translation>
+        <translation>Konferencja %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -1745,7 +1745,7 @@ Pamiętaj, aby dwukrotnie wprowadzić to samo hasło.</translation>
     </message>
     <message>
         <source>Conference</source>
-        <translation type="unfinished">Czat grupowy</translation>
+        <translation>Konferencja</translation>
     </message>
     <message>
         <source>Open conference management page</source>
@@ -2962,7 +2962,7 @@ To ID zawiera kod NoSpam (w kolorze niebieskim) oraz sumę kontrolną (w kolorze
     </message>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished">Grupy</translation>
+        <translation>Konferencje</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -2995,7 +2995,7 @@ To ID zawiera kod NoSpam (w kolorze niebieskim) oraz sumę kontrolną (w kolorze
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation type="unfinished">Grupa #%1</translation>
+        <translation>Konferencja #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>
