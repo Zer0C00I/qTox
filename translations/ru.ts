@@ -233,7 +233,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation type="unfinished">Автоматически принимать приглашения в групповой чат от этого контакта.</translation>
+        <translation>Автоматически принимать приглашения в конференции от этого контакта, если установлено.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -285,7 +285,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation type="unfinished">Автоматическое принятие приглашений в группы</translation>
+        <translation>Автоматическое принятие приглашений в конференции</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
@@ -828,15 +828,15 @@ so you can save the file on Windows.</source>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished">Группы</translation>
+        <translation>Конференции</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation type="unfinished">Создать новую группу</translation>
+        <translation>Создать новую конференцию</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation type="unfinished">Групповые приглашения</translation>
+        <translation>Приглашения в конференции</translation>
     </message>
 </context>
 <context>
@@ -867,7 +867,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Quit conference</source>
         <comment>Menu to quit a conference</comment>
-        <translation>Покинуть группу</translation>
+        <translation>Покинуть конференцию</translation>
     </message>
     <message>
         <source>Set title...</source>
@@ -899,7 +899,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation type="unfinished">Групповой чат %1</translation>
+        <translation>Конференция %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -1062,7 +1062,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invite to conference</source>
         <comment>Menu to invite a friend to a conference</comment>
-        <translation>Пригласить в группу</translation>
+        <translation>Пригласить в конференцию</translation>
     </message>
     <message>
         <source>Open chat in new window</source>
@@ -1074,11 +1074,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>To new conference</source>
-        <translation type="unfinished">В новую группу</translation>
+        <translation>В новую конференцию</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation type="unfinished">Пригласить в группу &apos;%1&apos;</translation>
+        <translation>Пригласить в конференцию &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1278,7 +1278,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
-        <translation type="unfinished">Отправлять сообщение в чат, когда пользователь вступает в группу, или покидает её</translation>
+        <translation>Отправлять сообщение в чат, когда пользователь вступает в конференцию, или покидает её</translation>
     </message>
 </context>
 <context>
@@ -1661,7 +1661,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation type="unfinished">Создать групповой чат</translation>
+        <translation>Создать конференцию</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1729,11 +1729,11 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Conference</source>
-        <translation type="unfinished">Групповой чат</translation>
+        <translation>Конференция</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation type="unfinished">Открыть страницу настройки группового чата</translation>
+        <translation>Открыть страницу управления конференцией</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -1854,7 +1854,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>New conference message</source>
-        <translation type="unfinished">Новое групповое сообщение</translation>
+        <translation>Новое сообщение в конференции</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
@@ -1867,11 +1867,11 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Conference invite received</source>
-        <translation type="unfinished">Получено приглашение в группу</translation>
+        <translation>Получено приглашение в конференцию</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
-        <translation type="unfinished">%1 приглашает вас вступить в группу.</translation>
+        <translation>%1 приглашает вас вступить в конференцию.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -1959,7 +1959,7 @@ Save format changes are possible, which may result in data loss.</source>
     </message>
     <message>
         <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation type="unfinished">Фильтруйте групповые сообщения через публичные ключи участников группы. Добавьте публичные ключи сюда, один на каждую строку.</translation>
+        <translation>Фильтруйте сообщения в конференции с помощью публичных ключей её участников. Добавьте публичные ключи сюда, один на каждую строку.</translation>
     </message>
 </context>
 <context>
@@ -2381,11 +2381,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>%1 has joined the conference</source>
-        <translation type="unfinished">%1 присоединился к группе</translation>
+        <translation>%1 присоединился к конференции</translation>
     </message>
     <message>
         <source>%1 has left the conference</source>
-        <translation type="unfinished">%1 покинул группу</translation>
+        <translation>%1 покинул конференцию</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
@@ -2482,11 +2482,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>You have joined the conference</source>
-        <translation type="unfinished">Вы вступили в группу</translation>
+        <translation>Вы вступили в конференцию</translation>
     </message>
     <message>
         <source>You have left the conference</source>
-        <translation type="unfinished">Вы покинули группу</translation>
+        <translation>Вы покинули конференцию</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
@@ -2774,7 +2774,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation type="unfinished">Поместить групповые чаты вверху контакт-листа</translation>
+        <translation>Поместить конференции наверху списка друзей</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode.</source>
@@ -2844,7 +2844,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation type="unfinished">Получать уведомления в групповых чатах только когда вас упоминают</translation>
+        <translation>Получать уведомления от конференций только когда вас упомянут</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -2864,17 +2864,17 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
-        <translation type="unfinished">Использовать цветные имена пользователей в групповых чатах</translation>
+        <translation>Использовать цветные имена пользователей в конференциях</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
-        <translation>Уведомлять о новых сообщениях из групповых чатов только при упоминаниях.</translation>
+        <translation>Уведомлять о новых сообщениях из конференций только при упоминаниях.</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
         <comment>toolTip for conference positioning</comment>
-        <translation>Если отмечено, групповые чаты будут помещены на верх списка друзей, в противном случае, они будут помещены под друзьями находящимися в сети.</translation>
+        <translation>Если отмечено, конференции будут размещаться наверху списка друзей, в противном случае, они будут размещены под друзьями, находящимися в сети.</translation>
     </message>
     <message>
         <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
@@ -2915,7 +2915,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation type="unfinished">Создать новую группу...</translation>
+        <translation>Создать новую конференцию...</translation>
     </message>
     <message>
         <source>Add new circle...</source>
@@ -2943,7 +2943,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished">Группы</translation>
+        <translation>Конференции</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -2976,7 +2976,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation type="unfinished">Групповой чат #%1</translation>
+        <translation>Конференция #%1</translation>
     </message>
     <message>
         <source>Show</source>
@@ -2991,7 +2991,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Conference invites</source>
         <comment>title of the window</comment>
-        <translation>Приглашения в группы</translation>
+        <translation>Приглашения в конференции</translation>
     </message>
     <message>
         <source>File transfers</source>
@@ -3031,10 +3031,10 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
-        <translation type="unfinished">
-            <numerusform>%n новое приглашение в группу</numerusform>
-            <numerusform>%n новых приглашений в группы</numerusform>
-            <numerusform>%n новых приглашений в группы</numerusform>
+        <translation>
+            <numerusform>%n новое приглашение в конференцию</numerusform>
+            <numerusform>%n новых приглашения в конференции</numerusform>
+            <numerusform>%n новых приглашений в конференции</numerusform>
         </translation>
     </message>
     <message>
