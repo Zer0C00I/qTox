@@ -118,7 +118,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: qTox-${{ github.sha }}.${{ matrix.arch }}.apk
-          path: _build/android-build//build/outputs/apk/release/android-build-release-signed.apk
+          path: _build/android-build/build/outputs/apk/release/android-build-release-signed.apk
       - name: Get tag name for Android release file name
         if: contains(github.ref, 'refs/tags/v')
         id: get_version
@@ -126,7 +126,7 @@ jobs:
       - name: Rename Android APK for release upload
         if: contains(github.ref, 'refs/tags/v')
         run: |
-          cp _build/android-build//build/outputs/apk/release/android-build-release-signed.apk qTox-${{ steps.get_version.outputs.VERSION }}.${{ matrix.arch }}.apk
+          cp _build/android-build/build/outputs/apk/release/android-build-release-signed.apk qTox-${{ steps.get_version.outputs.VERSION }}.${{ matrix.arch }}.apk
           sha256sum qTox-${{ steps.get_version.outputs.VERSION }}.${{ matrix.arch }}.apk > qTox-${{ steps.get_version.outputs.VERSION }}.${{ matrix.arch }}.apk.sha256
       - name: Upload to versioned release
         if: contains(github.ref, 'refs/tags/v')
@@ -139,7 +139,7 @@ jobs:
       - name: Rename Android APK for nightly upload
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: |
-          cp _build/android-build//build/outputs/apk/release/android-build-release-signed.apk qTox-nightly.${{ matrix.arch }}.apk
+          cp _build/android-build/build/outputs/apk/release/android-build-release-signed.apk qTox-nightly.${{ matrix.arch }}.apk
           sha256sum qTox-nightly.${{ matrix.arch }}.apk > qTox-nightly.${{ matrix.arch }}.apk.sha256
       - name: Upload to nightly release
         uses: ncipollo/release-action@v1

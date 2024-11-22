@@ -4,18 +4,20 @@
 
 set -e
 
-for i in "$@"; do
-  case $i in
-    --arch=*)
-      ARCH="${i#*=}"
-      shift
+while (($# > 0)); do
+  case $1 in
+    --arch)
+      ARCH="$2"
+      shift 2
       ;;
-    --build-type=*)
-      BUILD_TYPE="${i#*=}"
-      shift
+    --build-type)
+      BUILD_TYPE="$2"
+      shift 2
       ;;
-    *) ;;
-
+    *)
+      echo "Unexpected argument $1"
+      exit 1
+      ;;
   esac
 done
 
