@@ -5,7 +5,4 @@ exclude:
 restylers:
   - astyle:
       enabled: false
-  - prettier-json:
-      # TODO(iphydf): enable
-      enabled: false
   - "*"
