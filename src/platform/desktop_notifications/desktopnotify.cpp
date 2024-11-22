@@ -22,8 +22,15 @@ namespace {
 GdkPixbuf* convert(const QPixmap& pixmap)
 {
     const QImage image = pixmap.toImage();
-    return gdk_pixbuf_new_from_data(image.bits(), GDK_COLORSPACE_RGB, true, 8, image.width(),
-                                    image.height(), image.bytesPerLine(), nullptr, nullptr);
+    guchar* dataCopy = new guchar[image.sizeInBytes()];
+    std::copy(image.bits(), image.bits() + image.sizeInBytes(), dataCopy);
+    return gdk_pixbuf_new_from_data(
+        dataCopy, GDK_COLORSPACE_RGB, true, 8, image.width(), image.height(), image.bytesPerLine(),
+        [](guchar* data, gpointer user_data) {
+            std::ignore = user_data;
+            delete[] data;
+        },
+        nullptr);
 }
 
 } // namespace

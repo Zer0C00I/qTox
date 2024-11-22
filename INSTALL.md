@@ -50,7 +50,7 @@
 | [qrencode]    | >= 3.0.3  |                                                          |
 | [sqlcipher]   | >= 3.2.0  |                                                          |
 | [pkg-config]  | >= 0.28   |                                                          |
-| [snorenotify] | >= 0.7.0  | optional dependency                                      |
+| [libnotify]   | >= 0.7.9  | optional dependency                                      |
 
 ## Optional dependencies
 
@@ -95,9 +95,9 @@ Disabled if dependencies are missing during compilation.
 
 Disabled by default
 
-| Name          | Version  |
-| ------------- | -------- |
-| [snorenotify] | >= 0.7.0 |
+| Name        | Version  |
+| ----------- | -------- |
+| [libnotify] | >= 0.7.9 |
 
 To enable: `-DDESKTOP_NOTIFICATIONS=True`
 
@@ -471,5 +471,5 @@ Switches:
 [Qt]: https://www.qt.io/
 [toxcore]: https://github.com/TokTok/c-toxcore/
 [sonnet]: https://github.com/KDE/sonnet
-[snorenotify]: https://techbase.kde.org/Projects/Snorenotify
+[libnotify]: https://gitlab.gnome.org/GNOME/libnotify
 [sqlcipher]: https://github.com/sqlcipher/sqlcipher

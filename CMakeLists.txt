@@ -18,7 +18,7 @@ option(SPELL_CHECK "Enable spell cheching support" ON)
 option(SVGZ_ICON "Compress the SVG icon of qTox" ON)
 option(ASAN "Compile with AddressSanitizer" OFF)
 option(TSAN "Compile with ThreadSanitizer" OFF)
-option(DESKTOP_NOTIFICATIONS "Use snorenotify for desktop notifications" OFF)
+option(DESKTOP_NOTIFICATIONS "Use libnotify for desktop notifications" OFF)
 option(STRICT_OPTIONS "Error on compile warning, used by CI" OFF)
 
 # process generated files if cmake >= 3.10
