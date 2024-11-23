@@ -5,6 +5,8 @@ on:
     branches: ["master"]
   push:
     branches: ["master", "refs/tags/v*"]
+  release:
+    types: [released]
 
 # Cancel old PR builds when pushing new commits.
 concurrency:
