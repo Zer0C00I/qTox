@@ -17,7 +17,7 @@ option(PLATFORM_EXTENSIONS
        "Enable platform specific extensions, requires extra dependencies" ON)
 option(UPDATE_CHECK "Enable automatic update check" ON)
 option(USE_CCACHE "Use ccache when available" ON)
-option(SPELL_CHECK "Enable spell cheching support" ON)
+option(SPELL_CHECK "Enable spellcheck support" ON)
 option(SVGZ_ICON "Compress the SVG icon of qTox" ON)
 option(ASAN "Compile with AddressSanitizer" OFF)
 option(TSAN "Compile with ThreadSanitizer" OFF)
