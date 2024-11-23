@@ -302,8 +302,16 @@ jobs:
 
   build-osx-distributable:
     name: macOS distributable
-    runs-on: macos-13
     needs: update-nightly-tag
+    strategy:
+      matrix:
+        arch: [x86_64, arm64]
+        include:
+          - arch: x86_64
+            os: macos-13
+          - arch: arm64
+            os: macos-14
+    runs-on: ${{ matrix.os }}
     permissions:
       contents: write
     steps:
@@ -311,7 +319,7 @@ jobs:
       - name: Set up ccache
         uses: hendrikmuhs/ccache-action@v1.2
         with:
-          key: ${{ github.job }}
+          key: ${{ github.job }}-${{ matrix.arch }}
           append-timestamp: false
       - name: Fetch build scripts
         run: git clone --depth=1 https://github.com/TokTok/dockerfiles ".ci-scripts/dockerfiles"
@@ -322,20 +330,17 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ".ci-scripts/dockerfiles/local-deps"
-          key: ${{ runner.os }}-local-deps
+          key: ${{ runner.os }}-${{ matrix.arch }}-local-deps
       - name: Build dependencies
         if: steps.cache-deps.outputs.cache-hit != 'true'
-        run: ./.ci-scripts/build-osx-deps.sh
+        run: ./.ci-scripts/build-osx-deps.sh ${{ matrix.arch }}
       - name: Build qTox
-        run: ./.ci-scripts/build-qtox-macos.sh dist
+        run: ./.ci-scripts/build-qtox-macos.sh dist ${{ matrix.arch }}
       - name: Upload dmg
         uses: actions/upload-artifact@v4
         with:
-          name: qTox-${{ github.sha }}.dmg
+          name: qTox-${{ github.sha }}-${{ matrix.arch }}.dmg
           path: qTox.dmg
-      - name: Create shasum for versioned release
-        if: contains(github.ref, 'refs/tags/v')
-        run: sha256sum qTox.dmg > qTox.dmg.sha256
       - name: Upload to versioned release
         if: contains(github.ref, 'refs/tags/v')
         uses: ncipollo/release-action@v1
@@ -343,12 +348,12 @@ jobs:
           allowUpdates: true
           draft: true
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: "qTox.dmg,qTox.dmg.sha256"
+          artifacts: "qTox-${{ matrix.arch }}.dmg,qTox-${{ matrix.arch }}.dmg.sha256"
       - name: Rename artifact for nightly upload
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: |
-          cp qTox.dmg qTox-nightly.dmg
-          sha256sum qTox-nightly.dmg > qTox-nightly.dmg.sha256
+          cp qTox-${{ matrix.arch }}.dmg qTox-nightly-${{ matrix.arch }}.dmg
+          cp qTox-${{ matrix.arch }}.dmg.sha256 qTox-nightly-${{ matrix.arch }}.dmg.sha256
       - name: Upload to nightly release
         uses: ncipollo/release-action@v1
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
@@ -360,29 +365,33 @@ jobs:
           prerelease: true
           replacesArtifacts: true
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: "qTox-nightly.dmg,qTox-nightly.dmg.sha256"
+          artifacts: "qTox-nightly-${{ matrix.arch }}.dmg,qTox-nightly-${{ matrix.arch }}.dmg.sha256"
 
-  build-osx-users:
+  build-osx-user:
     name: macOS user
     if: github.event_name == 'pull_request'
-    runs-on: macos-13
+    strategy:
+      matrix:
+        arch: [x86_64]
+        include:
+          - arch: x86_64
+            os: macos-13
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
       - name: Set up ccache
         uses: hendrikmuhs/ccache-action@v1.2
         with:
-          key: ${{ github.job }}
+          key: ${{ github.job }}-${{ matrix.arch }}
           append-timestamp: false
       - name: Fetch build scripts
         run: git clone --depth=1 https://github.com/TokTok/dockerfiles ".ci-scripts/dockerfiles"
       - name: Homebrew
         run: brew bundle --file ./osx/Brewfile
       - name: Install toxcore
-        run: |
-          git clone --depth=1 https://github.com/TokTok/dockerfiles
-          dockerfiles/qtox/build_toxcore_linux.sh sudo
+        run: .ci-scripts/dockerfiles/qtox/build_toxcore_linux.sh sudo
       - name: Build qTox
-        run: ./.ci-scripts/build-qtox-macos.sh user
+        run: ./.ci-scripts/build-qtox-macos.sh user ${{ matrix.arch }}
 
   build-docs:
     name: Docs

@@ -6,7 +6,6 @@ brew "coreutils"
 brew "git"
 brew "libtool"
 brew "ninja"
-brew "pkgconfig"
 brew "yasm"
 
 brew "qt@6" # Qt sets a low compatibility version by default: https://doc.qt.io/qt-6/macos.html#target-platforms

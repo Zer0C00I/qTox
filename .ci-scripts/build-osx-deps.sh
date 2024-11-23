@@ -22,24 +22,26 @@ if [ ! -d "$SCRIPT_DIR/dockerfiles" ]; then
   git clone --depth=1 https://github.com/TokTok/dockerfiles "$SCRIPT_DIR/dockerfiles"
 fi
 
+ARCH="$1"
+
 install_deps() {
   for dep in "$@"; do
     mkdir -p _build-dep
     pushd _build-dep
-    "$SCRIPT_DIR/dockerfiles/qtox/$dep" --arch macos
+    "$SCRIPT_DIR/dockerfiles/qtox/$dep" --arch "macos-$ARCH"
     popd
     rm -rf _build-dep
   done
 }
 
 install_deps \
-    build_openssl.sh \
-    build_qrencode.sh \
-    build_libexif.sh \
-    build_sodium.sh \
-    build_openal.sh \
-    build_vpx.sh \
-    build_opus.sh \
-    build_ffmpeg.sh \
-    build_toxcore.sh \
-    build_sqlcipher.sh \
+  build_openssl.sh \
+  build_qrencode.sh \
+  build_libexif.sh \
+  build_sodium.sh \
+  build_openal.sh \
+  build_vpx.sh \
+  build_opus.sh \
+  build_ffmpeg.sh \
+  build_toxcore.sh \
+  build_sqlcipher.sh
