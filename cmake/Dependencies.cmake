@@ -37,9 +37,11 @@ add_dependency(
 
 include(CMakeParseArguments)
 
+set(TOXCORE_MINIMUM_VERSION "0.2.20")
+
 function(search_dependency pkg)
   set(options OPTIONAL STATIC_PACKAGE)
-  set(oneValueArgs PACKAGE LIBRARY FRAMEWORK HEADER)
+  set(oneValueArgs PACKAGE LIBRARY FRAMEWORK HEADER MINIMUM_VERSION)
   set(multiValueArgs)
   cmake_parse_arguments(arg "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
 
@@ -59,6 +61,10 @@ function(search_dependency pkg)
     if(${pkg}_LIBRARIES)
       set(${pkg}_FOUND TRUE)
     endif()
+  endif()
+
+  if(${pkg} MATCHES "TOXCORE" AND "${TOXCORE_VERSION}" VERSION_LESS "${arg_MINIMUM_VERSION}")
+    message(FATAL_ERROR "Minimum ${arg_PACKAGE} version is: ${arg_MINIMUM_VERSION}")
   endif()
 
   # Last, search for the library itself globally.
@@ -135,15 +141,15 @@ endif()
 
 # Try to find cmake toxcore libraries
 if(WIN32 OR ANDROID)
-  search_dependency(TOXCORE             PACKAGE toxcore          OPTIONAL STATIC_PACKAGE)
+  search_dependency(TOXCORE             PACKAGE toxcore          OPTIONAL STATIC_PACKAGE MINIMUM_VERSION ${TOXCORE_MINIMUM_VERSION})
 else()
-  search_dependency(TOXCORE             PACKAGE toxcore          OPTIONAL)
+  search_dependency(TOXCORE             PACKAGE toxcore          OPTIONAL MINIMUM_VERSION ${TOXCORE_MINIMUM_VERSION})
 endif()
 
 # If not found, use automake toxcore libraries
 # We only check for TOXCORE, because the other two are gone in 0.2.0.
 if (NOT TOXCORE_FOUND)
-  search_dependency(TOXCORE         PACKAGE libtoxcore)
+  search_dependency(TOXCORE         PACKAGE libtoxcore MINIMUM_VERSION ${TOXCORE_MINIMUM_VERSION})
   search_dependency(TOXAV           PACKAGE libtoxav)
 endif()
 
