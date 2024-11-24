@@ -1,0 +1,19 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "debug-default",
+      "binaryDir": "${sourceDir}/_build",
+      "generator": "Ninja",
+      "cacheVariables": {
+        "ASAN": true,
+        "DESKTOP_NOTIFICATIONS": true,
+        "SPELL_CHECK": true,
+        "STRICT_OPTIONS": true,
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_COMPILE_WARNING_AS_ERROR": true,
+        "CMAKE_EXPORT_COMPILE_COMMANDS": true
+      }
+    }
+  ]
+}

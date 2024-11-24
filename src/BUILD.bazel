@@ -177,8 +177,8 @@ cc_library(
     ),
     hdrs = glob(["**/*.h"]) + [":version"],
     copts = [
-        "-iquoteqtox",
-        "-iquote$(GENDIR)/qtox",
+        "-Iqtox",
+        "-I$(GENDIR)/qtox",
     ] + select({
         "//tools/config:freebsd": [],
         "//tools/config:linux": ["-fPIC"],
@@ -229,8 +229,8 @@ cc_library(
     name = "main",
     srcs = ["main.cpp"],
     copts = [
-        "-iquoteqtox",
-        "-iquote$(GENDIR)/qtox",
+        "-Iqtox",
+        "-I$(GENDIR)/qtox",
     ] + select({
         "//tools/config:freebsd": [],
         "//tools/config:linux": ["-fPIC"],
