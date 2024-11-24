@@ -359,6 +359,8 @@ void ConferenceForm::keyPressEvent(QKeyEvent* ev)
         onMicMuteToggle();
     }
 
+    // TODO(iphydf): This does nothing. Also, this whole function is never called.
+    // It should prevent tabbing out of the editor widget when tab-completing, but it doesn't.
     if (msgEdit->hasFocus())
         return;
 }

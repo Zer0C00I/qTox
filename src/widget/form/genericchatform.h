@@ -107,24 +107,15 @@ protected slots:
 
 private:
     void retranslateUi();
-    void addSystemDateMessage(const QDate& date);
     QDateTime getTime(const ChatLine::Ptr& chatLine) const;
 
 protected:
-    ChatMessage::Ptr createMessage(const ToxPk& author, const QString& message,
-                                   const QDateTime& datetime, bool isAction, bool isSent,
-                                   bool colorizeName = false);
     void adjustFileMenuPosition();
     void hideEvent(QHideEvent* event) override;
     void showEvent(QShowEvent* event) override;
     bool event(QEvent* event) final;
     void resizeEvent(QResizeEvent* event) final;
     bool eventFilter(QObject* object, QEvent* event) final;
-    bool searchInText(const QString& phrase, const ParameterSearch& parameter,
-                      SearchDirection direction);
-    std::pair<int, int> indexForSearchInLine(const QString& txt, const QString& phrase,
-                                             const ParameterSearch& parameter,
-                                             SearchDirection direction);
 
 protected:
     const Core& core;

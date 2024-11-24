@@ -150,7 +150,7 @@ ChatForm::ChatForm(Profile& profile_, Friend* chatFriend, IChatLog& chatLog_,
 
     contentLayout->insertWidget(3, imagePreview);
 
-    copyStatusAction = statusMessageMenu.addAction(QString(), this, SLOT(onCopyStatusMessage()));
+    copyStatusAction = statusMessageMenu.addAction(QString(), this, &ChatForm::onCopyStatusMessage);
 
     const CoreFile* coreFile = core.getCoreFile();
     connect(&profile, &Profile::friendAvatarChanged, this, &ChatForm::onAvatarChanged);
@@ -567,7 +567,7 @@ void ChatForm::onScreenshotClicked()
 {
     doScreenshot();
     // Give the window manager a moment to open the fullscreen grabber window
-    QTimer::singleShot(SCREENSHOT_GRABBER_OPENING_DELAY, this, SLOT(hideFileMenu()));
+    QTimer::singleShot(SCREENSHOT_GRABBER_OPENING_DELAY, this, &ChatForm::hideFileMenu);
 }
 
 void ChatForm::doScreenshot()

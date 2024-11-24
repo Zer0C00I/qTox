@@ -378,18 +378,18 @@ void Widget::init()
     connect(coreFile, &CoreFile::fileSendFailed, this, &Widget::dispatchFileSendFailed,
             Qt::QueuedConnection);
     // NOTE: We intentionally do not connect the fileUploadFinished and fileDownloadFinished signals
-    // because they are duplicates of fileTransferFinished NOTE: We don't hook up the
-    // fileNameChanged signal since it is only emitted before a fileReceiveRequest. We get the
-    // initial request with the sanitized name so there is no work for us to do
+    // because they are duplicates of fileTransferFinished.
+    // NOTE: We don't hook up the fileNameChanged signal since it is only emitted before a fileReceiveRequest.
+    // We get the initial request with the sanitized name so there is no work for us to do
 
     // keyboard shortcuts
     auto* const quitShortcut = new QShortcut(Qt::CTRL | Qt::Key_Q, this);
     connect(quitShortcut, &QShortcut::activated, qApp, &QApplication::quit);
-    new QShortcut(Qt::CTRL | Qt::SHIFT | Qt::Key_Tab, this, SLOT(previousChat()));
-    new QShortcut(Qt::CTRL | Qt::Key_Tab, this, SLOT(nextChat()));
-    new QShortcut(Qt::CTRL | Qt::Key_PageUp, this, SLOT(previousChat()));
-    new QShortcut(Qt::CTRL | Qt::Key_PageDown, this, SLOT(nextChat()));
-    new QShortcut(Qt::Key_F11, this, SLOT(toggleFullscreen()));
+    new QShortcut(Qt::CTRL | Qt::SHIFT | Qt::Key_Tab, this, this, &Widget::previousChat);
+    new QShortcut(Qt::CTRL | Qt::Key_Tab, this, this, &Widget::nextChat);
+    new QShortcut(Qt::CTRL | Qt::Key_PageUp, this, this, &Widget::previousChat);
+    new QShortcut(Qt::CTRL | Qt::Key_PageDown, this, this, &Widget::nextChat);
+    new QShortcut(Qt::Key_F11, this, this, &Widget::toggleFullscreen);
 
 #ifdef Q_OS_MAC
     QMenuBar* globalMenu = nexus.globalMenuBar;
@@ -1240,7 +1240,7 @@ void Widget::addFriend(uint32_t friendId, const ToxPk& friendPk)
     connect(widget, &FriendWidget::friendHistoryRemoved, friendForm, &ChatForm::clearChatArea);
     connect(widget, &FriendWidget::copyFriendIdToClipboard, this, &Widget::copyFriendIdToClipboard);
     connect(widget, &FriendWidget::contextMenuCalled, widget, &FriendWidget::onContextMenuCalled);
-    connect(widget, SIGNAL(removeFriend(const ToxPk&)), this, SLOT(removeFriend(const ToxPk&)));
+    connect(widget, &FriendWidget::removeFriend, this, qOverload<const ToxPk&>(&Widget::removeFriend));
 
     connect(&profile, &Profile::friendAvatarSet, widget, &FriendWidget::onAvatarSet);
     connect(&profile, &Profile::friendAvatarRemoved, widget, &FriendWidget::onAvatarRemoved);

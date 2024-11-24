@@ -118,11 +118,11 @@ ContentDialog::ContentDialog(const Core& core, Settings& settings_, Style& style
 
     reloadTheme();
 
-    new QShortcut(Qt::CTRL | Qt::Key_Q, this, SLOT(close()));
-    new QShortcut(Qt::CTRL | Qt::SHIFT | Qt::Key_Tab, this, SLOT(previousChat()));
-    new QShortcut(Qt::CTRL | Qt::Key_Tab, this, SLOT(nextChat()));
-    new QShortcut(Qt::CTRL | Qt::Key_PageUp, this, SLOT(previousChat()));
-    new QShortcut(Qt::CTRL | Qt::Key_PageDown, this, SLOT(nextChat()));
+    new QShortcut(Qt::CTRL | Qt::Key_Q, this, this, &ContentDialog::close);
+    new QShortcut(Qt::CTRL | Qt::SHIFT | Qt::Key_Tab, this, this, &ContentDialog::previousChat);
+    new QShortcut(Qt::CTRL | Qt::Key_Tab, this, this, &ContentDialog::nextChat);
+    new QShortcut(Qt::CTRL | Qt::Key_PageUp, this, this, &ContentDialog::previousChat);
+    new QShortcut(Qt::CTRL | Qt::Key_PageDown, this, this, &ContentDialog::nextChat);
 
     connect(&settings, &Settings::conferencePositionChanged, this,
             &ContentDialog::onConferencePositionChanged);

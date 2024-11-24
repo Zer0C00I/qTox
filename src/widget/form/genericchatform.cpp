@@ -209,9 +209,9 @@ GenericChatForm::GenericChatForm(const Core& core_, const Chat* chat, IChatLog& 
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
     quoteAction = menu.addAction(QIcon(), QString(), QKeySequence(Qt::ALT | Qt::Key_Q), this,
-                                 SLOT(quoteSelectedText()));
+                                 &GenericChatForm::quoteSelectedText);
 #else
-    quoteAction = menu.addAction(QIcon(), QString(), this, SLOT(quoteSelectedText()),
+    quoteAction = menu.addAction(QIcon(), QString(), this, &GenericChatForm::quoteSelectedText,
                                  QKeySequence(Qt::ALT | Qt::Key_Q));
 #endif
     addAction(quoteAction);
@@ -219,9 +219,9 @@ GenericChatForm::GenericChatForm(const Core& core_, const Chat* chat, IChatLog& 
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
     goToCurrentDateAction = menu.addAction(QIcon(), QString(), QKeySequence(Qt::CTRL | Qt::Key_G),
-                                           this, SLOT(goToCurrentDate()));
+                                           this, &GenericChatForm::goToCurrentDate);
 #else
-    goToCurrentDateAction = menu.addAction(QIcon(), QString(), this, SLOT(goToCurrentDate()),
+    goToCurrentDateAction = menu.addAction(QIcon(), QString(), this, &GenericChatForm::goToCurrentDate,
                                            QKeySequence(Qt::CTRL | Qt::Key_G));
 #endif
     addAction(goToCurrentDateAction);
@@ -230,9 +230,9 @@ GenericChatForm::GenericChatForm(const Core& core_, const Chat* chat, IChatLog& 
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
     searchAction = menu.addAction(QIcon(), QString(), QKeySequence(Qt::CTRL | Qt::Key_F), this,
-                                  SLOT(searchFormShow()));
+                                  &GenericChatForm::searchFormShow);
 #else
-    searchAction = menu.addAction(QIcon(), QString(), this, SLOT(searchFormShow()),
+    searchAction = menu.addAction(QIcon(), QString(), this, &GenericChatForm::searchFormShow,
                                   QKeySequence(Qt::CTRL | Qt::Key_F));
 #endif
     addAction(searchAction);
@@ -243,22 +243,22 @@ GenericChatForm::GenericChatForm(const Core& core_, const Chat* chat, IChatLog& 
     menu.addSeparator();
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
-    clearAction =
-        menu.addAction(QIcon::fromTheme("edit-clear"), QString(),
-                       QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_L), this, SLOT(clearChatArea()));
+    clearAction = menu.addAction(QIcon::fromTheme("edit-clear"), QString(),
+                                 QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_L), this,
+                                 qOverload<>(&GenericChatForm::clearChatArea));
 #else
-    clearAction =
-        menu.addAction(QIcon::fromTheme("edit-clear"), QString(), this, SLOT(clearChatArea()),
-                       QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_L));
+    clearAction = menu.addAction(QIcon::fromTheme("edit-clear"), QString(), this,
+                                 qOverload<>(&GenericChatForm::clearChatArea),
+                                 QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_L));
 #endif
     addAction(clearAction);
 
-    copyLinkAction = menu.addAction(QIcon(), QString(), this, SLOT(copyLink()));
+    copyLinkAction = menu.addAction(QIcon(), QString(), this, &GenericChatForm::copyLink);
     menu.addSeparator();
 
-    loadHistoryAction = menu.addAction(QIcon(), QString(), this, SLOT(onLoadHistory()));
-    exportChatAction =
-        menu.addAction(QIcon::fromTheme("document-save"), QString(), this, SLOT(onExportChat()));
+    loadHistoryAction = menu.addAction(QIcon(), QString(), this, &GenericChatForm::onLoadHistory);
+    exportChatAction = menu.addAction(QIcon::fromTheme("document-save"), QString(), this,
+                                      &GenericChatForm::onExportChat);
 
     connect(chatWidget, &ChatWidget::customContextMenuRequested, this,
             &GenericChatForm::onChatContextMenuRequested);
@@ -462,7 +462,7 @@ void GenericChatForm::onEmoteButtonClicked()
         return;
 
     EmoticonsWidget widget(smileyPack, settings, style);
-    connect(&widget, SIGNAL(insertEmoticon(QString)), this, SLOT(onEmoteInsertRequested(QString)));
+    connect(&widget, &EmoticonsWidget::insertEmoticon, this, &GenericChatForm::onEmoteInsertRequested);
     widget.installEventFilter(this);
 
     QWidget* sender = qobject_cast<QWidget*>(QObject::sender());

@@ -19,8 +19,9 @@ SetPasswordDialog::SetPasswordDialog(QString body_, QString extraButton, QWidget
 {
     ui->setupUi(this);
 
-    connect(ui->passwordlineEdit, SIGNAL(textChanged(QString)), this, SLOT(onPasswordEdit()));
-    connect(ui->repasswordlineEdit, SIGNAL(textChanged(QString)), this, SLOT(onPasswordEdit()));
+    connect(ui->passwordlineEdit, &PasswordEdit::textChanged, this, &SetPasswordDialog::onPasswordEdit);
+    connect(ui->repasswordlineEdit, &PasswordEdit::textChanged, this,
+            &SetPasswordDialog::onPasswordEdit);
 
     ui->body->setText(body_ + "\n\n");
     QPushButton* ok = ui->buttonBox->button(QDialogButtonBox::Ok);

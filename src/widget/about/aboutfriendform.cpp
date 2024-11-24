@@ -37,7 +37,7 @@ AboutFriendForm::AboutFriendForm(std::unique_ptr<IAboutFriend> about_, Settings&
 
     connect(ui->buttonBox, &QDialogButtonBox::accepted, this, &AboutFriendForm::onAcceptedClicked);
     connect(ui->autoacceptfile, &QCheckBox::clicked, this, &AboutFriendForm::onAutoAcceptDirClicked);
-    connect(ui->autoacceptcall, SIGNAL(activated(int)), this, SLOT(onAutoAcceptCallClicked(void)));
+    connect(ui->autoacceptcall, &QComboBox::activated, this, &AboutFriendForm::onAutoAcceptCallClicked);
     connect(ui->autoconferenceinvite, &QCheckBox::clicked, this,
             &AboutFriendForm::onAutoConferenceInvite);
     connect(ui->selectSaveDir, &QPushButton::clicked, this, &AboutFriendForm::onSelectDirClicked);
