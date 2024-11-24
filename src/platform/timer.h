@@ -9,7 +9,6 @@
 
 #include <cstdint>
 
-
 namespace Platform {
 uint32_t getIdleTime();
 }

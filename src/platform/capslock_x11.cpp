@@ -3,9 +3,13 @@
  * Copyright © 2024 The TokTok team.
  */
 
-#include "src/platform/capslock.h"
-#include "src/platform/x11_display.h"
+#include "capslock.h"
+
+#ifdef QTOX_PLATFORM_EXT
 #include <QtCore/qsystemdetection.h>
+
+#if !defined(Q_OS_WIN) && !defined(Q_OS_MACOS)
+#include "src/platform/x11_display.h"
 #include <X11/XKBlib.h>
 #undef KeyPress
 #undef KeyRelease
@@ -24,3 +28,5 @@ bool Platform::capsLockEnabled()
     X11Display::unlock();
     return caps_state;
 }
+#endif
+#endif

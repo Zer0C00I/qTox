@@ -3,8 +3,13 @@
  * Copyright © 2024 The TokTok team.
  */
 
+#include "autorun.h"
+
+#ifdef QTOX_PLATFORM_EXT
+#include <QtCore/qsystemdetection.h>
+
+#ifdef Q_OS_WIN
 #include "src/persistence/settings.h"
-#include "src/platform/autorun.h"
 #include <QApplication>
 #include <string>
 #include <windows.h>
@@ -91,3 +96,5 @@ bool Platform::getAutorun(const Settings& settings)
     RegCloseKey(key);
     return result;
 }
+#endif
+#endif

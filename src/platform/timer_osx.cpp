@@ -10,9 +10,13 @@
  */
 
 #include "src/platform/timer.h"
+
+#ifdef QTOX_PLATFORM_EXT
+#include <QtCore/qsystemdetection.h>
+
+#ifdef Q_OS_MACOS
 #include <CoreFoundation/CoreFoundation.h>
 #include <IOKit/IOKitLib.h>
-#include <QtCore/qsystemdetection.h>
 
 uint32_t Platform::getIdleTime()
 {
@@ -35,3 +39,5 @@ uint32_t Platform::getIdleTime()
 
     return idleTime_ns / 1000000;
 }
+#endif
+#endif

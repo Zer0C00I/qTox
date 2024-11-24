@@ -3,8 +3,13 @@
  * Copyright © 2024 The TokTok team.
  */
 
+#include "autorun.h"
+
+#ifdef QTOX_PLATFORM_EXT
+#include <QtCore/qsystemdetection.h>
+
+#if !defined(Q_OS_WIN) && !defined(Q_OS_MACOS)
 #include "src/persistence/settings.h"
-#include "src/platform/autorun.h"
 #include <QApplication>
 #include <QDir>
 #include <QProcessEnvironment>
@@ -65,3 +70,5 @@ bool Platform::getAutorun(const Settings& settings)
 {
     return QFile(getAutostartFilePath(settings, getAutostartDirPath())).exists();
 }
+#endif // !defined(Q_OS_WIN) && !defined(Q_OS_MAC)
+#endif // QTOX_PLATFORM_EXT

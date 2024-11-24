@@ -7,7 +7,6 @@
 
 #ifdef QTOX_PLATFORM_EXT
 
-
 namespace Platform {
 bool capsLockEnabled();
 }

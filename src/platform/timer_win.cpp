@@ -4,7 +4,11 @@
  */
 
 #include "src/platform/timer.h"
+
+#ifdef QTOX_PLATFORM_EXT
 #include <QtCore/qsystemdetection.h>
+
+#ifdef Q_OS_WIN
 #include <windows.h>
 
 uint32_t Platform::getIdleTime()
@@ -15,3 +19,5 @@ uint32_t Platform::getIdleTime()
         return GetTickCount() - info.dwTime;
     return 0;
 }
+#endif
+#endif
