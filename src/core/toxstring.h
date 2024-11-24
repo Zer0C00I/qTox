@@ -20,7 +20,7 @@ public:
     const uint8_t* data() const;
     size_t size() const;
     QString getQString() const;
-    QByteArray getBytes() const;
+    const QByteArray& getBytes() const;
 
 private:
     QByteArray string;

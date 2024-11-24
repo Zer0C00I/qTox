@@ -9,6 +9,8 @@
 #include <QString>
 #include <QtTest/QtTest>
 
+#include "src/widget/form/settings/generalform.h" // getLocales
+
 class TestToxString : public QObject
 {
     Q_OBJECT
@@ -20,6 +22,12 @@ private slots:
     void emptyQByteTest();
     void emptyUINT8Test();
     void nullptrUINT8Test();
+    void localesTest();
+    void filterTest();
+    void emojiTest();
+    void handshakeEmojiTest();
+    void coloredEmojiTest();
+    void combiningCharacterTest();
 
 private:
     /* Test Strings */
@@ -229,6 +237,117 @@ void TestToxString::nullptrUINT8Test()
     QVERIFY(emptyLength == test_size);
     for (int i = 0; i <= emptyLength; i++) {
         QVERIFY(emptyUINT8[i] == test_int[i]);
+    }
+}
+
+/**
+ * @brief Check that we can encode and decode all native locale names.
+ *
+ * This is a smoke test as opposed to anything comprehensive, but it ensures that scripts used
+ * in the languages we have translations for can be encoded and decoded.
+ */
+void TestToxString::localesTest()
+{
+    const QStringList& locales = GeneralForm::getLocales();
+    for (const QString& locale : locales) {
+        const QString lang = QLocale(locale).nativeLanguageName();
+        ToxString test(lang);
+        const QString test_string = test.getQString();
+        QCOMPARE(lang, test_string);
+    }
+}
+
+/**
+ * @brief Check that we filter out non-printable characters.
+ */
+void TestToxString::filterTest()
+{
+    const struct TestCase
+    {
+        QString input;
+        QString expected;
+    } testCases[] = {
+        {QStringLiteral("Hello, World!"), QStringLiteral("Hello, World!")},
+        {QStringLiteral("Hello, \x00World!"), QStringLiteral("Hello, World!")},
+        {QStringLiteral("Hello, \x01World!"), QStringLiteral("Hello, World!")},
+        {QStringLiteral("Hello, \x7FWorld!"), QStringLiteral("Hello, World!")},
+        {QStringLiteral("Hello, \x80World!"), QStringLiteral("Hello, World!")},
+    };
+    for (const auto& testCase : testCases) {
+        QCOMPARE(ToxString(testCase.input).getQString(), testCase.expected);
+    }
+}
+
+/**
+ * @brief Check that we can encode and decode emojis.
+ *
+ * These are high code point characters that are not single code units in UTF-16.
+ */
+void TestToxString::emojiTest()
+{
+    const QString testCases[] = {
+        QStringLiteral("🙂"), QStringLiteral("🙁"), QStringLiteral("🤣"), QStringLiteral("🤷"),
+        QStringLiteral("🤼"), QStringLiteral("🥃"), QStringLiteral("🥌"), QStringLiteral("🥐"),
+    };
+
+    for (const auto& testCase : testCases) {
+        QCOMPARE(ToxString(testCase).getQString(), testCase);
+    }
+}
+
+/**
+ * @brief Check that we can encode and decode emojis with color modifiers.
+ *
+ * These use modifier characters to change the color of the emoji.
+ */
+void TestToxString::coloredEmojiTest()
+{
+    const QString testCases[] = {
+        QStringLiteral("👨🏻‍👩🏻‍👧🏻‍👦🏻"),
+        QStringLiteral("👨🏼‍👩🏼‍👧🏼‍👦🏼"),
+        QStringLiteral("👨🏽‍👩🏽‍👧🏽‍👦🏽"),
+        QStringLiteral("👨🏾‍👩🏾‍👧🏾‍👦🏾"),
+        QStringLiteral("👨🏿‍👩🏿‍👧🏿‍👦🏿"),
+    };
+    for (const auto& testCase : testCases) {
+        QCOMPARE(ToxString(testCase).getQString(), testCase);
+    }
+}
+
+void TestToxString::handshakeEmojiTest()
+{
+    if (QChar::category(0x1FAF1) == QChar::Other_NotAssigned) {
+        QSKIP("Emoji U+1FAF1 (Rightwards Hand) not supported by Qt");
+    }
+    const QString testCases[] = {
+        QStringLiteral("🫱🏼‍🫲🏽"),
+    };
+
+    for (const auto& testCase : testCases) {
+        QCOMPARE(ToxString(testCase).getQString(), testCase);
+    }
+}
+
+/**
+ * @brief Check that we can encode and decode combining characters.
+ *
+ * These are codepoints that add diacritics and other decorations around characters.
+ */
+void TestToxString::combiningCharacterTest()
+{
+    const struct TestCase
+    {
+        QString input;
+        QString expected;
+    } testCases[] = {
+        // U+0303 Combining Tilde
+        // U+0320 Combining Minus Sign Below
+        // U+0337 Combining Short Solidus Overlay
+        {QStringLiteral(u"o\u0303\u0337\u0320"), QStringLiteral(u"o\u0303\u0337\u0320")},
+    };
+
+    for (const auto& testCase : testCases) {
+        QCOMPARE(ToxString(testCase.input).getQString(), testCase.expected);
     }
 }
 

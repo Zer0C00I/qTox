@@ -64,19 +64,30 @@ size_t ToxString::size() const
 }
 
 /**
- * @brief Gets the string as QString.
- * @return QString representation of the string.
+ * @brief Interpret the string as UTF-8 encoded QString.
+ *
+ * Removes any non-printable characters from the string. This is a defense-in-depth measure to
+ * prevent some potential security issues caused by bugs in client code or one of its dependencies.
  */
 QString ToxString::getQString() const
 {
-    return QString::fromUtf8(string);
+    const auto tainted = QString::fromUtf8(string).toStdU32String();
+    std::u32string cleaned;
+    std::copy_if(tainted.cbegin(), tainted.cend(), std::back_inserter(cleaned), [](char32_t c) {
+        // Cf (Other_Format) is to allow skin-color modifiers for emojis.
+        return QChar::isPrint(c) || QChar::category(c) == QChar::Category::Other_Format;
+    });
+    return QString::fromStdU32String(cleaned);
 }
 
 /**
- * @brief getBytes Gets the bytes of the string.
- * @return Bytes of the string as QByteArray.
+ * @brief Returns the bytes verbatim as they were received from or will be sent to the network.
+ *
+ * No cleanup or interpretation is done here. The bytes are returned as they were received from the
+ * network. Callers should be careful when processing these bytes. If UTF-8 messages are expected,
+ * use getQString() instead.
  */
-QByteArray ToxString::getBytes() const
+const QByteArray& ToxString::getBytes() const
 {
-    return QByteArray(string);
+    return string;
 }
