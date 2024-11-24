@@ -4,6 +4,8 @@
  */
 
 #include "src/platform/x11_display.h"
+
+#ifdef QTOX_PLATFORM_EXT
 #include <QtCore/qsystemdetection.h>
 
 #if !defined(Q_OS_WIN) && !defined(Q_OS_MACOS)
@@ -47,4 +49,5 @@ void X11Display::unlock()
     X11DisplayPrivate::getSingleInstance().mutex.unlock();
 }
 } // namespace Platform
+#endif
 #endif

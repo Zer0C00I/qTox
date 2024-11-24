@@ -91,16 +91,6 @@ of spell check).
 
 Disabled if dependencies are missing during compilation.
 
-#### Snorenotify desktop notification backend
-
-Disabled by default
-
-| Name        | Version  |
-| ----------- | -------- |
-| [libnotify] | >= 0.7.9 |
-
-To enable: `-DDESKTOP_NOTIFICATIONS=True`
-
 ## Linux
 
 ### Simple install

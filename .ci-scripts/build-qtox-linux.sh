@@ -106,7 +106,6 @@ else
     -DUPDATE_CHECK=ON \
     -DSTRICT_OPTIONS=ON \
     -DCODE_COVERAGE=ON \
-    -DDESKTOP_NOTIFICATIONS=ON \
     -GNinja \
     "${CMAKE_ARGS[@]}"
 fi

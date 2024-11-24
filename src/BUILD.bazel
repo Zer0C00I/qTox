@@ -5,7 +5,6 @@ VERSION = "1.16.3"
 
 DEFINES = [
     "DEBUG",
-    "DESKTOP_NOTIFICATIONS",
     "LOG_TO_FILE",
     "QTOX_PLATFORM_EXT",
     "QT_MESSAGELOGCONTEXT",
@@ -203,7 +202,6 @@ cc_library(
         "//qtox/util",
         "@ffmpeg",
         "@libexif",
-        "@libnotify",
         "@libqrencode",
         "@libsodium",
         "@libvpx",

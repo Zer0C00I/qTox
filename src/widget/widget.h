@@ -23,10 +23,8 @@
 #include "src/core/toxpk.h"
 #include "src/model/conferencemessagedispatcher.h"
 #include "src/model/friendmessagedispatcher.h"
-#if DESKTOP_NOTIFICATIONS
 #include "src/model/notificationgenerator.h"
 #include "src/platform/desktop_notifications/desktopnotify.h"
-#endif
 #include "src/widget/form/debugwidget.h"
 
 #define PIXELS_TO_ACT 7
@@ -370,10 +368,8 @@ private:
 
 
     std::unique_ptr<MessageProcessor::SharedParams> sharedMessageProcessorParams;
-#if DESKTOP_NOTIFICATIONS
     std::unique_ptr<NotificationGenerator> notificationGenerator;
-    DesktopNotify notifier;
-#endif
+    std::unique_ptr<DesktopNotify> notifier;
 
 #ifdef Q_OS_MAC
     QAction* fileMenu;

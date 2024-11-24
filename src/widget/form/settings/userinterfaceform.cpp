@@ -71,12 +71,8 @@ UserInterfaceForm::UserInterfaceForm(SmileyPack& smileyPack_, Settings& settings
     bodyUI->notifySound->setEnabled(settings.getNotify());
     bodyUI->busySound->setChecked(settings.getBusySound());
     bodyUI->busySound->setEnabled(settings.getNotifySound() && settings.getNotify());
-#if DESKTOP_NOTIFICATIONS
     bodyUI->desktopNotify->setChecked(settings.getDesktopNotify());
     bodyUI->desktopNotify->setEnabled(settings.getNotify());
-#else
-    bodyUI->desktopNotify->hide();
-#endif
 
     bodyUI->showWindow->setChecked(settings.getShowWindow());
 

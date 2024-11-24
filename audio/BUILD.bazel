@@ -49,7 +49,6 @@ cc_library(
     }),
     defines = [
         "DEBUG",
-        #"DESKTOP_NOTIFICATIONS",
         "QTOX_PLATFORM_EXT",
         "QT_MESSAGELOGCONTEXT",
         "UPDATE_CHECK_ENABLED",
