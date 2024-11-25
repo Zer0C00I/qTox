@@ -82,6 +82,7 @@ if [[ "$BUILD_TYPE" == "Release" ]]; then
     -DSTRICT_OPTIONS=ON \
     -DTEST_CROSSCOMPILING_EMULATOR=wine \
     -GNinja \
+    -B_build \
     "$QTOX_SRC_DIR"
 elif [[ "$BUILD_TYPE" == "Debug" ]]; then
   cmake -DCMAKE_TOOLCHAIN_FILE=/build/windows-toolchain.cmake \
@@ -94,23 +95,31 @@ elif [[ "$BUILD_TYPE" == "Debug" ]]; then
     -DTEST_CROSSCOMPILING_EMULATOR=wine \
     -GNinja \
     -DCMAKE_EXE_LINKER_FLAGS="-mconsole" \
+    -B_build \
     "$QTOX_SRC_DIR"
 fi
 
-cmake --build .
+cmake --build _build
 
 mkdir -p "$QTOX_PREFIX_DIR"
-cp qtox.exe "$QTOX_PREFIX_DIR"
+cp _build/qtox.exe "$QTOX_PREFIX_DIR"
 cp -r /export/* "$QTOX_PREFIX_DIR"
+
+export WINEQT_QPA_PLATFORM='offscreen'
+export WINEPREFIX="$PWD/_build/.wine"
+
+# Check if our main binary runs (just to see if any DLL errors happen early on).
+# This also initialises the wine directory for tests (avoiding race conditions).
+wine "$QTOX_PREFIX_DIR/qtox.exe" --help
 
 # Run tests
 set +u
 if [[ $RUN_TESTS -ne 0 ]]; then
-  export WINEPATH='/export;/windows/bin'
-  export CTEST_OUTPUT_ON_FAILURE=1
-  export PATH="$PATH:/opt/wine-stable/bin"
-  # TODO(iphydf): Fix tests on windows.
-  # ctest -j$(nproc)
+  # Set up the environment for the tests (not needed for the main binary, where
+  # we want to see if the prefix dir has everything we need).
+  export WINEQT_PLUGIN_PATH='z:\export'
+  export WINEPATH='z:\export;z:\windows\bin'
+  ctest --test-dir _build --parallel "$(nproc)" --output-on-failure
 fi
 set -u
 
@@ -172,7 +181,10 @@ $QTOX_PREFIX_DIR/imageformats/qwebp.dll
 $QTOX_PREFIX_DIR/platforms/qdirect2d.dll
 $QTOX_PREFIX_DIR/platforms/qminimal.dll
 $QTOX_PREFIX_DIR/platforms/qoffscreen.dll
-$QTOX_PREFIX_DIR/platforms/qwindows.dll" >runtime-dlls
+$QTOX_PREFIX_DIR/platforms/qwindows.dll
+$QTOX_PREFIX_DIR/tls/qcertonlybackend.dll
+$QTOX_PREFIX_DIR/tls/qopensslbackend.dll
+$QTOX_PREFIX_DIR/tls/qschannelbackend.dll" >runtime-dlls
 if [[ "$ARCH" == "i686" ]]; then
   echo "$QTOX_PREFIX_DIR/libssl-3.dll" >>runtime-dlls
 elif [[ "$ARCH" == "x86_64" ]]; then
