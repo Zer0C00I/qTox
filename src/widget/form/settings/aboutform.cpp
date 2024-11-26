@@ -52,11 +52,11 @@ AboutForm::AboutForm(UpdateCheck* updateCheck_, Style& style_)
 {
     bodyUI->setupUi(this);
 
-#if !UPDATE_CHECK_ENABLED
+#ifndef UPDATE_CHECK_ENABLED
     bodyUI->updateStack->setVisible(false);
 #endif
     bodyUI->unstableVersion->setVisible(false);
-#if UPDATE_CHECK_ENABLED
+#ifdef UPDATE_CHECK_ENABLED
     connect(updateCheck_, &UpdateCheck::versionIsUnstable, this, &AboutForm::onUnstableVersion);
 #endif
 
@@ -89,7 +89,7 @@ void AboutForm::replaceVersions()
 
     bodyUI->youAreUsing->setText(tr("You are using qTox version %1.").arg(QString(GIT_DESCRIBE)));
 
-#if UPDATE_CHECK_ENABLED
+#ifdef UPDATE_CHECK_ENABLED
     if (updateCheck != nullptr) {
         connect(updateCheck, &UpdateCheck::updateAvailable, this, &AboutForm::onUpdateAvailable);
         connect(updateCheck, &UpdateCheck::upToDate, this, &AboutForm::onUpToDate);

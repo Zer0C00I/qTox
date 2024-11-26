@@ -57,7 +57,7 @@ SettingsWidget::SettingsWidget(UpdateCheck* updateCheck, IAudioControl& audio, C
     std::unique_ptr<AdvancedForm> expfrm(new AdvancedForm(settings, style, messageBoxManager));
     std::unique_ptr<AboutForm> abtfrm(new AboutForm(updateCheck, style));
 
-#if UPDATE_CHECK_ENABLED
+#ifdef UPDATE_CHECK_ENABLED
     if (updateCheck != nullptr) {
         connect(updateCheck, &UpdateCheck::updateAvailable, this, &SettingsWidget::onUpdateAvailable);
     } else {

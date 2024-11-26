@@ -12,7 +12,6 @@
 
 #include <memory>
 
-#ifdef UPDATE_CHECK_ENABLED
 class Settings;
 class QString;
 class QUrl;
@@ -23,6 +22,8 @@ class UpdateCheck : public QObject
 
 public:
     UpdateCheck(const Settings& settings_);
+
+#ifdef UPDATE_CHECK_ENABLED
     void checkForUpdate();
 
 signals:
@@ -38,5 +39,5 @@ private:
     QNetworkAccessManager manager;
     QTimer updateTimer;
     const Settings& settings;
-};
 #endif
+};

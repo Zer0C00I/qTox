@@ -4,7 +4,6 @@
  */
 #include "src/net/updatecheck.h"
 
-#ifdef UPDATE_CHECK_ENABLED
 #include "src/persistence/settings.h"
 #ifndef CMAKE_BUILD
 #include "src/version.h"
@@ -20,6 +19,7 @@
 #include <QTimer>
 #include <cassert>
 
+#ifdef UPDATE_CHECK_ENABLED
 namespace {
 const QString versionUrl{
     QStringLiteral("https://api.github.com/repos/TokTok/qTox/releases/latest")};
@@ -91,8 +91,10 @@ bool isCurrentVersionStable()
 }
 
 } // namespace
+#endif
 
 UpdateCheck::UpdateCheck(const Settings& settings_)
+#ifdef UPDATE_CHECK_ENABLED
     : settings(settings_)
 {
     qInfo() << "qTox is running version:" << GIT_DESCRIBE;
@@ -100,7 +102,13 @@ UpdateCheck::UpdateCheck(const Settings& settings_)
     connect(&updateTimer, &QTimer::timeout, this, &UpdateCheck::checkForUpdate);
     connect(&manager, &QNetworkAccessManager::finished, this, &UpdateCheck::handleResponse);
 }
+#else
+{
+    std::ignore = settings_;
+}
+#endif
 
+#ifdef UPDATE_CHECK_ENABLED
 void UpdateCheck::checkForUpdate()
 {
     if (!settings.getCheckUpdates()) {

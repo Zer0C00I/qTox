@@ -96,6 +96,7 @@ if [ "$MINIMAL" -eq 1 ]; then
   cmake "$SRCDIR" \
     -DCMAKE_BUILD_TYPE="$BUILD_TYPE" \
     -DSMILEYS=DISABLED \
+    -DUPDATE_CHECK=OFF \
     -DSTRICT_OPTIONS=ON \
     -DSPELL_CHECK=OFF \
     -GNinja \
