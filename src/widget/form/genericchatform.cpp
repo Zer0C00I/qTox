@@ -292,6 +292,9 @@ GenericChatForm::GenericChatForm(const Core& core_, const Chat* chat, IChatLog& 
 GenericChatForm::~GenericChatForm()
 {
     Translator::unregister(this);
+#ifdef SPELL_CHECKING
+    delete decorator;
+#endif
     delete searchForm;
 }
 
