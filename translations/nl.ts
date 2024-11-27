@@ -172,7 +172,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>bug-tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
-        <translation type="unfinished">bugtracker</translation>
+        <translation>bugtracker</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
