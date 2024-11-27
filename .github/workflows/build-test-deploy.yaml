@@ -4,7 +4,8 @@ on:
   pull_request:
     branches: ["master"]
   push:
-    branches: ["master", "refs/tags/v*"]
+    branches: ["master"]
+    tags: ["v*"]
 
 # Cancel old PR builds when pushing new commits.
 concurrency:
