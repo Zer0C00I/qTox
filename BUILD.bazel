@@ -7,7 +7,10 @@ project(license = "gpl3-https")
 
 mypy_test(
     name = "mypy_test",
-    srcs = glob(["**/*.py"]),
+    srcs = glob(
+        ["**/*.py"],
+        exclude = [".ci-scripts/validate-pr.py"],
+    ),
 )
 
 qt_lconvert(
