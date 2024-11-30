@@ -606,6 +606,11 @@ qt_add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE
 target_link_libraries(
   ${PROJECT_NAME} PRIVATE ${PROJECT_NAME}_static ${CMAKE_REQUIRED_LIBRARIES}
                           ${ALL_LIBRARIES})
+set_target_properties(
+  ${PROJECT_NAME}
+  PROPERTIES QT_ANDROID_TARGET_SDK_VERSION 24
+             QT_ANDROID_MIN_SDK_VERSION 24
+             QT_ANDROID_ABIS arm64-v8a)
 
 include(Testing)
 include(Installation)
