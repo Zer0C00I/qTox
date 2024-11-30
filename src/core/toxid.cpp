@@ -42,11 +42,11 @@ ToxId::ToxId()
 }
 
 /**
- * @brief The copy constructor.
- * @param other ToxId to copy
+ * @brief The move constructor.
+ * @param other ToxId to move from.
  */
-ToxId::ToxId(const ToxId& other)
-    : toxId(other.toxId)
+ToxId::ToxId(ToxId&& other)
+    : toxId(std::move(other.toxId))
 {
 }
 
