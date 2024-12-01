@@ -2105,7 +2105,7 @@ Per favore scegli un&apos;immagine più piccola.</translation>
         <translation>Impossibile cambiare la password</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable</source>
+        <source>Empty path is unavailable</source>
         <translation>Percorso vuoto non permesso</translation>
     </message>
     <message>
@@ -2125,7 +2125,7 @@ Per favore scegli un&apos;immagine più piccola.</translation>
         <translation>Nome vuoto</translation>
     </message>
     <message>
-        <source>Empty name is unavaliable</source>
+        <source>Empty name is unavailable</source>
         <translation>Nome vuoto non disponibile</translation>
     </message>
     <message>
@@ -2171,7 +2171,7 @@ Per favore scegli un&apos;immagine più piccola.</translation>
         <translation>Il file che hai scelto non può essere salvato.</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable.</source>
+        <source>Empty path is unavailable.</source>
         <translation>Percorso vuoto non disponibile.</translation>
     </message>
     <message>

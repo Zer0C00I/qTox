@@ -2107,7 +2107,7 @@ Palun kasuta teist pilti.</translation>
         <translation>Salasõna vahetamine nurjus</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable</source>
+        <source>Empty path is unavailable</source>
         <translation>Tühja otsingurada pole</translation>
     </message>
     <message>
@@ -2127,7 +2127,7 @@ Palun kasuta teist pilti.</translation>
         <translation>Tühi nimi</translation>
     </message>
     <message>
-        <source>Empty name is unavaliable</source>
+        <source>Empty name is unavailable</source>
         <translation>Tühja nime pole</translation>
     </message>
     <message>
@@ -2173,7 +2173,7 @@ Palun kasuta teist pilti.</translation>
         <translation>Sinu valitud faili ei õnnestunud salvestada.</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable.</source>
+        <source>Empty path is unavailable.</source>
         <translation>Asukoht ei tohi puud olla.</translation>
     </message>
     <message>

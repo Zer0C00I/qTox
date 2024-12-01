@@ -2105,7 +2105,7 @@ Por favor escolha outra.</translation>
         <translation>Não foi possível alterar a palavra-passe</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable</source>
+        <source>Empty path is unavailable</source>
         <translation>O caminho vazio não está disponível</translation>
     </message>
     <message>
@@ -2125,7 +2125,7 @@ Por favor escolha outra.</translation>
         <translation>Nome vazio</translation>
     </message>
     <message>
-        <source>Empty name is unavaliable</source>
+        <source>Empty name is unavailable</source>
         <translation>Nome vazio não está disponível</translation>
     </message>
     <message>
@@ -2171,7 +2171,7 @@ Por favor escolha outra.</translation>
         <translation>O ficheiro que escolheu não pode ser guardado.</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable.</source>
+        <source>Empty path is unavailable.</source>
         <translation>Não é possível usar diretórios em branco.</translation>
     </message>
     <message>

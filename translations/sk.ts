@@ -2117,7 +2117,7 @@ Prosím, použite iný.</translation>
         <translation>Nepodarilo sa zmeniť heslo</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable</source>
+        <source>Empty path is unavailable</source>
         <translation>Prázdna cesta nie je povolená</translation>
     </message>
     <message>
@@ -2137,7 +2137,7 @@ Prosím, použite iný.</translation>
         <translation>Prázdne meno</translation>
     </message>
     <message>
-        <source>Empty name is unavaliable</source>
+        <source>Empty name is unavailable</source>
         <translation>Prázdne meno nie je povolené</translation>
     </message>
     <message>
@@ -2183,7 +2183,7 @@ Prosím, použite iný.</translation>
         <translation>Zvolený súbor sa nepodarilo uložiť.</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable.</source>
+        <source>Empty path is unavailable.</source>
         <translation>Prázdna cesta nie je povolená.</translation>
     </message>
     <message>

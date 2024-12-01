@@ -2105,7 +2105,7 @@ Valitse toinen kuva.</translation>
         <translation>Salasanaa ei voitu vaihtaa</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable</source>
+        <source>Empty path is unavailable</source>
         <translation>Tyhjä tiedostopolku ei kelpaa</translation>
     </message>
     <message>
@@ -2125,7 +2125,7 @@ Valitse toinen kuva.</translation>
         <translation>Nimi puuttuu</translation>
     </message>
     <message>
-        <source>Empty name is unavaliable</source>
+        <source>Empty name is unavailable</source>
         <translation>Nimi on pakollinen</translation>
     </message>
     <message>
@@ -2171,7 +2171,7 @@ Valitse toinen kuva.</translation>
         <translation>Valitsemaasi tiedostoa ei voitu tallentaa.</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable.</source>
+        <source>Empty path is unavailable.</source>
         <translation>Tyhjä polku ei kelpaa.</translation>
     </message>
     <message>

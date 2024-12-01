@@ -2105,7 +2105,7 @@ Veuillez utiliser une autre image.</translation>
         <translation>Impossible de changer le mot de passe</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable</source>
+        <source>Empty path is unavailable</source>
         <translation>Un chemin vide n&apos;est pas valide</translation>
     </message>
     <message>
@@ -2125,7 +2125,7 @@ Veuillez utiliser une autre image.</translation>
         <translation>Nom vide</translation>
     </message>
     <message>
-        <source>Empty name is unavaliable</source>
+        <source>Empty name is unavailable</source>
         <translation>Impossible d&apos;utiliser un nom vide</translation>
     </message>
     <message>
@@ -2171,7 +2171,7 @@ Veuillez utiliser une autre image.</translation>
         <translation>Le fichier que vous avez choisi n&apos;a pas pu être enregistré.</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable.</source>
+        <source>Empty path is unavailable.</source>
         <translation>Un chemin vide n&apos;est pas valide.</translation>
     </message>
     <message>

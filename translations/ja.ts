@@ -2091,7 +2091,7 @@ Please use another image.</source>
         <translation>パスワードを変更できませんでした</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable</source>
+        <source>Empty path is unavailable</source>
         <translation>空のパスは利用できません</translation>
     </message>
     <message>
@@ -2111,7 +2111,7 @@ Please use another image.</source>
         <translation>空の名前</translation>
     </message>
     <message>
-        <source>Empty name is unavaliable</source>
+        <source>Empty name is unavailable</source>
         <translation>空の名前は利用できません</translation>
     </message>
     <message>
@@ -2157,7 +2157,7 @@ Please use another image.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Empty path is unavaliable.</source>
+        <source>Empty path is unavailable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

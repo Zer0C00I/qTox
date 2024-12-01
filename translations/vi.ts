@@ -2109,7 +2109,7 @@ Vui lòng sử dụng hình ảnh khác.</translation>
         <translation>Không thể thay đổi mật khẩu</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable</source>
+        <source>Empty path is unavailable</source>
         <translation>Không thể sử dụng đường dẫn trống</translation>
     </message>
     <message>
@@ -2129,7 +2129,7 @@ Vui lòng sử dụng hình ảnh khác.</translation>
         <translation>Tên trống</translation>
     </message>
     <message>
-        <source>Empty name is unavaliable</source>
+        <source>Empty name is unavailable</source>
         <translation>Không được để tên trống</translation>
     </message>
     <message>
@@ -2175,7 +2175,7 @@ Vui lòng sử dụng hình ảnh khác.</translation>
         <translation>Tệp bạn đã chọn không thể lưu.</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable.</source>
+        <source>Empty path is unavailable.</source>
         <translation>Không được để trống đường dẫn.</translation>
     </message>
     <message>

@@ -2117,7 +2117,7 @@ Utilizați o altă imagine.</translation>
         <translation>Nu s-a putut modifica parola</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable</source>
+        <source>Empty path is unavailable</source>
         <translation>Calea goală nu este disponibilă</translation>
     </message>
     <message>
@@ -2137,7 +2137,7 @@ Utilizați o altă imagine.</translation>
         <translation>Nume gol</translation>
     </message>
     <message>
-        <source>Empty name is unavaliable</source>
+        <source>Empty name is unavailable</source>
         <translation>Numele gol este indisponibil</translation>
     </message>
     <message>
@@ -2183,7 +2183,7 @@ Utilizați o altă imagine.</translation>
         <translation>Fișierul pe care l-ați ales nu a putut fi salvat.</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable.</source>
+        <source>Empty path is unavailable.</source>
         <translation>Calea goală nu este disponibilă.</translation>
     </message>
     <message>

@@ -2109,7 +2109,7 @@ Prosím použijte jiný.</translation>
         <translation>Nepodařilo se změnit heslo</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable</source>
+        <source>Empty path is unavailable</source>
         <translation>Prázdná cesta není k dispozici</translation>
     </message>
     <message>
@@ -2129,7 +2129,7 @@ Prosím použijte jiný.</translation>
         <translation>Prázdné jméno</translation>
     </message>
     <message>
-        <source>Empty name is unavaliable</source>
+        <source>Empty name is unavailable</source>
         <translation>Nezadali jste jméno</translation>
     </message>
     <message>
@@ -2175,7 +2175,7 @@ Prosím použijte jiný.</translation>
         <translation>Zvolený soubor nelze uložit.</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable.</source>
+        <source>Empty path is unavailable.</source>
         <translation>Nelze zadat prázdnou cestu.</translation>
     </message>
     <message>

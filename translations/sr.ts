@@ -2108,7 +2108,7 @@ Please use another image.</source>
         <translation>Не могу да променим лозинку</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable</source>
+        <source>Empty path is unavailable</source>
         <translation>Празна путања није могућа</translation>
     </message>
     <message>
@@ -2128,7 +2128,7 @@ Please use another image.</source>
         <translation>Празно име</translation>
     </message>
     <message>
-        <source>Empty name is unavaliable</source>
+        <source>Empty name is unavailable</source>
         <translation>Празно име није могуће</translation>
     </message>
     <message>
@@ -2174,7 +2174,7 @@ Please use another image.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Empty path is unavaliable.</source>
+        <source>Empty path is unavailable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

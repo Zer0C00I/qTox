@@ -2107,7 +2107,7 @@ Velg et annet bilde.</translation>
         <translation>Kunne ikke endre passord</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable</source>
+        <source>Empty path is unavailable</source>
         <translation>Tom sti utilgjengelig</translation>
     </message>
     <message>
@@ -2127,7 +2127,7 @@ Velg et annet bilde.</translation>
         <translation>Tomt navn</translation>
     </message>
     <message>
-        <source>Empty name is unavaliable</source>
+        <source>Empty name is unavailable</source>
         <translation>Tomt navn utilgjengelig</translation>
     </message>
     <message>
@@ -2173,7 +2173,7 @@ Velg et annet bilde.</translation>
         <translation>Filen du valgte kunne ikke lagres.</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable.</source>
+        <source>Empty path is unavailable.</source>
         <translation type="unfinished">Tom sti utilgjengelig.</translation>
     </message>
     <message>

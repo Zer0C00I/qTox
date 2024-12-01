@@ -2105,7 +2105,7 @@ Använd en annan bild.</translation>
         <translation>Det gick inte att ändra lösenordet</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable</source>
+        <source>Empty path is unavailable</source>
         <translation>Tom sökväg är inte tillgänglig</translation>
     </message>
     <message>
@@ -2125,7 +2125,7 @@ Använd en annan bild.</translation>
         <translation>Tomt namn</translation>
     </message>
     <message>
-        <source>Empty name is unavaliable</source>
+        <source>Empty name is unavailable</source>
         <translation>Tomt namn är inte tillgängligt</translation>
     </message>
     <message>
@@ -2171,7 +2171,7 @@ Använd en annan bild.</translation>
         <translation>Filen du valde kunde inte sparas.</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable.</source>
+        <source>Empty path is unavailable.</source>
         <translation>Tom sökväg är inte tillgänglig.</translation>
     </message>
     <message>

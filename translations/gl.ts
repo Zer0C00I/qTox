@@ -2104,7 +2104,7 @@ Utilice outra imaxe.</translation>
         <translation>Non se puido cambiar o contrasinal</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable</source>
+        <source>Empty path is unavailable</source>
         <translation>A ruta baleira non está dispoñible</translation>
     </message>
     <message>
@@ -2124,7 +2124,7 @@ Utilice outra imaxe.</translation>
         <translation>Nome baleiro</translation>
     </message>
     <message>
-        <source>Empty name is unavaliable</source>
+        <source>Empty name is unavailable</source>
         <translation>O nome baleiro non é válido</translation>
     </message>
     <message>
@@ -2170,7 +2170,7 @@ Utilice outra imaxe.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Empty path is unavaliable.</source>
+        <source>Empty path is unavailable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

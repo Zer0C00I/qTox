@@ -2112,7 +2112,7 @@ Please use another image.</source>
         <translation>Невозможно изменить пароль</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable</source>
+        <source>Empty path is unavailable</source>
         <translation>Пустой путь недопустим</translation>
     </message>
     <message>
@@ -2132,7 +2132,7 @@ Please use another image.</source>
         <translation>Пустое имя</translation>
     </message>
     <message>
-        <source>Empty name is unavaliable</source>
+        <source>Empty name is unavailable</source>
         <translation>Пустое имя недопустимо</translation>
     </message>
     <message>
@@ -2178,7 +2178,7 @@ Please use another image.</source>
         <translation>Файл, который вы выбрали не может быть сохранён.</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable.</source>
+        <source>Empty path is unavailable.</source>
         <translation>Пустой путь недопустим.</translation>
     </message>
     <message>

@@ -2100,7 +2100,7 @@ Koristi jednu drugu sliku.</translation>
         <translation>Nije bilo moguće promijeniti lozinku</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable</source>
+        <source>Empty path is unavailable</source>
         <translation>Prazna putanja nije dostupna</translation>
     </message>
     <message>
@@ -2120,7 +2120,7 @@ Koristi jednu drugu sliku.</translation>
         <translation>Ime nema znakova</translation>
     </message>
     <message>
-        <source>Empty name is unavaliable</source>
+        <source>Empty name is unavailable</source>
         <translation>Ime bez znakova nije dostupno</translation>
     </message>
     <message>
@@ -2166,7 +2166,7 @@ Koristi jednu drugu sliku.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Empty path is unavaliable.</source>
+        <source>Empty path is unavailable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

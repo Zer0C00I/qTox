@@ -2114,7 +2114,7 @@ Bitte verwende ein anderes.</translation>
         <translation>Passwortänderung nicht möglich</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable</source>
+        <source>Empty path is unavailable</source>
         <translation>Leerer Pfad ist nicht verfügbar</translation>
     </message>
     <message>
@@ -2134,7 +2134,7 @@ Bitte verwende ein anderes.</translation>
         <translation>Leerer Name</translation>
     </message>
     <message>
-        <source>Empty name is unavaliable</source>
+        <source>Empty name is unavailable</source>
         <translation>Leerer Name ist nicht verfügbar</translation>
     </message>
     <message>
@@ -2180,7 +2180,7 @@ Bitte verwende ein anderes.</translation>
         <translation>Die Datei, die ausgewählt wurde, konnte nicht gespeichert werden.</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable.</source>
+        <source>Empty path is unavailable.</source>
         <translation>Leerer Pfad ist nicht verfügbar.</translation>
     </message>
     <message>

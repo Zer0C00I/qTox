@@ -2108,7 +2108,7 @@ Please use another image.</source>
         <translation>Неуспешна промена на лозинката</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable</source>
+        <source>Empty path is unavailable</source>
         <translation>Празната патека е недостапна</translation>
     </message>
     <message>
@@ -2128,7 +2128,7 @@ Please use another image.</source>
         <translation>Празно име</translation>
     </message>
     <message>
-        <source>Empty name is unavaliable</source>
+        <source>Empty name is unavailable</source>
         <translation>Празно име е недозволиво</translation>
     </message>
     <message>
@@ -2174,7 +2174,7 @@ Please use another image.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Empty path is unavaliable.</source>
+        <source>Empty path is unavailable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

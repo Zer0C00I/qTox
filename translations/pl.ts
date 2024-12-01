@@ -2136,7 +2136,7 @@ Proszę, użyj innego obrazka.</translation>
         <translation>Nie można zmienić hasła</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable</source>
+        <source>Empty path is unavailable</source>
         <translation>Pusta ścieżka jest niedostępna</translation>
     </message>
     <message>
@@ -2156,7 +2156,7 @@ Proszę, użyj innego obrazka.</translation>
         <translation>Pusta nazwa</translation>
     </message>
     <message>
-        <source>Empty name is unavaliable</source>
+        <source>Empty name is unavailable</source>
         <translation>Pusta nazwa jest niedostępna</translation>
     </message>
     <message>
@@ -2202,7 +2202,7 @@ Proszę, użyj innego obrazka.</translation>
         <translation>Wybrany przez Ciebie plik nie mógł zostać zapisany.</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable.</source>
+        <source>Empty path is unavailable.</source>
         <translation>Pusta ścieżka jest niedostępna.</translation>
     </message>
     <message>

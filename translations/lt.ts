@@ -2111,7 +2111,7 @@ Pasirinkite kitą.</translation>
         <translation>Nepavyko pakeisti slaptažodžio</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable</source>
+        <source>Empty path is unavailable</source>
         <translation>Tuščias kelias yra neprieinamas</translation>
     </message>
     <message>
@@ -2131,7 +2131,7 @@ Pasirinkite kitą.</translation>
         <translation>Tuščias vardas</translation>
     </message>
     <message>
-        <source>Empty name is unavaliable</source>
+        <source>Empty name is unavailable</source>
         <translation>Tuščias vardas yra neprieinamas</translation>
     </message>
     <message>
@@ -2177,7 +2177,7 @@ Pasirinkite kitą.</translation>
         <translation>Pasirinkto failo nepavyko išsaugoti.</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable.</source>
+        <source>Empty path is unavailable.</source>
         <translation>Tuščias kelias yra neprieinamas.</translation>
     </message>
     <message>

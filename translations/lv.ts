@@ -2115,7 +2115,7 @@ Lūdzu, izvēlieties citu attēlu.</translation>
         <translation>Nesanāca nomainīt paroli</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable</source>
+        <source>Empty path is unavailable</source>
         <translation>Norāde bez galamērķa nav pieļaujama</translation>
     </message>
     <message>
@@ -2135,7 +2135,7 @@ Lūdzu, izvēlieties citu attēlu.</translation>
         <translation>Tukšs nosaukums</translation>
     </message>
     <message>
-        <source>Empty name is unavaliable</source>
+        <source>Empty name is unavailable</source>
         <translation>Tukšs nosaukums nav pieļaujams</translation>
     </message>
     <message>
@@ -2181,7 +2181,7 @@ Lūdzu, izvēlieties citu attēlu.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Empty path is unavaliable.</source>
+        <source>Empty path is unavailable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -2101,7 +2101,7 @@ Please use another image.</source>
         <translation>无法修改密码</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable</source>
+        <source>Empty path is unavailable</source>
         <translation>空路径不可用</translation>
     </message>
     <message>
@@ -2121,7 +2121,7 @@ Please use another image.</source>
         <translation>空名称</translation>
     </message>
     <message>
-        <source>Empty name is unavaliable</source>
+        <source>Empty name is unavailable</source>
         <translation>空名称无效</translation>
     </message>
     <message>
@@ -2167,7 +2167,7 @@ Please use another image.</source>
         <translation>无法保存您选择的文件。</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable.</source>
+        <source>Empty path is unavailable.</source>
         <translation>空路径不可用。</translation>
     </message>
     <message>

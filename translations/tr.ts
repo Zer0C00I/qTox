@@ -2105,7 +2105,7 @@ lütfen başka bir resim kullanın.</translation>
         <translation>Parola değiştirilemedi</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable</source>
+        <source>Empty path is unavailable</source>
         <translation>Boş konum kullanılamaz</translation>
     </message>
     <message>
@@ -2125,7 +2125,7 @@ lütfen başka bir resim kullanın.</translation>
         <translation>Boş ad</translation>
     </message>
     <message>
-        <source>Empty name is unavaliable</source>
+        <source>Empty name is unavailable</source>
         <translation>Boş ad kullanılamaz</translation>
     </message>
     <message>
@@ -2171,7 +2171,7 @@ lütfen başka bir resim kullanın.</translation>
         <translation>Seçtiğiniz dosya kaydedilemedi.</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable.</source>
+        <source>Empty path is unavailable.</source>
         <translation>Boş yol kullanılamıyor.</translation>
     </message>
     <message>

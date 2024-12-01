@@ -2109,7 +2109,7 @@ Molimo koristite drugu.</translation>
         <translation>Ne mogu da promenim lozinku</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable</source>
+        <source>Empty path is unavailable</source>
         <translation>Prazna putanja nije dostupna</translation>
     </message>
     <message>
@@ -2129,7 +2129,7 @@ Molimo koristite drugu.</translation>
         <translation>Prazno ime</translation>
     </message>
     <message>
-        <source>Empty name is unavaliable</source>
+        <source>Empty name is unavailable</source>
         <translation>Prazno ime nije dostupno</translation>
     </message>
     <message>
@@ -2175,7 +2175,7 @@ Molimo koristite drugu.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Empty path is unavaliable.</source>
+        <source>Empty path is unavailable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

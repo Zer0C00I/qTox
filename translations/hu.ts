@@ -2092,7 +2092,7 @@ Válasszon egy másik képet.</translation>
         <translation>Jelszó módosítása sikertelen</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable</source>
+        <source>Empty path is unavailable</source>
         <translation>Az üres útvonal nem elérhető</translation>
     </message>
     <message>
@@ -2112,7 +2112,7 @@ Válasszon egy másik képet.</translation>
         <translation>Üres név</translation>
     </message>
     <message>
-        <source>Empty name is unavaliable</source>
+        <source>Empty name is unavailable</source>
         <translation>Az üres név érvénytelen</translation>
     </message>
     <message>
@@ -2158,7 +2158,7 @@ Válasszon egy másik képet.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Empty path is unavaliable.</source>
+        <source>Empty path is unavailable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

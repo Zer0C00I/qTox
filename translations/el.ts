@@ -2096,7 +2096,7 @@ Please use another image.</source>
         <translation>Αδύνατη αλλαγή του κωδικού πρόσβασης</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable</source>
+        <source>Empty path is unavailable</source>
         <translation>Κενή διαδρομή μη διαθέσιμη</translation>
     </message>
     <message>
@@ -2116,7 +2116,7 @@ Please use another image.</source>
         <translation>Κενό όνομα</translation>
     </message>
     <message>
-        <source>Empty name is unavaliable</source>
+        <source>Empty name is unavailable</source>
         <translation>Κενό όνομα μη διαθέσιμο</translation>
     </message>
     <message>
@@ -2162,7 +2162,7 @@ Please use another image.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Empty path is unavaliable.</source>
+        <source>Empty path is unavailable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

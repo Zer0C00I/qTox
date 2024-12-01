@@ -41,7 +41,7 @@ const QMap<IProfileInfo::SetAvatarResult, QString> SET_AVATAR_ERROR = {
     {IProfileInfo::SetAvatarResult::CanNotRead, ProfileForm::tr("Unable to read this image.")},
     {IProfileInfo::SetAvatarResult::TooLarge,
      ProfileForm::tr("The supplied image is too large.\nPlease use another image.")},
-    {IProfileInfo::SetAvatarResult::EmptyPath, ProfileForm::tr("Empty path is unavaliable")},
+    {IProfileInfo::SetAvatarResult::EmptyPath, ProfileForm::tr("Empty path is unavailable")},
 };
 
 const QMap<IProfileInfo::RenameResult, QPair<QString, QString>> RENAME_ERROR = {
@@ -52,7 +52,7 @@ const QMap<IProfileInfo::RenameResult, QPair<QString, QString>> RENAME_ERROR = {
      {ProfileForm::tr("Profile already exists"),
       ProfileForm::tr("A profile named \"%1\" already exists.")}},
     {IProfileInfo::RenameResult::EmptyName,
-     {ProfileForm::tr("Empty name"), ProfileForm::tr("Empty name is unavaliable")}},
+     {ProfileForm::tr("Empty name"), ProfileForm::tr("Empty name is unavailable")}},
 };
 
 const QMap<IProfileInfo::SaveResult, QPair<QString, QString>> SAVE_ERROR = {
@@ -67,7 +67,7 @@ const QMap<IProfileInfo::SaveResult, QPair<QString, QString>> SAVE_ERROR = {
      {ProfileForm::tr("Failed to save file"),
       ProfileForm::tr("The file you chose could not be saved.")}},
     {IProfileInfo::SaveResult::EmptyPath,
-     {ProfileForm::tr("Empty path"), ProfileForm::tr("Empty path is unavaliable.")}},
+     {ProfileForm::tr("Empty path"), ProfileForm::tr("Empty path is unavailable.")}},
 };
 
 const QPair<QString, QString> CAN_NOT_CHANGE_PASSWORD =

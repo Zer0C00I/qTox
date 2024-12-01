@@ -2113,7 +2113,7 @@ Por favor, escolha outra.</translation>
         <translation>Não foi possível alterar a senha</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable</source>
+        <source>Empty path is unavailable</source>
         <translation>Caminho em branco não está disponível</translation>
     </message>
     <message>
@@ -2133,7 +2133,7 @@ Por favor, escolha outra.</translation>
         <translation>Nome em branco</translation>
     </message>
     <message>
-        <source>Empty name is unavaliable</source>
+        <source>Empty name is unavailable</source>
         <translation>Nome em branco não está disponível</translation>
     </message>
     <message>
@@ -2179,7 +2179,7 @@ Por favor, escolha outra.</translation>
         <translation>O arquivo que você escolheu não pôde ser salvo.</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable.</source>
+        <source>Empty path is unavailable.</source>
         <translation>Não é possível usar diretórios em branco.</translation>
     </message>
     <message>

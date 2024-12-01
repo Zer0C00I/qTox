@@ -2104,7 +2104,7 @@ Gebruik een andere afbeelding.</translation>
         <translation>Kon paswoord niet wijzigen</translation>
     </message>
     <message>
-        <source>Empty path is unavaliable</source>
+        <source>Empty path is unavailable</source>
         <translation>Leeg pad is niet beschikbaar</translation>
     </message>
     <message>
@@ -2124,7 +2124,7 @@ Gebruik een andere afbeelding.</translation>
         <translation>Lege naam</translation>
     </message>
     <message>
-        <source>Empty name is unavaliable</source>
+        <source>Empty name is unavailable</source>
         <translation>Lege naam is niet beschikbaar</translation>
     </message>
     <message>
@@ -2170,7 +2170,7 @@ Gebruik een andere afbeelding.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Empty path is unavaliable.</source>
+        <source>Empty path is unavailable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
