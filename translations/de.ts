@@ -29,7 +29,7 @@
     </message>
     <message>
         <source>Gain</source>
-        <translation>Aufnahmelautstärke:</translation>
+        <translation>Aufnahmelautstärke</translation>
     </message>
     <message>
         <source>Playback device</source>
@@ -41,7 +41,7 @@
     </message>
     <message>
         <source>Volume</source>
-        <translation>Wiedergabelautstärke:</translation>
+        <translation>Wiedergabelautstärke</translation>
     </message>
     <message>
         <source>Video Settings</source>
@@ -65,7 +65,7 @@ schnell und stabil genug ist.</translation>
     </message>
     <message>
         <source>Resolution</source>
-        <translation>Kameraauflösung:</translation>
+        <translation>Kameraauflösung</translation>
     </message>
     <message>
         <source>Rescan devices</source>
@@ -233,7 +233,7 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation type="unfinished">Akzeptiere automatisch Gruppenchat-Einladungen von diesem Kontakt, falls festgelegt.</translation>
+        <translation>Akzeptiere automatisch Konferenz-Einladungen von diesem Kontakt, falls festgelegt.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -285,11 +285,11 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation type="unfinished">Gruppeneinladungen automatisch annehmen</translation>
+        <translation>Konferenzeinladungen automatisch annehmen</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
-        <translation>Sie können Kommentare über über diesen Kontakt hier speichern.</translation>
+        <translation>Sie können Kommentare über diesen Kontakt hier speichern.</translation>
     </message>
     <message>
         <source>Choose an auto-accept directory</source>
@@ -591,7 +591,7 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
-        <translation type="unfinished"></translation>
+        <translation>Debug-Tools einschalten (nur Entwickler)</translation>
     </message>
 </context>
 <context>
@@ -638,7 +638,7 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Fehler</translation>
+        <translation>Fehler</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
@@ -829,15 +829,15 @@ um sie in Windows speichern zu können.</translation>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished">Gruppen</translation>
+        <translation>Konferenzen</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation type="unfinished">Neue Gruppe erstellen</translation>
+        <translation>Neue Konferenz erstellen</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation type="unfinished">Gruppeneinladungen</translation>
+        <translation>Konferenzeinladungen</translation>
     </message>
 </context>
 <context>
@@ -899,7 +899,7 @@ um sie in Windows speichern zu können.</translation>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation type="unfinished">Gruppenchat %1</translation>
+        <translation>Konferenz %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -926,22 +926,22 @@ um sie in Windows speichern zu können.</translation>
     <name>DebugLog</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation>Debug-Protokoll</translation>
     </message>
     <message>
         <source>Auto-reload</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisch neu laden</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisch scrollen</translation>
     </message>
 </context>
 <context>
     <name>DebugLogForm</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation>Debug-Protokoll</translation>
     </message>
 </context>
 <context>
@@ -1109,11 +1109,11 @@ um sie in Windows speichern zu können.</translation>
     </message>
     <message>
         <source>To new conference</source>
-        <translation type="unfinished">Zu einer neuen Gruppe</translation>
+        <translation>Zu einer neuen Konferenz</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation type="unfinished">In Gruppe „%1“ einladen</translation>
+        <translation>In Konferenz „%1“ einladen</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1305,7 +1305,7 @@ anstatt ganz zu schließen.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
-        <translation type="unfinished">Hinzufügen einer Chat-Nachricht, wenn ein Benutzer einer Gruppe beitritt oder sie verlässt</translation>
+        <translation>Hinzufügen einer Chat-Nachricht, wenn ein Benutzer einer Konferenz beitritt oder sie verlässt</translation>
     </message>
 </context>
 <context>
@@ -1697,7 +1697,7 @@ Bitte gib in beide Felder das gleiche Passwort ein.</translation>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation type="unfinished">Einen Gruppenchat eröffnen</translation>
+        <translation>Eine Konferenz eröffnen</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1757,11 +1757,11 @@ Bitte gib in beide Felder das gleiche Passwort ein.</translation>
     </message>
     <message>
         <source>Conference</source>
-        <translation type="unfinished">Gruppenchat</translation>
+        <translation>Konferenz</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation type="unfinished">Gruppenchat-Verwaltung öffnen</translation>
+        <translation>Konferenz-Verwaltung öffnen</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -1781,15 +1781,15 @@ Bitte gib in beide Felder das gleiche Passwort ein.</translation>
     </message>
     <message>
         <source>Open internal debugging tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Interne Debug-Tools öffnen</translation>
     </message>
     <message>
         <source>Debug</source>
-        <translation type="unfinished">Debug</translation>
+        <translation>Debug</translation>
     </message>
     <message>
         <source>Open Debugger</source>
-        <translation type="unfinished"></translation>
+        <translation>Debugger öffnen</translation>
     </message>
 </context>
 <context>
@@ -1893,7 +1893,7 @@ Bitte gib in beide Felder das gleiche Passwort ein.</translation>
     </message>
     <message>
         <source>New conference message</source>
-        <translation type="unfinished">Neue Gruppennachricht</translation>
+        <translation>Neue Konferenznachricht</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
@@ -1906,11 +1906,11 @@ Bitte gib in beide Felder das gleiche Passwort ein.</translation>
     </message>
     <message>
         <source>Conference invite received</source>
-        <translation type="unfinished">Gruppeneinladung erhalten</translation>
+        <translation>Konferenzeinladung erhalten</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
-        <translation type="unfinished">%1 hat dich in eine Gruppe eingeladen.</translation>
+        <translation>%1 hat dich in eine Konferenz eingeladen.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -1999,7 +1999,7 @@ Die Sicherung des Verlaufs ist noch in Entwicklung. Formatierungsänderungen bei
     </message>
     <message>
         <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation type="unfinished">Filtere Gruppennachricht nach öffentlichem Schlüssel des Gruppenmitglieds. Füge öffentlichen Schlüssel hier ein, einen pro Zeile.</translation>
+        <translation>Filtere Konferenznachricht nach öffentlichem Schlüssel des Konferenzmitglieds. Füge öffentlichen Schlüssel hier ein, einen pro Zeile.</translation>
     </message>
 </context>
 <context>
@@ -2042,7 +2042,7 @@ Die Sicherung des Verlaufs ist noch in Entwicklung. Formatierungsänderungen bei
     </message>
     <message>
         <source>Remove</source>
-        <translation>Löschen</translation>
+        <translation>Entfernen</translation>
     </message>
     <message>
         <source>Unable to read this image.</source>
@@ -2353,7 +2353,7 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     </message>
     <message>
         <source>qTox couldn&apos;t open your chat logs, they will be disabled.</source>
-        <translation>qTox konnte Ihr Gesprächsprotokoll nicht öffnen. Das Speichern der Gespräche wird deaktiviert!</translation>
+        <translation>qTox konnte Ihr Gesprächsprotokoll nicht öffnen. Das Speichern der Gespräche wird deaktiviert.</translation>
     </message>
     <message>
         <source>Dark</source>
@@ -2421,11 +2421,11 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     </message>
     <message>
         <source>%1 has joined the conference</source>
-        <translation type="unfinished">%1 ist der Gruppe beigetreten</translation>
+        <translation>%1 ist der Konferenz beigetreten</translation>
     </message>
     <message>
         <source>%1 has left the conference</source>
-        <translation type="unfinished">%1 hat die Gruppe verlassen</translation>
+        <translation>%1 hat die Konferenz verlassen</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
@@ -2557,7 +2557,7 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     </message>
     <message>
         <source>Remove</source>
-        <translation>Löschen</translation>
+        <translation>Entfernen</translation>
     </message>
 </context>
 <context>
@@ -2814,7 +2814,7 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation type="unfinished">Gruppenchats an erster Stelle der Kontaktliste anzeigen</translation>
+        <translation>Konferenz am Anfang der Kontaktliste anzeigen</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode.</source>
@@ -2884,7 +2884,7 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation type="unfinished">Gruppenchats benachrichtigen nur, wenn du darin erwähnt wirst</translation>
+        <translation>Konferenzen benachrichtigen nur, wenn du darin erwähnt wirst</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -2904,7 +2904,7 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
-        <translation type="unfinished">Farbige Spitznamen in Gruppenchats verwenden</translation>
+        <translation>Farbige Spitznamen in Konferenzen verwenden</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when mentioned.</source>
@@ -2975,7 +2975,7 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation type="unfinished">Neue Gruppe erstellen...</translation>
+        <translation>Neue Konferenz erstellen...</translation>
     </message>
     <message>
         <source>Add new circle...</source>
@@ -3008,7 +3008,7 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     </message>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished">Gruppen</translation>
+        <translation>Konferenzen</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -3016,7 +3016,7 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation type="unfinished">Gruppenchat #%1</translation>
+        <translation>Konferenz #%1</translation>
     </message>
     <message>
         <source>Show</source>
@@ -3070,9 +3070,9 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
-        <translation type="unfinished">
-            <numerusform>%n neue Gruppeneinladung</numerusform>
-            <numerusform>%n neue Gruppeneinladungen</numerusform>
+        <translation>
+            <numerusform>%n neue Konferenzeinladung</numerusform>
+            <numerusform>%n neue Konferenzeinladungen</numerusform>
         </translation>
     </message>
     <message>
@@ -3107,7 +3107,7 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     <message>
         <source>Debug</source>
         <comment>title of the window</comment>
-        <translation type="unfinished">Debug</translation>
+        <translation>Debug</translation>
     </message>
 </context>
 </TS>
