@@ -55,7 +55,7 @@ SettingsWidget::SettingsWidget(UpdateCheck* updateCheck, IAudioControl& audio, C
     AVForm* rawAvfrm = new AVForm(audio, coreAV, cameraSource, audioSettings, videoSettings, style);
     std::unique_ptr<AVForm> avfrm(rawAvfrm);
     std::unique_ptr<AdvancedForm> expfrm(new AdvancedForm(settings, style, messageBoxManager));
-    std::unique_ptr<AboutForm> abtfrm(new AboutForm(updateCheck, style));
+    std::unique_ptr<AboutForm> abtfrm(new AboutForm(updateCheck, core->getSelfId().toString(), style));
 
 #ifdef UPDATE_CHECK_ENABLED
     if (updateCheck != nullptr) {

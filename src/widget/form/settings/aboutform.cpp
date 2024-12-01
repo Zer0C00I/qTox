@@ -25,6 +25,13 @@
 
 #include <memory>
 
+namespace {
+QString urlEncode(const QString& str)
+{
+    return QString::fromUtf8(QUrl::toPercentEncoding(str));
+}
+} // namespace
+
 // index of UI in the QStackedWidget
 enum class updateIndex
 {
@@ -43,11 +50,12 @@ enum class updateIndex
 /**
  * @brief Constructor of AboutForm.
  */
-AboutForm::AboutForm(UpdateCheck* updateCheck_, Style& style_)
+AboutForm::AboutForm(UpdateCheck* updateCheck_, QString contactInfo_, Style& style_)
     : GenericForm(QPixmap(":/img/settings/general.png"), style_)
     , bodyUI(new Ui::AboutSettings)
     , progressTimer(new QTimer(this))
     , updateCheck(updateCheck_)
+    , contactInfo{contactInfo_}
     , style{style_}
 {
     bodyUI->setupUi(this);
@@ -80,12 +88,8 @@ AboutForm::AboutForm(UpdateCheck* updateCheck_, Style& style_)
  */
 void AboutForm::replaceVersions()
 {
-    // TODO: When we finally have stable releases: build-in a way to tell
-    // nightly builds from stable releases.
-
-    QString TOXCORE_VERSION = QString::number(tox_version_major()) + "."
-                              + QString::number(tox_version_minor()) + "."
-                              + QString::number(tox_version_patch());
+    QString TOXCORE_VERSION =
+        QStringLiteral("%1.%2.%3").arg(tox_version_major()).arg(tox_version_minor()).arg(tox_version_patch());
 
     bodyUI->youAreUsing->setText(tr("You are using qTox version %1.").arg(QString(GIT_DESCRIBE)));
 
@@ -108,33 +112,6 @@ void AboutForm::replaceVersions()
     bodyUI->toxCoreVersion->setText(tr("toxcore version: %1").arg(TOXCORE_VERSION));
     bodyUI->qtVersion->setText(tr("Qt version: %1").arg(QT_VERSION_STR));
 
-    QString issueBody =
-        QString("##### Brief Description\n\n"
-                "OS: %1\n"
-                "qTox version: %2\n"
-                "Commit hash: %3\n"
-                "toxcore: %4\n"
-                "Qt: %5\n…\n\n"
-                "Reproducible: Always / Almost Always / Sometimes"
-                " / Rarely / Couldn't Reproduce\n\n"
-                "##### Steps to reproduce\n\n"
-                "1. \n2. \n3. …\n\n"
-                "##### Observed Behavior\n\n\n"
-                "##### Expected Behavior\n\n\n"
-                "##### Additional Info\n"
-                "(links, images, etc go here)\n\n"
-                "----\n\n"
-                "More information on how to write good bug reports in the wiki: "
-                "https://github.com/TokTok/qTox/wiki/Writing-Useful-Bug-Reports.\n\n"
-                "Please remove any unnecessary template section before submitting.")
-            .arg(QSysInfo::prettyProductName())
-            .arg(GIT_DESCRIBE)
-            .arg(GIT_VERSION)
-            .arg(TOXCORE_VERSION)
-            .arg(QT_VERSION_STR);
-
-    issueBody.replace("#", "%23").replace(":", "%3A");
-
     bodyUI->knownIssues->setText(
         tr("A list of all known issues may be found at our %1 at Github."
            " If you discover a bug or security vulnerability within"
@@ -149,11 +126,22 @@ void AboutForm::replaceVersions()
                             tr("Writing Useful Bug Reports",
                                "Replaces `%2` in the `A list of all known…`"))));
 
-    bodyUI->clickToReport->setText(
-        createLink("https://github.com/TokTok/qTox/issues/new?body="
-                       + QString::fromUtf8(QUrl(issueBody).toEncoded()),
-                   QString("<b>%1</b>").arg(tr("Click here to report a bug."))));
-
+    bodyUI->clickToReport->setText(createLink( //
+        QStringLiteral(                        //
+            "https://github.com/TokTok/qTox/issues/new"
+            "?labels=bug"
+            "&template=bug.yaml"
+            "&contact=%1"
+            "&title=%2"
+            "&qtox_version=%3"
+            "&commit_hash=%4"
+            "&toxcore_version=%5"
+            "&qt_version=%6"
+            "&os_detail=%7")
+            .arg(urlEncode("tox:" + contactInfo), urlEncode("Bug: "), urlEncode(GIT_DESCRIBE),
+                 urlEncode(GIT_VERSION), urlEncode(TOXCORE_VERSION), urlEncode(QT_VERSION_STR),
+                 urlEncode(QSysInfo::prettyProductName())),
+        QStringLiteral("<b>%1</b>").arg(tr("Click here to report a bug."))));
 
     QString authorInfo =
         QString("<p>%1</p><p>%2</p>")

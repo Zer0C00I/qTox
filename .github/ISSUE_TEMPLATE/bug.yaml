@@ -9,11 +9,13 @@ body:
         Thanks for taking the time to fill out this bug report!
 
         If you filed this report from the qTox about form, version fields should be filled out automatically. If you're filing this report manually, please fill out the following fields to the best of your ability.
+
+        More information on how to write good bug reports in the [wiki](https://github.com/TokTok/qTox/wiki/Writing-Useful-Bug-Reports).
   - type: input
     id: contact
     attributes:
       label: Contact Details (e.g. Tox ID or email)
-      description: How can we get in touch with you if we need more info?
+      description: How can we get in touch with you if we need more info? If you filed a bug report from the qTox about form, this field should be filled out automatically. If you don't want to share your contact details, you can leave this blank (delete it if qTox filled it in).
       placeholder: "tox:12345678..."
     validations:
       required: false
@@ -43,10 +45,7 @@ body:
       label: Steps to reproduce
       placeholder: How can we reproduce the bug?
       value: |
-        1. Go to '...'
-        2. Click on '....'
-        3. Scroll down to '....'
-        4. See error
+        1. Start qTox
     validations:
       required: true
   - type: textarea

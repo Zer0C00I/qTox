@@ -10,7 +10,6 @@
 #include <QUrl>
 
 #include <memory>
-class Core;
 class QTimer;
 class QString;
 class UpdateCheck;
@@ -25,7 +24,7 @@ class AboutForm : public GenericForm
 {
     Q_OBJECT
 public:
-    AboutForm(UpdateCheck* updateCheck_, Style& style_);
+    AboutForm(UpdateCheck* updateCheck_, QString contactInfo_, Style& style_);
     ~AboutForm();
     QString getFormName() final
     {
@@ -48,6 +47,7 @@ private:
     Ui::AboutSettings* bodyUI;
     QTimer* progressTimer;
     UpdateCheck* updateCheck;
+    QString contactInfo;
     QMetaObject::Connection linkConnection;
     Style& style;
 };
