@@ -105,7 +105,7 @@ wat tot problemen kan leiden met videogesprekken.</translation>
     </message>
     <message>
         <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to reduce bandwidth usage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Verzonden audiokwaliteit. Verlaag deze instelling als je bandbreedte niet hoog genoeg is of als je het bandbreedtegebruik wilt verminderen.</translation>
     </message>
     <message>
         <source>Set resolution of your camera.
@@ -113,19 +113,23 @@ The higher values, the better video quality your friends may get.
 Note that with better video quality, you use more bandwidth.
 Sometimes your connection may not be good enough to handle higher video quality,
 which may lead to problems with video calls.</source>
-        <translation type="unfinished"></translation>
+        <translation>Stel de resolutie van je camera in.
+Hoe hoger de waarden, hoe beter de videokwaliteit voor je vrienden.
+Houd er rekening mee dat je met een betere videokwaliteit meer bandbreedte gebruikt.
+Soms is je verbinding niet goed genoeg om een hogere videokwaliteit aan te kunnen,
+wat kan leiden tot problemen met videogesprekken.</translation>
     </message>
     <message>
         <source>Play a test sound while changing the output volume.</source>
-        <translation type="unfinished"></translation>
+        <translation>Speel een testgeluid af terwijl je het uitgangsvolume wijzigt.</translation>
     </message>
     <message>
         <source>Use slider to set the gain of your input device ranging from %1dB to %2dB.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik de schuifregelaar om de versterking van je invoerapparaat in te stellen tussen %1dB en %2dB.</translation>
     </message>
     <message>
         <source>Use slider to set the activation volume for your input device.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik de schuifregelaar om het activeringsvolume voor je invoerapparaat in te stellen.</translation>
     </message>
 </context>
 <context>
@@ -269,28 +273,28 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Auto-accept files</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisch bestanden accepteren</translation>
     </message>
     <message>
         <source>Auto-accept for this contact is disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisch accepteren voor dit contact is uitgeschakeld</translation>
     </message>
     <message>
         <source>Auto-accept call:</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisch gesprek accepteren:</translation>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisch conferentie-uitnodigingen accepteren</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hier kun je opmerkingen over dit contact opslaan.</translation>
     </message>
     <message>
         <source>Choose an auto-accept directory</source>
         <extracomment>popup title</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Kies een bestandsmap voor automatisch accepteren</translation>
     </message>
 </context>
 <context>
@@ -325,7 +329,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Currently running an untested/unstable version of qTox</source>
-        <translation type="unfinished"></translation>
+        <translation>Momenteel wordt een ongeteste/onstabiele versie van qTox uitgevoerd</translation>
     </message>
 </context>
 <context>
@@ -441,17 +445,17 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Tox ID, 76 hexadecimal characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Tox-ID, 76 hexadecimale tekens</translation>
     </message>
     <message>
         <source>%1 Tox ID is invalid</source>
         <comment>Tox address error</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 Tox-ID is ongeldig</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>76 hexadecimale tekens</translation>
     </message>
 </context>
 <context>
@@ -494,15 +498,15 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
-        <translation type="unfinished"></translation>
+        <translation>Tenzij je %1 weet wat je doet, %2 verander dan niets hier. Wijzigingen die hier worden aangebracht, kunnen leiden tot problemen met qTox en zelfs tot verlies van je gegevens, bijvoorbeeld geschiedenis.%3</translation>
     </message>
     <message>
         <source>Changes here are applied only after restarting qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wijzigingen worden pas doorgevoerd nadat je qTox opnieuw hebt opgestart.</translation>
     </message>
     <message>
         <source>Save file</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestand opslaan</translation>
     </message>
 </context>
 <context>
@@ -578,16 +582,16 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Connection settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Verbindingsinstellingen</translation>
     </message>
     <message>
         <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
         <extracomment>force tcp checkbox tooltip</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Als u dit uitschakelt, wordt bijvoorbeeld Tox over Tor toegestaan. Het voegt echter wel belasting toe aan het Tox-netwerk, dus vink het alleen uit als het nodig is.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
-        <translation type="unfinished"></translation>
+        <translation>Debugtools inschakelen (alleen voor ontwikkelaars)</translation>
     </message>
 </context>
 <context>
@@ -610,27 +614,27 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <translation type="unfinished"></translation>
+        <translation>Stelt IPv6 &lt;aan&gt;/&lt;uit&gt; in. Standaard is AAN.</translation>
     </message>
     <message>
         <source>on/off</source>
-        <translation type="unfinished"></translation>
+        <translation>aan/uit</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zet UDP &lt;aan&gt;/&lt;uit&gt;. Standaard is AAN.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zet LAN-detectie &lt;aan&gt;/&lt;uit&gt;. UDP uit overschrijft. Standaard is AAN.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
-        <translation type="unfinished"></translation>
+        <translation>Stelt proxy-instellingen in. Standaard is GEEN.</translation>
     </message>
     <message>
         <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translation type="unfinished"></translation>
+        <translation>(SOCKS5/HTTP/GEEN):(ADRES):(POORT)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -687,7 +691,8 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Illegal characters have been changed to _ 
 so you can save the file on Windows.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ongeldige tekens zijn vervangen door _
+zodat u het bestand op Windows kunt opslaan.</translation>
     </message>
 </context>
 <context>
@@ -805,9 +810,9 @@ so you can save the file on Windows.</source>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n gebruiker in de chat</numerusform>
+            <numerusform>%n gebruikers in de chat</numerusform>
         </translation>
     </message>
     <message>
@@ -871,9 +876,9 @@ so you can save the file on Windows.</source>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n gebruiker in de chat</numerusform>
+            <numerusform>%n gebruikers in de chat</numerusform>
         </translation>
     </message>
     <message>
@@ -920,22 +925,22 @@ so you can save the file on Windows.</source>
     <name>DebugLog</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation>Debug-logboek</translation>
     </message>
     <message>
         <source>Auto-reload</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisch opnieuw laden</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisch scrollen</translation>
     </message>
 </context>
 <context>
     <name>DebugLogForm</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation>Debug-logboek</translation>
     </message>
 </context>
 <context>
@@ -1022,7 +1027,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Remote paused</source>
         <comment>file transfer widget</comment>
-        <translation type="unfinished"></translation>
+        <translation>Andere kant gepauzeerd</translation>
     </message>
 </context>
 <context>
@@ -1038,7 +1043,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Transferred files</source>
         <comment>&quot;Headline&quot; of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation>Overgedragen bestanden</translation>
     </message>
 </context>
 <context>
@@ -1065,7 +1070,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Older than 6 months</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouder dan 6 maanden</translation>
     </message>
 </context>
 <context>
@@ -1144,7 +1149,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Verplaats naar cirkel &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Remove friend</source>
@@ -1153,11 +1158,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Blocked</source>
-        <translation type="unfinished"></translation>
+        <translation>Geblokkeerd</translation>
     </message>
     <message>
         <source>Negotiating</source>
-        <translation type="unfinished"></translation>
+        <translation>Onderhandelen</translation>
     </message>
 </context>
 <context>
@@ -1173,7 +1178,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>%1 (no fonts)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (geen lettertypen)</translation>
     </message>
 </context>
 <context>
@@ -1276,22 +1281,24 @@ so you can save the file on Windows.</source>
         <source>After pressing minimize (_) qTox will minimize to tray,
 instead of system taskbar.</source>
         <comment>toolTip for minimize to tray setting</comment>
-        <translation type="unfinished"></translation>
+        <translation>Also je op minimaliseren (_) drukt, minimaliseert qTox naar het systeemvak,
+in plaats van naar de systeemtaakbalk.</translation>
     </message>
     <message>
         <source>After pressing close (X) qTox will close to tray,
 instead of closing entirely.</source>
         <comment>toolTip for close to tray setting</comment>
-        <translation type="unfinished"></translation>
+        <translation>Als je op sluiten (X) drukt, sluit qTox naar het systeemvak,
+in plaats van volledig te sluiten.</translation>
     </message>
     <message>
         <source>You can set this on a per-friend basis by right clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
-        <translation type="unfinished"></translation>
+        <translation>Je kunt dit per vriend instellen door met de rechtermuisknop op een vriend te klikken.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
-        <translation type="unfinished"></translation>
+        <translation>Voeg een chatbericht toe wanneer een gebruiker een conferentie betreedt of verlaat</translation>
     </message>
 </context>
 <context>
@@ -1350,7 +1357,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
-        <translation type="unfinished"></translation>
+        <translation>Weet je zeker dat je alle weergegeven berichten wilt wissen?</translation>
     </message>
 </context>
 <context>
@@ -1502,18 +1509,19 @@ Dit bestand bevat geen chatgeschiedenis.</translation>
         <source>This ID allows other Tox users to add and contact you.
 Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
-        <translation type="unfinished"></translation>
+        <translation>Met deze ID kunnen andere Tox-gebruikers je toevoegen en contact met je opnemen.
+Deel het met je vrienden om te beginnen met chatten.</translation>
     </message>
 </context>
 <context>
     <name>LoadHistoryDialog</name>
     <message>
         <source>Load history dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Geschiedenisdialoogvenster laden</translation>
     </message>
     <message>
         <source>Load history from:</source>
-        <translation type="unfinished"></translation>
+        <translation>Geschiedenis laden uit:</translation>
     </message>
 </context>
 <context>
@@ -1657,7 +1665,8 @@ Misschien wil je er een maken.</translation>
     <message>
         <source>The passwords you&apos;ve entered are different.
 Please make sure to enter the same password twice.</source>
-        <translation type="unfinished"></translation>
+        <translation>De wachtwoorden die je hebt ingevoerd, zijn verschillend.
+Zorg ervoor dat je hetzelfde wachtwoord twee keer invoert.</translation>
     </message>
 </context>
 <context>
@@ -1764,7 +1773,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Open internal debugging tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Interne debuggingtools openen</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -1772,7 +1781,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Open Debugger</source>
-        <translation type="unfinished"></translation>
+        <translation>Debugger openen</translation>
     </message>
 </context>
 <context>
@@ -1820,11 +1829,11 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Hide messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Berichten verbergen</translation>
     </message>
     <message>
         <source>Show messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Berichten weergeven</translation>
     </message>
 </context>
 <context>
@@ -1885,7 +1894,7 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>%1 - file transfer</source>
         <extracomment>e.g. Bob - file transfer</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>%1 - bestandsoverdracht</translation>
     </message>
     <message>
         <source>Conference invite received</source>
@@ -1893,7 +1902,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 nodigt je uit om deel te nemen aan een conferentie.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -1901,7 +1910,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Friend request received from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Vriendschapsverzoek ontvangen van %1</translation>
     </message>
 </context>
 <context>
@@ -1981,7 +1990,7 @@ Het is mogelijk dat er zich veranderingen in het formaat voordoen, wat kan leide
     </message>
     <message>
         <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation type="unfinished"></translation>
+        <translation>Filter conferentieberichten op openbare sleutels van conferentieleden. Plaats hier openbare sleutels, één per regel.</translation>
     </message>
 </context>
 <context>
@@ -1996,7 +2005,7 @@ Het is mogelijk dat er zich veranderingen in het formaat voordoen, wat kan leide
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
-        <translation type="unfinished"></translation>
+        <translation>Het wachtwoord van de database kon niet worden gewijzigd. Het is mogelijk dat de database beschadigd is of dat het oude wachtwoord wordt gebruikt.</translation>
     </message>
 </context>
 <context>
@@ -2151,23 +2160,23 @@ Gebruik een andere afbeelding.</translation>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation type="unfinished"></translation>
+        <translation>Je hebt geen toestemming om naar die locatie te schrijven. Kies een andere locatie of annuleer het dialoogvenster Opslaan.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
-        <translation type="unfinished"></translation>
+        <translation>Opslaan mislukt</translation>
     </message>
     <message>
         <source>The file you chose could not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Het door u gekozen bestand kon niet worden opgeslagen.</translation>
     </message>
     <message>
         <source>Empty path is unavailable.</source>
-        <translation type="unfinished"></translation>
+        <translation>Leeg pad is niet beschikbaar.</translation>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Het wachtwoord van de database kon niet worden gewijzigd. Het is mogelijk dat de database beschadigd is of dat het oude wachtwoord wordt gebruikt.</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
@@ -2469,7 +2478,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Remote paused</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Andere kant gepauzeerd</translation>
     </message>
     <message>
         <source>File Name</source>
