@@ -76,7 +76,7 @@ void CategoryWidget::setExpanded(bool isExpanded, bool save)
     expanded = isExpanded;
     setMouseTracking(true);
 
-    // The listWidget will recieve a enterEvent for some reason if now visible.
+    // The listWidget will receive a enterEvent for some reason if now visible.
     // Using the following, we prevent that.
     listWidget->setAttribute(Qt::WA_TransparentForMouseEvents, true);
     listWidget->setVisible(isExpanded);

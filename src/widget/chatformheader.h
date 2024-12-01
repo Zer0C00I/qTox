@@ -27,7 +27,7 @@ public:
     enum class CallButtonState
     {
         Disabled = 0,  // Grey
-        Avaliable = 1, // Green
+        Available = 1, // Green
         InCall = 2,    // Red
         Outgoing = 3,  // Yellow
         Incoming = 4,  // Yellow

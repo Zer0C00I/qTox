@@ -177,7 +177,7 @@ signals:
     void conferenceJoined(int conferencenumber, ConferenceId conferenceId);
     void actionSentResult(uint32_t friendId, const QString& action, int success);
 
-    void receiptRecieved(int friedId, ReceiptNum receipt);
+    void receiptReceived(int friedId, ReceiptNum receipt);
 
     void failedToRemoveFriend(uint32_t friendId);
 

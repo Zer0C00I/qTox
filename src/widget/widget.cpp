@@ -725,7 +725,7 @@ void Widget::onCoreChanged(Core& core_)
     connect(core, &Core::friendStatusMessageChanged, this, &Widget::onFriendStatusMessageChanged);
     connect(core, &Core::friendRequestReceived, this, &Widget::onFriendRequestReceived);
     connect(core, &Core::friendMessageReceived, this, &Widget::onFriendMessageReceived);
-    connect(core, &Core::receiptRecieved, this, &Widget::onReceiptReceived);
+    connect(core, &Core::receiptReceived, this, &Widget::onReceiptReceived);
     connect(core, &Core::conferenceInviteReceived, this, &Widget::onConferenceInviteReceived);
     connect(core, &Core::conferenceMessageReceived, this, &Widget::onConferenceMessageReceived);
     connect(core, &Core::conferencePeerlistChanged, this, &Widget::onConferencePeerlistChanged);

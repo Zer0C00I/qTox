@@ -417,7 +417,7 @@ bool CameraDevice::isScreen(const QString& devName)
 
 /**
  * @brief Get list of resolutions and position of screens
- * @return Vector of avaliable screen modes with offset
+ * @return Vector of available screen modes with offset
  */
 QVector<VideoMode> CameraDevice::getScreenModes()
 {

@@ -215,7 +215,7 @@ ChatForm::~ChatForm()
 void ChatForm::setStatusMessage(const QString& newMessage)
 {
     statusMessageLabel->setText(newMessage);
-    // for long messsages
+    // for long messages
     statusMessageLabel->setToolTip(Qt::convertFromPlainText(newMessage, Qt::WhiteSpaceNormal));
 }
 

@@ -575,7 +575,7 @@ void Core::onConferenceTitleChange(Tox* tox, uint32_t conferenceId, uint32_t pee
 void Core::onReadReceiptCallback(Tox* tox, uint32_t friendId, uint32_t receipt, void* core)
 {
     std::ignore = tox;
-    emit static_cast<Core*>(core)->receiptRecieved(friendId, ReceiptNum{receipt});
+    emit static_cast<Core*>(core)->receiptReceived(friendId, ReceiptNum{receipt});
 }
 
 void Core::acceptFriendRequest(const ToxPk& friendPk)

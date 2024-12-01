@@ -58,7 +58,7 @@ bool DbTo11::appendSplitPeersQueries(RawDatabase& db, QVector<RawDatabase::Query
     // splitting peers table into separate chat and authors table.
     // peers had a dual-meaning of each friend having their own chat, but also each peer
     // being authors of messages. This wasn't true for self which was in the peers table
-    // but had no related chat. For upcomming group history, the confusion is amplified
+    // but had no related chat. For upcoming group history, the confusion is amplified
     // since each group is a chat so is in peers, but authors no messages, and each group
     // member is an author so is in peers, but has no chat.
     // Splitting peers makes the relation much clearer and the tables have a single meaning.
