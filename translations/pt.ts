@@ -1164,10 +1164,6 @@ de forma que possa guardar o ficheiro no Windows.</translation>
         <source>Blocked</source>
         <translation>Bloqueado</translation>
     </message>
-    <message>
-        <source>Negotiating</source>
-        <translation>A negociar</translation>
-    </message>
 </context>
 <context>
     <name>GeneralForm</name>

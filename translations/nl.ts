@@ -1164,10 +1164,6 @@ zodat u het bestand op Windows kunt opslaan.</translation>
         <source>Blocked</source>
         <translation>Geblokkeerd</translation>
     </message>
-    <message>
-        <source>Negotiating</source>
-        <translation>Onderhandelen</translation>
-    </message>
 </context>
 <context>
     <name>GeneralForm</name>

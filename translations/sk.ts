@@ -1174,10 +1174,6 @@ so you can save the file on Windows.</translation>
         <source>Blocked</source>
         <translation>Zablokovaný/á</translation>
     </message>
-    <message>
-        <source>Negotiating</source>
-        <translation>Dohováram sa</translation>
-    </message>
 </context>
 <context>
     <name>GeneralForm</name>

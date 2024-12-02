@@ -1164,10 +1164,6 @@ joten voit tallentaa tiedoston Windowsissa.</translation>
         <source>Blocked</source>
         <translation>Estetty</translation>
     </message>
-    <message>
-        <source>Negotiating</source>
-        <translation>Neuvotellaan</translation>
-    </message>
 </context>
 <context>
     <name>GeneralForm</name>

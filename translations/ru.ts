@@ -1170,10 +1170,6 @@ so you can save the file on Windows.</source>
         <source>Blocked</source>
         <translation>Заблокировано</translation>
     </message>
-    <message>
-        <source>Negotiating</source>
-        <translation>Переговоры</translation>
-    </message>
 </context>
 <context>
     <name>GeneralForm</name>

@@ -1165,10 +1165,6 @@ ja sa saad seda faili nüüd Windowsis salvestada.</translation>
         <source>Blocked</source>
         <translation>Blokitud</translation>
     </message>
-    <message>
-        <source>Negotiating</source>
-        <translation>Läbirääkimine</translation>
-    </message>
 </context>
 <context>
     <name>GeneralForm</name>

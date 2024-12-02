@@ -1165,10 +1165,6 @@ geçersiz karakterler _ olarak değiştirildi.</translation>
         <source>Blocked</source>
         <translation>Engellendi</translation>
     </message>
-    <message>
-        <source>Negotiating</source>
-        <translation>Müzakere ediliyor</translation>
-    </message>
 </context>
 <context>
     <name>GeneralForm</name>

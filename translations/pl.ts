@@ -1178,10 +1178,6 @@ więc możesz zapisać ten plik na systemie Windows.</translation>
         <source>Blocked</source>
         <translation>Zablokowany</translation>
     </message>
-    <message>
-        <source>Negotiating</source>
-        <translation>Negocjowanie</translation>
-    </message>
 </context>
 <context>
     <name>GeneralForm</name>

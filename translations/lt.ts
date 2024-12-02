@@ -1167,10 +1167,6 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
         <source>Blocked</source>
         <translation>Blokuota</translation>
     </message>
-    <message>
-        <source>Negotiating</source>
-        <translation>Derybos</translation>
-    </message>
 </context>
 <context>
     <name>GeneralForm</name>

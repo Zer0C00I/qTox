@@ -1171,10 +1171,6 @@ um sie in Windows speichern zu können.</translation>
         <source>Blocked</source>
         <translation>Blockiert</translation>
     </message>
-    <message>
-        <source>Negotiating</source>
-        <translation>Verhandlungen</translation>
-    </message>
 </context>
 <context>
     <name>GeneralForm</name>

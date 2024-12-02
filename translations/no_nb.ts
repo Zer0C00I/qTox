@@ -1166,10 +1166,6 @@ slik at du kan lagre filen på Windows.</translation>
         <source>Blocked</source>
         <translation>Blokkert</translation>
     </message>
-    <message>
-        <source>Negotiating</source>
-        <translation>Forhandler</translation>
-    </message>
 </context>
 <context>
     <name>GeneralForm</name>

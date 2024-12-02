@@ -330,8 +330,9 @@ QString FriendWidget::getStatusString() const
     const int status = static_cast<int>(frnd->getStatus());
     const bool event = frnd->getEventFlag();
 
-    static const QVector<QString> names = {tr("Online"),  tr("Away"),    tr("Busy"),
-                                           tr("Offline"), tr("Blocked"), tr("Negotiating")};
+    static const QVector<QString> names = {
+        tr("Online"), tr("Away"), tr("Busy"), tr("Offline"), tr("Blocked"),
+    };
 
     return event ? tr("New message") : names.value(status);
 }

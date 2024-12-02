@@ -1167,10 +1167,6 @@ takže můžete soubor uložit i v systému Windows.</translation>
         <source>Blocked</source>
         <translation>Blokováno</translation>
     </message>
-    <message>
-        <source>Negotiating</source>
-        <translation>Vyjednávání</translation>
-    </message>
 </context>
 <context>
     <name>GeneralForm</name>

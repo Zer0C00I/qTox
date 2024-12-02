@@ -1174,10 +1174,6 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
         <source>Blocked</source>
         <translation>Bloķēts</translation>
     </message>
-    <message>
-        <source>Negotiating</source>
-        <translation>Vienošanās</translation>
-    </message>
 </context>
 <context>
     <name>GeneralForm</name>

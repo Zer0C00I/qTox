@@ -1165,10 +1165,6 @@ så att du kan spara filen i Windows.</translation>
         <source>Blocked</source>
         <translation>Blockerad</translation>
     </message>
-    <message>
-        <source>Negotiating</source>
-        <translation>Förhandlar</translation>
-    </message>
 </context>
 <context>
     <name>GeneralForm</name>

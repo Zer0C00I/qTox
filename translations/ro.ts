@@ -1174,10 +1174,6 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
         <source>Blocked</source>
         <translation>Blocat</translation>
     </message>
-    <message>
-        <source>Negotiating</source>
-        <translation>Negociere</translation>
-    </message>
 </context>
 <context>
     <name>GeneralForm</name>

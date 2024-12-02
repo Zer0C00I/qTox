@@ -1161,10 +1161,6 @@ so you can save the file on Windows.</source>
         <source>Blocked</source>
         <translation>阻止</translation>
     </message>
-    <message>
-        <source>Negotiating</source>
-        <translation>协商</translation>
-    </message>
 </context>
 <context>
     <name>GeneralForm</name>
