@@ -38,6 +38,7 @@ cc_library(
     hdrs = ["dbutility/include/dbutility/dbutility.h"],
     copts = COPTS,
     strip_include_prefix = "dbutility/include",
+    tags = ["no-cross"],
     deps = [
         "//qtox/src",
         "@qt//:qt_core",
