@@ -233,7 +233,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation type="unfinished">如果设置此项则自动接受来自该联系人的群聊邀请。</translation>
+        <translation>如果设置此项则自动接受来自该联系人的会议邀请。</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -590,7 +590,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
-        <translation type="unfinished"></translation>
+        <translation>启用调试工具（仅限开发人员）</translation>
     </message>
 </context>
 <context>
@@ -895,7 +895,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation type="unfinished">群聊 %1</translation>
+        <translation>会议 %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -922,22 +922,22 @@ so you can save the file on Windows.</source>
     <name>DebugLog</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation>调试日志</translation>
     </message>
     <message>
         <source>Auto-reload</source>
-        <translation type="unfinished"></translation>
+        <translation>自动重新加载</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
-        <translation type="unfinished"></translation>
+        <translation>自动滚动</translation>
     </message>
 </context>
 <context>
     <name>DebugLogForm</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation>调试日志</translation>
     </message>
 </context>
 <context>
@@ -1125,7 +1125,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation type="unfinished">邀请进入群聊 &apos;%1&apos;</translation>
+        <translation>邀请进入会议 &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1175,7 +1175,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>%1 (no fonts)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1（无字体）</translation>
     </message>
 </context>
 <context>
@@ -1746,11 +1746,11 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Conference</source>
-        <translation type="unfinished">群聊</translation>
+        <translation>会议</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation type="unfinished">打开群聊管理页面</translation>
+        <translation>打开会议管理页面</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -1770,7 +1770,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Open internal debugging tools</source>
-        <translation type="unfinished"></translation>
+        <translation>打开内部调试工具</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -1778,7 +1778,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Open Debugger</source>
-        <translation type="unfinished"></translation>
+        <translation>打开调试器</translation>
     </message>
 </context>
 <context>
@@ -2945,7 +2945,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished">群组</translation>
+        <translation>会议</translation>
     </message>
     <message>
         <source>Logout</source>
@@ -2958,11 +2958,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation type="unfinished">群聊 #%1</translation>
+        <translation>会议 #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation type="unfinished">创建新群聊...</translation>
+        <translation>创建新会议...</translation>
     </message>
     <message>
         <source>Add new circle...</source>
