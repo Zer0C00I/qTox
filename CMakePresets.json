@@ -7,7 +7,6 @@
       "generator": "Ninja",
       "cacheVariables": {
         "ASAN": true,
-        "DESKTOP_NOTIFICATIONS": true,
         "SPELL_CHECK": true,
         "STRICT_OPTIONS": true,
         "CMAKE_BUILD_TYPE": "Debug",
