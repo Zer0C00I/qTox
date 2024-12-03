@@ -185,6 +185,10 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
         <comment>Replaces `%1` in `See a full list of…`</comment>
         <translation type="unfinished">பங்களிப்பாளர்கள்</translation>
     </message>
+    <message>
+        <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutFriendForm</name>

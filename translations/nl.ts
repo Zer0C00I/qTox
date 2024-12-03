@@ -188,6 +188,10 @@ wat kan leiden tot problemen met videogesprekken.</translation>
         <comment>Replaces `%1` in `See a full list of…`</comment>
         <translation type="unfinished">bijdragers</translation>
     </message>
+    <message>
+        <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutFriendForm</name>

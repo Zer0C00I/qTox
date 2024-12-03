@@ -184,6 +184,10 @@ which may lead to problems with video calls.</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
         <translation type="unfinished">貢献者</translation>
     </message>
+    <message>
+        <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutFriendForm</name>

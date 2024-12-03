@@ -188,6 +188,10 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
         <comment>Replaces `%1` in `See a full list of…`</comment>
         <translation>đóng góp</translation>
     </message>
+    <message>
+        <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutFriendForm</name>

@@ -23,7 +23,9 @@
 namespace {
 const QString versionUrl{
     QStringLiteral("https://api.github.com/repos/TokTok/qTox/releases/latest")};
-const QString versionRegexString{QStringLiteral("v([0-9]+)\\.([0-9]+)\\.([0-9]+)")};
+// Release candidates are ignored, as they are prereleases and don't appear in
+// the response to the releases/latest API call.
+const QString versionRegexString{QStringLiteral(R"(v([0-9]+)\.([0-9]+)\.([0-9]+))")};
 
 struct Version
 {
@@ -32,7 +34,7 @@ struct Version
     int patch;
 };
 
-Version tagToVersion(QString tagName)
+Version tagToVersion(const QString& tagName)
 {
     // capture tag name to avoid showing update available on dev builds which include hash as part of describe
     QRegularExpression versionFormat(versionRegexString);
@@ -40,17 +42,17 @@ Version tagToVersion(QString tagName)
     assert(matches.lastCapturedIndex() == 3);
 
     bool ok;
-    auto major = matches.captured(1).toInt(&ok);
+    const auto major = matches.captured(1).toInt(&ok);
     assert(ok);
-    auto minor = matches.captured(2).toInt(&ok);
+    const auto minor = matches.captured(2).toInt(&ok);
     assert(ok);
-    auto patch = matches.captured(3).toInt(&ok);
+    const auto patch = matches.captured(3).toInt(&ok);
     assert(ok);
 
     return {major, minor, patch};
 }
 
-bool isUpdateAvailable(Version current, Version available)
+bool isUpdateAvailable(const Version& current, const Version& available)
 {
     // A user may have a version greater than our latest release in the time between a tag being
     // pushed and the release being published. Don't notify about an update in that case.
@@ -81,7 +83,7 @@ bool isUpdateAvailable(Version current, Version available)
 
 bool isCurrentVersionStable()
 {
-    QRegularExpression versionRegex(versionRegexString);
+    const QRegularExpression versionRegex(versionRegexString);
     auto currentVer = versionRegex.match(GIT_DESCRIBE_EXACT);
     if (currentVer.hasMatch()) {
         return true;
@@ -141,11 +143,11 @@ void UpdateCheck::handleResponse(QNetworkReply* reply)
         reply->deleteLater();
         return;
     }
-    QByteArray result = reply->readAll();
-    QJsonDocument doc = QJsonDocument::fromJson(result);
-    QJsonObject jObject = doc.object();
-    QVariantMap mainMap = jObject.toVariantMap();
-    QString latestVersion = mainMap["tag_name"].toString();
+    const QByteArray result = reply->readAll();
+    const QJsonDocument doc = QJsonDocument::fromJson(result);
+    const QJsonObject jObject = doc.object();
+    const QVariantMap mainMap = jObject.toVariantMap();
+    const QString latestVersion = mainMap["tag_name"].toString();
     if (latestVersion.isEmpty()) {
         qWarning() << "No tag name found in response:";
         emit updateCheckFailed();
@@ -153,12 +155,12 @@ void UpdateCheck::handleResponse(QNetworkReply* reply)
         return;
     }
 
-    auto currentVer = tagToVersion(GIT_DESCRIBE);
-    auto availableVer = tagToVersion(latestVersion);
+    const auto currentVer = tagToVersion(GIT_DESCRIBE);
+    const auto availableVer = tagToVersion(latestVersion);
 
     if (isUpdateAvailable(currentVer, availableVer)) {
         qInfo() << "Update available to version" << latestVersion;
-        QUrl link{mainMap["html_url"].toString()};
+        const QUrl link{mainMap["html_url"].toString()};
         emit updateAvailable(latestVersion, link);
     } else {
         qInfo() << "qTox is up to date";

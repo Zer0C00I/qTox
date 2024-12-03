@@ -188,6 +188,10 @@ o que pode levar a problemas com as videochamadas.</translation>
         <comment>Replaces `%1` in `See a full list of…`</comment>
         <translation>contribuidores</translation>
     </message>
+    <message>
+        <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutFriendForm</name>

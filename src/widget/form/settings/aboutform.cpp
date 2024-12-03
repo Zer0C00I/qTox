@@ -144,13 +144,14 @@ void AboutForm::replaceVersions()
         QStringLiteral("<b>%1</b>").arg(tr("Click here to report a bug."))));
 
     QString authorInfo =
-        QString("<p>%1</p><p>%2</p>")
-            .arg(tr("Original author: %1").arg(createLink("https://github.com/tux3", "tux3")))
-            .arg(
-                tr("See a full list of %1 at Github",
-                   "`%1` is replaced with translation of word `contributors`")
-                    .arg(createLink("https://qtox.github.io/gitstats/authors.html",
-                                    tr("contributors", "Replaces `%1` in `See a full list of…`"))));
+        QStringLiteral("<p>%1</p><p>%2</p><p>%3</p>")
+            .arg(tr("Original author: %1").arg(createLink("https://github.com/tux3", "tux3")),
+                 tr("See a full list of %1 at Github",
+                    "`%1` is replaced with translation of word `contributors`")
+                     .arg(createLink("https://qtox.github.io/gitstats/authors.html",
+                                     tr("contributors", "Replaces `%1` in `See a full list of…`"))),
+                 tr("This version of qTox is being maintained by the TokTok team "
+                    "following the archiving of the original qTox project."));
 
     bodyUI->authorInfo->setText(authorInfo);
 }

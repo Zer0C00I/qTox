@@ -10,18 +10,17 @@
 #include <QTimer>
 #include <QUrl>
 
-#include <memory>
-
 class Settings;
 class QString;
 class QUrl;
 class QNetworkReply;
+
 class UpdateCheck : public QObject
 {
     Q_OBJECT
 
 public:
-    UpdateCheck(const Settings& settings_);
+    explicit UpdateCheck(const Settings& settings_);
 
 #ifdef UPDATE_CHECK_ENABLED
     void checkForUpdate();
