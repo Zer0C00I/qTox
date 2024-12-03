@@ -12,6 +12,7 @@
 #include "src/persistence/iconferencesettings.h"
 #include "src/video/corevideosource.h"
 #include "src/video/videoframe.h"
+#include "util/algorithm.h"
 #include "util/toxcoreerrorparser.h"
 
 #include <QCoreApplication>
@@ -153,12 +154,8 @@ IAudioControl* CoreAV::getAudio()
 CoreAV::~CoreAV()
 {
     /* Gracefully leave calls and conference calls to avoid deadlocks in destructor */
-    for (const auto& call : calls) {
-        cancelCall(call.first);
-    }
-    for (const auto& call : conferenceCalls) {
-        leaveConferenceCall(call.first);
-    }
+    forEachKey(calls, [this](uint32_t callId) { cancelCall(callId); });
+    forEachKey(conferenceCalls, [this](int callId) { leaveConferenceCall(callId); });
 
     assert(calls.empty());
     assert(conferenceCalls.empty());
