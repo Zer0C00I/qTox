@@ -22,7 +22,15 @@ class UpdateCheck : public QObject
 public:
     explicit UpdateCheck(const Settings& settings_);
 
+    constexpr bool canCheck() const
+    {
 #ifdef UPDATE_CHECK_ENABLED
+        return true;
+#else
+        return false;
+#endif
+    }
+
     void checkForUpdate();
 
 signals:
@@ -38,5 +46,4 @@ private:
     QNetworkAccessManager manager;
     QTimer updateTimer;
     const Settings& settings;
-#endif
 };

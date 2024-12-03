@@ -50,7 +50,7 @@ enum class updateIndex
 /**
  * @brief Constructor of AboutForm.
  */
-AboutForm::AboutForm(UpdateCheck* updateCheck_, QString contactInfo_, Style& style_)
+AboutForm::AboutForm(UpdateCheck& updateCheck_, QString contactInfo_, Style& style_)
     : GenericForm(QPixmap(":/img/settings/general.png"), style_)
     , bodyUI(new Ui::AboutSettings)
     , progressTimer(new QTimer(this))
@@ -60,13 +60,9 @@ AboutForm::AboutForm(UpdateCheck* updateCheck_, QString contactInfo_, Style& sty
 {
     bodyUI->setupUi(this);
 
-#ifndef UPDATE_CHECK_ENABLED
-    bodyUI->updateStack->setVisible(false);
-#endif
+    bodyUI->updateStack->setVisible(updateCheck.canCheck());
     bodyUI->unstableVersion->setVisible(false);
-#ifdef UPDATE_CHECK_ENABLED
-    connect(updateCheck_, &UpdateCheck::versionIsUnstable, this, &AboutForm::onUnstableVersion);
-#endif
+    connect(&updateCheck, &UpdateCheck::versionIsUnstable, this, &AboutForm::onUnstableVersion);
 
     // block all child signals during initialization
     const RecursiveSignalBlocker signalBlocker(this);
@@ -93,17 +89,13 @@ void AboutForm::replaceVersions()
 
     bodyUI->youAreUsing->setText(tr("You are using qTox version %1.").arg(QString(GIT_DESCRIBE)));
 
-#ifdef UPDATE_CHECK_ENABLED
-    if (updateCheck != nullptr) {
-        connect(updateCheck, &UpdateCheck::updateAvailable, this, &AboutForm::onUpdateAvailable);
-        connect(updateCheck, &UpdateCheck::upToDate, this, &AboutForm::onUpToDate);
-        connect(updateCheck, &UpdateCheck::updateCheckFailed, this, &AboutForm::onUpdateCheckFailed);
-    } else {
-        qWarning() << "AboutForm passed null UpdateCheck!";
+    connect(&updateCheck, &UpdateCheck::updateAvailable, this, &AboutForm::onUpdateAvailable);
+    connect(&updateCheck, &UpdateCheck::upToDate, this, &AboutForm::onUpToDate);
+    connect(&updateCheck, &UpdateCheck::updateCheckFailed, this, &AboutForm::onUpdateCheckFailed);
+
+    if (!updateCheck.canCheck()) {
+        qDebug() << "AboutForm not showing updates, qTox built without UPDATE_CHECK";
     }
-#else
-    qDebug() << "AboutForm not showing updates, qTox built without UPDATE_CHECK";
-#endif
 
     QString commitLink = "https://github.com/TokTok/qTox/commit/" + QString(GIT_VERSION);
     bodyUI->gitVersion->setText(
@@ -192,7 +184,7 @@ void AboutForm::onUnstableVersion()
  * @param text Text, which will be clickable.
  * @return Hyperlink to paste.
  */
-QString AboutForm::createLink(QString path, QString text) const
+inline QString AboutForm::createLink(QString path, QString text) const
 {
     return QString::fromUtf8(
                "<a href=\"%1\" style=\"text-decoration: underline; color:%2;\">%3</a>")

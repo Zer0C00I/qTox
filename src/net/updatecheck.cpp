@@ -96,23 +96,19 @@ bool isCurrentVersionStable()
 #endif
 
 UpdateCheck::UpdateCheck(const Settings& settings_)
-#ifdef UPDATE_CHECK_ENABLED
     : settings(settings_)
 {
     qInfo() << "qTox is running version:" << GIT_DESCRIBE;
+#ifdef UPDATE_CHECK_ENABLED
     updateTimer.start(1000 * 60 * 60 * 24 /* 1 day */);
     connect(&updateTimer, &QTimer::timeout, this, &UpdateCheck::checkForUpdate);
     connect(&manager, &QNetworkAccessManager::finished, this, &UpdateCheck::handleResponse);
-}
-#else
-{
-    std::ignore = settings_;
-}
 #endif
+}
 
-#ifdef UPDATE_CHECK_ENABLED
 void UpdateCheck::checkForUpdate()
 {
+#ifdef UPDATE_CHECK_ENABLED
     if (!settings.getCheckUpdates()) {
         // still run the timer to check periodically incase setting changes
         return;
@@ -127,6 +123,7 @@ void UpdateCheck::checkForUpdate()
     manager.setProxy(settings.getProxy());
     QNetworkRequest request{versionUrl};
     manager.get(request);
+#endif
 }
 
 void UpdateCheck::handleResponse(QNetworkReply* reply)
@@ -137,6 +134,7 @@ void UpdateCheck::handleResponse(QNetworkReply* reply)
         return;
     }
 
+#ifdef UPDATE_CHECK_ENABLED
     if (reply->error() != QNetworkReply::NoError) {
         qWarning() << "Failed to check for update:" << reply->error();
         emit updateCheckFailed();
@@ -168,5 +166,5 @@ void UpdateCheck::handleResponse(QNetworkReply* reply)
     }
 
     reply->deleteLater();
-}
 #endif
+}

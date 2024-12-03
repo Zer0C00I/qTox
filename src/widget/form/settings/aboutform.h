@@ -24,7 +24,7 @@ class AboutForm : public GenericForm
 {
     Q_OBJECT
 public:
-    AboutForm(UpdateCheck* updateCheck_, QString contactInfo_, Style& style_);
+    AboutForm(UpdateCheck& updateCheck_, QString contactInfo_, Style& style_);
     ~AboutForm();
     QString getFormName() final
     {
@@ -41,12 +41,12 @@ public slots:
 private:
     void retranslateUi();
     void replaceVersions();
-    inline QString createLink(QString path, QString text) const;
+    QString createLink(QString path, QString text) const;
 
 private:
     Ui::AboutSettings* bodyUI;
     QTimer* progressTimer;
-    UpdateCheck* updateCheck;
+    UpdateCheck& updateCheck;
     QString contactInfo;
     QMetaObject::Connection linkConnection;
     Style& style;

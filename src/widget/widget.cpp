@@ -287,15 +287,11 @@ void Widget::init()
     addFriendForm = new AddFriendForm(core->getSelfId(), settings, style, *messageBoxManager, *core);
     conferenceInviteForm = new ConferenceInviteForm(settings, *core);
 
-#ifdef UPDATE_CHECK_ENABLED
-    updateCheck = std::unique_ptr<UpdateCheck>(new UpdateCheck(settings));
+    updateCheck = std::make_unique<UpdateCheck>(settings);
     connect(updateCheck.get(), &UpdateCheck::updateAvailable, this, &Widget::onUpdateAvailable);
-#endif
-    settingsWidget = new SettingsWidget(updateCheck.get(), audio, core, *smileyPack, cameraSource,
+    settingsWidget = new SettingsWidget(*updateCheck, audio, core, *smileyPack, cameraSource,
                                         settings, style, *messageBoxManager, profile, this);
-#ifdef UPDATE_CHECK_ENABLED
     updateCheck->checkForUpdate();
-#endif
 
     debugWidget = new DebugWidget(settings.getPaths(), style, this);
 

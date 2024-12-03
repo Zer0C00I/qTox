@@ -27,7 +27,7 @@
 
 #include <memory>
 
-SettingsWidget::SettingsWidget(UpdateCheck* updateCheck, IAudioControl& audio, Core* core,
+SettingsWidget::SettingsWidget(UpdateCheck& updateCheck, IAudioControl& audio, Core* core,
                                SmileyPack& smileyPack, CameraSource& cameraSource, Settings& settings,
                                Style& style, IMessageBoxManager& messageBoxManager,
                                Profile& profile, Widget* parent)
@@ -57,13 +57,7 @@ SettingsWidget::SettingsWidget(UpdateCheck* updateCheck, IAudioControl& audio, C
     std::unique_ptr<AdvancedForm> expfrm(new AdvancedForm(settings, style, messageBoxManager));
     std::unique_ptr<AboutForm> abtfrm(new AboutForm(updateCheck, core->getSelfId().toString(), style));
 
-#ifdef UPDATE_CHECK_ENABLED
-    if (updateCheck != nullptr) {
-        connect(updateCheck, &UpdateCheck::updateAvailable, this, &SettingsWidget::onUpdateAvailable);
-    } else {
-        qWarning() << "SettingsWidget passed null UpdateCheck!";
-    }
-#endif
+    connect(&updateCheck, &UpdateCheck::updateAvailable, this, &SettingsWidget::onUpdateAvailable);
 
     cfgForms = {{std::move(gfrm), std::move(uifrm), std::move(pfrm), std::move(avfrm),
                  std::move(expfrm), std::move(abtfrm)}};
