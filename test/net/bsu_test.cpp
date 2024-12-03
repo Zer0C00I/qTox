@@ -57,5 +57,5 @@ void TestBootstrapNodesUpdater::testLocal()
     QVERIFY(defaultNodes.size() > 0);
 }
 
-QTEST_GUILESS_MAIN(TestBootstrapNodesUpdater)
+QTEST_MAIN(TestBootstrapNodesUpdater)
 #include "bsu_test.moc"

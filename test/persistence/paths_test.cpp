@@ -153,5 +153,5 @@ void TestPaths::checkPathsPortable()
 }
 #endif
 
-QTEST_GUILESS_MAIN(TestPaths)
+QTEST_MAIN(TestPaths)
 #include "paths_test.moc"
