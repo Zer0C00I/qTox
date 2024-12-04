@@ -15,9 +15,13 @@ class ChatLineContentProxy : public ChatLineContent
     Q_OBJECT
 
 public:
+    /**
+     * @brief Type tag to avoid dynamic_cast of contained QWidget*
+     */
     enum ChatLineContentProxyType
     {
-        GenericType,
+        // TODO(iphydf): Why are these the same value?
+        GenericType = 0,
         FileTransferWidgetType = 0,
     };
 
