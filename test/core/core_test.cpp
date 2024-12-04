@@ -77,7 +77,7 @@ void bootstrapToxes(Core& alice, MockBootstrapListGenerator& alicesNodes, Core& 
 
 void TestCore::startup_with_invalid_socks5_proxy()
 {
-    settings.setProxyAddr("Test");
+    settings.setProxyAddr("Test::haha:::nope");
     settings.setProxyPort(9985);
     settings.setProxyType(MockSettings::ProxyType::ptSOCKS5);
 
@@ -88,7 +88,7 @@ void TestCore::startup_with_invalid_socks5_proxy()
 
 void TestCore::startup_with_invalid_http_proxy()
 {
-    settings.setProxyAddr("Test");
+    settings.setProxyAddr("Test::haha:::nope");
     settings.setProxyPort(9985);
     settings.setProxyType(MockSettings::ProxyType::ptHTTP);
 
