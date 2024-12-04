@@ -190,7 +190,7 @@ lo que puede provocar problemas en las videollamadas.</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta versión de qTox está siendo mantenida por el equipo de TokTok tras el archivo del proyecto qTox original.</translation>
     </message>
 </context>
 <context>
