@@ -103,30 +103,34 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
 
     // Time should be in UTC to save user privacy on log sharing
     QTime time = QDateTime::currentDateTime().toUTC().time();
-    QString LogMsg =
+    QString logPrefix =
         QStringLiteral("[%1 UTC] %2:%3 : ").arg(time.toString("HH:mm:ss.zzz")).arg(file).arg(ctxt.line);
     switch (type) {
     case QtDebugMsg:
-        LogMsg += "Debug";
+        logPrefix += "Debug";
         break;
     case QtInfoMsg:
-        LogMsg += "Info";
+        logPrefix += "Info";
         break;
     case QtWarningMsg:
-        LogMsg += "Warning";
+        logPrefix += "Warning";
         break;
     case QtCriticalMsg:
-        LogMsg += "Critical";
+        logPrefix += "Critical";
         break;
     case QtFatalMsg:
-        LogMsg += "Fatal";
+        logPrefix += "Fatal";
         break;
     default:
         break;
     }
 
-    LogMsg += ": " + canonicalLogMessage(msg) + "\n";
-    const QByteArray LogMsgBytes = LogMsg.toUtf8();
+    QString logMsg;
+    for (const auto& line : msg.split('\n')) {
+        logMsg += logPrefix + ": " + canonicalLogMessage(line) + "\n";
+    }
+
+    const QByteArray LogMsgBytes = logMsg.toUtf8();
     fwrite(LogMsgBytes.constData(), 1, LogMsgBytes.size(), stderr);
 
 #ifdef LOG_TO_FILE
@@ -278,8 +282,11 @@ int AppManager::run()
         mainLogFilePtr = fopen(logfile.toLocal8Bit().constData(), "a");
     }
 
-    if (!mainLogFilePtr)
+    if (!mainLogFilePtr) {
         qCritical() << "Couldn't open logfile" << logfile;
+    } else {
+        qDebug() << "Logging to" << logfile;
+    }
 
     logFileFile.storeRelaxed(mainLogFilePtr); // atomically set the logFile
 #endif
