@@ -7,6 +7,7 @@
 #include "style.h"
 #include "src/persistence/settings.h"
 #include <QFrame>
+#include <QStyle>
 #include <QStyleFactory>
 
 ContentLayout::ContentLayout(Settings& settings_, Style& style_)
@@ -103,8 +104,10 @@ void ContentLayout::init()
     mainContent->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
 
     if (QStyleFactory::keys().contains(settings.getStyle()) && settings.getStyle() != "None") {
-        mainHead->setStyle(QStyleFactory::create(settings.getStyle()));
-        mainContent->setStyle(QStyleFactory::create(settings.getStyle()));
+        QStyle* qstyle = QStyleFactory::create(settings.getStyle());
+        qstyle->setParent(this);
+        mainHead->setStyle(qstyle);
+        mainContent->setStyle(qstyle);
     }
 
     connect(&style, &Style::themeReload, this, &ContentLayout::reloadTheme);

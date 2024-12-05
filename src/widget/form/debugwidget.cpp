@@ -22,7 +22,7 @@ DebugWidget::DebugWidget(Paths& paths, Style& style, Widget* parent)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 
-    bodyLayout = new QVBoxLayout();
+    bodyLayout = new QVBoxLayout(this);
 
     debugWidgets = new QTabWidget(this);
     debugWidgets->setTabPosition(QTabWidget::North);
