@@ -190,7 +190,7 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese Version von qTox wird vom TokTok-Team nach der Archivierung des ursprünglichen qTox-Projekts gepflegt.</translation>
     </message>
 </context>
 <context>
@@ -1995,7 +1995,7 @@ Die Sicherung des Verlaufs ist noch in Entwicklung. Formatierungsänderungen bei
     </message>
     <message>
         <source>BlackList</source>
-        <translation>Schwarze Liste</translation>
+        <translation>Denial-Liste</translation>
     </message>
     <message>
         <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
