@@ -48,6 +48,9 @@ function(search_dependency pkg)
   # Try pkg-config first.
   if(NOT ${pkg}_FOUND AND arg_PACKAGE)
     pkg_check_modules(${pkg} ${arg_PACKAGE})
+    if(${pkg} AND ${pkg} MATCHES "TOXCORE" AND "${TOXCORE_VERSION}" VERSION_LESS "${arg_MINIMUM_VERSION}")
+      message(FATAL_ERROR "Minimum ${arg_PACKAGE} version is: ${arg_MINIMUM_VERSION}")
+    endif()
   endif()
 
   # Then, try OSX frameworks.
@@ -61,10 +64,6 @@ function(search_dependency pkg)
     if(${pkg}_LIBRARIES)
       set(${pkg}_FOUND TRUE)
     endif()
-  endif()
-
-  if(${pkg} MATCHES "TOXCORE" AND "${TOXCORE_VERSION}" VERSION_LESS "${arg_MINIMUM_VERSION}")
-    message(FATAL_ERROR "Minimum ${arg_PACKAGE} version is: ${arg_MINIMUM_VERSION}")
   endif()
 
   # Last, search for the library itself globally.
@@ -133,9 +132,11 @@ endif()
 
 # Try to find cmake toxcore libraries
 if(WIN32 OR ANDROID)
-  search_dependency(TOXCORE             PACKAGE toxcore          OPTIONAL STATIC_PACKAGE MINIMUM_VERSION ${TOXCORE_MINIMUM_VERSION})
+  search_dependency(TOXCORE             PACKAGE toxcore             LIBRARY toxcore          OPTIONAL STATIC_PACKAGE MINIMUM_VERSION ${TOXCORE_MINIMUM_VERSION})
 else()
-  search_dependency(TOXCORE             PACKAGE toxcore          OPTIONAL MINIMUM_VERSION ${TOXCORE_MINIMUM_VERSION})
+  search_dependency(TOXCORE             PACKAGE toxcore             LIBRARY toxcore          OPTIONAL MINIMUM_VERSION ${TOXCORE_MINIMUM_VERSION})
+  search_dependency(TOXAV               PACKAGE toxav               LIBRARY toxav            OPTIONAL)
+  search_dependency(TOXENCRYPTSAVE      PACKAGE toxencryptsave      LIBRARY toxencryptsave   OPTIONAL)
 endif()
 
 # If not found, use automake toxcore libraries
