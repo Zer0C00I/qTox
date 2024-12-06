@@ -946,7 +946,7 @@ so you can save the file on Windows.</source>
     <name>DebugLogForm</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation>Лог налагодження</translation>
     </message>
 </context>
 <context>
