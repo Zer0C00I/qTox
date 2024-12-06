@@ -190,7 +190,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
-        <translation type="unfinished"></translation>
+        <translation>Эта версия qTox поддерживается командой TokTok в связи с архивацией оригинального проекта qTox.</translation>
     </message>
 </context>
 <context>
@@ -225,7 +225,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Manual</source>
-        <translation>Ручной</translation>
+        <translation>Вручную</translation>
     </message>
     <message>
         <source>Audio</source>
@@ -257,11 +257,11 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Это открытый ключ вашего друга, используйте его, чтобы подтвердить свою личность через другой канал. Вы не можете отправить его другим людям для добавления этого контакта.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Это открытый (публичный) ключ вашего друга, используйте его, чтобы подтвердить свою личность через другой канал. Вы не можете отправить его другим людям для добавления этого контакта.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>
-        <translation>Открытый ключ (не ToxID):</translation>
+        <translation>Открытый (публичный) ключ (не Tox ID):</translation>
     </message>
     <message>
         <source>Confirmation</source>
@@ -269,7 +269,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Are you sure to remove %1 chat history?</source>
-        <translation>Вы уверены, что хотите удалить %1 историю чата?</translation>
+        <translation>Вы уверены, что хотите удалить историю чата %1?</translation>
     </message>
     <message>
         <source>Failed to remove chat history with %1!</source>
@@ -329,7 +329,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>qTox is up to date ✓</source>
-        <translation>qTox обновлен ✓</translation>
+        <translation>qTox обновлён ✓</translation>
     </message>
     <message>
         <source>Currently running an untested/unstable version of qTox</source>
@@ -377,7 +377,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Friend request message</source>
-        <translation>Запрос в друзья</translation>
+        <translation>Запрос на добавление в друзья</translation>
     </message>
     <message>
         <source>Type message to send with the friend request or leave empty to send a default message</source>
@@ -426,7 +426,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Send friend requests</source>
-        <translation>Отправить запросы в друзья</translation>
+        <translation>Отправить запросы на добавление в друзья</translation>
     </message>
     <message>
         <source>%1 here! Tox me maybe?</source>
@@ -440,9 +440,9 @@ which may lead to problems with video calls.</source>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
         <translation>
-            <numerusform>Можно импортировать %n контакт, нажмите &quot;Отправить&quot; для подтверждения</numerusform>
-            <numerusform>Можно импортировать %n контактов, нажмите &quot;Отправить&quot; для подтверждения</numerusform>
-            <numerusform>Можно импортировать %n контакта, нажмите &quot;Отправить&quot; для подтверждения</numerusform>
+            <numerusform>Всё готово для импортирования %n контакта, нажмите &quot;Отправить&quot; для подтверждения</numerusform>
+            <numerusform>Всё готово для импортирования %n контактов, нажмите &quot;Отправить&quot; для подтверждения</numerusform>
+            <numerusform>Всё готово для импортирования %n контактов, нажмите &quot;Отправить&quot; для подтверждения</numerusform>
         </translation>
     </message>
     <message>
@@ -451,7 +451,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Tox ID, 76 hexadecimal characters</source>
-        <translation>Tox ID, 76 HEX-символов</translation>
+        <translation>Tox ID, 76 шестнадцатиричных (hex) символов</translation>
     </message>
     <message>
         <source>%1 Tox ID is invalid</source>
@@ -461,7 +461,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
-        <translation>76 HEX-символов</translation>
+        <translation>76 шестнадцатиричных (hex) символов</translation>
     </message>
 </context>
 <context>
@@ -1135,7 +1135,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Choose an auto accept directory</source>
         <comment>popup title</comment>
-        <translation>Выбрать папку для автоматического приема</translation>
+        <translation>Выбрать папку для автоматического приёма</translation>
     </message>
     <message>
         <source>New message</source>
@@ -1147,11 +1147,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Away</source>
-        <translation>Отошел</translation>
+        <translation>Отошёл/отошла</translation>
     </message>
     <message>
         <source>Busy</source>
-        <translation>Занят</translation>
+        <translation>Занят/занята</translation>
     </message>
     <message>
         <source>Offline</source>
@@ -1176,7 +1176,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Choose an auto accept directory</source>
         <comment>popup title</comment>
-        <translation>Выбрать папку для автоматического приема</translation>
+        <translation>Выбрать папку для автоматического приёма</translation>
     </message>
     <message>
         <source>General</source>
@@ -1245,11 +1245,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Your status is changed to Away after set period of inactivity.</source>
-        <translation>Ваш статус изменится на «Отошел» после заданного периода бездействия.</translation>
+        <translation>Ваш статус изменится на &quot;Отошёл/отошла&quot; после заданного периода бездействия.</translation>
     </message>
     <message>
         <source>Auto away after (0 to disable):</source>
-        <translation>Статус «Отошел» после (0 - выключено):</translation>
+        <translation>Статус &quot;Отошёл/отошла&quot; после (0 - выключено):</translation>
     </message>
     <message>
         <source>Start qTox on operating system startup (current profile).</source>
@@ -1277,7 +1277,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Max autoaccept file size (0 to disable):</source>
-        <translation>Максимальный размер файла автоприема (0 для отключения):</translation>
+        <translation>Максимальный размер файла автоприёма (0 для отключения):</translation>
     </message>
     <message>
         <source> MB</source>
@@ -2381,12 +2381,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>away</source>
         <comment>contact status</comment>
-        <translation>отошел</translation>
+        <translation>отошёл/отошла</translation>
     </message>
     <message>
         <source>busy</source>
         <comment>contact status</comment>
-        <translation>занят</translation>
+        <translation>занят/занята</translation>
     </message>
     <message>
         <source>offline</source>
@@ -2890,7 +2890,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Play sound while Busy</source>
-        <translation>Воспроизводить звук, когда Занят</translation>
+        <translation>Воспроизводить звук, когда &quot;Занят/занята&quot;</translation>
     </message>
     <message>
         <source>Notify via desktop notifications</source>
@@ -2940,12 +2940,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Away</source>
         <comment>Button to set your status to &apos;Away&apos;</comment>
         <translatorcomment>Вероятно, это не столь долгое путешествие</translatorcomment>
-        <translation>Отошел</translation>
+        <translation>Отошёл/отошла</translation>
     </message>
     <message>
         <source>Busy</source>
         <comment>Button to set your status to &apos;Busy&apos;</comment>
-        <translation>Занят</translation>
+        <translation>Занят/занята</translation>
     </message>
     <message>
         <source>Your name</source>
