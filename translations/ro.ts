@@ -190,7 +190,7 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
-        <translation type="unfinished"></translation>
+        <translation>Această versiune de qTox este întreținută de echipa TokTok după arhivarea proiectului qTox original.</translation>
     </message>
 </context>
 <context>
@@ -237,7 +237,7 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation type="unfinished">Acceptați automat invitațiile discuției de grup de la acest contact dacă este setat.</translation>
+        <translation>Acceptați automat invitațiile la conferințe de la acest contact, dacă este setat.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -289,7 +289,7 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation type="unfinished">Acceptați automat invitațiile de grup</translation>
+        <translation>Acceptați automat invitațiile la conferințe</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
@@ -596,7 +596,7 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
-        <translation type="unfinished"></translation>
+        <translation>Activați instrumentele de depanare (numai pentru dezvoltatori)</translation>
     </message>
 </context>
 <context>
@@ -643,7 +643,7 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Eroare</translation>
+        <translation>Eroare</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
@@ -779,19 +779,19 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
     <name>ChatWidget</name>
     <message>
         <source>pending</source>
-        <translation type="unfinished">în așteptare</translation>
+        <translation>în așteptare</translation>
     </message>
     <message>
         <source>%1 is typing</source>
-        <translation type="unfinished">%1 scrie</translation>
+        <translation>%1 scrie</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Copiere</translation>
+        <translation>Copiere</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="unfinished">Selectează tot</translation>
+        <translation>Selectează tot</translation>
     </message>
 </context>
 <context>
@@ -835,15 +835,15 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished">Grupuri</translation>
+        <translation>Conferințe</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation type="unfinished">Creați un grup nou</translation>
+        <translation>Creați o nouă conferință</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation type="unfinished">Grupul invită</translation>
+        <translation>Invitații la conferință</translation>
     </message>
 </context>
 <context>
@@ -906,7 +906,7 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation type="unfinished">Discuții de grup</translation>
+        <translation>Conferința %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -933,22 +933,22 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
     <name>DebugLog</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation>Jurnal de depanare</translation>
     </message>
     <message>
         <source>Auto-reload</source>
-        <translation type="unfinished"></translation>
+        <translation>Reîncărcare automată</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
-        <translation type="unfinished"></translation>
+        <translation>Defilare automată</translation>
     </message>
 </context>
 <context>
     <name>DebugLogForm</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation>Jurnal de depanare</translation>
     </message>
 </context>
 <context>
@@ -1116,11 +1116,11 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
     </message>
     <message>
         <source>To new conference</source>
-        <translation type="unfinished">În grupul nou</translation>
+        <translation>În noua conferință</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation type="unfinished">Invitați la grup &apos;%1&apos;</translation>
+        <translation>Invitați la conferința „%1”</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1188,7 +1188,7 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (fără fonturi)</translation>
     </message>
 </context>
 <context>
@@ -1308,7 +1308,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
-        <translation type="unfinished"></translation>
+        <translation>Adăugați un mesaj de chat când un utilizator se alătură sau părăsește o conferință</translation>
     </message>
 </context>
 <context>
@@ -1531,7 +1531,7 @@ Distribuiți-l prietenilor dvs. pentru a începe să conversați.</translation>
     </message>
     <message>
         <source>Load history from:</source>
-        <translation type="unfinished"></translation>
+        <translation>Încărcare istoric de la:</translation>
     </message>
 </context>
 <context>
@@ -1700,7 +1700,7 @@ Vă rugăm să vă asigurați că introduceți aceeași parolă de două ori.</t
     </message>
     <message>
         <source>Create a conference</source>
-        <translation type="unfinished">Creați un grup de discuții</translation>
+        <translation>Creați o conferință</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1760,11 +1760,11 @@ Vă rugăm să vă asigurați că introduceți aceeași parolă de două ori.</t
     </message>
     <message>
         <source>Conference</source>
-        <translation type="unfinished">Grup de discuții</translation>
+        <translation>Conferinţă</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation type="unfinished">Deschideți pagina de gestionare a discuțiilor de grup</translation>
+        <translation>Deschideți pagina de gestionare a conferinței</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -1784,15 +1784,15 @@ Vă rugăm să vă asigurați că introduceți aceeași parolă de două ori.</t
     </message>
     <message>
         <source>Open internal debugging tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Deschideți instrumentele interne de depanare</translation>
     </message>
     <message>
         <source>Debug</source>
-        <translation type="unfinished">Debug</translation>
+        <translation>Depanați</translation>
     </message>
     <message>
         <source>Open Debugger</source>
-        <translation type="unfinished"></translation>
+        <translation>Deschideți depanatorul</translation>
     </message>
 </context>
 <context>
@@ -1800,12 +1800,12 @@ Vă rugăm să vă asigurați că introduceți aceeași parolă de două ori.</t
     <message>
         <source>Executable file</source>
         <comment>popup title</comment>
-        <translation type="unfinished">Fișier executabil</translation>
+        <translation>Fișier executabil</translation>
     </message>
     <message>
         <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished">Sunteți întrebat de qTox pentru deschiderea unui fișier executabil. Fișierele executabile pot deteriora computerul. Sigur doriți să deschideți acest fișier?</translation>
+        <translation>Sunteți întrebat de qTox pentru deschiderea unui fișier executabil. Fișierele executabile pot deteriora computerul. Sigur doriți să deschideți acest fișier?</translation>
     </message>
 </context>
 <context>
@@ -1897,7 +1897,7 @@ Vă rugăm să vă asigurați că introduceți aceeași parolă de două ori.</t
     </message>
     <message>
         <source>New conference message</source>
-        <translation type="unfinished">Mesaj de grup nou</translation>
+        <translation>Mesaj de conferință nou</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
@@ -1910,11 +1910,11 @@ Vă rugăm să vă asigurați că introduceți aceeași parolă de două ori.</t
     </message>
     <message>
         <source>Conference invite received</source>
-        <translation type="unfinished">Invitație de grup primită</translation>
+        <translation>Invitație la conferință primită</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
-        <translation type="unfinished">%1 vă invită să vă alăturați unui grup.</translation>
+        <translation>%1 vă invită să participați la o conferință.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2002,7 +2002,7 @@ Salvarea modificărilor formatelor este posibilă, ceea ce poate duce la pierder
     </message>
     <message>
         <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation type="unfinished">Filtrează mesajele de grup după cheile publice ale membrilor grupului. Puneți aici cheile publice, câte una pe fiecare rând.</translation>
+        <translation>Filtrează mesajele conferinței după cheile publice ale membrilor conferinței. Puneți aici cheile publice, câte una pe fiecare rând.</translation>
     </message>
 </context>
 <context>
@@ -2420,23 +2420,23 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
-        <translation type="unfinished">Eșec la trimiterea fișierului &quot;%1&quot;</translation>
+        <translation>Eșec la trimiterea fișierului &quot;%1&quot;</translation>
     </message>
     <message>
         <source>%1 has joined the conference</source>
-        <translation type="unfinished">%1 sa alăturat grupului</translation>
+        <translation>%1 s-a alăturat conferinței</translation>
     </message>
     <message>
         <source>%1 has left the conference</source>
-        <translation type="unfinished">%1 a părăsit grupul</translation>
+        <translation>%1 a părăsit conferința</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
-        <translation type="unfinished">%1 este acum cunoscut ca %2</translation>
+        <translation>%1 este acum cunoscut ca %2</translation>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
-        <translation type="unfinished">%1 a fost setat titlul la %2</translation>
+        <translation>%1 a fost setat titlul la %2</translation>
     </message>
     <message>
         <source>Cleared</source>
@@ -2469,23 +2469,23 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
     <message>
         <source>Initializing</source>
-        <translation type="unfinished"></translation>
+        <translation>Inițializare</translation>
     </message>
     <message>
         <source>Transmitting</source>
-        <translation type="unfinished"></translation>
+        <translation>Transmiterea</translation>
     </message>
     <message>
         <source>Finished</source>
-        <translation type="unfinished"></translation>
+        <translation>Terminat</translation>
     </message>
     <message>
         <source>Broken</source>
-        <translation type="unfinished"></translation>
+        <translation>Rupt</translation>
     </message>
     <message>
         <source>Canceled</source>
-        <translation type="unfinished"></translation>
+        <translation>Anulat</translation>
     </message>
     <message>
         <source>Paused</source>
@@ -2497,23 +2497,23 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
     <message>
         <source>File Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nume de fișier</translation>
     </message>
     <message>
         <source>Contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Contact</translation>
     </message>
     <message>
         <source>Progress</source>
-        <translation type="unfinished"></translation>
+        <translation>Progres</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimensiune</translation>
     </message>
     <message>
         <source>Speed</source>
-        <translation type="unfinished"></translation>
+        <translation>Viteză</translation>
     </message>
     <message>
         <source>Status</source>
@@ -2521,23 +2521,23 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
     <message>
         <source>Control</source>
-        <translation type="unfinished"></translation>
+        <translation>Controlul</translation>
     </message>
     <message>
         <source>You have joined the conference</source>
-        <translation type="unfinished"></translation>
+        <translation>Te-ai alăturat conferinței</translation>
     </message>
     <message>
         <source>You have left the conference</source>
-        <translation type="unfinished"></translation>
+        <translation>Ai părăsit conferința</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
-        <translation type="unfinished"></translation>
+        <translation>Istoricul chatului nu a putut fi încărcat</translation>
     </message>
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation>Versiunea bazei de date (%1) este mai nouă decât suportăm în prezent (%2). Vă rugăm să faceți upgrade la qTox.</translation>
     </message>
 </context>
 <context>
@@ -2556,7 +2556,7 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
-        <translation type="unfinished">Sunteți sigur că vreți să eliminați %1 Din lista persoanelor de contact?</translation>
+        <translation>Sunteți sigur că vreți să eliminați %1 din lista persoanelor de contact?</translation>
     </message>
     <message>
         <source>Remove</source>
@@ -2646,7 +2646,7 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
     <message>
         <source>Select Date Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog de selectare a datei</translation>
     </message>
     <message>
         <source>Select a date</source>
@@ -2704,15 +2704,15 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
     <message>
         <source>Failed to load personal settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Nu s-au încărcat setările personale</translation>
     </message>
     <message>
         <source>Unable to upgrade settings from version %1 to version %2. Cannot start qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation>Imposibil de actualizat setările de la versiunea %1 la versiunea %2. Nu se poate porni qTox.</translation>
     </message>
     <message>
         <source>Failed to load global settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Nu s-au încărcat setările globale</translation>
     </message>
 </context>
 <context>
@@ -2817,7 +2817,7 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation type="unfinished">Puneți grupurile de discuții deasupra listei de prieteni</translation>
+        <translation>Fixați conferințe în partea de sus a listei de prieteni</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode.</source>
@@ -2887,7 +2887,7 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation type="unfinished">Conversațiile de grup se notifică numai atunci când sunt menționate</translation>
+        <translation>Conversațiile din conferință se notifică numai atunci când sunt menționate</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -2907,7 +2907,7 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
-        <translation type="unfinished">Utilizați porecle colorate în discuțiile de grup</translation>
+        <translation>Utilizați porecle colorate în conferințe</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when mentioned.</source>
@@ -2978,7 +2978,7 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation type="unfinished">Creați un grup nou...</translation>
+        <translation>Creați o nouă conferință...</translation>
     </message>
     <message>
         <source>Add new circle...</source>
@@ -3011,7 +3011,7 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished">Grupuri</translation>
+        <translation>Conferințe</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -3019,7 +3019,7 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation type="unfinished">Grup discuții #%1</translation>
+        <translation>Conferința #%1</translation>
     </message>
     <message>
         <source>Show</source>
@@ -3074,10 +3074,10 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
-        <translation type="unfinished">
-            <numerusform>%n invitație de grup nouă</numerusform>
-            <numerusform>%n invitații de grup noi</numerusform>
-            <numerusform>%n invitații de grup noi</numerusform>
+        <translation>
+            <numerusform>%n invitație nouă la conferință</numerusform>
+            <numerusform>%n noi invitații la conferințe</numerusform>
+            <numerusform>%n de noi invitații la conferințe</numerusform>
         </translation>
     </message>
     <message>
@@ -3112,7 +3112,7 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     <message>
         <source>Debug</source>
         <comment>title of the window</comment>
-        <translation type="unfinished">Debug</translation>
+        <translation>Depanați</translation>
     </message>
 </context>
 </TS>
