@@ -352,7 +352,7 @@ wat kan leiden tot problemen met videogesprekken.</translation>
     </message>
     <message>
         <source>Invalid Tox ID format</source>
-        <translation>Ongeldige Tox-ID</translation>
+        <translation>Ongeldig Tox-ID formaat</translation>
     </message>
     <message>
         <source>Add a friend</source>
