@@ -95,17 +95,14 @@ SmileyPack::SmileyPack(ISmileySettings& settings_)
     : cleanupTimer{new QTimer(this)}
     , settings{settings_}
 {
-    loadingMutex.lock();
-    QThreadPool::globalInstance()->start([this]() { load(settings.getSmileyPack()); });
-    settings.connectTo_smileyPackChanged(this, [&](const QString&) { onSmileyPackChanged(); });
+    load(settings.getSmileyPack());
+
+    settings.connectTo_smileyPackChanged(this, [this](const QString& filename) { load(filename); });
     connect(cleanupTimer, &QTimer::timeout, this, &SmileyPack::cleanupIconsCache);
     cleanupTimer->start(CLEANUP_TIMEOUT);
 }
 
-SmileyPack::~SmileyPack()
-{
-    delete cleanupTimer;
-}
+SmileyPack::~SmileyPack() = default;
 
 /**
  * @brief Wraps passed string into smiley HTML image reference
@@ -175,17 +172,18 @@ QList<QPair<QString, QString>> SmileyPack::listSmileyPacks(const QStringList& pa
 }
 
 /**
- * @brief Load smile pack
- * @note The caller must lock loadingMutex and should run it in a thread
- * @param filename Filename of smilepack.
- * @return False if cannot open file, true otherwise.
+ * @brief Load smiley pack.
+ *
+ * @param filename Filename of smiley pack.
  */
-bool SmileyPack::load(const QString& filename)
+void SmileyPack::load(const QString& filename)
 {
+    QMutexLocker<QMutex> locker(&loadingMutex);
+
     QFile xmlFile(filename);
     if (!xmlFile.exists() || !xmlFile.open(QIODevice::ReadOnly)) {
-        loadingMutex.unlock();
-        return false;
+        qWarning() << "SmileyPack: Could not open file" << filename;
+        return;
     }
 
     QDomDocument doc;
@@ -233,9 +231,6 @@ bool SmileyPack::load(const QString& filename)
     }
 
     constructRegex();
-
-    loadingMutex.unlock();
-    return true;
 }
 
 /**
@@ -329,10 +324,4 @@ std::shared_ptr<QIcon> SmileyPack::getAsIcon(const QString& emoticon) const
     auto icon = std::make_shared<QIcon>(iconPath);
     cachedIcon[emoticon] = icon;
     return icon;
-}
-
-void SmileyPack::onSmileyPackChanged()
-{
-    loadingMutex.lock();
-    QThreadPool::globalInstance()->start([this]() { load(settings.getSmileyPack()); });
 }
