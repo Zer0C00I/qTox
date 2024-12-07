@@ -1837,22 +1837,22 @@ Please make sure to enter the same password twice.</source>
     <name>Nexus</name>
     <message>
         <source>View</source>
-        <comment>OS X Menu bar</comment>
+        <comment>macOS Menu bar</comment>
         <translation>查看</translation>
     </message>
     <message>
         <source>Window</source>
-        <comment>OS X Menu bar</comment>
+        <comment>macOS Menu bar</comment>
         <translation>日期</translation>
     </message>
     <message>
         <source>Minimize</source>
-        <comment>OS X Menu bar</comment>
+        <comment>macOS Menu bar</comment>
         <translation>最小化</translation>
     </message>
     <message>
         <source>Bring All to Front</source>
-        <comment>OS X Menu bar</comment>
+        <comment>macOS Menu bar</comment>
         <translation>移动全部到最上层</translation>
     </message>
     <message>

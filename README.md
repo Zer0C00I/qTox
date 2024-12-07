@@ -62,7 +62,7 @@ the encrypted peer-to-peer Tox protocol.
 
 ---
 
-| Windows                                          | Linux                                                                              | OS X                    | FreeBSD              |
+| Windows                                          | Linux                                                                              | macOS                   | FreeBSD              |
 | ------------------------------------------------ | ---------------------------------------------------------------------------------- | ----------------------- | -------------------- |
 | **[64 bit release]**                             | **[Arch]**, **[Debian]**, **[Fedora]**, **[Gentoo]**, **[openSUSE]**, **[Ubuntu]** | **[Latest release]**    | **[Package & Port]** |
 | [32 bit release]                                 | **[Flatpak]**                                                                      | [Building instructions] |

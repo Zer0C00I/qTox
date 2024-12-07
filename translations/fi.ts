@@ -1840,22 +1840,22 @@ Varmista, että syötät saman salasanan kahdesti.</translation>
     <name>Nexus</name>
     <message>
         <source>View</source>
-        <comment>OS X Menu bar</comment>
+        <comment>macOS Menu bar</comment>
         <translation>Näytä</translation>
     </message>
     <message>
         <source>Window</source>
-        <comment>OS X Menu bar</comment>
+        <comment>macOS Menu bar</comment>
         <translation>Ikkuna</translation>
     </message>
     <message>
         <source>Minimize</source>
-        <comment>OS X Menu bar</comment>
+        <comment>macOS Menu bar</comment>
         <translation>Pienennä</translation>
     </message>
     <message>
         <source>Bring All to Front</source>
-        <comment>OS X Menu bar</comment>
+        <comment>macOS Menu bar</comment>
         <translation>Tuo kaikki eteen</translation>
     </message>
     <message>

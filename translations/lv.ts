@@ -1849,22 +1849,22 @@ Please make sure to enter the same password twice.</source>
     <name>Nexus</name>
     <message>
         <source>View</source>
-        <comment>OS X Menu bar</comment>
+        <comment>macOS Menu bar</comment>
         <translation>Skatīt</translation>
     </message>
     <message>
         <source>Window</source>
-        <comment>OS X Menu bar</comment>
+        <comment>macOS Menu bar</comment>
         <translation>Logs</translation>
     </message>
     <message>
         <source>Minimize</source>
-        <comment>OS X Menu bar</comment>
+        <comment>macOS Menu bar</comment>
         <translation>Minimizēt</translation>
     </message>
     <message>
         <source>Bring All to Front</source>
-        <comment>OS X Menu bar</comment>
+        <comment>macOS Menu bar</comment>
         <translation>Novietot visu priekšā</translation>
     </message>
     <message>

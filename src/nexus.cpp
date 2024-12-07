@@ -300,10 +300,10 @@ bool Nexus::handleToxSave(const QString& path)
 #ifdef Q_OS_MAC
 void Nexus::retranslateUi()
 {
-    viewMenu->menuAction()->setText(tr("View", "OS X Menu bar"));
-    windowMenu->menuAction()->setText(tr("Window", "OS X Menu bar"));
-    minimizeAction->setText(tr("Minimize", "OS X Menu bar"));
-    frontAction->setText((tr("Bring All to Front", "OS X Menu bar")));
+    viewMenu->menuAction()->setText(tr("View", "macOS Menu bar"));
+    windowMenu->menuAction()->setText(tr("Window", "macOS Menu bar"));
+    minimizeAction->setText(tr("Minimize", "macOS Menu bar"));
+    frontAction->setText((tr("Bring All to Front", "macOS Menu bar")));
 }
 
 void Nexus::onWindowStateChanged(Qt::WindowStates state)

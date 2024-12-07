@@ -1862,22 +1862,22 @@ Pamiętaj, aby dwukrotnie wprowadzić to samo hasło.</translation>
     <name>Nexus</name>
     <message>
         <source>View</source>
-        <comment>OS X Menu bar</comment>
+        <comment>macOS Menu bar</comment>
         <translation>Pokaż</translation>
     </message>
     <message>
         <source>Window</source>
-        <comment>OS X Menu bar</comment>
+        <comment>macOS Menu bar</comment>
         <translation>Okno</translation>
     </message>
     <message>
         <source>Minimize</source>
-        <comment>OS X Menu bar</comment>
+        <comment>macOS Menu bar</comment>
         <translation>Minimalizuj</translation>
     </message>
     <message>
         <source>Bring All to Front</source>
-        <comment>OS X Menu bar</comment>
+        <comment>macOS Menu bar</comment>
         <translatorcomment>better translation?</translatorcomment>
         <translation>Pokaż na pierwszym planie</translation>
     </message>

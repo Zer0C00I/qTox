@@ -306,7 +306,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "qtox-nightly-${{ matrix.arch }}-${{ matrix.build_type }}.exe,qtox-nightly-${{ matrix.arch }}-${{ matrix.build_type }}.exe.sha256"
 
-  build-osx-distributable:
+  build-macos-distributable:
     name: macOS distributable
     needs: update-nightly-tag
     strategy:
@@ -330,7 +330,7 @@ jobs:
       - name: Fetch build scripts
         run: git clone --depth=1 https://github.com/TokTok/dockerfiles ".ci-scripts/dockerfiles"
       - name: Homebrew dependencies to build dependencies
-        run: brew bundle --file ./osx/Brewfile-DepBuildDeps
+        run: brew bundle --file ./macos/Brewfile-DepBuildDeps
       - name: Cache dependencies
         id: cache-deps
         uses: actions/cache@v4
@@ -339,7 +339,7 @@ jobs:
           key: ${{ runner.os }}-${{ matrix.arch }}-local-deps
       - name: Build dependencies
         if: steps.cache-deps.outputs.cache-hit != 'true'
-        run: ./.ci-scripts/build-osx-deps.sh ${{ matrix.arch }}
+        run: ./.ci-scripts/build-macos-deps.sh ${{ matrix.arch }}
       - name: Build qTox
         run: ./.ci-scripts/build-qtox-macos.sh dist ${{ matrix.arch }}
       - name: Upload dmg
@@ -373,7 +373,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "qTox-nightly-${{ matrix.arch }}.dmg,qTox-nightly-${{ matrix.arch }}.dmg.sha256"
 
-  build-osx-user:
+  build-macos-user:
     name: macOS user
     if: github.event_name == 'pull_request'
     strategy:
@@ -393,7 +393,7 @@ jobs:
       - name: Fetch build scripts
         run: git clone --depth=1 https://github.com/TokTok/dockerfiles ".ci-scripts/dockerfiles"
       - name: Homebrew
-        run: brew bundle --file ./osx/Brewfile
+        run: brew bundle --file ./macos/Brewfile
       - name: Install toxcore
         run: .ci-scripts/dockerfiles/qtox/build_toxcore_linux.sh sudo
       - name: Build qTox

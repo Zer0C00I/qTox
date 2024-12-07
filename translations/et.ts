@@ -1841,22 +1841,22 @@ Palun vaata, et sa mõlemal korral sisestad sama salasõna.</translation>
     <name>Nexus</name>
     <message>
         <source>View</source>
-        <comment>OS X Menu bar</comment>
+        <comment>macOS Menu bar</comment>
         <translation>Vaade</translation>
     </message>
     <message>
         <source>Window</source>
-        <comment>OS X Menu bar</comment>
+        <comment>macOS Menu bar</comment>
         <translation>Aken</translation>
     </message>
     <message>
         <source>Minimize</source>
-        <comment>OS X Menu bar</comment>
+        <comment>macOS Menu bar</comment>
         <translation>Vähenda</translation>
     </message>
     <message>
         <source>Bring All to Front</source>
-        <comment>OS X Menu bar</comment>
+        <comment>macOS Menu bar</comment>
         <translation>Too kõik esile</translation>
     </message>
     <message>

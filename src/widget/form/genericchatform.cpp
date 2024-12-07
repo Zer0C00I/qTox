@@ -107,7 +107,7 @@ template <class T, class Fun>
 QPushButton* createButton(const QString& name, T* self, Fun onClickSlot, Settings& settings, Style& style)
 {
     QPushButton* btn = new QPushButton();
-    // Fix for incorrect layouts on OS X as per
+    // Fix for incorrect layouts on macOS as per
     // https://bugreports.qt-project.org/browse/QTBUG-14591
     btn->setAttribute(Qt::WA_LayoutUsesWidgetRect);
     btn->setObjectName(name);

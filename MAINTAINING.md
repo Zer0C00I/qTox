@@ -200,7 +200,7 @@ If a new translation language has been added, update the following files:
 - Format all code using the [`./tools/format-code.sh`] script
 - Update the Flatpak manifest of our [Flathub repository] with the script in flatpak/update_flathub_descriptor_dependencies.py
   - Make sure to check if new dependencies need to be added, add them if necessary
-- Update version number for windows/osx packages using the
+- Update version number for windows/macos packages using the
   [`./tools/update-versions.sh`] script, e.g. `./tools/update-versions.sh
   1.11.0`
 - Update toxcore version number to the latest tag in [`./buildscripts/download/download_toxcore.sh]

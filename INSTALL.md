@@ -31,7 +31,7 @@
   - [Security hardening with AppArmor](#security-hardening-with-apparmor)
 - [BSD](#bsd)
   - [FreeBSD](#freebsd-easy)
-- [OS X](#osx)
+- [macOS](#macos)
 - [Windows](#windows)
   - [Cross-compile from Linux](#cross-compile-from-linux)
   - [Native](#native)
@@ -181,10 +181,7 @@ are provided instructions.
 
 ---
 
-Most of the dependencies should be available through your package manager. You
-may either follow the directions below, or simply run `./simple_make.sh` after
-cloning this repository, which will attempt to automatically download
-dependencies followed by compilation.
+Most of the dependencies should be available through your package manager.
 
 <a name="ubuntu-easy" />
 
@@ -278,12 +275,12 @@ Please see buildscripts/docker/Dockerfile... for your distribution for an up to 
 Provided that you have all required dependencies installed, you can simply run:
 
 ```bash
-git clone https://github.com/toktok/c-toxcore.git toxcore
+git clone https://github.com/TokTok/c-toxcore.git toxcore
 cd toxcore
 # Note: See buildscirpts/download/download_toxcore.sh for which version should be checked out
-cmake . -DBOOTSTRAP_DAEMON=OFF
-make -j$(nproc)
-sudo make install
+cmake -B_build -H. -GNinja -DBOOTSTRAP_DAEMON=OFF
+cmake --build _build
+sudo cmake --install _build
 
 # we don't know what whether user runs 64 or 32 bits, and on some distros
 # (Fedora, openSUSE) lib/ doesn't link to lib64/, so add both
@@ -311,11 +308,11 @@ export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig"
 Run in qTox directory to compile:
 
 ```bash
-cmake .
-make -j$(nproc)
+cmake -B_build -H.
+cmake --build _build
 ```
 
-Now you can start compiled qTox with `./qtox`
+Now you can start compiled qTox with `_build/qtox`
 
 Congratulations, you've compiled qTox `:)`
 
@@ -359,13 +356,13 @@ cd /usr/ports/net-im/qTox
 make install clean
 ```
 
-<a name="osx" />
+<a name="macos" />
 
-## OS X
+## macOS
 
-Supported OS X versions: >=10.15.
+Supported macOS versions: >=10.15.
 
-Compiling qTox on OS X for development requires 2 tools:
+Compiling qTox on macOS for development requires 2 tools:
 [Xcode](https://developer.apple.com/xcode/) and [homebrew](https://brew.sh).
 
 ### Manual Compiling
@@ -388,7 +385,7 @@ cd qTox
 Then install required dependencies available via `brew`.
 
 ```bash
-brew bundle --file osx/Brewfile
+brew bundle --file macos/Brewfile
 ```
 
 Then, install [toxcore](https://github.com/toktok/c-toxcore/blob/master/INSTALL.md).
@@ -402,16 +399,14 @@ Finally, build qTox.
 #### Compiling
 
 ```bash
-mkdir -p _build
-cd _build
-cmake .. -DCMAKE_PREFIX_PATH=$(brew --prefix qt@6)
-make -j$(sysctl -n hw.ncpu)
-make install
+cmake -B_build -H. -GNinja -DCMAKE_PREFIX_PATH=$(brew --prefix qt@6)
+cmake --build _build
+cmake --install _build
 ```
 
 #### Running qTox
 
-`qTox.dmg` should be in your build directory. You can install qTox from the dmg
+`qTox.dmg` should be in your `_build` directory. You can install qTox from the dmg
 to your Applications folder, or run qTox directly from the dmg.
 
 <a name="windows" />

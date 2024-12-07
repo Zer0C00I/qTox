@@ -1,23 +1,11 @@
 #!/bin/bash
 
-#   Copyright © 2016-2019 by The qTox Project Contributors
-#
-#   This file is part of qTox, a Qt-based graphical interface for Tox.
-#   qTox is libre software: you can redistribute it and/or modify
-#   it under the terms of the GNU General Public License as published by
-#   the Free Software Foundation, either version 3 of the License, or
-#   (at your option) any later version.
-#
-#   qTox is distributed in the hope that it will be useful,
-#   but WITHOUT ANY WARRANTY; without even the implied warranty of
-#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#   GNU General Public License for more details.
-#
-#   You should have received a copy of the GNU General Public License
-#   along with qTox.  If not, see <http://www.gnu.org/licenses/>
+# SPDX-License-Identifier: GPL-3.0-or-later.
+# Copyright © 2016-2019 by The qTox Project Contributors
+# Copyright © 2024 The TokTok team
 
 
-# script to change versions in the files for osx and windows "packages"
+# script to change versions in the files for macOS and windows "packages"
 #
 # it should be run before releasing a new version
 #
@@ -44,16 +32,16 @@ update_windows() {
         ./qtox-nsi-version.sh "$@" )
 }
 
-update_osx() {
-    ( cd "$BASE_DIR/osx"
+update_macos() {
+    ( cd "$BASE_DIR/macos"
         ./update-plist-version.sh "$@" )
 }
 
 update_readme() {
     cd "$BASE_DIR"
-    sed -ri "s|(github.com/qTox/qTox/releases/download/v)$VERSION_PATTERN|\1$@|g" README.md
+    sed -ri "s|(github.com/TokTok/qTox/releases/download/v)$VERSION_PATTERN|\1$@|g" README.md
     # for flatpak and AppImage
-    sed -ri "s|(github.com/qTox/qTox/releases/download/v$VERSION_PATTERN/qTox-v)$VERSION_PATTERN|\1$@|g" README.md
+    sed -ri "s|(github.com/TokTok/qTox/releases/download/v$VERSION_PATTERN/qTox-v)$VERSION_PATTERN|\1$@|g" README.md
 }
 
 update_appdata() {
@@ -77,16 +65,16 @@ is_version() {
 main() {
     is_version "$@"
 
-    # osx cannot into proper sed
+    # macOS cannot into proper sed
     if [[ ! "$OSTYPE" == "darwin"* ]]
     then
-        update_osx "$@"
+        update_macos "$@"
         update_windows "$@"
         update_readme "$@"
         update_appdata "$@"
     else
-        # TODO: actually check whether there is a GNU sed on osx
-        echo "OSX's sed not supported. Get a proper one."
+        # TODO: actually check whether there is a GNU sed on macOS
+        echo "macOS' sed not supported. Get a proper one."
     fi
 }
 main "$@"

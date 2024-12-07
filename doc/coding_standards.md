@@ -20,7 +20,7 @@ GNU/GCC specific extensions (i.e. qTox should compile with `CXXFLAGS` set to
 `-std=c++11`, regardless of if `-std=gnu+11` is being used during compile
 time). Source code must be able to be compiled under multiple different
 compilers and operating systems including but not limited to GCC and Clang on
-Microsoft Windows, Apple OS X and GNU/Linux-based derivatives.
+Microsoft Windows, Apple macOS and GNU/Linux-based derivatives.
 
 In addition to the base language, the following additional restrictions are
 imposed:
