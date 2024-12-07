@@ -41,7 +41,7 @@ void signalHandler(int signum)
         return;
 
     if (::write(g_signalSocketPair[0], &signum, sizeof(signum)) == -1) {
-        // We hardly can do anything more usefull in signal handler, and
+        // We hardly can do anything more useful in signal handler, and
         // any ways it's probably very unexpected error (out of memory?),
         // since we check socket existance with a flag beforehand.
         abort();

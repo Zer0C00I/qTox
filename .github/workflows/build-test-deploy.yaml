@@ -311,12 +311,12 @@ jobs:
     needs: update-nightly-tag
     strategy:
       matrix:
-        arch: [x86_64, arm64]
+        arch: [arm64, x86_64]
         include:
-          - arch: x86_64
-            os: macos-13
           - arch: arm64
             os: macos-14
+          - arch: x86_64
+            os: macos-13
     runs-on: ${{ matrix.os }}
     permissions:
       contents: write
@@ -378,8 +378,10 @@ jobs:
     if: github.event_name == 'pull_request'
     strategy:
       matrix:
-        arch: [x86_64]
+        arch: [arm64, x86_64]
         include:
+          - arch: arm64
+            os: macos-14
           - arch: x86_64
             os: macos-13
     runs-on: ${{ matrix.os }}
