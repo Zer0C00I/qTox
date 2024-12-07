@@ -40,7 +40,7 @@
 #include <QtGlobal>
 
 #ifdef SPELL_CHECKING
-#include <KF6/SonnetUi/sonnet/spellcheckdecorator.h>
+#include <sonnet/spellcheckdecorator.h>
 #endif
 
 /**

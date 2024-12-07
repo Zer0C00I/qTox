@@ -216,6 +216,71 @@ jobs:
   # Build, test, and deploy jobs (PR and push)
   ################################################################################################
 
+  build-appimage:
+    name: AppImage on alpine
+    runs-on: ubuntu-22.04
+    needs: [update-nightly-tag]
+    strategy:
+      matrix:
+        features: [full]
+        build_type: [Release]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache compiler output
+        uses: actions/cache@v4
+        with:
+          path: ".cache/ccache"
+          key: ${{ github.job }}-ccache
+      - name: Install docker-compose
+        run: sudo apt-get install -y docker-compose
+      - name: Run build
+        run: docker-compose run --rm -e GITHUB_REPOSITORY=$GITHUB_REPOSITORY -e GITHUB_REF=$GITHUB_REF alpine-appimage ./appimage/build.sh --src-dir /qtox
+      - name: Upload AppImage
+        uses: actions/upload-artifact@v4
+        with:
+          name: qTox-${{ github.sha }}-x86_64-AppImage
+          path: |
+            qTox-*.AppImage
+            qTox-*.AppImage.zsync
+      - name: Get tag name for AppImage release file name
+        if: contains(github.ref, 'refs/tags/v')
+        id: get_version
+        run: |
+          VERSION="$(echo $GITHUB_REF | cut -d / -f 3)"
+          echo "release_appimage=qTox-$VERSION.x86_64.AppImage" >>$GITHUB_OUTPUT
+      - name: Rename AppImage for release upload
+        if: contains(github.ref, 'refs/tags/v')
+        run: |
+          cp qTox-*.x86_64.AppImage "${{ steps.get_version.outputs.release_appimage }}"
+          sha256sum "${{ steps.get_version.outputs.release_appimage }}" > "${{ steps.get_version.outputs.release_appimage }}.sha256"
+          cp qTox-*.x86_64.AppImage.zsync "${{ steps.get_version.outputs.release_appimage }}.zsync"
+      - name: Upload to versioned release
+        if: contains(github.ref, 'refs/tags/v')
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: true
+          draft: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifacts: "${{ steps.get_version.outputs.release_appimage }},${{ steps.get_version.outputs.release_appimage }}.sha256,${{ steps.get_version.outputs.release_appimage }}.zsync"
+      - name: Rename AppImage for nightly upload
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        run: |
+          cp qTox-*.x86_64.AppImage qTox-nightly.x86_64.AppImage
+          sha256sum qTox-nightly.x86_64.AppImage > qTox-nightly.x86_64.AppImage.sha256
+          cp qTox-*.x86_64.AppImage.zsync qTox-nightly.x86_64.AppImage.zsync
+      - name: Upload to nightly release
+        uses: ncipollo/release-action@v1
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        with:
+          allowUpdates: true
+          tag: nightly
+          omitBodyDuringUpdate: true
+          omitNameDuringUpdate: true
+          prerelease: true
+          replacesArtifacts: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifacts: "qTox-nightly.x86_64.AppImage,qTox-nightly.x86_64.AppImage.sha256,qTox-nightly.x86_64.AppImage.zsync"
+
   build-android:
     name: Android
     needs: [update-nightly-tag]
