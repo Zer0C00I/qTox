@@ -141,34 +141,44 @@ jobs:
       contents: write
     strategy:
       matrix:
-        arch: [arm64-v8a]
+        arch: [armeabi-v7a, arm64-v8a]
         build_type: [Debug, Release]
+        version: [6.2.4, 6.8.1]
         exclude:
+          - arch: ${{ github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'packaging') && 'armeabi-v7a' }}
           - build_type: ${{ github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'packaging') && 'Debug' }}
+          - version: ${{ github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'packaging') && '6.2.4' }}
     steps:
       - name: Compute values for remaining steps
         id: computed
         run: |
           ARTIFACT_TYPE="$(echo '${{ matrix.build_type }}' | tr '[:upper:]' '[:lower:]')"
           echo "artifact_type=$ARTIFACT_TYPE" >>$GITHUB_OUTPUT
-          echo "built_apk=_build/android-build/build/outputs/apk/$ARTIFACT_TYPE/android-build-$ARTIFACT_TYPE-signed.apk" >>$GITHUB_OUTPUT
-          echo "nightly_apk=qTox-nightly-${{ matrix.arch }}-$ARTIFACT_TYPE.apk" >>$GITHUB_OUTPUT
+          if [ "${{ matrix.version }}" == "6.2.4" ]; then
+            SUFFIX="-android7"
+            echo "built_apk=_build/android-build/build/outputs/apk/debug/android-build-debug.apk" >>$GITHUB_OUTPUT
+          else
+            SUFFIX=""
+            echo "built_apk=_build/android-build/build/outputs/apk/$ARTIFACT_TYPE/android-build-$ARTIFACT_TYPE-signed.apk" >>$GITHUB_OUTPUT
+          fi
+          echo "suffix=$SUFFIX" >>$GITHUB_OUTPUT
+          echo "nightly_apk=qTox-nightly-${{ matrix.arch }}-$ARTIFACT_TYPE$SUFFIX.apk" >>$GITHUB_OUTPUT
       - uses: actions/checkout@v4
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
       - name: Run build
-        run: docker-compose run --rm "android_builder.${{ matrix.arch }}.${{ steps.computed.outputs.artifact_type }}" ./android/cross-compile/build.sh --arch "${{ matrix.arch }}" --build-type "${{ matrix.build_type }}"
+        run: docker-compose run --rm "android_builder.${{ matrix.arch }}.${{ steps.computed.outputs.artifact_type }}_${{ matrix.version }}" ./android/cross-compile/build.sh --arch "${{ matrix.arch }}" --build-type "${{ matrix.build_type }}"
       - name: Upload Android apk
         uses: actions/upload-artifact@v4
         with:
-          name: qTox-${{ github.sha }}-${{ matrix.arch }}-${{ steps.computed.outputs.artifact_type }}.apk
+          name: qTox-${{ github.sha }}-${{ matrix.arch }}-${{ steps.computed.outputs.artifact_type }}${{ steps.computed.outputs.suffix }}.apk
           path: ${{ steps.computed.outputs.built_apk }}
       - name: Get tag name for Android release file name
         if: contains(github.ref, 'refs/tags/v') && matrix.build_type == 'Release'
         id: get_version
         run: |
           VERSION="$(echo $GITHUB_REF | cut -d / -f 3)"
-          echo "release_apk=qTox-$VERSION-${{ matrix.arch }}-${{ steps.computed.outputs.artifact_type }}.apk" >>$GITHUB_OUTPUT
+          echo "release_apk=qTox-$VERSION-${{ matrix.arch }}-${{ steps.computed.outputs.artifact_type }}${{ steps.computed.outputs.suffix }}.apk" >>$GITHUB_OUTPUT
       - name: Rename Android APK for release upload
         if: contains(github.ref, 'refs/tags/v')
         run: |

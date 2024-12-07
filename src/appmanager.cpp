@@ -47,8 +47,12 @@ QString canonicalLogFilePath(const char* filename)
     QString file = QString::fromUtf8(filename);
     // We're not using QT_MESSAGELOG_FILE here, because that can be 0, NULL, or
     // nullptr in release builds.
+#ifdef ANDROID
+    const QString srcPath = QStringLiteral(__FILE__);
+#else
     const QString srcPath =
         QString::fromStdString(std::filesystem::path(__FILE__).parent_path().parent_path().string());
+#endif
     if (file.startsWith(srcPath)) {
         file = file.mid(srcPath.length() + 1);
     }

@@ -636,6 +636,12 @@ target_link_libraries(${PROJECT_NAME}_static util_library)
 target_link_libraries(${PROJECT_NAME}_static audio_library)
 target_link_libraries(${PROJECT_NAME}_static translations_library)
 
+if(COMMAND qt_policy)
+  # set QTP0002 policy: target properties that specify Android-specific paths
+  # may contain generator expressions
+  qt_policy(SET QTP0002 NEW)
+endif()
+
 qt_add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE
                   ${${PROJECT_NAME}_RESOURCES} ${SMILEY_RESOURCES} src/main.cpp)
 target_link_libraries(
@@ -643,9 +649,10 @@ target_link_libraries(
                           ${ALL_LIBRARIES})
 set_target_properties(
   ${PROJECT_NAME}
-  PROPERTIES QT_ANDROID_TARGET_SDK_VERSION 24
+  PROPERTIES QT_ANDROID_TARGET_SDK_VERSION 34
              QT_ANDROID_MIN_SDK_VERSION 24
-             QT_ANDROID_ABIS arm64-v8a)
+             QT_ANDROID_PACKAGE_SOURCE_DIR
+             "${CMAKE_CURRENT_SOURCE_DIR}/android/${Qt6Core_VERSION}")
 
 include(Testing)
 include(Installation)
