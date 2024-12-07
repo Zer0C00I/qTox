@@ -13,19 +13,17 @@
 # usage:
 #   ./$script
 
-
 # Fail as soon as error appears
 set -eu -o pipefail
-
 
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 readonly BASE_DIR="$SCRIPT_DIR/../"
 
 format() {
-    cd "$BASE_DIR"
-    [[ -f .clang-format ]] # make sure that it exists
-    # NOTE: some earlier than 3.8 versions of clang-format are broken
-    # and will not work correctly
-    clang-format -i -style=file $(git ls-files "*.cpp" "*.h" "*.mm")
+  cd "$BASE_DIR"
+  [[ -f .clang-format ]] # make sure that it exists
+  # NOTE: some earlier than 3.8 versions of clang-format are broken
+  # and will not work correctly
+  clang-format -i -style=file "$(git ls-files "*.cpp" "*.h" "*.mm")"
 }
 format

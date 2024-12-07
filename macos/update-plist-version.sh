@@ -15,7 +15,6 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-
 # script to change qTox version in `info.plist` file to the supplied one
 #
 # NOTE: it checkouts the files before appending a version to them!
@@ -34,30 +33,28 @@ set -eu -o pipefail
 
 # update version in `info.plist` file to supplied one after the right lines
 update_version() {
-    local vars=(
-        '	<key>CFBundleShortVersionString</key>'
-        '	<key>CFBundleVersion</key>'
-    )
+  local vars=(
+    '	<key>CFBundleShortVersionString</key>'
+    '	<key>CFBundleVersion</key>'
+  )
 
-    for v in "${vars[@]}"
-    do
-        sed -i -r "\\R$v\$R,+1 s,(<string>)[0-9\\.]+(</string>)$,\\1$@\\2," \
-            "./info.plist"
-    done
+  for v in "${vars[@]}"; do
+    sed -i -r "\\R$v\$R,+1 s,(<string>)[0-9\\.]+(</string>)$,\\1$@\\2," \
+      "./info.plist"
+  done
 }
 
 # exit if supplied arg is not a version
 is_version() {
-    if [[ ! $@ =~ [0-9\\.]+ ]]
-    then
-        echo "Not a version: $@"
-        exit 1
-    fi
+  if [[ ! $@ =~ [0-9\\.]+ ]]; then
+    echo "Not a version: $@"
+    exit 1
+  fi
 }
 
 main() {
-    is_version "$@"
+  is_version "$@"
 
-    update_version "$@"
+  update_version "$@"
 }
 main "$@"

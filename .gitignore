@@ -27,16 +27,7 @@ libs
 # Git
 *.orig
 
-# Go stuff (for Go OSX updater)
-*.cgo1.go
-*.cgo2.c
-_cgo_defun.c
-_cgo_gotypes.go
-_cgo_export.*
-_testmain.go
-*.test
-
-# OSX
+# macOS
 .DS_Store
 /qtox.app
 

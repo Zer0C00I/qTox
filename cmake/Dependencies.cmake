@@ -53,7 +53,7 @@ function(search_dependency pkg)
     endif()
   endif()
 
-  # Then, try OSX frameworks.
+  # Then, try macOS frameworks.
   if(NOT ${pkg}_FOUND AND arg_FRAMEWORK)
     find_library(${pkg}_LIBRARIES
             NAMES ${arg_FRAMEWORK}

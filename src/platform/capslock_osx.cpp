@@ -9,7 +9,7 @@
 #include <QtCore/qsystemdetection.h>
 
 #ifdef Q_OS_MACOS
-// TODO: Implement for osx
+// TODO: Implement for macOS
 bool Platform::capsLockEnabled()
 {
     return false;

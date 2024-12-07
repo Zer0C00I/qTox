@@ -16,7 +16,7 @@
 #   You should have received a copy of the GNU General Public License
 #   along with qTox.  If not, see <http://www.gnu.org/licenses/>
 
-PWD=`pwd`
+PWD=$PWD
 
 echo "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?>
 <installer-gui-script minSpecVersion=\"1\">
@@ -40,4 +40,4 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?>
         <pkg-ref id=\"chat.tox.qtox\"/>
     </choice>
     <pkg-ref id=\"chat.tox.qtox\" version=\"1\" onConclusion=\"none\">qtox.pkg</pkg-ref>
-</installer-gui-script>" > distribution.xml
+</installer-gui-script>" >distribution.xml
