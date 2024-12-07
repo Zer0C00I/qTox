@@ -172,6 +172,7 @@ void Settings::loadGlobal()
         showWindow = s.value("showWindow", true).toBool();
         notify = s.value("notify", true).toBool();
         desktopNotify = s.value("desktopNotify", true).toBool();
+        notifySystemBackend = s.value("notifySystemBackend", true).toBool();
         conferenceAlwaysNotify = s.value("conferenceAlwaysNotify", true).toBool();
         conferencePosition = s.value("conferencePosition", true).toBool();
         separateWindow = s.value("separateWindow", false).toBool();
@@ -658,6 +659,7 @@ void Settings::saveGlobal()
         s.setValue("showWindow", showWindow);
         s.setValue("notify", notify);
         s.setValue("desktopNotify", desktopNotify);
+        s.setValue("notifySystemBackend", notifySystemBackend);
         s.setValue("conferenceAlwaysNotify", conferenceAlwaysNotify);
         s.setValue("separateWindow", separateWindow);
         s.setValue("dontGroupWindows", dontGroupWindows);
@@ -1616,10 +1618,23 @@ bool Settings::getDesktopNotify() const
     return desktopNotify;
 }
 
-void Settings::setDesktopNotify(bool enabled)
+void Settings::setDesktopNotify(bool newValue)
 {
-    if (setVal(desktopNotify, enabled)) {
-        emit desktopNotifyChanged(enabled);
+    if (setVal(desktopNotify, newValue)) {
+        emit desktopNotifyChanged(newValue);
+    }
+}
+
+bool Settings::getNotifySystemBackend() const
+{
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
+    return notifySystemBackend;
+}
+
+void Settings::setNotifySystemBackend(bool newValue)
+{
+    if (setVal(notifySystemBackend, newValue)) {
+        emit notifySystemBackendChanged(newValue);
     }
 }
 

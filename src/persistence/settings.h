@@ -173,6 +173,7 @@ signals:
     void minimizeToTrayChanged(bool enabled);
     void notifyChanged(bool enabled);
     void desktopNotifyChanged(bool enabled);
+    void notifySystemBackendChanged(bool enabled);
     void showWindowChanged(bool enabled);
     void makeToxPortableChanged(bool enabled);
     void busySoundChanged(bool enabled);
@@ -315,7 +316,10 @@ public:
     void setShowWindow(bool newValue) override;
 
     bool getDesktopNotify() const override;
-    void setDesktopNotify(bool enabled) override;
+    void setDesktopNotify(bool newValue) override;
+
+    bool getNotifySystemBackend() const override;
+    void setNotifySystemBackend(bool newValue) override;
 
     bool getNotifySound() const override;
     void setNotifySound(bool newValue) override;
@@ -597,6 +601,7 @@ private:
     bool checkUpdates;
     bool notify;
     bool desktopNotify;
+    bool notifySystemBackend;
     bool showWindow;
     bool notifySound;
     bool notifyHide;

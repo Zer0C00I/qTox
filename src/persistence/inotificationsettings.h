@@ -24,7 +24,10 @@ public:
     virtual void setShowWindow(bool newValue) = 0;
 
     virtual bool getDesktopNotify() const = 0;
-    virtual void setDesktopNotify(bool enabled) = 0;
+    virtual void setDesktopNotify(bool newValue) = 0;
+
+    virtual bool getNotifySystemBackend() const = 0;
+    virtual void setNotifySystemBackend(bool newValue) = 0;
 
     virtual bool getNotifySound() const = 0;
     virtual void setNotifySound(bool newValue) = 0;

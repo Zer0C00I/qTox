@@ -73,6 +73,8 @@ UserInterfaceForm::UserInterfaceForm(SmileyPack& smileyPack_, Settings& settings
     bodyUI->busySound->setEnabled(settings.getNotifySound() && settings.getNotify());
     bodyUI->desktopNotify->setChecked(settings.getDesktopNotify());
     bodyUI->desktopNotify->setEnabled(settings.getNotify());
+    bodyUI->notifySystemBackend->setChecked(settings.getNotifySystemBackend());
+    bodyUI->notifySystemBackend->setEnabled(settings.getNotify() && settings.getDesktopNotify());
 
     bodyUI->showWindow->setChecked(settings.getShowWindow());
 
@@ -263,6 +265,8 @@ void UserInterfaceForm::on_notify_stateChanged()
     bodyUI->notifySound->setEnabled(notify);
     bodyUI->busySound->setEnabled(notify && bodyUI->notifySound->isChecked());
     bodyUI->desktopNotify->setEnabled(notify);
+    bodyUI->notifySystemBackend->setEnabled(notify && bodyUI->desktopNotify->isChecked());
+    bodyUI->notifyHide->setEnabled(notify);
 }
 
 void UserInterfaceForm::on_notifySound_stateChanged()
@@ -276,6 +280,12 @@ void UserInterfaceForm::on_desktopNotify_stateChanged()
 {
     const bool notify = bodyUI->desktopNotify->isChecked();
     settings.setDesktopNotify(notify);
+    bodyUI->notifySystemBackend->setEnabled(notify);
+}
+
+void UserInterfaceForm::on_notifySystemBackend_stateChanged()
+{
+    settings.setNotifySystemBackend(bodyUI->notifySystemBackend->isChecked());
 }
 
 void UserInterfaceForm::on_busySound_stateChanged()

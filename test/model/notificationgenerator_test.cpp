@@ -38,9 +38,18 @@ class MockNotificationSettings : public INotificationSettings
     {
         return true;
     }
-    virtual void setDesktopNotify(bool enabled) override
+    virtual void setDesktopNotify(bool newValue) override
     {
-        std::ignore = enabled;
+        std::ignore = newValue;
+    }
+
+    virtual bool getNotifySystemBackend() const override
+    {
+        return true;
+    }
+    virtual void setNotifySystemBackend(bool newValue) override
+    {
+        std::ignore = newValue;
     }
 
     virtual bool getNotifySound() const override

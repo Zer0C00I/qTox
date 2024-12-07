@@ -39,6 +39,7 @@ private slots:
     void on_useEmoticons_stateChanged();
     void on_notify_stateChanged();
     void on_desktopNotify_stateChanged();
+    void on_notifySystemBackend_stateChanged();
     void on_notifySound_stateChanged();
     void on_notifyHide_stateChanged(int value);
     void on_busySound_stateChanged();

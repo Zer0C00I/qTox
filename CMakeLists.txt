@@ -413,6 +413,9 @@ set(${PROJECT_NAME}_SOURCES
     src/platform/capslock_x11.cpp
     src/platform/desktop_notifications/desktopnotify.cpp
     src/platform/desktop_notifications/desktopnotify.h
+    src/platform/desktop_notifications/desktopnotifybackend_dbus.cpp
+    src/platform/desktop_notifications/desktopnotifybackend_noop.cpp
+    src/platform/desktop_notifications/desktopnotifybackend.h
     src/platform/posixsignalnotifier.cpp
     src/platform/posixsignalnotifier.h
     src/platform/timer.h

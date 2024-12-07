@@ -2917,6 +2917,14 @@ Deze ID bevat de NoSpam-code (in het blauw) en de checksum (in het grijs).</tran
         <extracomment>Text on smiley pack label</extracomment>
         <translation>Smiley-pakket:</translation>
     </message>
+    <message>
+        <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use system-specific notification backend if available</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

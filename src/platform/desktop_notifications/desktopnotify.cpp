@@ -1,32 +1,58 @@
 /* SPDX-License-Identifier: GPL-3.0-or-later
- * Copyright © 2019 by The qTox Project Contributors
  * Copyright © 2024 The TokTok team.
  */
 
 #include "desktopnotify.h"
 
-#include "src/persistence/settings.h"
+#include "desktopnotifybackend.h"
+#include "src/persistence/inotificationsettings.h"
 
 #include <QSystemTrayIcon>
 
-DesktopNotify::DesktopNotify(Settings& settings, QSystemTrayIcon* icon)
-    : settings_{settings}
-    , icon_{icon}
+struct DesktopNotify::Private
 {
-    if (icon_) {
-        connect(icon_, &QSystemTrayIcon::messageClicked, this, &DesktopNotify::notificationClosed);
+    INotificationSettings& settings;
+    QSystemTrayIcon* icon;
+    DesktopNotifyBackend* dbus;
+};
+
+DesktopNotify::DesktopNotify(INotificationSettings& settings, QObject* parent)
+    : QObject(parent)
+    , d{std::make_unique<Private>(Private{
+          settings,
+          nullptr,
+          new DesktopNotifyBackend(this),
+      })}
+{
+    connect(d->dbus, &DesktopNotifyBackend::messageClicked, this, &DesktopNotify::notificationClosed);
+    if (d->icon) {
+        connect(d->icon, &QSystemTrayIcon::messageClicked, this, &DesktopNotify::notificationClosed);
     }
 }
 
 DesktopNotify::~DesktopNotify() = default;
 
+void DesktopNotify::setIcon(QSystemTrayIcon* icon)
+{
+    d->icon = icon;
+}
+
 void DesktopNotify::notifyMessage(const NotificationData& notificationData)
 {
-    if (!(settings_.getNotify() && settings_.getDesktopNotify())) {
+    if (!(d->settings.getNotify() && d->settings.getDesktopNotify())) {
         return;
     }
 
-    if (icon_) {
-        icon_->showMessage(notificationData.title, notificationData.message, notificationData.pixmap);
+    // Try system-backends first.
+    if (d->settings.getNotifySystemBackend()) {
+        if (d->dbus->showMessage(notificationData.title, notificationData.message,
+                                 notificationData.pixmap)) {
+            return;
+        }
+    }
+
+    // Fallback to QSystemTrayIcon.
+    if (d->icon) {
+        d->icon->showMessage(notificationData.title, notificationData.message, notificationData.pixmap);
     }
 }

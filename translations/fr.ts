@@ -2917,6 +2917,14 @@ Cet identifiant comprend le code NoSpam (en bleu) et la somme de contrôle (en g
         <extracomment>Text on smiley pack label</extracomment>
         <translation>Pack d&apos;émoticônes :</translation>
     </message>
+    <message>
+        <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use system-specific notification backend if available</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>
