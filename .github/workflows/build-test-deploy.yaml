@@ -148,26 +148,32 @@ jobs:
     steps:
       - name: Compute values for remaining steps
         id: computed
-        run: echo "artifact_type=${{ matrix.build_type }}" | tr '[:upper:]' '[:lower:]' >>$GITHUB_OUTPUT
+        run: |
+          ARTIFACT_TYPE="$(echo '${{ matrix.build_type }}' | tr '[:upper:]' '[:lower:]')"
+          echo "artifact_type=$ARTIFACT_TYPE" >>$GITHUB_OUTPUT
+          echo "built_apk=_build/android-build/build/outputs/apk/$ARTIFACT_TYPE/android-build-$ARTIFACT_TYPE-signed.apk" >>$GITHUB_OUTPUT
+          echo "nightly_apk=qTox-nightly-${{ matrix.arch }}-$ARTIFACT_TYPE.apk"
       - uses: actions/checkout@v4
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
       - name: Run build
-        run: docker-compose run --rm android_builder.${{ matrix.arch }}.${{ steps.computed.outputs.artifact_type }} ./android/cross-compile/build.sh --arch ${{ matrix.arch }} --build-type ${{ matrix.build_type }}
+        run: docker-compose run --rm "android_builder.${{ matrix.arch }}.${{ steps.computed.outputs.artifact_type }}" ./android/cross-compile/build.sh --arch "${{ matrix.arch }}" --build-type "${{ matrix.build_type }}"
       - name: Upload Android apk
         uses: actions/upload-artifact@v4
         with:
           name: qTox-${{ github.sha }}-${{ matrix.arch }}-${{ steps.computed.outputs.artifact_type }}.apk
-          path: _build/android-build/build/outputs/apk/${{ steps.computed.outputs.artifact_type }}/android-build-${{ steps.computed.outputs.artifact_type }}-signed.apk
+          path: ${{ steps.computed.outputs.built_apk }}
       - name: Get tag name for Android release file name
         if: contains(github.ref, 'refs/tags/v') && matrix.build_type == 'Release'
         id: get_version
-        run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
+        run: |
+          VERSION="$(echo $GITHUB_REF | cut -d / -f 3)"
+          echo "release_apk=qTox-$VERSION-${{ matrix.arch }}-${{ steps.computed.outputs.artifact_type }}.apk" >>$GITHUB_OUTPUT
       - name: Rename Android APK for release upload
         if: contains(github.ref, 'refs/tags/v')
         run: |
-          cp _build/android-build/build/outputs/apk/${{ steps.computed.outputs.artifact_type }}/android-build-${{ steps.computed.outputs.artifact_type }}-signed.apk qTox-${{ steps.get_version.outputs.VERSION }}-${{ matrix.arch }}-${{ steps.computed.outputs.artifact_type }}.apk
-          sha256sum qTox-${{ steps.get_version.outputs.VERSION }}-${{ matrix.arch }}-${{ steps.computed.outputs.artifact_type }}.apk > qTox-${{ steps.get_version.outputs.VERSION }}-${{ matrix.arch }}-${{ steps.computed.outputs.artifact_type }}.apk.sha256
+          cp "${{ steps.computed.outputs.built_apk }}" "${{ steps.get_version.outputs.release_apk }}"
+          sha256sum "${{ steps.get_version.outputs.release_apk }}" > "${{ steps.get_version.outputs.release_apk }}.sha256"
       - name: Upload to versioned release
         if: contains(github.ref, 'refs/tags/v') && matrix.build_type == 'Release'
         uses: ncipollo/release-action@v1
@@ -175,12 +181,12 @@ jobs:
           allowUpdates: true
           draft: true
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: "qTox-${{ steps.get_version.outputs.VERSION }}-${{ matrix.arch }}-${{ steps.computed.outputs.artifact_type }}.apk,qTox-${{ steps.get_version.outputs.VERSION }}-${{ matrix.arch }}-${{ steps.computed.outputs.artifact_type }}.apk.sha256"
+          artifacts: "${{ steps.get_version.outputs.release_apk }},${{ steps.get_version.outputs.release_apk }}.sha256"
       - name: Rename Android APK for nightly upload
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: |
-          cp _build/android-build/build/outputs/apk/${{ steps.computed.outputs.artifact_type }}/android-build-${{ steps.computed.outputs.artifact_type }}-signed.apk qTox-nightly-${{ matrix.arch }}-${{ steps.computed.outputs.artifact_type }}.apk
-          sha256sum qTox-nightly-${{ matrix.arch }}-${{ steps.computed.outputs.artifact_type }}.apk > qTox-nightly-${{ matrix.arch }}-${{ steps.computed.outputs.artifact_type }}.apk.sha256
+          cp "${{ steps.computed.outputs.built_apk }}" "${{ steps.computed.outputs.nightly_apk }}"
+          sha256sum "${{ steps.computed.outputs.nightly_apk }}" > "${{ steps.computed.outputs.nightly_apk }}.sha256"
       - name: Upload to nightly release
         uses: ncipollo/release-action@v1
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
@@ -192,7 +198,7 @@ jobs:
           prerelease: true
           replacesArtifacts: true
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: "qTox-nightly-${{ matrix.arch }}-${{ steps.computed.outputs.artifact_type }}.apk,qTox-nightly-${{ matrix.arch }}-${{ steps.computed.outputs.artifact_type }}.apk.sha256"
+          artifacts: "${{ steps.computed.outputs.nightly_apk }},${{ steps.computed.outputs.nightly_apk }}.sha256"
 
   build-flatpak:
     name: Flatpak
