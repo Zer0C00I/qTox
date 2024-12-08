@@ -13,6 +13,11 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+
+  ################################################################################################
+  # Preparation jobs
+  ################################################################################################
+
   update-nightly-tag:
     name: Update nightly release tag
     runs-on: ubuntu-22.04
@@ -23,6 +28,68 @@ jobs:
       - name: Move nightly tag to head for nightly release
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: git tag -f nightly && git push origin nightly -f
+
+  ################################################################################################
+  # Static analysis and other checks
+  ################################################################################################
+
+  clang-tidy:
+    name: Clang-Tidy
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install docker-compose
+        run: sudo apt-get install -y docker-compose
+      - name: Run build
+        run: docker-compose run --rm fedora ./.ci-scripts/build-qtox-linux.sh --build-type Release --full --tidy
+
+  translation-check:
+    name: Check for translatable strings
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install deps
+        run: sudo apt-get update && sudo apt-get install qt6-l10n-tools
+      - name: Test for modified translatable strings
+        run: PATH="/usr/lib/qt6/bin:$PATH"
+          ./tools/update-translation-files.sh ALL &&
+          git diff --exit-code
+
+  ################################################################################################
+  # Build and test jobs (PR)
+  ################################################################################################
+
+  build-alpine:
+    name: Alpine
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        features: [full]
+        build_type: [Debug]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install docker-compose
+        run: sudo apt-get install -y docker-compose
+      - name: Run build
+        run: docker-compose run --rm alpine ./.ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }}
+
+  build-debian:
+    name: Debian
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        features: [minimal]
+        build_type: [Debug]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install docker-compose
+        run: sudo apt-get install -y docker-compose
+      - name: Run build
+        run: docker-compose run --rm debian ./.ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }}
 
   build-fedora:
     name: Fedora with ASAN
@@ -39,46 +106,9 @@ jobs:
       - name: Run build
         run: docker-compose run --rm fedora ./.ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }} --sanitize
 
-  clang-tidy:
-    name: Clang-Tidy
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: actions/checkout@v4
-      - name: Install docker-compose
-        run: sudo apt-get install -y docker-compose
-      - name: Run build
-        run: docker-compose run --rm fedora ./.ci-scripts/build-qtox-linux.sh --build-type Release --full --tidy
-
-  build-debian:
-    name: Debian
-    runs-on: ubuntu-22.04
-    strategy:
-      matrix:
-        features: [minimal]
-        build_type: [Debug]
-    steps:
-      - uses: actions/checkout@v4
-      - name: Install docker-compose
-        run: sudo apt-get install -y docker-compose
-      - name: Run build
-        run: docker-compose run --rm debian ./.ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }}
-
-  translation-check:
-    name: Check for translatable strings
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: actions/checkout@v4
-      - name: Install deps
-        run: sudo apt-get update && sudo apt-get install qt6-l10n-tools
-      - name: Test for modified translatable strings
-        run: PATH="/usr/lib/qt6/bin:$PATH"
-          ./tools/update-translation-files.sh ALL &&
-          git diff --exit-code
-
   build-ubuntu:
     name: Ubuntu LTS
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-22.04
     strategy:
       matrix:
@@ -98,6 +128,10 @@ jobs:
             # Upload report to codecov.io
             bash <(curl -s https://codecov.io/bash) -f coverage.info || echo "Codecov did not collect coverage reports"
           fi
+
+  ################################################################################################
+  # Build, test, and deploy jobs (PR and push)
+  ################################################################################################
 
   build-android:
     name: Android
@@ -217,98 +251,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "qTox-nightly.flatpak,qTox-nightly.flatpak.sha256"
 
-  build-alpine:
-    name: Alpine
-    runs-on: ubuntu-22.04
-    strategy:
-      matrix:
-        features: [full]
-        build_type: [Debug]
-    steps:
-      - uses: actions/checkout@v4
-      - name: Install docker-compose
-        run: sudo apt-get install -y docker-compose
-      - name: Run build
-        run: docker-compose run --rm alpine ./.ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }}
-
-  build-windows:
-    name: Windows
-    runs-on: ubuntu-22.04
-    needs: [update-nightly-tag]
-    permissions:
-      contents: write
-    strategy:
-      matrix:
-        arch: [i686, x86_64]
-        build_type: [Debug, Release]
-        exclude:
-          - arch: ${{ github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'packaging') && 'i686' }}
-          - build_type: ${{ github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'packaging') && 'Debug' }}
-    steps:
-      - uses: actions/checkout@v4
-      - name: Install docker-compose
-        run: sudo apt-get install -y docker-compose
-      - name: Run build
-        run: docker-compose run --rm windows_builder.${{ matrix.arch }} ./windows/cross-compile/build.sh --arch ${{ matrix.arch }} --build-type ${{ matrix.build_type }} --run-tests --src-dir /qtox
-      - name: Upload installer
-        if: matrix.build_type == 'release'
-        uses: actions/upload-artifact@v4
-        with:
-          name: setup-qtox-${{ matrix.arch }}-${{ matrix.build_type }}.exe
-          path: package-prefix/setup-qtox.exe
-      - name: Upload zip
-        uses: actions/upload-artifact@v4
-        with:
-          name: qtox-${{ matrix.arch }}-${{ matrix.build_type }}.zip
-          path: install-prefix/qtox-${{ matrix.arch }}-${{ matrix.build_type }}.zip
-      - name: Rename exe for release upload
-        if: contains(github.ref, 'refs/tags/v') && matrix.build_type == 'release'
-        run: |
-          cp package-prefix/setup-qtox.exe setup-qtox-${{ matrix.arch }}-release.exe
-          sha256sum setup-qtox-${{ matrix.arch }}-release.exe > setup-qtox-${{ matrix.arch }}-release.exe.sha256
-      - name: Upload to versioned release
-        if: contains(github.ref, 'refs/tags/v') && matrix.build_type == 'release'
-        uses: ncipollo/release-action@v1
-        with:
-          allowUpdates: true
-          draft: true
-          token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: "setup-qtox-${{ matrix.arch }}-release.exe,setup-qtox-${{ matrix.arch }}-release.exe.sha256"
-      - name: Rename zip for nightly upload
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-        run: |
-          cp install-prefix/qtox-${{ matrix.arch }}-${{ matrix.build_type }}.zip qtox-nightly-${{ matrix.arch }}-${{ matrix.build_type }}.zip
-          sha256sum qtox-nightly-${{ matrix.arch }}-${{ matrix.build_type }}.zip > qtox-nightly-${{ matrix.arch }}-${{ matrix.build_type }}.zip.sha256
-      - name: Upload zip to nightly release
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-        uses: ncipollo/release-action@v1
-        with:
-          allowUpdates: true
-          tag: nightly
-          omitBodyDuringUpdate: true
-          omitNameDuringUpdate: true
-          prerelease: true
-          replacesArtifacts: true
-          token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: "qtox-nightly-${{ matrix.arch }}-${{ matrix.build_type }}.zip,qtox-nightly-${{ matrix.arch }}-${{ matrix.build_type }}.zip.sha256"
-      - name: Rename exe for nightly upload
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master' && matrix.build_type == 'release'
-        run: |
-          cp package-prefix/setup-qtox.exe qtox-nightly-${{ matrix.arch }}-${{ matrix.build_type }}.exe
-          sha256sum qtox-nightly-${{ matrix.arch }}-${{ matrix.build_type }}.exe > qtox-nightly-${{ matrix.arch }}-${{ matrix.build_type }}.exe.sha256
-      - name: Upload exe to nightly release
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master' && matrix.build_type == 'release'
-        uses: ncipollo/release-action@v1
-        with:
-          allowUpdates: true
-          tag: nightly
-          omitBodyDuringUpdate: true
-          omitNameDuringUpdate: true
-          prerelease: true
-          replacesArtifacts: true
-          token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: "qtox-nightly-${{ matrix.arch }}-${{ matrix.build_type }}.exe,qtox-nightly-${{ matrix.arch }}-${{ matrix.build_type }}.exe.sha256"
-
   build-macos-distributable:
     name: macOS distributable
     needs: update-nightly-tag
@@ -397,6 +339,88 @@ jobs:
         run: .ci-scripts/dockerfiles/qtox/build_toxcore_linux.sh sudo
       - name: Build qTox
         run: ./.ci-scripts/build-qtox-macos.sh user ${{ matrix.arch }}
+
+  build-windows:
+    name: Windows
+    runs-on: ubuntu-22.04
+    needs: [update-nightly-tag]
+    permissions:
+      contents: write
+    strategy:
+      matrix:
+        arch: [i686, x86_64]
+        build_type: [Debug, Release]
+        exclude:
+          - arch: ${{ github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'packaging') && 'i686' }}
+          - build_type: ${{ github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'packaging') && 'Debug' }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install docker-compose
+        run: sudo apt-get install -y docker-compose
+      - name: Run build
+        run: docker-compose run --rm windows_builder.${{ matrix.arch }} ./windows/cross-compile/build.sh --arch ${{ matrix.arch }} --build-type ${{ matrix.build_type }} --run-tests --src-dir /qtox
+      - name: Upload installer
+        if: matrix.build_type == 'release'
+        uses: actions/upload-artifact@v4
+        with:
+          name: setup-qtox-${{ matrix.arch }}-${{ matrix.build_type }}.exe
+          path: package-prefix/setup-qtox.exe
+      - name: Upload zip
+        uses: actions/upload-artifact@v4
+        with:
+          name: qtox-${{ matrix.arch }}-${{ matrix.build_type }}.zip
+          path: install-prefix/qtox-${{ matrix.arch }}-${{ matrix.build_type }}.zip
+      - name: Rename exe for release upload
+        if: contains(github.ref, 'refs/tags/v') && matrix.build_type == 'release'
+        run: |
+          cp package-prefix/setup-qtox.exe setup-qtox-${{ matrix.arch }}-release.exe
+          sha256sum setup-qtox-${{ matrix.arch }}-release.exe > setup-qtox-${{ matrix.arch }}-release.exe.sha256
+      - name: Upload to versioned release
+        if: contains(github.ref, 'refs/tags/v') && matrix.build_type == 'release'
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: true
+          draft: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifacts: "setup-qtox-${{ matrix.arch }}-release.exe,setup-qtox-${{ matrix.arch }}-release.exe.sha256"
+      - name: Rename zip for nightly upload
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        run: |
+          cp install-prefix/qtox-${{ matrix.arch }}-${{ matrix.build_type }}.zip qtox-nightly-${{ matrix.arch }}-${{ matrix.build_type }}.zip
+          sha256sum qtox-nightly-${{ matrix.arch }}-${{ matrix.build_type }}.zip > qtox-nightly-${{ matrix.arch }}-${{ matrix.build_type }}.zip.sha256
+      - name: Upload zip to nightly release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: true
+          tag: nightly
+          omitBodyDuringUpdate: true
+          omitNameDuringUpdate: true
+          prerelease: true
+          replacesArtifacts: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifacts: "qtox-nightly-${{ matrix.arch }}-${{ matrix.build_type }}.zip,qtox-nightly-${{ matrix.arch }}-${{ matrix.build_type }}.zip.sha256"
+      - name: Rename exe for nightly upload
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master' && matrix.build_type == 'release'
+        run: |
+          cp package-prefix/setup-qtox.exe qtox-nightly-${{ matrix.arch }}-${{ matrix.build_type }}.exe
+          sha256sum qtox-nightly-${{ matrix.arch }}-${{ matrix.build_type }}.exe > qtox-nightly-${{ matrix.arch }}-${{ matrix.build_type }}.exe.sha256
+      - name: Upload exe to nightly release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master' && matrix.build_type == 'release'
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: true
+          tag: nightly
+          omitBodyDuringUpdate: true
+          omitNameDuringUpdate: true
+          prerelease: true
+          replacesArtifacts: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifacts: "qtox-nightly-${{ matrix.arch }}-${{ matrix.build_type }}.exe,qtox-nightly-${{ matrix.arch }}-${{ matrix.build_type }}.exe.sha256"
+
+  ################################################################################################
+  # Documentation/website jobs
+  ################################################################################################
 
   build-docs:
     name: Docs
