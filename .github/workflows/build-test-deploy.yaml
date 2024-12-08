@@ -152,7 +152,7 @@ jobs:
           ARTIFACT_TYPE="$(echo '${{ matrix.build_type }}' | tr '[:upper:]' '[:lower:]')"
           echo "artifact_type=$ARTIFACT_TYPE" >>$GITHUB_OUTPUT
           echo "built_apk=_build/android-build/build/outputs/apk/$ARTIFACT_TYPE/android-build-$ARTIFACT_TYPE-signed.apk" >>$GITHUB_OUTPUT
-          echo "nightly_apk=qTox-nightly-${{ matrix.arch }}-$ARTIFACT_TYPE.apk"
+          echo "nightly_apk=qTox-nightly-${{ matrix.arch }}-$ARTIFACT_TYPE.apk" >>$GITHUB_OUTPUT
       - uses: actions/checkout@v4
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
