@@ -39,6 +39,11 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
+      - name: Set up ccache
+        uses: hendrikmuhs/ccache-action@v1.2
+        with:
+          key: ${{ github.job }}
+          append-timestamp: false
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
       - name: Run build
@@ -71,6 +76,11 @@ jobs:
         build_type: [Debug]
     steps:
       - uses: actions/checkout@v4
+      - name: Set up ccache
+        uses: hendrikmuhs/ccache-action@v1.2
+        with:
+          key: ${{ github.job }}
+          append-timestamp: false
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
       - name: Run build
@@ -86,6 +96,11 @@ jobs:
         build_type: [Debug]
     steps:
       - uses: actions/checkout@v4
+      - name: Set up ccache
+        uses: hendrikmuhs/ccache-action@v1.2
+        with:
+          key: ${{ github.job }}
+          append-timestamp: false
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
       - name: Run build
@@ -101,6 +116,11 @@ jobs:
         build_type: [Debug]
     steps:
       - uses: actions/checkout@v4
+      - name: Set up ccache
+        uses: hendrikmuhs/ccache-action@v1.2
+        with:
+          key: ${{ github.job }}
+          append-timestamp: false
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
       - name: Run build
@@ -116,6 +136,11 @@ jobs:
         build_type: [Release]
     steps:
       - uses: actions/checkout@v4
+      - name: Set up ccache
+        uses: hendrikmuhs/ccache-action@v1.2
+        with:
+          key: ${{ github.job }}
+          append-timestamp: false
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
       - name: Run build
@@ -164,6 +189,11 @@ jobs:
           echo "suffix=$SUFFIX" >>$GITHUB_OUTPUT
           echo "nightly_apk=qTox-nightly-${{ matrix.arch }}-$ARTIFACT_TYPE$SUFFIX.apk" >>$GITHUB_OUTPUT
       - uses: actions/checkout@v4
+      - name: Set up ccache
+        uses: hendrikmuhs/ccache-action@v1.2
+        with:
+          key: ${{ github.job }}-${{ matrix.arch }}-${{ matrix.build_type }}-${{ matrix.version }}
+          append-timestamp: false
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
       - name: Run build
@@ -371,6 +401,11 @@ jobs:
           - build_type: ${{ github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'packaging') && 'Debug' }}
     steps:
       - uses: actions/checkout@v4
+      - name: Set up ccache
+        uses: hendrikmuhs/ccache-action@v1.2
+        with:
+          key: ${{ github.job }}-${{ matrix.arch }}-${{ matrix.build_type }}
+          append-timestamp: false
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
       - name: Run build
