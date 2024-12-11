@@ -31,6 +31,7 @@ libs
 # macOS
 .DS_Store
 /qtox.app
+*-e
 
 # Qt
 *.user

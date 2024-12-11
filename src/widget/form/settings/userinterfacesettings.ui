@@ -32,15 +32,15 @@
       <bool>true</bool>
      </property>
      <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
      </property>
      <widget class="QWidget" name="scrollAreaWidgetContents">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>650</width>
-        <height>950</height>
+        <width>664</width>
+        <height>902</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,0,0,0,0,0">
@@ -74,7 +74,7 @@
              <string>Base font:</string>
             </property>
             <property name="alignment">
-             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
             </property>
            </widget>
           </item>
@@ -108,13 +108,24 @@
           <item row="1" column="0">
            <widget class="QLabel" name="textStyleLabel">
             <property name="toolTip">
-             <string>New text styling preference may not load until qTox restarts.</string>
+             <string>New text styling preference may not load on chat history until qTox restarts.
+It will affect new messages immediately.
+
+Plaintext:
+    Don't apply any formatting to messages.
+    E.g. &quot;**text**&quot; will show as &quot;**text**&quot;, not bold.
+Show formatting characters:
+    Apply formatting and show characters.
+    E.g. &quot;**text**&quot; will show as &quot;**text**&quot;, bold.
+Hide formatting characters:
+    Apply formatting and don't show characters.
+    E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</string>
             </property>
             <property name="text">
-             <string>Text Style format:</string>
+             <string>Text styling:</string>
             </property>
             <property name="alignment">
-             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
             </property>
            </widget>
           </item>
@@ -144,7 +155,7 @@
             </item>
             <item>
              <property name="text">
-              <string>Don't show formatting characters</string>
+              <string>Hide formatting characters</string>
              </property>
             </item>
            </widget>
@@ -171,7 +182,7 @@
           <item>
            <widget class="QCheckBox" name="notify">
             <property name="toolTip">
-             <string comment="tooltip for Notify setting">Show a notification when you receive a new message and the window is not selected.</string>
+             <string comment="tooltip for Notify setting">Show a notification when you receive a new message, call, or friend request and the window is not selected.</string>
             </property>
             <property name="text">
              <string>Notify</string>
@@ -186,7 +197,7 @@
             <item>
              <widget class="QCheckBox" name="conferenceOnlyNotifyWhenMentioned">
               <property name="toolTip">
-               <string comment="toolTip for Conferences only notify when mentioned">Only notify about new messages in conferences when mentioned.</string>
+               <string comment="toolTip for Conferences only notify when mentioned">Only notify about new messages in conferences when your nickname is mentioned.</string>
               </property>
               <property name="text">
                <string>Conferences only notify when mentioned</string>
@@ -195,6 +206,9 @@
             </item>
             <item>
              <widget class="QCheckBox" name="notifySound">
+              <property name="toolTip">
+               <string>If disabled, mute notification sounds when status is Busy (but still show a notification)</string>
+              </property>
               <property name="text">
                <string>Play sound</string>
               </property>
@@ -216,6 +230,9 @@
             </item>
             <item>
              <widget class="QCheckBox" name="desktopNotify">
+              <property name="toolTip">
+               <string>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</string>
+              </property>
               <property name="text">
                <string>Notify via desktop notifications</string>
               </property>
@@ -240,6 +257,9 @@
             </item>
             <item>
              <widget class="QCheckBox" name="notifyHide">
+              <property name="toolTip">
+               <string>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</string>
+              </property>
               <property name="text">
                <string>Hide message sender and contents</string>
               </property>
@@ -279,7 +299,7 @@
           <item>
            <widget class="QCheckBox" name="cbCompactLayout">
             <property name="toolTip">
-             <string comment="toolTip for compact layout setting">Your contact list will be shown in compact mode.</string>
+             <string comment="toolTip for compact layout setting">Your contact list will be shown in compact mode (small avatars, tabular view).</string>
             </property>
             <property name="text">
              <string>Compact contact list</string>
@@ -288,6 +308,9 @@
           </item>
           <item>
            <widget class="QCheckBox" name="cbSeparateWindow">
+            <property name="toolTip">
+             <string>Split friend list and chat window into separately moveable windows.</string>
+            </property>
             <property name="text">
              <string>Multiple windows mode</string>
             </property>
@@ -337,6 +360,9 @@
          <layout class="QFormLayout" name="formLayout_4">
           <item row="0" column="0">
            <widget class="QCheckBox" name="useEmoticons">
+            <property name="toolTip">
+             <string>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</string>
+            </property>
             <property name="text">
              <string>Use emoticons</string>
             </property>
@@ -344,6 +370,9 @@
           </item>
           <item row="1" column="0">
            <widget class="QLabel" name="smileyPackLabel">
+            <property name="toolTip">
+             <string>Select which set of pictures to use when rendering emojis.</string>
+            </property>
             <property name="text">
              <string extracomment="Text on smiley pack label">Smiley pack:</string>
             </property>
@@ -362,7 +391,7 @@
           <item row="2" column="0">
            <spacer name="horizontalSpacer_2">
             <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+             <enum>Qt::Orientation::Horizontal</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -375,7 +404,7 @@
           <item row="2" column="1">
            <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0,0,0">
             <property name="sizeConstraint">
-             <enum>QLayout::SetDefaultConstraint</enum>
+             <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
             </property>
             <item>
              <widget class="QLabel" name="smile1">
@@ -386,7 +415,7 @@
                <string/>
               </property>
               <property name="alignment">
-               <set>Qt::AlignCenter</set>
+               <set>Qt::AlignmentFlag::AlignCenter</set>
               </property>
              </widget>
             </item>
@@ -399,7 +428,7 @@
                <string/>
               </property>
               <property name="alignment">
-               <set>Qt::AlignCenter</set>
+               <set>Qt::AlignmentFlag::AlignCenter</set>
               </property>
              </widget>
             </item>
@@ -412,7 +441,7 @@
                <string/>
               </property>
               <property name="alignment">
-               <set>Qt::AlignCenter</set>
+               <set>Qt::AlignmentFlag::AlignCenter</set>
               </property>
              </widget>
             </item>
@@ -425,11 +454,11 @@
                <string/>
               </property>
               <property name="alignment">
-               <set>Qt::AlignCenter</set>
+               <set>Qt::AlignmentFlag::AlignCenter</set>
               </property>
              </widget>
             </item>
-            <item alignment="Qt::AlignTop">
+            <item alignment="Qt::AlignmentFlag::AlignTop">
              <widget class="QLabel" name="smile5">
               <property name="toolTip">
                <string notr="true">:'(</string>
@@ -438,7 +467,7 @@
                <string/>
               </property>
               <property name="alignment">
-               <set>Qt::AlignCenter</set>
+               <set>Qt::AlignmentFlag::AlignCenter</set>
               </property>
              </widget>
             </item>
@@ -446,6 +475,9 @@
           </item>
           <item row="3" column="0">
            <widget class="QLabel" name="emoticonSizeLabel">
+            <property name="toolTip">
+             <string>Size in pixels of an emoji picture. Select something similar to your base font size.</string>
+            </property>
             <property name="text">
              <string>Emoticon size:</string>
             </property>
@@ -485,17 +517,11 @@
           <string>Theme</string>
          </property>
          <layout class="QFormLayout" name="formLayout">
-          <property name="fieldGrowthPolicy">
-           <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
-          </property>
-          <property name="topMargin">
-           <number>9</number>
-          </property>
-          <property name="bottomMargin">
-           <number>9</number>
-          </property>
           <item row="3" column="0">
            <widget class="QLabel" name="styleLabel">
+            <property name="toolTip">
+             <string>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</string>
+            </property>
             <property name="text">
              <string>Style:</string>
             </property>
@@ -513,6 +539,9 @@
           </item>
           <item row="4" column="0">
            <widget class="QLabel" name="themeColorLabel">
+            <property name="toolTip">
+             <string>UI color theme. Use this to select dark mode.</string>
+            </property>
             <property name="text">
              <string>Theme color:</string>
             </property>
@@ -542,7 +571,7 @@
                <bool>true</bool>
               </property>
               <property name="insertPolicy">
-               <enum>QComboBox::NoInsert</enum>
+               <enum>QComboBox::InsertPolicy::NoInsert</enum>
               </property>
              </widget>
             </item>
@@ -552,7 +581,7 @@
                <string notr="true">Time example</string>
               </property>
               <property name="alignment">
-               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
               </property>
              </widget>
             </item>
@@ -573,7 +602,7 @@
                <bool>true</bool>
               </property>
               <property name="insertPolicy">
-               <enum>QComboBox::NoInsert</enum>
+               <enum>QComboBox::InsertPolicy::NoInsert</enum>
               </property>
              </widget>
             </item>
@@ -583,7 +612,7 @@
                <string notr="true">Date Example</string>
               </property>
               <property name="alignment">
-               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
               </property>
              </widget>
             </item>
@@ -602,7 +631,7 @@
        <item>
         <spacer name="verticalSpacer">
          <property name="orientation">
-          <enum>Qt::Vertical</enum>
+          <enum>Qt::Orientation::Vertical</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>

@@ -697,7 +697,7 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
     <message>
         <source>Illegal characters have been changed to _ 
 so you can save the file on Windows.</source>
-        <translation>Caracterele ilegale au fost schimbate în _ 
+        <translation>Caracterele ilegale au fost schimbate în _
 astfel încât să puteți salva fișierul pe Windows.</translation>
     </message>
 </context>
@@ -2775,11 +2775,22 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <translation>Mărime: </translation>
     </message>
     <message>
-        <source>New text styling preference may not load until qTox restarts.</source>
-        <translation>Preferința noului stil de text nu se poate încărca până la repornirea qTox.</translation>
+        <source>New text styling preference may not load on chat history until qTox restarts.
+It will affect new messages immediately.
+
+Plaintext:
+    Don&apos;t apply any formatting to messages.
+    E.g. &quot;**text**&quot; will show as &quot;**text**&quot;, not bold.
+Show formatting characters:
+    Apply formatting and show characters.
+    E.g. &quot;**text**&quot; will show as &quot;**text**&quot;, bold.
+Hide formatting characters:
+    Apply formatting and don&apos;t show characters.
+    E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</source>
+        <translation type="unfinished">Preferința noului stil de text nu se poate încărca până la repornirea qTox.</translation>
     </message>
     <message>
-        <source>Text Style format:</source>
+        <source>Text styling:</source>
         <translation>Formatul stilului de text:</translation>
     </message>
     <message>
@@ -2795,7 +2806,7 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <translation>Afișează formatarea caracterelor</translation>
     </message>
     <message>
-        <source>Don&apos;t show formatting characters</source>
+        <source>Hide formatting characters</source>
         <translation>Nu afișa formatarea caracterelor</translation>
     </message>
     <message>
@@ -2820,9 +2831,9 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <translation>Fixați conferințe în partea de sus a listei de prieteni</translation>
     </message>
     <message>
-        <source>Your contact list will be shown in compact mode.</source>
+        <source>Your contact list will be shown in compact mode (small avatars, tabular view).</source>
         <comment>toolTip for compact layout setting</comment>
-        <translation>Lista dvs. de contacte va fi afișată în modul compact.</translation>
+        <translation type="unfinished">Lista dvs. de contacte va fi afișată în modul compact.</translation>
     </message>
     <message>
         <source>Compact contact list</source>
@@ -2877,9 +2888,9 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <translation>Utilizați icon de identificare în loc de avatare goale</translation>
     </message>
     <message>
-        <source>Show a notification when you receive a new message and the window is not selected.</source>
+        <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
         <comment>tooltip for Notify setting</comment>
-        <translation>Afișați o notificare atunci când primiți un mesaj nou și fereastra nu este selectată.</translation>
+        <translation type="unfinished">Afișați o notificare atunci când primiți un mesaj nou și fereastra nu este selectată.</translation>
     </message>
     <message>
         <source>Notify</source>
@@ -2910,9 +2921,9 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <translation>Utilizați porecle colorate în conferințe</translation>
     </message>
     <message>
-        <source>Only notify about new messages in conferences when mentioned.</source>
+        <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
-        <translation>Numai notificări despre mesaje noi din discuțiile de grup când este menționat.</translation>
+        <translation type="unfinished">Numai notificări despre mesaje noi din discuțiile de grup când este menționat.</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
@@ -2928,6 +2939,42 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <source>Smiley pack:</source>
         <extracomment>Text on smiley pack label</extracomment>
         <translation>Pachet de zâmbete:</translation>
+    </message>
+    <message>
+        <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Split friend list and chat window into separately moveable windows.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select which set of pictures to use when rendering emojis.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>UI color theme. Use this to select dark mode.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>

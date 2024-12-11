@@ -2771,11 +2771,22 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinza).</translation>
         <translation>Tamanho: </translation>
     </message>
     <message>
-        <source>New text styling preference may not load until qTox restarts.</source>
-        <translation>A preferência de novo estilo de texto pode não ser carregada até o qTox reiniciar.</translation>
+        <source>New text styling preference may not load on chat history until qTox restarts.
+It will affect new messages immediately.
+
+Plaintext:
+    Don&apos;t apply any formatting to messages.
+    E.g. &quot;**text**&quot; will show as &quot;**text**&quot;, not bold.
+Show formatting characters:
+    Apply formatting and show characters.
+    E.g. &quot;**text**&quot; will show as &quot;**text**&quot;, bold.
+Hide formatting characters:
+    Apply formatting and don&apos;t show characters.
+    E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</source>
+        <translation type="unfinished">A preferência de novo estilo de texto pode não ser carregada até o qTox reiniciar.</translation>
     </message>
     <message>
-        <source>Text Style format:</source>
+        <source>Text styling:</source>
         <translation>Formatar estilo de texto:</translation>
     </message>
     <message>
@@ -2791,7 +2802,7 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinza).</translation>
         <translation>Mostrar símbolos de formatação</translation>
     </message>
     <message>
-        <source>Don&apos;t show formatting characters</source>
+        <source>Hide formatting characters</source>
         <translation>Não mostrar os símbolos de formatação</translation>
     </message>
     <message>
@@ -2816,9 +2827,9 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinza).</translation>
         <translation type="unfinished">Colocar bate-papo em grupo no topo da lista de amigos</translation>
     </message>
     <message>
-        <source>Your contact list will be shown in compact mode.</source>
+        <source>Your contact list will be shown in compact mode (small avatars, tabular view).</source>
         <comment>toolTip for compact layout setting</comment>
-        <translation>Sua lista de contatos será exibida em modo compacto.</translation>
+        <translation type="unfinished">Sua lista de contatos será exibida em modo compacto.</translation>
     </message>
     <message>
         <source>Compact contact list</source>
@@ -2873,9 +2884,9 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinza).</translation>
         <translation>Use identicons em vez de avatares em branco</translation>
     </message>
     <message>
-        <source>Show a notification when you receive a new message and the window is not selected.</source>
+        <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
         <comment>tooltip for Notify setting</comment>
-        <translation>Mostrar uma notificação quando você receber uma nova mensagem e a janela não estiver selecionada.</translation>
+        <translation type="unfinished">Mostrar uma notificação quando você receber uma nova mensagem e a janela não estiver selecionada.</translation>
     </message>
     <message>
         <source>Notify</source>
@@ -2906,9 +2917,9 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinza).</translation>
         <translation type="unfinished">Usar apelidos coloridos em chats de grupo</translation>
     </message>
     <message>
-        <source>Only notify about new messages in conferences when mentioned.</source>
+        <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
-        <translation>Somente notificar novas mensagens em bate-papos de grupo quando você for mencionado.</translation>
+        <translation type="unfinished">Somente notificar novas mensagens em bate-papos de grupo quando você for mencionado.</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
@@ -2924,6 +2935,42 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinza).</translation>
         <source>Smiley pack:</source>
         <extracomment>Text on smiley pack label</extracomment>
         <translation>Pacote de emoticons:</translation>
+    </message>
+    <message>
+        <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Split friend list and chat window into separately moveable windows.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select which set of pictures to use when rendering emojis.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>UI color theme. Use this to select dark mode.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>

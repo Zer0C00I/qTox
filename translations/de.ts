@@ -58,9 +58,9 @@ Note though that with better video quality there is needed better internet conne
 Sometimes your connection may not be good enough to handle higher video quality,
 which may lead to problems with video calls.</source>
         <translation>Wähle deine Kameraauflösung.
-Höhere Werte führen zu einem schärferen Bild für deine Freunde, allerdings wird eine bessere 
+Höhere Werte führen zu einem schärferen Bild für deine Freunde, allerdings wird eine bessere
 Internetverbindung benötigt.
-Zu hohe Auflösungen können daher zu Problemen in Videoanrufen führen, wenn die Verbindung nicht 
+Zu hohe Auflösungen können daher zu Problemen in Videoanrufen führen, wenn die Verbindung nicht
 schnell und stabil genug ist.</translation>
     </message>
     <message>
@@ -696,7 +696,7 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
     <message>
         <source>Illegal characters have been changed to _ 
 so you can save the file on Windows.</source>
-        <translation>Nicht unterstützte Satzzeichen wurden zu _ geändert, 
+        <translation>Nicht unterstützte Satzzeichen wurden zu _ geändert,
 um sie in Windows speichern zu können.</translation>
     </message>
 </context>
@@ -2772,11 +2772,22 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
         <translation>Größe: </translation>
     </message>
     <message>
-        <source>New text styling preference may not load until qTox restarts.</source>
-        <translation>Änderungen am Aussehen des Textes werden eventuell erst nach einem Neustart von qTox wirksam.</translation>
+        <source>New text styling preference may not load on chat history until qTox restarts.
+It will affect new messages immediately.
+
+Plaintext:
+    Don&apos;t apply any formatting to messages.
+    E.g. &quot;**text**&quot; will show as &quot;**text**&quot;, not bold.
+Show formatting characters:
+    Apply formatting and show characters.
+    E.g. &quot;**text**&quot; will show as &quot;**text**&quot;, bold.
+Hide formatting characters:
+    Apply formatting and don&apos;t show characters.
+    E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</source>
+        <translation type="unfinished">Änderungen am Aussehen des Textes werden eventuell erst nach einem Neustart von qTox wirksam.</translation>
     </message>
     <message>
-        <source>Text Style format:</source>
+        <source>Text styling:</source>
         <translation>Textformat:</translation>
     </message>
     <message>
@@ -2792,7 +2803,7 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
         <translation>Formatierungszeichen anzeigen</translation>
     </message>
     <message>
-        <source>Don&apos;t show formatting characters</source>
+        <source>Hide formatting characters</source>
         <translation>Formatierungszeichen nicht anzeigen</translation>
     </message>
     <message>
@@ -2817,9 +2828,9 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
         <translation>Konferenz am Anfang der Kontaktliste anzeigen</translation>
     </message>
     <message>
-        <source>Your contact list will be shown in compact mode.</source>
+        <source>Your contact list will be shown in compact mode (small avatars, tabular view).</source>
         <comment>toolTip for compact layout setting</comment>
-        <translation>Die Kontaktliste wird kompakt dargestellt.</translation>
+        <translation type="unfinished">Die Kontaktliste wird kompakt dargestellt.</translation>
     </message>
     <message>
         <source>Compact contact list</source>
@@ -2874,9 +2885,9 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
         <translation>Identitätssymbol statt leerer Avatare verwenden</translation>
     </message>
     <message>
-        <source>Show a notification when you receive a new message and the window is not selected.</source>
+        <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
         <comment>tooltip for Notify setting</comment>
-        <translation>Zeigt eine Benachrichtigung an, wenn du eine neue Nachricht erhältst und das qTox-Fenster nicht den Fokus hat.</translation>
+        <translation type="unfinished">Zeigt eine Benachrichtigung an, wenn du eine neue Nachricht erhältst und das qTox-Fenster nicht den Fokus hat.</translation>
     </message>
     <message>
         <source>Notify</source>
@@ -2907,9 +2918,9 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
         <translation>Farbige Spitznamen in Konferenzen verwenden</translation>
     </message>
     <message>
-        <source>Only notify about new messages in conferences when mentioned.</source>
+        <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
-        <translation>Nur über neue Nachrichten in Gruppenchats benachrichtigen, wenn du darin erwähnt wirst.</translation>
+        <translation type="unfinished">Nur über neue Nachrichten in Gruppenchats benachrichtigen, wenn du darin erwähnt wirst.</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
@@ -2925,6 +2936,42 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
         <source>Smiley pack:</source>
         <extracomment>Text on smiley pack label</extracomment>
         <translation>Smiley pack:</translation>
+    </message>
+    <message>
+        <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Split friend list and chat window into separately moveable windows.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select which set of pictures to use when rendering emojis.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>UI color theme. Use this to select dark mode.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
