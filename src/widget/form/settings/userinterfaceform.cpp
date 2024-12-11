@@ -226,13 +226,14 @@ void UserInterfaceForm::reloadSmileys()
 
     // sometimes there are no emoticons available, don't crash in this case
     if (emoticons.isEmpty()) {
-        qDebug() << "reloadSmilies: No emoticons found";
+        qDebug() << "reloadSmileys: No emoticons found";
         return;
     }
 
     QStringList smileys;
-    for (int i = 0; i < emoticons.size(); ++i)
-        smileys.push_front(emoticons.at(i).first());
+    for (const auto& emoticon : emoticons) {
+        smileys.push_back(emoticon.first());
+    }
 
     emoticonsIcons.clear();
     const QSize size(18, 18);
