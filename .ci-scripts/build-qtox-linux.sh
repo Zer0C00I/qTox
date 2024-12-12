@@ -88,7 +88,7 @@ if [ "$MINIMAL" -eq 1 ]; then
     -DSTRICT_OPTIONS=ON \
     -DUBSAN=ON \
     -GNinja \
-    -DSMILEYS=DISABLED \
+    -DSMILEYS=OFF \
     -DUPDATE_CHECK=OFF \
     -DSPELL_CHECK=OFF \
     "${CMAKE_ARGS[@]}"

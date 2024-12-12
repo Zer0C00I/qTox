@@ -423,20 +423,14 @@ See [`windows/cross-compile`](windows/cross-compile).
 ## Compile-time switches
 
 They are passed as an argument to `cmake` command. E.g. with a switch `SWITCH`
-that has value `YES` it would be passed to `cmake` in a following manner:
+that has value `ON` it would be passed to `cmake` in a following manner:
 
 ```bash
-cmake -DSWITCH=yes
+cmake -DSWITCH=ON
 ```
 
-Switches:
-
-- `SMILEYS`, values:
-  - if not defined or an unsupported value is passed, all emoticon packs are
-    included
-  - `DISABLED` – don't include any emoticon packs, custom ones are still loaded
-  - `MIN` – minimal support for emoticons, only a single emoticon pack is
-    included
+Look at the beginning of `CMakeLists.txt` for a list of options. Options that
+are `ON` by default can be turned off by passing `-DSWITCH=OFF`.
 
 [AppArmor]: /security/apparmor/README.md
 [Atk]: https://wiki.gnome.org/Accessibility

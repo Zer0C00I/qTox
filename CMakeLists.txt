@@ -15,6 +15,8 @@ cmake_policy(VERSION 3.16)
 
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
+option(SMILEYS "Enable smileys support (will greatly increase the binary size)"
+       ON)
 option(PLATFORM_EXTENSIONS
        "Enable platform specific extensions, requires extra dependencies" ON)
 option(UPDATE_CHECK "Enable automatic update check" ON)
@@ -150,9 +152,9 @@ if(USE_CCACHE)
   find_program(CCACHE_FOUND ccache)
   if(CCACHE_FOUND)
     set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE ccache)
-    message(STATUS "using ccache")
+    message(STATUS "Using ccache")
   else()
-    message(STATUS "ccache not found")
+    message(STATUS "Not using ccache (not found)")
   endif()
 else()
   message(
@@ -194,17 +196,27 @@ qt6_wrap_ui(
 
 set(${PROJECT_NAME}_RESOURCES res.qrc)
 
-if(NOT SMILEYS)
-  set(SMILEYS "")
-endif()
-
-set(SMILEY_RESOURCES "")
-if(NOT "${SMILEYS}" STREQUAL "DISABLED")
-  set(SMILEY_RESOURCES smileys/emojione.qrc)
-
-  if(NOT "${SMILEYS}" STREQUAL "MIN")
-    set(SMILEY_RESOURCES ${SMILEY_RESOURCES} smileys/smileys.qrc)
+if(SMILEYS)
+  if(NOT SMILEY_PACKS)
+    file(
+      GLOB SMILEY_QRCS
+      RELATIVE ${CMAKE_SOURCE_DIR}
+      smileys/*/emoticons.qrc)
+    # smileys/$PACK/emoticons.qrc -> $PACK
+    set(SMILEY_PACKS "")
+    foreach(SMILEY_PACK ${SMILEY_QRCS})
+      get_filename_component(SMILEY_PACK ${SMILEY_PACK} DIRECTORY)
+      get_filename_component(SMILEY_PACK ${SMILEY_PACK} NAME)
+      list(APPEND SMILEY_PACKS ${SMILEY_PACK})
+    endforeach()
   endif()
+  message(STATUS "Using smiley packs ${SMILEY_PACKS}")
+
+  set(SMILEY_RESOURCES "")
+  foreach(SMILEY_PACK ${SMILEY_PACKS})
+    set(SMILEY_RESOURCES ${SMILEY_RESOURCES}
+                         smileys/${SMILEY_PACK}/emoticons.qrc)
+  endforeach()
 endif()
 
 set(${PROJECT_NAME}_SOURCES
@@ -594,7 +606,7 @@ endif()
 
 if(${UPDATE_CHECK})
   add_definitions(-DUPDATE_CHECK_ENABLED=1)
-  message(STATUS "using update check")
+  message(STATUS "Using update check")
 else()
   message(STATUS "NOT using update check")
 endif()

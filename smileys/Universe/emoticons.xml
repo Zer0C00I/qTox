@@ -1,5 +1,5 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<messaging-emoticon-map>
+<?xml version="1.0" encoding="utf-8"?>
+<messaging-emoticon-map xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../messaging-emoticon-map.xsd">
     <emoticon file="263a">
         <string>☺</string>
         <string>:-)</string>
@@ -147,8 +147,8 @@
     <emoticon file="1f620">
         <string>😠</string>
         <string>:angry:</string>
-        <string>>:-(</string>
-        <string>>:(</string>
+        <string>&gt;:-(</string>
+        <string>&gt;:(</string>
     </emoticon>
     <emoticon file="1f621">
         <string>😡</string>
@@ -422,7 +422,7 @@
         <string>🌵</string>
     </emoticon>
     <emoticon file="1f337">
-      <string>🌷</string>
+        <string>🌷</string>
     </emoticon>
     <emoticon file="1f338">
         <string>🌸</string>
@@ -1945,30 +1945,6 @@
     <emoticon file="2649">
         <string>♉</string>
     </emoticon>
-    <emoticon file="2648">
-        <string>♈</string>
-    </emoticon>
-    <emoticon file="2649">
-        <string>♉</string>
-    </emoticon>
-    <emoticon file="264a">
-        <string>♊</string>
-    </emoticon>
-    <emoticon file="264b">
-        <string>♋</string>
-    </emoticon>
-    <emoticon file="264c">
-        <string>♌</string>
-    </emoticon>
-    <emoticon file="264d">
-        <string>♍</string>
-    </emoticon>
-    <emoticon file="264e">
-        <string>♎</string>
-    </emoticon>
-    <emoticon file="264f">
-        <string>♏</string>
-    </emoticon>
     <emoticon file="264a">
         <string>♊</string>
     </emoticon>
@@ -2382,9 +2358,11 @@
     </emoticon>
     <emoticon file="3297">
         <string>祝</string>
+        <string>㊗</string>
     </emoticon>
     <emoticon file="3299">
         <string>秘</string>
+        <string>㊙</string>
     </emoticon>
     <emoticon file="a9">
         <string>©</string>
@@ -2590,5 +2568,151 @@
     <emoticon file="1f1fa-1f1f8">
         <string>🇺🇸</string>
     </emoticon>
-    
+    <emoticon file="23-20e3">
+        <string>#⃣</string>
+    </emoticon>
+    <emoticon file="30-20e3">
+        <string>0⃣</string>
+    </emoticon>
+    <emoticon file="31-20e3">
+        <string>1⃣</string>
+    </emoticon>
+    <emoticon file="32-20e3">
+        <string>2⃣</string>
+    </emoticon>
+    <emoticon file="33-20e3">
+        <string>3⃣</string>
+    </emoticon>
+    <emoticon file="34-20e3">
+        <string>4⃣</string>
+    </emoticon>
+    <emoticon file="35-20e3">
+        <string>5⃣</string>
+    </emoticon>
+    <emoticon file="36-20e3">
+        <string>6⃣</string>
+    </emoticon>
+    <emoticon file="37-20e3">
+        <string>7⃣</string>
+    </emoticon>
+    <emoticon file="38-20e3">
+        <string>8⃣</string>
+    </emoticon>
+    <emoticon file="39-20e3">
+        <string>9⃣</string>
+    </emoticon>
+    <emoticon file="203c">
+        <string>‼</string>
+    </emoticon>
+    <emoticon file="2049">
+        <string>⁉</string>
+    </emoticon>
+    <emoticon file="2122">
+        <string>™</string>
+    </emoticon>
+    <emoticon file="2139">
+        <string>ℹ</string>
+    </emoticon>
+    <emoticon file="2194">
+        <string>↔</string>
+    </emoticon>
+    <emoticon file="2195">
+        <string>↕</string>
+    </emoticon>
+    <emoticon file="2196">
+        <string>↖</string>
+    </emoticon>
+    <emoticon file="2197">
+        <string>↗</string>
+    </emoticon>
+    <emoticon file="2198">
+        <string>↘</string>
+    </emoticon>
+    <emoticon file="2199">
+        <string>↙</string>
+    </emoticon>
+    <emoticon file="21a9">
+        <string>↩</string>
+    </emoticon>
+    <emoticon file="21aa">
+        <string>↪</string>
+    </emoticon>
+    <emoticon file="231a">
+        <string>⌚</string>
+    </emoticon>
+    <emoticon file="231b">
+        <string>⌛</string>
+    </emoticon>
+    <emoticon file="23e9">
+        <string>⏩</string>
+    </emoticon>
+    <emoticon file="23ea">
+        <string>⏪</string>
+    </emoticon>
+    <emoticon file="23eb">
+        <string>⏫</string>
+    </emoticon>
+    <emoticon file="23ec">
+        <string>⏬</string>
+    </emoticon>
+    <emoticon file="23f0">
+        <string>⏰</string>
+    </emoticon>
+    <emoticon file="23f3">
+        <string>⏳</string>
+    </emoticon>
+    <emoticon file="24c2">
+        <string>Ⓜ</string>
+    </emoticon>
+    <emoticon file="25aa">
+        <string>▪</string>
+    </emoticon>
+    <emoticon file="25ab">
+        <string>▫</string>
+    </emoticon>
+    <emoticon file="25b6">
+        <string>▶</string>
+    </emoticon>
+    <emoticon file="25c0">
+        <string>◀</string>
+    </emoticon>
+    <emoticon file="25fb">
+        <string>◻</string>
+    </emoticon>
+    <emoticon file="25fc">
+        <string>◼</string>
+    </emoticon>
+    <emoticon file="25fd">
+        <string>◽</string>
+    </emoticon>
+    <emoticon file="25fe">
+        <string>◾</string>
+    </emoticon>
+    <emoticon file="2b05">
+        <string>⬅</string>
+    </emoticon>
+    <emoticon file="2b06">
+        <string>⬆</string>
+    </emoticon>
+    <emoticon file="2b07">
+        <string>⬇</string>
+    </emoticon>
+    <emoticon file="2b1b">
+        <string>⬛</string>
+    </emoticon>
+    <emoticon file="2b1c">
+        <string>⬜</string>
+    </emoticon>
+    <emoticon file="2b50">
+        <string>⭐</string>
+    </emoticon>
+    <emoticon file="2b55">
+        <string>⭕</string>
+    </emoticon>
+    <emoticon file="303d">
+        <string>〽</string>
+    </emoticon>
+    <emoticon file="e50a">
+        <string></string>
+    </emoticon>
 </messaging-emoticon-map>

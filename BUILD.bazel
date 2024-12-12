@@ -1,8 +1,17 @@
 load("@rules_cc//cc:defs.bzl", "cc_library")
+load("//third_party/python:build_defs.bzl", "mypy_test")
 load("//third_party/qt:build_defs.bzl", "qt_binary", "qt_lconvert", "qt_rcc")
 load("//tools/project:build_defs.bzl", "project")
 
 project(license = "gpl3-https")
+
+mypy_test(
+    name = "mypy_test",
+    srcs = glob(
+        ["**/*.py"],
+        exclude = ["flatpak/update_flathub_descriptor_dependencies.py"],
+    ),
+)
 
 qt_lconvert(
     name = "qtox_qms",
@@ -27,15 +36,13 @@ qt_rcc(
 
 qt_rcc(
     name = "res",
-    srcs = [
-        "res.qrc",
-        "smileys/emojione.qrc",
-        "smileys/smileys.qrc",
-    ],
+    srcs = ["res.qrc"] + glob(["smileys/*/emoticons.qrc"]),
     data = glob([
         "img/**/*",
         "res/**/*",
-        "smileys/*/*",
+        "smileys/*/*.png",
+        "smileys/*/*.svg",
+        "smileys/*/*.xml",
         "themes/**/*",
     ]),
     tags = ["qt"],
