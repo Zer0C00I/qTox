@@ -29,17 +29,14 @@
  *
  * class Example : public QObject, public IExample {
  * public:
- *     // Declare real signal and implement `connectTo_valueChanged`
+ *     // Declare real signal and implement `connectTo_valueChanged`.
  *     SIGNAL_IMPL(Example, valueChanged, int value);
  * };
  */
-#define DECLARE_SIGNAL(name, ...)                         \
-    using Slot_##name = std::function<void(__VA_ARGS__)>; \
-    virtual QMetaObject::Connection connectTo_##name(QObject* receiver, Slot_##name slot) const = 0
 
 /**
  * @def DECLARE_SIGNAL
- * @brief Decalre signal-like method. Should be used in interface
+ * @brief Declare signal-like method. Should be used in interface.
  */
 #define DECLARE_SIGNAL(name, ...)                         \
     using Slot_##name = std::function<void(__VA_ARGS__)>; \
