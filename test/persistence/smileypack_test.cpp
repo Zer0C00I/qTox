@@ -26,7 +26,7 @@ public:
 
 QString MockSettings::getSmileyPack() const
 {
-    return ":/smileys/emojione/emoticons.xml";
+    return ":/smileys/EmojiOne/emoticons.xml";
 }
 
 class TestSmileyPack : public QObject
