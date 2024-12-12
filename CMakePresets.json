@@ -2,8 +2,8 @@
   "version": 3,
   "configurePresets": [
     {
-      "name": "debug-default",
-      "binaryDir": "${sourceDir}/_build",
+      "name": "asan",
+      "binaryDir": "${sourceDir}/_build-asan",
       "generator": "Ninja",
       "cacheVariables": {
         "ASAN": true,
@@ -16,7 +16,7 @@
       }
     },
     {
-      "name": "debug-tsan",
+      "name": "tsan",
       "binaryDir": "${sourceDir}/_build-tsan",
       "generator": "Ninja",
       "cacheVariables": {
@@ -24,6 +24,18 @@
         "SPELL_CHECK": true,
         "STRICT_OPTIONS": true,
         "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_COMPILE_WARNING_AS_ERROR": true,
+        "CMAKE_EXPORT_COMPILE_COMMANDS": true
+      }
+    },
+    {
+      "name": "profiling",
+      "binaryDir": "${sourceDir}/_build-profiling",
+      "generator": "Ninja",
+      "cacheVariables": {
+        "SPELL_CHECK": true,
+        "STRICT_OPTIONS": true,
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
         "CMAKE_COMPILE_WARNING_AS_ERROR": true,
         "CMAKE_EXPORT_COMPILE_COMMANDS": true
       }

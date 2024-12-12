@@ -17,7 +17,7 @@ namespace Ui {
 class DebugLog;
 }
 
-class DebugLogForm : public GenericForm
+class DebugLogForm final : public GenericForm
 {
     Q_OBJECT
 public:
@@ -28,10 +28,14 @@ public:
         return tr("Debug Log");
     }
 
+protected:
+    void showEvent(QShowEvent* event) final;
+
 private:
     void retranslateUi();
 
 private:
+    Paths& paths_;
     std::unique_ptr<Ui::DebugLog> ui_;
     std::unique_ptr<DebugLogModel> debugLogModel_;
     std::unique_ptr<QTimer> reloadTimer_;

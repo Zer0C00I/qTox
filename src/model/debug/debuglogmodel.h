@@ -36,7 +36,7 @@ public:
         QString message;
     };
 
-    explicit DebugLogModel(const QStringList& logs, QObject* parent = nullptr);
+    explicit DebugLogModel(QObject* parent);
     ~DebugLogModel() override;
 
     int rowCount(const QModelIndex& parent = QModelIndex()) const override;

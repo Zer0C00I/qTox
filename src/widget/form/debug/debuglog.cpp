@@ -52,8 +52,9 @@ QStringList loadLogs(Paths& paths)
 
 DebugLogForm::DebugLogForm(Paths& paths, Style& style, QWidget* parent)
     : GenericForm{QPixmap(":/img/settings/general.png"), style, parent}
+    , paths_{paths}
     , ui_{std::make_unique<Ui::DebugLog>()}
-    , debugLogModel_{std::make_unique<DebugLogModel>(loadLogs(paths), this)}
+    , debugLogModel_{std::make_unique<DebugLogModel>(this)}
     , reloadTimer_{std::make_unique<QTimer>(this)}
 {
     ui_->setupUi(this);
@@ -90,6 +91,14 @@ DebugLogForm::DebugLogForm(Paths& paths, Style& style, QWidget* parent)
 DebugLogForm::~DebugLogForm()
 {
     Translator::unregister(this);
+}
+
+void DebugLogForm::showEvent(QShowEvent* event)
+{
+    qDebug() << "Loading logs for debug log view";
+    debugLogModel_->reload(loadLogs(paths_));
+
+    GenericForm::showEvent(event);
 }
 
 /**

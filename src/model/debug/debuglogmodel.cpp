@@ -104,11 +104,9 @@ bool filterAccepts(DebugLogModel::Filter filter, QtMsgType type)
 }
 } // namespace
 
-DebugLogModel::DebugLogModel(const QStringList& logs, QObject* parent)
+DebugLogModel::DebugLogModel(QObject* parent)
     : QAbstractListModel(parent)
-    , logs_(parse(logs))
 {
-    recomputeFilter();
 }
 
 DebugLogModel::~DebugLogModel() = default;

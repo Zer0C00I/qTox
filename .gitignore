@@ -19,6 +19,7 @@ build-*-Debug
 .qtox-wrapped
 
 # Folders
+/.cache
 _[Bb]uild*/
 _obj
 _test
