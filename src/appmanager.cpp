@@ -45,9 +45,9 @@ constexpr std::string_view sourceRootPath()
     // nullptr in release builds.
     constexpr std::string_view path = __FILE__;
     constexpr size_t srcRootPos = [=]() {
-        size_t pos = path.find("/src/");
+        size_t pos = path.rfind("/src/");
         if (pos == std::string_view::npos) {
-            pos = path.find("\\src\\");
+            pos = path.rfind("\\src\\");
         }
         return pos;
     }();
