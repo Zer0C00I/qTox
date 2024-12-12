@@ -152,7 +152,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>toxcore version: %1</source>
-        <translation>Версия toxcore: %1</translation>
+        <translation>Версия Toxcore: %1</translation>
     </message>
     <message>
         <source>Qt version: %1</source>
@@ -377,7 +377,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Friend request message</source>
-        <translation>Запрос на добавление в друзья</translation>
+        <translation>Сообщение запроса на добавление в друзья</translation>
     </message>
     <message>
         <source>Type message to send with the friend request or leave empty to send a default message</source>
@@ -386,7 +386,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
         <extracomment>When trying to add your own Tox ID as friend</extracomment>
-        <translation>Вы не можете добавить себя в друзья!</translation>
+        <translation>Вы не можете добавить самого себя в друзья!</translation>
     </message>
     <message>
         <source>Open contact list</source>
@@ -624,7 +624,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>on/off</source>
-        <translation>включить/выключить</translation>
+        <translation>включено/выключено</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
@@ -632,7 +632,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <translation>Устанавливает обнаружение LAN &lt;включённым&gt;/&lt;выключенным&gt;. Перезаписывает отключённый UDP. По стандарту оно ВКЛЮЧЕНО.</translation>
+        <translation>Устанавливает обнаружение локальной сети (LAN) &lt;включённым&gt;/&lt;выключенным&gt;. Перезаписывает отключённый UDP. По стандарту оно ВКЛЮЧЕНО.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
@@ -714,11 +714,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>End audio call</source>
-        <translation>Завершить звонок</translation>
+        <translation>Завершить аудиозвонок</translation>
     </message>
     <message>
         <source>Cancel audio call</source>
-        <translation>Прервать звонок</translation>
+        <translation>Отменить аудиозвонок</translation>
     </message>
     <message>
         <source>Accept audio call</source>
@@ -750,11 +750,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Unmute call</source>
-        <translation>Включить звук</translation>
+        <translation>Включить звук звонка</translation>
     </message>
     <message>
         <source>Mute call</source>
-        <translation>Выключить звук</translation>
+        <translation>Выключить звук звонка</translation>
     </message>
     <message>
         <source>Microphone can be muted only during a call</source>
@@ -780,7 +780,7 @@ so you can save the file on Windows.</source>
     <name>ChatWidget</name>
     <message>
         <source>pending</source>
-        <translation>в ожидании</translation>
+        <translation>ожидание</translation>
     </message>
     <message>
         <source>%1 is typing</source>
@@ -788,11 +788,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Copy</source>
-        <translation>Копировать</translation>
+        <translation>Скопировать</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation>Выбрать все</translation>
+        <translation>Выбрать всё</translation>
     </message>
 </context>
 <context>
@@ -825,7 +825,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>mute</source>
-        <translation>заглушить</translation>
+        <translation>выключить звук</translation>
     </message>
     <message>
         <source>unmute</source>
@@ -851,7 +851,7 @@ so you can save the file on Windows.</source>
     <name>ConferenceInviteWidget</name>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
-        <translation>Приглашён %1 %2 в %3.</translation>
+        <translation>Приглашён %1 от %2 в %3.</translation>
     </message>
     <message>
         <source>Join</source>
@@ -917,7 +917,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>You need to write a message with your request</source>
         <comment>Error while sending friend request</comment>
-        <translation>Вам нужно написать сообщение с текстом запроса</translation>
+        <translation>Вам нужно написать сообщение с текстом вашего запроса</translation>
     </message>
     <message>
         <source>Your message is too long!</source>
@@ -1071,7 +1071,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>This month</source>
-        <translation>За этот месяц</translation>
+        <translation>В этом месяце</translation>
     </message>
     <message>
         <source>Never</source>
@@ -1164,7 +1164,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Remove friend</source>
         <comment>Menu to remove the friend from the friend list</comment>
-        <translation>Удалить друга</translation>
+        <translation>Удалить из друзей</translation>
     </message>
     <message>
         <source>Blocked</source>
@@ -1273,7 +1273,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Spell checking</source>
-        <translation>Проверка орфографии</translation>
+        <translation>Проверка правописания</translation>
     </message>
     <message>
         <source>Max autoaccept file size (0 to disable):</source>
@@ -1359,18 +1359,18 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Export to file</source>
-        <translation>Экспорт в файл</translation>
+        <translation>Экспортировать в файл</translation>
     </message>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
-        <translation>Вы уверены, что вы хотите очистить все отображаемые сообщения?</translation>
+        <translation>Вы уверены, что вы хотите удалить все отображаемые сообщения?</translation>
     </message>
 </context>
 <context>
     <name>IdentitySettings</name>
     <message>
         <source>Public Information</source>
-        <translation>Публичные данные</translation>
+        <translation>Публичная информация</translation>
     </message>
     <message>
         <source>Tox ID</source>
@@ -1489,7 +1489,7 @@ Profile does not contain your history.</source>
     </message>
     <message>
         <source>Export profile</source>
-        <translation>Экспортировать ьрофиль</translation>
+        <translation>Экспортировать профиль</translation>
     </message>
     <message>
         <source>Remove password from profile</source>
@@ -1515,7 +1515,7 @@ Profile does not contain your history.</source>
         <source>This ID allows other Tox users to add and contact you.
 Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
-        <translation>Этот ID позволяет другим пользователям Tox добавлять вас и общаться с вами.
+        <translation>Этот идентификатор позволяет другим пользователям Tox добавлять вас в друзья и общаться с вами.
 Поделитесь им с вашими друзьями, чтобы начать общаться.</translation>
     </message>
 </context>
@@ -1654,7 +1654,7 @@ You may want to create one.</source>
     </message>
     <message>
         <source>Import profile</source>
-        <translation>Импорт профиля</translation>
+        <translation>Импортировать профиль</translation>
     </message>
     <message>
         <source>Load selected profile button</source>
@@ -1715,7 +1715,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Open profile page when clicked</source>
-        <translation>Открыть профиль по клику</translation>
+        <translation>Открыть страницу профиля при нажатии</translation>
     </message>
     <message>
         <source>Status message input</source>
@@ -1862,7 +1862,7 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>Bring All to Front</source>
         <comment>macOS Menu bar</comment>
-        <translation>Отобразить все</translation>
+        <translation>Вывести всё на передний план</translation>
     </message>
     <message>
         <source>Exit Full Screen</source>
@@ -1917,14 +1917,14 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Friend request received from %1</source>
-        <translation>Получен запрос в друзья от %1</translation>
+        <translation>Получен запрос на добавление в друзья от %1</translation>
     </message>
 </context>
 <context>
     <name>PasswordEdit</name>
     <message>
         <source>Caps-lock enabled</source>
-        <translation>Включен Caps Lock</translation>
+        <translation>Включён Caps Lock</translation>
     </message>
 </context>
 <context>
@@ -1989,26 +1989,26 @@ Save format changes are possible, which may result in data loss.</source>
     </message>
     <message>
         <source>Privacy</source>
-        <translation>Конфиденциальность</translation>
+        <translation>Приватность</translation>
     </message>
     <message>
         <source>BlackList</source>
-        <translation>Список заблокированных</translation>
+        <translation>Список блокировки</translation>
     </message>
     <message>
         <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation>Фильтруйте сообщения в конференции с помощью публичных ключей её участников. Добавьте публичные ключи сюда, один на каждую строку.</translation>
+        <translation>Фильтруйте сообщения в конференции с помощью открытых (публичных) ключей её участников. Добавьте открытые (публичные) ключи сюда, один на каждую строку.</translation>
     </message>
 </context>
 <context>
     <name>Profile</name>
     <message>
         <source>Failed to derive key from password, the profile won&apos;t use the new password.</source>
-        <translation>Ошибка извлечения ключа из пароля, новый пароль на профиль не установлен.</translation>
+        <translation>Не удалось получить ключ от пароля, профиль не будет использовать новый пароль.</translation>
     </message>
     <message>
         <source>Toxing on qTox</source>
-        <translation>Общайтесь в qTox</translation>
+        <translation>Я использую qTox</translation>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
@@ -2105,11 +2105,11 @@ Please use another image.</source>
     </message>
     <message>
         <source>Current profile location: %1</source>
-        <translation>Путь к текущему профилю: %1</translation>
+        <translation>Расположение текущего профиля: %1</translation>
     </message>
     <message>
         <source>Couldn&apos;t change password</source>
-        <translation>Невозможно изменить пароль</translation>
+        <translation>Не удалось сменить пароль</translation>
     </message>
     <message>
         <source>Empty path is unavailable</source>
@@ -2125,7 +2125,7 @@ Please use another image.</source>
     </message>
     <message>
         <source>A profile named &quot;%1&quot; already exists.</source>
-        <translation>Профиль с именем &quot;%1&quot; уже существует.</translation>
+        <translation>Профиль с именем пользователя &quot;%1&quot; уже существует.</translation>
     </message>
     <message>
         <source>Empty name</source>
@@ -2137,7 +2137,7 @@ Please use another image.</source>
     </message>
     <message>
         <source>Empty path</source>
-        <translation>Путь не задан</translation>
+        <translation>Пустой путь</translation>
     </message>
     <message>
         <source>Export profile</source>
@@ -2175,7 +2175,7 @@ Please use another image.</source>
     </message>
     <message>
         <source>The file you chose could not be saved.</source>
-        <translation>Файл, который вы выбрали не может быть сохранён.</translation>
+        <translation>Выбранный вами файл не может быть сохранён.</translation>
     </message>
     <message>
         <source>Empty path is unavailable.</source>
@@ -2183,11 +2183,11 @@ Please use another image.</source>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
-        <translation>Не удалось изменить пароль базы данных, он может быть повреждён или был использован старый пароль.</translation>
+        <translation>Не удалось сменить пароль базы данных, она может быть повреждена, или был использован старый пароль.</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
-        <translation>Имена пользователей Tox не могут превышать %1 символов.</translation>
+        <translation>Имена пользователей Tox не могут содержать в себе более %1 символов.</translation>
     </message>
     <message>
         <source>Delete profile</source>
@@ -2209,10 +2209,10 @@ Please use another image.</source>
 Share it with your friends to begin chatting.
 
 This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
-        <translation>Этот ID позволяет другим пользователям Tox добавлять вас и общаться с вами.
+        <translation>Этот идентификатор позволяет другим пользователям Tox добавлять вас в друзья и общаться с вами.
 Поделитесь им с вашими друзьями, чтобы начать общаться.
 
-Этот ID включает в себя АнтиСпам код (голубой) и контрольную сумму (серую).</translation>
+Этот идентификатор включает в себя АнтиСпам код (голубым цветом) и контрольную сумму (серым цветом).</translation>
     </message>
 </context>
 <context>
@@ -2285,7 +2285,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>LTR</source>
         <comment>Translate this string to the string &apos;RTL&apos; in right-to-left languages (for example Hebrew and Arabic) to get proper widget layout</comment>
-        <translation>Письмо справа налево</translation>
+        <translation>Слева-направо (LTR)</translation>
     </message>
 </context>
 <context>
@@ -2297,11 +2297,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
         <comment>When trying to add your own Tox ID as friend</comment>
-        <translation>Вы не можете добавить себя в друзья!</translation>
+        <translation>Вы не можете добавить самого себя в друзья!</translation>
     </message>
     <message>
         <source>%1 is not a valid Tox address.</source>
-        <translation>%1 это недопустимый Tox адрес.</translation>
+        <translation>%1 является недопустимым Tox адресом.</translation>
     </message>
 </context>
 <context>
@@ -2355,28 +2355,28 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Dark</source>
-        <translation>Темный</translation>
+        <translation>Тёмный</translation>
     </message>
     <message>
         <source>Dark blue</source>
-        <translation>Темно-синий</translation>
+        <translation>Тёмно-синий</translation>
     </message>
     <message>
         <source>Dark olive</source>
-        <translation>Темно-оливковый</translation>
+        <translation>Тёмно-оливковый</translation>
     </message>
     <message>
         <source>Dark red</source>
-        <translation>Темно-красный</translation>
+        <translation>Тёмно-красный</translation>
     </message>
     <message>
         <source>Dark violet</source>
-        <translation>Темно-фиолетовый</translation>
+        <translation>Тёмно-фиолетовый</translation>
     </message>
     <message>
         <source>online</source>
         <comment>contact status</comment>
-        <translation>онлайн</translation>
+        <translation>в сети</translation>
     </message>
     <message>
         <source>away</source>
@@ -2391,7 +2391,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>offline</source>
         <comment>contact status</comment>
-        <translation>Не в сети</translation>
+        <translation>не в сети</translation>
     </message>
     <message>
         <source>blocked</source>
@@ -2439,11 +2439,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
-        <translation>Разговор с %1 неожиданно прервался. %2</translation>
+        <translation>Звонок с %1 неожиданно завершился. %2</translation>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation>Разговор с %1 завершился. %2</translation>
+        <translation>Звонок с %1 завершился. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
@@ -2456,7 +2456,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>%1 calling</source>
-        <translation>Входящий звонок от %1</translation>
+        <translation>%1 звонит</translation>
     </message>
     <message>
         <source>Message failed to send</source>
@@ -2464,7 +2464,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Initializing</source>
-        <translation>Подготовка</translation>
+        <translation>Подготовка к работе</translation>
     </message>
     <message>
         <source>Transmitting</source>
@@ -2539,15 +2539,15 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>RemoveChatDialog</name>
     <message>
         <source>Remove friend</source>
-        <translation>Удалить друга</translation>
+        <translation>Удалить из друзей</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation>Удалять всю историю переписки с другом если это включено</translation>
+        <translation>Когда установлено, удалять всю историю чата с другом</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
-        <translation>Также удалить историю переписки</translation>
+        <translation>Также удалить историю чата</translation>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
@@ -2563,7 +2563,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Click and drag to select a region. Press %1 to hide/show qTox window, or %2 to cancel.</source>
         <comment>Help text shown when no region has been selected yet</comment>
-        <translation>Обведите область с зажатой левой клавишей. Нажмите %1, чтобы скрыть/показать окно qTox или %2 для отмены.</translation>
+        <translation>Нажмите и перетащите, чтобы выбрать область. Нажмите %1, чтобы скрыть/показать окно qTox или %2 для отмены.</translation>
     </message>
     <message>
         <source>Space</source>
@@ -2573,7 +2573,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Escape</source>
         <comment>[Escape] key on the keyboard</comment>
-        <translation>Escape</translation>
+        <translation>Escape (Esc)</translation>
     </message>
     <message>
         <source>Press %1 to send a screenshot of the selection, %2 to hide/show qTox window, or %3 to cancel.</source>
@@ -2583,7 +2583,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Enter</source>
         <comment>[Enter] key on the keyboard</comment>
-        <translation>Ввод</translation>
+        <translation>Enter (Ввод)</translation>
     </message>
 </context>
 <context>
@@ -2594,7 +2594,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Start</source>
-        <translation>Начало</translation>
+        <translation>Поиск</translation>
     </message>
 </context>
 <context>
@@ -2633,7 +2633,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Whole words only</source>
-        <translation>Только слова целиком</translation>
+        <translation>Только целые слова</translation>
     </message>
     <message>
         <source>Use regular expressions</source>
@@ -2641,11 +2641,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Select Date Dialog</source>
-        <translation>Окно выбора даты</translation>
+        <translation>Диалоговое окно выбора даты</translation>
     </message>
     <message>
         <source>Select a date</source>
-        <translation>Выберите дату</translation>
+        <translation>Выбрать дату</translation>
     </message>
 </context>
 <context>
@@ -2763,7 +2763,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>px</source>
-        <translation>px</translation>
+        <translation>пикселей</translation>
     </message>
     <message>
         <source>Size: </source>
@@ -2771,15 +2771,15 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>New text styling preference may not load until qTox restarts.</source>
-        <translation>Для применения нового стиля текстовых сообщений может потребоваться перезагрузка qTox.</translation>
+        <translation>Новые параметры стиля текста могут не загрузиться, пока qTox не перезапустится.</translation>
     </message>
     <message>
         <source>Text Style format:</source>
-        <translation>Стиль текстовых сообщений:</translation>
+        <translation>Формат стиля текста:</translation>
     </message>
     <message>
         <source>Select text styling preference.</source>
-        <translation>Выберите стиль текстовых сообщений.</translation>
+        <translation>Выберите предпочтительный стиль текста.</translation>
     </message>
     <message>
         <source>Plaintext</source>
@@ -2845,7 +2845,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source> px</source>
-        <translation> px</translation>
+        <translation> пикселей</translation>
     </message>
     <message>
         <source>Theme</source>
@@ -2857,7 +2857,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Theme color:</source>
-        <translation>Цветовая схема:</translation>
+        <translation>Цвет темы:</translation>
     </message>
     <message>
         <source>Timestamp format:</source>
@@ -2886,7 +2886,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Play sound</source>
-        <translation>Воспроизводить звуки</translation>
+        <translation>Воспроизводить звук</translation>
     </message>
     <message>
         <source>Play sound while Busy</source>
@@ -2907,7 +2907,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Only notify about new messages in conferences when mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
-        <translation>Уведомлять о новых сообщениях из конференций только при упоминаниях.</translation>
+        <translation>Уведомлять о новых сообщениях в конференциях только при упоминаниях.</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
@@ -3019,7 +3019,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Show</source>
         <comment>Tray action menu to show qTox window</comment>
-        <translation>Отобразить</translation>
+        <translation>Показать</translation>
     </message>
     <message>
         <source>Add friend</source>
@@ -3034,7 +3034,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>File transfers</source>
         <comment>title of the window</comment>
-        <translation>Передача файлов</translation>
+        <translation>Передачи файлов</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -3062,9 +3062,9 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
         <translation>
-            <numerusform>%n новый запрос в друзья</numerusform>
-            <numerusform>%n новых запросов в друзья</numerusform>
-            <numerusform>%n новых запросов в друзья</numerusform>
+            <numerusform>%n новый запрос на добавление в друзья</numerusform>
+            <numerusform>%n новых запроса на добавление в друзья</numerusform>
+            <numerusform>%n новых запросов на добавление в друзья</numerusform>
         </translation>
     </message>
     <message numerus="yes">
