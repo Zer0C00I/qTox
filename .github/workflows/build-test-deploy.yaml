@@ -39,11 +39,11 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - name: Set up ccache
-        uses: hendrikmuhs/ccache-action@v1.2
+      - name: Cache compiler output
+        uses: actions/cache@v4
         with:
-          key: ${{ github.job }}
-          append-timestamp: false
+          path: ".cache/ccache"
+          key: ${{ github.job }}-ccache
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
       - name: Run build
@@ -76,11 +76,11 @@ jobs:
         build_type: [Debug]
     steps:
       - uses: actions/checkout@v4
-      - name: Set up ccache
-        uses: hendrikmuhs/ccache-action@v1.2
+      - name: Cache compiler output
+        uses: actions/cache@v4
         with:
-          key: ${{ github.job }}
-          append-timestamp: false
+          path: ".cache/ccache"
+          key: ${{ github.job }}-ccache
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
       - name: Run build
@@ -95,11 +95,11 @@ jobs:
         build_type: [Release]
     steps:
       - uses: actions/checkout@v4
-      - name: Set up ccache
-        uses: hendrikmuhs/ccache-action@v1.2
+      - name: Cache compiler output
+        uses: actions/cache@v4
         with:
-          key: ${{ github.job }}
-          append-timestamp: false
+          path: ".cache/ccache"
+          key: ${{ github.job }}-ccache
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
       - name: Run build
@@ -115,11 +115,11 @@ jobs:
         build_type: [Debug]
     steps:
       - uses: actions/checkout@v4
-      - name: Set up ccache
-        uses: hendrikmuhs/ccache-action@v1.2
+      - name: Cache compiler output
+        uses: actions/cache@v4
         with:
-          key: ${{ github.job }}
-          append-timestamp: false
+          path: ".cache/ccache"
+          key: ${{ github.job }}-ccache
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
       - name: Run build
@@ -135,11 +135,11 @@ jobs:
         build_type: [Debug]
     steps:
       - uses: actions/checkout@v4
-      - name: Set up ccache
-        uses: hendrikmuhs/ccache-action@v1.2
+      - name: Cache compiler output
+        uses: actions/cache@v4
         with:
-          key: ${{ github.job }}
-          append-timestamp: false
+          path: ".cache/ccache"
+          key: ${{ github.job }}-ccache
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
       - name: Run build
@@ -155,11 +155,11 @@ jobs:
         build_type: [Release]
     steps:
       - uses: actions/checkout@v4
-      - name: Set up ccache
-        uses: hendrikmuhs/ccache-action@v1.2
+      - name: Cache compiler output
+        uses: actions/cache@v4
         with:
-          key: ${{ github.job }}
-          append-timestamp: false
+          path: ".cache/ccache"
+          key: ${{ github.job }}-ccache
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
       - name: Run build
@@ -208,11 +208,11 @@ jobs:
           echo "suffix=$SUFFIX" >>$GITHUB_OUTPUT
           echo "nightly_apk=qTox-nightly-${{ matrix.arch }}-$ARTIFACT_TYPE$SUFFIX.apk" >>$GITHUB_OUTPUT
       - uses: actions/checkout@v4
-      - name: Set up ccache
-        uses: hendrikmuhs/ccache-action@v1.2
+      - name: Cache compiler output
+        uses: actions/cache@v4
         with:
-          key: ${{ github.job }}-${{ matrix.arch }}-${{ matrix.build_type }}-${{ matrix.version }}
-          append-timestamp: false
+          path: ".cache/ccache"
+          key: ${{ github.job }}-${{ matrix.arch }}-${{ matrix.build_type }}-${{ matrix.version }}-ccache
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
       - name: Run build
@@ -329,11 +329,13 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - name: Set up ccache
-        uses: hendrikmuhs/ccache-action@v1.2
+      - name: Cache compiler output
+        uses: actions/cache@v4
         with:
-          key: ${{ github.job }}-${{ matrix.arch }}
-          append-timestamp: false
+          path: ".cache/ccache"
+          key: ${{ github.job }}-${{ matrix.arch }}-ccache
+      - name: Set up ccache
+        run: brew install ccache && ccache --set-config=max_size=200M --set-config=cache_dir="$PWD/.cache/ccache" && ccache --show-config
       - name: Fetch build scripts
         run: git clone --depth=1 https://github.com/TokTok/dockerfiles ".ci-scripts/dockerfiles"
       - name: Homebrew dependencies to build dependencies
@@ -391,11 +393,13 @@ jobs:
     runs-on: ${{ matrix.arch == 'arm64' && 'macos-14' || 'macos-13' }}
     steps:
       - uses: actions/checkout@v4
-      - name: Set up ccache
-        uses: hendrikmuhs/ccache-action@v1.2
+      - name: Cache compiler output
+        uses: actions/cache@v4
         with:
-          key: ${{ github.job }}-${{ matrix.arch }}
-          append-timestamp: false
+          path: ".cache/ccache"
+          key: ${{ github.job }}-${{ matrix.arch }}-ccache
+      - name: Set up ccache
+        run: brew install ccache && ccache --set-config=max_size=200M --set-config=cache_dir="$PWD/.cache/ccache" && ccache --show-config
       - name: Fetch build scripts
         run: git clone --depth=1 https://github.com/TokTok/dockerfiles ".ci-scripts/dockerfiles"
       - name: Homebrew
@@ -420,11 +424,11 @@ jobs:
           - build_type: ${{ github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'packaging') && 'Debug' }}
     steps:
       - uses: actions/checkout@v4
-      - name: Set up ccache
-        uses: hendrikmuhs/ccache-action@v1.2
+      - name: Cache compiler output
+        uses: actions/cache@v4
         with:
-          key: ${{ github.job }}-${{ matrix.arch }}-${{ matrix.build_type }}
-          append-timestamp: false
+          path: ".cache/ccache"
+          key: ${{ github.job }}-${{ matrix.arch }}-${{ matrix.build_type }}-ccache
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
       - name: Run build
