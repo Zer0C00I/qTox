@@ -27,12 +27,23 @@ it still will be there next time you might need it. `:-)`
 
 # Filing an issue
 
-### Must read
+Come talk to us on TokTok-Dev. The Tox Chat ID is
+360497DA684BCE2A500C1AF9B3A5CE949BBB9F6FB1F91589806FB04CA039E313. On
+[toxic](https://github.com/TokTok/toxic), use `/join` to enter the chat.
+
+## Must read
 
 - If you aren't sure, you can ask on the
   [**IRC channel**](https://web.libera.chat/#qtox) or read our
   [**wiki**](https://github.com/qTox/qTox/wiki) first.
+- You can also join TokTok-Dev on Tox new group chats (qTox does not yet
+  support these, but you can use [toxic](https://github.com/TokTok/toxic)
+  or [tomato](https://github.com/Green-Sky/tomato) for now).
 - Do a quick **search**. Others might have already reported the issue.
+- If the issue already exists in the original repository
+  [qTox/qTox](https://github.com/qTox/qTox/issues), please file it again in
+  [TokTok/qTox](https://github.com/TokTok/qTox/issues) and link to the
+  original issue.
 - Write in **English**!
 - Provide **version** information (you can find version numbers in menu
   `Settings → About`):
@@ -50,7 +61,7 @@ Qt:
 - **Screenshots**! A screenshot is worth a thousand words. Just upload it.
   [(How?)](https://help.github.com/articles/file-attachments-on-issues-and-pull-requests)
 
-### Good to know
+## Good to know
 
 - **Patience**. The dev team is small and resource limited. Devs have to find
   time, analyze the problem and fix the issue, it all takes time. :clock3:
