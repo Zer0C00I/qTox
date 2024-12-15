@@ -152,7 +152,7 @@ void AboutForm::onUpdateAvailable(QString latestVersion, QUrl link)
 {
     std::ignore = latestVersion;
     QObject::disconnect(linkConnection);
-    linkConnection = connect(bodyUI->updateAvailableButton, &QPushButton::clicked,
+    linkConnection = connect(bodyUI->updateAvailableButton, &QPushButton::clicked, this,
                              [link]() { QDesktopServices::openUrl(link); });
     bodyUI->updateStack->setCurrentIndex(static_cast<int>(updateIndex::available));
 }

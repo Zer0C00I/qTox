@@ -398,7 +398,7 @@ void Widget::init()
 
     fileMenu->menu()->addSeparator();
     logoutAction = fileMenu->menu()->addAction(QString());
-    connect(logoutAction, &QAction::triggered, [this]() { nexus.showLogin(); });
+    connect(logoutAction, &QAction::triggered, this, [this]() { nexus.showLogin(); });
 
     editMenu = globalMenu->insertMenu(viewMenu, new QMenu(this));
     editMenu->menu()->addSeparator();
@@ -414,7 +414,7 @@ void Widget::init()
     nextConversationAction = new QAction(this);
     nexus.windowMenu->insertAction(frontAction, nextConversationAction);
     nextConversationAction->setShortcut(QKeySequence::SelectNextPage);
-    connect(nextConversationAction, &QAction::triggered, [this]() {
+    connect(nextConversationAction, &QAction::triggered, this, [this]() {
         if (contentDialogManager->current() == QApplication::activeWindow())
             contentDialogManager->current()->cycleChats(true);
         else if (QApplication::activeWindow() == this)
@@ -424,7 +424,7 @@ void Widget::init()
     previousConversationAction = new QAction(this);
     nexus.windowMenu->insertAction(frontAction, previousConversationAction);
     previousConversationAction->setShortcut(QKeySequence::SelectPreviousPage);
-    connect(previousConversationAction, &QAction::triggered, [this] {
+    connect(previousConversationAction, &QAction::triggered, this, [this] {
         if (contentDialogManager->current() == QApplication::activeWindow())
             contentDialogManager->current()->cycleChats(false);
         else if (QApplication::activeWindow() == this)
@@ -439,7 +439,7 @@ void Widget::init()
 
     QAction* aboutAction = viewMenu->menu()->addAction(QString());
     aboutAction->setMenuRole(QAction::AboutRole);
-    connect(aboutAction, &QAction::triggered, [this]() {
+    connect(aboutAction, &QAction::triggered, this, [this]() {
         onShowSettings();
         settingsWidget->showAbout();
     });
@@ -1199,15 +1199,12 @@ void Widget::addFriend(uint32_t friendId, const ToxPk& friendPk)
 
     chatListWidget->addFriendWidget(widget);
 
-
-    auto notifyReceivedCallback = [this, friendPk](const ToxPk& author, const Message& message) {
-        std::ignore = author;
-        newFriendMessageAlert(friendPk, message.content);
-    };
-
     auto notifyReceivedConnection =
-        connect(friendMessageDispatcher.get(), &IMessageDispatcher::messageReceived,
-                notifyReceivedCallback);
+        connect(friendMessageDispatcher.get(), &IMessageDispatcher::messageReceived, this,
+                [this, friendPk](const ToxPk& author, const Message& message) {
+                    std::ignore = author;
+                    newFriendMessageAlert(friendPk, message.content);
+                });
 
     friendAlertConnections.insert(friendPk, notifyReceivedConnection);
     connect(newfriend, &Friend::aliasChanged, this, &Widget::onFriendAliasChanged);
@@ -1454,11 +1451,12 @@ void Widget::addFriendDialog(const Friend* frnd, ContentDialog* dialog)
     connect(friendWidget, &FriendWidget::contextMenuCalled, widget,
             [=](QContextMenuEvent* event) { emit widget->contextMenuCalled(event); });
 
-    connect(friendWidget, &FriendWidget::chatroomWidgetClicked, [=](GenericChatroomWidget* w) {
-        std::ignore = w;
-        emit widget->chatroomWidgetClicked(widget);
-    });
-    connect(friendWidget, &FriendWidget::newWindowOpened, [=](GenericChatroomWidget* w) {
+    connect(friendWidget, &FriendWidget::chatroomWidgetClicked, widget,
+            [widget](GenericChatroomWidget* w) {
+                std::ignore = w;
+                emit widget->chatroomWidgetClicked(widget);
+            });
+    connect(friendWidget, &FriendWidget::newWindowOpened, widget, [widget](GenericChatroomWidget* w) {
         std::ignore = w;
         emit widget->newWindowOpened(widget);
     });
@@ -1502,15 +1500,17 @@ void Widget::addConferenceDialog(const Conference* conference, ContentDialog* di
     // Signal transmission from the created `conferenceWidget` (which shown in
     // ContentDialog) to the `widget` (which shown in main widget)
     // FIXME: emit should be removed
-    connect(conferenceWidget, &ConferenceWidget::chatroomWidgetClicked, [=](GenericChatroomWidget* w) {
-        std::ignore = w;
-        emit widget->chatroomWidgetClicked(widget);
-    });
+    connect(conferenceWidget, &ConferenceWidget::chatroomWidgetClicked, widget,
+            [widget](GenericChatroomWidget* w) {
+                std::ignore = w;
+                emit widget->chatroomWidgetClicked(widget);
+            });
 
-    connect(conferenceWidget, &ConferenceWidget::newWindowOpened, [=](GenericChatroomWidget* w) {
-        std::ignore = w;
-        emit widget->newWindowOpened(widget);
-    });
+    connect(conferenceWidget, &ConferenceWidget::newWindowOpened, widget,
+            [widget](GenericChatroomWidget* w) {
+                std::ignore = w;
+                emit widget->newWindowOpened(widget);
+            });
 
     // FIXME: emit should be removed
     emit widget->chatroomWidgetClicked(widget);
@@ -2098,7 +2098,7 @@ Conference* Widget::createConference(uint32_t conferencenumber, const Conference
     assert(newconference);
 
     if (enabled) {
-        connect(newconference, &Conference::userLeft, [this, newconference](const ToxPk& user) {
+        connect(newconference, &Conference::userLeft, this, [this, newconference](const ToxPk& user) {
             CoreAV* av = core->getAv();
             assert(av);
             av->invalidateConferenceCallPeerSource(*newconference, user);
@@ -2121,17 +2121,17 @@ Conference* Widget::createConference(uint32_t conferencenumber, const Conference
     auto chatHistory = std::make_shared<ChatHistory>(*newconference, history, *core, settings,
                                                      *messageDispatcher, *friendList, *conferenceList);
 
-    auto notifyReceivedCallback = [this, conferenceId](const ToxPk& author, const Message& message) {
-        auto isTargeted = std::any_of(message.metadata.begin(), message.metadata.end(),
-                                      [](MessageMetadata metadata) {
-                                          return metadata.type == MessageMetadataType::selfMention;
-                                      });
-        newConferenceMessageAlert(conferenceId, author, message.content,
-                                  isTargeted || settings.getConferenceAlwaysNotify());
-    };
-
     auto notifyReceivedConnection =
-        connect(messageDispatcher.get(), &IMessageDispatcher::messageReceived, notifyReceivedCallback);
+        connect(messageDispatcher.get(), &IMessageDispatcher::messageReceived, this,
+                [this, conferenceId](const ToxPk& author, const Message& message) {
+                    auto isTargeted =
+                        std::any_of(message.metadata.begin(), message.metadata.end(),
+                                    [](MessageMetadata metadata) {
+                                        return metadata.type == MessageMetadataType::selfMention;
+                                    });
+                    newConferenceMessageAlert(conferenceId, author, message.content,
+                                              isTargeted || settings.getConferenceAlwaysNotify());
+                });
     conferenceAlertConnections.insert(conferenceId, notifyReceivedConnection);
 
     auto form = new ConferenceForm(*core, newconference, *chatHistory, *messageDispatcher, settings,
@@ -2585,7 +2585,7 @@ void Widget::friendRequestsUpdate()
         friendRequestsButton->setObjectName("green");
         ui->statusLayout->insertWidget(2, friendRequestsButton);
 
-        connect(friendRequestsButton, &QPushButton::released, [this]() {
+        connect(friendRequestsButton, &QPushButton::released, this, [this]() {
             onAddClicked();
             addFriendForm->setMode(AddFriendForm::Mode::FriendRequest);
         });

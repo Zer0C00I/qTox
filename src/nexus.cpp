@@ -124,7 +124,7 @@ void Nexus::start()
 
     minimizeAction = windowMenu->addAction(QString());
     minimizeAction->setShortcut(Qt::CTRL | Qt::Key_M);
-    connect(minimizeAction, &QAction::triggered, [this]() {
+    connect(minimizeAction, &QAction::triggered, this, [this]() {
         minimizeAction->setEnabled(false);
         QApplication::focusWindow()->showMinimized();
     });

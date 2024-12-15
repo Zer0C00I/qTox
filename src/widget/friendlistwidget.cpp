@@ -346,10 +346,11 @@ FriendListWidget::SortingMode FriendListWidget::getMode() const
 void FriendListWidget::addConferenceWidget(ConferenceWidget* widget)
 {
     Conference* c = widget->getConference();
-    connect(c, &Conference::titleChanged, [this, widget](const QString& author, const QString& name) {
-        std::ignore = author;
-        renameConferenceWidget(widget, name);
-    });
+    connect(c, &Conference::titleChanged, this,
+            [this, widget](const QString& author, const QString& name) {
+                std::ignore = author;
+                renameConferenceWidget(widget, name);
+            });
 
     manager->addFriendListItem(widget);
 }

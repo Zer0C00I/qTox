@@ -41,7 +41,7 @@ ConferenceInviteForm::ConferenceInviteForm(Settings& settings_, Core& core_)
     , core{core_}
 {
     QVBoxLayout* layout = new QVBoxLayout(this);
-    connect(createButton, &QPushButton::clicked,
+    connect(createButton, &QPushButton::clicked, this,
             [this]() { emit conferenceCreate(TOX_CONFERENCE_TYPE_AV); });
 
     QWidget* innerWidget = new QWidget(scroll);
@@ -114,12 +114,13 @@ bool ConferenceInviteForm::addConferenceInvite(const ConferenceInvite& inviteInf
     ConferenceInviteWidget* widget = new ConferenceInviteWidget(this, inviteInfo, settings, core);
     scroll->widget()->layout()->addWidget(widget);
     invites.append(widget);
-    connect(widget, &ConferenceInviteWidget::accepted, [this](const ConferenceInvite& inviteInfo_) {
-        deleteInviteWidget(inviteInfo_);
-        emit conferenceInviteAccepted(inviteInfo_);
-    });
+    connect(widget, &ConferenceInviteWidget::accepted, this,
+            [this](const ConferenceInvite& inviteInfo_) {
+                deleteInviteWidget(inviteInfo_);
+                emit conferenceInviteAccepted(inviteInfo_);
+            });
 
-    connect(widget, &ConferenceInviteWidget::rejected,
+    connect(widget, &ConferenceInviteWidget::rejected, this,
             [this](const ConferenceInvite& inviteInfo_) { deleteInviteWidget(inviteInfo_); });
     if (isVisible()) {
         emit conferenceInvitesSeen();

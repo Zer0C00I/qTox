@@ -61,7 +61,7 @@ DebugLogForm::DebugLogForm(Paths& paths, Style& style, QWidget* parent)
 
     // Reload logs every 5 seconds
     reloadTimer_->start(5000);
-    connect(reloadTimer_.get(), &QTimer::timeout, [this, &paths] {
+    connect(reloadTimer_.get(), &QTimer::timeout, this, [this, &paths] {
         if (ui_->cbAutoReload->isChecked()) {
             debugLogModel_->reload(loadLogs(paths));
         }
@@ -74,12 +74,12 @@ DebugLogForm::DebugLogForm(Paths& paths, Style& style, QWidget* parent)
     for (int i = 0; i < filterEnum.keyCount(); ++i) {
         ui_->cmbFilters->addItem(QString::fromUtf8(filterEnum.key(i)));
     }
-    connect(ui_->cmbFilters, qOverload<int>(&QComboBox::currentIndexChanged), [this](int index) {
+    connect(ui_->cmbFilters, qOverload<int>(&QComboBox::currentIndexChanged), this, [this](int index) {
         debugLogModel_->setFilter(static_cast<DebugLogModel::Filter>(index));
     });
 
     ui_->debugLog->setModel(debugLogModel_.get());
-    connect(ui_->debugLog, &QListView::doubleClicked, [this](const QModelIndex& index) {
+    connect(ui_->debugLog, &QListView::doubleClicked, this, [this](const QModelIndex& index) {
         const int originalIndex = debugLogModel_->originalIndex(index);
         ui_->cmbFilters->setCurrentIndex(0);
         ui_->debugLog->scrollTo(debugLogModel_->index(originalIndex));

@@ -267,7 +267,7 @@ void ConferenceForm::peerAudioPlaying(ToxPk peerPk)
     if (!peerAudioTimers[peerPk]) {
         peerAudioTimers[peerPk] = new QTimer(this);
         peerAudioTimers[peerPk]->setSingleShot(true);
-        connect(peerAudioTimers[peerPk], &QTimer::timeout, [this, peerPk] {
+        connect(peerAudioTimers[peerPk], &QTimer::timeout, this, [this, peerPk] {
             auto it = peerLabels.find(peerPk);
             if (it != peerLabels.end()) {
                 peerLabels[peerPk]->setProperty("playingAudio", LABEL_PEER_NOT_PLAYING_AUDIO);

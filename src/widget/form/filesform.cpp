@@ -439,10 +439,10 @@ FilesForm::FilesForm(CoreFile& coreFile, Settings& settings, Style& style,
         coreFile.cancelFileSend(file.friendId, file.fileNum);
     };
 
-    connect(recvdModel, &FileTransferList::Model::togglePause, pauseFile);
-    connect(recvdModel, &FileTransferList::Model::cancel, cancelFileRecv);
-    connect(sentModel, &FileTransferList::Model::togglePause, pauseFile);
-    connect(sentModel, &FileTransferList::Model::cancel, cancelFileSend);
+    connect(recvdModel, &FileTransferList::Model::togglePause, &coreFile, pauseFile);
+    connect(recvdModel, &FileTransferList::Model::cancel, &coreFile, cancelFileRecv);
+    connect(sentModel, &FileTransferList::Model::togglePause, &coreFile, pauseFile);
+    connect(sentModel, &FileTransferList::Model::cancel, &coreFile, cancelFileSend);
 
     recvd = new FileTransferList::View(recvdModel, settings, style);
     sent = new FileTransferList::View(sentModel, settings, style);

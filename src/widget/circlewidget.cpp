@@ -42,12 +42,12 @@ CircleWidget::CircleWidget(const Core& core_, FriendListWidget* parent, int id_,
     setName(settings.getCircleName(id), false);
     circleList[id] = this;
 
-    connect(nameLabel, &CroppingLabel::editFinished, [this](const QString& newName) {
+    connect(nameLabel, &CroppingLabel::editFinished, this, [this](const QString& newName) {
         if (!newName.isEmpty())
             emit renameRequested(this, newName);
     });
 
-    connect(nameLabel, &CroppingLabel::editRemoved, [this]() {
+    connect(nameLabel, &CroppingLabel::editRemoved, this, [this]() {
         if (isCompact())
             nameLabel->minimizeMaximumWidth();
     });

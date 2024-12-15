@@ -97,7 +97,7 @@ void FriendWidget::onContextMenuCalled(QContextMenuEvent* event)
 
     if (chatroom->possibleToOpenInNewWindow()) {
         const auto openChatWindow = menu.addAction(tr("Open chat in new window"));
-        connect(openChatWindow, &QAction::triggered, [this]() { emit newWindowOpened(this); });
+        connect(openChatWindow, &QAction::triggered, this, [this]() { emit newWindowOpened(this); });
     }
 
     if (chatroom->canBeRemovedFromWindow()) {
@@ -117,7 +117,7 @@ void FriendWidget::onContextMenuCalled(QContextMenuEvent* event)
     for (const auto& conference : chatroom->getConferences()) {
         const auto conferenceAction =
             inviteMenu->addAction(tr("Invite to conference '%1'").arg(conference.name));
-        connect(conferenceAction, &QAction::triggered,
+        connect(conferenceAction, &QAction::triggered, this,
                 [this, conference] { chatroom->inviteFriend(conference.conference); });
     }
 
@@ -139,7 +139,7 @@ void FriendWidget::onContextMenuCalled(QContextMenuEvent* event)
 
     for (const auto& circle : chatroom->getOtherCircles()) {
         QAction* action = new QAction(tr("Move to circle \"%1\"").arg(circle.name), circleMenu);
-        connect(action, &QAction::triggered, [this, circle] { moveToCircle(circle.circleId); });
+        connect(action, &QAction::triggered, this, [this, circle] { moveToCircle(circle.circleId); });
         circleMenu->addAction(action);
     }
 

@@ -120,23 +120,23 @@ NetCamView::NetCamView(ToxPk friendPk_, CameraSource& cameraSource_, Settings& s
     connections +=
         connect(selfVideoSurface, &VideoSurface::ratioChanged, this, &NetCamView::updateRatio);
 
-    connections += connect(videoSurface, &VideoSurface::boundaryChanged, [this]() {
+    connections += connect(videoSurface, &VideoSurface::boundaryChanged, this, [this]() {
         QRect boundingRect = videoSurface->getBoundingRect();
         updateFrameSize(boundingRect.size());
         selfFrame->setBoundary(boundingRect);
     });
 
-    connections += connect(videoSurface, &VideoSurface::ratioChanged, [this]() {
+    connections += connect(videoSurface, &VideoSurface::ratioChanged, this, [this]() {
         selfFrame->setMinimumWidth(selfFrame->minimumHeight() * selfVideoSurface->getRatio());
         QRect boundingRect = videoSurface->getBoundingRect();
         updateFrameSize(boundingRect.size());
         selfFrame->resetBoundary(boundingRect);
     });
 
-    connections += connect(&profile, &Profile::selfAvatarChanged,
+    connections += connect(&profile, &Profile::selfAvatarChanged, this,
                            [this](const QPixmap& pixmap) { selfVideoSurface->setAvatar(pixmap); });
 
-    connections += connect(&profile, &Profile::friendAvatarChanged,
+    connections += connect(&profile, &Profile::friendAvatarChanged, this,
                            [this](ToxPk friendPkArg, const QPixmap& pixmap) {
                                if (friendPk == friendPkArg)
                                    videoSurface->setAvatar(pixmap);

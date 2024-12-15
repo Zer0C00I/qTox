@@ -32,8 +32,8 @@ ConferenceInviteWidget::ConferenceInviteWidget(QWidget* parent, const Conference
     , settings{settings_}
     , core{core_}
 {
-    connect(acceptButton, &QPushButton::clicked, [this] { emit accepted(inviteInfo); });
-    connect(rejectButton, &QPushButton::clicked, [this] { emit rejected(inviteInfo); });
+    connect(acceptButton, &QPushButton::clicked, this, [this] { emit accepted(inviteInfo); });
+    connect(rejectButton, &QPushButton::clicked, this, [this] { emit rejected(inviteInfo); });
     widgetLayout->addWidget(inviteMessageLabel);
     widgetLayout->addWidget(acceptButton);
     widgetLayout->addWidget(rejectButton);
