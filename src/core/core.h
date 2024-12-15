@@ -116,7 +116,7 @@ public slots:
     bool sendMessage(uint32_t friendId, const QString& message, ReceiptNum& receipt) override;
     void sendConferenceMessage(int conferenceId, const QString& message) override;
     void sendConferenceAction(int conferenceId, const QString& message) override;
-    void changeConferenceTitle(int conferenceId, const QString& title);
+    void changeConferenceTitle(uint32_t conferenceId, const QString& title);
     bool sendAction(uint32_t friendId, const QString& action, ReceiptNum& receipt) override;
     void sendTyping(uint32_t friendId, bool typing);
 
@@ -163,21 +163,22 @@ signals:
     void friendRemoved(uint32_t friendId);
     void friendLastSeenChanged(uint32_t friendId, const QDateTime& dateTime);
 
-    void emptyConferenceCreated(int conferencenumber, const ConferenceId conferenceId,
+    void emptyConferenceCreated(uint32_t conferencenumber, const ConferenceId conferenceId,
                                 const QString& title = QString());
     void conferenceInviteReceived(const ConferenceInvite& inviteInfo);
-    void conferenceMessageReceived(int conferencenumber, int peernumber, const QString& message,
-                                   bool isAction);
-    void conferenceNamelistChanged(int conferencenumber, int peernumber, uint8_t change);
-    void conferencePeerlistChanged(int conferencenumber);
-    void conferencePeerNameChanged(int conferencenumber, const ToxPk& peerPk, const QString& newName);
-    void conferenceTitleChanged(int conferencenumber, const QString& author, const QString& title);
-    void conferencePeerAudioPlaying(int conferencenumber, ToxPk peerPk);
-    void conferenceSentFailed(int conferenceId);
-    void conferenceJoined(int conferencenumber, ConferenceId conferenceId);
+    void conferenceMessageReceived(uint32_t conferencenumber, uint32_t peernumber,
+                                   const QString& message, bool isAction);
+    void conferenceNamelistChanged(uint32_t conferencenumber, uint32_t peernumber, uint8_t change);
+    void conferencePeerlistChanged(uint32_t conferencenumber);
+    void conferencePeerNameChanged(uint32_t conferencenumber, const ToxPk& peerPk,
+                                   const QString& newName);
+    void conferenceTitleChanged(uint32_t conferencenumber, const QString& author, const QString& title);
+    void conferencePeerAudioPlaying(uint32_t conferencenumber, ToxPk peerPk);
+    void conferenceSentFailed(uint32_t conferenceId);
+    void conferenceJoined(uint32_t conferencenumber, ConferenceId conferenceId);
     void actionSentResult(uint32_t friendId, const QString& action, int success);
 
-    void receiptReceived(int friedId, ReceiptNum receipt);
+    void receiptReceived(uint32_t friendId, ReceiptNum receipt);
 
     void failedToRemoveFriend(uint32_t friendId);
 

@@ -1250,7 +1250,7 @@ void Widget::addFriendFailed(const ToxPk& userId, const QString& errorInfo)
     QMessageBox::critical(nullptr, "Error", info);
 }
 
-void Widget::onCoreFriendStatusChanged(int friendId, Status::Status status)
+void Widget::onCoreFriendStatusChanged(uint32_t friendId, Status::Status status)
 {
     const auto& friendPk = friendList->id2Key(friendId);
     Friend* f = friendList->findFriend(friendPk);
@@ -1282,7 +1282,7 @@ void Widget::onFriendStatusChanged(const ToxPk& friendPk, Status::Status status)
     contentDialogManager->updateFriendStatus(friendPk);
 }
 
-void Widget::onFriendStatusMessageChanged(int friendId, const QString& message)
+void Widget::onFriendStatusMessageChanged(uint32_t friendId, const QString& message)
 {
     const auto& friendPk = friendList->id2Key(friendId);
     Friend* f = friendList->findFriend(friendPk);
@@ -1316,7 +1316,7 @@ void Widget::onFriendDisplayedNameChanged(const QString& displayed)
     chatListWidget->itemsChanged();
 }
 
-void Widget::onFriendUsernameChanged(int friendId, const QString& username)
+void Widget::onFriendUsernameChanged(uint32_t friendId, const QString& username)
 {
     const auto& friendPk = friendList->id2Key(friendId);
     Friend* f = friendList->findFriend(friendPk);
@@ -1412,7 +1412,7 @@ void Widget::onFriendMessageReceived(uint32_t friendnumber, const QString& messa
     friendMessageDispatchers[f->getPublicKey()]->onMessageReceived(isAction, message);
 }
 
-void Widget::onReceiptReceived(int friendId, ReceiptNum receipt)
+void Widget::onReceiptReceived(uint32_t friendId, ReceiptNum receipt)
 {
     const auto& friendKey = friendList->id2Key(friendId);
     Friend* f = friendList->findFriend(friendKey);
@@ -1955,7 +1955,7 @@ void Widget::onConferenceInviteAccepted(const ConferenceInvite& inviteInfo)
     }
 }
 
-void Widget::onConferenceMessageReceived(int conferencenumber, int peernumber,
+void Widget::onConferenceMessageReceived(uint32_t conferencenumber, uint32_t peernumber,
                                          const QString& message, bool isAction)
 {
     const ConferenceId& conferenceId = conferenceList->id2Key(conferencenumber);
@@ -2008,7 +2008,7 @@ void Widget::titleChangedByUser(const QString& title)
     emit changeConferenceTitle(conference->getId(), title);
 }
 
-void Widget::onConferencePeerAudioPlaying(int conferencenumber, ToxPk peerPk)
+void Widget::onConferencePeerAudioPlaying(uint32_t conferencenumber, ToxPk peerPk)
 {
     const ConferenceId& conferenceId = conferenceList->id2Key(conferencenumber);
     assert(conferenceList->findConference(conferenceId));
@@ -2179,7 +2179,7 @@ void Widget::onEmptyConferenceCreated(uint32_t conferencenumber, const Conferenc
     }
 }
 
-void Widget::onConferenceJoined(int conferenceNum, const ConferenceId& conferenceId)
+void Widget::onConferenceJoined(uint32_t conferenceNum, const ConferenceId& conferenceId)
 {
     createConference(conferenceNum, conferenceId);
 }

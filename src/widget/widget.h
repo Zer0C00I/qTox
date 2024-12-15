@@ -165,30 +165,30 @@ public slots:
     void setStatusMessage(const QString& statusMessage);
     void addFriend(uint32_t friendId, const ToxPk& friendPk);
     void addFriendFailed(const ToxPk& userId, const QString& errorInfo = QString());
-    void onCoreFriendStatusChanged(int friendId, Status::Status status);
+    void onCoreFriendStatusChanged(uint32_t friendId, Status::Status status);
     void onFriendStatusChanged(const ToxPk& friendPk, Status::Status status);
-    void onFriendStatusMessageChanged(int friendId, const QString& message);
+    void onFriendStatusMessageChanged(uint32_t friendId, const QString& message);
     void onFriendDisplayedNameChanged(const QString& displayed);
-    void onFriendUsernameChanged(int friendId, const QString& username);
+    void onFriendUsernameChanged(uint32_t friendId, const QString& username);
     void onFriendAliasChanged(const ToxPk& friendId, const QString& alias);
     void onFriendMessageReceived(uint32_t friendnumber, const QString& message, bool isAction);
-    void onReceiptReceived(int friendId, ReceiptNum receipt);
+    void onReceiptReceived(uint32_t friendId, ReceiptNum receipt);
     void onFriendRequestReceived(const ToxPk& friendPk, const QString& message);
     void onFileReceiveRequested(const ToxFile& file);
     void onEmptyConferenceCreated(uint32_t conferencenumber, const ConferenceId& conferenceId,
                                   const QString& title);
-    void onConferenceJoined(int conferenceNum, const ConferenceId& conferenceId);
+    void onConferenceJoined(uint32_t conferenceNum, const ConferenceId& conferenceId);
     void onConferenceInviteReceived(const ConferenceInvite& inviteInfo);
     void onConferenceInviteAccepted(const ConferenceInvite& inviteInfo);
-    void onConferenceMessageReceived(int conferencenumber, int peernumber, const QString& message,
-                                     bool isAction);
+    void onConferenceMessageReceived(uint32_t conferencenumber, uint32_t peernumber,
+                                     const QString& message, bool isAction);
     void onConferencePeerlistChanged(uint32_t conferencenumber);
     void onConferencePeerNameChanged(uint32_t conferencenumber, const ToxPk& peerPk,
                                      const QString& newName);
     void onConferenceTitleChanged(uint32_t conferencenumber, const QString& author,
                                   const QString& title);
     void titleChangedByUser(const QString& title);
-    void onConferencePeerAudioPlaying(int conferencenumber, ToxPk peerPk);
+    void onConferencePeerAudioPlaying(uint32_t conferencenumber, ToxPk peerPk);
     void onConferenceSendFailed(uint32_t conferencenumber);
     void onFriendTypingChanged(uint32_t friendnumber, bool isTyping);
     void nextChat();

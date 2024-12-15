@@ -273,7 +273,7 @@ void Text::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 
     // open anchor in browser
     if (!anchor.isEmpty())
-        QDesktopServices::openUrl(anchor);
+        QDesktopServices::openUrl(QUrl(anchor));
 }
 
 void Text::hoverMoveEvent(QGraphicsSceneHoverEvent* event)

@@ -21,8 +21,7 @@
 
 #ifdef UPDATE_CHECK_ENABLED
 namespace {
-const QString versionUrl{
-    QStringLiteral("https://api.github.com/repos/TokTok/qTox/releases/latest")};
+const QUrl versionUrl{QStringLiteral("https://api.github.com/repos/TokTok/qTox/releases/latest")};
 // Release candidates are ignored, as they are prereleases and don't appear in
 // the response to the releases/latest API call.
 const QString versionRegexString{QStringLiteral(R"(v([0-9]+)\.([0-9]+)\.([0-9]+))")};

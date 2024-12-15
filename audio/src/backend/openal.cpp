@@ -60,8 +60,7 @@ OpenAL::OpenAL(IAudioSettings& _settings)
 
     voiceTimer.setSingleShot(true);
     voiceTimer.moveToThread(audioThread);
-    connect(this, &OpenAL::startActive, &voiceTimer,
-            static_cast<void (QTimer::*)(int)>(&QTimer::start));
+    connect(this, &OpenAL::startActive, this, [this](qreal time) { voiceTimer.start(time); });
     connect(&voiceTimer, &QTimer::timeout, this, &OpenAL::stopActive);
 
     connect(&captureTimer, &QTimer::timeout, this, &OpenAL::doAudio);

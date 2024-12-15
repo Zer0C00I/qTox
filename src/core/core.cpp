@@ -728,7 +728,7 @@ void Core::sendConferenceAction(int conferenceId, const QString& message)
     sendConferenceMessageWithType(conferenceId, message, TOX_MESSAGE_TYPE_ACTION);
 }
 
-void Core::changeConferenceTitle(int conferenceId, const QString& title)
+void Core::changeConferenceTitle(uint32_t conferenceId, const QString& title)
 {
     QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
