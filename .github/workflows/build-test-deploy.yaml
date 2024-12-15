@@ -355,7 +355,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: qTox-${{ github.sha }}-${{ matrix.arch }}.dmg
-          path: qTox.dmg
+          path: qTox-${{ matrix.arch }}.dmg
       - name: Upload to versioned release
         if: contains(github.ref, 'refs/tags/v')
         uses: ncipollo/release-action@v1
@@ -381,6 +381,30 @@ jobs:
           replacesArtifacts: true
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "qTox-nightly-${{ matrix.arch }}.dmg,qTox-nightly-${{ matrix.arch }}.dmg.sha256"
+
+  test-macos-distributable:
+    name: Test macOS distributable
+    needs: build-macos-distributable
+    strategy:
+      matrix:
+        arch: [arm64, x86_64]
+        exclude:
+          - arch: ${{ github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'packaging') && 'x86_64' }}
+    runs-on: ${{ matrix.arch == 'arm64' && 'macos-14' || 'macos-13' }}
+    permissions:
+      contents: write
+    steps:
+      - name: Download artifact from macOS distributable (${{ matrix.arch }})
+        uses: actions/download-artifact@v4
+        with:
+          name: qTox-${{ github.sha }}-${{ matrix.arch }}.dmg
+          path: qTox.dmg
+      - name: Install 7zip
+        run: brew install 7zip
+      - name: Unpack dmg
+        run: 7zz x qTox.dmg qtox.app
+      - name: Run qTox
+        run: qtox.app/Contents/MacOS/qTox --help
 
   build-macos-user:
     name: macOS user

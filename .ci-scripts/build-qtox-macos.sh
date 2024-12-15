@@ -20,10 +20,8 @@ source "$SCRIPT_DIR/dockerfiles/qtox/build_utils.sh"
 parse_arch --arch macos --supported macos --dep macos
 
 if [ "$1" == "user" ]; then
-  DEPLOYMENT_TARGET=""
   PREFIX_PATH="$(brew --prefix qt@6)"
 elif [ "$1" == "dist" ]; then
-  DEPLOYMENT_TARGET="-DCMAKE_OSX_DEPLOYMENT_TARGET=$MACOS_MINIMUM_SUPPORTED_VERSION"
   PREFIX_PATH="$DEP_PREFIX;$(brew --prefix qt@6)"
 else
   echo "Unknown arg $1"
@@ -40,14 +38,15 @@ build_qtox() {
     -DSPELL_CHECK=OFF \
     -DSTRICT_OPTIONS=ON \
     -DCMAKE_BUILD_TYPE=Release \
-    "$DEPLOYMENT_TARGET" \
+    -DCMAKE_OSX_DEPLOYMENT_TARGET="$MACOS_MINIMUM_SUPPORTED_VERSION" \
     -DCMAKE_PREFIX_PATH="$PREFIX_PATH" \
     -GNinja \
+    -B_build \
     .
-  cmake --build .
-  ctest --output-on-failure --parallel "$(sysctl -n hw.ncpu)"
-  cmake --install .
-  cp qTox.dmg "$BIN_NAME"
+  cmake --build _build
+  ctest --output-on-failure --parallel "$(sysctl -n hw.ncpu)" --test-dir _build
+  cmake --install _build
+  cp _build/qTox.dmg "$BIN_NAME"
 }
 
 check() {

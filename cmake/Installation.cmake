@@ -21,9 +21,8 @@ if(APPLE)
 
   install(CODE "
   message(STATUS \"Creating app bundle\")
+  execute_process(COMMAND ln -sf /opt/homebrew/lib ${CMAKE_BINARY_DIR}/lib)
   execute_process(COMMAND ${MACDEPLOYQT_PATH}/macdeployqt ${BUNDLE_PATH} -no-strip)
-  message(STATUS \"Updating library paths\")
-  execute_process(COMMAND ${CMAKE_SOURCE_DIR}/macos/macfixrpath ${BUNDLE_PATH})
   " COMPONENT Runtime
   )
 
@@ -36,7 +35,7 @@ if(APPLE)
   " COMPONENT Runtime
   )
 else()
-  include( GNUInstallDirs )
+  include(GNUInstallDirs)
   # follow the xdg-desktop specification
   install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}" LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}")
   install(FILES "res/io.github.qtox.qTox.appdata.xml" DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/metainfo")
@@ -62,5 +61,4 @@ else()
     set(SVG_DEST "${SVG_SRC}")
   endif()
   install(FILES "${SVG_DEST}" DESTINATION "share/icons/hicolor/scalable/apps")
-
 endif()
