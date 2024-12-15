@@ -580,7 +580,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Copy Debug Log</source>
-        <translation>Копировать журнал отладки</translation>
+        <translation>Скопировать журнал отладки</translation>
     </message>
     <message>
         <source>Enable LAN discovery</source>
@@ -685,7 +685,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Copy</source>
-        <translation>Копировать</translation>
+        <translation>Скопировать</translation>
     </message>
     <message>
         <source>You&apos;re trying to send a sequential file, which is not going to work!</source>
@@ -1339,7 +1339,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Copy link address</source>
-        <translation>Копировать адрес ссылки</translation>
+        <translation>Скопировать адрес ссылки</translation>
     </message>
     <message>
         <source>Confirmation</source>
@@ -1390,7 +1390,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Copy image</source>
-        <translation>Копировать изображение</translation>
+        <translation>Скопировать изображение</translation>
     </message>
     <message>
         <source>Profile</source>
