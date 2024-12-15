@@ -190,7 +190,7 @@ jobs:
         version: [6.2.4, 6.8.1]
         exclude:
           - arch: ${{ github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'packaging') && 'armeabi-v7a' }}
-          - build_type: ${{ github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'packaging') && 'Debug' }}
+          - build_type: ${{ (github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'packaging') || contains(github.ref, 'refs/tags/v')) && 'Debug' }}
           - version: ${{ github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'packaging') && '6.2.4' }}
     steps:
       - name: Compute values for remaining steps
@@ -223,7 +223,7 @@ jobs:
           name: qTox-${{ github.sha }}-${{ matrix.arch }}-${{ steps.computed.outputs.artifact_type }}${{ steps.computed.outputs.suffix }}.apk
           path: ${{ steps.computed.outputs.built_apk }}
       - name: Get tag name for Android release file name
-        if: contains(github.ref, 'refs/tags/v') && matrix.build_type == 'Release'
+        if: contains(github.ref, 'refs/tags/v')
         id: get_version
         run: |
           VERSION="$(echo $GITHUB_REF | cut -d / -f 3)"
@@ -234,7 +234,7 @@ jobs:
           cp "${{ steps.computed.outputs.built_apk }}" "${{ steps.get_version.outputs.release_apk }}"
           sha256sum "${{ steps.get_version.outputs.release_apk }}" > "${{ steps.get_version.outputs.release_apk }}.sha256"
       - name: Upload to versioned release
-        if: contains(github.ref, 'refs/tags/v') && matrix.build_type == 'Release'
+        if: contains(github.ref, 'refs/tags/v')
         uses: ncipollo/release-action@v1
         with:
           allowUpdates: true
@@ -421,7 +421,7 @@ jobs:
         build_type: [Debug, Release]
         exclude:
           - arch: ${{ github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'packaging') && 'i686' }}
-          - build_type: ${{ github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'packaging') && 'Debug' }}
+          - build_type: ${{ (github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'packaging') || contains(github.ref, 'refs/tags/v')) && 'Debug' }}
     steps:
       - uses: actions/checkout@v4
       - name: Cache compiler output
@@ -445,12 +445,12 @@ jobs:
           name: qtox-${{ matrix.arch }}-${{ matrix.build_type }}.zip
           path: install-prefix/qtox-${{ matrix.arch }}-${{ matrix.build_type }}.zip
       - name: Rename exe for release upload
-        if: contains(github.ref, 'refs/tags/v') && matrix.build_type == 'release'
+        if: contains(github.ref, 'refs/tags/v')
         run: |
           cp package-prefix/setup-qtox.exe setup-qtox-${{ matrix.arch }}-release.exe
           sha256sum setup-qtox-${{ matrix.arch }}-release.exe > setup-qtox-${{ matrix.arch }}-release.exe.sha256
       - name: Upload to versioned release
-        if: contains(github.ref, 'refs/tags/v') && matrix.build_type == 'release'
+        if: contains(github.ref, 'refs/tags/v')
         uses: ncipollo/release-action@v1
         with:
           allowUpdates: true
