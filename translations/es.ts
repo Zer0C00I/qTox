@@ -2920,11 +2920,11 @@ Este ID incluye el código NoSpam (en azul), y la suma de comprobación (en gris
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation>Si está desactivada, utilice las notificaciones básicas de la bandeja del sistema. De lo contrario, intente utilizar el backend de notificaciones de su entorno de escritorio. Desactívalo si observas problemas con las notificaciones del escritorio.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilizar el backend de notificación específico del sistema si está disponible</translation>
     </message>
 </context>
 <context>
