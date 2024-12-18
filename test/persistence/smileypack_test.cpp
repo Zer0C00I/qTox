@@ -32,8 +32,6 @@ QString MockSettings::getSmileyPack() const
 class TestSmileyPack : public QObject
 {
     Q_OBJECT
-public:
-    TestSmileyPack();
 
 private slots:
     void testSmilifySingleCharEmoji();
@@ -42,20 +40,8 @@ private slots:
 
 private:
     std::unique_ptr<QGuiApplication> app;
-    std::unique_ptr<MockSettings> settings;
+    std::unique_ptr<MockSettings> settings = std::make_unique<MockSettings>();
 };
-
-TestSmileyPack::TestSmileyPack()
-{
-    static char arg1[]{"QToxSmileyPackTestApp"};
-    static char arg2[]{"-platform"};
-    static char arg3[]{"offscreen"};
-    static char* qtTestAppArgv[] = {arg1, arg2, arg3};
-    static int qtTestAppArgc = 3;
-
-    app = std::unique_ptr<QGuiApplication>(new QGuiApplication(qtTestAppArgc, qtTestAppArgv));
-    settings = std::unique_ptr<MockSettings>(new MockSettings());
-}
 
 /**
  * @brief Test that single-character emojis (non-ascii) are correctly smilified
@@ -115,5 +101,5 @@ void TestSmileyPack::testSmilifyAsciiEmoticon()
 }
 
 
-QTEST_GUILESS_MAIN(TestSmileyPack)
+QTEST_MAIN(TestSmileyPack)
 #include "smileypack_test.moc"

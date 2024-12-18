@@ -2,13 +2,14 @@
   "version": 3,
   "configurePresets": [
     {
-      "name": "static",
+      "name": "static-release",
       "binaryDir": "${sourceDir}/_build-static",
       "generator": "Ninja",
       "environment": {
         "PKG_CONFIG_PATH": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/pkgconfig"
       },
       "cacheVariables": {
+        "UBSAN": true,
         "SPELL_CHECK": true,
         "STRICT_OPTIONS": true,
         "UPDATE_CHECK": true,
@@ -16,7 +17,29 @@
         "CMAKE_COMPILE_WARNING_AS_ERROR": true,
         "CMAKE_EXPORT_COMPILE_COMMANDS": true,
         "CMAKE_PREFIX_PATH": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/cmake",
-        "CMAKE_OSX_DEPLOYMENT_TARGET": "14"
+        "CMAKE_OSX_DEPLOYMENT_TARGET": "14",
+        "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/qt/lib/cmake/Qt6/qt.toolchain.cmake"
+      }
+    },
+    {
+      "name": "static-asan",
+      "binaryDir": "${sourceDir}/_build-static",
+      "generator": "Ninja",
+      "environment": {
+        "PKG_CONFIG_PATH": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/pkgconfig"
+      },
+      "cacheVariables": {
+        "ASAN": true,
+        "UBSAN": true,
+        "SPELL_CHECK": true,
+        "STRICT_OPTIONS": true,
+        "UPDATE_CHECK": true,
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_COMPILE_WARNING_AS_ERROR": true,
+        "CMAKE_EXPORT_COMPILE_COMMANDS": true,
+        "CMAKE_PREFIX_PATH": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/cmake",
+        "CMAKE_OSX_DEPLOYMENT_TARGET": "14",
+        "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/qt/lib/cmake/Qt6/qt.toolchain.cmake"
       }
     },
     {

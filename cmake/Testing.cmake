@@ -18,9 +18,16 @@ function(auto_test subsystem module extra_res extra_libs)
     ${CHECK_LIBRARIES}
     Qt6::Test
     ${extra_libs})
+  if(QT_FEATURE_static)
+    target_link_libraries(test_${module}
+      Qt6::QOffscreenIntegrationPlugin)
+  endif()
   add_test(
     NAME test_${module}
     COMMAND ${TEST_CROSSCOMPILING_EMULATOR} test_${module})
+  # don't require a display server for GUI tests
+  set_tests_properties(test_${module} PROPERTIES
+    ENVIRONMENT "QT_QPA_PLATFORM=offscreen")
 endfunction()
 
 add_subdirectory(test/mock)

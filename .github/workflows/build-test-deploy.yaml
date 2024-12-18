@@ -334,21 +334,38 @@ jobs:
         with:
           path: ".cache/ccache"
           key: ${{ github.job }}-${{ matrix.arch }}-ccache
+      - name: Cache dependencies (except/requires Qt)
+        id: cache-deps
+        uses: actions/cache@v4
+        with:
+          path: |
+            .ci-scripts/dockerfiles/local-deps/bin
+            .ci-scripts/dockerfiles/local-deps/include
+            .ci-scripts/dockerfiles/local-deps/lib
+            .ci-scripts/dockerfiles/local-deps/share
+          key: ${{ runner.os }}-${{ matrix.arch }}-local-deps
+      - name: Cache dependencies (only Qt)
+        id: cache-qt
+        uses: actions/cache@v4
+        with:
+          path: |
+            .ci-scripts/dockerfiles/local-deps/qt
+          key: ${{ runner.os }}-${{ matrix.arch }}-qt
       - name: Set up ccache
         run: brew install ccache && ccache --set-config=max_size=200M --set-config=cache_dir="$PWD/.cache/ccache" && ccache --show-config
       - name: Fetch build scripts
         run: git clone --depth=1 https://github.com/TokTok/dockerfiles ".ci-scripts/dockerfiles"
       - name: Homebrew dependencies to build dependencies
         run: brew bundle --file ./macos/Brewfile-DepBuildDeps
-      - name: Cache dependencies
-        id: cache-deps
-        uses: actions/cache@v4
-        with:
-          path: ".ci-scripts/dockerfiles/local-deps"
-          key: ${{ runner.os }}-${{ matrix.arch }}-local-deps
-      - name: Build dependencies
+      - name: Build dependencies (except Qt)
         if: steps.cache-deps.outputs.cache-hit != 'true'
         run: ./.ci-scripts/build-macos-deps.sh ${{ matrix.arch }}
+      - name: Build dependencies (only Qt)
+        if: steps.cache-qt.outputs.cache-hit != 'true'
+        run: ./.ci-scripts/build-macos-qt.sh ${{ matrix.arch }}
+      - name: Build dependencies (requires Qt)
+        if: steps.cache-deps.outputs.cache-hit != 'true'
+        run: ./.ci-scripts/build-macos-qtdeps.sh ${{ matrix.arch }}
       - name: Build qTox
         run: ./.ci-scripts/build-qtox-macos.sh dist ${{ matrix.arch }}
       - name: Upload dmg
