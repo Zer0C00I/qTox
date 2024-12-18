@@ -559,11 +559,6 @@ void ChatForm::dropEvent(QDropEvent* ev)
     }
 }
 
-void ChatForm::clearChatArea()
-{
-    GenericChatForm::clearChatArea(/* confirm = */ false, /* inform = */ true);
-}
-
 void ChatForm::onScreenshotClicked()
 {
     doScreenshot();

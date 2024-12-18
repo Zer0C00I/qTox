@@ -1226,8 +1226,9 @@ void Widget::addFriend(uint32_t friendId, const ToxPk& friendPk)
 
     connect(widget, &FriendWidget::newWindowOpened, this, &Widget::openNewDialog);
     connect(widget, &FriendWidget::chatroomWidgetClicked, this, &Widget::onChatroomWidgetClicked);
-    connect(widget, &FriendWidget::chatroomWidgetClicked, friendForm, &ChatForm::focusInput);
-    connect(widget, &FriendWidget::friendHistoryRemoved, friendForm, &ChatForm::clearChatArea);
+    connect(widget, &FriendWidget::chatroomWidgetClicked, friendForm, &GenericChatForm::focusInput);
+    connect(widget, &FriendWidget::friendHistoryRemoved, friendForm,
+            qOverload<>(&GenericChatForm::clearChatArea));
     connect(widget, &FriendWidget::copyFriendIdToClipboard, this, &Widget::copyFriendIdToClipboard);
     connect(widget, &FriendWidget::contextMenuCalled, widget, &FriendWidget::onContextMenuCalled);
     connect(widget, &FriendWidget::removeFriend, this, qOverload<const ToxPk&>(&Widget::removeFriend));
@@ -1484,6 +1485,7 @@ void Widget::addConferenceDialog(const Conference* conference, ContentDialog* di
     const ConferenceId& conferenceId = conference->getPersistentId();
     ContentDialog* conferenceDialog = contentDialogManager->getConferenceDialog(conferenceId);
     bool separated = settings.getSeparateWindow();
+    Q_ASSERT(conferenceWidgets.contains(conferenceId));
     ConferenceWidget* widget = conferenceWidgets[conferenceId];
     bool isCurrentWindow = activeChatroomWidget == widget;
     if (!conferenceDialog && !separated && isCurrentWindow) {
@@ -1494,14 +1496,14 @@ void Widget::addConferenceDialog(const Conference* conference, ContentDialog* di
     auto chatroom = conferenceRooms[conferenceId];
     auto conferenceWidget = contentDialogManager->addConferenceToDialog(dialog, chatroom, chatForm);
 
-    auto removeConference = QOverload<const ConferenceId&>::of(&Widget::removeConference);
+    auto removeConference = qOverload<const ConferenceId&>(&Widget::removeConference);
     connect(conferenceWidget, &ConferenceWidget::removeConference, this, removeConference);
     connect(conferenceWidget, &ConferenceWidget::chatroomWidgetClicked, chatForm,
-            &ConferenceForm::focusInput);
+            &GenericChatForm::focusInput);
     connect(conferenceWidget, &ConferenceWidget::middleMouseClicked, dialog,
             [=]() { dialog->removeConference(conferenceId); });
     connect(conferenceWidget, &ConferenceWidget::chatroomWidgetClicked, chatForm,
-            &ChatForm::focusInput);
+            &GenericChatForm::focusInput);
     connect(conferenceWidget, &ConferenceWidget::newWindowOpened, this, &Widget::openNewDialog);
 
     // Signal transmission from the created `conferenceWidget` (which shown in
@@ -2162,7 +2164,7 @@ Conference* Widget::createConference(uint32_t conferencenumber, const Conference
     connect(widget, &ConferenceWidget::removeConference, this, widgetRemoveConference);
     connect(widget, &ConferenceWidget::middleMouseClicked, this,
             [this, conferenceId]() { removeConference(conferenceId); });
-    connect(widget, &ConferenceWidget::chatroomWidgetClicked, form, &ChatForm::focusInput);
+    connect(widget, &ConferenceWidget::chatroomWidgetClicked, form, &GenericChatForm::focusInput);
     connect(newconference, &Conference::titleChangedByUser, this, &Widget::titleChangedByUser);
     connect(core, &Core::usernameSet, newconference, &Conference::setSelfName);
 

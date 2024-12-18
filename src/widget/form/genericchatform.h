@@ -79,6 +79,7 @@ signals:
     void messageInserted();
 
 public slots:
+    void clearChatArea();
     void focusInput();
     void onChatMessageFontChanged(const QFont& font);
     void setColorizedNames(bool enable);
@@ -92,7 +93,6 @@ protected slots:
     void onEmoteButtonClicked();
     void onEmoteInsertRequested(QString str);
     void onCopyLogClicked();
-    void clearChatArea();
     void clearChatArea(bool confirm, bool inform);
     void onSelectAllClicked();
     void showFileMenu();

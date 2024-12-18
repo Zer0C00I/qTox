@@ -38,17 +38,18 @@ public:
 
     int row() const
     {
-        if (parent == nullptr)
+        if (parent == nullptr) {
             return 0;
+        }
         const auto it = std::find_if(parent->children.cbegin(), parent->children.cend(),
                                      [this](const std::unique_ptr<TreeItem>& treeItem) {
                                          return treeItem.get() == this;
                                      });
 
-        if (it != parent->children.cend())
+        if (it != parent->children.cend()) {
             return std::distance(parent->children.cbegin(), it);
-        Q_ASSERT(false); // should not happen
-        return -1;
+        }
+        qFatal("Parent tree item does not contain this item");
     }
 
     TreeItem* parentItem()
