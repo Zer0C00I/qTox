@@ -5,12 +5,11 @@
 
 #pragma once
 
-#include "chatroom.h"
-
 #include <QObject>
 #include <QString>
 #include <QVector>
 
+class Chat;
 class Core;
 class IDialogsManager;
 class Friend;
@@ -30,14 +29,14 @@ struct CircleToDisplay
     int circleId;
 };
 
-class FriendChatroom : public QObject, public Chatroom
+class FriendChatroom final : public QObject
 {
     Q_OBJECT
 public:
     FriendChatroom(Friend* frnd_, IDialogsManager* dialogsManager_, Core& core_,
                    Settings& settings_, ConferenceList& conferenceList);
 
-    Chat* getChat() override;
+    Chat* getChat();
 
 public slots:
 

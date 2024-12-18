@@ -303,8 +303,6 @@ set(${PROJECT_NAME}_SOURCES
     src/model/chathistory.h
     src/model/chatlogitem.cpp
     src/model/chatlogitem.h
-    src/model/chatroom/chatroom.cpp
-    src/model/chatroom/chatroom.h
     src/model/chatroom/friendchatroom.cpp
     src/model/chatroom/friendchatroom.h
     src/model/chatroom/conferenceroom.cpp

@@ -5,24 +5,23 @@
 
 #pragma once
 
-#include "chatroom.h"
-
 #include <QObject>
 
+class Chat;
 class Core;
 class IDialogsManager;
 class Conference;
 class ToxPk;
 class FriendList;
 
-class ConferenceRoom : public QObject, public Chatroom
+class ConferenceRoom final : public QObject
 {
     Q_OBJECT
 public:
     ConferenceRoom(Conference* conference_, IDialogsManager* dialogsManager_, Core& core_,
                    FriendList& friendList);
 
-    Chat* getChat() override;
+    Chat* getChat();
 
     Conference* getConference();
 
