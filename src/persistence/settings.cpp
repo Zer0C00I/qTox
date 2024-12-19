@@ -6,20 +6,17 @@
 
 #include "settings.h"
 #include "src/core/core.h"
-#include "src/core/corefile.h"
 #include "src/nexus.h"
 #include "src/persistence/globalsettingsupgrader.h"
 #include "src/persistence/personalsettingsupgrader.h"
 #include "src/persistence/profile.h"
 #include "src/persistence/profilelocker.h"
 #include "src/persistence/settingsserializer.h"
-#include "src/persistence/smileypack.h"
-#include "src/widget/style.h"
-#include "src/widget/tool/imessageboxmanager.h"
 #ifdef QTOX_PLATFORM_EXT
 #include "src/platform/autorun.h"
 #endif
-#include "src/ipc.h"
+#include "src/widget/style.h"
+#include "src/widget/tool/imessageboxmanager.h"
 
 #include <QApplication>
 #include <QCryptographicHash>
@@ -33,6 +30,7 @@
 #include <QNetworkProxy>
 #include <QStandardPaths>
 #include <QStyleFactory>
+#include <QStyleHints>
 #include <QThread>
 #include <QtCore/QCommandLineParser>
 
@@ -185,6 +183,16 @@ void Settings::loadGlobal()
             smileyPack = DEFAULT_SMILEYS;
         }
 
+        const Style::MainTheme systemTheme =
+#if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
+            QGuiApplication::styleHints()->colorScheme() == Qt::ColorScheme::Dark
+#else
+            QGuiApplication::palette().color(QPalette::Window).value() < 128
+#endif
+                ? Style::MainTheme::Dark
+                : Style::MainTheme::Light;
+        qDebug() << "System theme:" << systemTheme;
+
         emojiFontPointSize = s.value("emojiFontPointSize", 24).toInt();
         firstColumnHandlePos = s.value("firstColumnHandlePos", 50).toInt();
         secondColumnHandlePosFromRight = s.value("secondColumnHandlePosFromRight", 50).toInt();
@@ -192,12 +200,12 @@ void Settings::loadGlobal()
         dateFormat = s.value("dateFormat", "yyyy-MM-dd").toString();
         minimizeOnClose = s.value("minimizeOnClose", false).toBool();
         minimizeToTray = s.value("minimizeToTray", false).toBool();
-        lightTrayIcon = s.value("lightTrayIcon", false).toBool();
+        lightTrayIcon = s.value("lightTrayIcon", systemTheme == Style::MainTheme::Dark).toBool();
         useEmoticons = s.value("useEmoticons", true).toBool();
         statusChangeNotificationEnabled = s.value("statusChangeNotificationEnabled", false).toBool();
         showConferenceJoinLeaveMessages = s.value("showConferenceJoinLeaveMessages", false).toBool();
         spellCheckingEnabled = s.value("spellCheckingEnabled", true).toBool();
-        themeColor = s.value("themeColor", 0).toInt();
+        themeColor = s.value("themeColor", Style::defaultThemeColor(systemTheme)).toInt();
         style = s.value("style", "").toString();
         if (style == "") // Default to Fusion if available, otherwise no style
         {

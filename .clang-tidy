@@ -1,5 +1,6 @@
-Checks: '
-	-*,
-	readability-named-parameter,
-	readability-inconsistent-declaration-parameter-name'
+Checks: "-*
+, modernize-use-emplace
+, readability-named-parameter
+, readability-inconsistent-declaration-parameter-name
+"
 WarningsAsErrors: "*"

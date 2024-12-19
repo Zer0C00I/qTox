@@ -57,6 +57,9 @@ public:
         Light,
         Dark
     };
+    Q_ENUM(MainTheme)
+
+    static int defaultThemeColor(MainTheme theme);
 
     static QStringList getThemeColorNames();
     static QString getThemeFolder(int themeColor);

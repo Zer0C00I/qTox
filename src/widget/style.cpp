@@ -10,6 +10,7 @@
 #include <QDir>
 #include <QFile>
 #include <QFontInfo>
+#include <QGuiApplication>
 #include <QMap>
 #include <QPainter>
 #include <QRegularExpression>
@@ -17,6 +18,7 @@
 #include <QStandardPaths>
 #include <QStringBuilder>
 #include <QStyle>
+#include <QStyleHints>
 #include <QSvgRenderer>
 #include <QWidget>
 
@@ -110,6 +112,16 @@ const QMap<ColorPalette, QString> aliasColors = {
     {ColorPalette::SelectText, "selectText"},
 };
 } // namespace
+
+int Style::defaultThemeColor(MainTheme theme)
+{
+    for (int i = 0; i < themeNameColors.size(); ++i) {
+        if (themeNameColors[i].type == theme) {
+            return i;
+        }
+    }
+    return 0;
+}
 
 QStringList Style::getThemeColorNames()
 {
@@ -279,7 +291,7 @@ const QString Style::resolve(const QString& filename, int themeColor, const QFon
         qss.replace(QRegularExpression(key % QLatin1String{"\\b"}), dictTheme[key]);
     }
 
-    // @getImagePath() function
+    // "@getImagePath()" function
     const QRegularExpression re{QStringLiteral(R"(@getImagePath\([^)\s]*\))")};
     QRegularExpressionMatchIterator i = re.globalMatch(qss);
 
@@ -329,10 +341,24 @@ void Style::setThemeColor(int themeColor, int color)
     dictColor.clear();
     initPalette(themeColor);
     initDictColor();
-    if (color < 0 || color >= themeNameColors.size())
+    if (color < 0 || color >= themeNameColors.size()) {
         setThemeColor(QColor());
-    else
-        setThemeColor(themeNameColors[color].color);
+    } else {
+        const auto& themeName = themeNameColors[color];
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 8, 0)
+        switch (themeName.type) {
+        case MainTheme::Light:
+            QGuiApplication::styleHints()->setColorScheme(Qt::ColorScheme::Light);
+            break;
+        case MainTheme::Dark:
+            QGuiApplication::styleHints()->setColorScheme(Qt::ColorScheme::Dark);
+            break;
+        }
+#endif
+
+        setThemeColor(themeName.color);
+    }
 }
 
 /**
