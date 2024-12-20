@@ -153,6 +153,10 @@ ToxFriendCall::~ToxFriendCall()
 void ToxFriendCall::onAudioSourceInvalidated()
 {
     auto newSrc = audio.makeSource();
+    if (newSrc == nullptr) {
+        qWarning() << "Failed to create a new audio source";
+        return;
+    }
     connect(newSrc.get(), &IAudioSource::frameAvailable, this,
             [this](const int16_t* pcm, size_t samples, uint8_t chans, uint32_t rate) {
                 av->sendCallAudio(friendId, pcm, samples, chans, rate);
@@ -197,6 +201,11 @@ ToxConferenceCall::ToxConferenceCall(const Conference& conference_, CoreAV& av_,
     : ToxCall(false, av_, audio_)
     , conference{conference_}
 {
+    if (audioSource == nullptr) {
+        qWarning() << "Created conference call without working audio source";
+        return;
+    }
+
     // register audio
     connect(audioSource.get(), &IAudioSource::frameAvailable, this,
             [this](const int16_t* pcm, size_t samples, uint8_t chans, uint32_t rate) {
@@ -220,7 +229,11 @@ ToxConferenceCall::~ToxConferenceCall()
 void ToxConferenceCall::onAudioSourceInvalidated()
 {
     auto newSrc = audio.makeSource();
-    connect(audioSource.get(), &IAudioSource::frameAvailable, this,
+    if (newSrc == nullptr) {
+        qWarning() << "Failed to create a new audio source";
+        return;
+    }
+    connect(newSrc.get(), &IAudioSource::frameAvailable, this,
             [this](const int16_t* pcm, size_t samples, uint8_t chans, uint32_t rate) {
                 if (conference.getPeersCount() <= 1) {
                     return;
