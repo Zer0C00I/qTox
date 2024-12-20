@@ -9,21 +9,9 @@
 
 #include <QDebug>
 #include <QLoggingCategory>
-#include <QRegularExpression>
-#include <QString>
-#include <QStringBuilder>
 
 namespace ToxLogger {
 namespace {
-
-QByteArray cleanPath(const char* file)
-{
-    // for privacy, make the path relative to the c-toxcore source directory
-    const QRegularExpression pathCleaner(QLatin1String{"[\\s|\\S]*c-toxcore."});
-    QByteArray cleanedPath = QString::fromUtf8(file).remove(pathCleaner).toUtf8();
-    cleanedPath.append('\0');
-    return cleanedPath;
-}
 
 Q_LOGGING_CATEGORY(toxcore, "tox.core")
 
@@ -38,22 +26,21 @@ void onLogMessage(Tox* tox, Tox_Log_Level level, const char* file, uint32_t line
 {
     std::ignore = tox;
     std::ignore = user_data;
-    const QByteArray cleanedPath = cleanPath(file);
 
     switch (level) {
     case TOX_LOG_LEVEL_TRACE:
         return; // trace level generates too much noise to enable by default
     case TOX_LOG_LEVEL_DEBUG:
-        QMessageLogger(cleanedPath.data(), line, func).debug(toxcore) << message;
+        QMessageLogger(file, line, func).debug(toxcore) << message;
         break;
     case TOX_LOG_LEVEL_INFO:
-        QMessageLogger(cleanedPath.data(), line, func).info(toxcore) << message;
+        QMessageLogger(file, line, func).info(toxcore) << message;
         break;
     case TOX_LOG_LEVEL_WARNING:
-        QMessageLogger(cleanedPath.data(), line, func).warning(toxcore) << message;
+        QMessageLogger(file, line, func).warning(toxcore) << message;
         break;
     case TOX_LOG_LEVEL_ERROR:
-        QMessageLogger(cleanedPath.data(), line, func).critical(toxcore) << message;
+        QMessageLogger(file, line, func).critical(toxcore) << message;
         break;
     }
 }
