@@ -349,7 +349,7 @@ bool RawDatabaseImpl::execNow(const QString& statement)
  */
 bool RawDatabaseImpl::execNow(RawDatabase::Query statement)
 {
-    QList<Query> statements;
+    std::vector<Query> statements;
     statements.push_back(std::move(statement));
     return execNow(std::move(statements));
 }
@@ -359,7 +359,7 @@ bool RawDatabaseImpl::execNow(RawDatabase::Query statement)
  * @param statements List of statements to execute.
  * @return Whether the transaction was successful.
  */
-bool RawDatabaseImpl::execNow(QList<RawDatabase::Query> statements)
+bool RawDatabaseImpl::execNow(std::vector<RawDatabase::Query> statements)
 {
     if (!sqlite) {
         qWarning() << "Trying to exec, but the database is not open";
@@ -398,12 +398,12 @@ void RawDatabaseImpl::execLater(const QString& statement)
 
 void RawDatabaseImpl::execLater(RawDatabase::Query statement)
 {
-    QList<Query> statements;
+    std::vector<Query> statements;
     statements.push_back(std::move(statement));
     execLater(std::move(statements));
 }
 
-void RawDatabaseImpl::execLater(QList<RawDatabase::Query> statements)
+void RawDatabaseImpl::execLater(std::vector<RawDatabase::Query> statements)
 {
     if (!sqlite) {
         qWarning() << "Trying to exec, but the database is not open";

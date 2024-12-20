@@ -18,6 +18,7 @@
 #include <queue>
 #include <atomic>
 #include <memory>
+#include <vector>
 
 /// The two following defines are required to use SQLCipher
 /// They are used by the sqlite3.h header
@@ -51,7 +52,7 @@ private:
      */
     struct Transaction
     {
-        QList<Query> queries;
+        std::vector<Query> queries;
         std::atomic_bool* success = nullptr;
         std::atomic_bool* done = nullptr;
     };
@@ -75,11 +76,11 @@ public:
 
     bool execNow(const QString& statement) override;
     bool execNow(Query statement) override;
-    bool execNow(QList<Query> statements) override;
+    bool execNow(std::vector<Query> statements) override;
 
     void execLater(const QString& statement) override;
     void execLater(Query statement) override;
-    void execLater(QList<Query> statements) override;
+    void execLater(std::vector<Query> statements) override;
 
     void sync() override;
 

@@ -12,6 +12,7 @@
 #include <QVector>
 
 #include <functional>
+#include <vector>
 
 struct sqlite3_stmt;
 
@@ -70,8 +71,8 @@ public:
         }
 
         Query() = default;
-        Query(const Query&) = default;
-        Query& operator=(const Query&) = default;
+        Query(const Query&) = delete;
+        Query& operator=(const Query&) = delete;
         Query(Query&&) = default;
         Query& operator=(Query&&) = default;
 
@@ -94,11 +95,11 @@ public:
 
     virtual bool execNow(const QString& statement) = 0;
     virtual bool execNow(Query statement) = 0;
-    virtual bool execNow(QList<Query> statements) = 0;
+    virtual bool execNow(std::vector<Query> statements) = 0;
 
     virtual void execLater(const QString& statement) = 0;
     virtual void execLater(Query statement) = 0;
-    virtual void execLater(QList<Query> statements) = 0;
+    virtual void execLater(std::vector<Query> statements) = 0;
 
     virtual void sync() = 0;
 
