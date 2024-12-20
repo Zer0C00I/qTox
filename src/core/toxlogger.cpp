@@ -8,6 +8,7 @@
 #include <tox/tox.h>
 
 #include <QDebug>
+#include <QLoggingCategory>
 #include <QRegularExpression>
 #include <QString>
 #include <QStringBuilder>
@@ -23,6 +24,8 @@ QByteArray cleanPath(const char* file)
     cleanedPath.append('\0');
     return cleanedPath;
 }
+
+Q_LOGGING_CATEGORY(toxcore, "tox.core")
 
 } // namespace
 
@@ -41,16 +44,16 @@ void onLogMessage(Tox* tox, Tox_Log_Level level, const char* file, uint32_t line
     case TOX_LOG_LEVEL_TRACE:
         return; // trace level generates too much noise to enable by default
     case TOX_LOG_LEVEL_DEBUG:
-        QMessageLogger(cleanedPath.data(), line, func).debug() << message;
+        QMessageLogger(cleanedPath.data(), line, func).debug(toxcore) << message;
         break;
     case TOX_LOG_LEVEL_INFO:
-        QMessageLogger(cleanedPath.data(), line, func).info() << message;
+        QMessageLogger(cleanedPath.data(), line, func).info(toxcore) << message;
         break;
     case TOX_LOG_LEVEL_WARNING:
-        QMessageLogger(cleanedPath.data(), line, func).warning() << message;
+        QMessageLogger(cleanedPath.data(), line, func).warning(toxcore) << message;
         break;
     case TOX_LOG_LEVEL_ERROR:
-        QMessageLogger(cleanedPath.data(), line, func).critical() << message;
+        QMessageLogger(cleanedPath.data(), line, func).critical(toxcore) << message;
         break;
     }
 }
