@@ -53,10 +53,6 @@
     </emoticon>
     <emoticon file="1f60b">
         <string>😋</string>
-        <string>:-P</string>
-        <string>:P</string>
-        <string>:-p</string>
-        <string>:p</string>
     </emoticon>
     <emoticon file="1f60c">
         <string>😌</string>
@@ -126,6 +122,10 @@
     </emoticon>
     <emoticon file="1f61b">
         <string>😛</string>
+        <string>:-P</string>
+        <string>:P</string>
+        <string>:-p</string>
+        <string>:p</string>
     </emoticon>
     <emoticon file="1f61c">
         <string>😜</string>
