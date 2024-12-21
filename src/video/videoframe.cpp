@@ -141,25 +141,20 @@ VideoFrame::VideoFrame(IDType sourceID_, AVFrame* sourceFrame, bool freeSourceFr
  */
 VideoFrame::~VideoFrame()
 {
-    // Release frame
-    frameLock.lockForWrite();
-
-    deleteFrameBuffer();
-
-    frameLock.unlock();
-
-    // Delete tracked reference
-    refsLock.lockForRead();
-
-    if (refsMap.count(sourceID) > 0) {
-        QMutex& sourceMutex = mutexMap[sourceID];
-
-        sourceMutex.lock();
-        refsMap[sourceID].erase(frameID);
-        sourceMutex.unlock();
+    {
+        // Release frame
+        QWriteLocker frameLockWriteLocker(&frameLock);
+        deleteFrameBuffer();
     }
 
-    refsLock.unlock();
+    // Delete tracked reference
+    QReadLocker refsLockReadLocker(&refsLock);
+
+    if (refsMap.count(sourceID) > 0) {
+        QMutexLocker<QMutex> sourceLocker(&mutexMap[sourceID]);
+
+        refsMap[sourceID].erase(frameID);
+    }
 }
 
 /**
@@ -172,11 +167,8 @@ VideoFrame::~VideoFrame()
  */
 bool VideoFrame::isValid()
 {
-    frameLock.lockForRead();
-    bool retValue = frameBuffer.size() > 0;
-    frameLock.unlock();
-
-    return retValue;
+    QReadLocker frameLockReadLocker(&frameLock);
+    return frameBuffer.size() > 0;
 }
 
 /**
@@ -225,19 +217,15 @@ std::shared_ptr<VideoFrame> VideoFrame::trackFrame()
  */
 void VideoFrame::untrackFrames(const VideoFrame::IDType& sourceID, bool releaseFrames)
 {
-    refsLock.lockForWrite();
+    QWriteLocker refsLockWriteLocker(&refsLock);
 
     if (refsMap.count(sourceID) == 0) {
         // No tracking reference exists for source, simply return
-        refsLock.unlock();
-
         return;
     }
 
     if (releaseFrames) {
-        QMutex& sourceMutex = mutexMap[sourceID];
-
-        sourceMutex.lock();
+        QMutexLocker<QMutex> sourceLocker(&mutexMap[sourceID]);
 
         for (auto& frameIterator : refsMap[sourceID]) {
             std::shared_ptr<VideoFrame> frame = frameIterator.second.lock();
@@ -246,16 +234,12 @@ void VideoFrame::untrackFrames(const VideoFrame::IDType& sourceID, bool releaseF
                 frame->releaseFrame();
             }
         }
-
-        sourceMutex.unlock();
     }
 
     refsMap[sourceID].clear();
 
     mutexMap.erase(sourceID);
     refsMap.erase(sourceID);
-
-    refsLock.unlock();
 }
 
 /**
@@ -263,11 +247,8 @@ void VideoFrame::untrackFrames(const VideoFrame::IDType& sourceID, bool releaseF
  */
 void VideoFrame::releaseFrame()
 {
-    frameLock.lockForWrite();
-
+    QWriteLocker frameLockWriteLocker(&frameLock);
     deleteFrameBuffer();
-
-    frameLock.unlock();
 }
 
 /**
@@ -289,16 +270,11 @@ const AVFrame* VideoFrame::getAVFrame(QSize frameSize, const int pixelFormat, co
         frameSize = sourceDimensions.size();
     }
 
-    // Since we are retrieving the AVFrame* directly, we merely need to pass the arguement through
-    const std::function<AVFrame*(AVFrame* const)> converter = [](AVFrame* const frame) {
+    // Returns nullptr case of invalid generation
+    return toGenericObject(frameSize, pixelFormat, requireAligned, [](AVFrame* const frame) {
+        // Since we are retrieving the AVFrame* directly, we merely need to pass the arguement through
         return frame;
-    };
-
-    // We need an explicit null pointer holding object to pass to toGenericObject()
-    AVFrame* nullPointer = nullptr;
-
-    // Returns std::nullptr case of invalid generation
-    return toGenericObject(frameSize, pixelFormat, requireAligned, converter, nullPointer);
+    });
 }
 
 /**
@@ -318,14 +294,14 @@ QImage VideoFrame::toQImage(QSize frameSize)
         frameSize = sourceDimensions.size();
     }
 
-    // Converter function (constructs QImage out of AVFrame*)
-    const std::function<QImage(AVFrame* const)> converter = [&](AVFrame* const frame) {
-        return QImage{*(frame->data), frameSize.width(), frameSize.height(), *(frame->linesize),
-                      QImage::Format_RGB888};
-    };
-
     // Returns an empty constructed QImage in case of invalid generation
-    return toGenericObject(frameSize, AV_PIX_FMT_RGB24, false, converter, QImage{});
+    return toGenericObject(frameSize, AV_PIX_FMT_RGB24, false, [frameSize](AVFrame* const frame) {
+        // Converter function (constructs QImage out of AVFrame*)
+        return QImage{
+            *frame->data,     frameSize.width(),     frameSize.height(),
+            *frame->linesize, QImage::Format_RGB888,
+        };
+    });
 }
 
 /**
@@ -345,17 +321,16 @@ ToxYUVFrame VideoFrame::toToxYUVFrame(QSize frameSize)
         frameSize = sourceDimensions.size();
     }
 
-    // Converter function (constructs ToxAVFrame out of AVFrame*)
-    const std::function<ToxYUVFrame(AVFrame* const)> converter = [&](AVFrame* const frame) {
-        ToxYUVFrame ret{static_cast<std::uint16_t>(frameSize.width()),
-                        static_cast<std::uint16_t>(frameSize.height()), frame->data[0],
-                        frame->data[1], frame->data[2]};
-
-        return ret;
-    };
-
-    return toGenericObject(frameSize, AV_PIX_FMT_YUV420P, true, converter,
-                           ToxYUVFrame{0, 0, nullptr, nullptr, nullptr});
+    return toGenericObject(frameSize, AV_PIX_FMT_YUV420P, true, [frameSize](AVFrame* const frame) {
+        // Converter function (constructs ToxAVFrame out of AVFrame*)
+        return ToxYUVFrame{
+            static_cast<std::uint16_t>(frameSize.width()),
+            static_cast<std::uint16_t>(frameSize.height()),
+            frame->data[0],
+            frame->data[1],
+            frame->data[2],
+        };
+    });
 }
 
 /**
@@ -697,42 +672,38 @@ void VideoFrame::deleteFrameBuffer()
  * same generation pattern (where XObject is some existing type like QImage).
  *
  * In order to create such a type, a object constructor function is required that takes the
- * generated AVFrame object and creates type T out of it. This function additionally requires
- * a null object of type T that represents an invalid/null object for when the generation
- * process fails (e.g. when the VideoFrame is no longer valid).
+ * generated AVFrame object and creates type T out of it. This function returns a
+ * default-constructed object when the generation process fails (e.g. when the VideoFrame is
+ * no longer valid).
  *
  * @param dimensions the dimensions of the frame, must be valid.
  * @param pixelFormat the pixel format of the frame.
  * @param requireAligned true if the generated frame needs to be frame aligned, false otherwise.
- * @param objectConstructor a std::function that takes the generated AVFrame and converts it
+ * @param objectConstructor a function that takes the generated AVFrame and converts it
  * to an object of type T.
- * @param nullObject an object of type T that represents the null/invalid object to be used
- * when the generation process fails.
  */
-template <typename T>
-T VideoFrame::toGenericObject(const QSize& dimensions, const int pixelFormat, const bool requireAligned,
-                              const std::function<T(AVFrame* const)>& objectConstructor,
-                              const T& nullObject)
+template <typename F>
+std::invoke_result_t<F, AVFrame* const>
+VideoFrame::toGenericObject(const QSize& dimensions, int pixelFormat, bool requireAligned,
+                            const F& objectConstructor)
 {
-    frameLock.lockForRead();
+    AVFrame* frame;
+    {
+        QReadLocker frameReadLock{&frameLock};
 
-    // We return nullObject if the VideoFrame is no longer valid
-    if (frameBuffer.size() == 0) {
-        frameLock.unlock();
-        return nullObject;
+        // We return empty if the VideoFrame is no longer valid
+        if (frameBuffer.size() == 0) {
+            return {};
+        }
+
+        frame = retrieveAVFrame(dimensions, pixelFormat, requireAligned);
+        if (frame != nullptr) {
+            return objectConstructor(frame);
+        }
+
+        // VideoFrame does not contain an AVFrame to spec, generate one here
+        frame = generateAVFrame(dimensions, pixelFormat, requireAligned);
     }
-
-    AVFrame* frame = retrieveAVFrame(dimensions, static_cast<int>(pixelFormat), requireAligned);
-
-    if (frame) {
-        T ret = objectConstructor(frame);
-
-        frameLock.unlock();
-        return ret;
-    }
-
-    // VideoFrame does not contain an AVFrame to spec, generate one here
-    frame = generateAVFrame(dimensions, static_cast<int>(pixelFormat), requireAligned);
 
     /*
      * We need to "upgrade" the lock to a write lock so we can update our frameBuffer map.
@@ -741,25 +712,11 @@ T VideoFrame::toGenericObject(const QSize& dimensions, const int pixelFormat, co
      * likely writing to somewhere else. Worst-case scenario, we merely perform the generation
      * process twice, and discard the old result.
      */
-    frameLock.unlock();
-    frameLock.lockForWrite();
-
-    frame = storeAVFrame(frame, dimensions, static_cast<int>(pixelFormat));
-
-    T ret = objectConstructor(frame);
-
-    frameLock.unlock();
-    return ret;
+    {
+        QWriteLocker frameWriteLock{&frameLock};
+        return objectConstructor(storeAVFrame(frame, dimensions, pixelFormat));
+    }
 }
-
-// Explicitly specialize VideoFrame::toGenericObject() function
-template QImage VideoFrame::toGenericObject<QImage>(
-    const QSize& dimensions, const int pixelFormat, const bool requireAligned,
-    const std::function<QImage(AVFrame* const)>& objectConstructor, const QImage& nullObject);
-template ToxYUVFrame VideoFrame::toGenericObject<ToxYUVFrame>(
-    const QSize& dimensions, const int pixelFormat, const bool requireAligned,
-    const std::function<ToxYUVFrame(AVFrame* const)>& objectConstructor,
-    const ToxYUVFrame& nullObject);
 
 /**
  * @brief Returns whether the given ToxYUVFrame represents a valid frame or not.

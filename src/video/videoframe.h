@@ -120,9 +120,10 @@ private:
 
     void deleteFrameBuffer();
 
-    template <typename T>
-    T toGenericObject(const QSize& dimensions, const int pixelFormat, const bool requireAligned,
-                      const std::function<T(AVFrame* const)>& objectConstructor, const T& nullObject);
+    template <typename F>
+    std::invoke_result_t<F, AVFrame* const> toGenericObject(const QSize& dimensions,
+                                                            int pixelFormat, bool requireAligned,
+                                                            const F& objectConstructor);
 
 private:
     // ID
