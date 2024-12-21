@@ -162,7 +162,7 @@ which may lead to problems with video calls.</source>
         <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
-        <translation>Список всех известных проблем вы можете найти на нашем %1 на Github. Если вы обнаружите ошибку или уязвимость в безопасности qTox, пожалуйста сообщите о них согласно указаниям в нашей статье %2 вики.</translation>
+        <translation>Список всех известных проблем находится на нашем %1 на Github. Если вы обнаружили ошибку или уязвимость в qTox, пожалуйста, сообщите о них согласно инструкции в нашей статье на вики %2.</translation>
     </message>
     <message>
         <source>Click here to report a bug.</source>
@@ -176,7 +176,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>bug-tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
-        <translation>баг-трекер</translation>
+        <translation>баг-трекере</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
@@ -186,7 +186,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
-        <translation>соавторы</translation>
+        <translation>соавторов</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
@@ -407,7 +407,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>We couldn&apos;t find any contacts to import in this file!</source>
-        <translation>Не удалось найти в этом файле какие-либо контакты для импорта!</translation>
+        <translation>Не удалось найти в этом файле какие-либо контакты для импортирования!</translation>
     </message>
     <message>
         <source>Tox ID</source>
@@ -435,7 +435,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
-        <translation>Импортировать список контактов, один Tox ID в строке</translation>
+        <translation>Импортировать список контактов, один Tox ID на строку</translation>
     </message>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
@@ -447,7 +447,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Import contacts</source>
-        <translation>Импорт списка контактов</translation>
+        <translation>Импортирование контактов</translation>
     </message>
     <message>
         <source>Tox ID, 76 hexadecimal characters</source>
@@ -537,16 +537,16 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
-        <translation>Включить IPv6 (реком.)</translation>
+        <translation>Включить IPv6 (рекомендуется)</translation>
     </message>
     <message>
         <source>Enable UDP (recommended)</source>
         <extracomment>Text on checkbox to disable UDP</extracomment>
-        <translation>Включить UDP (реком.)</translation>
+        <translation>Включить UDP (рекомендуется)</translation>
     </message>
     <message>
         <source>Proxy type:</source>
-        <translation>Прокси:</translation>
+        <translation>Тип прокси:</translation>
     </message>
     <message>
         <source>Address:</source>
@@ -576,7 +576,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Export Debug Log</source>
-        <translation>Экспорт журнала отладки</translation>
+        <translation>Экспортирование журнала отладки</translation>
     </message>
     <message>
         <source>Copy Debug Log</source>
@@ -636,7 +636,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
-        <translation>Устанавливает настройки прокси. По стандарту они ОТСУТСТВУЮТ.</translation>
+        <translation>Устанавливает настройки прокси-сервера. По стандарту они ОТСУТСТВУЮТ.</translation>
     </message>
     <message>
         <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
@@ -1438,8 +1438,8 @@ instead of closing entirely.</source>
         <source>Allows you to export your Tox profile to a file.
 Profile does not contain your history.</source>
         <comment>tooltip for profile exporting button</comment>
-        <translation>Экспорт Вашего Tox-профиля в файл.
-Данный файл-профиля не содержит историю переписки.</translation>
+        <translation>Позволяет экспортировать ваш Tox профиль в файл.
+Профиль не содержит историю ваших сообщений.</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -1501,7 +1501,7 @@ Profile does not contain your history.</source>
     </message>
     <message>
         <source>My name:</source>
-        <translation>Мое имя:</translation>
+        <translation>Моё имя:</translation>
     </message>
     <message>
         <source>My status:</source>
@@ -1614,7 +1614,7 @@ You may want to create one.</source>
     </message>
     <message>
         <source>Import</source>
-        <translation>Импорт</translation>
+        <translation>Импортирование</translation>
     </message>
     <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
@@ -2220,7 +2220,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Import profile</source>
         <comment>import dialog title</comment>
-        <translation>Импорт профиля</translation>
+        <translation>Импортировать профиль</translation>
     </message>
     <message>
         <source>Tox save file (*.tox)</source>
@@ -2782,7 +2782,18 @@ Show formatting characters:
 Hide formatting characters:
     Apply formatting and don&apos;t show characters.
     E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</source>
-        <translation type="unfinished">Новые параметры стиля текста могут не загрузиться, пока qTox не перезапустится.</translation>
+        <translation>Новые параметры стиля текста могут не загрузиться, пока qTox не перезапустится.
+Однако, это незамедлительно повлияет на новые сообщения.
+
+Простой текст:
+    Не применять какое-либо форматирование к сообщениям.
+    Например, &quot;**текст**&quot; будет отображаться как &quot;**текст**&quot;, не жирным шрифтом.
+Показывать символы форматирования:
+    Применять форматирование и показывать символы.
+    Например, &quot;**текст**&quot; будет отображаться как &quot;**текст**&quot;, жирным шрифтом.
+Скрывать символы форматирования:
+    Применять форматирование и не показывать символы.
+    Например, &quot;**текст**&quot; будет отображаться как &quot;текст&quot;, жирным шрифтом.</translation>
     </message>
     <message>
         <source>Text styling:</source>
@@ -2828,7 +2839,7 @@ Hide formatting characters:
     <message>
         <source>Your contact list will be shown in compact mode (small avatars, tabular view).</source>
         <comment>toolTip for compact layout setting</comment>
-        <translation type="unfinished">Ваш список контактов будет показан в компактном виде.</translation>
+        <translation>Ваш список контактов будет показан в компактном виде (маленькие аватары, табличное представление).</translation>
     </message>
     <message>
         <source>Compact contact list</source>
@@ -2885,7 +2896,7 @@ Hide formatting characters:
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
         <comment>tooltip for Notify setting</comment>
-        <translation type="unfinished">Показывать уведомление при получении нового сообщения, когда окно не выбрано.</translation>
+        <translation>Показывать уведомление при получении нового сообщения, звонка, или запроса на добавление в друзья когда окно не выбрано.</translation>
     </message>
     <message>
         <source>Notify</source>
@@ -2918,7 +2929,7 @@ Hide formatting characters:
     <message>
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
-        <translation type="unfinished">Уведомлять о новых сообщениях в конференциях только при упоминаниях.</translation>
+        <translation>Уведомлять о новых сообщениях в конференциях только при упоминаниях вашего имени пользователя.</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
@@ -2937,47 +2948,47 @@ Hide formatting characters:
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
-        <translation type="unfinished"></translation>
+        <translation>Если отключено, выключает звук уведомлений при статусе &quot;Занят/Занята&quot; (но всё ещё показывает уведомление)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
-        <translation type="unfinished"></translation>
+        <translation>Использовать уведомления на рабочем столе, например, в центре уведомлений на системной панели. Без этого, уведомления будут отображаться только как сияющая иконка на панели.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation>Показывать только текст &quot;новое сообщение&quot; без отображения потенциально секретной информации в уведомлениях на рабочем столе.</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
-        <translation type="unfinished"></translation>
+        <translation>Разделить список друзей и окно чата на отдельно перемещаемые друг от друга окна.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation>Отображать текстовые смайлики как цветные изображения вместо текста или чёрно-белых смайликов.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите, какой набор изображений использовать при отображении смайликов.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Размер изображения смайлика в пикселях. Выберите что-то близкое к вашему базовому размеру шрифта.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
-        <translation type="unfinished"></translation>
+        <translation>Базовый стиль для использования в интерфейсе. Рекомендуется использовать Fusion, так как с оформлением qTox он работает лучше всего.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>Цветовая тема интерфейса. Используйте это для выбора тёмного режима.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation>Если отключено, используются базовые уведомления в системной панели. В противном случае, производится попытка использовать бэкэнд уведомлений вашей среды рабочего стола. Отключите это, если вы наблюдаете проблемы с уведомлениями на рабочем столе.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
-        <translation type="unfinished"></translation>
+        <translation>Использовать определенный системой бэкэнд уведомлений, если он доступен</translation>
     </message>
 </context>
 <context>
@@ -3053,7 +3064,7 @@ Hide formatting characters:
     <message>
         <source>Logout</source>
         <comment>Tray action menu to logout user</comment>
-        <translation>Сменить аккаунт</translation>
+        <translation>Выйти из аккаунта</translation>
     </message>
     <message>
         <source>Filter...</source>
@@ -3108,7 +3119,7 @@ Hide formatting characters:
     <message>
         <source>Toxcore failed to start with your proxy settings. qTox cannot run; please modify your settings and restart.</source>
         <comment>popup text</comment>
-        <translation>Toxcore не удалось запуститься с вашими настройками прокси. qTox не может запуститься; пожалуйста, исправьте ваши настройки и перезапустите программу.</translation>
+        <translation>Toxcore не удалось запуститься с вашими настройками прокси-сервера. qTox не может запуститься; пожалуйста, исправьте ваши настройки и перезапустите программу.</translation>
     </message>
     <message>
         <source>Couldn&apos;t send friend request</source>
