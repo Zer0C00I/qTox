@@ -2775,7 +2775,18 @@ Show formatting characters:
 Hide formatting characters:
     Apply formatting and don&apos;t show characters.
     E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</source>
-        <translation type="unfinished">De nieuwe tekststijlvoorkeur wordt mogelijk niet geladen totdat qTox opnieuw is opgestart.</translation>
+        <translation>De nieuwe tekststijlvoorkeur wordt pas geladen in de chatgeschiedenis als qTox opnieuw is opgestart.
+Nieuwe berichten zullen direct aangepast worden.
+
+Platte tekst:
+    Pas geen opmaak toe op berichten.
+    Bijvoorbeeld: &quot;**tekst**&quot; wordt weergegeven als &quot;**tekst**&quot;, niet vetgedrukt.
+Opmaaktekens weergeven:
+    Pas opmaak toe en toon tekens.
+    Bijvoorbeeld: &quot;**tekst**&quot; wordt weergegeven als &quot;**tekst**&quot;, vetgedrukt.
+Opmaaktekens verbergen:
+    Pas opmaak toe en toon geen tekens.
+    Bijvoorbeeld: &quot;**tekst**&quot; wordt weergegeven als &quot;tekst&quot;, vetgedrukt.</translation>
     </message>
     <message>
         <source>Text styling:</source>
@@ -2821,7 +2832,7 @@ Hide formatting characters:
     <message>
         <source>Your contact list will be shown in compact mode (small avatars, tabular view).</source>
         <comment>toolTip for compact layout setting</comment>
-        <translation type="unfinished">Je contactlijst zal in compacte modus getoond worden.</translation>
+        <translation>Je contactenlijst wordt in compacte modus weergegeven (kleine avatars, tabelweergave).</translation>
     </message>
     <message>
         <source>Compact contact list</source>
@@ -2878,7 +2889,7 @@ Hide formatting characters:
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
         <comment>tooltip for Notify setting</comment>
-        <translation type="unfinished">Toon een notificatie wanneer je een nieuw bericht ontvangt en het venster niet geselecteerd is.</translation>
+        <translation>Toon een notificatie wanneer je een nieuw bericht ontvangt, een nieuwe oproep of een vriendschapsverzoek ontvangt en het venster niet geselecteerd is.</translation>
     </message>
     <message>
         <source>Notify</source>
@@ -2911,7 +2922,7 @@ Hide formatting characters:
     <message>
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
-        <translation type="unfinished">Ontvang alleen een melding over nieuwe berichten in conferenties wanneer je wordt genoemd.</translation>
+        <translation>Ontvang alleen een melding over nieuwe berichten in conferenties wanneer je naam wordt genoemd.</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
@@ -2930,47 +2941,47 @@ Hide formatting characters:
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
-        <translation type="unfinished"></translation>
+        <translation>Als dit is uitgeschakeld, worden de meldingsgeluiden gedempt wanneer de status Bezet is (maar er wordt nog steeds een melding weergegeven)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik bureaubladmeldingen, bijvoorbeeld in een meldingencentrum of in het systeemvak. Zonder deze melding is de melding alleen zichtbaar als een knipperend pictogram in het systeemvak.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alleen &quot;nieuw bericht&quot; weergeven, zonder mogelijk geheime informatie in bureaubladmeldingen te tonen.</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
-        <translation type="unfinished"></translation>
+        <translation>Splits je vriendenlijst en chatvenster in afzonderlijk verplaatsbare vensters.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation>Geef tekstuele emoji&apos;s weer als kleurrijke afbeeldingen in plaats van tekst of emoji&apos;s met een zwart/wit lettertype.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer welke set afbeeldingen je wilt gebruiken bij het renderen van emoji&apos;s.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Grootte in pixels van een emoji-afbeelding. Selecteer iets in de buurt van je basislettergrootte.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
-        <translation type="unfinished"></translation>
+        <translation>Basisstijl voor de gebruikersinterface. Fusion wordt aanbevolen omdat dat het beste werkt met qTox-thema&apos;s.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>UI-kleurenthema. Gebruik dit om bijvoorbeeld de donkere modus te selecteren.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation>Als dit is uitgeschakeld, worden systeemvakmeldingen gebruikt. Anders probeert de applicatie de meldingsbackend van uw desktopomgeving te gebruiken. Schakel dit uit als er problemen zijn met desktopmeldingen.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik systeemspecifieke notificatie-backend indien beschikbaar</translation>
     </message>
 </context>
 <context>
