@@ -151,9 +151,11 @@ bool ToxcoreErrorParser::parseErr(Tox_Err_Conference_Join error, const char* fil
         qCriticalFrom(file, line, func) << "Wrong conference type";
         return false;
 
+#if TOX_VERSION_IS_API_COMPATIBLE(0, 2, 20)
     case TOX_ERR_CONFERENCE_JOIN_NULL:
         qCriticalFrom(file, line, func) << "Null argument";
         return false;
+#endif
     }
     qCriticalFrom(file, line, func) << "Unknown Tox_Err_Conference_Join error code:" << error;
     return false;
