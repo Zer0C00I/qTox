@@ -32,8 +32,8 @@ It was fun working with all of you and I learned a lot!
 <a href="https://github.com/TokTok/qTox/blob/master/LICENSE">
 <img src="https://img.shields.io/badge/license-GPLv3%2B-blue.svg" alt="GPLv3+" />
 </a>
-<a href="https://hosted.weblate.org/engage/tox/?utm_source=widget">
-<img src="https://hosted.weblate.org/widgets/tox/-/svg-badge.svg"
+<a href="https://hosted.weblate.org/engage/qtox/?utm_source=widget">
+<img src="https://hosted.weblate.org/widgets/qtox/-/svg-badge.svg"
      alt="Translate on Weblate" />
 </a>
 <a href="https://gitter.im/qtox/qTox?utm_source=badge">
