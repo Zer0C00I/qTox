@@ -3,10 +3,11 @@ below.
 
 # Format
 
-Internally qTox needs PCM with signed 16Bit integers and a samplerate of
+Internally qTox needs PCM with signed 16Bit integers and a sample rate of
 48kHz and one channel (mono).
 
 You can use ffmpeg to create those files as follows:
+
 ```
 ffmpeg -i notification.wav -f s16le -acodec pcm_s16le -ac 1 -ar 48000 notification.s16le.pcm
 ```

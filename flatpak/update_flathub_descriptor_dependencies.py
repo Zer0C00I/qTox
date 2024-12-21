@@ -71,7 +71,7 @@ class FindVersionTest(unittest.TestCase):
             TEST_VERSION=1.2.3
             TEST_HASH=:)
 
-            download_verify_extrat_tarball \
+            download_verify_extract_tarball \
                 https://test_site.com/${TEST_VERSION} \
                 ${TEST_HASH}
             """
