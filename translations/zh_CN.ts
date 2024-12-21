@@ -1125,7 +1125,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>To new conference</source>
-        <translation type="unfinished">到新建群组</translation>
+        <translation>到新建群组</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
@@ -2771,7 +2771,18 @@ Show formatting characters:
 Hide formatting characters:
     Apply formatting and don&apos;t show characters.
     E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</source>
-        <translation type="unfinished">qTox 重新启动之前可能不会加载新的文本样式设置。</translation>
+        <translation>qTox 重新启动之前可能不会加载新的文本样式设置。
+它将立即影响新消息。
+
+纯文本：
+    不要对消息应用任何格式。
+    例如，“**text**”将显示为“**text**”，而不是粗体。
+显示格式化字符：
+    应用格式并显示字符。
+    例如，“**text**”将显示为“**text**”，粗体。
+隐藏格式化字符：
+    应用格式并且不显示字符。
+    例如，“**text**”将显示为“text”，粗体。</translation>
     </message>
     <message>
         <source>Text styling:</source>
@@ -2817,7 +2828,7 @@ Hide formatting characters:
     <message>
         <source>Your contact list will be shown in compact mode (small avatars, tabular view).</source>
         <comment>toolTip for compact layout setting</comment>
-        <translation type="unfinished">您的联系人列表将以紧缩格式显示。</translation>
+        <translation>您的联系人列表将以紧凑模式显示（小头像、表格视图）。</translation>
     </message>
     <message>
         <source>Compact contact list</source>
@@ -2874,7 +2885,7 @@ Hide formatting characters:
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
         <comment>tooltip for Notify setting</comment>
-        <translation type="unfinished">当窗口没有激活时如果收到新消息就显示提醒。</translation>
+        <translation>当窗口没有激活时如果收到新消息就显示提醒。</translation>
     </message>
     <message>
         <source>Notify</source>
@@ -2907,7 +2918,7 @@ Hide formatting characters:
     <message>
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
-        <translation type="unfinished">仅在提到时通知群组聊天中新消息。</translation>
+        <translation>仅在提到时通知群组聊天中新消息。</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
@@ -2926,47 +2937,47 @@ Hide formatting characters:
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
-        <translation type="unfinished"></translation>
+        <translation>如果禁用，则当状态为忙碌时静音通知声音（但仍显示通知）</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
-        <translation type="unfinished"></translation>
+        <translation>使用桌面通知，例如在通知中心或系统托盘中。如果没有此功能，通知将仅显示为闪烁的托盘图标。</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation>仅显示“新消息”而不在桌面通知中显示潜在的秘密信息。</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
-        <translation type="unfinished"></translation>
+        <translation>好友列表和聊天窗口分成单独可移动的窗口。</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation>将文本表情符号显示为彩色图片，而不是文本或黑/白字体呈现的表情符号。</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation>选择渲染表情符号时使用哪组图片。</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
-        <translation type="unfinished"></translation>
+        <translation>表情符号图片的像素大小。选择接近基本字体大小的字体。</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
-        <translation type="unfinished"></translation>
+        <translation>用于 UI 的基本样式。建议使用 Fusion，因为它与 qTox 主题配合得最好。</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>UI 颜色主题。例如，使用此主题来选择暗黑模式。</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation>如果禁用，则使用基本系统托盘通知。否则，尝试使用桌面环境的通知后端。如果您遇到桌面通知问题，请禁用此功能。</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
-        <translation type="unfinished"></translation>
+        <translation>如果可用，使用系统特定的通知后端</translation>
     </message>
 </context>
 <context>
