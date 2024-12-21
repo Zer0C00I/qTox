@@ -1985,11 +1985,11 @@ Les changements de format de sauvegarde sont possibles, ce qui pourrait entraine
         <translation>Vie privée</translation>
     </message>
     <message>
-        <source>BlackList</source>
+        <source>Conference block list</source>
         <translation>Liste noire</translation>
     </message>
     <message>
-        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation type="unfinished">Filtrer le message de groupe par clé publique du membre du groupe. Mettre la clé publique ici, une par ligne.</translation>
     </message>
 </context>

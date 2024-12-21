@@ -1991,11 +1991,11 @@ Failo formatas dar gali pasikeisti, todėl galite prarasti sukauptus duomenis.</
         <translation>Privatumas</translation>
     </message>
     <message>
-        <source>BlackList</source>
+        <source>Conference block list</source>
         <translation>Juodasis sąrašas</translation>
     </message>
     <message>
-        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation type="unfinished">Filtruoti grupės pranešimus pagal grupės narių viešuosius raktus. Čia įrašykite viešuosius raktus, po vieną kiekvienoje eilutėje.</translation>
     </message>
 </context>

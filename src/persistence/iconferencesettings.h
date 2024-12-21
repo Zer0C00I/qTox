@@ -19,12 +19,12 @@ public:
     IConferenceSettings(IConferenceSettings&&) = default;
     IConferenceSettings& operator=(IConferenceSettings&&) = default;
 
-    virtual QStringList getBlackList() const = 0;
-    virtual void setBlackList(const QStringList& blist) = 0;
+    virtual QStringList getBlockList() const = 0;
+    virtual void setBlockList(const QStringList& blist) = 0;
 
     virtual bool getShowConferenceJoinLeaveMessages() const = 0;
     virtual void setShowConferenceJoinLeaveMessages(bool newValue) = 0;
 
-    DECLARE_SIGNAL(blackListChanged, const QStringList& blist);
+    DECLARE_SIGNAL(blockListChanged, const QStringList& blist);
     DECLARE_SIGNAL(showConferenceJoinLeaveMessagesChanged, bool show);
 };

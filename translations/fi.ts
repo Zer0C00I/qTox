@@ -1985,11 +1985,11 @@ Tallennusformaatin muutokset ovat mahdollisia, mitkä saattavat johtaa tiedon me
         <translation>Yksityisyys</translation>
     </message>
     <message>
-        <source>BlackList</source>
+        <source>Conference block list</source>
         <translation>Musta lista</translation>
     </message>
     <message>
-        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation type="unfinished">Lajittele ryhmäviestit ryhmän jäsenten julkisten avainten mukaan. Laita julkiset avaimet tänne. Yksi avain yhdelle linjalle.</translation>
     </message>
 </context>

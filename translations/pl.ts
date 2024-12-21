@@ -2013,11 +2013,11 @@ Możliwe są zmianay formatu zapisu, co może skutkować utratą danych.</transl
         <translation>Prywatność</translation>
     </message>
     <message>
-        <source>BlackList</source>
+        <source>Conference block list</source>
         <translation>Czarna lista</translation>
     </message>
     <message>
-        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation type="unfinished">Filtruj wiadomości grupowe według kluczy publicznych należących do członków grupy. Umieść tutaj klucze publiczne, po jednym w każdym wierszu.</translation>
     </message>
 </context>

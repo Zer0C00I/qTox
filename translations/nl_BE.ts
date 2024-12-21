@@ -1984,11 +1984,11 @@ Het is mogelijk dat er zich veranderingen in het formaat voordoen, wat kan leide
         <translation></translation>
     </message>
     <message>
-        <source>BlackList</source>
+        <source>Conference block list</source>
         <translation>Zwarte lijst</translation>
     </message>
     <message>
-        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

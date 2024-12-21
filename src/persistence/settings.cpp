@@ -496,7 +496,7 @@ void Settings::loadPersonal(const Profile& profile, bool newProfile)
     {
         typingNotification = ps.value("typingNotification", true).toBool();
         enableLogging = ps.value("enableLogging", true).toBool();
-        blackList = ps.value("blackList").toString().split('\n');
+        blockList = ps.value("blackList").toString().split('\n');
     }
     ps.endGroup();
 
@@ -829,7 +829,7 @@ void Settings::savePersonal(QString profileName, const ToxEncrypt* passkey)
     {
         ps.setValue("typingNotification", typingNotification);
         ps.setValue("enableLogging", enableLogging);
-        ps.setValue("blackList", blackList.join('\n'));
+        ps.setValue("blackList", blockList.join('\n'));
     }
     ps.endGroup();
 
@@ -1716,16 +1716,16 @@ void Settings::setTypingNotification(bool enabled)
     }
 }
 
-QStringList Settings::getBlackList() const
+QStringList Settings::getBlockList() const
 {
     QMutexLocker<QRecursiveMutex> locker{&bigLock};
-    return blackList;
+    return blockList;
 }
 
-void Settings::setBlackList(const QStringList& blist)
+void Settings::setBlockList(const QStringList& blist)
 {
-    if (setVal(blackList, blist)) {
-        emit blackListChanged(blist);
+    if (setVal(blockList, blist)) {
+        emit blockListChanged(blist);
     }
 }
 

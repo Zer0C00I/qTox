@@ -485,7 +485,7 @@ void CoreAV::conferenceCallCallback(void* tox, uint32_t conference, uint32_t pee
 
     const ToxPk peerPk = c->getConferencePeerPk(conference, peer);
     // don't play the audio if it comes from a muted peer
-    if (cav->conferenceSettings.getBlackList().contains(peerPk.toString())) {
+    if (cav->conferenceSettings.getBlockList().contains(peerPk.toString())) {
         return;
     }
 

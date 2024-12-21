@@ -1995,11 +1995,11 @@ Iespējama saglabāšanas formāta izmaiņas, kas var novest pie datu zaudēšan
         <translation>Konfidencialitātes politika</translation>
     </message>
     <message>
-        <source>BlackList</source>
+        <source>Conference block list</source>
         <translation>Melnais saraksts</translation>
     </message>
     <message>
-        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

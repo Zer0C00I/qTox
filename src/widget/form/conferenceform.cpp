@@ -125,7 +125,7 @@ ConferenceForm::ConferenceForm(Core& core_, Conference* chatConference, IChatLog
     connect(conference, &Conference::userLeft, this, &ConferenceForm::onUserLeft);
     connect(conference, &Conference::peerNameChanged, this, &ConferenceForm::onPeerNameChanged);
     connect(conference, &Conference::numPeersChanged, this, &ConferenceForm::updateUserCount);
-    settings.connectTo_blackListChanged(this, [this](const QStringList&) { updateUserNames(); });
+    settings.connectTo_blockListChanged(this, [this](const QStringList&) { updateUserNames(); });
 
     if (settings.getShowConferenceJoinLeaveMessages()) {
         addSystemInfoMessage(QDateTime::currentDateTime(), SystemMessageType::selfJoinedConference, {});
@@ -205,7 +205,7 @@ void ConferenceForm::updateUserNames()
 
         if (peerPk == selfPk) {
             label->setProperty("peerType", LABEL_PEER_TYPE_OUR);
-        } else if (settings.getBlackList().contains(peerPk.toString())) {
+        } else if (settings.getBlockList().contains(peerPk.toString())) {
             label->setProperty("peerType", LABEL_PEER_TYPE_MUTED);
         }
 
@@ -401,7 +401,7 @@ void ConferenceForm::onLabelContextMenuRequested(const QPoint& localPos)
     const QPoint pos = label->mapToGlobal(localPos);
     const QString muteString = tr("mute");
     const QString unmuteString = tr("unmute");
-    QStringList blackList = settings.getBlackList();
+    QStringList blockList = settings.getBlockList();
     QMenu* const contextMenu = new QMenu(this);
     const ToxPk selfPk = core.getSelfPublicKey();
     ToxPk peerPk;
@@ -414,7 +414,7 @@ void ConferenceForm::onLabelContextMenuRequested(const QPoint& localPos)
         return;
     }
 
-    const bool isPeerBlocked = blackList.contains(peerPk.toString());
+    const bool isPeerBlocked = blockList.contains(peerPk.toString());
     QString menuTitle = label->text();
     if (menuTitle.endsWith(QLatin1String(", "))) {
         menuTitle.chop(2);
@@ -434,15 +434,15 @@ void ConferenceForm::onLabelContextMenuRequested(const QPoint& localPos)
     const QAction* selectedItem = contextMenu->exec(pos);
     if (selectedItem == toggleMuteAction) {
         if (isPeerBlocked) {
-            const int index = blackList.indexOf(peerPk.toString());
+            const int index = blockList.indexOf(peerPk.toString());
             if (index != -1) {
-                blackList.removeAt(index);
+                blockList.removeAt(index);
             }
         } else {
-            blackList << peerPk.toString();
+            blockList << peerPk.toString();
         }
 
-        settings.setBlackList(blackList);
+        settings.setBlockList(blockList);
     }
 }
 

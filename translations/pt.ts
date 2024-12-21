@@ -1985,11 +1985,11 @@ Por isso podem ocorrer alterações no formato do ficheiro guardado, o que pode 
         <translation>Privacidade</translation>
     </message>
     <message>
-        <source>BlackList</source>
+        <source>Conference block list</source>
         <translation>Lista negra</translation>
     </message>
     <message>
-        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation type="unfinished">Filtrar as mensagens de grupo por chaves públicas dos membros do grupo. Ponha aqui as chaves públicas, uma por linha.</translation>
     </message>
 </context>

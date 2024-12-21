@@ -1985,11 +1985,11 @@ Om du blir spammad med vänförfrågningar, ändra NoSpam.</translation>
         <translation>Integritet</translation>
     </message>
     <message>
-        <source>BlackList</source>
+        <source>Conference block list</source>
         <translation>Blocklista</translation>
     </message>
     <message>
-        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation type="unfinished">Filtrera gruppmeddelanden efter gruppmedlemmars offentliga nycklar. Sätt offentliga nycklar här, en per rad.</translation>
     </message>
 </context>

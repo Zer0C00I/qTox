@@ -1997,11 +1997,11 @@ Sú možné zmeny formátu, ktoré môžu spôsobiť stratu dát.</translation>
         <translation>Súkromie</translation>
     </message>
     <message>
-        <source>BlackList</source>
+        <source>Conference block list</source>
         <translation>Čierna listina</translation>
     </message>
     <message>
-        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation type="unfinished">Filtrovať skupinové správy podľa verejných kľúčov členov skupín. Vložte sem verejné kľúče, jeden kľúč na riadok.</translation>
     </message>
 </context>

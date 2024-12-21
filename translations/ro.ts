@@ -1997,11 +1997,11 @@ Salvarea modificărilor formatelor este posibilă, ceea ce poate duce la pierder
         <translation>Confidențialitate</translation>
     </message>
     <message>
-        <source>BlackList</source>
+        <source>Conference block list</source>
         <translation>Listă neagră</translation>
     </message>
     <message>
-        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation>Filtrează mesajele conferinței după cheile publice ale membrilor conferinței. Puneți aici cheile publice, câte una pe fiecare rând.</translation>
     </message>
 </context>

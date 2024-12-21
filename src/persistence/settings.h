@@ -96,7 +96,7 @@ class Settings : public QObject,
     // Privacy
     Q_PROPERTY(bool typingNotification READ getTypingNotification WRITE setTypingNotification NOTIFY
                    typingNotificationChanged FINAL)
-    Q_PROPERTY(QStringList blackList READ getBlackList WRITE setBlackList NOTIFY blackListChanged FINAL)
+    Q_PROPERTY(QStringList blockList READ getBlockList WRITE setBlockList NOTIFY blockListChanged FINAL)
 
     // Audio
     Q_PROPERTY(QString inDev READ getInDev WRITE setInDev NOTIFY inDevChanged FINAL)
@@ -458,9 +458,9 @@ public:
     bool getTypingNotification() const;
     void setTypingNotification(bool enabled);
 
-    QStringList getBlackList() const override;
-    void setBlackList(const QStringList& blist) override;
-    SIGNAL_IMPL(Settings, blackListChanged, const QStringList& blist)
+    QStringList getBlockList() const override;
+    void setBlockList(const QStringList& blist) override;
+    SIGNAL_IMPL(Settings, blockListChanged, const QStringList& blist)
 
     bool getShowConferenceJoinLeaveMessages() const override;
     void setShowConferenceJoinLeaveMessages(bool newValue) override;
@@ -657,7 +657,7 @@ private:
     // Privacy
     bool typingNotification;
     Db::syncType dbSyncType;
-    QStringList blackList;
+    QStringList blockList;
 
     // Audio
     QString inDev;

@@ -1981,11 +1981,11 @@ If you are getting spammed with friend requests, change the NoSpam.</source>
         <translation>隐私</translation>
     </message>
     <message>
-        <source>BlackList</source>
+        <source>Conference block list</source>
         <translation>黑名单</translation>
     </message>
     <message>
-        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation>按会议成员的公钥过滤会议消息。在此处输入公钥，每行一个。</translation>
     </message>
 </context>

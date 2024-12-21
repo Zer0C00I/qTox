@@ -123,13 +123,13 @@ If you are getting spammed with friend requests, change the NoSpam.</string>
           <string/>
          </property>
          <property name="title">
-          <string>BlackList</string>
+          <string>Conference block list</string>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
-           <widget class="QTextEdit" name="blackListTextEdit">
+           <widget class="QTextEdit" name="blockListTextEdit">
             <property name="toolTip">
-             <string>Filter conference messages by conference members' public keys. Put public keys here, one per line.</string>
+             <string>Filter out conference messages by conference members' public keys. Put public keys here, one per line.</string>
             </property>
            </widget>
           </item>

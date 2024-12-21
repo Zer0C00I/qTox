@@ -1995,11 +1995,11 @@ Save format changes are possible, which may result in data loss.</source>
         <translation>Приватність</translation>
     </message>
     <message>
-        <source>BlackList</source>
+        <source>Conference block list</source>
         <translation>Список блокування</translation>
     </message>
     <message>
-        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation>Фільтруйте повідомлення в конференції через відкриті (публічні) ключі учасників конференції. Впишіть сюди відкриті (публічні) ключі, по одному на рядок.</translation>
     </message>
 </context>

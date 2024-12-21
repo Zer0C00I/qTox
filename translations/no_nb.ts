@@ -1987,11 +1987,11 @@ Endringer av lagringsformat er mulig, som kan forårsake data tap.</translation>
         <translation>Personvern</translation>
     </message>
     <message>
-        <source>BlackList</source>
+        <source>Conference block list</source>
         <translation>Svarteliste</translation>
     </message>
     <message>
-        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation type="unfinished">Filtrer gruppemeldinger etter gruppemedlemmers offentlige nøkler. Legg inn offentlige nøkler her, én på hver linje.</translation>
     </message>
 </context>

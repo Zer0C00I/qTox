@@ -1988,11 +1988,11 @@ Save format changes are possible, which may result in data loss.</source>
         <translation>Приватност</translation>
     </message>
     <message>
-        <source>BlackList</source>
+        <source>Conference block list</source>
         <translation>Црна листа</translation>
     </message>
     <message>
-        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -1993,11 +1993,11 @@ Mudanças no arquivo salvo podem ocorrer, isso pode resultar em perda de dados.<
         <translation>Privacidade</translation>
     </message>
     <message>
-        <source>BlackList</source>
+        <source>Conference block list</source>
         <translation>Lista negra</translation>
     </message>
     <message>
-        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation type="unfinished">Filtrar as mensagens de grupo por chaves públicas dos membros do grupo. Coloque aqui as chaves públicas, uma por linha.</translation>
     </message>
 </context>

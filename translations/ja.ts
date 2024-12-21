@@ -1971,11 +1971,11 @@ If you are getting spammed with friend requests, change the NoSpam.</source>
         <translation>プライバシー</translation>
     </message>
     <message>
-        <source>BlackList</source>
+        <source>Conference block list</source>
         <translation>ブラックリスト</translation>
     </message>
     <message>
-        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -1989,11 +1989,11 @@ Pokud jste obtěžováni žádostmi o přidání, měli byste si změnit vaše N
         <translation>Soukromí</translation>
     </message>
     <message>
-        <source>BlackList</source>
+        <source>Conference block list</source>
         <translation>Černá listina</translation>
     </message>
     <message>
-        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation type="unfinished">Filtrujte skupinové zprávy podle veřejných klíčů členů skupiny. Sem vložte veřejné klíče, jeden na řádek.</translation>
     </message>
 </context>

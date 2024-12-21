@@ -1994,11 +1994,11 @@ Die Sicherung des Verlaufs ist noch in Entwicklung. Formatierungsänderungen bei
         <translation>Datenschutz</translation>
     </message>
     <message>
-        <source>BlackList</source>
+        <source>Conference block list</source>
         <translation>Denial-Liste</translation>
     </message>
     <message>
-        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation>Filtere Konferenznachricht nach öffentlichem Schlüssel des Konferenzmitglieds. Füge öffentlichen Schlüssel hier ein, einen pro Zeile.</translation>
     </message>
 </context>

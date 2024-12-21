@@ -1985,11 +1985,11 @@ Arkadaşlık istemleriyle rahatsız ediliyorsanız, NoSpam&apos;ı değiştirin.
         <translation>Gizlilik</translation>
     </message>
     <message>
-        <source>BlackList</source>
+        <source>Conference block list</source>
         <translation>KaraListe</translation>
     </message>
     <message>
-        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation type="unfinished">Grup iletilerini grup üyelerinin açık anahtarlarına göre filtreleyin. Açık anahtarları her satıra bir tane olacak şekilde buraya koyun.</translation>
     </message>
 </context>

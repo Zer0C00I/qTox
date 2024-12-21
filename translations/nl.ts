@@ -1985,11 +1985,11 @@ Het is mogelijk dat er zich veranderingen in het formaat voordoen, wat kan leide
         <translation>Privacy</translation>
     </message>
     <message>
-        <source>BlackList</source>
+        <source>Conference block list</source>
         <translation>Weigerlijst</translation>
     </message>
     <message>
-        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation>Filter conferentieberichten op openbare sleutels van conferentieleden. Plaats hier openbare sleutels, één per regel.</translation>
     </message>
 </context>

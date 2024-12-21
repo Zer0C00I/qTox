@@ -1989,11 +1989,11 @@ Có thể thay đổi định dạng lưu, điều này có thể làm mất d�
         <translation>Bảo mật</translation>
     </message>
     <message>
-        <source>BlackList</source>
+        <source>Conference block list</source>
         <translation>Danh sách đen</translation>
     </message>
     <message>
-        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation type="unfinished">Lọc tin nhắn nhóm theo khóa công khai của thành viên nhóm. Đặt các khóa công khai ở đây, một khóa trên mỗi dòng.</translation>
     </message>
 </context>

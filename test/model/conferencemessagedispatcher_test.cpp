@@ -53,9 +53,9 @@ class MockConferenceSettings : public QObject, public IConferenceSettings
     Q_OBJECT
 
 public:
-    QStringList getBlackList() const override;
-    void setBlackList(const QStringList& blist) override;
-    SIGNAL_IMPL(MockConferenceSettings, blackListChanged, const QStringList& blist)
+    QStringList getBlockList() const override;
+    void setBlockList(const QStringList& blist) override;
+    SIGNAL_IMPL(MockConferenceSettings, blockListChanged, const QStringList& blist)
 
     bool getShowConferenceJoinLeaveMessages() const override
     {
@@ -68,17 +68,17 @@ public:
     SIGNAL_IMPL(MockConferenceSettings, showConferenceJoinLeaveMessagesChanged, bool show)
 
 private:
-    QStringList blacklist;
+    QStringList blockList;
 };
 
-QStringList MockConferenceSettings::getBlackList() const
+QStringList MockConferenceSettings::getBlockList() const
 {
-    return blacklist;
+    return blockList;
 }
 
-void MockConferenceSettings::setBlackList(const QStringList& blist)
+void MockConferenceSettings::setBlockList(const QStringList& blist)
 {
-    blacklist = blist;
+    blockList = blist;
 }
 
 class TestConferenceMessageDispatcher : public QObject
@@ -94,7 +94,7 @@ private slots:
     void testMessageSending();
     void testEmptyConference();
     void testSelfReceive();
-    void testBlacklist();
+    void testBlockList();
 
     void onMessageSent(DispatchedMessageId id, Message message)
     {
@@ -235,16 +235,16 @@ void TestConferenceMessageDispatcher::testSelfReceive()
 }
 
 /**
- * @brief Tests that messages from blacklisted peers do not get propagated from the dispatcher
+ * @brief Tests that messages from block-listed peers do not get propagated from the dispatcher
  */
-void TestConferenceMessageDispatcher::testBlacklist()
+void TestConferenceMessageDispatcher::testBlockList()
 {
     uint8_t id[ToxPk::size] = {1};
     auto otherPk = ToxPk(id);
     conferenceMessageDispatcher->onMessageReceived(otherPk, false, "Test");
     QVERIFY(receivedMessages.size() == 1);
 
-    conferenceSettings->setBlackList({otherPk.toString()});
+    conferenceSettings->setBlockList({otherPk.toString()});
     conferenceMessageDispatcher->onMessageReceived(otherPk, false, "Test");
     QVERIFY(receivedMessages.size() == 1);
 }

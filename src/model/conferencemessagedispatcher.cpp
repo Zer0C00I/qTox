@@ -66,7 +66,7 @@ void ConferenceMessageDispatcher::onMessageReceived(const ToxPk& sender, bool is
         return;
     }
 
-    if (conferenceSettings.getBlackList().contains(sender.toString())) {
+    if (conferenceSettings.getBlockList().contains(sender.toString())) {
         qDebug() << "onConferenceMessageReceived: Filtered:" << sender.toString();
         return;
     }

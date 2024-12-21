@@ -1986,11 +1986,11 @@ If you are getting spammed with friend requests, change the NoSpam.</source>
         <translation>Поверителност</translation>
     </message>
     <message>
-        <source>BlackList</source>
+        <source>Conference block list</source>
         <translation>Черен списък</translation>
     </message>
     <message>
-        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation type="unfinished">Филтрирай групови съобщения по публични ключове на членове. Постави ключовете тук, по един на линия.</translation>
     </message>
 </context>

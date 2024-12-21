@@ -1985,11 +1985,11 @@ Se ricevi molte richieste di amicizia indesiderate cambia questo valore.</transl
         <translation>Privacy</translation>
     </message>
     <message>
-        <source>BlackList</source>
+        <source>Conference block list</source>
         <translation>Lista Nera</translation>
     </message>
     <message>
-        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation type="unfinished">Filtra i messaggi di gruppo dalle chiavi pubbliche dei membri. Inserisci qui le chiavi pubbliche, una per linea.</translation>
     </message>
 </context>

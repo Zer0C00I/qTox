@@ -2009,7 +2009,7 @@ Save format changes are possible, which may result in data loss.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>BlackList</source>
+        <source>Conference block list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

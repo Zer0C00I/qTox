@@ -273,9 +273,14 @@ will alter your Tox ID. You don't need to tell your existing contacts your new
 Tox ID, but you have to tell new contacts your new Tox ID. Your Tox ID can be
 found in your [User Profile](#user-profile).
 
-#### BlackList
+#### Conference block list
 
-BlackList is a feature of qTox that locally blocks a conference member's messages across all your joined conferences, in case someone spams a conference. You need to put a members public key into the BlackList text box one per line to activate it. Currently qTox doesn't have a method to get the public key from a conference member, this will be added in the future.
+Conference block list is a feature of qTox that locally blocks a conference
+member's messages across all your joined conferences, in case someone spams a
+conference. You need to put a members public key into the `Conference block
+list` text box one per line to activate it. Currently qTox doesn't have a
+method to get the public key from a conference member, this will be added in
+the future.
 
 ### Audio/Video
 

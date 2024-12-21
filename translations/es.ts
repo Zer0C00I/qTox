@@ -1986,11 +1986,11 @@ Es posible que haya cambios en el formato de guardado, lo que puede generar una 
         <translation>Privacidad</translation>
     </message>
     <message>
-        <source>BlackList</source>
+        <source>Conference block list</source>
         <translation>Lista negra</translation>
     </message>
     <message>
-        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation>Filtrar mensajes de grupo por clave pública de miembros del grupo. Ponga la clave pública aquí, una por línea.</translation>
     </message>
 </context>
