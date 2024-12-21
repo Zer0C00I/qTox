@@ -94,6 +94,7 @@ private slots:
     void onAudioSinkInvalidated();
 
 private:
+    QMetaObject::Connection audioSourceInvalid;
     QMetaObject::Connection audioSinkInvalid;
     TOXAV_FRIEND_CALL_STATE state{TOXAV_FRIEND_CALL_STATE_NONE};
     std::unique_ptr<IAudioSink> sink;

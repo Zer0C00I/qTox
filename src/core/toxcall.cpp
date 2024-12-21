@@ -111,13 +111,13 @@ ToxFriendCall::ToxFriendCall(uint32_t friendNum, bool VideoEnabled, CoreAV& av_,
     , friendId{friendNum}
     , cameraSource{cameraSource_}
 {
-    connect(audioSource.get(), &IAudioSource::frameAvailable, this,
-            [this](const int16_t* pcm, size_t samples, uint8_t chans, uint32_t rate) {
-                av->sendCallAudio(friendId, pcm, samples, chans, rate);
+    connect(audioSource.get(), &IAudioSource::frameAvailable, &av_,
+            [&av_, friendNum](const int16_t* pcm, size_t samples, uint8_t chans, uint32_t rate) {
+                av_.sendCallAudio(friendNum, pcm, samples, chans, rate);
             });
 
-    connect(audioSource.get(), &IAudioSource::invalidated, this,
-            &ToxFriendCall::onAudioSourceInvalidated);
+    audioSourceInvalid = connect(audioSource.get(), &IAudioSource::invalidated, this,
+                                 &ToxFriendCall::onAudioSourceInvalidated);
 
     if (sink) {
         audioSinkInvalid = sink->connectTo_invalidated(this, [this]() { onAudioSinkInvalidated(); });
@@ -147,6 +147,7 @@ ToxFriendCall::~ToxFriendCall()
         cameraSource.unsubscribe();
     }
     QObject::disconnect(audioSinkInvalid);
+    QObject::disconnect(audioSourceInvalid);
 }
 
 void ToxFriendCall::onAudioSourceInvalidated()
