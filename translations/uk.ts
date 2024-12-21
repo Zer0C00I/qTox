@@ -162,7 +162,7 @@ which may lead to problems with video calls.</source>
         <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
-        <translation>Список знаних проблем знаходиться у Github за адресою %1. Якщо ви знайшли помилку чи ваду у системі безпеки qTox, будь ласка, повідомте про неї згідно до інструкції у нашій статті на wiki %2.</translation>
+        <translation>Список знаних проблем знаходиться на нашому %1 на GitHub. Якщо ви знайшли помилку або вразливість у qTox, будь ласка, повідомте про них згідно з інструкцією у нашій статті на вікі %2.</translation>
     </message>
     <message>
         <source>Click here to report a bug.</source>
@@ -176,7 +176,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>bug-tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
-        <translation>баг-трекери</translation>
+        <translation>баг-трекері</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
@@ -186,7 +186,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
-        <translation>співавтори</translation>
+        <translation>співавторів</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
@@ -406,7 +406,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>We couldn&apos;t find any contacts to import in this file!</source>
-        <translation>Контактів для імпорту не знайдено!</translation>
+        <translation>Не вдалося знайти в цьому файлі будь-які контакти для імпортування!</translation>
     </message>
     <message>
         <source>Tox ID</source>
@@ -434,14 +434,14 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
-        <translation>Імпортувати список контактів, один Ідентифікатор Tox на рядок</translation>
+        <translation>Імпортувати список контактів, один Tox ID на рядок</translation>
     </message>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
         <translation>
-            <numerusform>Усе готово для імпортування %n контакту, натисніть &quot;Відправити&quot;, щоб підтвердити</numerusform>
-            <numerusform>Усе готово для імпортування %n контактів, натисніть &quot;Відправити&quot;, щоб підтвердити</numerusform>
-            <numerusform>Усе готово для імпортування %n контактів, натисніть &quot;Відправити&quot;, щоб підтвердити</numerusform>
+            <numerusform>Усе готово для імпортування %n контакту, натисніть &quot;Надіслати&quot;, щоб підтвердити</numerusform>
+            <numerusform>Усе готово для імпортування %n контактів, натисніть &quot;Надіслати&quot;, щоб підтвердити</numerusform>
+            <numerusform>Усе готово для імпортування %n контактів, натисніть &quot;Надіслати&quot;, щоб підтвердити</numerusform>
         </translation>
     </message>
     <message>
@@ -467,7 +467,7 @@ which may lead to problems with video calls.</source>
     <name>AdvancedForm</name>
     <message>
         <source>Advanced</source>
-        <translation>Більше</translation>
+        <translation>Розширені</translation>
     </message>
     <message>
         <source>really</source>
@@ -527,7 +527,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Reset to default settings</source>
-        <translation>Скинути на типові значення</translation>
+        <translation>Повернути стандартні налаштування</translation>
     </message>
     <message>
         <source>Portable</source>
@@ -683,7 +683,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Copy</source>
-        <translation>Копіювати</translation>
+        <translation>Скопіювати</translation>
     </message>
     <message>
         <source>You&apos;re trying to send a sequential file, which is not going to work!</source>
@@ -1201,7 +1201,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Enable light tray icon.</source>
         <comment>toolTip for light icon setting</comment>
-        <translation>Увімкнути світлі піктограми.</translation>
+        <translation>Увімкнути світлу піктограму в лотку.</translation>
     </message>
     <message>
         <source>Start qTox on operating system startup (current profile).</source>
@@ -1254,7 +1254,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Light icon</source>
-        <translation>Світлі піктограми</translation>
+        <translation>Світла піктограма</translation>
     </message>
     <message>
         <source>Autoaccept files</source>
@@ -1308,7 +1308,7 @@ instead of closing entirely.</source>
     <name>GenericChatForm</name>
     <message>
         <source>Send message</source>
-        <translation>Відправити повідомлення</translation>
+        <translation>Надіслати повідомлення</translation>
     </message>
     <message>
         <source>Smileys</source>
@@ -1316,11 +1316,11 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Send file(s)</source>
-        <translation>Відправити файл(и)</translation>
+        <translation>Надіслати файл(и)</translation>
     </message>
     <message>
         <source>Send a screenshot</source>
-        <translation>Відправити знімок екрану</translation>
+        <translation>Надіслати знімок екрану</translation>
     </message>
     <message>
         <source>Save chat log</source>
@@ -1375,7 +1375,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Your Tox ID (click to copy)</source>
-        <translation>Ваш Tox ID (клацніть аби скопіювати)</translation>
+        <translation>Ваш Tox ID (натисніть на нього, щоб скопіювати)</translation>
     </message>
     <message>
         <source>Profile</source>
@@ -1399,7 +1399,7 @@ instead of closing entirely.</source>
     <message>
         <source>Logout</source>
         <comment>import profile button</comment>
-        <translation>Вийти з облікового запису</translation>
+        <translation>Вийти</translation>
     </message>
     <message>
         <source>Remove password</source>
@@ -1419,7 +1419,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Copy image</source>
-        <translation>Копіювати зображення</translation>
+        <translation>Скопіювати зображення</translation>
     </message>
     <message>
         <source>Rename</source>
@@ -1429,7 +1429,7 @@ instead of closing entirely.</source>
     <message>
         <source>Export</source>
         <comment>export profile button</comment>
-        <translation>Експорт</translation>
+        <translation>Експортування</translation>
     </message>
     <message>
         <source>Allows you to export your Tox profile to a file.
@@ -1441,7 +1441,7 @@ Profile does not contain your history.</source>
     <message>
         <source>Delete</source>
         <comment>delete profile button</comment>
-        <translation>Вилучити</translation>
+        <translation>Видалити</translation>
     </message>
     <message>
         <source>Remove your password and encryption from your profile.</source>
@@ -1617,7 +1617,7 @@ You may want to create one.</source>
     </message>
     <message>
         <source>Import</source>
-        <translation>Імпорт</translation>
+        <translation>Імпортування</translation>
     </message>
     <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
@@ -1954,7 +1954,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Send typing notifications</source>
-        <translation>Відправляти сповіщення набирання повідомлення</translation>
+        <translation>Надсилати сповіщення набирання повідомлення</translation>
     </message>
     <message>
         <source>Keep chat history</source>
@@ -2351,7 +2351,7 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     <message>
         <source>None</source>
         <comment>No camera device set</comment>
-        <translation>Відсутній</translation>
+        <translation>Немає</translation>
     </message>
     <message>
         <source>Desktop</source>
@@ -2788,11 +2788,22 @@ Show formatting characters:
 Hide formatting characters:
     Apply formatting and don&apos;t show characters.
     E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</source>
-        <translation>Нові параметри стилю тексту можуть не завантажитися поки qTox не перезапуститься.</translation>
+        <translation>Нові параметри стилю тексту можуть не завантажитися поки qTox не перезапуститься.
+Однак, це негайно вплине на нові повідомлення.
+
+Простий текст:
+    Не застосовувати будь-яке форматування до повідомлень.
+    Наприклад, &quot;**текст**&quot; відображатиметься як &quot;**текст**&quot;, не жирним шрифтом.
+Показувати символи форматування:
+    Застосовувати форматування і показувати символи.
+    Наприклад, &quot;**текст**&quot; відображатиметься як &quot;**текст**&quot;, жирним шрифтом.
+Приховувати символи форматування:
+    Застосовувати форматування і не показувати символи.
+    Наприклад, &quot;**текст**&quot; відображатиметься як &quot;текст&quot;, жирним шрифтом.</translation>
     </message>
     <message>
         <source>Text styling:</source>
-        <translation type="unfinished">Формат стилю тексту:</translation>
+        <translation>Формат стилю тексту:</translation>
     </message>
     <message>
         <source>Select text styling preference.</source>
@@ -2808,7 +2819,7 @@ Hide formatting characters:
     </message>
     <message>
         <source>Hide formatting characters</source>
-        <translation type="unfinished">Не відображати символи форматування</translation>
+        <translation>Не відображати символи форматування</translation>
     </message>
     <message>
         <source>New message</source>
@@ -2943,47 +2954,47 @@ Hide formatting characters:
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation>Якщо вимкнено, використовуються базові повідомлення в системній панелі. В іншому випадку, робиться спроба використовувати бекенд повідомлень вашого середовища робочого столу. Вимкніть це, якщо ви спостерігаєте проблеми з повідомленнями на робочому столі.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
-        <translation type="unfinished"></translation>
+        <translation>Використовувати визначений системою бекенд повідомлень, якщо він доступний</translation>
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
-        <translation type="unfinished"></translation>
+        <translation>Якщо вимкнено, вимикає звук сповіщень у разі статусу &quot;Зайнятий/зайнята&quot; (але все ще показує сповіщення)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
-        <translation type="unfinished"></translation>
+        <translation>Використовувати сповіщення на робочому столі, наприклад, у центрі сповіщень на системній панелі. Без цього, сповіщення відображатимуться тільки як сяюча піктограма на панелі.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation>Показувати тільки текст &quot;нове повідомлення&quot; без відображення потенційно секретної інформації в повідомленнях на робочому столі.</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
-        <translation type="unfinished"></translation>
+        <translation>Розділити список друзів і вікно чату на вікна, які окремо переміщуються одне від одного.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation>Відображати текстові смайлики як кольорові зображення замість тексту або чорно-білих смайликів.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть, який набір зображень використовувати під час відображення смайликів.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Розмір зображення смайлика в пікселях. Виберіть щось близьке до вашого базового розміру шрифту.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
-        <translation type="unfinished"></translation>
+        <translation>Базовий стиль для використання в інтерфейсі. Рекомендується використовувати Fusion, оскільки з оформленням qTox він працює краще всього.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>Колірна тема інтерфейсу. Використовуйте це для вибору темного режиму.</translation>
     </message>
 </context>
 <context>
@@ -3042,7 +3053,7 @@ Hide formatting characters:
     <message>
         <source>Logout</source>
         <comment>Tray action menu to logout user</comment>
-        <translation>Вихід з облікового запису</translation>
+        <translation>Вийти з акаунта</translation>
     </message>
     <message>
         <source>Filter...</source>
