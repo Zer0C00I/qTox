@@ -521,6 +521,13 @@ void CoreAV::invalidateConferenceCallPeerSource(const Conference& conference, To
     it->second->removePeer(peerPk);
 }
 
+bool CoreAV::isAnyCallActive() const
+{
+    QReadLocker locker{&callsLock};
+    return std::any_of(calls.begin(), calls.end(),
+                       [](const auto& call) { return call.second->isActive(); });
+}
+
 /**
  * @brief Get a call's video source.
  * @param friendNum Id of friend in call list.

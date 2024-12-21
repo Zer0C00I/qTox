@@ -72,6 +72,7 @@ public:
                                        const int16_t* data, unsigned samples, uint8_t channels,
                                        uint32_t sample_rate, void* core);
     void invalidateConferenceCallPeerSource(const Conference& conference, ToxPk peerPk);
+    bool isAnyCallActive() const;
 
 public slots:
     bool startCall(uint32_t friendNum, bool video);
