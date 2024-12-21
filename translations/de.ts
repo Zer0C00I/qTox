@@ -2784,7 +2784,18 @@ Show formatting characters:
 Hide formatting characters:
     Apply formatting and don&apos;t show characters.
     E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</source>
-        <translation type="unfinished">Änderungen am Aussehen des Textes werden eventuell erst nach einem Neustart von qTox wirksam.</translation>
+        <translation>Änderungen am Aussehen des Textes werden eventuell erst nach einem Neustart von qTox wirksam.
+Sie wirkt sich sofort auf neue Nachrichten aus.
+
+Klartext:
+    Keine Formatierung auf Nachrichten anwenden.
+    Beispielsweise wird „**Text**“ als „**Text**“ und nicht fett angezeigt.
+Formatierungszeichen anzeigen:
+    Formatierung anwenden und Zeichen anzeigen.
+    Beispielsweise wird „**Text**“ als „**Text**“ und fett angezeigt.
+Formatierungszeichen ausblenden:
+    Formatierung anwenden und keine Zeichen anzeigen.
+    Beispielsweise wird „**Text**“ als „Text“ und fett angezeigt.</translation>
     </message>
     <message>
         <source>Text styling:</source>
@@ -2830,7 +2841,7 @@ Hide formatting characters:
     <message>
         <source>Your contact list will be shown in compact mode (small avatars, tabular view).</source>
         <comment>toolTip for compact layout setting</comment>
-        <translation type="unfinished">Die Kontaktliste wird kompakt dargestellt.</translation>
+        <translation>Die Kontaktliste wird im Kompaktmodus (kleine Avatare, tabellarische Ansicht) angezeigt.</translation>
     </message>
     <message>
         <source>Compact contact list</source>
@@ -2887,7 +2898,7 @@ Hide formatting characters:
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
         <comment>tooltip for Notify setting</comment>
-        <translation type="unfinished">Zeigt eine Benachrichtigung an, wenn du eine neue Nachricht erhältst und das qTox-Fenster nicht den Fokus hat.</translation>
+        <translation>Zeigt eine Benachrichtigung an, wenn du eine neue Nachricht, einen neuen Anruf oder eine Freundschaftsanfrage erhaltest und das Fenster nicht den Fokus hat.</translation>
     </message>
     <message>
         <source>Notify</source>
@@ -2920,7 +2931,7 @@ Hide formatting characters:
     <message>
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
-        <translation type="unfinished">Nur über neue Nachrichten in Gruppenchats benachrichtigen, wenn du darin erwähnt wirst.</translation>
+        <translation>Nur über neue Nachrichten in Gruppenchats benachrichtigen, wenn dein Name darin erwähnt wird.</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
@@ -2939,47 +2950,47 @@ Hide formatting characters:
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn deaktiviert, werden Benachrichtigungstöne stummgeschaltet, wenn der Status „Beschäftigt“ ist (es wird aber trotzdem eine Benachrichtigung angezeigt)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwenden von Desktopbenachrichtigungen, z. B. in einem Benachrichtigungscenter oder in der Taskleiste. Ohne diese Funktion ist die Benachrichtigung nur als blinkendes Taskleistensymbol sichtbar.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nur „neue Nachricht“ anzeigen, ohne möglicherweise geheime Informationen in Desktopbenachrichtigungen anzuzeigen.</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
-        <translation type="unfinished"></translation>
+        <translation>Freundesliste und Chatfenster in separat verschiebbare Fenster aufteilen.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeigt Text-Emojis als bunte Bilder an, statt als Text oder Emojis in schwarz-weißer Schrift.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wählt aus, welcher Bildersatz beim Rendern von Emojis verwendet werden soll.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Größe eines Emoji-Bildes in Pixeln. Wähle etwas in der Nähe der Basisschriftgröße.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
-        <translation type="unfinished"></translation>
+        <translation>Für die Benutzeroberfläche zu verwendender Basisstil. Fusion wird empfohlen, da es am besten mit qTox-Themen funktioniert.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>Farbdesign der Benutzeroberfläche. Verwende dies, um den Dunkelmodus auszuwählen.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn deaktiviert, werden Taskleistenbenachrichtigungen verwendet. Andernfalls wird versucht, das Benachrichtigungs-Backend Ihrer Desktopumgebung zu verwenden. Deaktiviere diese Option, wenn du Probleme mit Desktopbenachrichtigungen hast.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
-        <translation type="unfinished"></translation>
+        <translation>Systemspezifisches Benachrichtigungs-Backend verwenden, falls verfügbar</translation>
     </message>
 </context>
 <context>
