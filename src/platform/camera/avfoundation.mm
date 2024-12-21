@@ -60,6 +60,7 @@ QVector<QPair<QString, QString>> avfoundation::getDeviceList()
     } else {
         qDebug() << "We don't have access to the camera yet; asking user for permission.";
         QMutex mutex;
+        mutex.lock();
         QMutex* mutexPtr = &mutex;
         __block BOOL isGranted = false;
         [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo
@@ -67,6 +68,7 @@ QVector<QPair<QString, QString>> avfoundation::getDeviceList()
                                    isGranted = granted;
                                    mutexPtr->unlock();
                                  }];
+        // Lock it again so the callback can unlock it and we can proceed.
         mutex.lock();
         if (isGranted) {
             qInfo() << "We now have access to the camera.";
