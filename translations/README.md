@@ -3,7 +3,7 @@
 Translating qTox should be easy & straightforward for anyone using
 [**Weblate**](https://hosted.weblate.org/projects/qtox/qtox/).
 
-Overall translation: [![Translation status](https://hosted.weblate.org/widgets/tox/-/svg-badge.svg)](https://hosted.weblate.org/engage/tox/?utm_source=widget)
+Overall translation: [![Translation status](https://hosted.weblate.org/widgets/qtox/-/svg-badge.svg)](https://hosted.weblate.org/engage/qtox/?utm_source=widget)
 
 | Language                                                              | Status                                                                                                                                                        |
 | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
