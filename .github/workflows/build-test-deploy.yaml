@@ -354,7 +354,9 @@ jobs:
             .ci-scripts/dockerfiles/local-deps/qt
           key: ${{ runner.os }}-${{ matrix.arch }}-qt
       - name: Homebrew dependencies to build dependencies
-        run: brew bundle --file ./macos/Brewfile-DepBuildDeps
+        run: |
+          brew bundle --file ./macos/Brewfile-DepBuildDeps
+          sed -i '' -e 's/MAXIMUM_UNMOUNTING_ATTEMPTS=3/MAXIMUM_UNMOUNTING_ATTEMPTS=15/' "$(realpath "$(which create-dmg)")"
       - name: Set up ccache
         run: ccache --set-config=max_size=200M --set-config=cache_dir="$PWD/.cache/ccache" && ccache --show-config
       - name: Build dependencies (except Qt)
@@ -442,7 +444,9 @@ jobs:
           path: ".cache/ccache"
           key: ${{ github.job }}-${{ matrix.arch }}-ccache
       - name: Homebrew
-        run: brew bundle --file ./macos/Brewfile
+        run: |
+          brew bundle --file ./macos/Brewfile
+          sed -i '' -e 's/MAXIMUM_UNMOUNTING_ATTEMPTS=3/MAXIMUM_UNMOUNTING_ATTEMPTS=15/' "$(realpath "$(which create-dmg)")"
       - name: Set up ccache
         run: ccache --set-config=max_size=200M --set-config=cache_dir="$PWD/.cache/ccache" && ccache --show-config
       - name: Install toxcore
