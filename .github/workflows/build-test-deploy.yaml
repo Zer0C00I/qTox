@@ -272,6 +272,11 @@ jobs:
         with:
           path: ".flatpak-builder"
           key: ${{ github.job }}
+      - name: Cache compiler output
+        uses: actions/cache@v4
+        with:
+          path: ".cache/ccache"
+          key: ${{ github.job }}-ccache
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
       - name: Point flathub descriptor at current path
@@ -286,12 +291,14 @@ jobs:
       - name: Get tag name for flatpak release file name
         if: contains(github.ref, 'refs/tags/v')
         id: get_version
-        run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
+        run: |
+          VERSION="$(echo $GITHUB_REF | cut -d / -f 3)"
+          echo "release_flatpak=qTox-$VERSION.x86_64.flatpak" >>$GITHUB_OUTPUT
       - name: Rename flatpak for release upload
         if: contains(github.ref, 'refs/tags/v')
         run: |
-          cp qtox.flatpak qTox-${{ steps.get_version.outputs.VERSION }}.x86_64.flatpak
-          sha256sum qTox-${{ steps.get_version.outputs.VERSION }}.x86_64.flatpak > qTox-${{ steps.get_version.outputs.VERSION }}.x86_64.flatpak.sha256
+          cp qtox.flatpak "${{ steps.get_version.outputs.release_flatpak }}"
+          sha256sum "${{ steps.get_version.outputs.release_flatpak }}" > "${{ steps.get_version.outputs.release_flatpak }}.sha256"
       - name: Upload to versioned release
         if: contains(github.ref, 'refs/tags/v')
         uses: ncipollo/release-action@v1
@@ -299,7 +306,7 @@ jobs:
           allowUpdates: true
           draft: true
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: "qTox-${{ steps.get_version.outputs.VERSION }}.x86_64.flatpak,qTox-${{ steps.get_version.outputs.VERSION }}.x86_64.flatpak.sha256"
+          artifacts: "${{ steps.get_version.outputs.release_flatpak }},${{ steps.get_version.outputs.release_flatpak }}.sha256"
       - name: Rename flatpak for nightly upload
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: |
