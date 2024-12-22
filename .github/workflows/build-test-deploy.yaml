@@ -274,11 +274,6 @@ jobs:
         with:
           path: ".flatpak-builder"
           key: ${{ github.job }}
-      - name: Cache compiler output
-        uses: actions/cache@v4
-        with:
-          path: ".cache/ccache"
-          key: ${{ github.job }}-ccache
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
       - name: Point flathub descriptor at current path
@@ -347,6 +342,13 @@ jobs:
         with:
           path: ".cache/ccache"
           key: ${{ github.job }}-${{ matrix.arch }}-ccache
+      - name: Cache dependencies (only Qt)
+        id: cache-qt
+        uses: actions/cache@v4
+        with:
+          path: |
+            .ci-scripts/dockerfiles/local-deps/qt
+          key: ${{ github.job }}-${{ matrix.arch }}-qt
       - name: Cache dependencies (except Qt)
         id: cache-deps
         uses: actions/cache@v4
@@ -357,13 +359,6 @@ jobs:
             .ci-scripts/dockerfiles/local-deps/lib
             .ci-scripts/dockerfiles/local-deps/share
           key: ${{ github.job }}-${{ matrix.arch }}-local-deps
-      - name: Cache dependencies (only Qt)
-        id: cache-qt
-        uses: actions/cache@v4
-        with:
-          path: |
-            .ci-scripts/dockerfiles/local-deps/qt
-          key: ${{ github.job }}-${{ matrix.arch }}-qt
       - name: Homebrew dependencies to build dependencies
         run: |
           brew bundle --file ./macos/Brewfile-DepBuildDeps

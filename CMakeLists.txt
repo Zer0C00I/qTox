@@ -683,8 +683,8 @@ if(QT_FEATURE_static)
     target_link_libraries(
       ${PROJECT_NAME}
       PRIVATE Qt6::QLinuxFbIntegrationPlugin Qt6::QOffscreenIntegrationPlugin
-              Qt6::QVncIntegrationPlugin Qt6::QXcbGlxIntegrationPlugin
-              Qt6::QXcbIntegrationPlugin Qt6::QWaylandIntegrationPlugin)
+              Qt6::QVncIntegrationPlugin Qt6::QXcbIntegrationPlugin
+              Qt6::QWaylandIntegrationPlugin)
   endif()
 endif()
 if(FULLY_STATIC)

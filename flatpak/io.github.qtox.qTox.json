@@ -56,11 +56,9 @@
       },
       "sources": [
         {
-          "type": "git",
-          "url": "https://github.com/sqlcipher/sqlcipher",
-          "tag": "v4.6.1",
-          "commit": "c5bd336ece77922433aaf6d6fe8cf203b0c299d5",
-          "disable-fsckobjects": true
+          "type": "archive",
+          "url": "https://github.com/sqlcipher/sqlcipher/archive/v4.6.1.tar.gz",
+          "sha256": "d8f9afcbc2f4b55e316ca4ada4425daf3d0b4aab25f45e11a802ae422b9f53a3"
         }
       ]
     },
@@ -68,10 +66,9 @@
       "name": "libsodium",
       "sources": [
         {
-          "type": "git",
-          "url": "https://github.com/jedisct1/libsodium",
-          "tag": "1.0.20-RELEASE",
-          "commit": "9511c982fb1d046470a8b42aa36556cdb7da15de"
+          "type": "archive",
+          "url": "https://github.com/jedisct1/libsodium/releases/download/1.0.20-RELEASE/libsodium-1.0.20.tar.gz",
+          "sha256": "ebb65ef6ca439333c2bb41a0c1990587288da07f6c7fd07cb3a18cc18d30ce19"
         }
       ]
     },
@@ -85,14 +82,9 @@
       ],
       "sources": [
         {
-          "type": "git",
-          "url": "https://github.com/TokTok/c-toxcore",
-          "tag": "v0.2.20",
-          "commit": "934a8301113e6c6cb2bf1fb6791135cade908c72",
-          "x-checker-data": {
-            "type": "git",
-            "tag-pattern": "^v([\\d.]+)$"
-          }
+          "type": "archive",
+          "url": "https://github.com/TokTok/c-toxcore/releases/download/v0.2.20/c-toxcore-0.2.20.tar.gz",
+          "sha256": "a9c89a8daea745d53e5d78e7aacb99c7b4792c4400a5a69c71238f45d6164f4c"
         }
       ]
     },
@@ -104,7 +96,7 @@
         {
           "type": "git",
           "url": "https://github.com/TokTok/qTox",
-          "commit": "4b29cb671f444d5bf2298d2b1697aadc3f3dd3d7",
+          "commit": "927b87da1fa87fa3accff2a069fb9a3090424f7a",
           "tag": "v1.18.0-rc.3"
         }
       ]

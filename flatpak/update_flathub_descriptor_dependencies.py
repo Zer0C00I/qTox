@@ -39,23 +39,40 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-VERSION_EXTRACT_REGEX = re.compile(".*_VERSION=(.*)")
+PRINT_VERSION_SCRIPT = """
+download_verify_extract_tarball() {
+    echo "URL: $1"
+    echo "HASH: $2"
+}
+"""
 
 
-def find_version(download_script_path: pathlib.Path) -> str:
+def find_version(download_script_path: pathlib.Path) -> tuple[str, str]:
     """
-    Find the version specified for a given dependency by parsing its download script
+    Find the version and hash specified for a given dependency by parsing its
+    download script.
+
+    Returns a tuple of (version, hash).
     """
-    # Unintelligent regex parsing, but it will have to do.
-    # Hope there is no shell expansion in our version info, otherwise we'll have
-    # to do something a little more intelligent
     with open(download_script_path) as f:
-        script_content = f.read()
-        matches = VERSION_EXTRACT_REGEX.search(script_content, re.MULTILINE)
+        script_content = "".join(
+            re.sub(r"^source.*", PRINT_VERSION_SCRIPT, line)
+            for line in f.readlines())
 
-    if not matches:
-        raise ValueError(f"Could not find version in {download_script_path}")
-    return matches.group(1)
+    # Run bash script in a subshell to extract the version
+    version_output = subprocess.run(  # nosec
+        ["bash", "-c", script_content],
+        check=True,
+        stdout=subprocess.PIPE,
+    ).stdout.decode()
+
+    # Extract the version and hash from the output
+    matches = re.match(r"URL: (.*)\nHASH: (.*)", version_output, re.MULTILINE)
+    if matches is None:
+        raise ValueError(
+            "Failed to extract version and hash from download script")
+
+    return matches.group(1), matches.group(2)
 
 
 class FindVersionTest(unittest.TestCase):
@@ -72,8 +89,8 @@ class FindVersionTest(unittest.TestCase):
             TEST_HASH=:)
 
             download_verify_extract_tarball \
-                https://test_site.com/${TEST_VERSION} \
-                ${TEST_HASH}
+                "https://test_site.com/$TEST_VERSION" \
+                "$TEST_HASH"
             """
 
             sample_download_script_path = pathlib.Path(d) / "/test_script.sh"
@@ -81,7 +98,7 @@ class FindVersionTest(unittest.TestCase):
                 f.write(sample_download_script)
 
             self.assertEqual(find_version(sample_download_script_path),
-                             "1.2.3")
+                             ("1.2.3", ":)"))
 
 
 def load_flathub_manifest(flathub_manifest_path: str) -> Any:
@@ -117,7 +134,17 @@ def git_tag() -> str:
     return git_output.stdout.decode().strip()
 
 
-def update_source(module: dict[str, Any], tag: str) -> None:
+def update_archive_source(
+    module: dict[str, Any],
+    source: tuple[str, str],
+) -> None:
+    url, sha256 = source
+    module_source = module["sources"][0]
+    module_source["url"] = url
+    module_source["sha256"] = sha256
+
+
+def update_git_source(module: dict[str, Any], tag: str) -> None:
     module_source = module["sources"][0]
     module_source["tag"] = tag
     module_source["commit"] = commit_from_tag(
@@ -137,13 +164,13 @@ def main(flathub_manifest_path: str, output_manifest_path: str) -> None:
 
     for module in flathub_manifest["modules"]:
         if module["name"] == "sqlcipher":
-            update_source(module, f"v{sqlcipher_version}")
+            update_archive_source(module, sqlcipher_version)
         elif module["name"] == "libsodium":
-            update_source(module, sodium_version)
+            update_archive_source(module, sodium_version)
         elif module["name"] == "c-toxcore":
-            update_source(module, f"v{toxcore_version}")
+            update_archive_source(module, toxcore_version)
         elif module["name"] == "qTox":
-            update_source(module, qTox_version)
+            update_git_source(module, qTox_version)
 
     with open(output_manifest_path, "w") as f:
         json.dump(flathub_manifest, f, indent=2)

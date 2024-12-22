@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-# SPDX-License-Identifier: GPL-3.0+
-#
-#   Copyright © 2018-2021 by The qTox Project Contributors
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Copyright © 2018-2021 by The qTox Project Contributors
+# Copyright © 2024 The TokTok team
 
 # Fail out on error
 set -exuo pipefail
@@ -18,7 +18,7 @@ if [ -n "${FLATPAK_BUILD:-}" ]; then
 fi
 
 # Build the qTox flatpak
-flatpak-builder --disable-rofiles-fuse --install-deps-from=flathub --force-clean --repo=qtox-repo build "$FLATPAK_DESCRIPTOR"
+flatpak-builder --ccache --disable-rofiles-fuse --install-deps-from=flathub --force-clean --repo=qtox-repo _build-flatpak "$FLATPAK_DESCRIPTOR"
 
 # Create a bundle for distribution
 flatpak build-bundle qtox-repo qtox.flatpak io.github.qtox.qTox
