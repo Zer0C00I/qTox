@@ -1,6 +1,8 @@
 name: Build, test, and deploy
 
 on:
+  # Run this workflow every day at 3:00 UTC to update caches.
+  schedule: [cron: '0 3 * * *']
   pull_request:
     branches: ["master"]
   push:
@@ -35,7 +37,7 @@ jobs:
 
   clang-tidy:
     name: Clang-Tidy
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request' || github.event_name == 'schedule'
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
@@ -68,7 +70,7 @@ jobs:
 
   build-alpine:
     name: Alpine
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request' || github.event_name == 'schedule'
     runs-on: ubuntu-22.04
     strategy:
       matrix:
@@ -88,7 +90,7 @@ jobs:
 
   build-alpine-static:
     name: Alpine (static)
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request' || github.event_name == 'schedule'
     runs-on: ubuntu-22.04
     strategy:
       matrix:
@@ -107,7 +109,7 @@ jobs:
 
   build-debian:
     name: Debian
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request' || github.event_name == 'schedule'
     runs-on: ubuntu-22.04
     strategy:
       matrix:
@@ -127,7 +129,7 @@ jobs:
 
   build-fedora:
     name: Fedora with ASAN
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request' || github.event_name == 'schedule'
     runs-on: ubuntu-22.04
     strategy:
       matrix:
@@ -147,7 +149,7 @@ jobs:
 
   build-ubuntu:
     name: Ubuntu LTS
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request' || github.event_name == 'schedule'
     runs-on: ubuntu-22.04
     strategy:
       matrix:
@@ -345,7 +347,7 @@ jobs:
         with:
           path: ".cache/ccache"
           key: ${{ github.job }}-${{ matrix.arch }}-ccache
-      - name: Cache dependencies (except/requires Qt)
+      - name: Cache dependencies (except Qt)
         id: cache-deps
         uses: actions/cache@v4
         with:
@@ -354,29 +356,26 @@ jobs:
             .ci-scripts/dockerfiles/local-deps/include
             .ci-scripts/dockerfiles/local-deps/lib
             .ci-scripts/dockerfiles/local-deps/share
-          key: ${{ runner.os }}-${{ matrix.arch }}-local-deps
+          key: ${{ github.job }}-${{ matrix.arch }}-local-deps
       - name: Cache dependencies (only Qt)
         id: cache-qt
         uses: actions/cache@v4
         with:
           path: |
             .ci-scripts/dockerfiles/local-deps/qt
-          key: ${{ runner.os }}-${{ matrix.arch }}-qt
+          key: ${{ github.job }}-${{ matrix.arch }}-qt
       - name: Homebrew dependencies to build dependencies
         run: |
           brew bundle --file ./macos/Brewfile-DepBuildDeps
           sed -i '' -e 's/MAXIMUM_UNMOUNTING_ATTEMPTS=3/MAXIMUM_UNMOUNTING_ATTEMPTS=15/' "$(realpath "$(which create-dmg)")"
       - name: Set up ccache
         run: ccache --set-config=max_size=200M --set-config=cache_dir="$PWD/.cache/ccache" && ccache --show-config
-      - name: Build dependencies (except Qt)
-        if: steps.cache-deps.outputs.cache-hit != 'true'
-        run: ./.ci-scripts/build-macos-deps.sh ${{ matrix.arch }}
       - name: Build dependencies (only Qt)
         if: steps.cache-qt.outputs.cache-hit != 'true'
         run: ./.ci-scripts/build-macos-qt.sh ${{ matrix.arch }}
-      - name: Build dependencies (requires Qt)
+      - name: Build dependencies (except Qt)
         if: steps.cache-deps.outputs.cache-hit != 'true'
-        run: ./.ci-scripts/build-macos-qtdeps.sh ${{ matrix.arch }}
+        run: ./.ci-scripts/build-macos-deps.sh ${{ matrix.arch }}
       - name: Build qTox
         run: ./.ci-scripts/build-qtox-macos.sh dist ${{ matrix.arch }}
       - name: Upload dmg
@@ -436,7 +435,7 @@ jobs:
 
   build-macos-user:
     name: macOS user
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request' || github.event_name == 'schedule'
     strategy:
       matrix:
         arch: [arm64, x86_64]

@@ -20,4 +20,6 @@ install_deps \
   build_ffmpeg.sh \
   build_sqlcipher.sh \
   build_hunspell.sh \
+  build_extra_cmake_modules.sh \
+  build_sonnet.sh \
   build_toxcore.sh
