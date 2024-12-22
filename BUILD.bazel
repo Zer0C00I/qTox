@@ -7,10 +7,7 @@ project(license = "gpl3-https")
 
 mypy_test(
     name = "mypy_test",
-    srcs = glob(
-        ["**/*.py"],
-        exclude = ["flatpak/update_flathub_descriptor_dependencies.py"],
-    ),
+    srcs = glob(["**/*.py"]),
 )
 
 qt_lconvert(

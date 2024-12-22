@@ -5,6 +5,8 @@
 
 #include "videoframe.h"
 
+#include <QList>
+
 extern "C"
 {
 #pragma GCC diagnostic push
@@ -220,9 +222,9 @@ std::shared_ptr<VideoFrame> VideoFrame::trackFrame()
  */
 void VideoFrame::untrackFrames(const VideoFrame::IDType& sourceID, bool releaseFrames)
 {
-    // Keep the pointers to delete in a separate vector to avoid deadlock in the
+    // Keep the pointers to delete in a separate list to avoid deadlock in the
     // VideoFrame destructor, which also acquires a refsLock.
-    std::vector<std::shared_ptr<VideoFrame>> toDelete;
+    QList<std::shared_ptr<VideoFrame>> toDelete;
 
     // Must be created after toDelete to avoid deadlock.
     QWriteLocker refsLockWriteLocker(&refsLock);

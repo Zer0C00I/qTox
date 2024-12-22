@@ -9,7 +9,7 @@
     "--share=network",
     "--socket=pulseaudio",
     "--socket=wayland",
-    "--socket=x11",
+    "--socket=fallback-x11",
     "--share=ipc",
     "--talk-name=org.kde.StatusNotifierWatcher",
     "--filesystem=xdg-desktop",
@@ -24,7 +24,7 @@
   "add-extensions": {
     "org.freedesktop.Platform.ffmpeg-full": {
       "directory": "lib/ffmpeg",
-      "version": "20.08",
+      "version": "24.08",
       "add-ld-path": "."
     }
   },
@@ -99,15 +99,13 @@
     {
       "name": "qTox",
       "buildsystem": "cmake-ninja",
-      "config-opts": [
-        "-DCMAKE_BUILD_TYPE=Release",
-        "-DSVGZ_ICON=OFF",
-        "-DSTRICT_OPTIONS=ON"
-      ],
+      "config-opts": ["-DSVGZ_ICON=OFF", "-DSTRICT_OPTIONS=ON"],
       "sources": [
         {
-          "type": "dir",
-          "path": "/qtox/"
+          "type": "git",
+          "url": "https://github.com/TokTok/qTox",
+          "commit": "4b29cb671f444d5bf2298d2b1697aadc3f3dd3d7",
+          "tag": "v1.18.0-rc.3"
         }
       ]
     }
