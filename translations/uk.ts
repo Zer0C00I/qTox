@@ -81,19 +81,19 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>High (64 kBps)</source>
-        <translation>Висока (64 кбіт)</translation>
+        <translation>Висока (64 кБіт/с)</translation>
     </message>
     <message>
         <source>Medium (32 kBps)</source>
-        <translation>Середня (32 кбіт)</translation>
+        <translation>Середня (32 кБіт/с)</translation>
     </message>
     <message>
         <source>Low (16 kBps)</source>
-        <translation>Низька (16 кбіт)</translation>
+        <translation>Низька (16 кБіт/с)</translation>
     </message>
     <message>
         <source>Very low (8 kBps)</source>
-        <translation>Дуже низька (8 кбіт)</translation>
+        <translation>Дуже низька (8 кБіт/с)</translation>
     </message>
     <message>
         <source>Threshold</source>
@@ -1996,11 +1996,11 @@ Save format changes are possible, which may result in data loss.</source>
     </message>
     <message>
         <source>Conference block list</source>
-        <translation>Список блокування</translation>
+        <translation>Список блокування конференції</translation>
     </message>
     <message>
         <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation>Фільтруйте повідомлення в конференції через відкриті (публічні) ключі учасників конференції. Впишіть сюди відкриті (публічні) ключі, по одному на рядок.</translation>
+        <translation>Фільтруйте повідомлення в конференції через відкриті (публічні) ключі учасників конференції. Впишіть сюди відкриті (публічні) ключі, по одному на кожен рядок.</translation>
     </message>
 </context>
 <context>
