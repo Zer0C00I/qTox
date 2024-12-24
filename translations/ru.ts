@@ -81,19 +81,19 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>High (64 kBps)</source>
-        <translation>Высокий (64 Кбит/с)</translation>
+        <translation>Высокое (64 кБит/с)</translation>
     </message>
     <message>
         <source>Medium (32 kBps)</source>
-        <translation>Средний (32 КБит/с)</translation>
+        <translation>Среднее (32 кБит/с)</translation>
     </message>
     <message>
         <source>Low (16 kBps)</source>
-        <translation>Низкий (16 КБит/с)</translation>
+        <translation>Низкое (16 кБит/с)</translation>
     </message>
     <message>
         <source>Very low (8 kBps)</source>
-        <translation>Очень низкий (8 КБит/с)</translation>
+        <translation>Очень низкое (8 кБит/с)</translation>
     </message>
     <message>
         <source>Threshold</source>
@@ -1993,7 +1993,7 @@ Save format changes are possible, which may result in data loss.</source>
     </message>
     <message>
         <source>Conference block list</source>
-        <translation>Список блокировки</translation>
+        <translation>Список блокировки конференции</translation>
     </message>
     <message>
         <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
