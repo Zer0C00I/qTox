@@ -13,7 +13,7 @@
         "SPELL_CHECK": true,
         "STRICT_OPTIONS": true,
         "UPDATE_CHECK": true,
-        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
         "CMAKE_COMPILE_WARNING_AS_ERROR": true,
         "CMAKE_EXPORT_COMPILE_COMMANDS": true,
         "CMAKE_PREFIX_PATH": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/cmake",

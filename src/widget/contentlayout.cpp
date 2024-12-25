@@ -105,7 +105,9 @@ void ContentLayout::init()
 
     if (QStyleFactory::keys().contains(settings.getStyle()) && settings.getStyle() != "None") {
         QStyle* qstyle = QStyleFactory::create(settings.getStyle());
-        qstyle->setParent(this);
+        // Can't take ownership, because it gets used beyond the scope of this layout.
+        // TODO(iphydf): Find out why.
+        // qstyle->setParent(this);
         mainHead->setStyle(qstyle);
         mainContent->setStyle(qstyle);
     }
