@@ -88,9 +88,9 @@ private:
     void setProfile(Profile* p);
 
 private:
-    Profile* profile;
+    std::unique_ptr<Profile> profile;
     Settings& settings;
-    Widget* widget;
+    std::unique_ptr<Widget> widget;
     std::unique_ptr<IAudioControl> audioControl;
     QCommandLineParser* parser = nullptr;
     CameraSource& cameraSource;

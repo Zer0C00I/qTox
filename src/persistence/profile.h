@@ -37,6 +37,7 @@ public:
     static Profile* createProfile(const QString& name, const QString& password, Settings& settings,
                                   const QCommandLineParser* parser, CameraSource& cameraSource,
                                   IMessageBoxManager& messageBoxManager);
+    void save();
     ~Profile();
 
     Core& getCore() const;

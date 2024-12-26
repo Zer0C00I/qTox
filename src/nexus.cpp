@@ -61,10 +61,11 @@ Nexus::Nexus(Settings& settings_, IMessageBoxManager& messageBoxManager_,
 
 Nexus::~Nexus()
 {
-    delete widget;
     widget = nullptr;
-    delete profile;
-    profile = nullptr;
+    if (profile != nullptr) {
+        profile->save();
+        profile = nullptr;
+    }
     emit saveGlobal();
 #ifdef Q_OS_MAC
     delete globalMenuBar;
@@ -147,11 +148,16 @@ void Nexus::start()
  */
 int Nexus::showLogin(const QString& profileName)
 {
-    delete widget;
+    // Delete the current GUI.
     widget = nullptr;
 
-    delete profile;
-    profile = nullptr;
+    // Delete at the end of the function, but get ready to set a new one.
+    // We need to keep it alive for a while longer because it may be used on shutdown.
+    auto oldProfile = std::move(profile);
+    // Finish saving the current profile if needed.
+    if (oldProfile != nullptr) {
+        oldProfile->save();
+    }
 
     LoginScreen loginScreen{settings.getPaths(), *style, settings.getThemeColor(), profileName};
     connectLoginScreen(loginScreen);
@@ -169,6 +175,7 @@ int Nexus::showLogin(const QString& profileName)
         qApp->quit();
     }
     disconnect(this, &Nexus::currentProfileChanged, this, &Nexus::bootstrapWithProfile);
+
     return returnval;
 }
 
@@ -176,7 +183,8 @@ void Nexus::bootstrapWithProfile(Profile* p)
 {
     // kriby: This is a hack until a proper controller is written
 
-    profile = p;
+    // We take ownership of the profile here.
+    profile = std::unique_ptr<Profile>(p);
 
     if (profile) {
         audioControl = std::unique_ptr<IAudioControl>(Audio::makeAudio(settings));
@@ -210,7 +218,8 @@ void Nexus::showMainGUI()
     assert(profile);
 
     // Create GUI
-    widget = new Widget(*profile, *audioControl, cameraSource, settings, *style, ipc, *this);
+    widget =
+        std::make_unique<Widget>(*profile, *audioControl, cameraSource, settings, *style, ipc, *this);
 
     // Start GUI
     widget->init();
@@ -222,14 +231,15 @@ void Nexus::showMainGUI()
     widget->setEnabled(false);
 
     // Connections
-    connect(profile, &Profile::selfAvatarChanged, widget, &Widget::onSelfAvatarLoaded);
+    connect(profile.get(), &Profile::selfAvatarChanged, widget.get(), &Widget::onSelfAvatarLoaded);
 
-    connect(profile, &Profile::coreChanged, widget, &Widget::onCoreChanged);
+    connect(profile.get(), &Profile::coreChanged, widget.get(), &Widget::onCoreChanged);
 
-    connect(profile, &Profile::failedToStart, widget, &Widget::onFailedToStartCore,
+    connect(profile.get(), &Profile::failedToStart, widget.get(), &Widget::onFailedToStartCore,
             Qt::BlockingQueuedConnection);
 
-    connect(profile, &Profile::badProxy, widget, &Widget::onBadProxyCore, Qt::BlockingQueuedConnection);
+    connect(profile.get(), &Profile::badProxy, widget.get(), &Widget::onBadProxyCore,
+            Qt::BlockingQueuedConnection);
 
     profile->startCore();
 
@@ -242,7 +252,7 @@ void Nexus::showMainGUI()
  */
 Profile* Nexus::getProfile()
 {
-    return profile;
+    return profile.get();
 }
 
 /**

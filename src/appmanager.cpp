@@ -434,8 +434,6 @@ void AppManager::cleanup()
         settings->sync();
     }
 
-    nexus.reset();
-    settings.reset();
     qDebug() << "Cleanup success";
 
 #ifdef LOG_TO_FILE

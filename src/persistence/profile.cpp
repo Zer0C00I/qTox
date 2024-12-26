@@ -365,7 +365,7 @@ Profile* Profile::createProfile(const QString& name, const QString& password, Se
     return p;
 }
 
-Profile::~Profile()
+void Profile::save()
 {
     if (isRemoved) {
         return;
@@ -378,6 +378,8 @@ Profile::~Profile()
     assert(ProfileLocker::getCurLockName() == name);
     ProfileLocker::unlock();
 }
+
+Profile::~Profile() = default;
 
 /**
  * @brief Lists all the files in the config dir with a given extension
