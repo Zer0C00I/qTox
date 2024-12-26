@@ -7,7 +7,6 @@
 
 #include <cassert>
 #include <map>
-#include <ranges>
 
 #include <QDebug>
 #include <QScreen>
@@ -25,6 +24,7 @@
 #include "src/widget/tool/recursivesignalblocker.h"
 #include "src/widget/tool/screenshotgrabber.h"
 #include "src/widget/translator.h"
+#include "util/ranges.h"
 
 #ifndef ALC_ALL_DEVICES_SPECIFIER
 #define ALC_ALL_DEVICES_SPECIFIER ALC_DEVICE_SPECIFIER
@@ -266,7 +266,7 @@ void AVForm::selectBestModes(QVector<VideoMode>& allVideoModes)
     }
 
     QVector<VideoMode> newVideoModes;
-    for (const auto& [_, modeIndex] : std::views::reverse(bestModeIndices)) {
+    for (const auto& [_, modeIndex] : qtox::views::reverse(bestModeIndices)) {
         VideoMode mode_ = allVideoModes[modeIndex];
 
         if (newVideoModes.empty()) {

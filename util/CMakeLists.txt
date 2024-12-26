@@ -6,6 +6,8 @@ add_library(
   include/util/algorithm.h
   src/algorithm.cpp
   include/util/interface.h
+  include/util/ranges.h
+  src/ranges.cpp
   include/util/strongtype.h
   include/util/display.h
   src/display.cpp
