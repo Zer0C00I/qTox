@@ -11,4 +11,4 @@ readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 
 # Needs openssl from build-macos-deps.sh to already have been installed.
 install_deps \
-  build_qt_macos.sh
+  qt

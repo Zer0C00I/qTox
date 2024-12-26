@@ -14,10 +14,15 @@ ARCH="$1"
 
 install_deps() {
   for dep in "$@"; do
-    mkdir -p _build-dep
-    pushd _build-dep
-    "$SCRIPT_DIR/dockerfiles/qtox/$dep" --arch "macos-$ARCH" --libtype "static"
+    mkdir -p "external/$dep"
+    pushd "external/$dep"
+    if [ -f "$SCRIPT_DIR/dockerfiles/qtox/build_${dep}_macos.sh" ]; then
+      SCRIPT="$SCRIPT_DIR/dockerfiles/qtox/build_${dep}_macos.sh"
+    else
+      SCRIPT="$SCRIPT_DIR/dockerfiles/qtox/build_$dep.sh"
+    fi
+    "$SCRIPT" --arch "macos-$ARCH" --libtype "static"
     popd
-    rm -rf _build-dep
+    rm -rf "external/$dep"
   done
 }
