@@ -12,6 +12,8 @@ You can use ffmpeg to create those files as follows:
 ffmpeg -i notification.wav -f s16le -acodec pcm_s16le -ac 1 -ar 48000 notification.s16le.pcm
 ```
 
+You can run `make` in this directory to do this for all files.
+
 # Normalization
 
 All sound files should have their maximum at -1.0 dB.

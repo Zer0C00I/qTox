@@ -72,11 +72,11 @@ public:
         case Sound::NewMessage:
             return QStringLiteral(":/audio/notification.s16le.pcm");
         case Sound::IncomingCall:
-            return QStringLiteral(":/audio/ToxIncomingCall.s16le.pcm");
+            return QStringLiteral(":/audio/call_incoming.s16le.pcm");
         case Sound::OutgoingCall:
-            return QStringLiteral(":/audio/ToxOutgoingCall.s16le.pcm");
+            return QStringLiteral(":/audio/call_outgoing.s16le.pcm");
         case Sound::CallEnd:
-            return QStringLiteral(":/audio/ToxEndCall.s16le.pcm");
+            return QStringLiteral(":/audio/call_end.s16le.pcm");
         }
         assert(false);
         return {};
