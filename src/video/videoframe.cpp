@@ -335,12 +335,19 @@ ToxYUVFrame VideoFrame::toToxYUVFrame(QSize frameSize)
 
     return toGenericObject(frameSize, AV_PIX_FMT_YUV420P, true, [frameSize](AVFrame* const frame) {
         // Converter function (constructs ToxAVFrame out of AVFrame*)
+        // TODO(iphydf): Be more efficient (less copying).
         return ToxYUVFrame{
             static_cast<std::uint16_t>(frameSize.width()),
             static_cast<std::uint16_t>(frameSize.height()),
-            frame->data[0],
-            frame->data[1],
-            frame->data[2],
+            // width * height
+            std::vector<uint8_t>(frame->data[0],
+                                 frame->data[0] + frameSize.width() * frameSize.height()),
+            // (width/2) * (height/2)
+            std::vector<uint8_t>(frame->data[1],
+                                 frame->data[1] + (frameSize.width() / 2) * (frameSize.height() / 2)),
+            // (width/2) * (height/2)
+            std::vector<uint8_t>(frame->data[2],
+                                 frame->data[2] + (frameSize.width() / 2) * (frameSize.height() / 2)),
         };
     });
 }
@@ -704,7 +711,7 @@ VideoFrame::toGenericObject(const QSize& dimensions, int pixelFormat, bool requi
         QReadLocker frameReadLock{&frameLock};
 
         // We return empty if the VideoFrame is no longer valid
-        if (frameBuffer.size() == 0) {
+        if (frameBuffer.empty()) {
             return {};
         }
 

@@ -408,8 +408,8 @@ void CoreAV::sendCallVideo(uint32_t callId, std::shared_ptr<VideoFrame> vframe)
     Toxav_Err_Send_Frame err;
     int retries = 0;
     do {
-        if (!toxav_video_send_frame(toxav.get(), callId, frame.width, frame.height, frame.y,
-                                    frame.u, frame.v, &err)) {
+        if (!toxav_video_send_frame(toxav.get(), callId, frame.width, frame.height, frame.y.data(),
+                                    frame.u.data(), frame.v.data(), &err)) {
             if (err == TOXAV_ERR_SEND_FRAME_SYNC) {
                 ++retries;
                 QThread::usleep(500);

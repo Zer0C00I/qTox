@@ -50,6 +50,8 @@ jobs:
         run: .ci-scripts/import-developer-keys.sh
       - name: Verify signatures
         if: github.event_name == 'pull_request'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: tools/verify-release-assets.py
 
   update-nightly-tag:
