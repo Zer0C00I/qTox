@@ -49,7 +49,7 @@ jobs:
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
       - name: Run build
-        run: docker-compose run --rm fedora ./.ci-scripts/build-qtox-linux.sh --build-type Release --full --tidy
+        run: docker-compose run --rm fedora .ci-scripts/build-qtox-linux.sh --build-type Release --full --tidy
 
   translation-check:
     name: Check for translatable strings
@@ -86,7 +86,7 @@ jobs:
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
       - name: Run build
-        run: docker-compose run --rm alpine ./.ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }}
+        run: docker-compose run --rm alpine .ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }}
 
   build-alpine-static:
     name: Alpine (static)
@@ -105,7 +105,7 @@ jobs:
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
       - name: Run build
-        run: docker-compose run --rm alpine-static ./.ci-scripts/build-qtox-linux-static.sh --build-type ${{ matrix.build_type }}
+        run: docker-compose run --rm alpine-static .ci-scripts/build-qtox-linux-static.sh --build-type ${{ matrix.build_type }}
 
   build-debian:
     name: Debian
@@ -125,7 +125,7 @@ jobs:
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
       - name: Run build
-        run: docker-compose run --rm debian ./.ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }}
+        run: docker-compose run --rm debian .ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }}
 
   build-fedora:
     name: Fedora with ASAN
@@ -145,7 +145,7 @@ jobs:
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
       - name: Run build
-        run: docker-compose run --rm fedora ./.ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }} --sanitize
+        run: docker-compose run --rm fedora .ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }} --sanitize
 
   build-ubuntu:
     name: Ubuntu LTS
@@ -165,12 +165,12 @@ jobs:
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
       - name: Run build
-        run: docker-compose run --rm ubuntu_lts ./.ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }}
+        run: docker-compose run --rm ubuntu_lts .ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }}
       - name: Code coverage
         run: |
           # https://github.com/actions/runner/issues/491
           if [ "${{ matrix.build_type }}" == "Release" ] && [ "${{ matrix.features }}" == "full" ]; then
-            docker-compose run --rm ubuntu_lts ./.ci-scripts/lcov.sh
+            docker-compose run --rm ubuntu_lts .ci-scripts/lcov.sh
             # Upload report to codecov.io
             bash <(curl -s https://codecov.io/bash) -f coverage.info || echo "Codecov did not collect coverage reports"
           fi
@@ -367,12 +367,19 @@ jobs:
         run: ccache --set-config=max_size=200M --set-config=cache_dir="$PWD/.cache/ccache" && ccache --show-config
       - name: Build dependencies (only Qt)
         if: steps.cache-qt.outputs.cache-hit != 'true'
-        run: ./.ci-scripts/build-macos-qt.sh ${{ matrix.arch }}
+        run: .ci-scripts/build-macos-qt.sh ${{ matrix.arch }}
       - name: Build dependencies (except Qt)
         if: steps.cache-deps.outputs.cache-hit != 'true'
-        run: ./.ci-scripts/build-macos-deps.sh ${{ matrix.arch }}
+        run: .ci-scripts/build-macos-deps.sh ${{ matrix.arch }}
+      - name: Install the Apple certificate
+#       if: github.event_name == 'push'
+        env:
+          BUILD_CERTIFICATE_BASE64: ${{ secrets.APPLE_BUILD_CERTIFICATE_BASE64 }}
+          P12_PASSWORD: ${{ secrets.APPLE_P12_PASSWORD }}
+          KEYCHAIN_PASSWORD: ${{ secrets.APPLE_KEYCHAIN_PASSWORD }}
+        run: .github/scripts/install_apple_cert >/dev/null
       - name: Build qTox
-        run: ./.ci-scripts/build-qtox-macos.sh dist ${{ matrix.arch }}
+        run: .ci-scripts/build-qtox-macos.sh dist ${{ matrix.arch }}
       - name: Upload dmg
         uses: actions/upload-artifact@v4
         with:
@@ -455,7 +462,7 @@ jobs:
       - name: Install toxcore
         run: .ci-scripts/dockerfiles/qtox/build_toxcore_linux.sh sudo
       - name: Build qTox
-        run: ./.ci-scripts/build-qtox-macos.sh user ${{ matrix.arch }}
+        run: .ci-scripts/build-qtox-macos.sh user ${{ matrix.arch }}
 
   build-windows:
     name: Windows
@@ -554,9 +561,9 @@ jobs:
         with:
           fetch-depth: 0
       - name: Run
-        run: ./.ci-scripts/build-docs.sh
+        run: .ci-scripts/build-docs.sh
       - name: Deploy
         if: github.ref == 'refs/heads/master' && github.repository_owner == 'qTox'
         env:
           access_key: ${{ secrets.DOXYGEN_DEPLOY_KEY }}
-        run: ./.ci-scripts/deploy-docs.sh
+        run: .ci-scripts/deploy-docs.sh

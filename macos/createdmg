@@ -4,7 +4,7 @@
 # Copyright © 2017-2019 by The qTox Project Contributors
 # Copyright © 2024 The TokTok team
 
-set -eu -o pipefail
+set -euo pipefail
 
 QTOX_DIR="$1"
 
@@ -19,6 +19,13 @@ if [ ! -d "$BUNDLE_PATH" ]; then
 fi
 
 rm -f "$BUILD_DIR/qTox.dmg"
+
+if security find-identity | grep -q Development; then
+  codesign -s "Development" "$BUNDLE_PATH"
+  codesign -v "$BUNDLE_PATH"
+else
+  echo "No Development identity found, skipping code signing"
+fi
 
 create-dmg \
   --filesystem APFS \
