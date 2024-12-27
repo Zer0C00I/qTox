@@ -690,7 +690,7 @@ if(QT_FEATURE_static)
   endif()
 endif()
 if(FULLY_STATIC)
-  target_link_options(${PROJECT_NAME} PRIVATE -static)
+  target_link_options(${PROJECT_NAME} PRIVATE -static-pie)
 endif()
 
 if(BUILD_TESTING)

@@ -9,6 +9,7 @@
 
 #include <QDebug>
 #include <QFile>
+#include <QLoggingCategory>
 #include <QMutexLocker>
 #include <QPointer>
 #include <QThread>
@@ -16,6 +17,20 @@
 #include <QtMath>
 
 #include <cassert>
+
+#if defined(QT_STATIC)
+extern "C"
+{
+    typedef void alsoftLogCallback(void* userptr, char level, const char* message, int length) noexcept;
+    /**
+     * @brief Set a callback for OpenAL logging.
+     *
+     * @note This function is only available in statically linked builds where we know for sure we
+     * link against openal-soft.
+     */
+    void alsoft_set_log_callback(alsoftLogCallback* callback, void* userptr) noexcept;
+}
+#endif
 
 namespace {
 void applyGain(int16_t* buffer, uint32_t bufferSize, qreal gainFactor)
@@ -41,12 +56,45 @@ void applyGain(int16_t* buffer, uint32_t bufferSize, qreal gainFactor)
 
 constexpr unsigned int BUFFER_COUNT = 16;
 constexpr uint32_t AUDIO_CHANNELS = 2;
+
+namespace logcat {
+#if defined(QT_STATIC)
+Q_LOGGING_CATEGORY(openal, "openal")
+#endif
+Q_LOGGING_CATEGORY(audio, "qtox.audio")
+} // namespace logcat
 } // namespace
 
 OpenAL::OpenAL(IAudioSettings& _settings)
     : settings{_settings}
     , audioThread{new QThread}
 {
+#if defined(QT_STATIC)
+    alsoft_set_log_callback(
+        [](void* userptr, char level, const char* message, int length) noexcept {
+            std::ignore = userptr;
+            // OpenAL passes .data() and .size() to the callback,
+            // so we can't rely on null-termination.
+            const std::string_view msg{message, static_cast<size_t>(length)};
+            switch (level) {
+            case 'E':
+                qCCritical(logcat::openal).noquote() << msg;
+                break;
+            case 'W':
+                qCWarning(logcat::openal).noquote() << msg;
+                break;
+            case 'I':
+                qCDebug(logcat::openal).noquote() << msg;
+                break;
+            default:
+                // Shouldn't happen, but if it does, we'll log it as a warning.
+                qCWarning(logcat::openal).noquote() << level << msg;
+                break;
+            }
+        },
+        nullptr);
+#endif
+
     // initialize OpenAL error stack
     alGetError();
     alcGetError(nullptr);
@@ -92,15 +140,17 @@ OpenAL::~OpenAL()
 void OpenAL::checkAlError() noexcept
 {
     const ALenum al_err = alGetError();
-    if (al_err != AL_NO_ERROR)
-        qWarning("OpenAL error: %d", al_err);
+    if (al_err != AL_NO_ERROR) {
+        qWarning("OpenAL error: %s", alGetString(al_err));
+    }
 }
 
 void OpenAL::checkAlcError(ALCdevice* device) noexcept
 {
     const ALCenum alc_err = alcGetError(device);
-    if (alc_err)
-        qWarning("OpenAL error: %d", alc_err);
+    if (alc_err) {
+        qWarning("OpenAL error: %s", alcGetString(device, alc_err));
+    }
 }
 
 /**
@@ -112,9 +162,7 @@ void OpenAL::setOutputVolume(qreal volume)
 {
     QMutexLocker<QRecursiveMutex> locker(&audioLock);
 
-    volume = std::max(0.0, std::min(volume, 1.0));
-
-    alListenerf(AL_GAIN, static_cast<ALfloat>(volume));
+    alListenerf(AL_GAIN, static_cast<ALfloat>(std::max(0.0, std::min(volume, 1.0))));
     checkAlError();
 }
 
@@ -223,7 +271,7 @@ std::unique_ptr<IAudioSink> OpenAL::makeSink()
     }
 
     sinks.insert(sink);
-    qDebug() << "Audio source" << sid << "created. Sources active:" << sinks.size();
+    qCDebug(logcat::audio) << "Audio source" << sid << "created. Sources active:" << sinks.size();
 
     return std::unique_ptr<IAudioSink>{sink};
 }
@@ -241,7 +289,7 @@ void OpenAL::destroySink(AlSink& sink)
     const auto soundSinksErased = soundSinks.erase(&sink);
 
     if (sinksErased == 0 && soundSinksErased == 0) {
-        qWarning() << "Destroying non-existent sink";
+        qCWarning(logcat::audio) << "Destroying non-existent sink";
         return;
     }
 
@@ -251,9 +299,9 @@ void OpenAL::destroySink(AlSink& sink)
         // stop playing, marks all buffers as processed
         alSourceStop(sid);
         cleanupBuffers(sid);
-        qDebug() << "Audio source" << sid << "deleted. Sources active:" << sinks.size();
+        qCDebug(logcat::audio) << "Audio source" << sid << "deleted. Sources active:" << sinks.size();
     } else {
-        qWarning() << "Trying to delete invalid audio source" << sid;
+        qCWarning(logcat::audio) << "Trying to delete invalid audio source" << sid;
     }
 
     if (sinks.empty() && soundSinks.empty()) {
@@ -278,7 +326,8 @@ std::unique_ptr<IAudioSource> OpenAL::makeSource()
     auto* const source = new AlSource(*this);
     sources.insert(source);
 
-    qDebug() << "Subscribed to audio input device [" << sources.size() << "subscriptions ]";
+    qCDebug(logcat::audio) << "Subscribed to audio input device [" << sources.size()
+                           << "subscriptions ]";
 
     return std::unique_ptr<IAudioSource>{source};
 }
@@ -294,13 +343,14 @@ void OpenAL::destroySource(AlSource& source)
 
     const auto s = sources.find(&source);
     if (s == sources.end()) {
-        qWarning() << "Destroyed non-existent source";
+        qCWarning(logcat::audio) << "Destroyed non-existent source";
         return;
     }
 
     sources.erase(s);
 
-    qDebug() << "Unsubscribed from audio input device [" << sources.size() << "subscriptions left ]";
+    qCDebug(logcat::audio) << "Unsubscribed from audio input device [" << sources.size()
+                           << "subscriptions left ]";
 
     if (sources.empty()) {
         cleanupInput();
@@ -338,7 +388,7 @@ bool OpenAL::initInput(const QString& deviceName, uint32_t channels)
         return false;
     }
 
-    qDebug() << "Opening audio input" << deviceName;
+    qCDebug(logcat::audio) << "Opening audio input" << deviceName;
     assert(!alInDev);
 
     // TODO: Try to actually detect if our audio source is stereo
@@ -356,7 +406,7 @@ bool OpenAL::initInput(const QString& deviceName, uint32_t channels)
 
     // Restart the capture if necessary
     if (!alInDev) {
-        qWarning() << "Failed to initialize audio input device:" << deviceName;
+        qCWarning(logcat::audio) << "Failed to initialize audio input device:" << deviceName;
         return false;
     }
 
@@ -364,7 +414,7 @@ bool OpenAL::initInput(const QString& deviceName, uint32_t channels)
     setInputGain(settings.getAudioInGainDecibel());
     setInputThreshold(settings.getAudioThreshold());
 
-    qDebug() << "Opened audio input" << deviceName;
+    qCDebug(logcat::audio) << "Opened audio input" << deviceName;
     alcCaptureStart(alInDev);
 
     return true;
@@ -382,7 +432,7 @@ bool OpenAL::initOutput(const QString& deviceName)
     if (!settings.getAudioOutDevEnabled())
         return false;
 
-    qDebug() << "Opening audio output" << deviceName;
+    qCDebug(logcat::audio) << "Opening audio output" << deviceName;
     assert(!alOutDev);
 
     const QByteArray qDevName = deviceName.toUtf8();
@@ -390,16 +440,16 @@ bool OpenAL::initOutput(const QString& deviceName)
     alOutDev = alcOpenDevice(tmpDevName);
 
     if (!alOutDev) {
-        qWarning() << "Cannot open audio output device" << deviceName;
+        qCWarning(logcat::audio) << "Cannot open audio output device" << deviceName;
         return false;
     }
 
-    qDebug() << "Opened audio output" << deviceName;
+    qCDebug(logcat::audio) << "Opened audio output" << deviceName;
     alOutContext = alcCreateContext(alOutDev, nullptr);
     checkAlcError(alOutDev);
 
     if (!alcMakeContextCurrent(alOutContext)) {
-        qWarning() << "Cannot create audio output context";
+        qCWarning(logcat::audio) << "Cannot create audio output context";
         return false;
     }
 
@@ -419,14 +469,14 @@ void OpenAL::playMono16Sound(AlSink& sink, const IAudioSink::Sound& sound)
     const uint sourceId = sink.getSourceId();
     QFile sndFile(IAudioSink::getSound(sound));
     if (!sndFile.exists()) {
-        qDebug() << "Trying to open non-existent sound file";
+        qCDebug(logcat::audio) << "Trying to open non-existent sound file";
         return;
     }
 
     sndFile.open(QIODevice::ReadOnly);
     const QByteArray data{sndFile.readAll()};
     if (data.isEmpty()) {
-        qDebug() << "Sound file contained no data";
+        qCDebug(logcat::audio) << "Sound file contained no data";
         return;
     }
 
@@ -524,12 +574,12 @@ void OpenAL::cleanupInput()
     if (!alInDev)
         return;
 
-    qDebug() << "Closing audio input";
+    qCDebug(logcat::audio) << "Closing audio input";
     alcCaptureStop(alInDev);
     if (alcCaptureCloseDevice(alInDev) == ALC_TRUE) {
         alInDev = nullptr;
     } else {
-        qWarning() << "Failed to close input";
+        qCWarning(logcat::audio) << "Failed to close input";
     }
 
     delete[] inputBuffer;
@@ -550,7 +600,7 @@ void OpenAL::cleanupOutput()
         alcDestroyContext(alOutContext);
         alOutContext = nullptr;
 
-        qDebug() << "Closing audio output";
+        qCDebug(logcat::audio) << "Closing audio output";
         if (alcCloseDevice(alOutDev)) {
             alOutDev = nullptr;
         } else {
@@ -686,6 +736,7 @@ QStringList OpenAL::inDeviceNames()
     const ALchar* pDeviceList = alcGetString(nullptr, ALC_CAPTURE_DEVICE_SPECIFIER);
 
     if (pDeviceList) {
+        qCDebug(logcat::audio) << "Available input devices:" << pDeviceList;
         while (*pDeviceList) {
             auto len = strlen(pDeviceList);
             list << QString::fromUtf8(pDeviceList, len);

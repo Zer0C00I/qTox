@@ -12,11 +12,11 @@ cmake \
   -DBUILD_TESTING=OFF \
   -DFULLY_STATIC=ON \
   -GNinja \
-  -B_build \
+  -B_build-static \
   -H.
 
-cmake --build _build
+cmake --build _build-static
 
-ls -lh _build/qtox
-file _build/qtox
-QT_QPA_PLATFORM=offscreen _build/qtox --help
+ls -lh _build-static/qtox
+file _build-static/qtox
+QT_QPA_PLATFORM=offscreen _build-static/qtox --help
