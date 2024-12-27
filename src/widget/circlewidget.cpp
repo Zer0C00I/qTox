@@ -29,7 +29,7 @@ QHash<int, CircleWidget*> CircleWidget::circleList;
 CircleWidget::CircleWidget(const Core& core_, FriendListWidget* parent, int id_, Settings& settings_,
                            Style& style_, IMessageBoxManager& messageBoxManager_,
                            FriendList& friendList_, ConferenceList& conferenceList_, Profile& profile_)
-    : CategoryWidget(isCompact(), settings_, style_, parent)
+    : CategoryWidget(settings_.getCompactLayout(), settings_, style_, parent)
     , id(id_)
     , core{core_}
     , settings{settings_}
