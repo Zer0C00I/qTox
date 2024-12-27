@@ -5,7 +5,7 @@ set -eux
 cmake \
   -DCMAKE_TOOLCHAIN_FILE=/sysroot/static-toolchain.cmake \
   -DCMAKE_PREFIX_PATH=/sysroot/opt/qt/lib/cmake \
-  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DSPELL_CHECK=OFF \
   -DUPDATE_CHECK=ON \
   -DSTRICT_OPTIONS=ON \

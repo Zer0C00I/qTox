@@ -18,6 +18,7 @@ extern "C"
 #include "videoframe.h"
 #include "src/persistence/settings.h"
 #include <QDebug>
+#include <QLoggingCategory>
 #include <QReadLocker>
 #include <QWriteLocker>
 #include <QtConcurrent/QtConcurrentRun>
@@ -77,14 +78,135 @@ extern "C"
  * @brief Remember how many times we subscribed for RAII
  */
 
+namespace {
+namespace logcat {
+Q_LOGGING_CATEGORY(ffmpeg, "ffmpeg")
+Q_LOGGING_CATEGORY(ffmpegInput, "ffmpeg.input")
+Q_LOGGING_CATEGORY(ffmpegOutput, "ffmpeg.output")
+Q_LOGGING_CATEGORY(ffmpegMuxer, "ffmpeg.muxer")
+Q_LOGGING_CATEGORY(ffmpegDemuxer, "ffmpeg.demuxer")
+Q_LOGGING_CATEGORY(ffmpegEncoder, "ffmpeg.encoder")
+Q_LOGGING_CATEGORY(ffmpegDecoder, "ffmpeg.decoder")
+Q_LOGGING_CATEGORY(ffmpegFilter, "ffmpeg.filter")
+Q_LOGGING_CATEGORY(ffmpegBitstreamFilter, "ffmpeg.bitstream_filter")
+Q_LOGGING_CATEGORY(ffmpegSwscaler, "ffmpeg.swscaler")
+Q_LOGGING_CATEGORY(ffmpegSwresampler, "ffmpeg.swresampler")
+Q_LOGGING_CATEGORY(ffmpegDeviceVideoOutput, "ffmpeg.device.video_output")
+Q_LOGGING_CATEGORY(ffmpegDeviceVideoInput, "ffmpeg.device.video_input")
+Q_LOGGING_CATEGORY(ffmpegDeviceAudioOutput, "ffmpeg.device.audio_output")
+Q_LOGGING_CATEGORY(ffmpegDeviceAudioInput, "ffmpeg.device.audio_input")
+Q_LOGGING_CATEGORY(ffmpegDeviceOutput, "ffmpeg.device.output")
+Q_LOGGING_CATEGORY(ffmpegDeviceInput, "ffmpeg.device.input")
+} // namespace logcat
+
+const QLoggingCategory& (*avLogCategory(const AVClass* avc))()
+{
+    if (!avc) {
+        return logcat::ffmpeg;
+    }
+
+    switch (avc->category) {
+    case AV_CLASS_CATEGORY_NA:
+    case AV_CLASS_CATEGORY_NB:
+        return logcat::ffmpeg;
+    case AV_CLASS_CATEGORY_INPUT:
+        return logcat::ffmpegInput;
+    case AV_CLASS_CATEGORY_OUTPUT:
+        return logcat::ffmpegOutput;
+    case AV_CLASS_CATEGORY_MUXER:
+        return logcat::ffmpegMuxer;
+    case AV_CLASS_CATEGORY_DEMUXER:
+        return logcat::ffmpegDemuxer;
+    case AV_CLASS_CATEGORY_ENCODER:
+        return logcat::ffmpegEncoder;
+    case AV_CLASS_CATEGORY_DECODER:
+        return logcat::ffmpegDecoder;
+    case AV_CLASS_CATEGORY_FILTER:
+        return logcat::ffmpegFilter;
+    case AV_CLASS_CATEGORY_BITSTREAM_FILTER:
+        return logcat::ffmpegBitstreamFilter;
+    case AV_CLASS_CATEGORY_SWSCALER:
+        return logcat::ffmpegSwscaler;
+    case AV_CLASS_CATEGORY_SWRESAMPLER:
+        return logcat::ffmpegSwresampler;
+    case AV_CLASS_CATEGORY_DEVICE_VIDEO_OUTPUT:
+        return logcat::ffmpegDeviceVideoOutput;
+    case AV_CLASS_CATEGORY_DEVICE_VIDEO_INPUT:
+        return logcat::ffmpegDeviceVideoInput;
+    case AV_CLASS_CATEGORY_DEVICE_AUDIO_OUTPUT:
+        return logcat::ffmpegDeviceAudioOutput;
+    case AV_CLASS_CATEGORY_DEVICE_AUDIO_INPUT:
+        return logcat::ffmpegDeviceAudioInput;
+    case AV_CLASS_CATEGORY_DEVICE_OUTPUT:
+        return logcat::ffmpegDeviceOutput;
+    case AV_CLASS_CATEGORY_DEVICE_INPUT:
+        return logcat::ffmpegDeviceInput;
+    }
+    return logcat::ffmpeg;
+}
+
+const char* avItemName(void* obj, const AVClass* cls)
+{
+    return (cls->item_name ? cls->item_name : av_default_item_name)(obj);
+}
+
+QString avLogType(void* obj, const AVClass* avc)
+{
+    if (!avc) {
+        return QStringLiteral("ffmpeg");
+    }
+
+    return QString::fromUtf8(avItemName(obj, avc));
+}
+
+Q_ATTRIBUTE_FORMAT_PRINTF(3, 0)
+void avLogCallback(void* obj, int level, const char* fmt, va_list args)
+{
+    const AVClass* avc = obj ? *static_cast<const AVClass* const*>(obj) : nullptr;
+
+    const auto cat = avLogCategory(avc);
+    const QString message =
+        QStringLiteral("[%1] %3").arg(avLogType(obj, avc)).arg(QString::vasprintf(fmt, args).trimmed());
+    switch (level) {
+    case AV_LOG_PANIC:
+        qFatal("%s", message.toUtf8().constData());
+    case AV_LOG_FATAL:
+        qCCritical(cat).noquote() << message;
+        break;
+    case AV_LOG_ERROR:
+        qCCritical(cat).noquote() << message;
+        break;
+    case AV_LOG_WARNING:
+        qCWarning(cat).noquote() << message;
+        break;
+    case AV_LOG_INFO:
+        qCInfo(cat).noquote() << message;
+        break;
+    case AV_LOG_VERBOSE:
+        qCDebug(cat).noquote() << message;
+        break;
+#ifdef QTOX_DEBUG_FFMPEG
+    case AV_LOG_DEBUG:
+        qCDebug(cat).noquote() << message;
+        break;
+    case AV_LOG_TRACE:
+        qCDebug(cat).noquote() << message;
+        break;
+    default:
+        qCDebug(cat).noquote() << level << message;
+        break;
+#endif
+    }
+} // namespace logcat
+} // namespace
+
 CameraSource::CameraSource(Settings& settings_)
     : deviceThread{new QThread}
     , deviceName{"none"}
     , device{nullptr}
-    , mode(VideoMode())
-    // clang-format off
+    , mode{}
     , cctx{nullptr}
-#if LIBAVCODEC_VERSION_INT < 3747941
+#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(57, 48, 101)
     , cctxOrig{nullptr}
 #endif
     , videoStreamIndex{-1}
@@ -92,6 +214,8 @@ CameraSource::CameraSource(Settings& settings_)
     , subscriptions{0}
     , settings{settings_}
 {
+    av_log_set_callback(avLogCallback);
+
     qRegisterMetaType<VideoMode>("VideoMode");
     deviceThread->setObjectName("Device thread");
     deviceThread->start();
@@ -105,8 +229,6 @@ CameraSource::CameraSource(Settings& settings_)
 #endif
     avdevice_register_all();
 }
-
-// clang-format on
 
 /**
  * @brief Setup default device
@@ -185,7 +307,7 @@ CameraSource::~CameraSource()
     if (cctx) {
         avcodec_free_context(&cctx);
     }
-#if LIBAVCODEC_VERSION_INT < 3747941
+#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(57, 48, 101)
     if (cctxOrig) {
         avcodec_close(cctxOrig);
     }
@@ -266,7 +388,7 @@ void CameraSource::openDevice()
     // Find the first video stream, if any
     for (unsigned i = 0; i < device->context->nb_streams; ++i) {
         AVMediaType type;
-#if LIBAVCODEC_VERSION_INT < 3747941
+#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(57, 48, 101)
         type = device->context->streams[i]->codec->codec_type;
 #else
         type = device->context->streams[i]->codecpar->codec_type;
@@ -284,7 +406,7 @@ void CameraSource::openDevice()
     }
 
     AVCodecID codecId;
-#if LIBAVCODEC_VERSION_INT < 3747941
+#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(57, 48, 101)
     cctxOrig = device->context->streams[videoStreamIndex]->codec;
     codecId = cctxOrig->codec_id;
 #else
@@ -299,7 +421,7 @@ void CameraSource::openDevice()
         return;
     }
 
-#if LIBAVCODEC_VERSION_INT < 3747941
+#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(57, 48, 101)
     // Copy context, since we apparently aren't allowed to use the original
     cctx = avcodec_alloc_context3(codec);
     if (avcodec_copy_context(cctx, cctxOrig) != 0) {
@@ -364,7 +486,7 @@ void CameraSource::closeDevice()
     // Free our resources and close the device
     videoStreamIndex = -1;
     avcodec_free_context(&cctx);
-#if LIBAVCODEC_VERSION_INT < 3747941
+#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(57, 48, 101)
     avcodec_close(cctxOrig);
     cctxOrig = nullptr;
 #endif
@@ -385,7 +507,7 @@ void CameraSource::stream()
             return;
         }
 
-#if LIBAVCODEC_VERSION_INT < 3747941
+#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(57, 48, 101)
         AVFrame* frame = av_frame_alloc();
         if (!frame) {
             return;
