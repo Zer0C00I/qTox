@@ -1809,7 +1809,6 @@ ContentDialog* Widget::createContentDialog() const
 {
     ContentDialog* contentDialog = new ContentDialog(*core, settings, style, *messageBoxManager,
                                                      *friendList, *conferenceList, profile);
-
     registerContentDialog(*contentDialog);
     return contentDialog;
 }
@@ -1828,11 +1827,15 @@ void Widget::registerContentDialog(ContentDialog& contentDialog) const
     connect(&contentDialog, &ContentDialog::connectFriendWidget, this, &Widget::connectFriendWidget);
 
 #ifdef Q_OS_MAC
-    Nexus& n = nexus;
-    connect(&contentDialog, &ContentDialog::destroyed, &n, &Nexus::updateWindowsClosed);
-    connect(&contentDialog, &ContentDialog::windowStateChanged, &n, &Nexus::onWindowStateChanged);
-    connect(contentDialog.windowHandle(), &QWindow::windowTitleChanged, &n, &Nexus::updateWindows);
-    n.updateWindows();
+    connect(&contentDialog, &ContentDialog::destroyed, &nexus, &Nexus::updateWindowsClosed);
+    connect(&contentDialog, &ContentDialog::windowStateChanged, &nexus, &Nexus::onWindowStateChanged);
+    QWindow* window = contentDialog.windowHandle();
+    if (window != nullptr) {
+        connect(window, &QWindow::windowTitleChanged, &nexus, &Nexus::updateWindows);
+    } else {
+        qWarning() << "Null window handle for ContentDialog";
+    }
+    nexus.updateWindows();
 #endif
 }
 
