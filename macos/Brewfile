@@ -1,3 +1,4 @@
+brew "bash"  # macOS bash is too old
 brew "cmake"
 brew "coreutils"
 brew "create-dmg"
