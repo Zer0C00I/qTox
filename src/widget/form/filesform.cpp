@@ -97,7 +97,7 @@ bool fileTransferFailed(const ToxFile::FileStatus& status)
 
 bool shouldProcessFileKind(uint8_t inKind)
 {
-    auto kind = static_cast<TOX_FILE_KIND>(inKind);
+    auto kind = static_cast<Tox_File_Kind>(inKind);
 
     switch (kind) {
     case TOX_FILE_KIND_DATA:
@@ -108,7 +108,7 @@ bool shouldProcessFileKind(uint8_t inKind)
         return false;
     }
 
-    qWarning("Unexpected file kind %d", kind);
+    qWarning("Unexpected file kind %d", inKind);
     return false;
 }
 
