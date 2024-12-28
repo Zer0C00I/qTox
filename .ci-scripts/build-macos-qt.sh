@@ -9,6 +9,4 @@ set -euo pipefail
 readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 . "$SCRIPT_DIR/macos_install_deps.sh"
 
-# Needs openssl from build-macos-deps.sh to already have been installed.
-install_deps \
-  qt
+install_deps qt

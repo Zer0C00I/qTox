@@ -4,13 +4,15 @@
 # Copyright © 2022 by The qTox Project Contributors
 # Copyright © 2024 The TokTok team
 
-set -euo pipefail
+set -euxo pipefail
 
 if [ ! -d "$SCRIPT_DIR/dockerfiles" ]; then
   git clone --depth=1 https://github.com/TokTok/dockerfiles "$SCRIPT_DIR/dockerfiles"
 fi
 
-ARCH="$1"
+ARCH="${1:-$(uname -m)}"
+BUILD_TYPE="${2:-release}"
+SANITIZE="${3:-}"
 
 install_deps() {
   for dep in "$@"; do
@@ -21,7 +23,7 @@ install_deps() {
     else
       SCRIPT="$SCRIPT_DIR/dockerfiles/qtox/build_$dep.sh"
     fi
-    "$SCRIPT" --arch "macos-$ARCH" --libtype "static"
+    "$SCRIPT" --arch "macos-$ARCH" --libtype "static" --buildtype "$BUILD_TYPE" --sanitize "$SANITIZE"
     popd
     rm -rf "external/$dep"
   done

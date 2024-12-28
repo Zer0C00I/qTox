@@ -54,3 +54,6 @@ target/
 
 # Editor temp files
 *.swp
+
+# IDE support
+/compile_commands.json

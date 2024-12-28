@@ -21,7 +21,6 @@ extern "C"
 
 #include <atomic>
 #include <cstdint>
-#include <functional>
 #include <memory>
 #include <unordered_map>
 #include <vector>
@@ -48,12 +47,6 @@ public:
     using AtomicIDType = std::atomic_uint_fast64_t;
 
 public:
-    VideoFrame(IDType sourceID_, AVFrame* sourceFrame, QRect dimensions, int pixFmt,
-               bool freeSourceFrame_ = false);
-    VideoFrame(IDType sourceID_, AVFrame* sourceFrame, bool freeSourceFrame_ = false);
-
-    ~VideoFrame();
-
     // Copy/Move operations are disabled for the VideoFrame, encapsulate with a std::shared_ptr to
     // manage.
 
@@ -63,9 +56,13 @@ public:
     const VideoFrame& operator=(const VideoFrame& other) = delete;
     const VideoFrame& operator=(VideoFrame&& other) = delete;
 
+    ~VideoFrame();
+
     bool isValid();
 
-    std::shared_ptr<VideoFrame> trackFrame();
+    static std::shared_ptr<VideoFrame> fromAVFrameUntracked(IDType sourceID, AVFrame* sourceFrame,
+                                                            bool freeSourceFrame);
+    static std::shared_ptr<VideoFrame> fromAVFrame(IDType sourceID, AVFrame* sourceFrame);
     static void untrackFrames(const IDType& sourceID, bool releaseFrames = false);
 
     void releaseFrame();
@@ -82,6 +79,10 @@ public:
     static constexpr int dataAlignment = 32;
 
 private:
+    VideoFrame(IDType sourceID_, AVFrame* sourceFrame, bool freeSourceFrame, QRect dimensions,
+               int pixFmt);
+    VideoFrame(IDType sourceID_, AVFrame* sourceFrame, bool freeSourceFrame_);
+
     class FrameBufferKey
     {
     public:

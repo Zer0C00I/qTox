@@ -88,8 +88,7 @@ void CoreVideoSource::pushFrame(const vpx_image_t* vpxFrame)
         }
     }
 
-    vframe = std::make_shared<VideoFrame>(id, avFrame, true);
-    emit frameAvailable(vframe);
+    emit frameAvailable(VideoFrame::fromAVFrameUntracked(id, avFrame, true));
 }
 
 void CoreVideoSource::subscribe()

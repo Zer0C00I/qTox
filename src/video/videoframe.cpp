@@ -78,19 +78,18 @@ QReadWriteLock VideoFrame::refsLock{};
  *
  * @param sourceID the VideoSource's ID to track the frame under.
  * @param sourceFrame the source AVFrame pointer to use, must be valid.
+ * @param freeSourceFrame whether to free the source frame buffers or not.
  * @param dimensions the dimensions of the AVFrame, obtained from the AVFrame if not given.
  * @param pixFmt the pixel format of the AVFrame, obtained from the AVFrame if not given.
- * @param freeSourceFrame whether to free the source frame buffers or not.
  */
-VideoFrame::VideoFrame(IDType sourceID_, AVFrame* sourceFrame, QRect dimensions, int pixFmt,
-                       bool freeSourceFrame_)
+VideoFrame::VideoFrame(IDType sourceID_, AVFrame* sourceFrame, bool freeSourceFrame_,
+                       QRect dimensions, int pixFmt)
     : frameID(frameIDs++)
     , sourceID(sourceID_)
     , sourceDimensions(dimensions)
     , sourceFrameKey(getFrameKey(dimensions.size(), pixFmt, sourceFrame->linesize[0]))
     , freeSourceFrame(freeSourceFrame_)
 {
-
     // We override the pixel format in the case a deprecated one is used
     switch (pixFmt) {
     case AV_PIX_FMT_YUVJ420P: {
@@ -133,8 +132,8 @@ VideoFrame::VideoFrame(IDType sourceID_, AVFrame* sourceFrame, QRect dimensions,
 }
 
 VideoFrame::VideoFrame(IDType sourceID_, AVFrame* sourceFrame, bool freeSourceFrame_)
-    : VideoFrame(sourceID_, sourceFrame, QRect{0, 0, sourceFrame->width, sourceFrame->height},
-                 sourceFrame->format, freeSourceFrame_)
+    : VideoFrame(sourceID_, sourceFrame, freeSourceFrame_,
+                 QRect{0, 0, sourceFrame->width, sourceFrame->height}, sourceFrame->format)
 {
 }
 
@@ -176,15 +175,21 @@ bool VideoFrame::isValid()
     return frameBuffer.size() > 0;
 }
 
+std::shared_ptr<VideoFrame> VideoFrame::fromAVFrameUntracked(IDType sourceID, AVFrame* sourceFrame,
+                                                             bool freeSourceFrame)
+{
+    return std::shared_ptr<VideoFrame>{new VideoFrame(sourceID, sourceFrame, freeSourceFrame)};
+}
+
 /**
  * @brief Causes the VideoFrame class to maintain an internal reference for the frame.
  *
  * The internal reference is managed via a std::weak_ptr such that it doesn't inhibit
  * destruction of the object once all external references are no longer reachable.
  *
- * @return a std::shared_ptr holding a reference to this frame.
+ * @return a std::shared_ptr holding a reference to the new frame.
  */
-std::shared_ptr<VideoFrame> VideoFrame::trackFrame()
+std::shared_ptr<VideoFrame> VideoFrame::fromAVFrame(IDType sourceID, AVFrame* sourceFrame)
 {
     // Add frame to tracked reference list
     refsLock.lockForRead();
@@ -195,18 +200,16 @@ std::shared_ptr<VideoFrame> VideoFrame::trackFrame()
         refsLock.lockForWrite();
     }
 
-    QMutex& sourceMutex = mutexMap[sourceID];
+    const auto frame = [sourceID, sourceFrame] {
+        QMutexLocker<QMutex> sourceMutexLock{&mutexMap[sourceID]};
+        auto ret = fromAVFrameUntracked(sourceID, sourceFrame, false);
+        refsMap[sourceID][ret->frameID] = ret;
+        return ret;
+    }();
 
-    sourceMutex.lock();
-
-    std::shared_ptr<VideoFrame> ret{this};
-
-    refsMap[sourceID][frameID] = ret;
-
-    sourceMutex.unlock();
     refsLock.unlock();
 
-    return ret;
+    return frame;
 }
 
 /**

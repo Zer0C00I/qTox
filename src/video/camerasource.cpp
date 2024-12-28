@@ -22,8 +22,6 @@ extern "C"
 #include <QReadLocker>
 #include <QWriteLocker>
 #include <QtConcurrent/QtConcurrentRun>
-#include <functional>
-#include <memory>
 
 /**
  * @class CameraSource
@@ -449,10 +447,11 @@ void CameraSource::openDevice()
         return;
     }
 
-    if (streamFuture.isRunning())
+    if (streamFuture.isRunning()) {
         qDebug() << "The stream thread is already running! Keeping the current one open.";
-    else
-        streamFuture = QtConcurrent::run(std::bind(&CameraSource::stream, this));
+    } else {
+        streamFuture = QtConcurrent::run([this] { stream(); });
+    }
 
     // Synchronize with our stream thread
     while (!streamFuture.isRunning())
@@ -522,8 +521,7 @@ void CameraSource::stream()
                 return;
             }
 
-            VideoFrame* vframe = new VideoFrame(id, frame);
-            emit frameAvailable(vframe->trackFrame());
+            emit frameAvailable(VideoFrame::fromAVFrame(id, frame));
         }
 #else
 
@@ -534,8 +532,7 @@ void CameraSource::stream()
         if (readyToReceive) {
             AVFrame* frame = av_frame_alloc();
             if (frame && !avcodec_receive_frame(cctx, frame)) {
-                VideoFrame* vframe = new VideoFrame(id, frame);
-                emit frameAvailable(vframe->trackFrame());
+                emit frameAvailable(VideoFrame::fromAVFrame(id, frame));
             } else {
                 av_frame_free(&frame);
             }
