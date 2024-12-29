@@ -23,7 +23,7 @@ jobs:
   validate-pr:
     # All expensive jobs below depend on this one, so they will not run if the validation fails.
     name: Validate PR
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
         if: github.event_name == 'pull_request'
@@ -32,7 +32,9 @@ jobs:
           fetch-depth: 0
       - name: Validate PR
         if: github.event_name == 'pull_request'
-        run: .ci-scripts/validate-pr.py
+        run: |
+          .ci-scripts/create-identity.sh
+          .ci-scripts/validate-pr.py --no-sign
 
   verify-signatures:
     name: Verify release asset signatures

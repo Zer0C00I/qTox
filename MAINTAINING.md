@@ -200,7 +200,7 @@ can run locally to automate the pre-tagging process.
   `tools/update-versions.sh 1.11.0` (don't add the `v` in `v1.11.0`)
 - Update the bootstrap nodelist at `res/nodes.json` from https://nodes.tox.chat/json.
   This can be done by running [`tools/update-nodes.sh`]
-- Generate changelog with `clog`.
+- Generate changelog with [`tools/update-changelog.py`].
   - In a `MAJOR`/`MINOR` release tag should include information that changelog
     is located in the `CHANGELOG.md` file, e.g. `For details see CHANGELOG.md`
 - To release a `PATCH` version after non-fix changes have landed on `master`
@@ -261,6 +261,7 @@ helping for a while, ask to be added to the `TokTok` organization on GitHub.
 [`test-pr.sh`]: /test-pr.sh
 [`tools/create-tarballs.py`]: /tools/create-tarballs.py
 [`tools/sign-release-assets.py`]: /tools/sign-release-assets.py
+[`tools/update-changelog.py`]: /tools/update-changelog.py
 [`tools/update-nodes.sh`]: /tools/update-nodes.sh
 [`tools/update-versions.sh`]: /tools/update-versions.sh
 [`tools/format-code.sh`]: /tools/format-code.sh

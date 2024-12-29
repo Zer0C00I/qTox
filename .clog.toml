@@ -2,3 +2,9 @@
 repository = "https://github.com/TokTok/qTox"
 changelog = "CHANGELOG.md"
 from-latest-tag = true
+ignore-before = "v1.3.0"
+forked-from = [
+    # Actually since 8632be2, but there's no release for that yet.
+    # TODO(iphydf): Change to 8632be2 after release.
+    { repository = "https://github.com/qTox/qTox", since = "54345d1" }
+]

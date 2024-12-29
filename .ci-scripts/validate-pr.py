@@ -1,14 +1,37 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Copyright © 2024 The TokTok team
+import argparse
 import os
 import re
 import subprocess  # nosec
+from dataclasses import dataclass
 from functools import cache as memoize
 from typing import Any
 from typing import Optional
 
 import requests
+
+
+@dataclass
+class Config:
+    sign: bool
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="""
+    Run a bunch of checks to validate a PR. This script is meant to be run in a
+    GitHub Actions workflow, but can also be run locally.
+    """)
+    parser.add_argument(
+        "--sign",
+        action=argparse.BooleanOptionalAction,
+        help="Sign tags (doesn't work on GitHub Actions)",
+        default=True,
+        dest="sign",
+    )
+    return parser.parse_args()
+
 
 SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
 GIT_BASE_DIR = os.path.dirname(SCRIPT_DIR)
@@ -377,7 +400,40 @@ def check_no_version_changes(failures: list[str]) -> None:
             check.ok("No version changes were made")
 
 
-def main() -> None:
+def check_changelog(failures: list[str], config: Config) -> None:
+    """Check that the changelog is up-to-date."""
+    with Checker(failures, "Changelog",
+                 "The changelog should be up-to-date") as check:
+        subprocess.run(  # nosec
+            [
+                "tools/sync-changelog-tags.py",
+                "--sign" if config.sign else "--no-sign"
+            ],
+            check=True,
+            cwd=GIT_BASE_DIR,
+        )
+        subprocess.run(  # nosec
+            ["tools/update-changelog.py"],
+            check=True,
+            cwd=GIT_BASE_DIR,
+        )
+        diff = subprocess.run(  # nosec
+            ["git", "diff", "--exit-code"],
+            cwd=GIT_BASE_DIR,
+        )
+        if diff.returncode:
+            check.fail("The changelog needs to be updated")
+            # Reset the changes to the changelog.
+            subprocess.run(  # nosec
+                ["git", "checkout", "CHANGELOG.md"],
+                cwd=GIT_BASE_DIR,
+                check=True,
+            )
+        else:
+            check.ok("The changelog is up-to-date")
+
+
+def main(config: Config) -> None:
     """Main entry point."""
     print("GIT_BASE_DIR:       ", GIT_BASE_DIR)
     print("GITHUB_ACTOR:       ", github_actor())
@@ -404,6 +460,8 @@ def main() -> None:
         print("This is not a release PR.\n")
         check_no_version_changes(failures)
 
+    check_changelog(failures, config)
+
     print(f"\nDebug: {len(github_api_requests)} GitHub API requests made")
 
     if failures:
@@ -414,4 +472,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    main(Config(**vars(parse_args())))
