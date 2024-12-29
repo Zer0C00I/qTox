@@ -25,10 +25,12 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
+        if: github.event_name == 'pull_request'
         with:
           # Fetch all history so that we can check for changes in the entire history.
           fetch-depth: 0
       - name: Validate PR
+        if: github.event_name == 'pull_request'
         run: .ci-scripts/validate-pr.py
 
   update-nightly-tag:
