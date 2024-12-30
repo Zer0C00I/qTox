@@ -25,6 +25,7 @@ _[Bb]uild*/
 _obj
 _test
 libs
+__pycache__
 
 # Git
 *.orig

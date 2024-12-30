@@ -23,7 +23,7 @@ def parse_args() -> argparse.Namespace:
     qTox. This script will iterate over all known dependencies in the manifest
     and replace their tags with the ones specified by our download_xxx.sh
     scripts. The commit hash for the tag will be replaced with whatever is
-    currently in the git remote
+    currently in the git remote.
     """)
     parser.add_argument(
         "--flathub-manifest",
@@ -122,6 +122,10 @@ def load_flathub_manifest(flathub_manifest_path: str) -> Any:
 
 
 def commit_from_tag(url: str, tag: str) -> str:
+    if tag.startswith("release/"):
+        return (subprocess.check_output(  # nosec
+            ["git", "rev-parse", tag], ).decode().strip())
+
     git_output = subprocess.run(  # nosec
         ["git", "ls-remote", url, f"{tag}^{{}}"],
         check=True,
@@ -161,10 +165,9 @@ def update_archive_source(
 
 def update_git_source(module: dict[str, Any], tag: str) -> None:
     module_source = module["sources"][0]
-    module_source["tag"] = tag
     module_source["commit"] = commit_from_tag(
         module_source["url"],
-        module_source["tag"],
+        tag,
     )
 
 

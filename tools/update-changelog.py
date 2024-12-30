@@ -11,6 +11,8 @@ from typing import Any
 from typing import Iterable
 from typing import Optional
 
+from lib import git
+
 # b2215454e chore(windows): update copyright year
 # d44fc4dfe chore: Add script for syncing CHANGELOG.md to git tags.
 COMMIT_REGEX = re.compile(
@@ -89,16 +91,6 @@ def parse_config(data: dict[str, Any]) -> Config:
     )
 
 
-def git_release_tags() -> list[str]:
-    tags = subprocess.check_output(["git", "tag", "--merged"])  # nosec
-    return sorted(
-        (tag for tag in tags.decode("utf-8").splitlines()
-         if tag.startswith("v") and "-rc" not in tag),
-        reverse=True,
-        key=lambda tag: tuple(map(int, tag[1:].split("."))),
-    )
-
-
 def git_log(prev_tag: str, cur_tag: str) -> list[str]:
     log = subprocess.check_output([  # nosec
         "git",
@@ -109,17 +101,27 @@ def git_log(prev_tag: str, cur_tag: str) -> list[str]:
 
 
 def git_tag_info(tag: str) -> tuple[str, str]:
+    tag_sha = (
+        subprocess.check_output(  # nosec
+            [
+                "git",
+                "rev-parse",
+                tag,
+            ]).decode("utf-8").strip())
     tag_data = subprocess.check_output(  # nosec
         [
             "git",
             "cat-file",
-            "tag",
-            tag,
+            "-p",
+            tag_sha,
         ]).decode("utf-8")
     date_match = re.search(r"^Original tagger: .+ (\d{10})", tag_data,
                            re.MULTILINE)
     if not date_match:
         date_match = re.search(r"^tagger .+ (\d{10})", tag_data, re.MULTILINE)
+    if not date_match:
+        date_match = re.search(r"^committer .+ (\d{10})", tag_data,
+                               re.MULTILINE)
     if not date_match:
         raise Exception(f"Date not found for tag {tag}")
 
@@ -129,11 +131,15 @@ def git_tag_info(tag: str) -> tuple[str, str]:
             re.MULTILINE)
     else:
         message_match = re.search(r"\n\n((.|\n)*)$", tag_data, re.MULTILINE)
-    if not message_match:
-        raise Exception(f"Message not found for tag {tag}")
-
-    message = re.sub(r"\n+Original tagger: .+$", "",
-                     message_match.group(1).strip(), re.MULTILINE)
+    if message_match:
+        message = re.sub(r"\n+Original tagger: .+$", "",
+                         message_match.group(1).strip(), re.MULTILINE)
+    else:
+        if "\ngpgsig -----BEGIN PGP SIGNATURE-----" in tag_data:
+            # No message, just a signature.
+            message = ""
+        else:
+            raise Exception(f"Message not found for tag {tag}")
     return (
         datetime.fromtimestamp(int(date_match.group(1))).strftime("%Y-%m-%d"),
         message,
@@ -265,6 +271,8 @@ def format_closes(entry: LogEntry) -> str:
 
 MARKDOWN_REGEX = re.compile(
     r"`[^`]+`|\*\*[^\*]+\*\*|\*[^\*]+\*|_[^_]+_|~[^~]+~|\S+|\s+")
+ITALIC_REGEX = re.compile(r"\*([^*]+)\*")
+BOLD_REGEX = re.compile(r"\*\*([^*]+)\*\*")
 
 
 def is_xml_tag(word: str) -> bool:
@@ -280,6 +288,8 @@ def escape(word: str) -> str:
         return "&lt;"
     if word == ">":
         return "&gt;"
+    if re.match(ITALIC_REGEX, word) and not re.match(BOLD_REGEX, word):
+        return f"_{word[1:-1]}_"
     if "_" in word or is_xml_tag(word) or "::" in word:
         return f"`{word}`"
     if word.count("*") % 2:
@@ -325,10 +335,11 @@ def format_changelog(
     - **chatlog:** Disable join and leave system messages based on setting ([ee0334ac](https://github.com/qTox/qTox/commit/ee0334acc55215ed8e94bae8fa4ff8976834af20))
     """
     tag_date, tag_message = git_tag_info(tag)
+    version = tag.removeprefix("release/")
     lines = [
-        f'<a name="{tag}"></a>',
+        f'<a name="{version}"></a>',
         "",
-        f"## {tag} ({tag_date})",
+        f"## {version} ({tag_date})",
     ]
     if tag_message:
         lines.append("")
@@ -392,7 +403,7 @@ def read_clog_toml() -> dict[str, Any]:
 
 def main() -> None:
     config = parse_config(read_clog_toml())
-    tags = git_release_tags()
+    tags = git.release_branches() + git.release_tags()
     # Ignore everything before and including some tag.
     # (+1 because we still need {after tag}...{tag}).
     if config.ignore_before:

@@ -179,15 +179,15 @@ candidates).
 
 ### Step 1. Create a release PR
 
-Most of these steps are automated by [`.ci-scripts/validate-pr.py`], which you
+Most of these steps are automated by [`tools/validate-pr.py`], which you
 can run locally to automate the pre-tagging process.
 
 - Merge any Weblate PRs if they are still open.
-- Create a new release PR branch, e.g.: `git checkout -b 1.18.0-rc.3`.
+- Create a new release PR branch, e.g.: `git checkout -b release/v1.18.0-rc.3`.
 
 **Automated method:**
 
-- Run `.ci-scripts/validate-pr.py`.
+- Run `tools/validate-pr.py`.
 
 **Manual method:**
 
@@ -255,7 +255,6 @@ Once you're confident about your knowledge and you've been around the project
 helping for a while, ask to be added to the `TokTok` organization on GitHub.
 
 [commit message format]: /CONTRIBUTING.md#commit-message-format
-[`.ci-scripts/validate-pr.py`]: /.ci-scripts/validate-pr.py
 [`CONTRIBUTING.md`]: /CONTRIBUTING.md
 [`merge-pr.sh`]: /merge-pr.sh
 [`test-pr.sh`]: /test-pr.sh
@@ -265,6 +264,7 @@ helping for a while, ask to be added to the `TokTok` organization on GitHub.
 [`tools/update-nodes.sh`]: /tools/update-nodes.sh
 [`tools/update-versions.sh`]: /tools/update-versions.sh
 [`tools/format-code.sh`]: /tools/format-code.sh
+[`tools/validate-pr.py`]: /tools/validate-pr.py
 [Flathub repository]: https://github.com/flathub/io.github.qtox.qTox
 [`flatpak/io.github.qtox.qTox.json`]: /flatpak/io.github.qtox.qTox.json
 [`flatpak/update_flathub_descriptor_dependencies.py`]: /flatpak/update_flathub_descriptor_dependencies.py

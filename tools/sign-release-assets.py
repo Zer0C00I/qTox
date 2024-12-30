@@ -6,9 +6,10 @@ import os
 import subprocess  # nosec
 import tempfile
 from dataclasses import dataclass
-from functools import cache as memoize
 
 import requests
+from lib import git
+from lib import github
 
 BINARY_EXTENSIONS = (".apk", ".dmg", ".exe", ".flatpak")
 
@@ -33,41 +34,9 @@ def parse_args() -> Config:
     parser.add_argument(
         "--tag",
         help="Tag to create signatures for",
-        default=git_tag(),
+        default=git.current_tag(),
     )
     return Config(**vars(parser.parse_args()))
-
-
-@memoize
-def github_token() -> str:
-    token = os.getenv("GITHUB_TOKEN")
-    if not token:
-        raise ValueError("GITHUB_TOKEN is needed to upload tarballs")
-    return token
-
-
-@memoize
-def github_release_id(tag: str) -> str:
-    response = requests.get(
-        f"https://api.github.com/repos/TokTok/qTox/releases/tags/{tag}",
-        headers={
-            "Authorization": f"token {github_token()}",
-        },
-    )
-    response.raise_for_status()
-    return str(response.json()["id"])
-
-
-def git_tag() -> str:
-    return (subprocess.check_output(  # nosec
-        [
-            "git",
-            "describe",
-            "--tags",
-            "--abbrev=0",
-            "--match",
-            "v*",
-        ]).decode("utf-8").strip())
 
 
 def needs_signing(name: str, asset_names: list[str]) -> bool:
@@ -89,14 +58,14 @@ def sign_binary(binary: str, tmpdir: str) -> None:
 
 
 def upload_signature(tag: str, tmpdir: str, binary: str) -> None:
-    release_id = github_release_id(tag)
+    release_id = github.release_id(tag)
     print(f"Uploading signature for {binary}")
     with open(os.path.join(tmpdir, f"{binary}.asc"), "rb") as f:
         response = requests.post(
             f"https://uploads.github.com/repos/TokTok/qTox/releases/{release_id}/assets?name={binary}.asc",
             headers={
-                "Authorization": f"token {github_token()}",
                 "Content-Type": "application/pgp-signature",
+                **github.auth_headers(required=True),
             },
             data=f,
         )
@@ -106,9 +75,7 @@ def upload_signature(tag: str, tmpdir: str, binary: str) -> None:
 def download_and_sign_binaries(config: Config, tmpdir: str) -> None:
     response = requests.get(
         f"https://api.github.com/repos/TokTok/qTox/releases/tags/{config.tag}",
-        headers={
-            "Authorization": f"token {github_token()}",
-        },
+        headers=github.auth_headers(required=False),
     )
     response.raise_for_status()
     assets = response.json()["assets"]

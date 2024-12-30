@@ -13,6 +13,8 @@ import re
 import subprocess  # nosec
 from dataclasses import dataclass
 
+from lib import changelog
+
 
 @dataclass
 class Config:
@@ -32,32 +34,6 @@ def parse_args() -> argparse.Namespace:
         dest="sign",
     )
     return parser.parse_args()
-
-
-def parse_changelog() -> dict[str, str]:
-    messages: dict[str, str] = {}
-
-    with open("CHANGELOG.md", "r") as f:
-        version = None
-        message: list[str] = []
-        for line in f.read().splitlines():
-            version_found = re.search(r"^##\s*(v[^ ]+)", line)
-            if version_found:
-                version = version_found.group(1)
-                continue
-            if version:
-                if line.startswith("####") or line.startswith("<a name="):
-                    while message and not message[-1].strip():
-                        message.pop()
-                    while message and not message[0].strip():
-                        message.pop(0)
-                    messages[version] = "\n".join(message)
-                    version = None
-                    message = []
-                else:
-                    message.append(line)
-
-    return messages
 
 
 def git_tag_message(tag: str) -> tuple[str, str, str]:
@@ -105,8 +81,7 @@ def git_tag_update(config: Config, tag: str, sha: str, message: str) -> None:
 
 
 def main(config: Config) -> None:
-    changelog = parse_changelog()
-    for version, message in changelog.items():
+    for version, message in changelog.parse().items():
         if not message.strip():
             continue
         sha, tagger, orig_message = git_tag_message(version)

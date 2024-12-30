@@ -8,10 +8,11 @@ import subprocess  # nosec
 import sys
 import tempfile
 from dataclasses import dataclass
-from functools import cache as memoize
 from typing import Any
 
 import requests
+from lib import git
+from lib import github
 
 NEEDS_SIGNATURE = (".apk", ".dmg", ".exe", ".flatpak", ".gz", ".xz")
 
@@ -29,33 +30,9 @@ def parse_args() -> Config:
     parser.add_argument(
         "--tag",
         help="Tag to create signatures for",
-        default=git_tag(),
+        default=git.current_tag(),
     )
     return Config(**vars(parser.parse_args()))
-
-
-@memoize
-def auth_headers() -> dict[str, str]:
-    token = os.getenv("GITHUB_TOKEN")
-    if not token:
-        print(
-            "Using non-authorized access to GitHub API (low rate limit)",
-            file=sys.stderr,
-        )
-        return {}
-    return {"Authorization": f"token {token}"}
-
-
-def git_tag() -> str:
-    return (subprocess.check_output(  # nosec
-        [
-            "git",
-            "describe",
-            "--tags",
-            "--abbrev=0",
-            "--match",
-            "v*",
-        ]).decode("utf-8").strip())
 
 
 def verify_signature(tmpdir: str, binary: str) -> None:
@@ -87,7 +64,7 @@ def download_and_verify(
 def download_and_verify_binaries(config: Config, tmpdir: str) -> None:
     response = requests.get(
         f"https://api.github.com/repos/TokTok/qTox/releases/tags/{config.tag}",
-        headers=auth_headers(),
+        headers=github.auth_headers(required=False),
     )
     response.raise_for_status()
     assets = response.json()["assets"]

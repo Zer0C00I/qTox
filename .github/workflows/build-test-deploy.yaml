@@ -34,7 +34,7 @@ jobs:
         if: github.event_name == 'pull_request'
         run: |
           .ci-scripts/create-identity.sh
-          .ci-scripts/validate-pr.py --no-sign
+          tools/validate-pr.py --no-sign
 
   verify-signatures:
     name: Verify release asset signatures

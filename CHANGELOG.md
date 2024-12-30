@@ -1,3 +1,380 @@
+<a name="v1.18.0-rc.3"></a>
+
+## v1.18.0-rc.3 (2024-12-23)
+
+qTox version 1.18.0 release candidate 3
+
+#### Performance
+
+- Don't log verbose toxav messages. ([349b6101](https://github.com/TokTok/qTox/commit/349b6101976add3a0a3d71df8dc33d539e8d024e))
+
+#### Bug Fixes
+
+- Fix occasional deadlock in ending a video call. ([73c253d7](https://github.com/TokTok/qTox/commit/73c253d70d14048e1a2711ba798aa9e72b861c03))
+- Disable video device selection box during call. ([527c9096](https://github.com/TokTok/qTox/commit/527c90969eabbb9416666106091d75729d952983))
+- Make sure camera access is gained on macOS before calling. ([3ebea6e9](https://github.com/TokTok/qTox/commit/3ebea6e962889c313c15b01ddcb6e6a4e6a3512e))
+- Make camera input work again on macOS. ([a5d0bcc4](https://github.com/TokTok/qTox/commit/a5d0bcc4e3a787f3e226f0e368b0d9e10f1c87fd))
+- Don't crash on quit during AV call. ([ffd7b4e1](https://github.com/TokTok/qTox/commit/ffd7b4e15f03c1464edff48c2a1b9385da7ce31e))
+
+#### Features
+
+- Add many missing emojis from the smiley packs. ([2897ee56](https://github.com/TokTok/qTox/commit/2897ee564fae480e31f62dad5270801e54dd2cfb))
+- Add DBus desktop notification support. ([fb4df420](https://github.com/TokTok/qTox/commit/fb4df420d8821fe60e9982dfb119d7eb32f39e7c))
+
+<a name="v1.18.0-rc.2"></a>
+
+## v1.18.0-rc.2 (2024-12-15)
+
+#### Performance
+
+- Delay debug log loading to show time. ([7525725b](https://github.com/TokTok/qTox/commit/7525725b76210bbebb10624c10555415859b3c48))
+
+#### Bug Fixes
+
+- Use the _last_ `/src/` to find the source root. ([62c093a9](https://github.com/TokTok/qTox/commit/62c093a9f1d9e3ba58c1b769b5d56baa0a8bb62f))
+- Show actual smileys in the smileypack selector. ([97bc8fcd](https://github.com/TokTok/qTox/commit/97bc8fcd06d4a71fdd4fa937d5704aef360b1d85))
+- cmake file dependencies ([de7c4909](https://github.com/TokTok/qTox/commit/de7c4909aac1d363638a626043358491d55b93ff))
+- Fix two memory leaks. ([91a02bc5](https://github.com/TokTok/qTox/commit/91a02bc5c4e22b06f7dd0be21d5c9dc52d48b99c))
+- Fix use-after-free when closing qTox during a call. ([6da12d60](https://github.com/TokTok/qTox/commit/6da12d6086a528aa993d39953ceb364f6c903c70))
+- Typo fix unavaliable -> unavailable. ([037ac452](https://github.com/TokTok/qTox/commit/037ac452214d18b8af868b74ac7349ade0458467))
+- Allow building qtox without update check. ([55ec9119](https://github.com/TokTok/qTox/commit/55ec9119999f21aeed5b37cd726f8fe32bedca31))
+- memory error on exit ([3721ad0d](https://github.com/TokTok/qTox/commit/3721ad0ded993f10763d2b4c7ba10ae8297ec788))
+- Correct the tab completion regex so it works with Qt6. ([1680064e](https://github.com/TokTok/qTox/commit/1680064e71bb5e677f4d4c703273c45251d619e9))
+- **security:** Only allow printable characters in incoming messages. ([18df99a3](https://github.com/TokTok/qTox/commit/18df99a392cbf46efd3b44f64643026f0f4889a7))
+
+#### Features
+
+- Add caps-lock indicator in password edit on macOS. ([70344bad](https://github.com/TokTok/qTox/commit/70344bad6732d5cbb0151848ceb77dc80cde71ae))
+- Add a Qt object tree view in the debug widget. ([a3828eca](https://github.com/TokTok/qTox/commit/a3828ecaea05d25cc9a1f3abe5f76a1b0f01a490))
+- Add system tray notification support. ([cfbd2bff](https://github.com/TokTok/qTox/commit/cfbd2bffa1b05709556fc60593c833ade95d6a57))
+
+<a name="v1.18.0-rc.1"></a>
+
+## v1.18.0-rc.1 (2024-11-23)
+
+#### Bug Fixes
+
+- Fix use-after-free bug in desktop notifications. ([34526c8e](https://github.com/TokTok/qTox/commit/34526c8e65628d15df27d5171318d4e6fd52871a))
+- Add Caucasian Albanian Script writing system mapping. ([42b0bc15](https://github.com/TokTok/qTox/commit/42b0bc152c394e6770cc23d0c5bbc4786b325fa9))
+- remove extra newline in log ([8fe87f17](https://github.com/TokTok/qTox/commit/8fe87f17f6e3b0a4fee3f53d0771ee27d5072eca))
+- Make checkboxes more visible on wayland. ([76713ff8](https://github.com/TokTok/qTox/commit/76713ff80fc1aa67a6268331d87761cd2b605657))
+- Don't create huge font weights in themes. ([9d0562a7](https://github.com/TokTok/qTox/commit/9d0562a740332475769c462cdebf39142b6e1701))
+- Fixed the style selector in UI settings. ([ee92a02e](https://github.com/TokTok/qTox/commit/ee92a02e36f1363af96ecf19f6af9e9fe0eda7e0))
+- Don't show unicode replacement boxes on unsupported languages. ([824637cb](https://github.com/TokTok/qTox/commit/824637cba1d6cd7d9ab9175486506c2fab2cc0e0))
+- Update more deprecated stuff ([e6cb2b2b](https://github.com/TokTok/qTox/commit/e6cb2b2b186293de903345af2b47eb183178caa4))
+- don't link emoji resources into targets that don't need them ([cd8af735](https://github.com/TokTok/qTox/commit/cd8af735fc3ac6494cd6112a068916f7d8e9baf4))
+- change color equation for groupchat names ([bde6dc0d](https://github.com/TokTok/qTox/commit/bde6dc0df0583a2c869612a010533bb6246ad7e2))
+- correctly destroy on group remove ([c9505728](https://github.com/TokTok/qTox/commit/c95057283e3c3d6c05a178b1f24cdeda6ae8eea2))
+- Replace deprecated `QMutex::Recursive` with QRecursiveMutex ([8276141e](https://github.com/TokTok/qTox/commit/8276141ef973f9e5b7334e0e9238e3970834bac8))
+- clear custom style before update style ([a97c5331](https://github.com/TokTok/qTox/commit/a97c53313a351d32051dc19db65a92a7902cfc56))
+- Qt ressource system usage ([0335f203](https://github.com/TokTok/qTox/commit/0335f20362e2b32e00d6b3fd286d801be1e014ab), closes [#6144](https://github.com/TokTok/qTox/issues/6144))
+- Usage of random ([f5f42233](https://github.com/TokTok/qTox/commit/f5f42233cad3e84d895261c25d693c6da637ef01))
+- add missing type for Qt slot ([ad139d67](https://github.com/TokTok/qTox/commit/ad139d67c2d8ee6cdc408cffbbdc26d52591c274))
+- remove unused variables ([e67cdadf](https://github.com/TokTok/qTox/commit/e67cdadf3d41521f563611bca1a688336a8bb254))
+- Remove unnecessary null pointer check ([20f948bc](https://github.com/TokTok/qTox/commit/20f948bc0842b1c9dd22a4fc386841fe04f2814c), closes [#5785](https://github.com/TokTok/qTox/issues/5785))
+- Remove empty file ([e6381861](https://github.com/TokTok/qTox/commit/e6381861c8cf3a30eb859618869868749e0f67a6))
+- empty username causes mention on ever message ([641fba35](https://github.com/TokTok/qTox/commit/641fba3553bc5a664cec593d38f7d80a0bf09a76), closes [#2119](https://github.com/TokTok/qTox/issues/2119))
+- update workerStb ([dedbd184](https://github.com/TokTok/qTox/commit/dedbd184b0df6bc708a2274231d288dae2f22c81))
+- data validation during the search (fix: #5791, #5723) ([e3c35c91](https://github.com/TokTok/qTox/commit/e3c35c9153cd5f843848eadea47a969b83da33da), closes [#5723](https://github.com/TokTok/qTox/issues/5723), closes [#5791](https://github.com/TokTok/qTox/issues/5791))
+- **AppManager:** Don't create temporary copy of argc ([2197bce6](https://github.com/TokTok/qTox/commit/2197bce610f2abf5e561b1ee528313660b0f0fb9), closes [#6641](https://github.com/TokTok/qTox/issues/6641))
+- **CI:**
+  - Fix commit message check on single commit PRs ([e48c5573](https://github.com/TokTok/qTox/commit/e48c557387f75b12cfcccc5b3c7806e9a8a113fa))
+  - Remove "setup" from Windows zip file name ([2f92a5f2](https://github.com/TokTok/qTox/commit/2f92a5f2f00a7f757479e21706dda99a58b99010))
+  - Don't upload Windows setup exe to nightly release ([c726b9ce](https://github.com/TokTok/qTox/commit/c726b9ce23980b950d7a812adaa7549226a782b0))
+  - Correct Wine lib path for winehq manual install ([80a0a4ae](https://github.com/TokTok/qTox/commit/80a0a4ae620d299d2379c28613d3298643f3fd19), closes [#6481](https://github.com/TokTok/qTox/issues/6481))
+  - Build in current dir in build-qtox-linux.sh ([11f7f619](https://github.com/TokTok/qTox/commit/11f7f6193a53092a84c284a6a8781470e8a99d88))
+  - Fix memory leak in `core_test` ([9cd9da4a](https://github.com/TokTok/qTox/commit/9cd9da4a5360028bab32bb7f04d95e67e895cc0d))
+  - Update Wine from 5 to 7 in docker image to fix unit tests ([79feb19d](https://github.com/TokTok/qTox/commit/79feb19d7d74be5c5b5862298818cc69507fda15))
+  - Grant action content write permission for release upload ([1bc72ab1](https://github.com/TokTok/qTox/commit/1bc72ab1a476e8eb9ca3c58e01515421ab1c29f4))
+  - Fix regression in logging from docker compose run ([44d867f6](https://github.com/TokTok/qTox/commit/44d867f624e93c4ede2446d45a847463c009d35d))
+- **FriendList:** exclusion of possible undefined behavior ([a1b08d64](https://github.com/TokTok/qTox/commit/a1b08d64934107a824215834f366a4a363c0c03b))
+- **History:**
+  - Correct SQL query for empty finished file transfer ([2d6cc254](https://github.com/TokTok/qTox/commit/2d6cc25405d1c7dbb55f0d2cc8a8a2cd10098572))
+  - Deep copy QByteArrays from SQL selects ([27f19ec2](https://github.com/TokTok/qTox/commit/27f19ec2fa1b7a1d0deb99393d296d697e3d890e))
+- **Paths:**
+  - Track portable state in Paths to updates paths correctly ([0eb56fb9](https://github.com/TokTok/qTox/commit/0eb56fb9bb61d953215e1531022a6460deb2a009), closes [#6443](https://github.com/TokTok/qTox/issues/6443))
+  - Default to auto paths detection mode ([d0c120e0](https://github.com/TokTok/qTox/commit/d0c120e0a8f4802cd03bd1fb305ade45c46799be))
+- **UI:**
+  - Centre message boxes on main window ([c5fdb786](https://github.com/TokTok/qTox/commit/c5fdb786764540358d255d32a9cc2d3d31614542))
+  - hide update related elements when `-DUPDATE_CHECK=OFF` ([db8af056](https://github.com/TokTok/qTox/commit/db8af0561d3128ed5598f9fa61ef381827747cae))
+- **Widget:** Incorrect removing of contacts ([039f6ff0](https://github.com/TokTok/qTox/commit/039f6ff0b3b66732ee7f37a427447e1a45bd0a49))
+- **Windows:**
+  - Fix starting qTox from installer ([beb38fa3](https://github.com/TokTok/qTox/commit/beb38fa33b51be97361b11edc03c96a13d616a47))
+  - Add missed openal dll since CI refactor ([68ca7354](https://github.com/TokTok/qTox/commit/68ca7354beae098773e407fe3481be15709bfb0a))
+- **appImage:** Bundle libpangocairo which was incompatible on Arch ([75648d04](https://github.com/TokTok/qTox/commit/75648d04b97c469fd1fc867ea9db4eadcac7ff3a), closes [#6454](https://github.com/TokTok/qTox/issues/6454))
+- **apparmor:**
+  - Allow access to Aspell personal dictionaries ([6a21d962](https://github.com/TokTok/qTox/commit/6a21d962141bd6dc7a6b051d20c7dbda471685a9))
+  - Allow spellchecking ([2ebf51b5](https://github.com/TokTok/qTox/commit/2ebf51b5b77184efefe3d02469748d67427c8d63))
+- **appimage:**
+  - Patch snore to enable notifications in AppImage ([b05c069d](https://github.com/TokTok/qTox/commit/b05c069dfe92c229fdde95f2f420b11f6d83c434), closes [#6411](https://github.com/TokTok/qTox/issues/6411))
+  - Include additional needed glib for RH based distros ([12ac8332](https://github.com/TokTok/qTox/commit/12ac8332544036bb11864bcbbe0894165cc9af98), closes [#6339](https://github.com/TokTok/qTox/issues/6339))
+  - Patch manually copied libs to include rpath for local dir ([cb8a095f](https://github.com/TokTok/qTox/commit/cb8a095fd295999ea574845d9688577fbab484b5))
+  - Handle no `TRAVIS_TAG` or `TRAVIS_COMMIT` in AppImage build ([aee189d4](https://github.com/TokTok/qTox/commit/aee189d46d1da37a353bcbc22e99152e9488c223))
+  - Use external binary path when enabling autorun from appimage ([da5c165f](https://github.com/TokTok/qTox/commit/da5c165f4116dce736def63b1b917523b848db09), closes [#6241](https://github.com/TokTok/qTox/issues/6241))
+- **build:**
+  - Remove unnecessary dependencies for Windows build ([4006d9b5](https://github.com/TokTok/qTox/commit/4006d9b5e8f8fe8e12044a0ed1c66f830ea4b912))
+  - Remove unnecessary dependencies ([0681614e](https://github.com/TokTok/qTox/commit/0681614ecc9c48f081e2e51f31ed4e151f3c1df5))
+  - Add std threading support in Windows build ([057f921a](https://github.com/TokTok/qTox/commit/057f921ace8894f7c193f8504bc44bdb78488fce))
+  - don't connect UpdateCheck when `-DUPDATE_CHECK=OFF` ([50063f76](https://github.com/TokTok/qTox/commit/50063f76abf2e4d3e20c9414ab61bae65335c7cb))
+  - include QVector type ([89fa7db9](https://github.com/TokTok/qTox/commit/89fa7db90a74100c1e3ff584b42557c0896101fd))
+  - cache debug deps during 2nd stage ([a686468b](https://github.com/TokTok/qTox/commit/a686468bfdaf7ecbed3dc5aabf522e9884cd1bb2))
+  - make pkg-config verbose about why it fails ([e4c7d81a](https://github.com/TokTok/qTox/commit/e4c7d81ab29299413d4b361f7dd23d4c6b83a879))
+  - appease appstream-glib validate ([dbf58826](https://github.com/TokTok/qTox/commit/dbf58826f6c970cc468667bfdb77e92755c09134))
+  - fix OpenAL Soft failing to build with newer CMake ([b8d3182d](https://github.com/TokTok/qTox/commit/b8d3182d069f30c10909956d602db3702d47e212))
+  - fix SQLCipher build issue with OpenSSL 1.1.1 on Windows ([cf8b89c5](https://github.com/TokTok/qTox/commit/cf8b89c5cb5d6c40c2c9b6d33a636a2960b34d96))
+- **buildscripts:** Fix license text for MIT derived works ([88edc66f](https://github.com/TokTok/qTox/commit/88edc66f88bb2eaaeda156f55a0731999bd81541))
+- **chat:**
+  - Undo removing of chat message insertion ([b82580c8](https://github.com/TokTok/qTox/commit/b82580c81427e4350369fcaa4f9a986e84f31f9e))
+  - Stop spellcheck from leaking messages to logs ([813643ad](https://github.com/TokTok/qTox/commit/813643adbf3d1eb943f88cbb5fff36120d9d9a02))
+- **chatform:** Scroll to bottom on load, broken on refactor ([69cd33b7](https://github.com/TokTok/qTox/commit/69cd33b7331368f4f0092e565ac8abcec62fc698), closes [#6314](https://github.com/TokTok/qTox/issues/6314))
+- **chathistory:** file transfers sometimes show wrong author name ([1bc97ef2](https://github.com/TokTok/qTox/commit/1bc97ef219916685a2dc704d5941237cfbec749e))
+- **chatlog:**
+  - Display correct system message timestamp in chatlog ([25223119](https://github.com/TokTok/qTox/commit/25223119c9c17fab3c973680d914abb31a503350))
+  - fixed rendering of new messages when scrolling up ([1aad9194](https://github.com/TokTok/qTox/commit/1aad91944ee8cad86b124f65531948e7bf186bb5))
+  - Remove invalid usages of raw chatlog indexes ([4b691f93](https://github.com/TokTok/qTox/commit/4b691f9392cc60394a577292becc67c0416e76e7))
+- **cmake:** use the 'STATIC' argument for `'translations_library'` ([5ba63af9](https://github.com/TokTok/qTox/commit/5ba63af9cb3f88c41e25bf4abe084c32aee9b405))
+- **contacts:** window with multiple friends contacts ([15459452](https://github.com/TokTok/qTox/commit/1545945236681bb1561df9bf2e8cafd701b3699a))
+- **core:**
+  - Correct getSelfDhtId's toxcore API ([faa72d56](https://github.com/TokTok/qTox/commit/faa72d567e049797ebbbb5322d0238cb83728abc))
+  - One time reset of user bootstrap node list to default ([4580d3f1](https://github.com/TokTok/qTox/commit/4580d3f1066ad946c7532af968d333cc0400eb4a), closes [#6452](https://github.com/TokTok/qTox/issues/6452))
+  - Fix logic error retrieving TCP port ([6f912370](https://github.com/TokTok/qTox/commit/6f9123705a726c1a219a0f447a7bf744710de328))
+  - Use node's TCP ports when connecting to TCP relay ([e7e30ada](https://github.com/TokTok/qTox/commit/e7e30ada8cd33f0dd4adfdb3c021b75e28232057))
+  - Don't apply Windows file transfer rename on other platforms ([3180d23e](https://github.com/TokTok/qTox/commit/3180d23ee2a7780e2314955e6cd7649ba40ef0ec), closes [#5242](https://github.com/TokTok/qTox/issues/5242))
+  - Fix missed ToxId to ToxPk constructions ([56eed63f](https://github.com/TokTok/qTox/commit/56eed63fdebd09f832a5eefd397f07fa26c1d71f))
+  - Track avatar offer file size to avoid cancelling transfers ([3ac37a54](https://github.com/TokTok/qTox/commit/3ac37a549646ce03d9ca736e5bb44b0b881334ba))
+  - extend RAII locker lifetime until end of function ([55fb28b0](https://github.com/TokTok/qTox/commit/55fb28b08b7eeb60fc2698ad9cb8e36e9db93e19))
+  - read proxy type after personal settings are loaded ([5dcea74d](https://github.com/TokTok/qTox/commit/5dcea74db500f09151dfb73fd937519c1d92d1ea))
+- **coreav:**
+  - prevent racy access to call variable ([c507d266](https://github.com/TokTok/qTox/commit/c507d2665d4c5a352661f7f2d701d2679b4e805a))
+  - change some lock to write locks ([dfcfb7d5](https://github.com/TokTok/qTox/commit/dfcfb7d5e00eb561d659fe236f4aa06b014ee643))
+  - fix assert because c-toxcore calls from unexpected thread ([141cbf88](https://github.com/TokTok/qTox/commit/141cbf887026835d83c3763f920daed3276b674e))
+  - avoid deadlock between CoreAV, main and Audio thread ([4b9e4a57](https://github.com/TokTok/qTox/commit/4b9e4a571d9ecd22c0cc339951cc0464cb8c24cc))
+  - cleanup assertions ([9499925f](https://github.com/TokTok/qTox/commit/9499925fb2bb4603dc0aa83bbf443a0ad61424a7))
+- **corefile:** Close files of broken file transfers ([5de54039](https://github.com/TokTok/qTox/commit/5de5403964854d1372efda7b8a8d7d324e85aba3), closes [#6500](https://github.com/TokTok/qTox/issues/6500))
+- **crash:** Handle nightly tag name in update check ([ddebf6ee](https://github.com/TokTok/qTox/commit/ddebf6ee7a68d5ffb42aeaccdfdd83f6a0fe5083))
+- **db:** prepare and execute queued statements one at a time ([af02542e](https://github.com/TokTok/qTox/commit/af02542e05992bf94fcff37c365f638ad7b53d8d))
+- **docs:**
+  - Add brew prefix to macOS build instructions ([3c682abc](https://github.com/TokTok/qTox/commit/3c682abc69b5a1b39d5679c76868c9bbdf49c527))
+  - Correct Windows cross compile example command ([0706c906](https://github.com/TokTok/qTox/commit/0706c906337180dfeed66950ee0cb97592caa542))
+  - add sqlcipher to required arch deps ([82d5beee](https://github.com/TokTok/qTox/commit/82d5beeee94f47fc6366e470b2469fbf497c330b))
+- **doxygen:** Re-enable deploying of doxygen to qtox.github.io ([d3995bc8](https://github.com/TokTok/qTox/commit/d3995bc87eeb4144c27568eb2059aed4c56de4cf))
+- **extensions:** Add toxext to CI scripts ([670457a7](https://github.com/TokTok/qTox/commit/670457a77bcb42f22153f0a08f8ecb351cf230ff))
+- **filetransfer:** Fix UI inconsistencies with pause/resume ([3bc4aa52](https://github.com/TokTok/qTox/commit/3bc4aa52bee98fe8b44c004d0f9f2e6759d9f73e))
+- **flatpak:**
+  - Build flatpak qTox and dependencies in Release mode ([9ea6d7e8](https://github.com/TokTok/qTox/commit/9ea6d7e8fcff3244cb793f53e3a8aad1dfeaf35d))
+  - workaround unstable flathub downloads ([69677831](https://github.com/TokTok/qTox/commit/69677831aba0763f5c8fdc1847db3e868e25c983))
+- **gitstats:** Re-enable deploying of gitstats to qtox.github.io ([5a77a18f](https://github.com/TokTok/qTox/commit/5a77a18fc09f8af5ffa7bc7a949eea505abe989b))
+- **group:** Change join leave message setting default to false ([0df98ce6](https://github.com/TokTok/qTox/commit/0df98ce64fe6532ce9e0025e7e4c8ec7c2f0038d))
+- **groups:** Fix invalid group list on group member join ([fd243738](https://github.com/TokTok/qTox/commit/fd243738c1a4773726e7edfa7c5988a4319364bd), closes [#5838](https://github.com/TokTok/qTox/issues/5838))
+- **history:**
+  - Heal duplicate peer entries with different case ([9a8706a6](https://github.com/TokTok/qTox/commit/9a8706a65f1737f875eccc9717c8389ff51798d2))
+  - Strictly check `public_key` during database upgrade ([f2957013](https://github.com/TokTok/qTox/commit/f29570138fa7d377e1dae7df6319277027eaac57))
+  - Fix alias removal SQL query after group history addition ([4f45f30e](https://github.com/TokTok/qTox/commit/4f45f30ef9da8ba0a8511acd53bdcf2054d91a18))
+  - Heal invalid `resume_file_id's` saved to history ([f777aa88](https://github.com/TokTok/qTox/commit/f777aa885cde638167c96792647726fc65d096ae), closes [#6553](https://github.com/TokTok/qTox/issues/6553))
+  - Don't cast `file_id` to QString before inserting ([47ee51c6](https://github.com/TokTok/qTox/commit/47ee51c61d99a7f3b0a8c63fa4d7bbfc32fb2a6d))
+  - Replace invalid Tox ID saved in peers table with Tox public key ([9ac44ee0](https://github.com/TokTok/qTox/commit/9ac44ee09c365075b6c1ae5f343f7d632a46cd5f), closes [#6485](https://github.com/TokTok/qTox/issues/6485))
+  - Fix qt deprecation warning ([6c34fad9](https://github.com/TokTok/qTox/commit/6c34fad9b6fa6b4c519ea1568443da4fb715694d))
+- **i18n:** Various English fixes ([11b34c84](https://github.com/TokTok/qTox/commit/11b34c84ef50358770248f689aaa606df9e595c5))
+- **ipc:** allow IPC under windows by not using `std::random_device` with mingw ([6105af82](https://github.com/TokTok/qTox/commit/6105af8279b609107f5116b0ac5039b8dbcd17b8), closes [#2917](https://github.com/TokTok/qTox/issues/2917))
+- **l10n:** Added comments in qTox.desktop file ([f4b7ea52](https://github.com/TokTok/qTox/commit/f4b7ea52b2333c39cb18f6e729c4dbc80e14a947))
+- **libav:** remove usage of a private field see https://github.com/signalwire/freeswitch/issues/2202 ([42303a9b](https://github.com/TokTok/qTox/commit/42303a9b76b012aa84089710be4241e4e0a8b1bb))
+- **logging:** check if version is stable before other checks ([0ee37a7a](https://github.com/TokTok/qTox/commit/0ee37a7a099aec6cd86d3361ca5e5065b8b4f501))
+- **login:**
+  - fix a crash when many dialogs are open ([c37a05f4](https://github.com/TokTok/qTox/commit/c37a05f40cce84f449527d7c381ee8285d91ba86))
+  - show login screen when autologin fails ([a3bbf5c4](https://github.com/TokTok/qTox/commit/a3bbf5c41d95470323afa162771f50f5901bc109), closes [#5781](https://github.com/TokTok/qTox/issues/5781))
+- **macOS:** Update video API usage for newer libavcodec ([15673a52](https://github.com/TokTok/qTox/commit/15673a52b6b4805d482b69281e21947fb7096e05))
+- **macos:**
+  - Represent autorun state in UI persistently ([ad6b5104](https://github.com/TokTok/qTox/commit/ad6b5104179bbcbbebf54197e81c487666d106d1))
+  - Fix macOS autorun not loading at start ([00936911](https://github.com/TokTok/qTox/commit/009369118f7e3175ab5857b39b98980a6f75d380), closes [#2814](https://github.com/TokTok/qTox/issues/2814))
+  - update deprecated AVFoundation API ([65ff532a](https://github.com/TokTok/qTox/commit/65ff532a54122a09357a0240b287219c0306c0be))
+- **main:** Construct ToxSave event handler ([7565f8b3](https://github.com/TokTok/qTox/commit/7565f8b350c54347e3c78a91d05bf50dff1ffe3c))
+- **model:**
+  - take QObject receiver argument to interface signal connection macro ([24e4ec37](https://github.com/TokTok/qTox/commit/24e4ec37510c11a38d7aedc6b533f11a653c65a6))
+  - stop interfaces from inheriting from QObject ([82a4f1b4](https://github.com/TokTok/qTox/commit/82a4f1b41292eae981b9374824ff1499ca1cfcb4))
+  - return connection from interface macro ([41b2b35c](https://github.com/TokTok/qTox/commit/41b2b35ce3037a32f705caf92600c42b0ae4798a))
+- **net:** check if the node has all needed fields ([ca4f14cc](https://github.com/TokTok/qTox/commit/ca4f14cc4c2ca2d80e73a9da503325ef13de807c))
+- **notification:** hide snore warning log spam ([ca4f9df1](https://github.com/TokTok/qTox/commit/ca4f9df1eecb43779ec7469ec24908a1a5f53a47))
+- **osx:**
+  - Fix product name when prompting for mic and camera permissions ([fb449056](https://github.com/TokTok/qTox/commit/fb4490569865113d07dbdd6e2da33890e0aff813), closes [#6261](https://github.com/TokTok/qTox/issues/6261))
+  - Allow rebuild using build script ([56151ea6](https://github.com/TokTok/qTox/commit/56151ea6fd1ff27dfb7b71eb2219a4b714a08469))
+  - Fix missing variables in macOS build script ([360cde9d](https://github.com/TokTok/qTox/commit/360cde9d3697cff9c29cb50d57393af57ba985bc))
+  - OSX updater dependency moved. ([6d99e909](https://github.com/TokTok/qTox/commit/6d99e9099f2a5d013a915b334d5d41b5f8bdfb9d))
+  - Add camera and microphone usage description. ([5f1338dd](https://github.com/TokTok/qTox/commit/5f1338dd78b4b9597c15ac187dce03e516977a5f))
+- **preview:**
+  - handle libexif missing fields, don't accept 0-value orientation ([535b01a8](https://github.com/TokTok/qTox/commit/535b01a8413ca3b51e739de7d57e534eecc8db6e))
+  - Don't log a warning on missing exif orientation metadata ([9da1e3bb](https://github.com/TokTok/qTox/commit/9da1e3bbdf01c8aba2dc5029f70a99fd0d85fd87))
+  - Fix exif orientations ([99c1753a](https://github.com/TokTok/qTox/commit/99c1753a76260afcd8cf4b5e3e75ba5b1b3b3909))
+- **profile:**
+  - load settings before starting Core ([bb26d4a0](https://github.com/TokTok/qTox/commit/bb26d4a08623981b5f423e2d217d45d3672e1939))
+  - write .tox file immediately on creation ([49c8f9b9](https://github.com/TokTok/qTox/commit/49c8f9b9b5dc3d364aa4ef13e22d199673ed68c3))
+- **security:** Do a better job of anonymising the log output. ([ac999816](https://github.com/TokTok/qTox/commit/ac999816e6e76db73b9dd947bf7baa167d50ea7e))
+- **settings:**
+  - Heal invalid ToxPk saved to Personal Settings ([dd952408](https://github.com/TokTok/qTox/commit/dd9524085fdc11ab39bdb7d44419959cc45e1790), closes [#6506](https://github.com/TokTok/qTox/issues/6506))
+  - Initialize gain slider to correct position ([ce1ecb42](https://github.com/TokTok/qTox/commit/ce1ecb4234444090bd290a4796109783dffc555a), closes [#6285](https://github.com/TokTok/qTox/issues/6285))
+  - Unlock Settings mutex before emitting setting changed signals ([0f5ba08f](https://github.com/TokTok/qTox/commit/0f5ba08fd22ca2f0208be2bac574a4430d755f25), closes [#6218](https://github.com/TokTok/qTox/issues/6218))
+  - Emit correct signal when spellchecking is updated ([68010986](https://github.com/TokTok/qTox/commit/68010986511e3215e05e89f8c1ce27acbfc20de5))
+- **smileys:** fix flag emojis ([034d7671](https://github.com/TokTok/qTox/commit/034d7671a5837a6320feaba1218f3152cc9e78fe))
+- **test:** Don't rely on row IDs after moving tables ([dc462678](https://github.com/TokTok/qTox/commit/dc46267833e69628f13c34cdfd2fb0ca1315eea8))
+- **tests:** Mock Settings for SmileyPack test ([b894531c](https://github.com/TokTok/qTox/commit/b894531cdb6f079f7064aca74ec2ef7e461dddfb), closes [#6530](https://github.com/TokTok/qTox/issues/6530))
+- **tools:**
+  - Add Windows to toxcore version update script ([1d1d2b26](https://github.com/TokTok/qTox/commit/1d1d2b26af2a176f1861126cf5342a810843f988))
+  - Use correct hash when automatically updating flatpak version ([1f1cb2f5](https://github.com/TokTok/qTox/commit/1f1cb2f5f9187cc987e2fbdb1957dde34f96c647))
+  - use a subdirectory for release source archives ([7dfd93bd](https://github.com/TokTok/qTox/commit/7dfd93bd9138b2c6a50cc2b2f32f68e70a59ecdf), closes [#6203](https://github.com/TokTok/qTox/issues/6203))
+- **toxcall:**
+  - move ToxCall ownership to correct Thread ([6b468e41](https://github.com/TokTok/qTox/commit/6b468e41fab5f158a26a9166cc15e190ea845d5f))
+  - handle Null sink correctly ([bf3921ce](https://github.com/TokTok/qTox/commit/bf3921ce94251a3f56d5f83d1c03735d7fad3821))
+- **toxext:**
+  - Update toxext to fix memory corruption issues ([761c2fb2](https://github.com/TokTok/qTox/commit/761c2fb29260908b674ace7f797eae829bdf652e))
+  - Protect use of toxext modifying functions ([5ddb8caa](https://github.com/TokTok/qTox/commit/5ddb8caa97cf2f13eeaec3b26e97df2c33d4494d))
+- **translation:**
+  - match text to translation files part 2 ([98976547](https://github.com/TokTok/qTox/commit/98976547feac60c8509a1c3917235d381767b496))
+  - match text to translation files ([251beb5b](https://github.com/TokTok/qTox/commit/251beb5b70fc50915720ed8217ecc22a949e052f))
+  - Fix Simplified Chinese format and add a message ([d48d02a1](https://github.com/TokTok/qTox/commit/d48d02a1edc539afface8a9c0b807a5d83312150))
+- **travis:**
+  - Don't call brew update in Travis CI ([abad3fc0](https://github.com/TokTok/qTox/commit/abad3fc095f09e33a481a7eaa3e555dbc1efd4a2))
+  - Install virtualenv for nightly build upload script ([a68f5bcc](https://github.com/TokTok/qTox/commit/a68f5bcc6f1bcc1240a00ec73f1cc336d70def03))
+- **ui:**
+  - Pass NetCamView's parent pointer to base QWidget ([809c6957](https://github.com/TokTok/qTox/commit/809c69571829df3aeee4e93c54c15da2ffebc637))
+  - Use GenericChatItemWidget construction compact argument ([f25e8558](https://github.com/TokTok/qTox/commit/f25e8558399c024278b167dc17198156571e405f))
+  - reorder the window title ([d621d745](https://github.com/TokTok/qTox/commit/d621d7451170941105b4ba581b63e90cc41f60e1))
+  - contact list optimization ([45b69519](https://github.com/TokTok/qTox/commit/45b69519c4f511bf5eedb85b1f6a8cd31f1f6307))
+  - passing arguments from the CircleWidget constructor ([e6bc355b](https://github.com/TokTok/qTox/commit/e6bc355bc741af195628f55aa50c09222499e34d))
+  - add group widgets on start with "Activity" mode ([b98801f4](https://github.com/TokTok/qTox/commit/b98801f42f55547fce227aaad7dabd71b8895338))
+  - system translation not being updated ([6527fd4f](https://github.com/TokTok/qTox/commit/6527fd4fca271b3787050ab6af6319c0c9896de8))
+  - move update elements in about ([31de0eaf](https://github.com/TokTok/qTox/commit/31de0eaf08d807732fb50124c1e129a90e0f970a))
+  - implement and connect reloadTheme in leaf classes ([3bf3128a](https://github.com/TokTok/qTox/commit/3bf3128a4fa4fe53694789da07a9669d12020179), closes [#5592](https://github.com/TokTok/qTox/issues/5592), closes [#5924](https://github.com/TokTok/qTox/issues/5924))
+  - don't notify of available update if local version is newer ([82547263](https://github.com/TokTok/qTox/commit/82547263f815c2acd1ad5ad4e31019be196d1f2c), closes [#6112](https://github.com/TokTok/qTox/issues/6112))
+  - using a separate css file ([03124454](https://github.com/TokTok/qTox/commit/03124454cd223262b3d66fb9ff7cab7e44592514))
+  - updating friends list color at runtime ([d01fed92](https://github.com/TokTok/qTox/commit/d01fed92f08dfaf9ed8a54fdc275b51b22b56ba7))
+  - quit qTox on Ctrl+Q when "Close to tray" is enabled ([f9f634b3](https://github.com/TokTok/qTox/commit/f9f634b326f359e9f605c1215f94670053d57069), closes [#5925](https://github.com/TokTok/qTox/issues/5925))
+- **video:**
+  - Close video device after checking V4L video modes ([9688a1e8](https://github.com/TokTok/qTox/commit/9688a1e82f49da5cdb4b77e49a8d6118e1b385cd), closes [#6346](https://github.com/TokTok/qTox/issues/6346))
+  - only list video devices with video capture capability ([98a818cb](https://github.com/TokTok/qTox/commit/98a818cbea9907947c420d68eb3720554895a27e), closes [#6276](https://github.com/TokTok/qTox/issues/6276))
+- **widget:** Update widget's core on core update ([b429e562](https://github.com/TokTok/qTox/commit/b429e562e25c6c2e65f1c511996637f74369b2f9))
+- **windows:**
+  - iconengines not being installed ([1e50c123](https://github.com/TokTok/qTox/commit/1e50c123dc906ad61dc093526ba5b4886fd4a471))
+  - libsnore-qt5 not being installed ([827b2c22](https://github.com/TokTok/qTox/commit/827b2c22103489b8cdbb0ca6ba973be14181780e))
+
+#### Features
+
+- Add desktop notifications support on Linux. ([edbbee9b](https://github.com/TokTok/qTox/commit/edbbee9b2ca865026e5d1be16114dcccfda9d9d7))
+- Add debug log view. ([bd07e0ff](https://github.com/TokTok/qTox/commit/bd07e0ffa871af2fe06c1ead0d0d922b59dba244))
+- Add new translations: Bengali, Latvian, Flemish, Vietnamese. ([3423eb59](https://github.com/TokTok/qTox/commit/3423eb597b72441901ec9f94849d98d57d9755d2))
+- add Fcitx and Uim support to AppImage ([bafce795](https://github.com/TokTok/qTox/commit/bafce7953dc784b92abfbdd13958c71dbc5efd63))
+- save selected search text after scrolling up ([a6a0481d](https://github.com/TokTok/qTox/commit/a6a0481ddccfddbc2237c067c709d4a3d8d28612))
+- check chat status before start a search ([76679de2](https://github.com/TokTok/qTox/commit/76679de2e09a0a5abae794289bdce15f2871f9e4))
+- **CI:**
+  - Disallow unsafe implicit casts to QString ([9571434d](https://github.com/TokTok/qTox/commit/9571434df97794b5291470ea41791a715d7a153a))
+  - Disallow implicit casting of QString to char\* ([b5aa5dac](https://github.com/TokTok/qTox/commit/b5aa5dac6332e62ddf66d4eb75b2b5ff2a2607cf))
+  - Disallow implicit casting of QByteArray to char\* or void\* ([f1b40116](https://github.com/TokTok/qTox/commit/f1b401166a8c876f64436e6a65b989a168ab5c7f))
+  - Run clang-tidy check in CI ([c828a16b](https://github.com/TokTok/qTox/commit/c828a16b7b1b0c027eb1306a832622b30031c83d))
+  - Run AddressSanitizer on Fedora build ([bf6d0159](https://github.com/TokTok/qTox/commit/bf6d01598ff9e6d3ebd621d5f286e046d00920c4))
+  - Output on test failure in Linux CI ([8d1b0d6c](https://github.com/TokTok/qTox/commit/8d1b0d6c6e3cef900bf1ad68d9009af49df0a02c))
+- **Core:** Add support for retrieving self DHT ID and port ([4f9ca0a4](https://github.com/TokTok/qTox/commit/4f9ca0a4113bf12b556d5a6a2c65e40d13583567))
+- **History:** Add a GUI error on database schema mismatch ([f4e64ee7](https://github.com/TokTok/qTox/commit/f4e64ee7a6149d5fcb9b4bb1003437771bb8957a), closes [#5683](https://github.com/TokTok/qTox/issues/5683))
+- **Settings:**
+  - Add GUI notice for global settings upgrade failure ([efc641ef](https://github.com/TokTok/qTox/commit/efc641efd775b33531bde511bc102b8ca313aa49))
+  - Add system for versioning and upgrading Settings ([2b41a06b](https://github.com/TokTok/qTox/commit/2b41a06b55f2174c4a0393caf45cb8be3f609ca0))
+  - Add setting for hiding group join and leave system messages ([1be5b99d](https://github.com/TokTok/qTox/commit/1be5b99d1741b0f4c92f9e8b51150e0d44ca0a42))
+- **UI:**
+  - Add UI for removing group history ([cd3c7b39](https://github.com/TokTok/qTox/commit/cd3c7b392eeed2bfc3bc7e9cd83aaf58a2d384ba))
+  - Add UI For controlling group join and leave system messages setting ([069ab92f](https://github.com/TokTok/qTox/commit/069ab92fd013b915855723f20ac72ad30838d325))
+- **apparmor:**
+  - Update AppArmor 2.13.3 profile ([a01d3144](https://github.com/TokTok/qTox/commit/a01d31445f403b73ec9a15655e24e0993b0ec097))
+  - Add AppArmor 2.13.3 profile ([2d22a76e](https://github.com/TokTok/qTox/commit/2d22a76ed32f2faa822a5bc81668e2c0c45f6fe8))
+- **build:**
+  - Add option to enable ThreadSanitizer ([be167c92](https://github.com/TokTok/qTox/commit/be167c92298baae7587b78b0b62a93101bff5e97))
+  - add nix-shell support ([faeb699f](https://github.com/TokTok/qTox/commit/faeb699fd08d7a6bbd648fed0647cc1f06788b4b))
+  - use Debian Buster for Windows cross-compilation ([4fdedba6](https://github.com/TokTok/qTox/commit/4fdedba6c041dfcec1089d94029dd635742a3f01))
+- **chat:** Add snore to Windows build and install for desktop notifications ([7409e6b4](https://github.com/TokTok/qTox/commit/7409e6b4cc584f1d1737e180b4066be371303801))
+- **chatlog:**
+  - Add support for ed2k file links ([7a3474bf](https://github.com/TokTok/qTox/commit/7a3474bf553aa085eea101182345c61eb418a5aa))
+  - Add gemini:// to hyperlink regex ([355dfb7a](https://github.com/TokTok/qTox/commit/355dfb7a7f4db5bfd30a14bced81c930398a0d28))
+  - Disable join and leave system messages based on setting ([de924cfd](https://github.com/TokTok/qTox/commit/de924cfdc793f4e71da47f877afa85dcb7a3e91a))
+  - Re-implement sliding window ChatLog view ([b36a38e7](https://github.com/TokTok/qTox/commit/b36a38e716859876a09ba0a5c8accee1a9355af0), closes [#5878](https://github.com/TokTok/qTox/issues/5878), closes [#5940](https://github.com/TokTok/qTox/issues/5940), closes [#6223](https://github.com/TokTok/qTox/issues/6223))
+  - Add image preview on paste ([7c218b38](https://github.com/TokTok/qTox/commit/7c218b389db6745aefd43b7d032d142be728333e))
+  - Add SystemMessages to SessionChatLog ([916834fb](https://github.com/TokTok/qTox/commit/916834fb9c8129a35f8c88bc35ceba32560ce4ca))
+  - Upgrade db schema to support system messages ([e9131d33](https://github.com/TokTok/qTox/commit/e9131d33aa757604021c741e46fd392f86ccd1d4), closes [#6221](https://github.com/TokTok/qTox/issues/6221))
+- **core:**
+  - Add error parsing for `Tox_Err_Options_New` ([2a2b0799](https://github.com/TokTok/qTox/commit/2a2b0799928816a5b2af7d8b74439e9f9a1d9ebf))
+  - Add error parsing for `Toxav_Err_Bit_Rate_Set` ([a5660fb6](https://github.com/TokTok/qTox/commit/a5660fb6e350801dde68644a03381b481662cacd))
+  - Add error parsing for `Toxav_Err_Call` ([47a05c75](https://github.com/TokTok/qTox/commit/47a05c75929043a038ed63a435ee402d5f2be151))
+  - Add error parsing for `Toxav_Err_Call_Control` ([47a20f60](https://github.com/TokTok/qTox/commit/47a20f606160666a6725f6478b905504adcb04bc))
+  - Add error parsing for `Tox_Err_File_Send_Chunk` ([6c9c3809](https://github.com/TokTok/qTox/commit/6c9c3809152d0dd3f1b68fb7e8dd131c595a6944))
+  - Add error parsing for `Tox_Err_File_Control` ([978bcde5](https://github.com/TokTok/qTox/commit/978bcde57203510bd6a1bf41eb875f956fa5176e))
+  - Add error parsing for `Tox_Err_File_Get` ([040beae5](https://github.com/TokTok/qTox/commit/040beae56a2febff8d78972e60b7d7b3681bbad7))
+  - Extend and deduplicate `Tox_Err_File_Send` error parsing ([aff56633](https://github.com/TokTok/qTox/commit/aff56633515fb5872f0f03ca420d7cec1d53f59a))
+  - Store default bootstrap list separate from user list ([08fdd3a2](https://github.com/TokTok/qTox/commit/08fdd3a2c727f5eac34eac4f9c7b2c48f722e1a7))
+  - use user editable bootstrap node list ([365a452f](https://github.com/TokTok/qTox/commit/365a452fb8d887b03cf6543f4d2aa80be5faca76), closes [#5767](https://github.com/TokTok/qTox/issues/5767))
+- **coreav:** add assertions to check for threading errors ([29f659c6](https://github.com/TokTok/qTox/commit/29f659c6599796340c4d0b99a498c54adf51e882))
+- **docs:** Add a security policy for disclosing vulnerabilities ([a99735d0](https://github.com/TokTok/qTox/commit/a99735d0e02dc0f5c8183071154359109a00eb87))
+- **extensions:**
+  - Split messages on extended messages ([26701283](https://github.com/TokTok/qTox/commit/26701283cd96aa2b0094035f6b6090351ec297f4))
+  - Update documentation ([a11a65af](https://github.com/TokTok/qTox/commit/a11a65af2a73be7920a6dc6dfa3ac28e52968cb6))
+  - UI updates for extension support ([b7158150](https://github.com/TokTok/qTox/commit/b71581501165ccb48c29799ddb857489c28a2736))
+- **filesform:** Add in progress transfers to files form ([257a19ca](https://github.com/TokTok/qTox/commit/257a19caaaa3a31b0890e3eeb728ef9e19f28ede))
+- **groups:** Allow being in group call if only member ([46d57c68](https://github.com/TokTok/qTox/commit/46d57c6864fccf8124232efefe7cc4e884cd3509))
+- **haiku:**
+  - Haiku doesn't use sys/errno.h ([36463f6f](https://github.com/TokTok/qTox/commit/36463f6f9dd9b07b65d9b044520a39086b990393))
+  - Don't use fstack-protector on Haiku ([d413e7b1](https://github.com/TokTok/qTox/commit/d413e7b13c918561361c1c7f7e1f95f5afac1d66))
+- **history:**
+  - Enable group history ([0352ada0](https://github.com/TokTok/qTox/commit/0352ada08c7efa4ad6523071bde566f506daeb4d), closes [#5452](https://github.com/TokTok/qTox/issues/5452))
+  - Remove group history on quit when selected ([1142cc03](https://github.com/TokTok/qTox/commit/1142cc03f849811b12da16298a2ae3d34fd7f714))
+  - Add self join/part messages ([e740859e](https://github.com/TokTok/qTox/commit/e740859ef9007dc6e2b8e708895f83c3a3bbdb69))
+  - Save/load system messages to history ([18109b2f](https://github.com/TokTok/qTox/commit/18109b2f7fa795c0d310e7e4ab053250d1a45540))
+- **i18n:**
+  - Handle English plural forms in translations ([0cb222c0](https://github.com/TokTok/qTox/commit/0cb222c0567698d70d4115321def32794a874136))
+  - Check for new translatable strings on every PR ([11450afa](https://github.com/TokTok/qTox/commit/11450afa810f59837519e919a13f399b8d9ef9a9))
+- **ipc:** make IPC user specific ([2fe19180](https://github.com/TokTok/qTox/commit/2fe1918083f99cde499eb8bc73c08851553bbd32), closes [#6076](https://github.com/TokTok/qTox/issues/6076))
+- **l10n:**
+  - update Chinese (Simplified) translation from Weblate ([60f8ae49](https://github.com/TokTok/qTox/commit/60f8ae49027c892b8f36936c312959e9f60f2359)), ([0d80f04d](https://github.com/TokTok/qTox/commit/0d80f04de74d6b9ed72302938cb3cba6cd2dc39b)), ([dbc9b4f0](https://github.com/TokTok/qTox/commit/dbc9b4f049fc3939040e675481953b1965feee73))
+  - update Russian translation from Weblate ([25506531](https://github.com/TokTok/qTox/commit/25506531460d27033029ec411e0f30cd76b427c1)), ([62548f1f](https://github.com/TokTok/qTox/commit/62548f1fec96f8e7adc8574b61797d13985a08d3)), ([84837965](https://github.com/TokTok/qTox/commit/848379652f19912f06d02a2209b8a4c90edd34c4)), ([479f6b72](https://github.com/TokTok/qTox/commit/479f6b72694748cc76ce06417c71243c8d9dbdbd))
+  - update Bengali translation from Weblate ([d64154a5](https://github.com/TokTok/qTox/commit/d64154a593d11ae62c44528619c581c93b989103))
+  - update Portuguese translation from Weblate ([72ed0758](https://github.com/TokTok/qTox/commit/72ed0758552ad4c5c6cfb7bd57a064d00d8061c0))
+  - update Korean translation from Weblate ([1c0616cc](https://github.com/TokTok/qTox/commit/1c0616cca92137fd7f7f8569e4f1b32357d2bcf9))
+  - update Polish translation from Weblate ([b66caa58](https://github.com/TokTok/qTox/commit/b66caa5895b9409355d4154fe34df11319414fe6)), ([adf4332c](https://github.com/TokTok/qTox/commit/adf4332c42be5978139e517d538b94c45b107505)), ([c0c2d1fa](https://github.com/TokTok/qTox/commit/c0c2d1fad33fe5ded0e8bc48ef61e9b171b0d534))
+  - update Portuguese (Brazil) translation from Weblate ([e5748056](https://github.com/TokTok/qTox/commit/e5748056c8d77302c2237b33954f1edefc439c16)), ([5b1661c4](https://github.com/TokTok/qTox/commit/5b1661c486336c5c090053fd4d09709b4363e2de))
+  - update Greek translation from Weblate ([44bebc75](https://github.com/TokTok/qTox/commit/44bebc758251e0dc658cb91b6d2ab205fb449676))
+  - update Slovak translation from Weblate ([197c9ebe](https://github.com/TokTok/qTox/commit/197c9ebe5b781802d0d3ff3e28aecf3d9345e24d))
+  - update Hungarian translation from Weblate ([15864a32](https://github.com/TokTok/qTox/commit/15864a3281372412109a61d1607bdb6ed5b97c3a))
+  - update Italian translation from Weblate ([ceec7d7f](https://github.com/TokTok/qTox/commit/ceec7d7f16e9abb9994b2dbe6c40f510f2d8d52b))
+  - update Turkish translation from Weblate ([e4b96179](https://github.com/TokTok/qTox/commit/e4b96179d9d65db4d9d18c2568383acb654359d6)), ([db5178c6](https://github.com/TokTok/qTox/commit/db5178c6ca8a616ae656c1a4231b98d413211d1a)), ([5968999a](https://github.com/TokTok/qTox/commit/5968999aff2961128ab46ecbb451c3af5ca8bf44))
+  - update Bulgarian translation from Weblate ([986b5359](https://github.com/TokTok/qTox/commit/986b5359a631b055f1766df8982a2f4b5e4da0a6)), ([d797fc27](https://github.com/TokTok/qTox/commit/d797fc27a92d6f96b45e6034aa54e5586eb1a59b))
+  - update Vietnamese translation from Weblate ([30637137](https://github.com/TokTok/qTox/commit/3063713704876bef8462bc25c7a6501541c2ad77))
+  - update Norwegian Bokmål translation from Weblate ([78670eda](https://github.com/TokTok/qTox/commit/78670eda55a09e33e5953a50779f71666bf1f8ee))
+  - update French translation from Weblate ([497feec9](https://github.com/TokTok/qTox/commit/497feec9bd63f2195da476527f9a50987944581a))
+  - update Danish translation from Weblate ([a494bc78](https://github.com/TokTok/qTox/commit/a494bc78e4a2f7b2ac97cdd0ba7200c6a011bc2e)), ([cb659bc8](https://github.com/TokTok/qTox/commit/cb659bc83fa8f02522a59426bcb3345b98490dcb))
+  - Add Urdu and Icelandic translations ([188fe340](https://github.com/TokTok/qTox/commit/188fe340f2cf3fd314cc39c46713b6f53e00ea5c))
+- **logging:**
+  - Hide toxcore spam when using IPv4 ([ac4f01cf](https://github.com/TokTok/qTox/commit/ac4f01cf7f5752e7e470a5d1c0ad074a01270709))
+  - check if current code is tagged ([90cc9628](https://github.com/TokTok/qTox/commit/90cc962802a5909e0692d5a6f84ac6808803fc28))
+- **login:** generate a GUI error when auto login fails ([88322347](https://github.com/TokTok/qTox/commit/8832234758d5a025afa15514f0526d3915e1460f))
+- **macOS:** Build deps from source, giving backwards compatibility ([e80db6a5](https://github.com/TokTok/qTox/commit/e80db6a532bb8af4c03a796aa3c19766cfb92a41), closes [#6260](https://github.com/TokTok/qTox/issues/6260))
+- **messages:**
+  - History and offline message support for extended messages ([5f5f6128](https://github.com/TokTok/qTox/commit/5f5f612841a89d575239702edcff499a5ff6019d))
+  - Multipacket message support ([7474c6d8](https://github.com/TokTok/qTox/commit/7474c6d8acff9347786b569a8cf1badb54c4b1ae))
+- **notification:**
+  - Notifications now always replace the previous one ([6e163ca5](https://github.com/TokTok/qTox/commit/6e163ca5edf3d3ac23ac6fed6521f921a22492a4))
+  - Notification string generator for multiple messages ([a9f6543e](https://github.com/TokTok/qTox/commit/a9f6543e43c53c6cb6759b40876e082a8ae02480))
+- **proxy:** provide commandline tools for proxy settings ([3e1e1f60](https://github.com/TokTok/qTox/commit/3e1e1f608797dde7fba21d8894c7daf3fde524ee))
+- **style:** Add clang-tidy config ([877ef4ae](https://github.com/TokTok/qTox/commit/877ef4ae5b982fc2d539f67d35d7ff36c8e3907e))
+- **test:**
+  - Bootstrap `core_test` off second local tox instance ([5f870c28](https://github.com/TokTok/qTox/commit/5f870c28e5912a1543a3e19261ec0bdf91ae3243))
+  - Add mock bootstrap list generator ([6f3fb30f](https://github.com/TokTok/qTox/commit/6f3fb30f244cc1de156dcce4f4af504ec62ec4c2))
+- **tests:** Merge core and `core_online` tests ([7d773930](https://github.com/TokTok/qTox/commit/7d773930c16c1a7fa50c83d426afd386df218a99))
+- **ui:**
+  - add warning in GUI when running unstable version ([b51e4668](https://github.com/TokTok/qTox/commit/b51e46683e660ad035f04d0797458ad7ccd08f7d))
+  - Make auto-accept size 0 wording less ambiguous ([cbead167](https://github.com/TokTok/qTox/commit/cbead167422f405f5a64b5c56c8f978f6e60f1c9))
+- **windows:**
+  - Build our own gdb ([ffc03599](https://github.com/TokTok/qTox/commit/ffc0359919f5f9b8886c34a411bd12de350c5c8a))
+  - Make sure no dlls are missing ([bfa49df0](https://github.com/TokTok/qTox/commit/bfa49df006ee33d8615e88bd2cd3952422b311cc))
+  - Link all Windows deps dynamically ([ef38c6b7](https://github.com/TokTok/qTox/commit/ef38c6b7b77f7ff1d37ae9fe50d997c421aa0311))
+
+#### Performance
+
+- reduce repainting in animations ([3c58b992](https://github.com/TokTok/qTox/commit/3c58b992c63f598c9b0e4f703c30ffa177c9e5dd))
+- **Settings:** Make personal settings saving consistently async ([a1f7c71f](https://github.com/TokTok/qTox/commit/a1f7c71feb6a79dae75ce76a28f415cb8c12dbf5))
+
 <a name="v1.17.6"></a>
 
 ## v1.17.6 (2022-03-07)
@@ -1658,3 +2035,24 @@ _PS._ If it's not clear from the changelog below, audio groupchats have been
 
 - **camerasource:** Passed parameter by reference ([910c41f4](https://github.com/qTox/qTox/commit/910c41f4fab106e1c736685ffad33141c1528107))
 - **contentdialog:** Delete redundant conditions ([904a1d49](https://github.com/qTox/qTox/commit/904a1d490973ed57327bc093aeaae1e7317b52e8))
+
+<a name="v1.3.0"></a>
+
+## v1.3.0 (2016-03-11)
+
+#### Bug Fixes
+
+- don't subscribe to in/out device when initialization failed ([e73fd27d](https://github.com/qTox/qTox/commit/e73fd27d8b126dc00b9ff82ce7eb3a86e7beec99))
+- **osx-script:** remove unnecessary usage of `sudo` ([e5e4d561](https://github.com/qTox/qTox/commit/e5e4d561c95cfaaa116999c5bcb592afd679cbf1))
+
+<a name="v1.2.4"></a>
+
+## v1.2.4 (2016-01-22)
+
+<a name="v1.2.3"></a>
+
+## v1.2.3 (2016-01-21)
+
+<a name="v1.2.2"></a>
+
+## v1.2.2 (2015-12-21)

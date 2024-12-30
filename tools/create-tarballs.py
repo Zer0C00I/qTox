@@ -6,9 +6,10 @@ import os
 import subprocess  # nosec
 import tempfile
 from dataclasses import dataclass
-from functools import cache as memoize
 
 import requests
+from lib import git
+from lib import github
 
 
 @dataclass
@@ -30,41 +31,9 @@ def parse_args() -> Config:
     parser.add_argument(
         "--tag",
         help="Tag to create tarballs for",
-        default=git_tag(),
+        default=git.current_tag(),
     )
     return Config(**vars(parser.parse_args()))
-
-
-@memoize
-def github_token() -> str:
-    token = os.getenv("GITHUB_TOKEN")
-    if not token:
-        raise ValueError("GITHUB_TOKEN is needed to upload tarballs")
-    return token
-
-
-@memoize
-def github_release_id(tag: str) -> str:
-    response = requests.get(
-        f"https://api.github.com/repos/TokTok/qTox/releases/tags/{tag}",
-        headers={
-            "Authorization": f"token {github_token()}",
-        },
-    )
-    response.raise_for_status()
-    return str(response.json()["id"])
-
-
-def git_tag() -> str:
-    return (subprocess.check_output(  # nosec
-        [
-            "git",
-            "describe",
-            "--tags",
-            "--abbrev=0",
-            "--match",
-            "v*",
-        ]).decode("utf-8").strip())
 
 
 def create_tarballs(tag: str, tmpdir: str) -> None:
@@ -114,10 +83,10 @@ def upload_tarballs(tag: str, tmpdir: str) -> None:
             print(f"Uploading {filename} to GitHub release {tag}")
             with open(os.path.join(tmpdir, filename), "rb") as f:
                 response = requests.post(
-                    f"https://uploads.github.com/repos/TokTok/qTox/releases/{github_release_id(tag)}/assets",
+                    f"https://uploads.github.com/repos/TokTok/qTox/releases/{github.release_id(tag)}/assets",
                     headers={
-                        "Authorization": f"token {github_token()}",
                         "Content-Type": content_type[suffix or ext],
+                        **github.auth_headers(required=True),
                     },
                     data=f,
                     params={"name": filename},
