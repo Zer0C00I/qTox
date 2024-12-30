@@ -211,16 +211,23 @@ can run locally to automate the pre-tagging process.
     tag release fixes, and to whom it's interesting (often only some
     OSes/distributions would find given `PATCH` release interesting).
 
-### Step 2. Prepare the binary and source release
+### Step 2. Merge the PR and tag the release
+
+- Get the release PR approved and merge it into `master`.
+- Tag the release with `git tag` and `git push` it to `TokTok/qTox`.
+
+### Step 3. Prepare the binary and source release
 
 In the PRs in this step, only make pull requests. Do not merge, yet.
 
-- Create and GPG-sign the tar.lz and tar.gz archives using
-  [`tools/create-tarballs.sh`] script, and upload both archives plus both
-  signature files to the github draft release that was created by CI.
+- Create and GPG-sign the tar.xz and tar.gz archives using
+  [`tools/create-tarballs.py`] script, and upload both archives plus both
+  signature files to the github draft release that was created by CI (passing
+  `--upload` to the script will do this automatically).
 - Download the binaries that are part of the draft release, sign them in
   in detached and ascii armored mode, e.g. `gpg -a -b <artifact>`, and upload
-  the signatures to the draft release.
+  the signatures to the draft release. You can automatically do this with the
+  [`tools/sign-release-assets.py`] script.
 - Make a PR to update download links on https://tox.chat to point to the new
   release.
 - Make a PR writing a short blog post for https://github.com/qTox/blog/.
@@ -229,7 +236,7 @@ In the PRs in this step, only make pull requests. Do not merge, yet.
 - Ensure the build passed for qTox on all architectures on
   [the Flathub build bot]
 
-### Step 3. Publish and publicize the release
+### Step 4. Publish and publicize the release
 
 - Add a title and description to the draft release, then publish the release.
 - Merge the [Flathub repository] PR.
@@ -252,7 +259,8 @@ helping for a while, ask to be added to the `TokTok` organization on GitHub.
 [`CONTRIBUTING.md`]: /CONTRIBUTING.md
 [`merge-pr.sh`]: /merge-pr.sh
 [`test-pr.sh`]: /test-pr.sh
-[`tools/create-tarball.sh`]: /tools/create-tarball.sh
+[`tools/create-tarballs.py`]: /tools/create-tarballs.py
+[`tools/sign-release-assets.py`]: /tools/sign-release-assets.py
 [`tools/update-nodes.sh`]: /tools/update-nodes.sh
 [`tools/update-versions.sh`]: /tools/update-versions.sh
 [`tools/format-code.sh`]: /tools/format-code.sh

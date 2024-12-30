@@ -1,22 +1,35 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Copyright © 2024 The TokTok team
 import os
 import re
 import subprocess  # nosec
 from functools import cache as memoize
 from typing import Any
+from typing import Optional
 
 import requests
 
 SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
 GIT_BASE_DIR = os.path.dirname(SCRIPT_DIR)
 
-GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 
-if GITHUB_TOKEN:
-    print("Authorization with GITHUB_TOKEN")
-else:
-    print("Unauthorized (low rate limit applies)")
-    print("Set GITHUB_TOKEN to increase the rate limit")
+@memoize
+def github_token() -> Optional[str]:
+    token = os.getenv("GITHUB_TOKEN")
+    if token:
+        print("Authorization with GITHUB_TOKEN")
+    else:
+        print("Unauthorized (low rate limit applies)")
+        print("Set GITHUB_TOKEN to increase the rate limit")
+    return token
+
+
+def auth_headers() -> dict[str, str]:
+    token = github_token()
+    if not token:
+        return {}
+    return {"Authorization": f"token {token}"}
 
 
 def github_api_url() -> str:
@@ -27,18 +40,15 @@ github_api_requests: list[str] = []
 
 
 @memoize
-def github_api(url: str, params: tuple[tuple[str, str]] = tuple()) -> Any:
+def github_api(url: str, params: tuple[tuple[str, str], ...] = tuple()) -> Any:
     """Calls the GitHub API with the given URL (GET only).
 
     Authorization is done with the GITHUB_TOKEN environment variable if it is set.
     """
-    headers: dict[str, str] = {}
-    if GITHUB_TOKEN:
-        headers["Authorization"] = f"token {GITHUB_TOKEN}"
     github_api_requests.append(f"GET {github_api_url()}{url}")
     response = requests.get(
         f"{github_api_url()}{url}",
-        headers=headers,
+        headers=auth_headers(),
         params=dict(params),
     )
     response.raise_for_status()

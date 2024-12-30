@@ -21,6 +21,7 @@ jobs:
   ################################################################################################
 
   validate-pr:
+    # All expensive jobs below depend on this one, so they will not run if the validation fails.
     name: Validate PR
     runs-on: ubuntu-22.04
     steps:
@@ -32,6 +33,20 @@ jobs:
       - name: Validate PR
         if: github.event_name == 'pull_request'
         run: .ci-scripts/validate-pr.py
+
+  verify-signatures:
+    name: Verify release asset signatures
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Fetch all history so that we can get the last release tag.
+          fetch-depth: 0
+      - name: Import developer public keys
+        run: .ci-scripts/import-developer-keys.sh
+      - name: Verify signatures
+        if: github.event_name == 'pull_request'
+        run: tools/verify-release-assets.py
 
   update-nightly-tag:
     name: Update nightly release tag
@@ -49,6 +64,19 @@ jobs:
   # Static analysis and other checks
   ################################################################################################
 
+  translation-check:
+    name: Check for translatable strings
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install deps
+        run: sudo apt-get update && sudo apt-get install qt6-l10n-tools
+      - name: Test for modified translatable strings
+        run: PATH="/usr/lib/qt6/bin:$PATH"
+          ./tools/update-translation-files.sh ALL &&
+          git diff --exit-code
+
   clang-tidy:
     name: Clang-Tidy
     needs: [validate-pr]
@@ -65,20 +93,6 @@ jobs:
         run: sudo apt-get install -y docker-compose
       - name: Run build
         run: docker-compose run --rm fedora .ci-scripts/build-qtox-linux.sh --build-type Release --full --tidy
-
-  translation-check:
-    name: Check for translatable strings
-    needs: [validate-pr]
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: actions/checkout@v4
-      - name: Install deps
-        run: sudo apt-get update && sudo apt-get install qt6-l10n-tools
-      - name: Test for modified translatable strings
-        run: PATH="/usr/lib/qt6/bin:$PATH"
-          ./tools/update-translation-files.sh ALL &&
-          git diff --exit-code
 
   ################################################################################################
   # Build and test jobs (PR)
