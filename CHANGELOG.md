@@ -1,3 +1,24 @@
+<a name="v1.18.0-rc.4"></a>
+
+## v1.18.0-rc.4 (2024-12-31)
+
+One more release candidate before our final release.
+
+#### Features
+
+- add appimage back to ci ([8f13b826](https://github.com/TokTok/qTox/commit/8f13b8261e199821cb79c7f02c9ff01cab7e838e))
+
+#### Bug Fixes
+
+- Fix uninitialised read in contact circle widget. ([afe24fbe](https://github.com/TokTok/qTox/commit/afe24fbe3ebf1ea395849a8012a031b1705bfe76))
+- Don't crash when closing the app after logout. ([b4b0d8c9](https://github.com/TokTok/qTox/commit/b4b0d8c9203a4937424a3d00c8ad86dca47553fe))
+- Don't crash on logout. ([b244e206](https://github.com/TokTok/qTox/commit/b244e2062845c1a03798bc2ff4af629b54d8f907))
+- Avoid hanging when capture device permissions denied on macOS. ([9e4b17b8](https://github.com/TokTok/qTox/commit/9e4b17b8605dd8c21db6ed6cfad7fca2331897da))
+
+#### Performance
+
+- Improve performance of video frame buffering. ([ffcef564](https://github.com/TokTok/qTox/commit/ffcef56404f2d8797edc730ebd222726119c74cc))
+
 <a name="v1.18.0-rc.3"></a>
 
 ## v1.18.0-rc.3 (2024-12-23)
