@@ -65,8 +65,8 @@ class Stash:
                 [
                     "git",
                     "stash",
-                    "--include-untracked",
                     "--quiet",
+                    "--include-untracked",
                 ],
                 check=True,
             )
@@ -98,8 +98,8 @@ class Checkout:
                 [
                     "git",
                     "checkout",
-                    self.branch,
                     "--quiet",
+                    self.branch,
                 ],
                 check=True,
             )
@@ -111,8 +111,8 @@ class Checkout:
                 [
                     "git",
                     "checkout",
-                    self.old_branch,
                     "--quiet",
+                    self.old_branch,
                 ],
                 check=True,
             )
@@ -131,8 +131,8 @@ class ResetOnExit:
             [
                 "git",
                 "reset",
-                "--hard",
                 "--quiet",
+                "--hard",
             ],
             check=True,
         )
@@ -160,10 +160,10 @@ def fetch(*remotes: str) -> None:
         [
             "git",
             "fetch",
+            "--quiet",
             "--tags",
             "--prune",
             "--force",
-            "--quiet",
             "--multiple",
             *remotes,
         ],
@@ -259,8 +259,8 @@ def diff_exitcode(*args: str) -> bool:
         [
             "git",
             "diff",
-            "--exit-code",
             "--quiet",
+            "--exit-code",
             *args,
         ],
         check=False,
@@ -273,6 +273,19 @@ def is_clean() -> bool:
     No pending or staged changes.
     """
     return not diff_exitcode() and not diff_exitcode("--cached")
+
+
+def changed_files() -> list[str]:
+    """Get a list of changed files."""
+    return subprocess.check_output(  # nosec
+        [
+            "git",
+            "diff",
+            "--name-only",
+            "HEAD",
+        ],
+        universal_newlines=True,
+    ).splitlines()
 
 
 def current_tag() -> str:
@@ -294,8 +307,8 @@ def checkout(branch: str) -> None:
         [
             "git",
             "checkout",
-            branch,
             "--quiet",
+            branch,
         ],
         check=True,
     )
@@ -308,8 +321,8 @@ def revert(*files: str) -> None:
         [
             "git",
             "checkout",
-            branch,
             "--quiet",
+            branch,
             "--",
             *files,
         ],
@@ -335,12 +348,49 @@ def reset(branch: str) -> None:
         [
             "git",
             "reset",
+            "--quiet",
             "--hard",
             branch,
-            "--quiet",
         ],
         check=True,
     )
+
+
+def rebase(onto: str, commits: int = 0) -> bool:
+    """Rebase the current branch onto another branch.
+
+    If commits is not 0, rebase only the last n commits.
+
+    Returns True if a rebase was performed.
+    """
+    old_sha = branch_sha("HEAD")
+    if not commits:
+        subprocess.run(  # nosec
+            [
+                "git",
+                "rebase",
+                "--quiet",
+                onto,
+            ],
+            check=True,
+        )
+    else:
+        branch = current_branch()
+        subprocess.run(  # nosec
+            [
+                "git",
+                "rebase",
+                "--quiet",
+                "--onto",
+                onto,
+                f"HEAD~{commits}",
+            ],
+            check=True,
+        )
+        new_sha = branch_sha("HEAD")
+        checkout(branch)
+        reset(new_sha)
+    return old_sha != branch_sha("HEAD")
 
 
 def create_branch(branch: str, base: str) -> None:
@@ -349,10 +399,27 @@ def create_branch(branch: str, base: str) -> None:
         [
             "git",
             "checkout",
+            "--quiet",
             "-b",
             branch,
             base,
+        ],
+        check=True,
+    )
+
+
+def push(remote: str, branch: str, force: bool = False) -> None:
+    """Push the current branch to a remote."""
+    force_flag = ["--force"] if force else []
+    subprocess.run(  # nosec
+        [
+            "git",
+            "push",
             "--quiet",
+            *force_flag,
+            "--set-upstream",
+            remote,
+            branch,
         ],
         check=True,
     )
@@ -370,13 +437,42 @@ def list_changed_files() -> list[str]:
     ).splitlines()
 
 
+def log(branch: str, count: int = 100) -> list[str]:
+    """Get the last n commit messages."""
+    return [
+        line.split(" ", 1)[1].strip()
+        for line in subprocess.check_output(  # nosec
+            [
+                "git",
+                "log",
+                "--oneline",
+                "--no-decorate",
+                f"--max-count={count}",
+                branch,
+            ],
+            universal_newlines=True,
+        ).splitlines()
+    ]
+
+
+def last_commit_message(branch: str) -> str:
+    """Get the last commit message."""
+    return log(branch, 1)[0]
+
+
 def commit(title: str, body: str) -> None:
-    """Commit changes."""
+    """Commit changes.
+
+    If the commit message is the same as the last commit, amend it.
+    """
+    amend = ["--amend"] if last_commit_message(
+        current_branch()) == title else []
     subprocess.run(  # nosec
         [
             "git",
             "commit",
             "--quiet",
+            *amend,
             "--message",
             title,
             "--message",

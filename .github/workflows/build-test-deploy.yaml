@@ -32,6 +32,8 @@ jobs:
           fetch-depth: 0
       - name: Validate PR
         if: github.event_name == 'pull_request'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           .ci-scripts/create-identity.sh
           tools/validate-pr.py --no-sign
@@ -376,10 +378,21 @@ jobs:
         with:
           path: ".flatpak-builder"
           key: ${{ github.job }}
+      - name: Get tag name for flatpak release file name
+        if: contains(github.ref, 'refs/tags/v')
+        id: get_version
+        run: |
+          VERSION="$(echo $GITHUB_REF | cut -d / -f 3)"
+          echo "version_tag=$VERSION" >>$GITHUB_OUTPUT
+          echo "release_flatpak=qTox-$VERSION.x86_64.flatpak" >>$GITHUB_OUTPUT
+      - name: Point flathub descriptor at the release tag
+        if: contains(github.ref, 'refs/tags/v')
+        run: flatpak/localize_flathub_descriptor.py
+          --flathub-manifest flatpak/io.github.qtox.qTox.json
+          --output flatpak/io.github.qtox.qTox.json
+          --git-tag "${{ steps.get_version.outputs.version_tag }}"
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
-      - name: Point flathub descriptor at current path
-        run: flatpak/localize_flathub_descriptor.py flatpak/io.github.qtox.qTox.json flatpak/io.github.qtox.qTox.json
       - name: Run build
         run: docker-compose run --rm flatpak ./flatpak/build.sh
       - name: Upload flatpak
@@ -387,12 +400,6 @@ jobs:
         with:
           name: qTox-${{ github.sha }}.x86_64.flatpak
           path: qtox.flatpak
-      - name: Get tag name for flatpak release file name
-        if: contains(github.ref, 'refs/tags/v')
-        id: get_version
-        run: |
-          VERSION="$(echo $GITHUB_REF | cut -d / -f 3)"
-          echo "release_flatpak=qTox-$VERSION.x86_64.flatpak" >>$GITHUB_OUTPUT
       - name: Rename flatpak for release upload
         if: contains(github.ref, 'refs/tags/v')
         run: |

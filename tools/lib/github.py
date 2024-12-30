@@ -3,6 +3,7 @@
 # Copyright © 2024 The TokTok team
 import os
 import re
+from dataclasses import dataclass
 from functools import cache as memoize
 from typing import Any
 from typing import Optional
@@ -45,8 +46,11 @@ def api_url() -> str:
     return os.getenv("GITHUB_API_URL") or "https://api.github.com"
 
 
-def api_uncached(url: str, auth: bool, params: tuple[tuple[str, str],
-                                                     ...]) -> Any:
+def api_uncached(
+        url: str,
+        auth: bool = False,
+        params: tuple[tuple[str, str], ...] = tuple(),
+) -> Any:
     """Call the GitHub API with the given URL (GET only).
 
     Not cached, use the api() function to cache calls.
@@ -79,6 +83,13 @@ def api(
     return api_uncached(url, auth, params)
 
 
+def username() -> Optional[str]:
+    """Get the GitHub username for the current authenticated user."""
+    if not github_token():
+        return None
+    return str(api("/user", auth=True)["login"])
+
+
 @memoize
 def release_id(tag: str) -> int:
     """Get the GitHub release ID number for a tag."""
@@ -98,7 +109,8 @@ def head_ref() -> str:
 
 def actor() -> str:
     """Returns the GitHub username for the current repository."""
-    return os.getenv("GITHUB_ACTOR") or git.remote_slug("origin").name
+    return os.getenv("GITHUB_ACTOR") or username() or git.remote_slug(
+        "origin").name
 
 
 def repository() -> str:
@@ -151,7 +163,7 @@ def milestones() -> list[str]:
     return [m["title"] for m in api(f"/repos/{repository()}/milestones")]
 
 
-def next_release() -> str:
+def next_milestone() -> str:
     """Get the next release number (based on the smallest open milestone).
 
     Milestones are formatted like v1.18.0 or v1.18.x (ignored). The next
@@ -177,3 +189,106 @@ def release_candidates(version: str) -> list[int]:
         int(i) for r in prereleases(version)
         for i in re.findall(r"-rc\.(\d+)$", r)
     ]
+
+
+@dataclass
+class PullRequest:
+    title: str
+    body: str
+    number: int
+    html_url: str
+    state: str
+    head_sha: str
+    mergeable: bool
+
+    @staticmethod
+    def fromJSON(pr: dict[str, Any]) -> "PullRequest":
+        return PullRequest(
+            title=str(pr["title"]),
+            body=str(pr["body"]),
+            number=int(pr["number"]),
+            html_url=str(pr["html_url"]),
+            state=str(pr["state"]),
+            head_sha=str(pr["head"]["sha"]),
+            mergeable=bool(
+                pr.get("mergeable", False)
+                and pr["mergeable_state"] == "clean"),
+        )
+
+
+def create_pr(title: str, body: str, head: str, base: str) -> PullRequest:
+    """Create a pull request with the given title and body.
+
+    Returns the URL of the created PR.
+    """
+    response = requests.post(
+        f"{api_url()}/repos/{repository()}/pulls",
+        headers=auth_headers(True),
+        json={
+            "title": title,
+            "body": body,
+            "head": head,
+            "base": base,
+        },
+    )
+    response.raise_for_status()
+    return PullRequest.fromJSON(response.json())
+
+
+def find_pr(head: str, base: str) -> Optional[PullRequest]:
+    """Find a PR with the given title, head, and base."""
+    # The HEAD sha may be updated, so we can't use cached API calls.
+    response = api_uncached(
+        f"/repos/{repository()}/pulls",
+        params=(
+            ("head", f"{actor()}:{head}"),
+            ("base", base),
+        ),
+    )
+    for pr in response:
+        return PullRequest.fromJSON(pr)
+    return None
+
+
+def change_pr(number: int, changes: dict[str, str]) -> None:
+    """Modify a PR with the given number (e.g. reopen by changing "state")."""
+    response = requests.patch(
+        f"{api_url()}/repos/{repository()}/pulls/{number}",
+        headers=auth_headers(True),
+        json=changes,
+    )
+    response.raise_for_status()
+
+
+@dataclass
+class CheckRun:
+    id: int
+    name: str
+    status: str
+    conclusion: str
+    html_url: str
+
+    @staticmethod
+    def fromJSON(run: dict[str, Any]) -> "CheckRun":
+        return CheckRun(
+            id=int(run["id"]),
+            name=str(run["name"]),
+            status=str(run["status"]),
+            conclusion=str(run["conclusion"]),
+            html_url=str(run["html_url"]),
+        )
+
+
+def checks(commit: str) -> dict[str, CheckRun]:
+    """Return all the GitHub Actions results."""
+    # The PR may be updated, so we can't use cached API calls.
+    check_runs = {
+        r["name"]: CheckRun.fromJSON(r)
+        for s in api_uncached(
+            f"/repos/{repository()}/commits/{commit}/check-suites",
+        )["check_suites"]
+        for r in api_uncached(
+            f"/repos/{repository()}/check-suites/{s['id']}/check-runs", )
+        ["check_runs"]
+    }
+    return check_runs

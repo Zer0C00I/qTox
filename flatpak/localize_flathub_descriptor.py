@@ -2,11 +2,44 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Copyright © 2021 by The qTox Project Contributors
 # Copyright © 2024 The TokTok team
+import argparse
 import json
 import subprocess  # nosec
 import sys
+from dataclasses import dataclass
 
 QTOX_GIT_URL = "https://github.com/TokTok/qTox"
+
+
+@dataclass
+class Config:
+    flathub_manifest: str
+    output: str
+    git_tag: str
+
+
+def parse_args() -> Config:
+    parser = argparse.ArgumentParser(description="""
+    Point the qTox flathub descriptor to the local qTox sources.
+    If the descriptor is already pointing at the local sources, do the inverse.
+    """)
+    parser.add_argument(
+        "--flathub-manifest",
+        help="Path to flathub manifest",
+        required=True,
+    )
+    parser.add_argument(
+        "--output",
+        help="Output manifest path",
+        required=True,
+    )
+    parser.add_argument(
+        "--git-tag",
+        help="Git tag to use for the qTox version",
+        required=False,
+        default=None,
+    )
+    return Config(**vars(parser.parse_args()))
 
 
 def commit_from_tag(url: str, tag: str) -> str:
@@ -27,9 +60,8 @@ def git_tag() -> str:
     return git_output.stdout.decode().strip()
 
 
-def localize_flathub_descriptor(flathub_descriptor_path: str,
-                                output_path: str) -> None:
-    with open(flathub_descriptor_path) as f:
+def localize_flathub_descriptor(config: Config) -> None:
+    with open(config.flathub_manifest) as f:
         flathub_descriptor = json.load(f)
 
     # Update the flathub descriptor for qTox to point sources at /qtox/.
@@ -41,7 +73,7 @@ def localize_flathub_descriptor(flathub_descriptor_path: str,
                     "path": "/qtox/",
                 }]
             else:
-                tag = git_tag()
+                tag = config.git_tag or git_tag()
                 commit = commit_from_tag(QTOX_GIT_URL, tag)
                 # Reverse if we run the script twice.
                 module["sources"] = [{
@@ -51,20 +83,14 @@ def localize_flathub_descriptor(flathub_descriptor_path: str,
                     "tag": tag,
                 }]
 
-    with open(output_path, "w") as f:
+    with open(config.output, "w") as f:
         json.dump(flathub_descriptor, f, indent=2)
         f.write("\n")
 
 
-def main() -> None:
-    if len(sys.argv) != 3:
-        print(f"Usage: {sys.argv[0]} <flathub_descriptor_path> <output_path>")
-        sys.exit(1)
-
-    flathub_descriptor_path = sys.argv[1]
-    output_path = sys.argv[2]
-    localize_flathub_descriptor(flathub_descriptor_path, output_path)
+def main(config: Config) -> None:
+    localize_flathub_descriptor(config)
 
 
 if __name__ == "__main__":
-    main()
+    main(parse_args())

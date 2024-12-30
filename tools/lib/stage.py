@@ -1,7 +1,10 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Copyright © 2024 The TokTok team
+import time
 from typing import Any
 from typing import Optional
+
+sleep = time.sleep
 
 
 class UserAbort(Exception):
@@ -12,6 +15,34 @@ class InvalidState(Exception):
     pass
 
 
+def _isatty() -> bool:
+    """Returns True if the output is a terminal."""
+    try:
+        import sys
+
+        return sys.stdout.isatty()
+    except Exception:
+        return False
+
+
+def _window_width() -> int:
+    """Returns the width of the terminal window."""
+    try:
+        import shutil
+
+        return shutil.get_terminal_size().columns
+    except Exception:
+        return 100
+
+
+def _clear() -> None:
+    """Clear the line."""
+    if not _isatty():
+        return
+    columns = _window_width()
+    print("\r" + " " * columns + "\r", end="", flush=True)
+
+
 def print_stage_start(name: str, description: str) -> None:
     """Prints a colorful message indicating that a stage is starting.
 
@@ -20,9 +51,25 @@ def print_stage_start(name: str, description: str) -> None:
     Looks roughly like:
        [ .... ] Stage name (requirement description)
     """
-    print(f"\033[1;34m[ .... ]\033[0m {name} {description}",
-          end="",
-          flush=True)
+    _clear()
+    text = f"\033[1;34m[ .... ]\033[0m {name} {description}"
+    print(text, end="", flush=True)
+
+
+def print_stage_progress(name: str, description: str, start_time: int) -> None:
+    """Prints a colorful message indicating that a stage is progressing.
+
+    Does not print a newline at the end. Starts with a carriage return to
+    overwrite the previous line. Prints the time elapsed since the start of the
+    stage.
+
+    Looks roughly like:
+       [  30 ] Stage name (requirement description)
+    """
+    _clear()
+    elapsed = int(time.time()) - start_time
+    text = f"\r\033[1;34m[ {elapsed:4d} ]\033[0m {name} {description}"
+    print(text, end="", flush=True)
 
 
 def print_stage_end(name: str, description: str, success: bool) -> None:
@@ -34,22 +81,22 @@ def print_stage_end(name: str, description: str, success: bool) -> None:
     Looks roughly like:
        [  OK  ] Stage name (result description)
     """
+    _clear()
     status = " \033[1;32mOK\033[0m " if success else "\033[1;31mFAIL\033[0m"
-    print(f"\r\033[1;34m[ {status} \033[1;34m]\033[0m {name} {description}")
-
-
-def padded(text: str, length: int) -> str:
-    """Pads the text with spaces to the given length."""
-    return f"{text}{' ' * (length - len(text))}"
+    text = f"\r\033[1;34m[ {status} \033[1;34m]\033[0m {name} {description}"
+    print(text)
 
 
 class Stage:
     """A class to run stages and print colorful messages for the user."""
 
-    def __init__(self,
-                 name: str,
-                 description: str,
-                 failures: Optional[list[str]] = None) -> None:
+    def __init__(
+        self,
+        name: str,
+        description: str,
+        failures: Optional[list[str]] = None,
+        parent: Optional["Stage"] = None,
+    ) -> None:
         """Initializes a new stage. Doesn't enter it yet (use `with` for that).
 
         The `failures` parameter is a list that will be appended to if the stage
@@ -57,32 +104,44 @@ class Stage:
         """
         self.failures = failures
         self.name = name
-        self.description = f"({description})"
+        self.parent = parent
+        self.description = description
         self.done = False
+        self.start_time = int(time.time())
 
     def __enter__(self) -> "Stage":
-        print_stage_start(self.name, self.description)
+        if self.parent:
+            self.progress(self.description)
+        else:
+            print_stage_start(self.name, f"({self.description})")
         return self
 
     def ok(self, description: str = "Done") -> None:
         print_stage_end(
             self.name,
-            padded(f"({description})", len(self.description)),
+            f"({description})",
             True,
         )
         self.done = True
 
-    def fail(self, description: str) -> None:
+    def progress(self, description: str) -> None:
+        print_stage_progress(self.name,
+                             f"({description})",
+                             start_time=self.start_time)
+
+    def fail(self, description: str) -> InvalidState:
         print_stage_end(
             self.name,
-            padded(f"({description})", len(self.description)),
+            f"({description})",
             False,
         )
+        exn = InvalidState(f"Stage {self.name} failed: {description}")
         if self.failures is not None:
             self.failures.append(self.name)
         else:
-            raise InvalidState(f"Stage {self.name} failed: {description}")
+            raise exn
         self.done = True
+        return exn
 
     def __exit__(self, exc_type: Any, exc_value: Any, traceback: Any) -> None:
         if not self.done:

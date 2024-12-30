@@ -94,7 +94,7 @@ def has_diff(config: Config, *files: str) -> bool:
     """
     quiet = ["--quiet"] if config.commit else []
     return (subprocess.run(  # nosec
-        ["git", "diff", "--exit-code", *files] + quiet).returncode != 0)
+        ["git", "diff", *quiet, "--exit-code", *files]).returncode != 0)
 
 
 def check_flathub_descriptor_dependencies(failures: list[str],
@@ -108,6 +108,7 @@ def check_flathub_descriptor_dependencies(failures: list[str],
         subprocess.run(  # nosec
             [
                 "flatpak/update_flathub_descriptor_dependencies.py",
+                "--quiet",
                 "--flathub-manifest",
                 flathub_manifest_path,
                 "--output",
@@ -115,7 +116,7 @@ def check_flathub_descriptor_dependencies(failures: list[str],
                 "--download-files-path",
                 os.path.join(dockerfiles_dir(), "qtox", "download"),
                 "--git-tag",
-                github.head_ref(),
+                github.head_ref().removeprefix("release/"),
             ],
             check=True,
             cwd=GIT_BASE_DIR,
@@ -242,14 +243,6 @@ def check_changelog(failures: list[str], config: Config) -> None:
     """Check that the changelog is up-to-date."""
     with stage.Stage("Changelog", "The changelog should be up-to-date",
                      failures) as check:
-        subprocess.run(  # nosec
-            [
-                "tools/sync-changelog-tags.py",
-                "--sign" if config.sign else "--no-sign"
-            ],
-            check=True,
-            cwd=GIT_BASE_DIR,
-        )
         subprocess.run(  # nosec
             ["tools/update-changelog.py"],
             check=True,

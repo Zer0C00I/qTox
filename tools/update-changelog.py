@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Copyright © 2024 The TokTok team
+import os
 import pathlib
 import re
 import subprocess  # nosec
@@ -11,6 +12,7 @@ from typing import Any
 from typing import Iterable
 from typing import Optional
 
+from lib import changelog
 from lib import git
 
 # b2215454e chore(windows): update copyright year
@@ -69,7 +71,7 @@ class ForkInfo:
 
 @dataclass
 class Config:
-    changelog: Optional[str]
+    changelog: str
     repository: str
     forked_from: list[ForkInfo]
     ignore_before: Optional[str]
@@ -83,7 +85,7 @@ def parse_fork_config(data: list[dict[str, Any]]) -> list[ForkInfo]:
 
 def parse_config(data: dict[str, Any]) -> Config:
     return Config(
-        changelog=data.get("clog", {}).get("changelog", None),
+        changelog=data.get("clog", {})["changelog"],
         repository=data.get("clog", {}).get("repository", "http://localhost/"),
         forked_from=parse_fork_config(
             data.get("clog", {}).get("forked-from", {})),
@@ -100,7 +102,7 @@ def git_log(prev_tag: str, cur_tag: str) -> list[str]:
     return log.decode("utf-8").removeprefix("commit ").split("\ncommit ")
 
 
-def git_tag_info(tag: str) -> tuple[str, str]:
+def git_tag_date(tag: str) -> str:
     tag_sha = (
         subprocess.check_output(  # nosec
             [
@@ -125,25 +127,8 @@ def git_tag_info(tag: str) -> tuple[str, str]:
     if not date_match:
         raise Exception(f"Date not found for tag {tag}")
 
-    if "-----BEGIN PGP SIGNATURE-----" in tag_data:
-        message_match = re.search(
-            r"\n\n((.|\n)*)\n-----BEGIN PGP SIGNATURE-----", tag_data,
-            re.MULTILINE)
-    else:
-        message_match = re.search(r"\n\n((.|\n)*)$", tag_data, re.MULTILINE)
-    if message_match:
-        message = re.sub(r"\n+Original tagger: .+$", "",
-                         message_match.group(1).strip(), re.MULTILINE)
-    else:
-        if "\ngpgsig -----BEGIN PGP SIGNATURE-----" in tag_data:
-            # No message, just a signature.
-            message = ""
-        else:
-            raise Exception(f"Message not found for tag {tag}")
-    return (
-        datetime.fromtimestamp(int(date_match.group(1))).strftime("%Y-%m-%d"),
-        message,
-    )
+    return datetime.fromtimestamp(int(
+        date_match.group(1))).strftime("%Y-%m-%d")
 
 
 def unindent(text: str) -> str:
@@ -312,8 +297,9 @@ def format_entry(entries: list[LogEntry]) -> str:
 
 
 def format_changelog(
-    tag: str,
+    tag: tuple[str, str],
     groups: dict[str, dict[Optional[str], dict[str, list[LogEntry]]]],
+    old_changelog: dict[str, str],
 ) -> str:
     """
     <a name="v1.17.5"></a>
@@ -334,8 +320,9 @@ def format_changelog(
     - **UI:** Add UI For controlling group join and leave system messages setting ([423049db](https://github.com/qTox/qTox/commit/423049db50ffea14ec222e1a83ee976029a6afaf))
     - **chatlog:** Disable join and leave system messages based on setting ([ee0334ac](https://github.com/qTox/qTox/commit/ee0334acc55215ed8e94bae8fa4ff8976834af20))
     """
-    tag_date, tag_message = git_tag_info(tag)
-    version = tag.removeprefix("release/")
+    version = tag[1].removeprefix("release/")
+    tag_date = git_tag_date(tag[0])
+    tag_message = old_changelog[version]
     lines = [
         f'<a name="{version}"></a>',
         "",
@@ -365,16 +352,20 @@ def format_changelog(
     return "\n".join(lines)
 
 
-def generate_changelog(parser: LogParser, cur_tag: str,
-                       prev_tag: str) -> Optional[str]:
-    log = git_log(prev_tag, cur_tag)
+def generate_changelog(
+    old_changelog: dict[str, str],
+    parser: LogParser,
+    cur_tag: tuple[str, str],
+    prev_tag: tuple[str, str],
+) -> Optional[str]:
+    log = git_log(prev_tag[0], cur_tag[0])
     if not any(log):
         log = []
     groups = {
         k: group_by_module(v)
         for k, v in group_by_category(parser.parse_log(log)).items()
     }
-    return format_changelog(cur_tag, groups)
+    return format_changelog(cur_tag, groups, old_changelog)
 
 
 def filter_str(strings: Iterable[Optional[str]]) -> Iterable[str]:
@@ -401,24 +392,35 @@ def read_clog_toml() -> dict[str, Any]:
         return tomllib.load(f)
 
 
+def current_release_branch() -> list[tuple[str, str]]:
+    head_ref = os.getenv("GITHUB_HEAD_REF")
+    if head_ref and head_ref.startswith("release/"):
+        return [("HEAD", head_ref)]
+    return []
+
+
 def main() -> None:
     config = parse_config(read_clog_toml())
-    tags = git.release_branches() + git.release_tags()
+    tags = current_release_branch() + [
+        (t, t) for t in git.release_branches() + git.release_tags()
+    ]
     # Ignore everything before and including some tag.
     # (+1 because we still need {after tag}...{tag}).
     if config.ignore_before:
-        tags = tags[:tags.index(config.ignore_before) + 1]
+        tags = tags[:tags.index((config.ignore_before, config.ignore_before)) +
+                    1]
+    old_changelog = changelog.parse(config.changelog)
     parser = LogParser(config)
-    changelog = "\n\n".join(
+    text = "\n\n".join(
         filter_str(
-            generate_changelog(parser, t[0], t[1])
+            generate_changelog(old_changelog, parser, t[0], t[1])
             for t in zip(tags, tags[1:])))
 
     if config.changelog:
         with open(config.changelog, "w") as f:
-            print(changelog, file=f)
+            print(text, file=f)
     else:
-        print(changelog)
+        print(text)
 
 
 if __name__ == "__main__":

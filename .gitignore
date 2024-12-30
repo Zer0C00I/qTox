@@ -29,6 +29,7 @@ __pycache__
 
 # Git
 *.orig
+*.rej
 
 # macOS
 .DS_Store

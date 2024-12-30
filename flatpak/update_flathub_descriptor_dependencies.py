@@ -9,6 +9,7 @@ import re
 import subprocess  # nosec
 import tempfile
 import unittest
+from dataclasses import dataclass
 from typing import Any
 from typing import Optional
 
@@ -17,13 +18,21 @@ TOKTOK_ROOT = QTOX_ROOT.parent
 DOWNLOAD_FILE_PATHS = TOKTOK_ROOT / "dockerfiles" / "qtox" / "download"
 
 
-def parse_args() -> argparse.Namespace:
+@dataclass
+class Config:
+    flathub_manifest_path: str
+    output_manifest_path: str
+    download_files_path: str
+    git_tag: Optional[str]
+    quiet: bool
+
+
+def parse_args() -> Config:
     parser = argparse.ArgumentParser(description="""
     Update dependencies of a flathub manifest to match the versions used by
     qTox. This script will iterate over all known dependencies in the manifest
     and replace their tags with the ones specified by our download_xxx.sh
-    scripts. The commit hash for the tag will be replaced with whatever is
-    currently in the git remote.
+    scripts.
     """)
     parser.add_argument(
         "--flathub-manifest",
@@ -51,7 +60,14 @@ def parse_args() -> argparse.Namespace:
         default=None,
         dest="git_tag",
     )
-    return parser.parse_args()
+    parser.add_argument(
+        "--quiet",
+        help="Suppress output",
+        action=argparse.BooleanOptionalAction,
+        default=False,
+        dest="quiet",
+    )
+    return Config(**vars(parser.parse_args()))
 
 
 PRINT_VERSION_SCRIPT = """
@@ -165,26 +181,23 @@ def update_archive_source(
 
 def update_git_source(module: dict[str, Any], tag: str) -> None:
     module_source = module["sources"][0]
-    module_source["commit"] = commit_from_tag(
-        module_source["url"],
-        tag,
-    )
+    if module_source["type"] == "git":
+        module_source["tag"] = tag
+        module_source["commit"] = commit_from_tag(
+            module_source["url"],
+            tag,
+        )
 
 
-def main(
-    flathub_manifest_path: str,
-    output_manifest_path: str,
-    download_files_path: str,
-    git_tag: Optional[str],
-) -> None:
-    flathub_manifest = load_flathub_manifest(flathub_manifest_path)
+def main(config: Config) -> None:
+    flathub_manifest = load_flathub_manifest(config.flathub_manifest_path)
 
-    download_files_dir = pathlib.Path(download_files_path)
+    download_files_dir = pathlib.Path(config.download_files_path)
     sqlcipher_version = find_version(download_files_dir /
                                      "download_sqlcipher.sh")
     sodium_version = find_version(download_files_dir / "download_sodium.sh")
     toxcore_version = find_version(download_files_dir / "download_toxcore.sh")
-    qTox_version = git_tag or get_git_tag()
+    qTox_version = config.git_tag or get_git_tag()
 
     for module in flathub_manifest["modules"]:
         if module["name"] == "sqlcipher":
@@ -196,13 +209,13 @@ def main(
         elif module["name"] == "qTox":
             update_git_source(module, qTox_version)
 
-    orig = load_flathub_manifest(output_manifest_path)
+    orig = load_flathub_manifest(config.output_manifest_path)
     if json.dumps(flathub_manifest) != json.dumps(orig):
-        print("Changes detected, writing to", output_manifest_path)
-        with open(output_manifest_path, "w") as f:
+        print("Changes detected, writing to", config.output_manifest_path)
+        with open(config.output_manifest_path, "w") as f:
             json.dump(flathub_manifest, f, indent=2)
             f.write("\n")
 
 
 if __name__ == "__main__":
-    main(**vars(parse_args()))
+    main(parse_args())

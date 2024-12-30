@@ -94,10 +94,8 @@
       "config-opts": ["-DSVGZ_ICON=OFF", "-DSTRICT_OPTIONS=ON"],
       "sources": [
         {
-          "type": "git",
-          "url": "https://github.com/TokTok/qTox",
-          "commit": "927b87da1fa87fa3accff2a069fb9a3090424f7a",
-          "tag": "v1.18.0-rc.3"
+          "type": "dir",
+          "path": "/qtox/"
         }
       ]
     }
