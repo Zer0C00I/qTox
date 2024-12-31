@@ -11,5 +11,4 @@ bazel-opt_task:
     - cd /src/workspace && bazel
         --max_idle_secs=5
         test -k
-        --remote_cache=http://$CIRRUS_HTTP_CACHE_HOST
         //qtox/...
