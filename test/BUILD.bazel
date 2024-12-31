@@ -1,4 +1,5 @@
 load("@rules_cc//cc:defs.bzl", "cc_library")
+load("@rules_fuzzing//fuzzing:cc_defs.bzl", "cc_fuzz_test")
 load("//third_party/qt:build_defs.bzl", "qt_moc", "qt_rcc", "qt_test")
 
 qt_rcc(
@@ -82,5 +83,17 @@ cc_library(
     ],
 ) for src in glob(
     ["**/*_test.cpp"],
-    exclude = ["persistence/dbschema_test.cpp"],
+    exclude = [
+        "persistence/dbschema_test.cpp",
+        "**/*_fuzz_test.cpp",
+    ],
 )]
+
+cc_fuzz_test(
+    name = "serialize_fuzz_test",
+    size = "small",
+    testonly = True,
+    srcs = ["persistence/serialize_fuzz_test.cpp"],
+    copts = COPTS,
+    deps = ["//qtox/src:serialize"],
+)

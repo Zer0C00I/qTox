@@ -162,6 +162,26 @@ mkstamp(
     hdr = "version.h",
 )
 
+COPTS = [
+    "-Iqtox",
+    "-I$(GENDIR)/qtox",
+] + select({
+    "//tools/config:freebsd": [],
+    "//tools/config:linux": ["-fPIC"],
+    "//tools/config:osx": [],
+    "//tools/config:windows": [],
+})
+
+cc_library(
+    name = "serialize",
+    srcs = ["persistence/serialize.cpp"],
+    hdrs = ["persistence/serialize.h"],
+    copts = COPTS,
+    tags = ["qt"],
+    visibility = ["//qtox:__subpackages__"],
+    deps = ["@qt//:qt_core"],
+)
+
 cc_library(
     name = "src",
     srcs = [
@@ -169,18 +189,16 @@ cc_library(
         ":src_ui",
     ] + glob(
         ["**/*.cpp"],
-        exclude = ["main.cpp"],
+        exclude = [
+            "persistence/serialize.cpp",
+            "main.cpp",
+        ],
     ),
-    hdrs = glob(["**/*.h"]) + [":version"],
-    copts = [
-        "-Iqtox",
-        "-I$(GENDIR)/qtox",
-    ] + select({
-        "//tools/config:freebsd": [],
-        "//tools/config:linux": ["-fPIC"],
-        "//tools/config:osx": [],
-        "//tools/config:windows": [],
-    }),
+    hdrs = glob(
+        ["**/*.h"],
+        exclude = ["persistence/serialize.h"],
+    ) + [":version"],
+    copts = COPTS,
     defines = DEFINES,
     includes = ["."],
     linkopts = select({
@@ -192,6 +210,7 @@ cc_library(
     tags = ["qt"],
     visibility = ["//qtox:__subpackages__"],
     deps = [
+        ":serialize",
         "//c-toxcore",
         "//qtox:res_lib",
         "//qtox/audio",
