@@ -11,13 +11,11 @@
 #include "src/persistence/profile.h"
 #include "src/persistence/settings.h"
 #include "src/persistence/toxsave.h"
+#include "src/version.h"
+#include "src/video/camerasource.h"
 #include "src/widget/tool/messageboxmanager.h"
 #include "src/widget/translator.h"
 #include "src/widget/widget.h"
-#ifndef CMAKE_BUILD
-#include "src/version.h"
-#endif
-#include "src/video/camerasource.h"
 
 #if defined(Q_OS_UNIX)
 #include "src/platform/posixsignalnotifier.h"

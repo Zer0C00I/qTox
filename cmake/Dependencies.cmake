@@ -210,10 +210,6 @@ if (NOT GIT_DESCRIBE)
   endif()
 endif()
 
-add_definitions(
-  -DGIT_DESCRIBE="${GIT_DESCRIBE}"
-)
-
 if (NOT GIT_VERSION)
   execute_process(
     COMMAND git rev-parse HEAD
@@ -227,10 +223,6 @@ if (NOT GIT_VERSION)
     set(GIT_VERSION "build without git")
   endif()
 endif()
-
-add_definitions(
-  -DGIT_VERSION="${GIT_VERSION}"
-)
 
 if (NOT GIT_DESCRIBE_EXACT)
   execute_process(
@@ -246,8 +238,11 @@ if (NOT GIT_DESCRIBE_EXACT)
   endif()
 endif()
 
-add_definitions(
-  -DGIT_DESCRIBE_EXACT="${GIT_DESCRIBE_EXACT}"
+# Generate version.h with the above version information.
+configure_file(
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/version.h.in
+  ${CMAKE_CURRENT_BINARY_DIR}/src/version.h
+  @ONLY
 )
 
 set(APPLE_EXT False)
@@ -262,9 +257,7 @@ endif()
 
 if (PLATFORM_EXTENSIONS)
   if (${APPLE_EXT} OR ${X11_EXT} OR WIN32)
-    add_definitions(
-      -DQTOX_PLATFORM_EXT
-    )
+    add_definitions(-DQTOX_PLATFORM_EXT)
     message(STATUS "Using platform extensions")
   else()
     message(WARNING "Not using platform extensions, dependencies not found")
@@ -272,8 +265,4 @@ if (PLATFORM_EXTENSIONS)
   endif()
 endif()
 
-add_definitions(
-  -DLOG_TO_FILE=1
-)
-
-add_definitions(-DCMAKE_BUILD)
+add_definitions(-DLOG_TO_FILE=1)
