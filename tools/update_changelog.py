@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Copyright © 2024-2025 The TokTok team
+import argparse
 import os
 import pathlib
 import re
@@ -72,9 +73,30 @@ class ForkInfo:
 @dataclass
 class Config:
     changelog: str
+    production: bool
     repository: str
     forked_from: list[ForkInfo]
     ignore_before: Optional[str]
+
+
+def find_clog_toml() -> Optional[pathlib.Path]:
+    """Find .clog.toml in the parent directories."""
+    path = pathlib.Path(__file__)
+    # Find the .clog.toml file in the parent directories
+    # (excluding the root directory).
+    while path != path.parent:
+        if (path / ".clog.toml").is_file():
+            return path / ".clog.toml"
+        path = path.parent
+    return None
+
+
+def read_clog_toml() -> dict[str, Any]:
+    toml = find_clog_toml()
+    if not toml:
+        return {}
+    with open(toml, "rb") as f:
+        return tomllib.load(f)
 
 
 def parse_fork_config(data: list[dict[str, Any]]) -> list[ForkInfo]:
@@ -86,11 +108,50 @@ def parse_fork_config(data: list[dict[str, Any]]) -> list[ForkInfo]:
 def parse_config(data: dict[str, Any]) -> Config:
     return Config(
         changelog=data.get("clog", {})["changelog"],
+        production=data.get("clog", {}).get("production", False),
         repository=data.get("clog", {}).get("repository", "http://localhost/"),
         forked_from=parse_fork_config(
             data.get("clog", {}).get("forked-from", {})),
         ignore_before=data.get("clog", {}).get("ignore-before", None),
     )
+
+
+def parse_args() -> Config:
+    parser = argparse.ArgumentParser(description="""
+    Update the CHANGELOG.md file with the commits between the current tag and
+    the previous tag. Rebuilds the entire CHANGELOG.md file using all tags.
+
+    Somewhat compatible with clog-cli.
+    """)
+    clog_config = parse_config(read_clog_toml())
+    parser.add_argument(
+        "--changelog",
+        help="Path to the CHANGELOG.md file",
+        default=clog_config.changelog,
+    )
+    parser.add_argument(
+        "--production",
+        action=argparse.BooleanOptionalAction,
+        help="Production mode: ignore release candidates",
+        default=clog_config.production,
+    )
+    parser.add_argument(
+        "--repository",
+        help="URL to the repository",
+        default=clog_config.repository,
+    )
+    parser.add_argument(
+        "--forked-from",
+        help="Forked from repository",
+        action="append",
+        default=clog_config.forked_from,
+    )
+    parser.add_argument(
+        "--ignore-before",
+        help="Ignore everything before and including this tag",
+        default=clog_config.ignore_before,
+    )
+    return Config(**vars(parser.parse_args()))
 
 
 def git_log(prev_tag: str, cur_tag: str) -> list[str]:
@@ -233,14 +294,39 @@ def group_by_message(entries: list[LogEntry]) -> dict[str, list[LogEntry]]:
     return by_message
 
 
+def preferred_case(
+    modules: Iterable[Optional[str]], ) -> dict[Optional[str], Optional[str]]:
+    """Preferred case for module names is the one that has the most uppercase letters."""
+    map: dict[Optional[str], Optional[str]] = {None: None}
+    for module in modules:
+        lower = module.lower() if module else None
+        if lower not in map:
+            # Don't have it yet.
+            map[lower] = module
+            continue
+
+        current = map[lower]
+
+        if current is None or module is None:
+            continue
+
+        # We have it. If the new one has more uppercase letters, use it.
+        if sum(1 for c in module if c.isupper()) > sum(1 for c in current
+                                                       if c.isupper()):
+            map[module.lower()] = module
+    return map
+
+
 def group_by_module(
     entries: list[LogEntry],
 ) -> dict[Optional[str], dict[str, list[LogEntry]]]:
     by_module: dict[Optional[str], list[LogEntry]] = {}
+    case = preferred_case(entry.module for entry in entries)
     for entry in entries:
-        if entry.module not in by_module:
-            by_module[entry.module] = []
-        by_module[entry.module].append(entry)
+        module = case[entry.module.lower() if entry.module else None]
+        if module not in by_module:
+            by_module[module] = []
+        by_module[module].append(entry)
     return {
         module: group_by_message(entries)
         for module, entries in by_module.items()
@@ -320,9 +406,9 @@ def format_changelog(
     - **UI:** Add UI For controlling group join and leave system messages setting ([423049db](https://github.com/qTox/qTox/commit/423049db50ffea14ec222e1a83ee976029a6afaf))
     - **chatlog:** Disable join and leave system messages based on setting ([ee0334ac](https://github.com/qTox/qTox/commit/ee0334acc55215ed8e94bae8fa4ff8976834af20))
     """
-    version = tag[1].removeprefix("release/")
+    version = tag[1].removeprefix(f"{git.RELEASE_BRANCH_PREFIX}/")
     tag_date = git_tag_date(tag[0])
-    tag_message = old_changelog[version]
+    tag_message = old_changelog.get(version, None)
     lines = [
         f'<a name="{version}"></a>',
         "",
@@ -372,37 +458,21 @@ def filter_str(strings: Iterable[Optional[str]]) -> Iterable[str]:
     return (s for s in strings if s)
 
 
-def find_clog_toml() -> Optional[pathlib.Path]:
-    """Find .clog.toml in the parent directories."""
-    path = pathlib.Path(__file__)
-    # Find the .clog.toml file in the parent directories
-    # (excluding the root directory).
-    while path != path.parent:
-        if (path / ".clog.toml").is_file():
-            return path / ".clog.toml"
-        path = path.parent
-    return None
-
-
-def read_clog_toml() -> dict[str, Any]:
-    toml = find_clog_toml()
-    if not toml:
-        return {}
-    with open(toml, "rb") as f:
-        return tomllib.load(f)
-
-
 def current_release_branch() -> list[tuple[str, str]]:
     head_ref = os.getenv("GITHUB_HEAD_REF")
-    if head_ref and head_ref.startswith("release/"):
+    if head_ref and head_ref.startswith(f"{git.RELEASE_BRANCH_PREFIX}/"):
         return [("HEAD", head_ref)]
+    branches = git.release_branches()
+    if branches:
+        return [(branches[0], branches[0])]
     return []
 
 
-def main() -> None:
-    config = parse_config(read_clog_toml())
+def main(config: Optional[Config] = None) -> None:
+    if not config:
+        config = parse_config(read_clog_toml())
     tags = current_release_branch() + [
-        (t, t) for t in git.release_branches() + git.release_tags()
+        (t, t) for t in git.release_tags(with_rc=not config.production)
     ]
     # Ignore everything before and including some tag.
     # (+1 because we still need {after tag}...{tag}).
@@ -424,4 +494,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    main(parse_args())

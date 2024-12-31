@@ -135,12 +135,11 @@ class Stage:
             f"({description})",
             False,
         )
-        exn = InvalidState(f"Stage {self.name} failed: {description}")
-        if self.failures is not None:
-            self.failures.append(self.name)
-        else:
-            raise exn
         self.done = True
+        exn = InvalidState(f"Stage {self.name} failed: {description}")
+        if self.failures is None:
+            raise exn
+        self.failures.append(self.name)
         return exn
 
     def __exit__(self, exc_type: Any, exc_value: Any, traceback: Any) -> None:

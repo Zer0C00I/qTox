@@ -82,16 +82,8 @@ def upload_tarballs(tag: str, tmpdir: str) -> None:
             filename = f"{tag}.tar.{ext}{suffix}"
             print(f"Uploading {filename} to GitHub release {tag}")
             with open(os.path.join(tmpdir, filename), "rb") as f:
-                response = requests.post(
-                    f"https://uploads.github.com/repos/TokTok/qTox/releases/{github.release_id(tag)}/assets",
-                    headers={
-                        "Content-Type": content_type[suffix or ext],
-                        **github.auth_headers(required=True),
-                    },
-                    data=f,
-                    params={"name": filename},
-                )
-                response.raise_for_status()
+                github.upload_asset(tag, filename, content_type[suffix or ext],
+                                    f)
 
 
 def main(config: Config) -> None:

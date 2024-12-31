@@ -11,7 +11,7 @@ import requests
 from lib import git
 from lib import github
 
-BINARY_EXTENSIONS = (".apk", ".dmg", ".exe", ".flatpak")
+BINARY_EXTENSIONS = (".AppImage", ".apk", ".dmg", ".exe", ".flatpak")
 
 
 @dataclass
@@ -61,34 +61,21 @@ def upload_signature(tag: str, tmpdir: str, binary: str) -> None:
     release_id = github.release_id(tag)
     print(f"Uploading signature for {binary}")
     with open(os.path.join(tmpdir, f"{binary}.asc"), "rb") as f:
-        response = requests.post(
-            f"https://uploads.github.com/repos/TokTok/qTox/releases/{release_id}/assets?name={binary}.asc",
-            headers={
-                "Content-Type": "application/pgp-signature",
-                **github.auth_headers(required=True),
-            },
-            data=f,
-        )
-        response.raise_for_status()
+        github.upload_asset(tag, f"{binary}.asc", "application/pgp-signature",
+                            f)
 
 
 def download_and_sign_binaries(config: Config, tmpdir: str) -> None:
-    response = requests.get(
-        f"https://api.github.com/repos/TokTok/qTox/releases/tags/{config.tag}",
-        headers=github.auth_headers(required=False),
-    )
-    response.raise_for_status()
-    assets = response.json()["assets"]
-    asset_names = [asset["name"] for asset in assets]
+    assets = github.release_assets(config.tag)
+    asset_names = [asset.name for asset in assets]
     for asset in assets:
-        binary = asset["name"]
-        if needs_signing(binary, asset_names):
-            with open(os.path.join(tmpdir, binary), "wb") as f:
-                print(f"Downloading {binary}")
-                f.write(requests.get(asset["browser_download_url"]).content)
-            sign_binary(binary, tmpdir)
+        if needs_signing(asset.name, asset_names):
+            with open(os.path.join(tmpdir, asset.name), "wb") as f:
+                print(f"Downloading {asset.name}")
+                f.write(github.download_asset(asset.id))
+            sign_binary(asset.name, tmpdir)
             if config.upload:
-                upload_signature(config.tag, tmpdir, binary)
+                upload_signature(config.tag, tmpdir, asset.name)
 
 
 def main(config: Config) -> None:

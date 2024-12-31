@@ -8,13 +8,12 @@ import subprocess  # nosec
 import sys
 import tempfile
 from dataclasses import dataclass
-from typing import Any
 
-import requests
 from lib import git
 from lib import github
 
-NEEDS_SIGNATURE = (".apk", ".dmg", ".exe", ".flatpak", ".gz", ".xz")
+NEEDS_SIGNATURE = (".AppImage", ".apk", ".dmg", ".exe", ".flatpak", ".gz",
+                   ".xz")
 
 
 @dataclass
@@ -48,30 +47,21 @@ def verify_signature(tmpdir: str, binary: str) -> None:
 
 
 def download_and_verify(
-        args: tuple[str, dict[str, Any], dict[str, Any]]) -> None:
+    args: tuple[str, github.ReleaseAsset, dict[str,
+                                               github.ReleaseAsset]]) -> None:
     tmpdir, asset, by_name = args
-    binary = asset["name"]
-    print(f"Downloading {binary} and {binary}.asc", file=sys.stderr)
-    with open(os.path.join(tmpdir, binary), "wb") as f:
-        f.write(requests.get(asset["browser_download_url"]).content)
-    with open(os.path.join(tmpdir, f"{binary}.asc"), "wb") as f:
-        f.write(
-            requests.get(
-                by_name[f"{binary}.asc"]["browser_download_url"]).content)
-    verify_signature(tmpdir, binary)
+    print(f"Downloading {asset.name} and {asset.name}.asc", file=sys.stderr)
+    with open(os.path.join(tmpdir, asset.name), "wb") as f:
+        f.write(github.download_asset(asset.id))
+    with open(os.path.join(tmpdir, f"{asset.name}.asc"), "wb") as f:
+        f.write(github.download_asset(by_name[asset.name + ".asc"].id))
+    verify_signature(tmpdir, asset.name)
 
 
 def download_and_verify_binaries(config: Config, tmpdir: str) -> None:
-    response = requests.get(
-        f"https://api.github.com/repos/TokTok/qTox/releases/tags/{config.tag}",
-        headers=github.auth_headers(required=False),
-    )
-    response.raise_for_status()
-    assets = response.json()["assets"]
-    by_name = {asset["name"]: asset for asset in assets}
-    todo = [
-        asset for asset in assets if asset["name"].endswith(NEEDS_SIGNATURE)
-    ]
+    assets = github.release_assets(config.tag)
+    by_name = {asset.name: asset for asset in assets}
+    todo = [asset for asset in assets if asset.name.endswith(NEEDS_SIGNATURE)]
     with multiprocessing.Pool() as pool:
         pool.map(download_and_verify,
                  [(tmpdir, asset, by_name) for asset in todo])

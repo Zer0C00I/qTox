@@ -179,7 +179,7 @@ candidates).
 
 ### Step 1. Create a release PR
 
-Most of these steps are automated by [`tools/validate-pr.py`], which you
+Most of these steps are automated by [`tools/validate_pr.py`], which you
 can run locally to automate the pre-tagging process.
 
 - Merge any Weblate PRs if they are still open.
@@ -187,7 +187,7 @@ can run locally to automate the pre-tagging process.
 
 **Automated method:**
 
-- Run `tools/validate-pr.py`.
+- Run `tools/validate_pr.py`.
 
 **Manual method:**
 
@@ -200,7 +200,7 @@ can run locally to automate the pre-tagging process.
   `tools/update-versions.sh 1.11.0` (don't add the `v` in `v1.11.0`)
 - Update the bootstrap nodelist at `res/nodes.json` from https://nodes.tox.chat/json.
   This can be done by running [`tools/update-nodes.sh`]
-- Generate changelog with [`tools/update-changelog.py`].
+- Generate changelog with [`tools/update_changelog.py`].
   - In a `MAJOR`/`MINOR` release tag should include information that changelog
     is located in the `CHANGELOG.md` file, e.g. `For details see CHANGELOG.md`
 - To release a `PATCH` version after non-fix changes have landed on `master`
@@ -221,7 +221,7 @@ can run locally to automate the pre-tagging process.
 In the PRs in this step, only make pull requests. Do not merge, yet.
 
 - Create and GPG-sign the tar.xz and tar.gz archives using
-  [`tools/create-tarballs.py`] script, and upload both archives plus both
+  [`tools/create_tarballs.py`] script, and upload both archives plus both
   signature files to the github draft release that was created by CI (passing
   `--upload` to the script will do this automatically).
 - Download the binaries that are part of the draft release, sign them in
@@ -258,13 +258,13 @@ helping for a while, ask to be added to the `TokTok` organization on GitHub.
 [`CONTRIBUTING.md`]: /CONTRIBUTING.md
 [`merge-pr.sh`]: /merge-pr.sh
 [`test-pr.sh`]: /test-pr.sh
-[`tools/create-tarballs.py`]: /tools/create-tarballs.py
+[`tools/create_tarballs.py`]: /tools/create_tarballs.py
 [`tools/sign-release-assets.py`]: /tools/sign-release-assets.py
-[`tools/update-changelog.py`]: /tools/update-changelog.py
+[`tools/update_changelog.py`]: /tools/update_changelog.py
 [`tools/update-nodes.sh`]: /tools/update-nodes.sh
 [`tools/update-versions.sh`]: /tools/update-versions.sh
 [`tools/format-code.sh`]: /tools/format-code.sh
-[`tools/validate-pr.py`]: /tools/validate-pr.py
+[`tools/validate_pr.py`]: /tools/validate_pr.py
 [Flathub repository]: https://github.com/flathub/io.github.qtox.qTox
 [`flatpak/io.github.qtox.qTox.json`]: /flatpak/io.github.qtox.qTox.json
 [`flatpak/update_flathub_descriptor_dependencies.py`]: /flatpak/update_flathub_descriptor_dependencies.py

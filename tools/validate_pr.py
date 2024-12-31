@@ -8,6 +8,7 @@ import subprocess  # nosec
 from dataclasses import dataclass
 from functools import cache as memoize
 
+import update_changelog
 from lib import git
 from lib import github
 from lib import stage
@@ -15,8 +16,7 @@ from lib import stage
 
 @dataclass
 class Config:
-    commit: str
-    sign: bool
+    commit: bool
 
 
 def parse_args() -> argparse.Namespace:
@@ -29,12 +29,6 @@ def parse_args() -> argparse.Namespace:
         action=argparse.BooleanOptionalAction,
         help="Stage changes with git add (no commit yet)",
         default=False,
-    )
-    parser.add_argument(
-        "--sign",
-        action=argparse.BooleanOptionalAction,
-        help="Sign tags (doesn't work on GitHub Actions)",
-        default=True,
     )
     return parser.parse_args()
 
@@ -116,7 +110,8 @@ def check_flathub_descriptor_dependencies(failures: list[str],
                 "--download-files-path",
                 os.path.join(dockerfiles_dir(), "qtox", "download"),
                 "--git-tag",
-                github.head_ref().removeprefix("release/"),
+                github.head_ref().removeprefix(
+                    f"{git.RELEASE_BRANCH_PREFIX}/"),
             ],
             check=True,
             cwd=GIT_BASE_DIR,
@@ -173,7 +168,8 @@ def check_package_versions(failures: list[str], config: Config) -> None:
         subprocess.run(  # nosec
             [
                 "tools/update-versions.sh",
-                github.head_ref().removeprefix("release/v")
+                github.head_ref().removeprefix(
+                    f"{git.RELEASE_BRANCH_PREFIX}/v"),
             ],
             check=True,
             cwd=GIT_BASE_DIR,
@@ -243,11 +239,7 @@ def check_changelog(failures: list[str], config: Config) -> None:
     """Check that the changelog is up-to-date."""
     with stage.Stage("Changelog", "The changelog should be up-to-date",
                      failures) as check:
-        subprocess.run(  # nosec
-            ["tools/update-changelog.py"],
-            check=True,
-            cwd=GIT_BASE_DIR,
-        )
+        update_changelog.main()
         if has_diff(config, "CHANGELOG.md"):
             if config.commit:
                 git.add("CHANGELOG.md")

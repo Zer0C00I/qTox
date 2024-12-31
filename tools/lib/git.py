@@ -2,6 +2,7 @@
 # Copyright © 2024-2025 The TokTok team
 import re
 import subprocess  # nosec
+import unittest
 from dataclasses import dataclass
 from functools import cache as memoize
 from typing import Any
@@ -10,7 +11,9 @@ from typing import Optional
 from lib import types
 
 VERSION_REGEX = re.compile(r"v\d+\.\d+\.\d+(?:-rc\.\d+)?")
-RELEASE_BRANCH_REGEX = re.compile(f"release/{VERSION_REGEX.pattern}")
+RELEASE_BRANCH_PREFIX = "release"
+RELEASE_BRANCH_REGEX = re.compile(
+    f"{RELEASE_BRANCH_PREFIX}/{VERSION_REGEX.pattern}")
 
 
 @dataclass
@@ -34,9 +37,9 @@ class Version:
         if self.patch != other.patch:
             return self.patch < other.patch
         if self.rc is None:
-            return other.rc is not None
-        if other.rc is None:
             return False
+        if other.rc is None:
+            return True
         return self.rc < other.rc
 
 
@@ -50,6 +53,28 @@ def parse_version(version: str) -> Version:
         patch=int(match.group(3)),
         rc=int(match.group(4)) if match.group(4) else None,
     )
+
+
+class TestParseVersion(unittest.TestCase):
+
+    def test_parse_version(self) -> None:
+        self.assertEqual(parse_version("v1.2.3"), Version(1, 2, 3, None))
+        self.assertEqual(parse_version("v1.2.3-rc.1"), Version(1, 2, 3, 1))
+
+    def test_comparison(self) -> None:
+        self.assertLess(parse_version("v1.2.3"), parse_version("v1.2.4"))
+        self.assertLess(parse_version("v1.2.3"), parse_version("v1.3.0"))
+        self.assertLess(parse_version("v1.2.3"), parse_version("v2.0.0"))
+        self.assertLess(parse_version("v1.2.3-rc.1"),
+                        parse_version("v1.2.3-rc.2"))
+        self.assertLess(parse_version("v1.2.3-rc.1"), parse_version("v1.2.3"))
+        self.assertGreater(parse_version("v1.2.3"), parse_version("v1.2.2"))
+        self.assertGreater(parse_version("v1.2.3"),
+                           parse_version("v1.2.3-rc.1"))
+        self.assertEqual(parse_version("v1.2.3"), parse_version("v1.2.3"))
+        self.assertEqual(parse_version("v1.2.3-rc.1"),
+                         parse_version("v1.2.3-rc.1"))
+        self.assertNotEqual(parse_version("v1.2.3"), parse_version("v1.2.4"))
 
 
 class Stash:
@@ -171,6 +196,21 @@ def fetch(*remotes: str) -> None:
     )
 
 
+def pull(remote: str) -> None:
+    """Pull changes from the current branch and remote."""
+    subprocess.run(  # nosec
+        [
+            "git",
+            "pull",
+            "--rebase",
+            "--quiet",
+            remote,
+            current_branch(),
+        ],
+        check=True,
+    )
+
+
 def remote_slug(remote: str) -> types.RepoSlug:
     """Get the GitHub slug of a remote."""
     url = (
@@ -200,7 +240,8 @@ def branch_sha(branch: str) -> str:
     return (subprocess.check_output(  # nosec
         [
             "git",
-            "rev-parse",
+            "rev-list",
+            "--max-count=1",
             branch,
         ]).strip().decode("utf-8"))
 
@@ -238,13 +279,34 @@ def current_branch() -> str:
         ]).strip().decode("utf-8"))
 
 
-def release_tags() -> list[str]:
+def release_tags(with_rc: bool = True) -> list[str]:
     tags = subprocess.check_output(["git", "tag", "--merged"])  # nosec
     return sorted(
         (tag for tag in tags.decode("utf-8").splitlines()
-         if re.match(VERSION_REGEX, tag)),
+         if re.match(VERSION_REGEX, tag) and (with_rc or "-rc." not in tag)),
         reverse=True,
         key=parse_version,
+    )
+
+
+def release_tag_exists(tag: str) -> bool:
+    """Check if a tag exists."""
+    return tag in release_tags()
+
+
+def tag(tag: str, message: str) -> None:
+    """Create a signed tag with a message."""
+    subprocess.run(  # nosec
+        [
+            "git",
+            "tag",
+            "--sign",
+            "--annotate",
+            "--message",
+            message,
+            tag,
+        ],
+        check=True,
     )
 
 
