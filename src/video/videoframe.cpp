@@ -267,32 +267,6 @@ void VideoFrame::releaseFrame()
 }
 
 /**
- * @brief Retrieves an AVFrame derived from the source based on the given parameters.
- *
- * If a given frame does not exist, this function will perform appropriate conversions to
- * return a frame that fulfills the given parameters.
- *
- * @param frameSize the dimensions of the frame to get. Defaults to source frame size if frameSize
- * is invalid.
- * @param pixelFormat the desired pixel format of the frame.
- * @param requireAligned true if the returned frame must be frame aligned, false if not.
- * @return a pointer to a AVFrame with the given parameters or nullptr if the VideoFrame is no
- * longer valid.
- */
-const AVFrame* VideoFrame::getAVFrame(QSize frameSize, const int pixelFormat, const bool requireAligned)
-{
-    if (!frameSize.isValid()) {
-        frameSize = sourceDimensions.size();
-    }
-
-    // Returns nullptr case of invalid generation
-    return toGenericObject(frameSize, pixelFormat, requireAligned, [](AVFrame* const frame) {
-        // Since we are retrieving the AVFrame* directly, we merely need to pass the argument through
-        return frame;
-    });
-}
-
-/**
  * @brief Converts this VideoFrame to a QImage that shares this VideoFrame's buffer.
  *
  * The VideoFrame will be scaled into the RGB24 pixel format along with the given
@@ -310,13 +284,17 @@ QImage VideoFrame::toQImage(QSize frameSize)
     }
 
     // Returns an empty constructed QImage in case of invalid generation
-    return toGenericObject(frameSize, AV_PIX_FMT_RGB24, false, [frameSize](AVFrame* const frame) {
-        // Converter function (constructs QImage out of AVFrame*)
-        return QImage{
-            *frame->data,     frameSize.width(),     frameSize.height(),
-            *frame->linesize, QImage::Format_RGB888,
-        };
-    });
+    auto [image, frameLocker] =
+        toGenericObject(frameSize, AV_PIX_FMT_RGB24, false, [frameSize](AVFrame* const frame) {
+            // Converter function (constructs QImage out of AVFrame*)
+            return QImage{
+                *frame->data,     frameSize.width(),     frameSize.height(),
+                *frame->linesize, QImage::Format_RGB888,
+            };
+        });
+
+    // No need to return the frame buffer lock since we are returning a QImage which owns the data.
+    return image;
 }
 
 /**
@@ -330,27 +308,18 @@ QImage VideoFrame::toQImage(QSize frameSize)
  * @return a ToxAVFrame structure that represents this VideoFrame, sharing it's buffers or an
  * empty structure if this VideoFrame is no longer valid.
  */
-ToxYUVFrame VideoFrame::toToxYUVFrame(QSize frameSize)
+std::pair<ToxYUVFrame, ReadWriteLocker> VideoFrame::toToxYUVFrame()
 {
-    if (!frameSize.isValid()) {
-        frameSize = sourceDimensions.size();
-    }
+    const QSize frameSize = sourceDimensions.size();
 
     return toGenericObject(frameSize, AV_PIX_FMT_YUV420P, true, [frameSize](AVFrame* const frame) {
         // Converter function (constructs ToxAVFrame out of AVFrame*)
-        // TODO(iphydf): Be more efficient (less copying).
         return ToxYUVFrame{
             static_cast<std::uint16_t>(frameSize.width()),
             static_cast<std::uint16_t>(frameSize.height()),
-            // width * height
-            std::vector<uint8_t>(frame->data[0],
-                                 frame->data[0] + frameSize.width() * frameSize.height()),
-            // (width/2) * (height/2)
-            std::vector<uint8_t>(frame->data[1],
-                                 frame->data[1] + (frameSize.width() / 2) * (frameSize.height() / 2)),
-            // (width/2) * (height/2)
-            std::vector<uint8_t>(frame->data[2],
-                                 frame->data[2] + (frameSize.width() / 2) * (frameSize.height() / 2)),
+            frame->data[0],
+            frame->data[1],
+            frame->data[2],
         };
     });
 }
@@ -498,8 +467,6 @@ VideoFrame::FrameBufferKey VideoFrame::getFrameKey(const QSize& frameSize, const
  *
  * This function is not thread-safe and must be called from a thread-safe context.
  *
- * Note: this function differs from getAVFrame() in that it returns a nullptr if no frame was
- * found.
  *
  * @param dimensions the dimensions of the frame, must be valid.
  * @param pixelFormat the desired pixel format of the frame.
@@ -705,22 +672,24 @@ void VideoFrame::deleteFrameBuffer()
  * to an object of type T.
  */
 template <typename F>
-std::invoke_result_t<F, AVFrame* const>
+std::pair<std::invoke_result_t<F, AVFrame* const>, ReadWriteLocker>
 VideoFrame::toGenericObject(const QSize& dimensions, int pixelFormat, bool requireAligned,
                             const F& objectConstructor)
 {
+    using ReturnType = std::invoke_result_t<F, AVFrame* const>;
+
     AVFrame* frame;
     {
-        QReadLocker frameReadLock{&frameLock};
+        ReadWriteLocker frameReadLock(&frameLock, ReadWriteLocker::ReadLock);
 
         // We return empty if the VideoFrame is no longer valid
         if (frameBuffer.empty()) {
-            return {};
+            return {ReturnType{}, ReadWriteLocker()};
         }
 
         frame = retrieveAVFrame(dimensions, pixelFormat, requireAligned);
         if (frame != nullptr) {
-            return objectConstructor(frame);
+            return {objectConstructor(frame), std::move(frameReadLock)};
         }
 
         // VideoFrame does not contain an AVFrame to spec, generate one here
@@ -735,8 +704,9 @@ VideoFrame::toGenericObject(const QSize& dimensions, int pixelFormat, bool requi
      * process twice, and discard the old result.
      */
     {
-        QWriteLocker frameWriteLock{&frameLock};
-        return objectConstructor(storeAVFrame(frame, dimensions, pixelFormat));
+        ReadWriteLocker frameWriteLock(&frameLock, ReadWriteLocker::WriteLock);
+        return {objectConstructor(storeAVFrame(frame, dimensions, pixelFormat)),
+                std::move(frameWriteLock)};
     }
 }
 

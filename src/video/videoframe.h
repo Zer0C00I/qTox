@@ -23,7 +23,63 @@ extern "C"
 #include <cstdint>
 #include <memory>
 #include <unordered_map>
-#include <vector>
+
+/**
+ * @brief A combination of QReadLocker and QWriteLocker that unlocks the lock when destroyed.
+ *
+ * Unlike QReadLocker and QWriteLocker, objects of this class are movable, so we use this to
+ * extend a critical section to the calling scope.
+ */
+class ReadWriteLocker
+{
+public:
+    enum LockType
+    {
+        WriteLock,
+        ReadLock,
+    };
+
+    ReadWriteLocker() = default;
+
+    explicit ReadWriteLocker(QReadWriteLock* lock, LockType type)
+        : lock_(lock)
+    {
+        switch (type) {
+        case WriteLock:
+            lock_->lockForWrite();
+            break;
+        case ReadLock:
+            lock_->lockForRead();
+            break;
+        }
+    }
+
+    ~ReadWriteLocker()
+    {
+        if (lock_ != nullptr) {
+            lock_->unlock();
+        }
+    }
+
+    ReadWriteLocker(ReadWriteLocker&& other)
+        : lock_(other.lock_)
+    {
+        other.lock_ = nullptr;
+    }
+
+    ReadWriteLocker& operator=(ReadWriteLocker&& other)
+    {
+        if (this != &other) {
+            lock_ = other.lock_;
+            other.lock_ = nullptr;
+        }
+
+        return *this;
+    }
+
+private:
+    QReadWriteLock* lock_;
+};
 
 struct ToxYUVFrame
 {
@@ -34,9 +90,9 @@ public:
     const std::uint16_t width;
     const std::uint16_t height;
 
-    const std::vector<uint8_t> y;
-    const std::vector<uint8_t> u;
-    const std::vector<uint8_t> v;
+    const uint8_t* y;
+    const uint8_t* u;
+    const uint8_t* v;
 };
 
 class VideoFrame
@@ -67,9 +123,8 @@ public:
 
     void releaseFrame();
 
-    const AVFrame* getAVFrame(QSize frameSize, const int pixelFormat, const bool requireAligned);
     QImage toQImage(QSize frameSize = {});
-    ToxYUVFrame toToxYUVFrame(QSize frameSize = {});
+    std::pair<ToxYUVFrame, ReadWriteLocker> toToxYUVFrame();
 
     IDType getFrameID() const;
     IDType getSourceID() const;
@@ -131,9 +186,9 @@ private:
     void deleteFrameBuffer();
 
     template <typename F>
-    std::invoke_result_t<F, AVFrame* const> toGenericObject(const QSize& dimensions,
-                                                            int pixelFormat, bool requireAligned,
-                                                            const F& objectConstructor);
+    std::pair<std::invoke_result_t<F, AVFrame* const>, ReadWriteLocker>
+    toGenericObject(const QSize& dimensions, int pixelFormat, bool requireAligned,
+                    const F& objectConstructor);
 
 private:
     // ID
