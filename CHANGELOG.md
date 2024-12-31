@@ -1,3 +1,28 @@
+<a name="v1.18.0"></a>
+
+## v1.18.0 (2025-01-01)
+
+Happy New Year 2025!
+
+It's taken us some time, but we're finally here. We hope you enjoy our new and updated qTox v1.18.0. Many bugs, especially around video calls, have been fixed. We also bring some performance improvements, but most importantly, **the RCE fear is over**.
+
+There have been many rumours about remote code execution attacks on qTox for the past 2 years. Although nobody has ever actually been able to demonstrate any of them working, we've done a deep dive audit on the relevant security aspects of the areas of potential vulnerability and have made a number of changes:
+
+- We've completely rewritten the notification system from scratch. We now use the built-in Qt system tray notifications on all systems. Additionally, on Linux, we use the Freedesktop notification system directly (you can turn this off if it doesn't work or you're afraid we've made a mistake) instead of going through an unaudited third party library.
+- We've put additional filtering in place for any incoming text messages from the Tox network, including friend request messages. We now filter out any non-printable characters. This may break certain newer emojis such as a skin-toned handshake emoji (🤝🏾) on older systems (from 2022 or earlier). If you use our provided binaries, it should just work, as we build our binaries with the latest Qt version and dependencies.
+- We've hardened some of the low level load/store functions used for settings. There almost certainly wasn't a vulnerability here, but they can no longer be abused directly if there ever will be.
+
+We have, as a side effect, also upgraded the toxcore used in the (windows) release. There are a great number of outdated toxcore nodes still present in the network, holding back new feature adoption such as the new group chats with moderation capabilities.
+
+Check out the release candidates' release notes as well for a full list of changes since the 1.17.6.
+
+As always, report any bugs or issues you find or features you'd like to see to our [issue tracker](https://github.com/TokTok/qTox/issues). We've got a long way to go, but we're come a long way as well. Enjoy the release!
+
+#### Bug Fixes
+
+- Avoid occasional crash when changing video devices or closing qTox. ([2bd629fe](https://github.com/TokTok/qTox/commit/2bd629fe5a0fc320fe78da7cddcd19965b7128dd))
+- **Security:** Harden the persistence/serialization functions. ([e4735668](https://github.com/TokTok/qTox/commit/e47356681c126dffe9f07fbfa4ee9d441446c230))
+
 <a name="v1.18.0-rc.4"></a>
 
 ## v1.18.0-rc.4 (2024-12-31)
