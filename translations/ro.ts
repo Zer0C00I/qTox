@@ -695,7 +695,7 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
         <translation>Denumirea fișierului conține caractere neconforme</translation>
     </message>
     <message>
-        <source>Illegal characters have been changed to _ 
+        <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translation>Caracterele ilegale au fost schimbate în _
 astfel încât să puteți salva fișierul pe Windows.</translation>

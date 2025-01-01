@@ -693,7 +693,7 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
         <translation>Tên tệp chứa các ký tự không hợp lệ</translation>
     </message>
     <message>
-        <source>Illegal characters have been changed to _ 
+        <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translation>Các ký tự không hợp lệ đã được đổi thành _
 để bạn có thể lưu tệp trên Windows.</translation>

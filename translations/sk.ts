@@ -695,7 +695,7 @@ Rýchlosť vášho pripojenia nemusí byť vždy dostačujúca pre vyššiu kval
         <translation>Názov súboru obsahoval nepovolené znaky</translation>
     </message>
     <message>
-        <source>Illegal characters have been changed to _ 
+        <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translation>Nepovolené znaky boli zmenené na _
 so you can save the file on Windows.</translation>

@@ -695,7 +695,7 @@ bu da video görüşmelerinde sorunlara yol açabilir.</translation>
         <translation>Dosya adı yasaklanmış karakterler içeriyor</translation>
     </message>
     <message>
-        <source>Illegal characters have been changed to _ 
+        <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translation>Dosyayı Windows&apos;ta kaydedebilmeniz için
 geçersiz karakterler _ olarak değiştirildi.</translation>

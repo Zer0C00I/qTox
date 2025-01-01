@@ -693,7 +693,7 @@ mikä voi johtaa ongelmiin videopuheluissa.</translation>
         <translation>Tiedostonimi sisälsi kiellettyjä merkkejä</translation>
     </message>
     <message>
-        <source>Illegal characters have been changed to _ 
+        <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translation>Kielletyt merkit on vaihdettu _
 joten voit tallentaa tiedoston Windowsissa.</translation>

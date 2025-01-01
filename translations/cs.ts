@@ -694,7 +694,7 @@ může dojít během video hovoru k výpadkům či jiným problémům.</translat
         <translation>Název souboru obsahuje nepovolené znaky</translation>
     </message>
     <message>
-        <source>Illegal characters have been changed to _ 
+        <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translation>Nepovolené znaky byly nahrazeny podtržítkem (_),
 takže můžete soubor uložit i v systému Windows.</translation>

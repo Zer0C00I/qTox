@@ -693,7 +693,7 @@ wat kan leiden tot problemen met videogesprekken.</translation>
         <translation>Bestandsnaam bevatte niet-toegestane tekens</translation>
     </message>
     <message>
-        <source>Illegal characters have been changed to _ 
+        <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translation>Ongeldige tekens zijn vervangen door _
 zodat u het bestand op Windows kunt opslaan.</translation>

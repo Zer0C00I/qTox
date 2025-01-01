@@ -692,7 +692,7 @@ which may lead to problems with video calls.</source>
         <translation>文件名包含非法字符</translation>
     </message>
     <message>
-        <source>Illegal characters have been changed to _ 
+        <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translation>非法字符已更改为 _
 因此，您可以在 Windows 上保存该文件。</translation>

@@ -695,7 +695,7 @@ noe som kan forårsake problemer i videosamtaler.</translation>
         <translation>Filnavnet inneholdt ulovlige tegn</translation>
     </message>
     <message>
-        <source>Illegal characters have been changed to _ 
+        <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translation>Ulovlige tegn har blitt endret til _
 slik at du kan lagre filen på Windows.</translation>

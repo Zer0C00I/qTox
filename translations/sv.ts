@@ -693,7 +693,7 @@ vilket kan leda till problem med videosamtal.</translation>
         <translation>Filnamnet innehåller förbjudna tecken</translation>
     </message>
     <message>
-        <source>Illegal characters have been changed to _ 
+        <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translation>Olagliga tecken har ändrats till _
 så att du kan spara filen i Windows.</translation>

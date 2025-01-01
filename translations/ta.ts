@@ -691,7 +691,7 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Illegal characters have been changed to _ 
+        <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translation type="unfinished"></translation>
     </message>

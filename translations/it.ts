@@ -693,7 +693,7 @@ il che può portare a problemi con le videochiamate.</translation>
         <translation>Il nome del file conteneva caratteri non autorizzati</translation>
     </message>
     <message>
-        <source>Illegal characters have been changed to _ 
+        <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translation>I caratteri non validi sono stati cambiati in _
 in modo da poter salvare il file su Windows.</translation>

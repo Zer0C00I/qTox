@@ -694,7 +694,7 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
         <translation>Failo pavadinime buvo neleidžiamų simbolių</translation>
     </message>
     <message>
-        <source>Illegal characters have been changed to _ 
+        <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translation>Neleidžiami simboliai buvo pakeisti į _
 tad dabar galite įrašyti failą Windows sistemoje.</translation>

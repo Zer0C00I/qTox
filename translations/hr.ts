@@ -690,7 +690,7 @@ which may lead to problems with video calls.</source>
         <translation>Ime datoteke je sadržalo nedozvoljene znakove</translation>
     </message>
     <message>
-        <source>Illegal characters have been changed to _ 
+        <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translation type="unfinished"></translation>
     </message>

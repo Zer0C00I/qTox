@@ -696,7 +696,7 @@ which may lead to problems with video calls.</source>
         <translation>Имя файла содержит недопустимые символы</translation>
     </message>
     <message>
-        <source>Illegal characters have been changed to _ 
+        <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translation>Недопустимые символы изменены на _
 чтобы вы смогли сохранить файл в Windows.</translation>

@@ -694,7 +694,7 @@ lo que puede provocar problemas en las videollamadas.</translation>
         <translation>Nombre del archivo contenía caracteres no válidos</translation>
     </message>
     <message>
-        <source>Illegal characters have been changed to _ 
+        <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translation>Los caracteres no válidos fueran cambiados a _
 para que puedas guardar el archivo en windows.</translation>

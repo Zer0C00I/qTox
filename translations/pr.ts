@@ -651,7 +651,7 @@ Take heed, fer higher qualities demand clearer skies.If yer seas are stormy, yer
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Illegal characters have been changed to _ 
+        <source>Illegal characters have been changed to _
 so you can save the file on windows.</source>
         <translation type="unfinished"></translation>
     </message>

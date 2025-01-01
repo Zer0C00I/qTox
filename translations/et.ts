@@ -693,7 +693,7 @@ mis võib põhjustada probleeme videokõnedega.</translation>
         <translation>Failinimi sisaldas keelatud märke</translation>
     </message>
     <message>
-        <source>Illegal characters have been changed to _ 
+        <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translation>Mõned mittesobilikud tähemärgid oleme asendanud alakriipsuga
 ja sa saad seda faili nüüd Windowsis salvestada.</translation>

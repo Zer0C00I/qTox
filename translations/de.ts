@@ -694,7 +694,7 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
         <translation>Der Dateiname enthält nicht unterstützte Satzzeichen</translation>
     </message>
     <message>
-        <source>Illegal characters have been changed to _ 
+        <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translation>Nicht unterstützte Satzzeichen wurden zu _ geändert,
 um sie in Windows speichern zu können.</translation>

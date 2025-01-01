@@ -695,7 +695,7 @@ kas var radīt video zvanu problēmas.</translation>
         <translation>Faila nosaukums satur nederīgas rakstzīmes</translation>
     </message>
     <message>
-        <source>Illegal characters have been changed to _ 
+        <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translation>Nederīgas rakstzīmes tiks aizvietotas ar _
 lai varētu saglabāt failus Windows operētājsistēmā.</translation>

@@ -701,7 +701,7 @@ co może powodować problemy z rozmowami wideo.</translation>
         <translation>Nazwa pliku zawiera niedozwolone znaki</translation>
     </message>
     <message>
-        <source>Illegal characters have been changed to _ 
+        <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translation>Niedozwolone znaki zostały zmienione na _
 więc możesz zapisać ten plik na systemie Windows.</translation>
