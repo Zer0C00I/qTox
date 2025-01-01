@@ -127,7 +127,7 @@ def pr_number() -> int:
     return int(
         api(
             f"/repos/{repository()}/pulls",
-            (("head", f"{actor()}:{head_ref()}"), ),
+            params=(("head", f"{actor()}:{head_ref()}"), ),
         )[0]["number"])
 
 
@@ -216,12 +216,15 @@ class Issue:
         )
 
 
-def milestone_issues(milestone: int) -> list[Issue]:
-    """Get all the issues for a given milestone."""
+def open_milestone_issues(milestone: int) -> list[Issue]:
+    """Get all the open issues for a given milestone."""
     return [
         Issue.fromJSON(i) for i in api(
             f"/repos/{repository()}/issues",
-            (("milestone", milestone), ),
+            params=(
+                ("milestone", milestone),
+                ("state", "open"),
+            ),
         )
     ]
 
@@ -248,6 +251,7 @@ class PullRequest:
     title: str
     body: str
     number: int
+    node_id: str
     html_url: str
     state: str
     head_sha: str
@@ -261,6 +265,7 @@ class PullRequest:
             title=str(pr["title"]),
             body=str(pr["body"]),
             number=int(pr["number"]),
+            node_id=str(pr["node_id"]),
             html_url=str(pr["html_url"]),
             state=str(pr["state"]),
             head_sha=str(pr["head"]["sha"]),
@@ -371,6 +376,7 @@ def checks(commit: str) -> dict[str, CheckRun]:
 @dataclass
 class ActionRun:
     id: int
+    node_id: str
     name: str
     status: str
     conclusion: str
@@ -380,6 +386,7 @@ class ActionRun:
     def fromJSON(run: dict[str, Any]) -> "ActionRun":
         return ActionRun(
             id=int(run["id"]),
+            node_id=str(run["node_id"]),
             name=str(run["name"]),
             status=str(run["status"]),
             conclusion=str(run["conclusion"]),
@@ -458,3 +465,31 @@ def upload_asset(
         params={"name": filename},
     )
     response.raise_for_status()
+
+
+def graphql(query: str) -> Any:
+    """Call the GitHub GraphQL API with the given query."""
+    response = requests.post(
+        f"{api_url()}/graphql",
+        headers={
+            "Accept": "application/json",
+            **auth_headers(required=True),
+        },
+        json={"query": query},
+    )
+    response.raise_for_status()
+    return response.json()["data"]
+
+
+# markPullRequestReadyForReview via graphql
+def mark_ready_for_review(pr_node_id: str) -> None:
+    """Mark a PR as ready for review."""
+    graphql(f"""
+        mutation MarkPrReady {{
+            markPullRequestReadyForReview(input: {{pullRequestId: "{pr_node_id}"}}) {{
+                pullRequest {{
+                    id
+                }}
+            }}
+        }}
+    """)

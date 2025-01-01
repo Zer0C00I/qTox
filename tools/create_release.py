@@ -375,7 +375,7 @@ def stage_production_ready(config: Config, version: str) -> None:
         if config.production:
             m = github.next_milestone()
             issues = [
-                i for i in github.milestone_issues(m.number)
+                i for i in github.open_milestone_issues(m.number)
                 if i.title != release_commit_message(version)
             ]
             if issues:
@@ -394,7 +394,7 @@ def stage_ready_for_review(config: Config, version: str) -> None:
         if not pr:
             raise s.fail("PR not found")
         if pr.draft:
-            github.change_pr(pr.number, {"draft": False})
+            github.mark_ready_for_review(pr.node_id)
             s.ok(f"PR {pr.number} is now ready for review")
         else:
             s.ok(f"PR {pr.number} is already ready for review")
@@ -413,6 +413,7 @@ def stage_await_merged(config: Config, version: str) -> None:
             if pr.state == "closed":
                 if pr.merged:
                     s.ok(f"PR {pr.number} was merged")
+                    git.checkout(config.main_branch)
                     git.pull(config.upstream)
                     return
                 raise s.fail(f"PR {pr.number} was closed without being merged")
