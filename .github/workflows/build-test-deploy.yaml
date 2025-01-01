@@ -285,6 +285,23 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "qTox-nightly-x86_64.AppImage,qTox-nightly-x86_64.AppImage.sha256,qTox-nightly-x86_64.AppImage.zsync"
 
+  test-appimage:
+    name: Test AppImage
+    needs: [build-appimage]
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download artifact from AppImage
+        uses: actions/download-artifact@v4
+        with:
+          name: qTox-${{ github.sha }}-x86_64-AppImage
+      - name: Install AppImage dependencies
+        run: sudo apt-get install -y fuse xvfb
+      - name: Run AppImage
+        run: |
+          chmod +x qTox-*.AppImage
+          xvfb-run --auto-servernum ./qTox-*.AppImage --help
+
   build-android:
     name: Android
     needs: [update-nightly-tag]
@@ -432,6 +449,29 @@ jobs:
           replacesArtifacts: true
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "qTox-nightly.flatpak,qTox-nightly.flatpak.sha256"
+
+  test-flatpak:
+    name: Test Flatpak
+    needs: [build-flatpak]
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download artifact from Flatpak
+        uses: actions/download-artifact@v4
+        with:
+          name: qTox-${{ github.sha }}.x86_64.flatpak
+      - name: Install flatpak runner
+        run: sudo apt-get install -y flatpak
+      - name: Install KDE runtime
+        run: |
+          flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+          flatpak install --user -y --noninteractive flathub org.kde.Platform/x86_64/6.7
+      - name: Install flatpak
+        run: flatpak install --user -y --bundle qtox.flatpak
+      - name: Run flatpak
+        run: flatpak run io.github.qtox.qTox --help
+        env:
+          QT_QPA_PLATFORM: offscreen
 
   build-macos-distributable:
     name: macOS distributable
