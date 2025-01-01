@@ -116,7 +116,7 @@ jobs:
   clang-tidy:
     name: Clang-Tidy
     needs: [validate-pr]
-    if: github.event_name == 'pull_request' || github.event_name == 'schedule'
+    if: github.event_name != 'push'
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
@@ -137,7 +137,7 @@ jobs:
   build-alpine:
     name: Alpine
     needs: [validate-pr]
-    if: github.event_name == 'pull_request' || github.event_name == 'schedule'
+    if: github.event_name != 'push'
     runs-on: ubuntu-22.04
     strategy:
       matrix:
@@ -158,7 +158,7 @@ jobs:
   build-alpine-static:
     name: Alpine (static)
     needs: [validate-pr]
-    if: github.event_name == 'pull_request' || github.event_name == 'schedule'
+    if: github.event_name != 'push'
     runs-on: ubuntu-22.04
     strategy:
       matrix:
@@ -178,7 +178,7 @@ jobs:
   build-debian:
     name: Debian
     needs: [validate-pr]
-    if: github.event_name == 'pull_request' || github.event_name == 'schedule'
+    if: github.event_name != 'push'
     runs-on: ubuntu-22.04
     strategy:
       matrix:
@@ -199,7 +199,7 @@ jobs:
   build-fedora:
     name: Fedora with ASAN
     needs: [validate-pr]
-    if: github.event_name == 'pull_request' || github.event_name == 'schedule'
+    if: github.event_name != 'push'
     runs-on: ubuntu-22.04
     strategy:
       matrix:
@@ -220,7 +220,7 @@ jobs:
   build-ubuntu:
     name: Ubuntu LTS
     needs: [validate-pr]
-    if: github.event_name == 'pull_request' || github.event_name == 'schedule'
+    if: github.event_name != 'push'
     runs-on: ubuntu-22.04
     strategy:
       matrix:
@@ -618,7 +618,7 @@ jobs:
   build-macos-user:
     name: macOS user
     needs: [validate-pr]
-    if: github.event_name == 'pull_request' || github.event_name == 'schedule'
+    if: github.event_name != 'push'
     strategy:
       matrix:
         arch: [arm64, x86_64]
