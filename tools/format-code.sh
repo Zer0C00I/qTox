@@ -2,7 +2,7 @@
 
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Copyright © 2017-2019 by The qTox Project Contributors
-# Copyright © 2024 The TokTok team
+# Copyright © 2024-2025 The TokTok team
 
 # Format all C++ codebase tracked by git using `clang-format`.
 

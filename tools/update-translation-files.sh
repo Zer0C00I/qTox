@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Copyright © 2016 Zetok Zalbavar <zetok@openmailbox.org>
 # Copyright © 2019 by The qTox Project Contributors
-# Copyright © 2024 The TokTok team.
+# Copyright © 2024-2025 The TokTok team.
 
 # Script for updating translation files.  Should be ran after
 # translatable strings are modified.

@@ -2,7 +2,7 @@
 
 # SPDX-License-Identifier: MIT
 # Copyright © 2017-2021 Maxim Biro <nurupo.contributions@gmail.com>
-# Copyright © 2024 The TokTok team.
+# Copyright © 2024-2025 The TokTok team.
 
 # Known issues:
 # - Doesn't build qTox updater, because it wasn't ported to cmake yet and

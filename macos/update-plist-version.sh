@@ -2,7 +2,7 @@
 
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Copyright © 2016-2019 by The qTox Project Contributors
-# Copyright © 2024 The TokTok team
+# Copyright © 2024-2025 The TokTok team
 
 # script to change qTox version in `Info.plist` file to the supplied one
 #
