@@ -3141,8 +3141,9 @@ Hide formatting characters:
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform>%n lời mời nhóm mới</numerusform>
+            <numerusform>%n lời mời hội nghị mới</numerusform>
         </translation>
     </message>
     <message>

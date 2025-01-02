@@ -480,8 +480,9 @@ which may lead to problems with video calls.</source>
     </message>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>準備匯入 %n 個聯絡人，按一下「傳送」進行確認</numerusform>
         </translation>
     </message>
     <message>
@@ -921,8 +922,9 @@ so you can save the file on Windows.</source>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%n 個用戶正在聊天</numerusform>
         </translation>
     </message>
     <message>
@@ -996,8 +998,9 @@ so you can save the file on Windows.</source>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%n 個用戶正在聊天</numerusform>
         </translation>
     </message>
     <message>
@@ -2162,8 +2165,9 @@ Please make sure to enter the same password twice.</source>
     <name>NotificationEdgeWidget</name>
     <message numerus="yes">
         <source>Unread message(s)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>未讀訊息</numerusform>
         </translation>
     </message>
 </context>
@@ -3632,14 +3636,16 @@ Hide formatting characters:
     </message>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%n 個新好友請求</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%n 個新會議邀請</numerusform>
         </translation>
     </message>
     <message>

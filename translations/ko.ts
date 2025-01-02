@@ -469,8 +469,9 @@ which may lead to problems with video calls.</source>
     </message>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%n개의 연락처를 가져올 준비가 되었습니다. 보내기를 클릭하여 확인하세요.</numerusform>
         </translation>
     </message>
     <message>
@@ -889,8 +890,9 @@ so you can save the file on Windows.</source>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%n명의 사용자가 채팅 중입니다.</numerusform>
         </translation>
     </message>
     <message>
@@ -964,8 +966,9 @@ so you can save the file on Windows.</source>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%n명의 사용자가 채팅 중입니다.</numerusform>
         </translation>
     </message>
     <message>
@@ -2121,8 +2124,9 @@ Please make sure to enter the same password twice.</source>
     <name>NotificationEdgeWidget</name>
     <message numerus="yes">
         <source>Unread message(s)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>읽지 않은 메시지</numerusform>
         </translation>
     </message>
 </context>
@@ -3590,14 +3594,16 @@ Hide formatting characters:
     </message>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%n개의 새 친구 요청</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%n개의 새 회의 초대</numerusform>
         </translation>
     </message>
     <message>

@@ -856,8 +856,9 @@ Windows にファイルを保存できるようになります。</translation>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%n 人のユーザーがチャット中</numerusform>
         </translation>
     </message>
     <message>
@@ -923,8 +924,9 @@ Windows にファイルを保存できるようになります。</translation>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%n 人のユーザーがチャット中</numerusform>
         </translation>
     </message>
     <message>
@@ -3270,14 +3272,16 @@ Hide formatting characters:
     </message>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%n 件の新しい友達リクエスト</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%n 件の新しい会議への招待</numerusform>
         </translation>
     </message>
     <message>

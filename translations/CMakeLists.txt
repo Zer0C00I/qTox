@@ -33,6 +33,7 @@ qt6_add_translation(
   jbo.ts
   kn.ts
   ko.ts
+  li.ts
   lt.ts
   lv.ts
   mk.ts

@@ -844,8 +844,9 @@ so you can save the file on Windows.</source>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%n کاربر در گپ</numerusform>
         </translation>
     </message>
     <message>
@@ -909,8 +910,9 @@ so you can save the file on Windows.</source>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%n کاربر در گپ</numerusform>
         </translation>
     </message>
     <message>
@@ -3224,14 +3226,16 @@ Hide formatting characters:
     </message>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%n درخواست دوستی جدید</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%n دعوت(های) کنفرانس جدید</numerusform>
         </translation>
     </message>
     <message>

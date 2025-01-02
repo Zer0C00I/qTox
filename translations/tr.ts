@@ -3134,8 +3134,9 @@ Hide formatting characters:
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform>%n yeni grup daveti</numerusform>
+            <numerusform>%n yeni konferans daveti</numerusform>
         </translation>
     </message>
     <message>

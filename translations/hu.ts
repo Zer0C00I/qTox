@@ -843,8 +843,9 @@ so you can save the file on Windows.</source>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%n felhasználó a csevegésben</numerusform>
         </translation>
     </message>
     <message>
@@ -908,8 +909,9 @@ so you can save the file on Windows.</source>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%n felhasználó a csevegésben</numerusform>
         </translation>
     </message>
     <message>
@@ -3215,14 +3217,16 @@ Hide formatting characters:
     </message>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%n új baráti kérés</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%n új konferenciameghívás</numerusform>
         </translation>
     </message>
     <message>

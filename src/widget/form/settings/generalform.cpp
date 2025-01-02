@@ -49,6 +49,7 @@ const QStringList locales = {
     "jbo",     // Lojban
     "kn",      // Kannada
     "ko",      // Korean
+    "li",      // Limburgish
     "lt",      // Lithuanian
     "lv",      // Latvian
     "mk",      // Macedonian
@@ -182,11 +183,13 @@ GeneralForm::GeneralForm(Settings& settings_, Style& style)
     for (int i = 0; i < locales.size(); ++i) {
         QString langName;
 
-        if (locales[i].startsWith(QLatin1String("jbo")))
+        if (locales[i].startsWith(QLatin1String("jbo"))) {
             langName = QLatin1String("Lojban");
-        else if (locales[i].startsWith(QLatin1String("pr")))
+        } else if (locales[i].startsWith(QLatin1String("li"))) {
+            langName = QLatin1String("Limburgs");
+        } else if (locales[i].startsWith(QLatin1String("pr"))) {
             langName = QLatin1String("Pirate");
-        else {
+        } else {
             const QLocale locale{locales[i]};
             if (!QFontDatabase::families(writingSystem(locale.script())).isEmpty())
                 langName = locale.nativeLanguageName();

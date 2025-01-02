@@ -38,6 +38,8 @@ LANGUAGES = (
     "hu",
     "is",
     "it",
+    # Limburgish needs hand-holding as well.
+    # "li",
     "lt",
     "lv",
     "ko",
@@ -253,11 +255,18 @@ def _need_translation(lang: str, source: str,
         # Skip messages with translator comments. These are probably
         # not meant to be translated.
         return []
+    if translation[0].getAttribute("type") != "unfinished":
+        return []
+    # If the translation node has 1 <numerusform> child, and it's empty,
+    # return it.
+    numerusform = translation[0].getElementsByTagName("numerusform")
+    if len(numerusform) == 1 and not numerusform[0].firstChild:
+        return numerusform
     # If the translation node text is empty, fill it in using the
     # translation of source. This is done for all translations that
     # are marked as "unfinished". If they are not marked as
     # "unfinished", empty is assumed to be intentional.
-    if translated or translation[0].getAttribute("type") != "unfinished":
+    if translated:
         return []
     return translation
 
@@ -299,9 +308,6 @@ def _translate_ts_file(file: str) -> None:
         with open(file, "w") as f:
             dom.writexml(f)
         for i, (source, translation) in enumerate(todo):
-            # Set the type attribute to "unfinished" to indicate that the
-            # translation is not complete (it was automated).
-            translation.setAttribute("type", "unfinished")
             # Clear the translation node of any existing text.
             for child in translation.childNodes:
                 translation.removeChild(child)
