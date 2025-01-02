@@ -12,7 +12,9 @@ from typing import Any
 import requests
 from lib import stage
 
-LANGUAGES = (
+_VALIDATE_LANG = False
+
+_LANGUAGES: tuple[str | tuple[str, str], ...] = (
     "ar",
     "be",
     # Tamazight is a bit broken in lupdate.
@@ -28,7 +30,7 @@ LANGUAGES = (
     "et",
     "ja",
     # Supported by Baidu, but needs hand-holding, so not enabled by default.
-    # "jbo",
+    # ("jbo", "loj"),
     "fa",
     "fi",
     "fr",
@@ -38,14 +40,13 @@ LANGUAGES = (
     "hu",
     "is",
     "it",
-    # Limburgish needs hand-holding as well.
-    # "li",
     "lt",
     "lv",
     "ko",
     "kn",
     "mk",
     "nl",
+    ("nl_LI", "li"),
     "nb_NO",
     "pl",
     "pt",
@@ -69,7 +70,17 @@ LANGUAGES = (
     "zh_TW",
 )
 
+_LANGUAGES_BAIDU = ("jbo", )
+
 LOCK = multiprocessing.Lock()
+
+
+def _file(lang: str | tuple[str, str]) -> str:
+    return lang if isinstance(lang, str) else lang[0]
+
+
+def _lang(lang: str | tuple[str, str]) -> str:
+    return lang if isinstance(lang, str) else lang[1]
 
 
 @memoize
@@ -209,20 +220,21 @@ def _baidu_translate(lang: str, text: str) -> str:
     return attempt
 
 
-def _translate(lang: str, current: int, total: int, text: str) -> str:
+def _translate(lang: str | tuple[str, str], current: int, total: int,
+               text: str) -> str:
     """Uses the Google Translate API to translate text to a given language.
 
     The source language is English.
     """
-    _progress_ts(lang, current, total, text)
-    if lang == "jbo":
-        return _fix_translation(text, _baidu_translate("loj", text))
+    _progress_ts(_lang(lang), current, total, text)
+    if lang in _LANGUAGES_BAIDU:
+        return _fix_translation(text, _baidu_translate(_lang(lang), text))
     response = requests.get(
         "https://translate.googleapis.com/translate_a/single",
         params={
             "client": "gtx",
             "sl": "en",
-            "tl": lang,
+            "tl": _lang(lang),
             "dt": "t",
             "q": text,
         },
@@ -231,8 +243,7 @@ def _translate(lang: str, current: int, total: int, text: str) -> str:
     return _fix_translation(text, "".join([x[0] for x in response.json()[0]]))
 
 
-def _need_translation(lang: str, source: str,
-                      message: minidom.Element) -> list[Any]:
+def _need_translation(source: str, message: minidom.Element) -> list[Any]:
     translation = message.getElementsByTagName("translation")
     if not translation:
         return []
@@ -271,7 +282,7 @@ def _need_translation(lang: str, source: str,
     return translation
 
 
-def _translate_ts_file(file: str) -> None:
+def _translate_ts_file(lang: str | tuple[str, str], file: str) -> None:
     """Fill in the untranslated translations in a .ts file.
 
     Doesn't touch anything other than completely empty translations. Empty
@@ -280,16 +291,19 @@ def _translate_ts_file(file: str) -> None:
     with open(file, "r") as f:
         dom = minidom.parse(f)  # nosec
     todo = []
-    # <TS version="2.1" language="es_MX">
-    lang = dom.getElementsByTagName("TS")[0].getAttribute("language")
-    if not lang:
-        raise ValueError(f"No language attribute found in TS file {file}")
+    if _VALIDATE_LANG:
+        ts_lang = dom.getElementsByTagName("TS")[0].getAttribute("language")
+        if not ts_lang:
+            raise ValueError(f"No language attribute found in TS file {file}")
+        if ts_lang != _lang(lang):
+            raise ValueError(f"Language mismatch in TS file {file}: "
+                             f"{ts_lang} != {_lang(lang)}")
     for context in dom.getElementsByTagName("context"):
         for message in context.getElementsByTagName("message"):
             source = message.getElementsByTagName("source")[0].firstChild
             if not isinstance(source, minidom.Text):
                 continue
-            translation = _need_translation(lang, source.data, message)
+            translation = _need_translation(source.data, message)
             if not translation:
                 continue
             todo.append((source.data, translation[0]))
@@ -321,7 +335,7 @@ def _translate_ts_file(file: str) -> None:
     finally:
         # Run lupdate for formatting, even if the process is interrupted.
         _progress_ts(
-            lang,
+            _lang(lang),
             len(todo),
             len(todo),
             subprocess.check_output(  # nosec
@@ -340,14 +354,14 @@ def _translate_ts_file(file: str) -> None:
         )
 
 
-def _translate_language(lang: str) -> None:
+def _translate_language(lang: str | tuple[str, str]) -> None:
     """Translate the strings in the .ts files for a given language."""
-    _translate_ts_file(f"translations/{lang}.ts")
+    _translate_ts_file(lang, f"translations/{_file(lang)}.ts")
 
 
 def main():
     with multiprocessing.Pool() as pool:
-        pool.map(_translate_language, LANGUAGES)
+        pool.map(_translate_language, _LANGUAGES)
     _progress_done("Translation done.")
 
 

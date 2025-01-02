@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="li">
+<TS version="2.1" language="nl_LI">
 <context>
     <name>AVForm</name>
     <message>
@@ -536,6 +536,7 @@ wat kin leie tot probleme mit videogesprekke.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
             <numerusform>Klaor um %n kontak(e) te importere, klik op sjikke um te bevestige</numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -997,6 +998,7 @@ zodet geer ut bestand op Windows kin opsjlaon.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
             <numerusform>%n gebruker(s) in de chat</numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -1075,6 +1077,7 @@ zodet geer ut bestand op Windows kin opsjlaon.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
             <numerusform>%n gebruker(s) in de chat</numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -2285,6 +2288,7 @@ Geer wilt mesjiens d’r ein make.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
             <numerusform>Ongeleze boodsjap(e)</numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -3717,6 +3721,7 @@ Opmaakteikens verberge:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
             <numerusform>%n nuie vrundsverzoek(e)</numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -3724,6 +3729,7 @@ Opmaakteikens verberge:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
             <numerusform>%n nuie conferentie-uitnodiging(e)</numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
