@@ -515,8 +515,9 @@ which may lead to problems with video calls.</source>
     </message>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>ⵀⴻⴳⴳⴰⴷ ⵉ ⵓⵙⴻⴽⵛⴻⵎ ⵏ %ⵏ ⵏ ⵢⵉⵎⴷⴰⵏⴻⵏ, ⵜⵜⴻⴽⵙⴻⴹ ⴰⵣⴻⵏ ⵉⵡⴰⴽⴽⴻⵏ ⴰⴷ ⵜⵜⴻⵙⵙⴻⴽⵏⴻⴹ</numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
@@ -963,8 +964,9 @@ so you can save the file on Windows.</source>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%ⵏ ⴰⵙⴻⵇⴷⴰⵛ (ⵏ) ⴷⴻⴳ ⵓⵎⴻⵙⵍⴰⵢ</numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
@@ -1041,8 +1043,9 @@ so you can save the file on Windows.</source>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%ⵏ ⴰⵙⴻⵇⴷⴰⵛ (ⵏ) ⴷⴻⴳ ⵓⵎⴻⵙⵍⴰⵢ</numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
@@ -2236,8 +2239,9 @@ Please make sure to enter the same password twice.</source>
     <name>NotificationEdgeWidget</name>
     <message numerus="yes">
         <source>Unread message(s)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>ⵉⵣⴻⵏ (ⵏ) ⵓⵔ ⵢⴻⵜⵜⵡⴰⵖⵔⴻⵏ ⴰⵔⴰ</numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
@@ -3730,15 +3734,17 @@ Hide formatting characters:
     </message>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%ⵏ ⴰⵙⵓⵜⴻⵔ (ⵏ) ⵏ ⵓⵎⴻⴷⴷⴰⴽⴻⵍ ⴰⵎⴰⵢⵏⵓⵜ</numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%ⵏ ⴰⵄⵔⴰⴹ ⵏ ⵓⵙⴰⵔⴰⴳ ⴰⵎⴰⵢⵏⵓⵜ</numerusform>
             <numerusform></numerusform>
         </translation>
     </message>

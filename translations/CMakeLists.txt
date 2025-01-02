@@ -17,7 +17,6 @@ qt6_add_translation(
   de.ts
   el.ts
   en.ts
-  en_PR.ts
   eo.ts
   es.ts
   et.ts
@@ -34,14 +33,15 @@ qt6_add_translation(
   jbo.ts
   kn.ts
   ko.ts
+  li.ts
   lt.ts
   lv.ts
   mk.ts
   nb_NO.ts
   nl.ts
   nl_BE.ts
-  nl_LI.ts
   pl.ts
+  pr.ts
   pt_BR.ts
   pt.ts
   ro.ts

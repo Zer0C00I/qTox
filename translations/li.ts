@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="nl_LI">
+<TS version="2.1" language="li">
 <context>
     <name>AVForm</name>
     <message>

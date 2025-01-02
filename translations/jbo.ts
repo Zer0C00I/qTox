@@ -526,9 +526,9 @@ so&apos;o roi lo nu do jungau cu na banzu xamgu lo ka zgana lo nu zgana lo vidni
     </message>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>pare lo nu samterci&apos;egau %n benji</numerusform>
         </translation>
     </message>
     <message>
@@ -975,9 +975,9 @@ e&apos;u do ka&apos;e sfaile lo nu sfaile bu&apos;u la .Windows.zoi ke&apos;a nu
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n pilno (bu&apos;u/ne&apos;i) lo nu casnu</numerusform>
         </translation>
     </message>
     <message>
@@ -1052,9 +1052,9 @@ e&apos;u do ka&apos;e sfaile lo nu sfaile bu&apos;u la .Windows.zoi ke&apos;a nu
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n pilno (bu&apos;u/ne&apos;i) lo nu casnu</numerusform>
         </translation>
     </message>
     <message>
@@ -2245,9 +2245,9 @@ Please make sure to enter the same password twice.</source>
     <name>NotificationEdgeWidget</name>
     <message numerus="yes">
         <source>Unread message(s)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>nalseltcidu notci</numerusform>
         </translation>
     </message>
 </context>
@@ -3745,16 +3745,16 @@ e.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</translation>
     </message>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>pa %n cnino pendo (cu) cpedu</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>ne&apos;i %n cnino nunvitke</numerusform>
         </translation>
     </message>
     <message>

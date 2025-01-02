@@ -77,27 +77,27 @@ Take heed, fer higher qualities demand clearer skies.If yer seas are stormy, yer
     </message>
     <message>
         <source>Audio quality</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Singin&apos; quality</translation>
     </message>
     <message>
         <source>High (64 kBps)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aye-Aye (64 kBps)</translation>
     </message>
     <message>
         <source>Medium (32 kBps)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aye (32 kBps)</translation>
     </message>
     <message>
         <source>Low (16 kBps)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nay (16 kBps)</translation>
     </message>
     <message>
         <source>Very low (8 kBps)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Shiver me timbers (8 kBps)</translation>
     </message>
     <message>
         <source>Threshold</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">When ta start</translation>
     </message>
     <message>
         <source>Use slider to set the volume of your speakers.</source>
@@ -105,7 +105,7 @@ Take heed, fer higher qualities demand clearer skies.If yer seas are stormy, yer
     </message>
     <message>
         <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to reduce bandwidth usage.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Transmitted singin&apos; quality. Lower this settin&apos; if yer bandwidth ain&apos;t high enough or if ye want ta reduce bandwidth usage.</translation>
     </message>
     <message>
         <source>Set resolution of your camera.
@@ -113,19 +113,23 @@ The higher values, the better video quality your friends may get.
 Note that with better video quality, you use more bandwidth.
 Sometimes your connection may not be good enough to handle higher video quality,
 which may lead to problems with video calls.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Command th&apos; quality o&apos; yer scryin.
+
+The higher th&apos; number, the better th&apos; view fer yer hearties.
+
+Take heed, fer higher qualities demand clearer skies and use more bandwidth. If yer seas are stormy, yer scryin&apos; will suffer.</translation>
     </message>
     <message>
         <source>Play a test sound while changing the output volume.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Play a test sound while changin&apos; the output loudness.</translation>
     </message>
     <message>
         <source>Use slider to set the gain of your input device ranging from %1dB to %2dB.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Use slider ta set the gain o&apos; yer input device rangin&apos; from %1dB ta %2dB.</translation>
     </message>
     <message>
         <source>Use slider to set the activation volume for your input device.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Use slider ta set the activation loudness fer yer input device.</translation>
     </message>
 </context>
 <context>
@@ -186,7 +190,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">This version o&apos; qTox be bein&apos; maintained by th&apos; TokTok crew followin&apos; th&apos; archivin&apos; o&apos; th&apos; original qTox project.</translation>
     </message>
 </context>
 <context>
@@ -233,7 +237,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Auto-accept invites from this matey.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -253,23 +257,23 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">This be the public key o&apos; yer matey, use it ta verify their identity via another channel. Ye can&apos;t send this ta other people so they can add this contact.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Key o&apos; th&apos; Seven Seas (not ToxID):</translation>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aye or Nay</translation>
     </message>
     <message>
         <source>Are you sure to remove %1 chat history?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Be ye sure ye want ta burn all yer letters with %1?</translation>
     </message>
     <message>
         <source>Failed to remove chat history with %1!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Failed ta burn letters with %1!</translation>
     </message>
     <message>
         <source>Auto-accept files</source>
@@ -285,7 +289,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Auto-accept invites aboard</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
@@ -294,7 +298,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Choose an auto-accept directory</source>
         <extracomment>popup title</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pick a chest fer auto-acceptin&apos; parcels</translation>
     </message>
 </context>
 <context>
@@ -317,19 +321,19 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Open update download link</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fetch th&apos; update</translation>
     </message>
     <message>
         <source>Update available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">New charts available</translation>
     </message>
     <message>
         <source>qTox is up to date ✓</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qTox be up ta date ✓</translation>
     </message>
     <message>
         <source>Currently running an untested/unstable version of qTox</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Currently runnin&apos; an untested/unstable version o&apos; qTox</translation>
     </message>
 </context>
 <context>
@@ -385,24 +389,24 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Open contact list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Open crew list</translation>
     </message>
     <message>
         <source>Couldn&apos;t open file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Couldn&apos;t pry open th&apos; chest</translation>
     </message>
     <message>
         <source>Couldn&apos;t open the contact file</source>
         <extracomment>Error message when trying to open a contact list file to import</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Couldn&apos;t open th&apos; contact file</translation>
     </message>
     <message>
         <source>Invalid file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Spoiled goods</translation>
     </message>
     <message>
         <source>We couldn&apos;t find any contacts to import in this file!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">We couldn&apos;t find any contacts ta import in this file!</translation>
     </message>
     <message>
         <source>Tox ID</source>
@@ -417,11 +421,11 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Open</source>
         <extracomment>Button to choose a file with a list of contacts to import</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Unseal</translation>
     </message>
     <message>
         <source>Send friend requests</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Send matey requests</translation>
     </message>
     <message>
         <source>%1 here! Tox me maybe?</source>
@@ -430,7 +434,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Import a list o&apos; contacts, one Tox ID per line</translation>
     </message>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
@@ -441,7 +445,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Import contacts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Import mateys</translation>
     </message>
     <message>
         <source>Tox ID, 76 hexadecimal characters</source>
@@ -450,12 +454,12 @@ which may lead to problems with video calls.</source>
     <message>
         <source>%1 Tox ID is invalid</source>
         <comment>Tox address error</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 Tox ID be invalid</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">76 hex-a-dessamull characters</translation>
     </message>
 </context>
 <context>
@@ -502,7 +506,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Changes here are applied only after restarting qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Changes here be applied only after restartin&apos; qTox.</translation>
     </message>
     <message>
         <source>Save file</source>
@@ -531,42 +535,44 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Enable IPv6 (best be doin&apos; this)</translation>
     </message>
     <message>
         <source>Enable UDP (recommended)</source>
         <extracomment>Text on checkbox to disable UDP</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Enable UDP (aye, do it)</translation>
     </message>
     <message>
         <source>Proxy type:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Type o&apos; yer middleman:</translation>
     </message>
     <message>
         <source>Address:</source>
         <extracomment>Text on proxy addr label</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Where ye be stayin&apos;:</translation>
     </message>
     <message>
         <source>Port:</source>
         <extracomment>Text on proxy port label</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Where th&apos; ships come in:</translation>
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nary a one</translation>
     </message>
     <message>
         <source>SOCKS5</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">SOCKS5</translation>
     </message>
     <message>
         <source>HTTP</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">HTTP</translation>
     </message>
     <message>
         <source>Debug</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Squash th&apos; bugs</translation>
     </message>
     <message>
         <source>Export Debug Log</source>
@@ -578,15 +584,15 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Enable LAN discovery</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Find other ships nearby</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Enable Debug Tools (fer th&apos; shipwrights only)</translation>
     </message>
     <message>
         <source>Connection settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">How ye connect</translation>
     </message>
     <message>
         <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
@@ -598,51 +604,51 @@ which may lead to problems with video calls.</source>
     <name>AppManager</name>
     <message>
         <source>Tox URI to parse</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tox URI ta parse</translation>
     </message>
     <message>
         <source>Starts new instance and loads specified profile.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Starts new instance &apos;n loads specified profile.</translation>
     </message>
     <message>
         <source>profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">yer face</translation>
     </message>
     <message>
         <source>Starts new instance and opens the login screen.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Starts new instance &apos;n opens th&apos; login screen.</translation>
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default be ON.</translation>
     </message>
     <message>
         <source>on/off</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">hoist/lower</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sets UDP &lt;on&gt;/&lt;off&gt;. Default be ON.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default be ON.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sets proxy settings. Default be NONE.</translation>
     </message>
     <message>
         <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">(SOCKS5/HTTP/NONE):(WHERE YE BE GOIN&apos;):(WHERE TH&apos; SHIPS COME IN)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Shiver me timbers!</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Failed ta load profile automatically.</translation>
     </message>
 </context>
 <context>
@@ -687,12 +693,13 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Filename contained illegal characters</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filename be cursed with foul symbols</translation>
     </message>
     <message>
         <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Foul symbols have been banished &apos;n&apos; replaced with _
+so ye can stash th&apos; file on Windows.</translation>
     </message>
 </context>
 <context>
@@ -715,7 +722,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Accept audio call</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Answer th&apos; call</translation>
     </message>
     <message>
         <source>Can&apos;t start video call</source>
@@ -735,23 +742,23 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Accept video call</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Answer th&apos; scryin&apos;</translation>
     </message>
     <message>
         <source>Sound can be disabled only during a call</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sound can be disabled only durin&apos; a call</translation>
     </message>
     <message>
         <source>Unmute call</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Uncork yer ears</translation>
     </message>
     <message>
         <source>Mute call</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Plug yer ears</translation>
     </message>
     <message>
         <source>Microphone can be muted only during a call</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Microphone can be muted only durin&apos; a call</translation>
     </message>
     <message>
         <source>Unmute microphone</source>
@@ -817,48 +824,48 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>mute</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">silence</translation>
     </message>
     <message>
         <source>unmute</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">give tongue</translation>
     </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Crews</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Form new crew</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Crew invites</translation>
     </message>
 </context>
 <context>
     <name>ConferenceInviteWidget</name>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Invited by %1 on th&apos; %2 at %3.</translation>
     </message>
     <message>
         <source>Join</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Come aboard</translation>
     </message>
     <message>
         <source>Decline</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nay</translation>
     </message>
 </context>
 <context>
     <name>ConferenceWidget</name>
     <message>
         <source>Set title...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Name it...</translation>
     </message>
     <message>
         <source>Open chat in new window</source>
@@ -871,7 +878,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Quit conference</source>
         <comment>Menu to quit a conference</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Abandon ship</translation>
     </message>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -898,12 +905,12 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Crew %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">False colors</translation>
     </message>
     <message>
         <source>You need to write a message with your request</source>
@@ -925,22 +932,22 @@ so you can save the file on Windows.</source>
     <name>DebugLog</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Captain&apos;s Log o&apos; Bugs</translation>
     </message>
     <message>
         <source>Auto-reload</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Reload o&apos;itself</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Scroll o&apos;itself</translation>
     </message>
 </context>
 <context>
     <name>DebugLogForm</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Captain&apos;s Log o&apos; Bugs</translation>
     </message>
 </context>
 <context>
@@ -948,22 +955,22 @@ so you can save the file on Windows.</source>
     <message>
         <source>Form</source>
         <translatorcomment>Ausgelassen</translatorcomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Shape</translation>
     </message>
     <message>
         <source>10Mb</source>
         <translatorcomment>Ausgelassen</translatorcomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">10 Meg</translation>
     </message>
     <message>
         <source>0kb/s</source>
         <translatorcomment>Ausgelassen</translatorcomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nothin&apos; comin&apos; in</translation>
     </message>
     <message>
         <source>ETA:10:10</source>
         <translatorcomment>Ausgelassen</translatorcomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Time o&apos; Arrival: 10:10</translation>
     </message>
     <message>
         <source>Filename</source>
@@ -1032,7 +1039,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Remote paused</source>
         <comment>file transfer widget</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">They put it on hold</translation>
     </message>
 </context>
 <context>
@@ -1071,7 +1078,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Never</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Not in this lifetime</translation>
     </message>
     <message>
         <source>Older than 6 months</source>
@@ -1164,14 +1171,14 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Blocked</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Marooned</translation>
     </message>
 </context>
 <context>
     <name>GeneralForm</name>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Th&apos; Whole Ship</translation>
     </message>
     <message>
         <source>Choose an auto accept directory</source>
@@ -1180,18 +1187,18 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>%1 (no fonts)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 (no fancy letters)</translation>
     </message>
 </context>
 <context>
     <name>GeneralSettings</name>
     <message>
         <source>General Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ship-wide Settings</translation>
     </message>
     <message>
         <source>The translation may not load until qTox restarts.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Th&apos; translation may not load until qTox restarts.</translation>
     </message>
     <message>
         <source>Language:</source>
@@ -1199,16 +1206,16 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Show system tray icon</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Show th&apos; ship in th&apos; tray</translation>
     </message>
     <message>
         <source>Enable light tray icon.</source>
         <comment>toolTip for light icon setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Make th&apos; tray icon bright.</translation>
     </message>
     <message>
         <source>Light icon</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Shiny icon</translation>
     </message>
     <message>
         <source>qTox will start minimized in tray.</source>
@@ -1221,11 +1228,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Close to tray</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Close ta tray</translation>
     </message>
     <message>
         <source>Minimize to tray</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Minimize ta tray</translation>
     </message>
     <message>
         <source>Autostart</source>
@@ -1233,7 +1240,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Set where files will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Choose th&apos; hold fer yer files.</translation>
     </message>
     <message>
         <source>Autoaccept files</source>
@@ -1241,23 +1248,23 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Set to 0 to disable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Set ta 0 ta disable</translation>
     </message>
     <message>
         <source>Your status is changed to Away after set period of inactivity.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Yer status be changed ta Away after set period o&apos; inactivity.</translation>
     </message>
     <message>
         <source>Auto away after (0 to disable):</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Auto away after (0 ta disable):</translation>
     </message>
     <message>
         <source>Show contacts&apos; status changes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Show mateys&apos; status changes</translation>
     </message>
     <message>
         <source>Start qTox on operating system startup (current profile).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Start qTox on operatin&apos; system startup (current profile).</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
@@ -1265,40 +1272,40 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Check for updates</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Check fer updates</translation>
     </message>
     <message>
         <source>Spell checking</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Spell checkin&apos;</translation>
     </message>
     <message>
         <source>Max autoaccept file size (0 to disable):</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Max autoaccept file size (0 ta disable):</translation>
     </message>
     <message>
         <source> MB</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> Mega-bytes</translation>
     </message>
     <message>
         <source>After pressing minimize (_) qTox will minimize to tray,
 instead of system taskbar.</source>
         <comment>toolTip for minimize to tray setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">When ye hit minimize (_), qTox will shrink ta th&apos; tray, not th&apos; taskbar.</translation>
     </message>
     <message>
         <source>After pressing close (X) qTox will close to tray,
 instead of closing entirely.</source>
         <comment>toolTip for close to tray setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">When ye hit close (X), qTox will hide in th&apos; tray, not disappear entirely.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Announce when a matey joins or leaves a gatherin&apos;</translation>
     </message>
     <message>
         <source>You can set this on a per-friend basis by right clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ye can set this fer each matey by right clickin&apos; &apos;em.</translation>
     </message>
 </context>
 <context>
@@ -1309,43 +1316,43 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Smileys</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Grinnin&apos; Faces</translation>
     </message>
     <message>
         <source>Send file(s)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Send treasure chest(s)</translation>
     </message>
     <message>
         <source>Send a screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Send a spyglass view</translation>
     </message>
     <message>
         <source>Save chat log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Save th&apos; messages</translation>
     </message>
     <message>
         <source>Clear displayed messages</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Scrub th&apos; slate clean</translation>
     </message>
     <message>
         <source>Quote selected text</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Parrot th&apos; chosen words</translation>
     </message>
     <message>
         <source>Copy link address</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Copy th&apos; location</translation>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aye or Nay</translation>
     </message>
     <message>
         <source>Search in text</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seek &apos;n&apos; ye shall find</translation>
     </message>
     <message>
         <source>Go to current date</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Go to this day</translation>
     </message>
     <message>
         <source>Load chat history...</source>
@@ -1353,18 +1360,18 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Export to file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Send to a file</translation>
     </message>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Be ye sure ye want ta scrub all th&apos; messages?</translation>
     </message>
 </context>
 <context>
     <name>IdentitySettings</name>
     <message>
         <source>Public Information</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">News fer All</translation>
     </message>
     <message>
         <source>Tox ID</source>
@@ -1372,412 +1379,416 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Your Tox ID (click to copy)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Yer Tox ID (click ta copy)</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Yer Mug</translation>
     </message>
     <message>
         <source>Rename profile.</source>
         <comment>tooltip for renaming profile button</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Change yer name.</translation>
     </message>
     <message>
         <source>Go back to the login screen</source>
         <comment>tooltip for logout button</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Go back ta th&apos; entryway</translation>
     </message>
     <message>
         <source>Logout</source>
         <comment>import profile button</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Abandon ship</translation>
     </message>
     <message>
         <source>Remove password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Toss th&apos; key overboard</translation>
     </message>
     <message>
         <source>Change password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Change th&apos; combination</translation>
     </message>
     <message>
         <source>This QR code contains your Tox ID. You may share this with your friends as well.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">This QR code holds yer Tox ID. Share it with yer hearties.</translation>
     </message>
     <message>
         <source>Save image</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Stash th&apos; image</translation>
     </message>
     <message>
         <source>Copy image</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Duplicate th&apos; image</translation>
     </message>
     <message>
         <source>Rename</source>
         <comment>rename profile button</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rechristen</translation>
     </message>
     <message>
         <source>Delete profile.</source>
         <comment>delete profile button tooltip</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Drown yer profile.</translation>
     </message>
     <message>
         <source>Allows you to export your Tox profile to a file.
 Profile does not contain your history.</source>
         <comment>tooltip for profile exporting button</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lets ye send yer Tox face ta a file.
+Don&apos;t be holdin&apos; yer past deeds.</translation>
     </message>
     <message>
         <source>Export</source>
         <comment>export profile button</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Send away</translation>
     </message>
     <message>
         <source>Delete</source>
         <comment>delete profile button</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Make it walk th&apos; plank</translation>
     </message>
     <message>
         <source>Remove your password and encryption from your profile.</source>
         <comment>Tooltip for the `Remove password` button.</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Remove yer password &apos;n&apos; secrecy from yer profile.</translation>
     </message>
     <message>
         <source>Name input</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Where ye put yer name</translation>
     </message>
     <message>
         <source>Name visible to contacts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Name shown ta yer hearties</translation>
     </message>
     <message>
         <source>Status message input</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Where ye write yer status</translation>
     </message>
     <message>
         <source>Status message visible to contacts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Status message shown ta yer hearties</translation>
     </message>
     <message>
         <source>Your Tox ID</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Yer Tox ID</translation>
     </message>
     <message>
         <source>Save QR image as file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Save QR image as a file</translation>
     </message>
     <message>
         <source>Copy QR image to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Copy QR image ta clipboard</translation>
     </message>
     <message>
         <source>Rename profile.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Change yer name.</translation>
     </message>
     <message>
         <source>Delete profile.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Drown yer profile.</translation>
     </message>
     <message>
         <source>Export profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Send away yer profile</translation>
     </message>
     <message>
         <source>Remove password from profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Remove password from yer face</translation>
     </message>
     <message>
         <source>Change profile password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Change yer face&apos;s password</translation>
     </message>
     <message>
         <source>My name:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Me Name:</translation>
     </message>
     <message>
         <source>My status:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Me Status:</translation>
     </message>
     <message>
         <source>My profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Me Mug</translation>
     </message>
     <message>
         <source>This ID allows other Tox users to add and contact you.
 Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">This ID lets other Tox users add &apos;n&apos; contact ye.
+Share it with yer mateys ta start jawin&apos;.</translation>
     </message>
 </context>
 <context>
     <name>LoadHistoryDialog</name>
     <message>
         <source>Load history dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Load past messages</translation>
     </message>
     <message>
         <source>Load history from:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Load th&apos; logbook from:</translation>
     </message>
 </context>
 <context>
     <name>LoginScreen</name>
     <message>
         <source>Username:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pirate Name:</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Secret Word:</translation>
     </message>
     <message>
         <source>Confirm:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aye, that be it:</translation>
     </message>
     <message>
         <source>Password strength: %p%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Strength o&apos; yer secret word: %p%</translation>
     </message>
     <message>
         <source>Create Profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Forge a Profile</translation>
     </message>
     <message>
         <source>If the profile does not have a password, qTox can skip the login screen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">If th&apos; profile ain&apos;t got no password, qTox can skip th&apos; login screen</translation>
     </message>
     <message>
         <source>Load automatically</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Load without askin&apos;</translation>
     </message>
     <message>
         <source>Load</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bring it aboard</translation>
     </message>
     <message>
         <source>Load Profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bring yer face aboard</translation>
     </message>
     <message>
         <source>New Profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">New Face</translation>
     </message>
     <message>
         <source>Couldn&apos;t create a new profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Couldn&apos;t forge a new face</translation>
     </message>
     <message>
         <source>The username must not be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ye gotta have a name, matey.</translation>
     </message>
     <message>
         <source>The password must be at least 6 characters long.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Th&apos; password needs at least 6 symbols.</translation>
     </message>
     <message>
         <source>A profile with this name already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">That name be already taken.</translation>
     </message>
     <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Profiles with passwords can&apos;t load themselves.</translation>
     </message>
     <message>
         <source>Couldn&apos;t load profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Couldn&apos;t load yer face</translation>
     </message>
     <message>
         <source>There is no selected profile.
 
 You may want to create one.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">There be no face chosen.
+
+Best make one.</translation>
     </message>
     <message>
         <source>Couldn&apos;t load this profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Couldn&apos;t load this face</translation>
     </message>
     <message>
         <source>This profile is already in use.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">This face be already used.</translation>
     </message>
     <message>
         <source>Wrong password.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Wrong secret word.</translation>
     </message>
     <message>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bring from elsewhere</translation>
     </message>
     <message>
         <source>Username input field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Where ye type yer pirate name</translation>
     </message>
     <message>
         <source>Password input field, you can leave it empty (no password), or type at least 6 characters</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Where ye type yer secret word, leave it empty if ye want, or put at least 6 symbols</translation>
     </message>
     <message>
         <source>Password confirmation field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Type yer secret word again, just ta be sure</translation>
     </message>
     <message>
         <source>Create a new profile button</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Make a new face button</translation>
     </message>
     <message>
         <source>Profile list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">List o&apos; faces</translation>
     </message>
     <message>
         <source>List of profiles</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">All yer faces</translation>
     </message>
     <message>
         <source>Password input</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Where ye put yer secret word</translation>
     </message>
     <message>
         <source>Load automatically checkbox</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Load without askin&apos; box</translation>
     </message>
     <message>
         <source>Import profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bring a face from elsewhere</translation>
     </message>
     <message>
         <source>Load selected profile button</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Load th&apos; chosen face button</translation>
     </message>
     <message>
         <source>New profile creation page</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Page fer makin&apos; new faces</translation>
     </message>
     <message>
         <source>Loading existing profile page</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Page fer loadin&apos; old faces</translation>
     </message>
     <message>
         <source>The passwords you&apos;ve entered are different.
 Please make sure to enter the same password twice.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Th&apos; secret words be different. Say th&apos; same one twice, aye?</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
         <source>Your name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Yer Name</translation>
     </message>
     <message>
         <source>Your status</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Yer Status</translation>
     </message>
     <message>
         <source>...</source>
         <translatorcomment>Ausgelassen</translatorcomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hmm...</translation>
     </message>
     <message>
         <source>Add friends</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Find new hearties</translation>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Start a gatherin&apos;</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">See past treasure chests</translation>
     </message>
     <message>
         <source>Change your settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Change how things work</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Batten down th&apos; hatches</translation>
     </message>
     <message>
         <source>Open profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Show yer mug</translation>
     </message>
     <message>
         <source>Open profile page when clicked</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Show yer mug when clicked</translation>
     </message>
     <message>
         <source>Status message input</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Where ye write yer status</translation>
     </message>
     <message>
         <source>Set your status message that will be shown to others</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Set a message fer others ta see</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">How ye be</translation>
     </message>
     <message>
         <source>Set availability status</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Set whether ye be available</translation>
     </message>
     <message>
         <source>Contact search</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Find yer mateys</translation>
     </message>
     <message>
         <source>Contact search input for known friends</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Search fer known hearties</translation>
     </message>
     <message>
         <source>Sorting and visibility</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sortin&apos; &apos;n&apos; showin&apos; yer mateys</translation>
     </message>
     <message>
         <source>Set friends sorting and visibility</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Set how yer mateys be sorted &apos;n&apos; shown</translation>
     </message>
     <message>
         <source>Open Add friends page</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Open th&apos; Add Hearties page</translation>
     </message>
     <message>
         <source>Conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Gatherin&apos;</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Open gatherin&apos; management page</translation>
     </message>
     <message>
         <source>File transfers history</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Past Treasure Chests</translation>
     </message>
     <message>
         <source>Open File transfers history</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Open Past Treasure Chests</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Th&apos; Workins&apos;</translation>
     </message>
     <message>
         <source>Open Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Open Th&apos; Workins&apos;</translation>
     </message>
     <message>
         <source>Open internal debugging tools</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Open th&apos; bug squashers</translation>
     </message>
     <message>
         <source>Debug</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Squash th&apos; bugs</translation>
     </message>
     <message>
         <source>Open Debugger</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Open th&apos; bug net</translation>
     </message>
 </context>
 <context>
@@ -1785,31 +1796,31 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>Executable file</source>
         <comment>popup title</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">File that does things</translation>
     </message>
     <message>
         <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ye be tryin&apos; ta open a file that can do things. Be careful, it might mess with yer ship&apos;s computer. Be ye sure ye want ta open it?</translation>
     </message>
 </context>
 <context>
     <name>NetCamView</name>
     <message>
         <source>Tox video</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tox Spyglass</translation>
     </message>
     <message>
         <source>Full Screen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Whole screen</translation>
     </message>
     <message>
         <source>Toggle video preview</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Show/Hide Spyglass Preview</translation>
     </message>
     <message>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Silence th&apos; sound</translation>
     </message>
     <message>
         <source>Mute microphone</source>
@@ -1821,15 +1832,15 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Exit full screen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Leave full screen</translation>
     </message>
     <message>
         <source>Hide messages</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hide th&apos; writin&apos;</translation>
     </message>
     <message>
         <source>Show messages</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Show th&apos; writin&apos;</translation>
     </message>
 </context>
 <context>
@@ -1837,30 +1848,30 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>View</source>
         <comment>macOS Menu bar</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Looksee</translation>
     </message>
     <message>
         <source>Window</source>
         <comment>macOS Menu bar</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Porthole</translation>
     </message>
     <message>
         <source>Minimize</source>
         <comment>macOS Menu bar</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Make it smaller</translation>
     </message>
     <message>
         <source>Bring All to Front</source>
         <comment>macOS Menu bar</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bring All ta th&apos; Front</translation>
     </message>
     <message>
         <source>Exit Full Screen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Leave Full Screen</translation>
     </message>
     <message>
         <source>Enter Full Screen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Take up th&apos; whole screen</translation>
     </message>
 </context>
 <context>
@@ -1881,24 +1892,24 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>New conference message</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">New gatherin&apos; message</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Incoming treasure chest</translation>
     </message>
     <message>
         <source>%1 - file transfer</source>
         <extracomment>e.g. Bob - file transfer</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 - treasure chest transfer</translation>
     </message>
     <message>
         <source>Conference invite received</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Gatherin&apos; invite received</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 be invitin&apos; ye ta a gatherin&apos;.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -1913,22 +1924,22 @@ Please make sure to enter the same password twice.</source>
     <name>PasswordEdit</name>
     <message>
         <source>Caps-lock enabled</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Caps-lock be on</translation>
     </message>
 </context>
 <context>
     <name>PrivacyForm</name>
     <message>
         <source>Privacy</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Secrecy</translation>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aye or Nay</translation>
     </message>
     <message>
         <source>Do you want to permanently delete all chat history?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Be ye wantin&apos; ta burn all yer letters forever?</translation>
     </message>
 </context>
 <context>
@@ -1936,60 +1947,64 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>Your friends will be able to see when you are typing.</source>
         <comment>tooltip for typing notifications setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Yer mateys will be able ta see when ye be writin&apos;.</translation>
     </message>
     <message>
         <source>Send typing notifications</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Let &apos;em know ye be writin&apos;</translation>
     </message>
     <message>
         <source>Keep chat history</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Keep th&apos; ol&apos; messages</translation>
     </message>
     <message>
         <source>NoSpam is part of your Tox ID.
 If you are being spammed with friend requests, you should change your NoSpam.
 People will be unable to add you with your old ID, but you will keep your current friends.</source>
         <comment>toolTip for nospam</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">NoSpam be part o&apos; yer Tox ID.
+If&apos;n ye be gettin&apos; spammed with matey requests, ye should change yer NoSpam.
+People won&apos;t be able ta add ye with yer old ID, but ye&apos;ll keep yer current mateys.</translation>
     </message>
     <message>
         <source>NoSpam</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">No bilge</translation>
     </message>
     <message>
         <source>NoSpam is a part of your ID that can be changed at will.
 If you are getting spammed with friend requests, change the NoSpam.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">NoSpam be part o&apos; yer ID that ye can change whenever.
+If ye be gettin&apos; too many matey requests, change th&apos; NoSpam.</translation>
     </message>
     <message>
         <source>Generate random NoSpam</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Make a random NoSpam</translation>
     </message>
     <message>
         <source>Chat history keeping is still in development.
 Save format changes are possible, which may result in data loss.</source>
         <comment>toolTip for Keep History setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Keepin&apos; chat history be still bein&apos; worked on.
+Th&apos; way it be saved might change, &apos;n&apos; ye could lose some messages.</translation>
     </message>
     <message>
         <source>Privacy</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Secrecy</translation>
     </message>
     <message>
         <source>Conference block list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Gatherin&apos; block list</translation>
     </message>
     <message>
         <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter out gatherin&apos; messages by th&apos; public keys o&apos; th&apos; crew. Put public keys here, one per line.</translation>
     </message>
 </context>
 <context>
     <name>Profile</name>
     <message>
         <source>Failed to derive key from password, the profile won&apos;t use the new password.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Couldn&apos;t make a key from th&apos; password, th&apos; profile won&apos;t be usin&apos; th&apos; new password.</translation>
     </message>
     <message>
         <source>Toxing on qTox</source>
@@ -1997,48 +2012,48 @@ Save format changes are possible, which may result in data loss.</source>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Couldn&apos;t change th&apos; database password, it may be corrupted or usin&apos; th&apos; old password.</translation>
     </message>
 </context>
 <context>
     <name>ProfileForm</name>
     <message>
         <source>Choose a profile picture</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Choose a picture fer yer mug</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Shiver me timbers!</translation>
     </message>
     <message>
         <source>Rename &quot;%1&quot;</source>
         <comment>renaming a profile</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Give &quot;%1&quot; a new name</translation>
     </message>
     <message>
         <source>Unable to open this file.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Can&apos;t open this here chest.</translation>
     </message>
     <message>
         <source>Current profile: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Yer current face: </translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Make it walk th&apos; plank</translation>
     </message>
     <message>
         <source>Unable to read this image.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">This picture be unreadable.</translation>
     </message>
     <message>
         <source>The supplied image is too large.
 Please use another image.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">That there picture be too grand. Choose a smaller one, ye scallywag!</translation>
     </message>
     <message>
         <source>Couldn&apos;t rename the profile to &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Couldn&apos;t rename th&apos; profile ta &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Location not writable</source>
@@ -2047,153 +2062,156 @@ Please use another image.</source>
     </message>
     <message>
         <source>Nothing to remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nothin&apos; ta make walk th&apos; plank</translation>
     </message>
     <message>
         <source>Your profile does not have a password!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Yer face ain&apos;t got no password!</translation>
     </message>
     <message>
         <source>Please enter a new password.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Choose a new secret word.</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this profile?</source>
         <comment>deletion confirmation text</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Be ye sure ye want ta drown this face?</translation>
     </message>
     <message>
         <source>Save</source>
         <comment>save qr image</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Stash it away</translation>
     </message>
     <message>
         <source>Save QrCode (*.png)</source>
         <comment>save dialog filter</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Stash QrCode (*.png)</translation>
     </message>
     <message>
         <source>Files could not be deleted!</source>
         <comment>deletion failed title</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Couldn&apos;t make those files walk th&apos; plank!</translation>
     </message>
     <message>
         <source>Change password</source>
         <comment>button text</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Change th&apos; combination</translation>
     </message>
     <message>
         <source>Set profile password</source>
         <comment>button text</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Give yer face a secret word</translation>
     </message>
     <message>
         <source>Current profile location: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Where yer face be stored: %1</translation>
     </message>
     <message>
         <source>Couldn&apos;t change password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Couldn&apos;t change th&apos; combination</translation>
     </message>
     <message>
         <source>Empty path is unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Empty path be unavailable</translation>
     </message>
     <message>
         <source>Failed to rename</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Couldn&apos;t rename</translation>
     </message>
     <message>
         <source>Profile already exists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">That face be already taken</translation>
     </message>
     <message>
         <source>A profile named &quot;%1&quot; already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A face by the name &quot;%1&quot; already be.</translation>
     </message>
     <message>
         <source>Empty name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">No name</translation>
     </message>
     <message>
         <source>Empty name is unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Empty name be unavailable</translation>
     </message>
     <message>
         <source>Empty path</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Thar be nothin&apos; here</translation>
     </message>
     <message>
         <source>Export profile</source>
         <extracomment>save dialog title</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Send away yer profile</translation>
     </message>
     <message>
         <source>Tox save file (*.tox)</source>
         <extracomment>save dialog filter</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tox treasure map (*.tox)</translation>
     </message>
     <message>
         <source>The following files could not be deleted:</source>
         <extracomment>deletion failed text part 1</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">These here files be stuck:</translation>
     </message>
     <message>
         <source>Please manually remove them.</source>
         <extracomment>deletion failed text part 2</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ye&apos;ll have ta scrub &apos;em yerself.</translation>
     </message>
     <message>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pictures (%1)</translation>
     </message>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ye ain&apos;t allowed ta write there. Choose another spot, or give up th&apos; save.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Couldn&apos;t save th&apos; file</translation>
     </message>
     <message>
         <source>The file you chose could not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Couldn&apos;t stash that file away.</translation>
     </message>
     <message>
         <source>Empty path is unavailable.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Empty path be unavailable.</translation>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Couldn&apos;t change th&apos; database password, it may be corrupted or usin&apos; th&apos; old password.</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tox user names can&apos;t be longer than %1 letters.</translation>
     </message>
     <message>
         <source>Delete profile</source>
         <comment>deletion confirmation title</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Drown yer face</translation>
     </message>
     <message>
         <source>Remove password</source>
         <comment>deletion confirmation title</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Toss th&apos; key overboard</translation>
     </message>
     <message>
         <source>Are you sure you want to remove your password?</source>
         <extracomment>deletion confirmation text</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Be ye sure ye want ta toss yer key overboard?</translation>
     </message>
     <message>
         <source>This ID allows other Tox users to add and contact you.
 Share it with your friends to begin chatting.
 
 This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">This here ID lets other Tox users add &apos;n&apos; contact ye.
+Share it with yer mateys ta start jawin&apos;.
+
+This ID has th&apos; NoSpam code (in blue), &apos;n&apos; th&apos; checksum (in gray).</translation>
     </message>
 </context>
 <context>
@@ -2201,59 +2219,59 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Import profile</source>
         <comment>import dialog title</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bring a face from elsewhere</translation>
     </message>
     <message>
         <source>Tox save file (*.tox)</source>
         <comment>import dialog filter</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tox treasure map (*.tox)</translation>
     </message>
     <message>
         <source>Ignoring non-Tox file</source>
         <comment>popup title</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ignoring landlubber file</translation>
     </message>
     <message>
         <source>Warning: You have chosen a file that is not a Tox save file; ignoring.</source>
         <comment>popup text</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Avast! Ye&apos;ve chosen a file that ain&apos;t no Tox save file; ignorin&apos; it.</translation>
     </message>
     <message>
         <source>Profile already exists</source>
         <comment>import confirm title</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">That face be already taken</translation>
     </message>
     <message>
         <source>A profile named &quot;%1&quot; already exists. Do you want to erase it?</source>
         <comment>import confirm text</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A face by the name &quot;%1&quot; already be. Do ye want ta scrub it?</translation>
     </message>
     <message>
         <source>File doesn&apos;t exist</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">That there file be a ghost</translation>
     </message>
     <message>
         <source>Profile doesn&apos;t exist</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">That there face ain&apos;t real</translation>
     </message>
     <message>
         <source>Profile imported</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Face brought aboard</translation>
     </message>
     <message>
         <source>%1.tox was successfully imported</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1.tox be now aboard</translation>
     </message>
 </context>
 <context>
     <name>QApplication</name>
     <message>
         <source>Ok</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aye</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Belay that</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -2282,34 +2300,34 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>%1 is not a valid Tox address.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ain&apos;t a proper Tox address.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">As it were</translation>
     </message>
     <message>
         <source>Blue</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sky color</translation>
     </message>
     <message>
         <source>Olive</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seaweed</translation>
     </message>
     <message>
         <source>Red</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sunset</translation>
     </message>
     <message>
         <source>Violet</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Purple</translation>
     </message>
     <message>
         <source>Incoming call...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Incoming scry...</translation>
     </message>
     <message>
         <source>%1 here! Tox me maybe?</source>
@@ -2319,40 +2337,40 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>None</source>
         <comment>No camera device set</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nary a one</translation>
     </message>
     <message>
         <source>Desktop</source>
         <comment>Desktop as a camera input for screen sharing</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Th&apos; Table</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Shiver me timbers!</translation>
     </message>
     <message>
         <source>qTox couldn&apos;t open your chat logs, they will be disabled.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qTox couldn&apos;t open yer chat logs, they be disabled now.</translation>
     </message>
     <message>
         <source>Dark</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Night</translation>
     </message>
     <message>
         <source>Dark blue</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Deep ocean</translation>
     </message>
     <message>
         <source>Dark olive</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dark seaweed</translation>
     </message>
     <message>
         <source>Dark red</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Blood red</translation>
     </message>
     <message>
         <source>Dark violet</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Deep purple</translation>
     </message>
     <message>
         <source>online</source>
@@ -2377,22 +2395,22 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>blocked</source>
         <comment>contact status</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">marooned</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sprucin&apos; up th&apos; words...</translation>
     </message>
     <message>
         <source>%1 message(s) from %2 chats</source>
         <extracomment>e.g. 3 messages from 2 chats</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 scroll(s) from %2 chatterboxes</translation>
     </message>
     <message>
         <source>%1 message(s) from %2</source>
         <extracomment>e.g. 2 messages from Bob</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 scroll(s) from %2</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
@@ -2400,27 +2418,27 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>%1 has joined the conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 has joined th&apos; gatherin&apos;</translation>
     </message>
     <message>
         <source>%1 has left the conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 has abandoned ship</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 be now known as %2</translation>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 has named it %2</translation>
     </message>
     <message>
         <source>Cleared</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Scrubbed clean</translation>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Scryin&apos; with %1 ended sudden-like. %2</translation>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
@@ -2441,43 +2459,43 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Message failed to send</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Message got lost at sea</translation>
     </message>
     <message>
         <source>You have joined the conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ye&apos;ve joined th&apos; gatherin&apos;</translation>
     </message>
     <message>
         <source>You have left the conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ye&apos;ve left th&apos; gatherin&apos;</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Couldn&apos;t hoist th&apos; ol&apos; messages</translation>
     </message>
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Th&apos; database version (%1) be newer than we support (%2). Please upgrade qTox.</translation>
     </message>
     <message>
         <source>Initializing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Gettin&apos; ready</translation>
     </message>
     <message>
         <source>Transmitting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sendin&apos; it over</translation>
     </message>
     <message>
         <source>Finished</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Done &apos;n&apos; dusted</translation>
     </message>
     <message>
         <source>Broken</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Smashed ta bits</translation>
     </message>
     <message>
         <source>Canceled</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Threw it overboard</translation>
     </message>
     <message>
         <source>Paused</source>
@@ -2485,35 +2503,35 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Remote paused</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">They put it on hold</translation>
     </message>
     <message>
         <source>File Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Name o&apos; th&apos; Loot</translation>
     </message>
     <message>
         <source>Contact</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hearty</translation>
     </message>
     <message>
         <source>Progress</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">How far along</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bulk</translation>
     </message>
     <message>
         <source>Speed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Knots</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">How ye be</translation>
     </message>
     <message>
         <source>Control</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Th&apos; Helm</translation>
     </message>
 </context>
 <context>
@@ -2524,19 +2542,19 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Burn all yer letters with this matey</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Also burn th&apos; messages</translation>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Be ye sure ye want ta kick %1 off yer crew?</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Make it walk th&apos; plank</translation>
     </message>
 </context>
 <context>
@@ -2544,151 +2562,152 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Click and drag to select a region. Press %1 to hide/show qTox window, or %2 to cancel.</source>
         <comment>Help text shown when no region has been selected yet</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Click &apos;n&apos; drag ta choose a spot. Press %1 ta hide/show qTox, or %2 ta give up.</translation>
     </message>
     <message>
         <source>Space</source>
         <comment>[Space] key on the keyboard</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Room</translation>
     </message>
     <message>
         <source>Escape</source>
         <comment>[Escape] key on the keyboard</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Flee</translation>
     </message>
     <message>
         <source>Press %1 to send a screenshot of the selection, %2 to hide/show qTox window, or %3 to cancel.</source>
         <comment>Help text shown when a region has been selected</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Press %1 ta send a spyglass view o&apos; what ye chose, %2 ta hide/show qTox, or %3 ta give up.</translation>
     </message>
     <message>
         <source>Enter</source>
         <comment>[Enter] key on the keyboard</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Come in</translation>
     </message>
 </context>
 <context>
     <name>SearchForm</name>
     <message>
         <source>The text could not be found.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Couldn&apos;t find that there text.</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hoist th&apos; sails</translation>
     </message>
 </context>
 <context>
     <name>SearchSettingsForm</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Shape</translation>
     </message>
     <message>
         <source>Start search:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Start searchin&apos;:</translation>
     </message>
     <message>
         <source>from the end</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">from th&apos; last word</translation>
     </message>
     <message>
         <source>from the beginning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">from th&apos; first word</translation>
     </message>
     <message>
         <source>after date</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">after th&apos; date</translation>
     </message>
     <message>
         <source>before date</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">afore th&apos; date</translation>
     </message>
     <message>
         <source>00.00.0000</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">00.00.0000</translation>
     </message>
     <message>
         <source>Case sensitive</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Matchin&apos; th&apos; case</translation>
     </message>
     <message>
         <source>Whole words only</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Whole words only, matey</translation>
     </message>
     <message>
         <source>Use regular expressions</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Use fancy patterns</translation>
     </message>
     <message>
         <source>Select Date Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Choose a Date</translation>
     </message>
     <message>
         <source>Select a date</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pick a day</translation>
     </message>
 </context>
 <context>
     <name>SetPasswordDialog</name>
     <message>
         <source>Set your password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Set yer secret word</translation>
     </message>
     <message>
         <source>Confirm:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aye, that be it:</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Secret Word:</translation>
     </message>
     <message>
         <source>Password strength: %p%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Strength o&apos; yer secret word: %p%</translation>
     </message>
     <message>
         <source>The password doesn&apos;t match.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Th&apos; secret words don&apos;t match.</translation>
     </message>
     <message>
         <source>Confirm password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Say th&apos; secret word again</translation>
     </message>
     <message>
         <source>Confirm password input</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Write yer secret word again, just ta be sure</translation>
     </message>
     <message>
         <source>Password input</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Where ye put yer secret word</translation>
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Where ye write yer secret word, needs at least 6 bits o&apos; ink</translation>
     </message>
     <message>
         <source>The password is too short.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">That secret word be too short.</translation>
     </message>
 </context>
 <context>
     <name>Settings</name>
     <message>
         <source>Circle #%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Guild #%1</translation>
     </message>
     <message>
         <source>Failed to load global settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Couldn&apos;t load th&apos; ship-wide settings</translation>
     </message>
     <message>
         <source>Unable to upgrade settings from version %1 to version %2. Cannot start qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Can&apos;t upgrade th&apos; settings from version %1 ta %2. Can&apos;t start qTox.</translation>
     </message>
     <message>
         <source>Failed to load personal settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Couldn&apos;t load yer own settings</translation>
     </message>
 </context>
 <context>
@@ -2700,7 +2719,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Do you want to add %1 as a friend?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Do ye want ta make %1 a hearty?</translation>
     </message>
     <message>
         <source>User ID:</source>
@@ -2713,42 +2732,42 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Send</source>
         <comment>Send a friend request</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fire away!</translation>
     </message>
     <message>
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Belay that</translation>
     </message>
 </context>
 <context>
     <name>UserInterfaceForm</name>
     <message>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nary a one</translation>
     </message>
     <message>
         <source>User Interface</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Th&apos; Helm</translation>
     </message>
 </context>
 <context>
     <name>UserInterfaceSettings</name>
     <message>
         <source>Chat</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jawin&apos;</translation>
     </message>
     <message>
         <source>Base font:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Main letterin&apos;:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pix</translation>
     </message>
     <message>
         <source>Size: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">How big: </translation>
     </message>
     <message>
         <source>New text styling preference may not load on chat history until qTox restarts.
@@ -2763,27 +2782,38 @@ Show formatting characters:
 Hide formatting characters:
     Apply formatting and don&apos;t show characters.
     E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">New fancy writin&apos; preferences may not load on old messages until qTox restarts.
+It will work on new messages right away.
+
+Plaintext:
+    Don&apos;t be doin&apos; nothin&apos; fancy ta messages.
+    E.g. &quot;**text**&quot; will show as &quot;**text**&quot;, not bold.
+Show formatting characters:
+    Make it fancy &apos;n&apos; show th&apos; marks.
+    E.g. &quot;**text**&quot; will show as &quot;**text**&quot;, bold.
+Hide formatting characters:
+    Make it fancy but hide th&apos; marks.
+    E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</translation>
     </message>
     <message>
         <source>Text styling:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Style o&apos; th&apos; words:</translation>
     </message>
     <message>
         <source>Select text styling preference.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Choose how ye want yer words ta look.</translation>
     </message>
     <message>
         <source>Plaintext</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Plain words</translation>
     </message>
     <message>
         <source>Show formatting characters</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Show fancy writin&apos; marks</translation>
     </message>
     <message>
         <source>Hide formatting characters</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hide fancy writin&apos; marks</translation>
     </message>
     <message>
         <source>New message</source>
@@ -2792,173 +2822,173 @@ Hide formatting characters:
     <message>
         <source>Open qTox&apos;s window when you receive a new message and no window is open yet.</source>
         <comment>tooltip for Show window setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Open qTox&apos;s window when ye receive a new message &apos;n&apos; no window be open yet.</translation>
     </message>
     <message>
         <source>Open window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Open porthole</translation>
     </message>
     <message>
         <source>Contact list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Crew manifest</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
         <comment>toolTip for conference positioning</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">If&apos;n this be checked, gatherin&apos;s will be at th&apos; top o&apos; th&apos; matey list, otherwise they be below online mateys.</translation>
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Put gatherin&apos;s at th&apos; top o&apos; th&apos; matey list</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode (small avatars, tabular view).</source>
         <comment>toolTip for compact layout setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Yer matey list will be shown short &apos;n&apos; sweet (small pictures, in a table).</translation>
     </message>
     <message>
         <source>Compact contact list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Short &apos;n&apos; sweet matey list</translation>
     </message>
     <message>
         <source>Multiple windows mode</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Many portholes mode</translation>
     </message>
     <message>
         <source>Open each chat in an individual window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Open each chat in its own porthole</translation>
     </message>
     <message>
         <source>Emoticons</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Grinnin&apos; Faces</translation>
     </message>
     <message>
         <source>Use emoticons</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Use Grinnin&apos; Faces</translation>
     </message>
     <message>
         <source>Emoticon size:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Size o&apos; yer Grinnin&apos; Faces:</translation>
     </message>
     <message>
         <source> px</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> pixels</translation>
     </message>
     <message>
         <source>Theme</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Style o&apos; th&apos; ship</translation>
     </message>
     <message>
         <source>Style:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Look:</translation>
     </message>
     <message>
         <source>Theme color:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Color o&apos; th&apos; ship:</translation>
     </message>
     <message>
         <source>Timestamp format:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">How ta show th&apos; time:</translation>
     </message>
     <message>
         <source>Date format:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">How ta show th&apos; date:</translation>
     </message>
     <message>
         <source>Use identicons instead of empty avatars</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Use identicons instead o&apos; empty pictures</translation>
     </message>
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
         <comment>tooltip for Notify setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Give a shout when ye get a new message, call, or matey request, even if th&apos; window ain&apos;t in front.</translation>
     </message>
     <message>
         <source>Notify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Give a shout</translation>
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Gatherin&apos;s only give a shout when ye be mentioned</translation>
     </message>
     <message>
         <source>Play sound</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Make a noise</translation>
     </message>
     <message>
         <source>Play sound while Busy</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Make a noise even when busy</translation>
     </message>
     <message>
         <source>Notify via desktop notifications</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Use desktop notifications</translation>
     </message>
     <message>
         <source>Hide message sender and contents</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hide who sent it &apos;n&apos; what it says</translation>
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Use colorful names in gatherin&apos;s</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Only give a shout &apos;bout new messages in gatherin&apos;s when yer name be called.</translation>
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">If this be off, silence th&apos; notifications when ye be busy (but still show &apos;em)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Use desktop notifications, like in a notification center or at th&apos; system tray. Without this, th&apos; notification will only be a flashin&apos; tray icon.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">If this be off, use simple tray notifications. Otherwise, try usin&apos; yer fancy desktop notifications. Turn it off if it be causin&apos; trouble.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Use th&apos; ship&apos;s notification backend if it be available</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Only show &quot;new message&quot; without showin&apos; any secrets in desktop notifications.</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Split th&apos; matey list &apos;n&apos; chat window into two windows ye can move about.</translation>
     </message>
     <message>
         <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
         <comment>toolTip for show identicons</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">If this be on, every matey without a picture will have a fancy icon made from their Tox ID.  Ye&apos;ll need ta restart th&apos; ship fer it ta work.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Show text emojis as colorful pictures instead o&apos; text or black/white font-rendered emojis.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Choose which set o&apos; pictures ta use fer yer emojis.</translation>
     </message>
     <message>
         <source>Smiley pack:</source>
         <extracomment>Text on smiley pack label</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Set o&apos; Grinnin&apos; Faces:</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Size o&apos; them emoji pictures. Choose somethin&apos; like yer normal letter size.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Base style ta use fer th&apos; UI. Fusion be recommended as it works best with qTox theming.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Colors o&apos; th&apos; helm. Use this ta choose dark mode.</translation>
     </message>
 </context>
 <context>
@@ -2980,52 +3010,52 @@ Hide formatting characters:
     </message>
     <message>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Scroll</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Scribble over</translation>
     </message>
     <message>
         <source>Logout</source>
         <comment>Tray action menu to logout user</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Abandon ship</translation>
     </message>
     <message>
         <source>Filter...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Strain...</translation>
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hearties</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">How ye be</translation>
     </message>
     <message>
         <source>Your name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Yer Name</translation>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Start a new gatherin&apos;...</translation>
     </message>
     <message>
         <source>Add new circle...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Add new guild...</translation>
     </message>
     <message>
         <source>By Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">By Title</translation>
     </message>
     <message>
         <source>By Activity</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">By Doin&apos;s</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Th&apos; whole lot</translation>
     </message>
     <message>
         <source>Online</source>
@@ -3038,11 +3068,11 @@ Hide formatting characters:
     </message>
     <message>
         <source>Friends</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hearties</translation>
     </message>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Crews</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -3060,45 +3090,45 @@ Hide formatting characters:
     <message>
         <source>Add friend</source>
         <comment>title of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Befriend a scallywag</translation>
     </message>
     <message>
         <source>Conference invites</source>
         <comment>title of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Crew invites</translation>
     </message>
     <message>
         <source>File transfers</source>
         <comment>title of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Treasure chests</translation>
     </message>
     <message>
         <source>Settings</source>
         <comment>title of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Th&apos; Workins&apos;</translation>
     </message>
     <message>
         <source>My profile</source>
         <comment>title of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Me Mug</translation>
     </message>
     <message>
         <source>Toxcore failed to start, the application will terminate after you close this message.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Th&apos; heart o&apos; th&apos; ship be failin&apos;, she&apos;ll be sinkin&apos; once ye close this here message.</translation>
     </message>
     <message>
         <source>Toxcore failed to start with your proxy settings. qTox cannot run; please modify your settings and restart.</source>
         <comment>popup text</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Th&apos; heart o&apos; th&apos; ship be failin&apos; with yer proxy settings. qTox can&apos;t run; please change yer settings &apos;n&apos; restart.</translation>
     </message>
     <message>
         <source>Couldn&apos;t send friend request</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Couldn&apos;t send th&apos; matey request</translation>
     </message>
     <message>
         <source>Debug</source>
         <comment>title of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Squash th&apos; bugs</translation>
     </message>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
@@ -3117,31 +3147,31 @@ Hide formatting characters:
     <message>
         <source>Exit</source>
         <comment>Tray action menu to exit Tox</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Walk th&apos; plank</translation>
     </message>
     <message>
         <source>Change status</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Change how ye be</translation>
     </message>
     <message>
         <source>Edit profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Change yer mug</translation>
     </message>
     <message>
         <source>Logout</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Abandon ship</translation>
     </message>
     <message>
         <source>Add contact...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Add a hearty...</translation>
     </message>
     <message>
         <source>Next conversation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Next chitter-chatter</translation>
     </message>
     <message>
         <source>Previous conversation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Last chitter-chatter</translation>
     </message>
 </context>
 </TS>

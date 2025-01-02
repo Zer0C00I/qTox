@@ -33,7 +33,6 @@ const QStringList locales = {
     "de",      // German
     "el",      // Greek
     "en",      // English
-    "en_PR",   // Pirate
     "eo",      // Esperanto
     "es",      // Spanish
     "et",      // Estonian
@@ -50,14 +49,15 @@ const QStringList locales = {
     "jbo",     // Lojban
     "kn",      // Kannada
     "ko",      // Korean
+    "li",      // Limburgish
     "lt",      // Lithuanian
     "lv",      // Latvian
     "mk",      // Macedonian
     "nb_NO",   // Norwegian Bokmål
     "nl",      // Dutch
     "nl_BE",   // Flemish
-    "nl_LI",   // Limburgish
     "pl",      // Polish
+    "pr",      // Pirate
     "pt",      // Portuguese
     "pt_BR",   // Brazilian Portuguese
     "ro",      // Romanian
@@ -185,9 +185,9 @@ GeneralForm::GeneralForm(Settings& settings_, Style& style)
 
         if (locales[i].startsWith(QLatin1String("jbo"))) {
             langName = QLatin1String("Lojban");
-        } else if (locales[i].startsWith(QLatin1String("nl_LI"))) {
+        } else if (locales[i].startsWith(QLatin1String("li"))) {
             langName = QLatin1String("Limburgs");
-        } else if (locales[i].startsWith(QLatin1String("en_PR"))) {
+        } else if (locales[i].startsWith(QLatin1String("pr"))) {
             langName = QLatin1String("Pirate");
         } else {
             const QLocale locale{locales[i]};
