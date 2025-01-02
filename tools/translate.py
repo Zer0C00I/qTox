@@ -164,11 +164,46 @@ def _baidu_call_translate(lang: str, text: str) -> str:
     return "\n".join(translations)
 
 
-def _baidu_translate(lang: str, text: str) -> str:
-    attempt = _baidu_call_translate(lang, text)
+def _validate_translation(source: str, translation: str) -> bool:
     for i in range(1, 6):
-        if f"%{i}" in text and f"% {i}" not in attempt and f"%{i}" not in attempt:
-            return _baidu_call_translate(lang, text.replace("%", "%%"))
+        if (f"%{i}" in source and f"% {i}" not in translation
+                and f"%{i}" not in translation):
+            return False
+    return True
+
+
+_BLYAT = (
+    ("%1", "TEEHEE"),
+    ("%2", "BLYAT"),
+    ("%3", "BLARGH"),
+)
+
+
+def _blyatyfy(text: str) -> str:
+    for key, value in _BLYAT:
+        text = text.replace(key, f"#{value}#")
+    return text
+
+
+def _unblyatyfy(text: str) -> str:
+    for key, value in _BLYAT:
+        text = text.replace(f"#{value}#", key)
+    return text
+
+
+def _baidu_translate(lang: str, text: str) -> str:
+    """Translate text to a given language using Baidu Translate.
+
+    All kinds of hacks here to try and make Baidu Translate work with "%1".
+    """
+    attempt = _baidu_call_translate(lang, text)
+    if not _validate_translation(text, attempt):
+        attempt = _baidu_call_translate(lang, text.replace("%", "%%"))
+    if not _validate_translation(text, attempt):
+        attempt = _unblyatyfy(_baidu_call_translate(lang, _blyatyfy(text)))
+    if not _validate_translation(text, attempt):
+        raise ValueError(
+            f"Failed to translate '{text}' to '{lang}': '{attempt}'")
     return attempt
 
 
@@ -194,9 +229,11 @@ def _translate(lang: str, current: int, total: int, text: str) -> str:
     return _fix_translation(text, "".join([x[0] for x in response.json()[0]]))
 
 
-def _need_translation(source: str, translation: list[Any]) -> bool:
+def _need_translation(lang: str, source: str,
+                      message: minidom.Element) -> list[Any]:
+    translation = message.getElementsByTagName("translation")
     if not translation:
-        return False
+        return []
     translated = translation[0].firstChild
     if isinstance(translated, minidom.Text):
         translated.data = _fix_translation(source, translated.data)
@@ -208,16 +245,28 @@ def _need_translation(source: str, translation: list[Any]) -> bool:
             # We'll default to LTR if we don't know.
             if translated.data and translated.data not in ("LTR", "RTL"):
                 translated.data = "LTR"
-        return False
-    return True
+        return []
+    translatorcomment = message.getElementsByTagName("translatorcomment")
+    if (translatorcomment
+            and isinstance(translatorcomment[0].firstChild, minidom.Text) and
+            translatorcomment[0].firstChild.data != "Automated translation."):
+        # Skip messages with translator comments. These are probably
+        # not meant to be translated.
+        return []
+    # If the translation node text is empty, fill it in using the
+    # translation of source. This is done for all translations that
+    # are marked as "unfinished". If they are not marked as
+    # "unfinished", empty is assumed to be intentional.
+    if translated or translation[0].getAttribute("type") != "unfinished":
+        return []
+    return translation
 
 
 def _translate_ts_file(file: str) -> None:
     """Fill in the untranslated translations in a .ts file.
 
     Doesn't touch anything other than completely empty translations. Empty
-    translations are marked with <translation></translation> or
-    <translation type="unfinished"></translation>.
+    translations are marked with <translation type="unfinished"></translation>.
     """
     with open(file, "r") as f:
         dom = minidom.parse(f)  # nosec
@@ -231,23 +280,20 @@ def _translate_ts_file(file: str) -> None:
             source = message.getElementsByTagName("source")[0].firstChild
             if not isinstance(source, minidom.Text):
                 continue
-            translation = message.getElementsByTagName("translation")
-            if not _need_translation(source.data, translation):
+            translation = _need_translation(lang, source.data, message)
+            if not translation:
                 continue
-            # If the translation node text is empty, fill it in using the
-            # translation of source. This is done for all translations that
-            # are marked as "unfinished". If they are not marked as
-            # "unfinished", empty is assumed to be intentional.
-            if (translation[0].firstChild is None
-                    and translation[0].getAttribute("type") == "unfinished"):
-                todo.append((source.data, translation[0]))
-                # Add a <translatorcomment> node to the message to indicate
-                # that the translation was automated.
-                if not message.getElementsByTagName("translatorcomment"):
-                    comment = dom.createElement("translatorcomment")
-                    comment.appendChild(
-                        dom.createTextNode("Automated translation."))
-                    message.appendChild(comment)
+            todo.append((source.data, translation[0]))
+            # Add a <translatorcomment> node to the message to indicate
+            # that the translation was automated.
+            if not message.getElementsByTagName("translatorcomment"):
+                # Skip messages with translator comments. These are
+                # probably not meant to be translated.
+                # continue
+                comment = dom.createElement("translatorcomment")
+                comment.appendChild(
+                    dom.createTextNode("Automated translation."))
+                message.appendChild(comment)
     try:
         # Write out changes we may have made in the loop above.
         with open(file, "w") as f:
@@ -256,6 +302,10 @@ def _translate_ts_file(file: str) -> None:
             # Set the type attribute to "unfinished" to indicate that the
             # translation is not complete (it was automated).
             translation.setAttribute("type", "unfinished")
+            # Clear the translation node of any existing text.
+            for child in translation.childNodes:
+                translation.removeChild(child)
+            # Add the translation to the translation node.
             translation.appendChild(
                 dom.createTextNode(_translate(lang, i, len(todo), source)))
             # Commit to disk every time a translation is done so that we don't
