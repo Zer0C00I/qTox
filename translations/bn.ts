@@ -2029,6 +2029,18 @@ Please make sure to enter the same password twice.</source>
         <translation type="unfinished">আপনার দেওয়া পাসওয়ার্ডগুলি আলাদা।
 অনুগ্রহ করে একই পাসওয়ার্ড দুবার প্রবেশ করানো নিশ্চিত করুন।</translation>
     </message>
+    <message>
+        <source>This optional password is used to encrypt local message data and your profile.
+If you lose this password, there is no way to recover it.
+Press Shift+F1 for more information.</source>
+        <translation type="unfinished">এই ঐচ্ছিক পাসওয়ার্ড স্থানীয় বার্তা ডেটা এবং আপনার প্রোফাইল এনক্রিপ্ট করতে ব্যবহার করা হয়।
+আপনি যদি এই পাসওয়ার্ডটি হারিয়ে ফেলেন তবে এটি পুনরুদ্ধার করার কোন উপায় নেই।
+আরও তথ্যের জন্য Shift+F1 টিপুন।</translation>
+    </message>
+    <message>
+        <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
+        <translation type="unfinished">আপনি এখানে যে পাসওয়ার্ডটি লিখছেন সেটি ঐচ্ছিক এবং বার্তা ডেটা এবং আপনার টক্স গোপন কী এনক্রিপ্ট করে। এটি প্রাপ্ত ফাইল এনক্রিপ্ট করে না। আপনার প্রোফাইল ডেটা কখনই কোনো সার্ভারে পাঠানো হয় না। এটি একটি দূরবর্তী লগইন নয়, এটি শুধুমাত্র আপনার কম্পিউটারে স্থানীয়। qTox বিকাশকারীরা আপনার পাসওয়ার্ড হারিয়ে গেলে পুনরুদ্ধার করতে সক্ষম হবে না।</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>

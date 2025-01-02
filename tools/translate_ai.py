@@ -9,7 +9,7 @@ import subprocess  # nosec
 import xml.dom.minidom as minidom  # nosec
 from functools import cache as memoize
 
-# <TS version="2.1" language="en_PR" sourcelanguage="en_US">
+# <TS version="2.1" language="pr" sourcelanguage="en_US">
 # <context>
 #     <name>AVForm</name>
 #     <message>
@@ -59,7 +59,7 @@ def accept_ai_response(response_file: str):
 
     If the translation is the same as the source, we ignore it.
     """
-    xml = minidom.parse("translations/en_PR.ts")  # nosec
+    xml = minidom.parse("translations/pr.ts")  # nosec
     with open(response_file, "r") as f:
         response = f.read()
     translations = {}
@@ -68,6 +68,9 @@ def accept_ai_response(response_file: str):
             response,
             re.DOTALL,
     ):
+        if source == "LTR":
+            # Ignore special string.
+            continue
         if source == translation:
             continue
         translations[source] = translation
@@ -82,7 +85,7 @@ def accept_ai_response(response_file: str):
                     translation.appendChild(
                         xml.createTextNode(translations[source.data]))
 
-    with open("translations/en_PR.ts", "w") as f:
+    with open("translations/pr.ts", "w") as f:
         xml.writexml(f)
 
     subprocess.check_output(  # nosec
@@ -94,7 +97,7 @@ def accept_ai_response(response_file: str):
             "-locations",
             "none",
             "-ts",
-            "translations/en_PR.ts",
+            "translations/pr.ts",
         ])
 
 
@@ -120,7 +123,7 @@ First, here are some examples of translations that have already been done:
     # 2. get all source/translation pairs where the translation is not empty. Give them to the AI
     # as example translations.
     examples = []
-    dom = minidom.parse("translations/en_PR.ts")  # nosec
+    dom = minidom.parse("translations/pr.ts")  # nosec
     for context in dom.getElementsByTagName("context"):
         for message in context.getElementsByTagName("message"):
             source = message.getElementsByTagName("source")[0].firstChild

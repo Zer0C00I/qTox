@@ -1730,6 +1730,18 @@ Please make sure to enter the same password twice.</source>
         <translation type="unfinished">Паролі, якія вы ўвялі, розныя.
 Не забудзьцеся ўвесці адзін і той жа пароль двойчы.</translation>
     </message>
+    <message>
+        <source>This optional password is used to encrypt local message data and your profile.
+If you lose this password, there is no way to recover it.
+Press Shift+F1 for more information.</source>
+        <translation type="unfinished">Гэты дадатковы пароль выкарыстоўваецца для шыфравання дадзеных лакальных паведамленняў і вашага профілю.
+Калі вы страціце гэты пароль, аднавіць яго немагчыма.
+Каб атрымаць дадатковую інфармацыю, націсніце Shift+F1.</translation>
+    </message>
+    <message>
+        <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
+        <translation type="unfinished">Пароль, які вы ўводзіце тут, не з&apos;яўляецца абавязковым і шыфруе даныя паведамлення і ваш сакрэтны ключ Tox. Ён не шыфруе атрыманыя файлы. Даныя вашага профілю ніколі не адпраўляюцца ні на якія серверы. Гэта не аддалены ўваход, ён толькі лакальны для вашага кампутара. Распрацоўшчыкі qTox не змогуць аднавіць ваш пароль у выпадку страты.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>

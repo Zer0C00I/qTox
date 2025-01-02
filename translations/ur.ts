@@ -2008,6 +2008,18 @@ Please make sure to enter the same password twice.</source>
         <translation type="unfinished">آپ نے جو پاس ورڈ درج کیے ہیں وہ مختلف ہیں۔
 براہ کرم ایک ہی پاس ورڈ کو دو بار درج کرنا یقینی بنائیں۔</translation>
     </message>
+    <message>
+        <source>This optional password is used to encrypt local message data and your profile.
+If you lose this password, there is no way to recover it.
+Press Shift+F1 for more information.</source>
+        <translation type="unfinished">یہ اختیاری پاس ورڈ مقامی پیغام کے ڈیٹا اور آپ کے پروفائل کو خفیہ کرنے کے لیے استعمال کیا جاتا ہے۔
+اگر آپ یہ پاس ورڈ کھو دیتے ہیں، تو اسے بازیافت کرنے کا کوئی طریقہ نہیں ہے۔
+مزید معلومات کے لیے Shift+F1 دبائیں۔</translation>
+    </message>
+    <message>
+        <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
+        <translation type="unfinished">آپ جو پاس ورڈ یہاں درج کرتے ہیں وہ اختیاری ہے اور پیغام کے ڈیٹا اور آپ کی Tox خفیہ کلید کو خفیہ کرتا ہے۔ یہ موصول ہونے والی فائلوں کو خفیہ نہیں کرتا ہے۔ آپ کا پروفائل ڈیٹا کبھی بھی کسی سرور کو نہیں بھیجا جاتا ہے۔ یہ ریموٹ لاگ ان نہیں ہے، یہ صرف آپ کے کمپیوٹر کے لیے مقامی ہے۔ qTox ڈویلپرز آپ کا پاس ورڈ کھو جانے کی صورت میں بازیافت نہیں کر سکیں گے۔</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>

@@ -1732,6 +1732,18 @@ Please make sure to enter the same password twice.</source>
         <translation type="unfinished">Οι κωδικοί πρόσβασης που έχετε εισάγει είναι διαφορετικοί.
 Βεβαιωθείτε ότι έχετε εισάγει τον ίδιο κωδικό πρόσβασης δύο φορές.</translation>
     </message>
+    <message>
+        <source>This optional password is used to encrypt local message data and your profile.
+If you lose this password, there is no way to recover it.
+Press Shift+F1 for more information.</source>
+        <translation type="unfinished">Αυτός ο προαιρετικός κωδικός πρόσβασης χρησιμοποιείται για την κρυπτογράφηση των δεδομένων τοπικών μηνυμάτων και του προφίλ σας.
+Εάν χάσετε αυτόν τον κωδικό πρόσβασης, δεν υπάρχει τρόπος να τον ανακτήσετε.
+Πατήστε Shift+F1 για περισσότερες πληροφορίες.</translation>
+    </message>
+    <message>
+        <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
+        <translation type="unfinished">Ο κωδικός πρόσβασης που εισάγετε εδώ είναι προαιρετικός και κρυπτογραφεί τα δεδομένα μηνυμάτων και το μυστικό κλειδί Tox σας. Δεν κρυπτογραφεί τα αρχεία που λαμβάνονται. Τα δεδομένα του προφίλ σας δεν αποστέλλονται ποτέ σε κανέναν διακομιστή. Δεν πρόκειται για απομακρυσμένη σύνδεση, είναι τοπική μόνο στον υπολογιστή σας. Οι προγραμματιστές qTox δεν θα μπορούν να ανακτήσουν τον κωδικό πρόσβασής σας εάν χαθεί.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>

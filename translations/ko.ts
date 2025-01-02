@@ -1884,6 +1884,18 @@ Please make sure to enter the same password twice.</source>
         <translation type="unfinished">입력한 비밀번호가 다릅니다.
 반드시 동일한 비밀번호를 두 번 입력해 주세요.</translation>
     </message>
+    <message>
+        <source>This optional password is used to encrypt local message data and your profile.
+If you lose this password, there is no way to recover it.
+Press Shift+F1 for more information.</source>
+        <translation type="unfinished">이 선택적 비밀번호는 로컬 메시지 데이터와 프로필을 암호화하는 데 사용됩니다.
+이 비밀번호를 잊어버리면 복구할 수 있는 방법이 없습니다.
+자세한 내용을 보려면 Shift+F1을 누르세요.</translation>
+    </message>
+    <message>
+        <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
+        <translation type="unfinished">여기에 입력하는 비밀번호는 선택사항이며 메시지 데이터와 Tox 비밀 키를 암호화합니다. 수신된 파일은 암호화하지 않습니다. 귀하의 프로필 데이터는 어떤 서버로도 전송되지 않습니다. 이것은 원격 로그인이 아니며, 귀하의 컴퓨터에만 로컬로 로그인됩니다. qTox 개발자는 비밀번호를 분실한 경우 복구할 수 없습니다.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>

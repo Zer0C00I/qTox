@@ -2034,6 +2034,18 @@ Please make sure to enter the same password twice.</source>
         <translation type="unfinished">Manenosiri uliyoweka ni tofauti.
 Tafadhali hakikisha umeingiza nenosiri sawa mara mbili.</translation>
     </message>
+    <message>
+        <source>This optional password is used to encrypt local message data and your profile.
+If you lose this password, there is no way to recover it.
+Press Shift+F1 for more information.</source>
+        <translation type="unfinished">Nenosiri hili la hiari hutumika kusimba kwa njia fiche data ya ujumbe wa ndani na wasifu wako.
+Ukipoteza nenosiri hili, hakuna njia ya kulirejesha.
+Bonyeza Shift+F1 kwa maelezo zaidi.</translation>
+    </message>
+    <message>
+        <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
+        <translation type="unfinished">Nenosiri unaloweka hapa ni la hiari na husimba kwa njia fiche data ya ujumbe na ufunguo wako wa siri wa Tox. Haisimbi kwa njia fiche faili zilizopokelewa. Data yako ya wasifu haitumwi kwa seva zozote. Huku si kuingia kwa mbali, ni kwa kompyuta yako pekee. Wasanidi wa qTox hawataweza kurejesha nenosiri lako likipotea.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>

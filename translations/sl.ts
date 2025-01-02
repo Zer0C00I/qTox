@@ -1762,6 +1762,18 @@ Please make sure to enter the same password twice.</source>
         <translation type="unfinished">Gesla, ki ste jih vnesli, so drugačna.
 Dvakrat vnesite isto geslo.</translation>
     </message>
+    <message>
+        <source>This optional password is used to encrypt local message data and your profile.
+If you lose this password, there is no way to recover it.
+Press Shift+F1 for more information.</source>
+        <translation type="unfinished">To neobvezno geslo se uporablja za šifriranje lokalnih podatkov sporočil in vašega profila.
+Če izgubite to geslo, ga ni mogoče obnoviti.
+Za več informacij pritisnite Shift+F1.</translation>
+    </message>
+    <message>
+        <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
+        <translation type="unfinished">Geslo, ki ga vnesete tukaj, ni obvezno in šifrira podatke sporočila in vaš skrivni ključ Tox. Prejetih datotek ne šifrira. Vaši profilni podatki se nikoli ne pošljejo nobenemu strežniku. To ni prijava na daljavo, je le lokalna v vašem računalniku. Razvijalci qTox ne bodo mogli obnoviti vašega gesla, če ga izgubite.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>

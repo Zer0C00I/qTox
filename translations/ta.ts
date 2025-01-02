@@ -1813,6 +1813,18 @@ Please make sure to enter the same password twice.</source>
         <translation type="unfinished">நீங்கள் உள்ளிட்ட கடவுச்சொற்கள் வேறுபட்டவை.
 ஒரே கடவுச்சொல்லை இருமுறை உள்ளிடுவதை உறுதிசெய்யவும்.</translation>
     </message>
+    <message>
+        <source>This optional password is used to encrypt local message data and your profile.
+If you lose this password, there is no way to recover it.
+Press Shift+F1 for more information.</source>
+        <translation type="unfinished">இந்த விருப்ப கடவுச்சொல் உள்ளூர் செய்தி தரவு மற்றும் உங்கள் சுயவிவரத்தை குறியாக்க பயன்படுத்தப்படுகிறது.
+இந்த கடவுச்சொல்லை இழந்தால், அதை மீட்டெடுக்க வழி இல்லை.
+மேலும் தகவலுக்கு Shift+F1 ஐ அழுத்தவும்.</translation>
+    </message>
+    <message>
+        <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
+        <translation type="unfinished">நீங்கள் இங்கு உள்ளிடும் கடவுச்சொல் விருப்பமானது மற்றும் செய்தித் தரவையும் உங்கள் டாக்ஸ் ரகசிய விசையையும் குறியாக்குகிறது. இது பெறப்பட்ட கோப்புகளை குறியாக்கம் செய்யாது. உங்கள் சுயவிவரத் தரவு எந்த சேவையகங்களுக்கும் அனுப்பப்படாது. இது தொலைநிலை உள்நுழைவு அல்ல, இது உங்கள் கணினியில் மட்டுமே உள்ளது. qTox டெவலப்பர்கள் உங்கள் கடவுச்சொல்லை இழந்தால் மீட்டெடுக்க முடியாது.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>

@@ -1724,6 +1724,18 @@ Please make sure to enter the same password twice.</source>
         <translation type="unfinished">Os contrasinais que introduciu son diferentes.
 Asegúrate de introducir o mesmo contrasinal dúas veces.</translation>
     </message>
+    <message>
+        <source>This optional password is used to encrypt local message data and your profile.
+If you lose this password, there is no way to recover it.
+Press Shift+F1 for more information.</source>
+        <translation type="unfinished">Este contrasinal opcional úsase para cifrar os datos da mensaxe local e o teu perfil.
+Se perde este contrasinal, non hai forma de recuperalo.
+Preme Maiús+F1 para obter máis información.</translation>
+    </message>
+    <message>
+        <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
+        <translation type="unfinished">O contrasinal que introduces aquí é opcional e cifra os datos da mensaxe e a túa clave secreta de Tox. Non cifra os ficheiros recibidos. Os datos do teu perfil nunca se envían a ningún servidor. Este non é un inicio de sesión remoto, só é local para o teu ordenador. Os desenvolvedores de qTox non poderán recuperar o teu contrasinal se o perden.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>

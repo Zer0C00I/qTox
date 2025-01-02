@@ -2001,6 +2001,20 @@ Please make sure to enter the same password twice.</source>
         <translation type="unfinished">ⴰⵡⴰⵍⴻⵏ ⵓⴼⴼⵉⵔⴻⵏ ⵉ ⵜⴻⵙⵙⴻⴽⵛⴻⵎⴹ ⵎⵅⴰⵍⵍⴰⴼⴻⵏ.
 ⵜⵜⵅⵉⵍ ⴹⴻⵎⵏⴻⴹ ⴰⴷ ⵜⴻⵙⵙⴻⴽⵛⴻⵎⴹ ⵢⵉⵡⴻⵏ ⵡⴰⵡⴰⵍ ⵓⴼⴼⵉⵔ ⵙⵏⴰⵜ ⵏ ⵜⵉⴽⴽⴰⵍ.</translation>
     </message>
+    <message>
+        <source>This optional password is used to encrypt local message data and your profile.
+If you lose this password, there is no way to recover it.
+Press Shift+F1 for more information.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ⴰⵡⴰⵍ ⵓⴼⴼⵉⵔⴰⴳⵉ ⵏ ⵜⴼⴻⵔⴽⵉⵜ ⵢⴻⵜⵜⵡⴰⵙⴻⵇⴷⴻⵛ ⵉ ⵓⵙⴻⴽⵍⴻⵙ ⵏ ⵢⵉⵙⴻⴼⴽⴰ ⵏ ⵢⵉⵣⴻⵏ ⴰⴷⵉⴳⴰⵏ ⴷ ⵓⴼⴻⵔⴷⵉⵙⵉⴽ.
+ⵎⴰ ⵜⴻⵙⵄⴻⴷⴷⴰⴹ ⴰⵡⴰⵍ ⵓⴼⴼⵉⵔⴰⴳⵉ, ⵓⵍⴰⵛ ⴰⵎⴻⴽ ⴰⵔⴰ ⵜⵉⴷⵜⴻⵔⵔⴻⴹ.
+ⵜⵜⴹⴻⴳⴳⵉⵔ Shift+F1 ⵉ ⵓⴳⴰⵔ ⵏ ⵢⵉⵙⴰⵍⵍⴻⵏ.</translation>
+    </message>
+    <message>
+        <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ⴰⵡⴰⵍ ⵓⴼⴼⵉⵔ ⴰⵔⴰ ⵜⴻⵙⵙⴻⴽⵛⴻⵎⴹ ⴷⴰⴳⵉ ⴷ ⴰⴼⴻⵔⴷⵉⵙ ⵢⴻⵔⵏⴰ ⵢⴻⵜⵜⵚⴻⵔⵔⵉⴼ ⵉⵙⴻⴼⴽⴰ ⵏ ⵢⵉⵣⴻⵏ ⴷ ⵜⵎⴻⵥⴷⵉⵜⵉⴽ ⵏ ⵜⵓⴼⴼⵔⴰ ⵏ Tox. ⵓⵔ ⵢⴻⵜⵜⵛⴻⴳⴳⵉⵄ ⴰⵔⴰ ⵉⴼⵓⵢⵍⴰ ⵉ ⴷⵢⴻⵜⵜⵡⴰⵙⵇⴻⴷⵛⴻⵏ. ⵉⵙⴻⴼⴽⴰ ⵏ ⵓⴼⴻⵔⴷⵉⵙⵉⴽ ⵓⵔ ⵜⵜⵡⴰⵣⴻⵏ ⴰⵔⴰ ⵖⴻⵔ ⴽⵔⴰ ⵏ ⵢⵉⵇⴻⴷⴷⴰⵛⴻⵏ. ⵡⴰⴳⵉ ⵎⴰⵞⵞⵉ ⴷ ⴰⵙⴻⴽⵛⴻⵎ ⵙ ⵜⵖⴻⵔⵖⴻⵔⵜ, ⴷ ⴰⴷⵉⴳⴰⵏ ⵉ ⵓⵙⴻⵍⴽⵉⵎⵉⴽ ⴽⴰⵏ. ⵉⵎⵙⵓⴷⴷⵙⴻⵏ ⵏ qTox ⵓⵔ ⵣⵎⵉⵔⴻⵏ ⴰⵔⴰ ⴰⴷ ⴷⵙⴼⴰⵢⴷⵉⵏ ⵙⴻⴳ ⵡⴰⵡⴰⵍ ⵓⴼⴼⵉⵔⵉⴽ ⵎⴰ ⵢⴻⵍⵍⴰ ⵢⴻⵖⵍⵉ.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>

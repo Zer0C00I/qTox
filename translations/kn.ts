@@ -2020,6 +2020,18 @@ Please make sure to enter the same password twice.</source>
         <translation type="unfinished">ನೀವು ನಮೂದಿಸಿದ ಪಾಸ್‌ವರ್ಡ್‌ಗಳು ವಿಭಿನ್ನವಾಗಿವೆ.
 ದಯವಿಟ್ಟು ಒಂದೇ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಎರಡು ಬಾರಿ ನಮೂದಿಸುವುದನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ.</translation>
     </message>
+    <message>
+        <source>This optional password is used to encrypt local message data and your profile.
+If you lose this password, there is no way to recover it.
+Press Shift+F1 for more information.</source>
+        <translation type="unfinished">ಸ್ಥಳೀಯ ಸಂದೇಶ ಡೇಟಾ ಮತ್ತು ನಿಮ್ಮ ಪ್ರೊಫೈಲ್ ಅನ್ನು ಎನ್‌ಕ್ರಿಪ್ಟ್ ಮಾಡಲು ಈ ಐಚ್ಛಿಕ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಬಳಸಲಾಗುತ್ತದೆ.
+ನೀವು ಈ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಕಳೆದುಕೊಂಡರೆ, ಅದನ್ನು ಮರುಪಡೆಯಲು ಯಾವುದೇ ಮಾರ್ಗವಿಲ್ಲ.
+ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗಿ Shift+F1 ಒತ್ತಿರಿ.</translation>
+    </message>
+    <message>
+        <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
+        <translation type="unfinished">ನೀವು ಇಲ್ಲಿ ನಮೂದಿಸುವ ಪಾಸ್‌ವರ್ಡ್ ಐಚ್ಛಿಕವಾಗಿರುತ್ತದೆ ಮತ್ತು ಸಂದೇಶ ಡೇಟಾ ಮತ್ತು ನಿಮ್ಮ ಟಾಕ್ಸ್ ರಹಸ್ಯ ಕೀಲಿಯನ್ನು ಎನ್‌ಕ್ರಿಪ್ಟ್ ಮಾಡುತ್ತದೆ. ಇದು ಸ್ವೀಕರಿಸಿದ ಫೈಲ್‌ಗಳನ್ನು ಎನ್‌ಕ್ರಿಪ್ಟ್ ಮಾಡುವುದಿಲ್ಲ. ನಿಮ್ಮ ಪ್ರೊಫೈಲ್ ಡೇಟಾವನ್ನು ಎಂದಿಗೂ ಯಾವುದೇ ಸರ್ವರ್‌ಗಳಿಗೆ ಕಳುಹಿಸಲಾಗುವುದಿಲ್ಲ. ಇದು ರಿಮೋಟ್ ಲಾಗಿನ್ ಅಲ್ಲ, ಇದು ನಿಮ್ಮ ಕಂಪ್ಯೂಟರ್‌ಗೆ ಮಾತ್ರ ಸ್ಥಳೀಯವಾಗಿದೆ. qTox ಡೆವಲಪರ್‌ಗಳು ಕಳೆದುಹೋದರೆ ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಮರುಪಡೆಯಲು ಸಾಧ್ಯವಾಗುವುದಿಲ್ಲ.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>

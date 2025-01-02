@@ -1904,6 +1904,18 @@ Please make sure to enter the same password twice.</source>
         <translation type="unfinished">La pasvortoj, kiujn vi enigis, estas malsamaj.
 Bonvolu certigi enigi la saman pasvorton dufoje.</translation>
     </message>
+    <message>
+        <source>This optional password is used to encrypt local message data and your profile.
+If you lose this password, there is no way to recover it.
+Press Shift+F1 for more information.</source>
+        <translation type="unfinished">Ĉi tiu laŭvola pasvorto estas uzata por ĉifri lokajn mesaĝajn datumojn kaj vian profilon.
+Se vi perdas ĉi tiun pasvorton, ne ekzistas maniero reakiri ĝin.
+Premu Shift+F1 por pliaj informoj.</translation>
+    </message>
+    <message>
+        <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
+        <translation type="unfinished">La pasvorto, kiun vi enigas ĉi tie, estas laŭvola kaj ĉifras mesaĝdatenojn kaj vian sekretan ŝlosilon de Tox. Ĝi ne ĉifras dosierojn ricevitajn. Viaj profilaj datumoj neniam estas senditaj al iuj serviloj. Ĉi tio ne estas fora ensaluto, ĝi estas loka al via komputilo nur. qTox-programistoj ne povos reakiri vian pasvorton se perdita.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>

@@ -1665,6 +1665,18 @@ Please make sure to enter the same password twice.</source>
         <translation>您输入的密码是不同的。
 请确保输入相同的密码两次。</translation>
     </message>
+    <message>
+        <source>This optional password is used to encrypt local message data and your profile.
+If you lose this password, there is no way to recover it.
+Press Shift+F1 for more information.</source>
+        <translation type="unfinished">此可选密码用于加密本地消息数据和您的个人资料。
+如果您丢失该密码，则无法恢复。
+按 Shift+F1 了解更多信息。</translation>
+    </message>
+    <message>
+        <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
+        <translation type="unfinished">您在此处输入的密码是可选的，它会对消息数据和您的 Tox 密钥进行加密。它不会加密收到的文件。您的个人资料数据永远不会发送到任何服务器。这不是远程登录，它仅适用于您的计算机本地。如果您的密码丢失，qTox 开发人员将无法恢复。</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>

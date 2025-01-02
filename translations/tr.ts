@@ -1676,6 +1676,18 @@ Please make sure to enter the same password twice.</source>
         <translation>Girdiğiniz parolalar farklı.
 Lütfen aynı parolayı iki kez girdiğinizden emin olun.</translation>
     </message>
+    <message>
+        <source>This optional password is used to encrypt local message data and your profile.
+If you lose this password, there is no way to recover it.
+Press Shift+F1 for more information.</source>
+        <translation type="unfinished">Bu isteğe bağlı şifre, yerel mesaj verilerini ve profilinizi şifrelemek için kullanılır.
+Bu şifreyi kaybederseniz kurtarmanın hiçbir yolu yoktur.
+Daha fazla bilgi için Shift+F1 tuşlarına basın.</translation>
+    </message>
+    <message>
+        <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
+        <translation type="unfinished">Buraya gireceğiniz şifre isteğe bağlıdır ve mesaj verilerini ve Tox gizli anahtarınızı şifreler. Alınan dosyaları şifrelemez. Profil verileriniz hiçbir zaman hiçbir sunucuya gönderilmez. Bu uzaktan oturum açma değildir, yalnızca bilgisayarınız için yereldir. qTox geliştiricileri şifrenizi kaybederseniz kurtaramaz.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>

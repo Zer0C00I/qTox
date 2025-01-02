@@ -2027,6 +2027,18 @@ Please make sure to enter the same password twice.</source>
         <translation type="unfinished">Fjalëkalimet që keni futur janë të ndryshme.
 Sigurohuni që të vendosni dy herë të njëjtin fjalëkalim.</translation>
     </message>
+    <message>
+        <source>This optional password is used to encrypt local message data and your profile.
+If you lose this password, there is no way to recover it.
+Press Shift+F1 for more information.</source>
+        <translation type="unfinished">Ky fjalëkalim opsional përdoret për të enkriptuar të dhënat e mesazheve lokale dhe profilin tuaj.
+Nëse e humbisni këtë fjalëkalim, nuk ka asnjë mënyrë për ta rikuperuar atë.
+Shtypni Shift+F1 për më shumë informacion.</translation>
+    </message>
+    <message>
+        <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
+        <translation type="unfinished">Fjalëkalimi që futni këtu është opsional dhe kodon të dhënat e mesazhit dhe çelësin tuaj sekret Tox. Nuk i kodon skedarët e marrë. Të dhënat e profilit tuaj nuk dërgohen kurrë në asnjë server. Ky nuk është një hyrje në distancë, është vetëm lokal në kompjuterin tuaj. Zhvilluesit e qTox nuk do të jenë në gjendje të rikuperojnë fjalëkalimin tuaj nëse humbet.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>

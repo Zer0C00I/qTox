@@ -2007,6 +2007,20 @@ Please make sure to enter the same password twice.</source>
         <translation type="unfinished">lo valsi poi do pu nerkla ke&apos;a cu drata
 .e&apos;o ko birti lo du&apos;u do nerkla lo mintu japyvla re roi</translation>
     </message>
+    <message>
+        <source>This optional password is used to encrypt local message data and your profile.
+If you lose this password, there is no way to recover it.
+Press Shift+F1 for more information.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">lo se cuxna japyvla cu se pilno lo nu benji lo te tcidu datni .e lo do perfil
+ganai do cirko lo vi japyvla gi na&apos;e cumki fi lo ka rinka
+ko danre la bastyfygau+F1 tezu&apos;e lo ka datni zenba</translation>
+    </message>
+    <message>
+        <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">lo japyvla poi do vi punji ke&apos;a cu tercu&apos;i gi&apos;e zifre lo notci datni .e lo do samselmipri ckiku pe la .toks. na benji lo sfaile poi selbenji lo do seltcidu cu noroi benji fi su&apos;o seltcidu ti na darno selcmene gi&apos;e diklo lo do skami po&apos;o la .qTox. fau lo nu fau lo nu fau lo nu fau lo nu fau lo nu fau lo nu fau lo nu facki lo japyvla na ka&apos;e rinka</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>

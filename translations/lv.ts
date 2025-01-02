@@ -1705,6 +1705,18 @@ Please make sure to enter the same password twice.</source>
         <translation type="unfinished">Jūsu ievadītās paroles atšķiras.
 Lūdzu, divreiz ievadiet vienu un to pašu paroli.</translation>
     </message>
+    <message>
+        <source>This optional password is used to encrypt local message data and your profile.
+If you lose this password, there is no way to recover it.
+Press Shift+F1 for more information.</source>
+        <translation type="unfinished">Šī izvēles parole tiek izmantota, lai šifrētu vietējo ziņojumu datus un jūsu profilu.
+Ja pazaudējat šo paroli, to vairs nevarēs atgūt.
+Lai iegūtu papildinformāciju, nospiediet taustiņu kombināciju Shift+F1.</translation>
+    </message>
+    <message>
+        <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
+        <translation type="unfinished">Šeit ievadītā parole nav obligāta, un tā šifrē ziņojumu datus un jūsu Tox slepeno atslēgu. Tas nešifrē saņemtos failus. Jūsu profila dati nekad netiek nosūtīti nevienam serverim. Šī nav attālināta pieteikšanās, tā ir lokāla tikai jūsu datoram. qTox izstrādātāji nevarēs atgūt jūsu paroli, ja tā tiks pazaudēta.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>

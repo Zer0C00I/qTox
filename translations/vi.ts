@@ -1679,6 +1679,18 @@ Please make sure to enter the same password twice.</source>
         <translation>Mật khẩu bạn đã nhập không giống nhau.
 Hãy đảm bảo nhập cùng một mật khẩu hai lần.</translation>
     </message>
+    <message>
+        <source>This optional password is used to encrypt local message data and your profile.
+If you lose this password, there is no way to recover it.
+Press Shift+F1 for more information.</source>
+        <translation type="unfinished">Mật khẩu tùy chọn này được sử dụng để mã hóa dữ liệu tin nhắn cục bộ và hồ sơ của bạn.
+Nếu bạn làm mất mật khẩu này thì không có cách nào lấy lại được.
+Nhấn Shift+F1 để biết thêm thông tin.</translation>
+    </message>
+    <message>
+        <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
+        <translation type="unfinished">Mật khẩu bạn nhập ở đây là tùy chọn và mã hóa dữ liệu tin nhắn cũng như khóa bí mật Tox của bạn. Nó không mã hóa các tập tin nhận được. Dữ liệu hồ sơ của bạn không bao giờ được gửi đến bất kỳ máy chủ nào. Đây không phải là đăng nhập từ xa, nó chỉ cục bộ trên máy tính của bạn. Các nhà phát triển qTox sẽ không thể khôi phục mật khẩu của bạn nếu bị mất.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>

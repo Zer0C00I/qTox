@@ -15,6 +15,7 @@ import requests
 from lib import stage
 
 _VALIDATE_LANG = False
+_AUTOMATED_TRANSLATION = "Automated translation."
 
 
 @dataclass
@@ -101,6 +102,7 @@ _LANGUAGES: tuple[Language, ...] = (
 )
 
 _BAIDU_LANGUAGES = ("jbo", )
+_IGNORE_LANGUAGES = ("pr", )
 
 LOCK = multiprocessing.Lock()
 
@@ -259,6 +261,8 @@ def _translate(lang: Language, current: int, total: int, text: str) -> str:
     The source language is English.
     """
     _progress_ts(lang.weblate_code, current, total, text)
+    if lang.weblate_code in _IGNORE_LANGUAGES:
+        return ""
     if lang.weblate_code in _BAIDU_LANGUAGES:
         return _fix_translation(lang, text, _baidu_translate(lang, text))
     response = requests.get(
@@ -296,7 +300,7 @@ def _need_translation(lang: Language, source: str,
     translatorcomment = message.getElementsByTagName("translatorcomment")
     if (translatorcomment
             and isinstance(translatorcomment[0].firstChild, minidom.Text) and
-            translatorcomment[0].firstChild.data != "Automated translation."):
+            translatorcomment[0].firstChild.data != _AUTOMATED_TRANSLATION):
         # Skip messages with translator comments. These are probably
         # not meant to be translated.
         return []
@@ -373,7 +377,20 @@ def _translate_ts_file(lang: Language, file: str) -> None:
             translation = _need_translation(lang, source.data, message)
             if not translation:
                 continue
-            todo.append((source.data, translation[0]))
+            todo.append((source.data, translation[0], message))
+    try:
+        # Write out changes we may have made in the loop above.
+        with open(file, "w") as f:
+            dom.writexml(f)
+        for i, (source, translation, message) in enumerate(todo):
+            translated = _translate(lang, i, len(todo), source)
+            if not translated:
+                continue
+            # Clear the translation node of any existing text.
+            for child in translation.childNodes:
+                translation.removeChild(child)
+            # Add the translation to the translation node.
+            translation.appendChild(dom.createTextNode(translated))
             # Add a <translatorcomment> node to the message to indicate
             # that the translation was automated.
             if not message.getElementsByTagName("translatorcomment"):
@@ -381,20 +398,8 @@ def _translate_ts_file(lang: Language, file: str) -> None:
                 # probably not meant to be translated.
                 # continue
                 comment = dom.createElement("translatorcomment")
-                comment.appendChild(
-                    dom.createTextNode("Automated translation."))
+                comment.appendChild(dom.createTextNode(_AUTOMATED_TRANSLATION))
                 message.appendChild(comment)
-    try:
-        # Write out changes we may have made in the loop above.
-        with open(file, "w") as f:
-            dom.writexml(f)
-        for i, (source, translation) in enumerate(todo):
-            # Clear the translation node of any existing text.
-            for child in translation.childNodes:
-                translation.removeChild(child)
-            # Add the translation to the translation node.
-            translation.appendChild(
-                dom.createTextNode(_translate(lang, i, len(todo), source)))
             # Commit to disk every time a translation is done so that we don't
             # lose progress if the script is interrupted.
             with open(file, "w") as f:

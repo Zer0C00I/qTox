@@ -2037,6 +2037,20 @@ Geer wilt mesjiens d’r ein make.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Dit profiel is al in gebruuk.</translation>
     </message>
+    <message>
+        <source>This optional password is used to encrypt local message data and your profile.
+If you lose this password, there is no way to recover it.
+Press Shift+F1 for more information.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Dit optioneel wachtwoord weurt gebruuk um lokale boodsjappegegevens en eur profiel te versleutelen.
+Es se dit wachtwoord verlees, is d’r gein meneer um ‘t te hersjtèlle.
+Druk op Shift+F1 veur mie informatie.</translation>
+    </message>
+    <message>
+        <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">‘t Wachwoord dat geer hei invoert is optioneel en versleut berichtgegeves en eur Tox-geheime sleutel. ‘t Versleutelt ontvange bestande neet. Uw profielgegevens weure noets nao servers gestuurd. Dit is gein externe inlog, dit is allein lokaal veur eur computer. qTox-ontwikkeleers kinne eur wachtwoord neet hersjtèlle es ‘t verlore geit.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
