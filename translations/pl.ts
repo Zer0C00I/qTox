@@ -1717,7 +1717,7 @@ Pamiętaj, aby dwukrotnie wprowadzić to samo hasło.</translation>
     </message>
     <message>
         <source>Change your settings</source>
-        <translatorcomment>translated as &quot;change settings&quot;;  seems to be simpler this way</translatorcomment>
+        <translatorcomment>translated as &quot;change settings&quot;; seems to be simpler this way</translatorcomment>
         <translation>Zmień ustawienia</translation>
     </message>
     <message>

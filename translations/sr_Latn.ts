@@ -2433,7 +2433,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
-        <translation type="unfinished">Zvanje %1  neočekivano završi. %2</translation>
+        <translation type="unfinished">Zvanje %1 neočekivano završi. %2</translation>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>

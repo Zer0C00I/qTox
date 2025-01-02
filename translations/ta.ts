@@ -1057,7 +1057,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Location not writable</source>
         <comment>Title of permissions popup</comment>
-        <translation>தங்கள்  கோப்பகத்தில் எழுதுதல் இயலாது</translation>
+        <translation>தங்கள் கோப்பகத்தில் எழுதுதல் இயலாது</translation>
     </message>
     <message>
         <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
@@ -2272,7 +2272,7 @@ Please use another image.</source>
     <message>
         <source>Location not writable</source>
         <comment>Title of permissions popup</comment>
-        <translation type="unfinished">தங்கள்  கோப்பகத்தில் எழுதுதல் இயலாது</translation>
+        <translation type="unfinished">தங்கள் கோப்பகத்தில் எழுதுதல் இயலாது</translation>
     </message>
     <message>
         <source>Nothing to remove</source>

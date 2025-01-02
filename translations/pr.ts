@@ -1002,7 +1002,7 @@ so you can save the file on windows.</source>
         <translation>Remove from guild &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Move  to circle &quot;%1&quot;</source>
+        <source>Move to circle &quot;%1&quot;</source>
         <translation>Move ta guild &quot;%1&quot;</translation>
     </message>
     <message>

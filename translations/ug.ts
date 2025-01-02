@@ -1443,7 +1443,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Your Tox ID (click to copy)</source>
-        <translation>سىزنىڭ Tox  كىملىكىڭىز (مائۇسنى چەكسىڭىز كۆچۈرۈلىدۇ)</translation>
+        <translation>سىزنىڭ Tox كىملىكىڭىز (مائۇسنى چەكسىڭىز كۆچۈرۈلىدۇ)</translation>
     </message>
     <message>
         <source>Profile</source>
@@ -1474,7 +1474,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>This QR code contains your Tox ID. You may share this with your friends as well.</source>
-        <translation>بۇ  Tox كىملىكىڭىزنىڭ ئىككىلىك كودى، دوستىڭىز بىلەن ئورتاقلاشسىڭىز بولىدۇ.</translation>
+        <translation>بۇ Tox كىملىكىڭىزنىڭ ئىككىلىك كودى، دوستىڭىز بىلەن ئورتاقلاشسىڭىز بولىدۇ.</translation>
     </message>
     <message>
         <source>Save image</source>
@@ -1872,7 +1872,7 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished">سىز  qTox ئارقىلىق ئىجرا بولىدىغان ھۆججەت ئاچماقچى، بۇ ھۆججەت بەلكىم كومپيۇتېرىڭىزغا زىيان يەتكۈزىشى مۇمكىن، راستىنلا بۇ ھۆججەتنى ئاچامسىز؟</translation>
+        <translation type="unfinished">سىز qTox ئارقىلىق ئىجرا بولىدىغان ھۆججەت ئاچماقچى، بۇ ھۆججەت بەلكىم كومپيۇتېرىڭىزغا زىيان يەتكۈزىشى مۇمكىن، راستىنلا بۇ ھۆججەتنى ئاچامسىز؟</translation>
     </message>
 </context>
 <context>
@@ -2248,7 +2248,7 @@ Please use another image.</source>
     <message>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
-        <translation type="unfinished">رەسىم  (%1)</translation>
+        <translation type="unfinished">رەسىم (%1)</translation>
     </message>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>

@@ -1707,7 +1707,7 @@ Vänligen se till att du skriver samma lösenord två gånger.</translation>
     </message>
     <message>
         <source>Change your settings</source>
-        <translatorcomment>translated as &quot;change settings&quot;;  seems to be simpler this way</translatorcomment>
+        <translatorcomment>translated as &quot;change settings&quot;; seems to be simpler this way</translatorcomment>
         <translation>Ändra dina inställningar</translation>
     </message>
     <message>

@@ -1569,7 +1569,7 @@ Profile does not contain your history.</source>
     </message>
     <message>
         <source>Save QR image as file</source>
-        <translation>حفظ صورة رمز QR  كملف</translation>
+        <translation>حفظ صورة رمز QR كملف</translation>
     </message>
     <message>
         <source>Copy QR image to clipboard</source>
@@ -1725,7 +1725,7 @@ You may want to create one.</source>
     </message>
     <message>
         <source>Password input field, you can leave it empty (no password), or type at least 6 characters</source>
-        <translation>كلمة المرور  في حقل الإدخال، يمكن تركها فارغة (بلا كلمة مرور)، أو أن لا تقل كلمة المرور عن 6 أحرف</translation>
+        <translation>كلمة المرور في حقل الإدخال، يمكن تركها فارغة (بلا كلمة مرور)، أو أن لا تقل كلمة المرور عن 6 أحرف</translation>
     </message>
     <message>
         <source>Password confirmation field</source>
@@ -2730,7 +2730,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Click and drag to select a region. Press %1 to hide/show qTox window, or %2 to cancel.</source>
         <comment>Help text shown when no region has been selected yet</comment>
-        <translation>اضغط واسحب للتحديد. اضغط %1 لـ اخفاء/إظهار نافذة qTox او %2  للالغاء.</translation>
+        <translation>اضغط واسحب للتحديد. اضغط %1 لـ اخفاء/إظهار نافذة qTox او %2 للالغاء.</translation>
     </message>
     <message>
         <source>Space</source>
