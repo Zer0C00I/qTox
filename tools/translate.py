@@ -15,6 +15,8 @@ from lib import stage
 LANGUAGES = (
     "ar",
     "be",
+    # Tamazight is a bit broken in lupdate.
+    # "ber",
     "bg",
     "bn",
     "cs",
@@ -25,6 +27,8 @@ LANGUAGES = (
     "es",
     "et",
     "ja",
+    # Supported by Baidu, but needs hand-holding, so not enabled by default.
+    # "jbo",
     "fa",
     "fi",
     "fr",
@@ -63,7 +67,6 @@ LANGUAGES = (
     "zh_TW",
 )
 
-# LANGUAGES = ["jbo"]  # Uncomment to test Lojban translations.
 LOCK = multiprocessing.Lock()
 
 
@@ -238,6 +241,13 @@ def _translate_ts_file(file: str) -> None:
             if (translation[0].firstChild is None
                     and translation[0].getAttribute("type") == "unfinished"):
                 todo.append((source.data, translation[0]))
+                # Add a <translatorcomment> node to the message to indicate
+                # that the translation was automated.
+                if not message.getElementsByTagName("translatorcomment"):
+                    comment = dom.createElement("translatorcomment")
+                    comment.appendChild(
+                        dom.createTextNode("Automated translation."))
+                    message.appendChild(comment)
     try:
         # Write out changes we may have made in the loop above.
         with open(file, "w") as f:

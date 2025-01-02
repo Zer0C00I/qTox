@@ -15,9 +15,13 @@
 
 set -eu -o pipefail
 
+if [ -f /nix/store/*-qttools-*-dev/bin/lupdate ]; then
+  export PATH="$PATH:$(dirname /nix/store/*-qttools-*-dev/bin/lupdate)"
+fi
+
 readonly LUPDATE_CMD=(lupdate src -no-obsolete -locations none)
 
-if [[ "$@" = "ALL" ]]; then
+if [ $# = 1 ] && [ "$1" = "ALL" ]; then
   for translation in translations/*.ts; do
     "${LUPDATE_CMD[@]}" -ts "$translation"
   done

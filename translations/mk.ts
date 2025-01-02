@@ -101,10 +101,12 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Use slider to set the volume of your speakers.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Користете го лизгачот за да ја поставите јачината на звукот на вашите звучници.</translation>
     </message>
     <message>
         <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to reduce bandwidth usage.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Пренесен аудио квалитет. Намалете ја оваа поставка ако вашиот пропусен опсег не е доволно голем или ако сакате да го намалите користењето на пропусниот опсег.</translation>
     </message>
     <message>
@@ -113,6 +115,7 @@ The higher values, the better video quality your friends may get.
 Note that with better video quality, you use more bandwidth.
 Sometimes your connection may not be good enough to handle higher video quality,
 which may lead to problems with video calls.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Поставете ја резолуцијата на вашата камера.
 Колку повисоки вредности, толку подобар квалитет на видеото може да добијат вашите пријатели.
 Забележете дека со подобар квалитет на видеото, користите повеќе пропусен опсег.
@@ -121,14 +124,17 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Play a test sound while changing the output volume.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Пуштете тест звук додека ја менувате излезната јачина.</translation>
     </message>
     <message>
         <source>Use slider to set the gain of your input device ranging from %1dB to %2dB.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Користете го лизгачот за да го поставите засилувањето на вашиот влезен уред во опсег од %1dB до %2dB.</translation>
     </message>
     <message>
         <source>Use slider to set the activation volume for your input device.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Користете го лизгачот за да ја поставите јачината на звукот за активирање за вашиот влезен уред.</translation>
     </message>
 </context>
@@ -190,6 +196,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Оваа верзија на qTox ја одржува тимот на TokTok по архивирањето на оригиналниот проект qTox.</translation>
     </message>
 </context>
@@ -257,6 +264,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ова е јавниот клуч на вашиот пријател, користете го за да го потврдите неговиот идентитет преку друг канал. Не можете да го испратите ова на други луѓе за да можат да го додадат овој контакт.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -269,35 +277,43 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Are you sure to remove %1 chat history?</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Дали сигурно ќе ја отстраните %1 историјата на разговор?</translation>
     </message>
     <message>
         <source>Failed to remove chat history with %1!</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Не успеа да се отстрани историјата на разговор со %1!</translation>
     </message>
     <message>
         <source>Auto-accept files</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Автоматско прифаќање датотеки</translation>
     </message>
     <message>
         <source>Auto-accept for this contact is disabled</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Автоматското прифаќање за овој контакт е оневозможено</translation>
     </message>
     <message>
         <source>Auto-accept call:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Автоматско прифаќање повик:</translation>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Автоматско прифаќање покани за конференција</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Можете да зачувате коментари за овој контакт овде.</translation>
     </message>
     <message>
         <source>Choose an auto-accept directory</source>
         <extracomment>popup title</extracomment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Изберете директориум за автоматско прифаќање</translation>
     </message>
 </context>
@@ -321,18 +337,22 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Open update download link</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Отворете ја врската за преземање ажурирање</translation>
     </message>
     <message>
         <source>Update available</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Достапно е ажурирање</translation>
     </message>
     <message>
         <source>qTox is up to date ✓</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">qTox е ажуриран ✓</translation>
     </message>
     <message>
         <source>Currently running an untested/unstable version of qTox</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Во моментов работи непроверена/нестабилна верзија на qTox</translation>
     </message>
 </context>
@@ -450,16 +470,19 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Tox ID, 76 hexadecimal characters</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Tox ID, 76 хексадецимални знаци</translation>
     </message>
     <message>
         <source>%1 Tox ID is invalid</source>
         <comment>Tox address error</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 Tox ID е неважечки</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">76 хексадецимални знаци</translation>
     </message>
 </context>
@@ -503,14 +526,17 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Освен ако %1 не знаете што правите, ве молиме %2 промени нешто овде. Промените направени овде може да доведат до проблеми со qTox, па дури и до губење на вашите податоци, на пр. историја.%3</translation>
     </message>
     <message>
         <source>Changes here are applied only after restarting qTox.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Промените овде се применуваат само по рестартирање на qTox.</translation>
     </message>
     <message>
         <source>Save file</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Зачувај датотека</translation>
     </message>
 </context>
@@ -583,19 +609,23 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Enable LAN discovery</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Овозможи откривање на LAN</translation>
     </message>
     <message>
         <source>Connection settings</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Поставки за поврзување</translation>
     </message>
     <message>
         <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
         <extracomment>force tcp checkbox tooltip</extracomment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Оневозможувањето на ова овозможува, на пр., Tox over Tor. Сепак, додава оптоварување на мрежата Tox, затоа отштиклирајте само кога е потребно.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Овозможи алатки за отстранување грешки (само за програмери)</translation>
     </message>
 </context>
@@ -619,26 +649,32 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Поставува IPv6 &lt;вклучено&gt;/&lt;исклучено&gt;. Стандардно е ВКЛУЧЕНО.</translation>
     </message>
     <message>
         <source>on/off</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">вклучување/исклучување</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Поставува UDP &lt;вклучено&gt;/&lt;исклучено&gt;. Стандардно е ВКЛУЧЕНО.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Го поставува откривањето на LAN &lt;вклучено&gt;/&lt;исклучено&gt;. Исклучениот UDP преовладува. Стандардно е ВКЛУЧЕНО.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Поставува поставки за прокси. Стандардно е НИКОЈ.</translation>
     </message>
     <message>
         <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">(чорапи 5/HTTP/НИЕ): (АДРЕСА): (ПОРТАН)</translation>
     </message>
     <message>
@@ -647,6 +683,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Не успеа автоматски да се вчита профилот.</translation>
     </message>
 </context>
@@ -692,11 +729,13 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Filename contained illegal characters</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Името на датотеката содржеше нелегални знаци</translation>
     </message>
     <message>
         <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Нелегалните знаци се сменети во _
 за да можете да ја зачувате датотеката на Windows.</translation>
     </message>
@@ -824,10 +863,12 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>mute</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">неми</translation>
     </message>
     <message>
         <source>unmute</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">вклучи звук</translation>
     </message>
 </context>
@@ -906,6 +947,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Conference %1</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Конференција %1</translation>
     </message>
     <message>
@@ -933,14 +975,17 @@ so you can save the file on Windows.</source>
     <name>DebugLog</name>
     <message>
         <source>Debug Log</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Дневник за отстранување грешки</translation>
     </message>
     <message>
         <source>Auto-reload</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Автоматско повторно вчитување</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Автоматско лизгање</translation>
     </message>
 </context>
@@ -948,6 +993,7 @@ so you can save the file on Windows.</source>
     <name>DebugLogForm</name>
     <message>
         <source>Debug Log</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Дневник за отстранување грешки</translation>
     </message>
 </context>
@@ -1040,6 +1086,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Remote paused</source>
         <comment>file transfer widget</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Далечинскиот управувач е паузиран</translation>
     </message>
 </context>
@@ -1056,6 +1103,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Transferred files</source>
         <comment>&quot;Headline&quot; of the window</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Пренесени датотеки</translation>
     </message>
 </context>
@@ -1083,6 +1131,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Older than 6 months</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Постари од 6 месеци</translation>
     </message>
 </context>
@@ -1163,6 +1212,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Премести во кругот „%1“</translation>
     </message>
     <message>
@@ -1172,6 +1222,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Blocked</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Блокиран</translation>
     </message>
 </context>
@@ -1188,6 +1239,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>%1 (no fonts)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 (без фонтови)</translation>
     </message>
 </context>
@@ -1273,24 +1325,29 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Check for updates</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Проверете дали има ажурирања</translation>
     </message>
     <message>
         <source>Spell checking</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Проверка на правопис</translation>
     </message>
     <message>
         <source>Max autoaccept file size (0 to disable):</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Максимална големина на датотека за автоматско прифаќање (0 за оневозможување):</translation>
     </message>
     <message>
         <source> MB</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">МБ</translation>
     </message>
     <message>
         <source>After pressing minimize (_) qTox will minimize to tray,
 instead of system taskbar.</source>
         <comment>toolTip for minimize to tray setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">По притискање на минимизирање (_) qTox ќе се минимизира во фиока,
 наместо системската лента со задачи.</translation>
     </message>
@@ -1298,16 +1355,19 @@ instead of system taskbar.</source>
         <source>After pressing close (X) qTox will close to tray,
 instead of closing entirely.</source>
         <comment>toolTip for close to tray setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">По притискање на затвори (X), qTox ќе се затвори до фиоката,
 наместо целосно да се затвори.</translation>
     </message>
     <message>
         <source>You can set this on a per-friend basis by right clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Можете да го поставите ова на основа на пријател со десен клик на поединечни пријатели.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Додајте порака за разговор кога корисникот се придружува или напушта конференција</translation>
     </message>
 </context>
@@ -1351,10 +1411,12 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Search in text</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Пребарување во текст</translation>
     </message>
     <message>
         <source>Go to current date</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Одете на тековниот датум</translation>
     </message>
     <message>
@@ -1367,6 +1429,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Дали сте сигурни дека сакате да ги исчистите сите прикажани пораки?</translation>
     </message>
 </context>
@@ -1519,6 +1582,7 @@ Profile does not contain your history.</source>
         <source>This ID allows other Tox users to add and contact you.
 Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Овој ID им овозможува на другите корисници на Tox да додаваат и да ве контактираат.
 Споделете го со вашите пријатели за да започнете разговор.</translation>
     </message>
@@ -1527,10 +1591,12 @@ Share it with your friends to begin chatting.</source>
     <name>LoadHistoryDialog</name>
     <message>
         <source>Load history dialog</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Дијалог за вчитување историја</translation>
     </message>
     <message>
         <source>Load history from:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Историја на вчитување од:</translation>
     </message>
 </context>
@@ -1675,6 +1741,7 @@ You may want to create one.</source>
     <message>
         <source>The passwords you&apos;ve entered are different.
 Please make sure to enter the same password twice.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Лозинките што ги внесовте се различни.
 Ве молиме погрижете се да ја внесете истата лозинка двапати.</translation>
     </message>
@@ -1784,6 +1851,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Open internal debugging tools</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Отворете ги внатрешните алатки за дебагирање</translation>
     </message>
     <message>
@@ -1792,6 +1860,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Open Debugger</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Отворете го Debugger</translation>
     </message>
 </context>
@@ -1816,14 +1885,17 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Full Screen</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Цел екран</translation>
     </message>
     <message>
         <source>Toggle video preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Вклучете го прегледот на видеото</translation>
     </message>
     <message>
         <source>Mute audio</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Исклучи звук</translation>
     </message>
     <message>
@@ -1836,14 +1908,17 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Exit full screen</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Излезете од цел екран</translation>
     </message>
     <message>
         <source>Hide messages</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Скриј пораки</translation>
     </message>
     <message>
         <source>Show messages</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Прикажи пораки</translation>
     </message>
 </context>
@@ -1897,31 +1972,38 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>New conference message</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Нова конференција порака</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Пренос на дојдовни датотеки</translation>
     </message>
     <message>
         <source>%1 - file transfer</source>
         <extracomment>e.g. Bob - file transfer</extracomment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 - пренос на датотеки</translation>
     </message>
     <message>
         <source>Conference invite received</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Добиена е покана за конференција</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 ве поканува да се придружите на конференција.</translation>
     </message>
     <message>
         <source>Friend request received</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Примено е барање за пријателство</translation>
     </message>
     <message>
         <source>Friend request received from %1</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Примено барање за пријателство од %1</translation>
     </message>
 </context>
@@ -2002,6 +2084,7 @@ Save format changes are possible, which may result in data loss.</source>
     </message>
     <message>
         <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Филтрирајте ги конференциските пораки според јавните клучеви на членовите на конференцијата. Ставете ги јавните клучеви овде, по еден по линија.</translation>
     </message>
 </context>
@@ -2017,6 +2100,7 @@ Save format changes are possible, which may result in data loss.</source>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Не може да се смени лозинката за базата на податоци, може да е оштетена или да ја користи старата лозинка.</translation>
     </message>
 </context>
@@ -2172,31 +2256,38 @@ Please use another image.</source>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Немате дозвола да пишувате на таа локација. Изберете друг или откажете го дијалогот за зачувување.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Не успеа да се зачува датотеката</translation>
     </message>
     <message>
         <source>The file you chose could not be saved.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Датотеката што ја избравте не може да се зачува.</translation>
     </message>
     <message>
         <source>Empty path is unavailable.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Празна патека е недостапна.</translation>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Не може да се смени лозинката за базата на податоци, може да е оштетена или да ја користи старата лозинка.</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Токс-корисничките имиња не можат да надминат %1 знаци.</translation>
     </message>
     <message>
         <source>Delete profile</source>
         <comment>deletion confirmation title</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Избриши профил</translation>
     </message>
     <message>
@@ -2207,6 +2298,7 @@ Please use another image.</source>
     <message>
         <source>Are you sure you want to remove your password?</source>
         <extracomment>deletion confirmation text</extracomment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Дали сте сигурни дека сакате да ја отстраните вашата лозинка?</translation>
     </message>
     <message>
@@ -2214,6 +2306,7 @@ Please use another image.</source>
 Share it with your friends to begin chatting.
 
 This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Овој ID им овозможува на другите корисници на Tox да додаваат и да ве контактираат.
 Споделете го со вашите пријатели за да започнете разговор.
 
@@ -2306,6 +2399,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>%1 is not a valid Tox address.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 не е валидна Tox адреса.</translation>
     </message>
 </context>
@@ -2360,22 +2454,27 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Dark</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Темно</translation>
     </message>
     <message>
         <source>Dark blue</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Темно сина боја</translation>
     </message>
     <message>
         <source>Dark olive</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Темна маслинка</translation>
     </message>
     <message>
         <source>Dark red</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Темно црвено</translation>
     </message>
     <message>
         <source>Dark violet</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Темно виолетова</translation>
     </message>
     <message>
@@ -2401,21 +2500,25 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>blocked</source>
         <comment>contact status</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">блокиран</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Се преформатира текст...</translation>
     </message>
     <message>
         <source>%1 message(s) from %2 chats</source>
         <extracomment>e.g. 3 messages from 2 chats</extracomment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 порака(и) од %2 разговори</translation>
     </message>
     <message>
         <source>%1 message(s) from %2</source>
         <extracomment>e.g. 2 messages from Bob</extracomment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 порака(и) од %2</translation>
     </message>
     <message>
@@ -2424,14 +2527,17 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>%1 has joined the conference</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 се приклучи на конференцијата</translation>
     </message>
     <message>
         <source>%1 has left the conference</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 ја напушти конференцијата</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 сега е познат како %2</translation>
     </message>
     <message>
@@ -2469,22 +2575,27 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Initializing</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Иницијализирање</translation>
     </message>
     <message>
         <source>Transmitting</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Пренесување</translation>
     </message>
     <message>
         <source>Finished</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Завршено</translation>
     </message>
     <message>
         <source>Broken</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Скршени</translation>
     </message>
     <message>
         <source>Canceled</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Откажано</translation>
     </message>
     <message>
@@ -2493,50 +2604,62 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Remote paused</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Далечинскиот управувач е паузиран</translation>
     </message>
     <message>
         <source>File Name</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Име на датотека</translation>
     </message>
     <message>
         <source>Contact</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Контакт</translation>
     </message>
     <message>
         <source>Progress</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Напредок</translation>
     </message>
     <message>
         <source>Size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Големина</translation>
     </message>
     <message>
         <source>Speed</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Брзина</translation>
     </message>
     <message>
         <source>Status</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Статус</translation>
     </message>
     <message>
         <source>Control</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Контрола</translation>
     </message>
     <message>
         <source>You have joined the conference</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Вие се приклучивте на конференцијата</translation>
     </message>
     <message>
         <source>You have left the conference</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ја напуштивте конференцијата</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Не успеа да се вчита историјата на разговор</translation>
     </message>
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Верзијата на базата на податоци (%1) е понова отколку што моментално поддржуваме (%2). Ве молиме надградете го qTox.</translation>
     </message>
 </context>
@@ -2595,10 +2718,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>SearchForm</name>
     <message>
         <source>The text could not be found.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Текстот не можеше да се најде.</translation>
     </message>
     <message>
         <source>Start</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Започнете</translation>
     </message>
 </context>
@@ -2610,46 +2735,57 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Start search:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Започнете со пребарување:</translation>
     </message>
     <message>
         <source>from the end</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">од крајот</translation>
     </message>
     <message>
         <source>from the beginning</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">од почетокот</translation>
     </message>
     <message>
         <source>after date</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">по датум</translation>
     </message>
     <message>
         <source>before date</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">пред датумот</translation>
     </message>
     <message>
         <source>00.00.0000</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">00.00.0000</translation>
     </message>
     <message>
         <source>Case sensitive</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Чувствителни на букви</translation>
     </message>
     <message>
         <source>Whole words only</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Само цели зборови</translation>
     </message>
     <message>
         <source>Use regular expressions</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Користете регуларни изрази</translation>
     </message>
     <message>
         <source>Select Date Dialog</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Изберете Дијалог за датум</translation>
     </message>
     <message>
         <source>Select a date</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Изберете датум</translation>
     </message>
 </context>
@@ -2693,6 +2829,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>The password is too short.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Лозинката е прекратка.</translation>
     </message>
 </context>
@@ -2704,14 +2841,17 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Failed to load personal settings</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Не успеа да се вчитаат личните поставки</translation>
     </message>
     <message>
         <source>Unable to upgrade settings from version %1 to version %2. Cannot start qTox.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Не може да се надградат поставките од верзија %1 на верзија %2. Не може да се стартува qTox.</translation>
     </message>
     <message>
         <source>Failed to load global settings</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Не успеа да се вчитаат глобалните поставки</translation>
     </message>
 </context>
@@ -2890,14 +3030,17 @@ Hide formatting characters:
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
         <comment>tooltip for Notify setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Прикажи известување кога ќе примите нова порака, повик или барање за пријателство и прозорецот не е избран.</translation>
     </message>
     <message>
         <source>Notify</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Известете</translation>
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Конференциите известуваат само кога се спомнуваат</translation>
     </message>
     <message>
@@ -2910,78 +3053,96 @@ Hide formatting characters:
     </message>
     <message>
         <source>Notify via desktop notifications</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Известете преку известувања за работната површина</translation>
     </message>
     <message>
         <source>Hide message sender and contents</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Сокриј го испраќачот на пораката и содржината</translation>
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Користете обоени прекари на конференции</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Известувајте за нови пораки на конференции само кога ќе се спомене вашиот прекар.</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
         <comment>toolTip for conference positioning</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ако е означено, конференциите ќе бидат поставени на врвот на листата на пријатели, во спротивно, тие ќе бидат ставени под онлајн пријателите.</translation>
     </message>
     <message>
         <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
         <comment>toolTip for show identicons</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ако е овозможено, секој контакт без аватар ќе има генерирана икона врз основа на нивниот Tox ID наместо стандардната слика. Потребно е рестартирање за да се примени.</translation>
     </message>
     <message>
         <source>Smiley pack:</source>
         <extracomment>Text on smiley pack label</extracomment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Пакет насмевки:</translation>
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ако е оневозможено, исклучете го известувањето кога статусот е зафатен (но сепак прикажува известување)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Користете известувања за работната површина, на пр. во центар за известувања или во системската лента. Без ова, известувањето ќе биде видливо само како трепкачка икона на фиоката.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Прикажувај само „нова порака“ без прикажување потенцијално тајни информации во известувањата за работната површина.</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Поделете го списокот со пријатели и прозорецот за разговор во одделно подвижни прозорци.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Прикажувајте ги текстуалните емотикони како шарени слики наместо текст или црно/бели емотикони со фонтови.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Изберете кој сет на слики да се користи при рендерирање емотикони.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Големина во пиксели на емоџи слика. Изберете нешто слично на вашата основна големина на фонтот.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Основен стил за користење за интерфејсот. Се препорачува Fusion бидејќи најдобро функционира со qTox темата.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Тема во боја на интерфејсот. Користете го ова за да изберете темни режим.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ако е оневозможено, користете ги основните известувања за системската фиока. Во спротивно, обидете се да го користите заднината за известувања на вашата работна околина. Оневозможете го ова ако забележите проблеми со известувањата на работната површина.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Користете го резервниот дел за известувања специфичен за системот доколку е достапен</translation>
     </message>
 </context>
@@ -3108,15 +3269,18 @@ Hide formatting characters:
     </message>
     <message>
         <source>Toxcore failed to start, the application will terminate after you close this message.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Toxcore не успеа да започне, апликацијата ќе прекине откако ќе ја затворите оваа порака.</translation>
     </message>
     <message>
         <source>Toxcore failed to start with your proxy settings. qTox cannot run; please modify your settings and restart.</source>
         <comment>popup text</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Toxcore не успеа да започне со поставките за вашиот прокси. qTox не може да работи; модифицирајте ги вашите поставки и рестартирајте.</translation>
     </message>
     <message>
         <source>Couldn&apos;t send friend request</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Не може да се испрати барање за пријателство</translation>
     </message>
     <message numerus="yes">
@@ -3142,26 +3306,32 @@ Hide formatting characters:
     </message>
     <message>
         <source>Change status</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Променете го статусот</translation>
     </message>
     <message>
         <source>Edit profile</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Уредете го профилот</translation>
     </message>
     <message>
         <source>Logout</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Одјавување</translation>
     </message>
     <message>
         <source>Add contact...</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Додадете контакт...</translation>
     </message>
     <message>
         <source>Next conversation</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Следен разговор</translation>
     </message>
     <message>
         <source>Previous conversation</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Претходен разговор</translation>
     </message>
     <message>

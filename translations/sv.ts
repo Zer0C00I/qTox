@@ -190,6 +190,7 @@ vilket kan leda till problem med videosamtal.</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Denna version av qTox underhålls av TokTok-teamet efter arkiveringen av det ursprungliga qTox-projektet.</translation>
     </message>
 </context>
@@ -595,6 +596,7 @@ vilket kan leda till problem med videosamtal.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Aktivera felsökningsverktyg (endast utvecklare)</translation>
     </message>
 </context>
@@ -634,10 +636,12 @@ vilket kan leda till problem med videosamtal.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ställer in proxyinställningar. Standard är INGEN.</translation>
     </message>
     <message>
         <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">(SOCKS5/HTTP/INGEN):(ADRESS):(PORT)</translation>
     </message>
     <message>
@@ -929,14 +933,17 @@ så att du kan spara filen i Windows.</translation>
     <name>DebugLog</name>
     <message>
         <source>Debug Log</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Felsökningslogg</translation>
     </message>
     <message>
         <source>Auto-reload</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ladda om automatiskt</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Automatisk rullning</translation>
     </message>
 </context>
@@ -944,6 +951,7 @@ så att du kan spara filen i Windows.</translation>
     <name>DebugLogForm</name>
     <message>
         <source>Debug Log</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Felsökningslogg</translation>
     </message>
 </context>
@@ -1179,6 +1187,7 @@ så att du kan spara filen i Windows.</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 (inga teckensnitt)</translation>
     </message>
 </context>
@@ -1282,6 +1291,7 @@ så att du kan spara filen i Windows.</translation>
         <source>After pressing minimize (_) qTox will minimize to tray,
 instead of system taskbar.</source>
         <comment>toolTip for minimize to tray setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Efter att ha tryckt på minimera (_) kommer qTox att minimera till facket,
 istället för systemets aktivitetsfält.</translation>
     </message>
@@ -1289,6 +1299,7 @@ istället för systemets aktivitetsfält.</translation>
         <source>After pressing close (X) qTox will close to tray,
 instead of closing entirely.</source>
         <comment>toolTip for close to tray setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Efter att ha tryckt på stäng (X) stänger qTox facket,
 istället för att stänga helt.</translation>
     </message>
@@ -1299,6 +1310,7 @@ istället för att stänga helt.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Lägg till ett chattmeddelande när en användare går med i eller lämnar en konferens</translation>
     </message>
 </context>
@@ -1522,6 +1534,7 @@ Dela det med dina vänner för att börja chatta.</translation>
     </message>
     <message>
         <source>Load history from:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ladda historik från:</translation>
     </message>
 </context>
@@ -1775,6 +1788,7 @@ Vänligen se till att du skriver samma lösenord två gånger.</translation>
     </message>
     <message>
         <source>Open internal debugging tools</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Öppna interna felsökningsverktyg</translation>
     </message>
     <message>
@@ -1783,6 +1797,7 @@ Vänligen se till att du skriver samma lösenord två gånger.</translation>
     </message>
     <message>
         <source>Open Debugger</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Öppna Debugger</translation>
     </message>
 </context>
@@ -2401,11 +2416,13 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
     <message>
         <source>%1 message(s) from %2 chats</source>
         <extracomment>e.g. 3 messages from 2 chats</extracomment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 meddelande(n) från %2 chattar</translation>
     </message>
     <message>
         <source>%1 message(s) from %2</source>
         <extracomment>e.g. 2 messages from Bob</extracomment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 meddelande(n) från %2</translation>
     </message>
     <message>
@@ -2459,22 +2476,27 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
     </message>
     <message>
         <source>Initializing</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Initierar</translation>
     </message>
     <message>
         <source>Transmitting</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Överföring</translation>
     </message>
     <message>
         <source>Finished</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Färdig</translation>
     </message>
     <message>
         <source>Broken</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Bruten</translation>
     </message>
     <message>
         <source>Canceled</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Avbruten</translation>
     </message>
     <message>
@@ -2487,22 +2509,27 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
     </message>
     <message>
         <source>File Name</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Filnamn</translation>
     </message>
     <message>
         <source>Contact</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Kontakta</translation>
     </message>
     <message>
         <source>Progress</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Framsteg</translation>
     </message>
     <message>
         <source>Size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Storlek</translation>
     </message>
     <message>
         <source>Speed</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Hastighet</translation>
     </message>
     <message>
@@ -2511,22 +2538,27 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
     </message>
     <message>
         <source>Control</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Kontrollera</translation>
     </message>
     <message>
         <source>You have joined the conference</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Du har gått med i konferensen</translation>
     </message>
     <message>
         <source>You have left the conference</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Du har lämnat konferensen</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Det gick inte att läsa in chatthistoriken</translation>
     </message>
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Databasversionen (%1) är nyare än vi för närvarande stöder (%2). Vänligen uppgradera qTox.</translation>
     </message>
 </context>
@@ -2636,6 +2668,7 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
     </message>
     <message>
         <source>Select Date Dialog</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Välj Datumdialog</translation>
     </message>
     <message>
@@ -2683,6 +2716,7 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
     </message>
     <message>
         <source>The password is too short.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Lösenordet är för kort.</translation>
     </message>
 </context>
@@ -2694,14 +2728,17 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
     </message>
     <message>
         <source>Failed to load personal settings</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Det gick inte att läsa in personliga inställningar</translation>
     </message>
     <message>
         <source>Unable to upgrade settings from version %1 to version %2. Cannot start qTox.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Det gick inte att uppgradera inställningarna från version %1 till version %2. Kan inte starta qTox.</translation>
     </message>
     <message>
         <source>Failed to load global settings</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Det gick inte att läsa in globala inställningar</translation>
     </message>
 </context>
@@ -2908,70 +2945,86 @@ Hide formatting characters:
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Använd färgade smeknamn i konferenser</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Meddela endast om nya meddelanden i konferenser när ditt smeknamn nämns.</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
         <comment>toolTip for conference positioning</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Om markerad kommer konferenser att placeras överst på vänlistan, annars placeras de under onlinevänner.</translation>
     </message>
     <message>
         <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
         <comment>toolTip for show identicons</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Om det är aktiverat kommer varje kontakt utan avatar att ha en genererad ikon baserad på deras Tox-ID istället för standardbilden. Kräver omstart för att ansöka.</translation>
     </message>
     <message>
         <source>Smiley pack:</source>
         <extracomment>Text on smiley pack label</extracomment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Smileypaket:</translation>
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Om den är inaktiverad, ljuder aviseringen när statusen är Upptagen (men visar fortfarande en avisering)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Använd skrivbordsaviseringar, t.ex. i ett meddelandecenter eller i systemfältet. Utan detta kommer meddelandet endast att vara synligt som en blinkande ikon i fältet.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Visa bara &quot;nytt meddelande&quot; utan att visa potentiellt hemlig information i skrivbordsaviseringar.</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Dela upp vänlistan och chattfönstret i separata flyttbara fönster.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Visa textuella emojis som färgglada bilder istället för text eller svart/vita teckensnittsrenderade emojis.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Välj vilken uppsättning bilder som ska användas när du renderar emojis.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Storlek i pixlar för en emoji-bild. Välj något som liknar din bastypsnittsstorlek.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Basstil att använda för användargränssnittet. Fusion rekommenderas eftersom det fungerar bäst med qTox-tema.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">UI färgtema. Använd detta för att välja mörkt läge.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Om den är inaktiverad, använd grundläggande meddelanden i systemfältet. Annars kan du försöka använda meddelandebackend för din skrivbordsmiljö. Inaktivera detta om du ser problem med skrivbordsaviseringar.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Använd systemspecifik aviseringsbackend om tillgängligt</translation>
     </message>
 </context>
@@ -3097,15 +3150,18 @@ Hide formatting characters:
     </message>
     <message>
         <source>Toxcore failed to start, the application will terminate after you close this message.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Toxcore misslyckades med att starta, applikationen avslutas när du stänger det här meddelandet.</translation>
     </message>
     <message>
         <source>Toxcore failed to start with your proxy settings. qTox cannot run; please modify your settings and restart.</source>
         <comment>popup text</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Toxcore kunde inte starta med dina proxyinställningar. qTox kan inte köras; vänligen ändra dina inställningar och starta om.</translation>
     </message>
     <message>
         <source>Couldn&apos;t send friend request</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Det gick inte att skicka vänförfrågan</translation>
     </message>
     <message numerus="yes">
@@ -3129,10 +3185,12 @@ Hide formatting characters:
     </message>
     <message>
         <source>Change status</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ändra status</translation>
     </message>
     <message>
         <source>Edit profile</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Redigera profil</translation>
     </message>
     <message>
@@ -3141,14 +3199,17 @@ Hide formatting characters:
     </message>
     <message>
         <source>Add contact...</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Lägg till kontakt...</translation>
     </message>
     <message>
         <source>Next conversation</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Nästa konversation</translation>
     </message>
     <message>
         <source>Previous conversation</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Tidigare konversation</translation>
     </message>
     <message>

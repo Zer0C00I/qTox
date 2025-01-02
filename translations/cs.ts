@@ -190,6 +190,7 @@ může dojít během video hovoru k výpadkům či jiným problémům.</translat
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Tato verze qTox je udržována týmem TokTok po archivaci původního projektu qTox.</translation>
     </message>
 </context>
@@ -596,6 +597,7 @@ může dojít během video hovoru k výpadkům či jiným problémům.</translat
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Povolit nástroje ladění (pouze pro vývojáře)</translation>
     </message>
 </context>
@@ -932,14 +934,17 @@ takže můžete soubor uložit i v systému Windows.</translation>
     <name>DebugLog</name>
     <message>
         <source>Debug Log</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Protokol ladění</translation>
     </message>
     <message>
         <source>Auto-reload</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Automatické opětovné načtení</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Automatické posouvání</translation>
     </message>
 </context>
@@ -947,6 +952,7 @@ takže můžete soubor uložit i v systému Windows.</translation>
     <name>DebugLogForm</name>
     <message>
         <source>Debug Log</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Protokol ladění</translation>
     </message>
 </context>
@@ -1181,6 +1187,7 @@ takže můžete soubor uložit i v systému Windows.</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 (žádná písma)</translation>
     </message>
 </context>
@@ -1301,6 +1308,7 @@ nedojde k jeho úplnému ukončení.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Přidejte chatovou zprávu, když se uživatel připojí ke konferenci nebo ji opustí</translation>
     </message>
 </context>
@@ -1524,6 +1532,7 @@ Zašlete ho svým přátelům a navažte kontakt.</translation>
     </message>
     <message>
         <source>Load history from:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Načíst historii z:</translation>
     </message>
 </context>
@@ -1776,6 +1785,7 @@ Ujistěte se, že zadáváte stejné heslo dvakrát.</translation>
     </message>
     <message>
         <source>Open internal debugging tools</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Otevřete nástroje pro interní ladění</translation>
     </message>
     <message>
@@ -1784,6 +1794,7 @@ Ujistěte se, že zadáváte stejné heslo dvakrát.</translation>
     </message>
     <message>
         <source>Open Debugger</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Otevřete Debugger</translation>
     </message>
 </context>
@@ -2461,22 +2472,27 @@ ID zahrnuje kód NoSpam (modře) a kontrolní součet (šedě).</translation>
     </message>
     <message>
         <source>Initializing</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Inicializace</translation>
     </message>
     <message>
         <source>Transmitting</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Vysílání</translation>
     </message>
     <message>
         <source>Finished</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Hotovo</translation>
     </message>
     <message>
         <source>Broken</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Zlomený</translation>
     </message>
     <message>
         <source>Canceled</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Zrušeno</translation>
     </message>
     <message>
@@ -2489,46 +2505,57 @@ ID zahrnuje kód NoSpam (modře) a kontrolní součet (šedě).</translation>
     </message>
     <message>
         <source>File Name</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Název souboru</translation>
     </message>
     <message>
         <source>Contact</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Kontakt</translation>
     </message>
     <message>
         <source>Progress</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Pokrok</translation>
     </message>
     <message>
         <source>Size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Velikost</translation>
     </message>
     <message>
         <source>Speed</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Rychlost</translation>
     </message>
     <message>
         <source>Status</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Postavení</translation>
     </message>
     <message>
         <source>Control</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Řízení</translation>
     </message>
     <message>
         <source>You have joined the conference</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Připojili jste se ke konferenci</translation>
     </message>
     <message>
         <source>You have left the conference</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Opustili jste konferenci</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Načtení historie chatu se nezdařilo</translation>
     </message>
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Verze databáze (%1) je novější, než aktuálně podporujeme (%2). Upgradujte prosím qTox.</translation>
     </message>
 </context>
@@ -2638,6 +2665,7 @@ ID zahrnuje kód NoSpam (modře) a kontrolní součet (šedě).</translation>
     </message>
     <message>
         <source>Select Date Dialog</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Vyberte dialogové okno Datum</translation>
     </message>
     <message>
@@ -2696,14 +2724,17 @@ ID zahrnuje kód NoSpam (modře) a kontrolní součet (šedě).</translation>
     </message>
     <message>
         <source>Failed to load personal settings</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Nepodařilo se načíst osobní nastavení</translation>
     </message>
     <message>
         <source>Unable to upgrade settings from version %1 to version %2. Cannot start qTox.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Nelze upgradovat nastavení z verze %1 na verzi %2. Nelze spustit qTox.</translation>
     </message>
     <message>
         <source>Failed to load global settings</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Nepodařilo se načíst globální nastavení</translation>
     </message>
 </context>
@@ -2934,46 +2965,57 @@ Hide formatting characters:
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Pokud je zakázáno, ztlumí zvuky upozornění, když je stav Zaneprázdněn (ale stále se zobrazuje upozornění)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Použijte upozornění na ploše, např. v oznamovacím centru nebo na systémové liště. Bez toho bude oznámení viditelné pouze jako blikající ikona na hlavním panelu.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Zobrazovat pouze „novou zprávu“ bez zobrazování potenciálně tajných informací v oznámeních na ploše.</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Rozdělte seznam přátel a okno chatu do samostatně pohyblivých oken.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Zobrazte textové emotikony jako barevné obrázky namísto textu nebo emotikonů vykreslených černobílým písmem.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Vyberte, kterou sadu obrázků použít při vykreslování emotikonů.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Velikost obrázku emodži v pixelech. Vyberte něco podobného, ​​jako je vaše základní velikost písma.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Základní styl pro uživatelské rozhraní. Doporučuje se Fusion, protože nejlépe funguje s motivy qTox.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Barevný motiv uživatelského rozhraní. Slouží k výběru tmavého režimu.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Pokud je zakázáno, použijte základní oznámení na systémové liště. V opačném případě zkuste použít oznamovací backend vašeho desktopového prostředí. Pokud pozorujete problémy s upozorněními na ploše, vypněte toto.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Pokud je k dispozici, použijte systém upozornění</translation>
     </message>
 </context>

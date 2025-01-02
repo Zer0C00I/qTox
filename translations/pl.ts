@@ -192,6 +192,7 @@ co może powodować problemy z rozmowami wideo.</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ta wersja qTox jest utrzymywana przez zespół TokTok po archiwizacji oryginalnego projektu qTox.</translation>
     </message>
 </context>
@@ -602,6 +603,7 @@ co może powodować problemy z rozmowami wideo.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Włącz narzędzia debugowania (tylko programiści)</translation>
     </message>
 </context>
@@ -941,14 +943,17 @@ więc możesz zapisać ten plik na systemie Windows.</translation>
     <name>DebugLog</name>
     <message>
         <source>Debug Log</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Dziennik debugowania</translation>
     </message>
     <message>
         <source>Auto-reload</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Automatyczne przeładowanie</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Automatyczne przewijanie</translation>
     </message>
 </context>
@@ -956,6 +961,7 @@ więc możesz zapisać ten plik na systemie Windows.</translation>
     <name>DebugLogForm</name>
     <message>
         <source>Debug Log</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Dziennik debugowania</translation>
     </message>
 </context>
@@ -1193,6 +1199,7 @@ więc możesz zapisać ten plik na systemie Windows.</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 (bez czcionek)</translation>
     </message>
 </context>
@@ -1795,6 +1802,7 @@ Pamiętaj, aby dwukrotnie wprowadzić to samo hasło.</translation>
     </message>
     <message>
         <source>Open internal debugging tools</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Otwórz wewnętrzne narzędzia do debugowania</translation>
     </message>
     <message>
@@ -1803,6 +1811,7 @@ Pamiętaj, aby dwukrotnie wprowadzić to samo hasło.</translation>
     </message>
     <message>
         <source>Open Debugger</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Otwórz debuger</translation>
     </message>
 </context>
@@ -2554,10 +2563,12 @@ To ID zawiera kod NoSpam (w kolorze niebieskim) oraz sumę kontrolną (w kolorze
     </message>
     <message>
         <source>Failed to load chat history</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Nie udało się załadować historii czatów</translation>
     </message>
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Wersja bazy danych (%1) jest nowsza niż obecnie obsługiwana (%2). Proszę zaktualizować qTox.</translation>
     </message>
 </context>
@@ -2963,46 +2974,57 @@ Hide formatting characters:
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Jeśli wyłączone, wycisz powiadomienie, gdy stan to Zajęty (ale nadal wyświetlaj powiadomienie)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Korzystaj z powiadomień na pulpicie, np. w centrum powiadomień lub na pasku zadań. Bez tego powiadomienie będzie widoczne jedynie jako migająca ikona w zasobniku.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Pokazuj tylko „nową wiadomość”, bez pokazywania potencjalnie tajnych informacji w powiadomieniach na pulpicie.</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Podziel listę znajomych i okno czatu na oddzielnie ruchome okna.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Wyświetlaj emoji tekstowe w postaci kolorowych obrazów zamiast tekstu lub emoji renderowanych za pomocą czarno-białej czcionki.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Wybierz zestaw obrazów, który ma zostać użyty podczas renderowania emoji.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Rozmiar obrazu emoji w pikselach. Wybierz coś podobnego do podstawowego rozmiaru czcionki.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Styl podstawowy do użycia w interfejsie użytkownika. Zalecana jest Fuzja, ponieważ najlepiej działa z motywem qTox.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Motyw kolorystyczny interfejsu użytkownika. Użyj tego, aby wybrać tryb ciemny.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Jeśli wyłączone, używaj podstawowych powiadomień w zasobniku systemowym. W przeciwnym razie spróbuj użyć zaplecza powiadomień w środowisku graficznym. Wyłącz tę opcję, jeśli zaobserwujesz problemy z powiadomieniami na pulpicie.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Jeśli jest dostępny, użyj systemu powiadomień specyficznego dla systemu</translation>
     </message>
 </context>

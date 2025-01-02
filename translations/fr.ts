@@ -190,6 +190,7 @@ ce qui peut entraîner des problèmes lors des appels vidéo.</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Cette version de qTox est maintenue par l&apos;équipe TokTok suite à l&apos;archivage du projet qTox original.</translation>
     </message>
 </context>
@@ -595,6 +596,7 @@ ce qui peut entraîner des problèmes lors des appels vidéo.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Activer les outils de débogage (développeurs uniquement)</translation>
     </message>
 </context>
@@ -929,14 +931,17 @@ afin que vous puissiez enregistrer le fichier sur windows.</translation>
     <name>DebugLog</name>
     <message>
         <source>Debug Log</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Journal de débogage</translation>
     </message>
     <message>
         <source>Auto-reload</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Rechargement automatique</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Défilement automatique</translation>
     </message>
 </context>
@@ -944,6 +949,7 @@ afin que vous puissiez enregistrer le fichier sur windows.</translation>
     <name>DebugLogForm</name>
     <message>
         <source>Debug Log</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Journal de débogage</translation>
     </message>
 </context>
@@ -1178,6 +1184,7 @@ afin que vous puissiez enregistrer le fichier sur windows.</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 (pas de polices)</translation>
     </message>
 </context>
@@ -1773,6 +1780,7 @@ Veuillez vous assurer d&apos;entrer deux fois le même mot de passe.</translatio
     </message>
     <message>
         <source>Open internal debugging tools</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ouvrir les outils de débogage internes</translation>
     </message>
     <message>
@@ -1781,6 +1789,7 @@ Veuillez vous assurer d&apos;entrer deux fois le même mot de passe.</translatio
     </message>
     <message>
         <source>Open Debugger</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ouvrir le débogueur</translation>
     </message>
 </context>
@@ -2930,46 +2939,57 @@ Hide formatting characters:
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Si désactivé, la notification muette retentit lorsque l&apos;état est Occupé (mais affiche toujours une notification)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Utilisez les notifications du bureau, par ex. dans un centre de notification ou dans la barre d&apos;état système. Sans cela, la notification ne sera visible que sous la forme d&apos;une icône clignotante dans la barre d&apos;état.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Afficher uniquement «&#xa0;nouveau message&#xa0;» sans afficher d&apos;informations potentiellement secrètes dans les notifications du bureau.</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Divisez la liste d&apos;amis et la fenêtre de discussion en fenêtres mobiles séparément.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Affichez les émojis textuels sous forme d’images colorées au lieu de texte ou d’émojis rendus en police noir/blanc.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Sélectionnez l&apos;ensemble d&apos;images à utiliser lors du rendu des emojis.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Taille en pixels d&apos;une image emoji. Sélectionnez quelque chose de similaire à votre taille de police de base.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Style de base à utiliser pour l’interface utilisateur. La fusion est recommandée car elle fonctionne mieux avec la thématique qTox.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Thème de couleur de l&apos;interface utilisateur. Utilisez-le pour sélectionner le mode sombre.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">S&apos;il est désactivé, utilisez les notifications de base de la barre d&apos;état système. Sinon, essayez d&apos;utiliser le backend de notification de votre environnement de bureau. Désactivez cette option si vous observez des problèmes avec les notifications du bureau.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Utiliser le backend de notification spécifique au système si disponible</translation>
     </message>
 </context>

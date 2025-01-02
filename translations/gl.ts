@@ -101,10 +101,12 @@ o que pode provocar problemas cas vídeo chamadas.</translation>
     </message>
     <message>
         <source>Use slider to set the volume of your speakers.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Usa o control deslizante para configurar o volume dos teus altofalantes.</translation>
     </message>
     <message>
         <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to reduce bandwidth usage.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Calidade de audio transmitida. Baixa esta configuración se o teu ancho de banda non é o suficientemente alto ou se queres reducir o uso do ancho de banda.</translation>
     </message>
     <message>
@@ -113,6 +115,7 @@ The higher values, the better video quality your friends may get.
 Note that with better video quality, you use more bandwidth.
 Sometimes your connection may not be good enough to handle higher video quality,
 which may lead to problems with video calls.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Establece a resolución da túa cámara.
 Cantos máis altos valores, mellor calidade de vídeo poderán obter os teus amigos.
 Teña en conta que cunha mellor calidade de vídeo, usa máis ancho de banda.
@@ -121,14 +124,17 @@ o que pode provocar problemas coas videochamadas.</translation>
     </message>
     <message>
         <source>Play a test sound while changing the output volume.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Reproduce un son de proba mentres cambias o volume de saída.</translation>
     </message>
     <message>
         <source>Use slider to set the gain of your input device ranging from %1dB to %2dB.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Usa o control deslizante para configurar a ganancia do teu dispositivo de entrada entre %1dB e %2dB.</translation>
     </message>
     <message>
         <source>Use slider to set the activation volume for your input device.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Usa o control deslizante para configurar o volume de activación do teu dispositivo de entrada.</translation>
     </message>
 </context>
@@ -190,6 +196,7 @@ o que pode provocar problemas coas videochamadas.</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Esta versión de qTox está a ser mantida polo equipo de TokTok tras o arquivo do proxecto qTox orixinal.</translation>
     </message>
 </context>
@@ -277,27 +284,33 @@ o que pode provocar problemas coas videochamadas.</translation>
     </message>
     <message>
         <source>Auto-accept files</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Acepta automaticamente ficheiros</translation>
     </message>
     <message>
         <source>Auto-accept for this contact is disabled</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">A aceptación automática deste contacto está desactivada</translation>
     </message>
     <message>
         <source>Auto-accept call:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Aceptación automática de chamadas:</translation>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Acepta automaticamente invitacións a conferencias</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Podes gardar comentarios sobre este contacto aquí.</translation>
     </message>
     <message>
         <source>Choose an auto-accept directory</source>
         <extracomment>popup title</extracomment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Escolla un directorio de aceptación automática</translation>
     </message>
 </context>
@@ -333,6 +346,7 @@ o que pode provocar problemas coas videochamadas.</translation>
     </message>
     <message>
         <source>Currently running an untested/unstable version of qTox</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Actualmente executando unha versión non probada/inestable de qTox</translation>
     </message>
 </context>
@@ -449,16 +463,19 @@ o que pode provocar problemas coas videochamadas.</translation>
     </message>
     <message>
         <source>Tox ID, 76 hexadecimal characters</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Tox ID, 76 caracteres hexadecimais</translation>
     </message>
     <message>
         <source>%1 Tox ID is invalid</source>
         <comment>Tox address error</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 Tox ID non é válido</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">76 caracteres hexadecimais</translation>
     </message>
 </context>
@@ -502,14 +519,17 @@ o que pode provocar problemas coas videochamadas.</translation>
     </message>
     <message>
         <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
-        <translation type="unfinished">A menos que %1 saiba o que está a facer, faga %2 cambiar calquera cousa aquí. Os cambios feitos aquí poden provocar problemas con qTox e mesmo a perda dos teus datos, por exemplo. historia.%3</translation>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">A non ser que %1 saiba o que está a facer, faga %2 cambiar calquera cousa aquí. Os cambios realizados aquí poden provocar problemas con qTox e mesmo a perda dos teus datos, p. ex. historia.%3</translation>
     </message>
     <message>
         <source>Changes here are applied only after restarting qTox.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Os cambios aquí só se aplican despois de reiniciar qTox.</translation>
     </message>
     <message>
         <source>Save file</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Gardar ficheiro</translation>
     </message>
 </context>
@@ -586,15 +606,18 @@ o que pode provocar problemas coas videochamadas.</translation>
     </message>
     <message>
         <source>Connection settings</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Configuración de conexión</translation>
     </message>
     <message>
         <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
         <extracomment>force tcp checkbox tooltip</extracomment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">A desactivación permite, por exemplo, Tox sobre Tor. Non obstante, engade carga á rede Tox, polo que desmarque só cando sexa necesario.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Activar ferramentas de depuración (só para programadores)</translation>
     </message>
 </context>
@@ -618,26 +641,32 @@ o que pode provocar problemas coas videochamadas.</translation>
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Establece IPv6 &lt;activado&gt;/&lt;desactivado&gt;. O predeterminado é ON.</translation>
     </message>
     <message>
         <source>on/off</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">on/off</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Establece UDP &lt;activado&gt;/&lt;desactivado&gt;. O predeterminado é ON.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Establece o descubrimento da LAN &lt;on&gt;/&lt;off&gt;. Desactivación de UDP anula. O predeterminado é ON.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Establece a configuración do proxy. O predeterminado é NINGUNHA.</translation>
     </message>
     <message>
         <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">(SOCKS5/HTTP/NONE):(ENDEREZO):(PORTO)</translation>
     </message>
     <message>
@@ -696,6 +725,7 @@ o que pode provocar problemas coas videochamadas.</translation>
     <message>
         <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Os caracteres ilegais cambiáronse a _
 para que poida gardar o ficheiro en Windows.</translation>
     </message>
@@ -930,14 +960,17 @@ para que poida gardar o ficheiro en Windows.</translation>
     <name>DebugLog</name>
     <message>
         <source>Debug Log</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Rexistro de depuración</translation>
     </message>
     <message>
         <source>Auto-reload</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Recarga automática</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Desprazamento automático</translation>
     </message>
 </context>
@@ -945,6 +978,7 @@ para que poida gardar o ficheiro en Windows.</translation>
     <name>DebugLogForm</name>
     <message>
         <source>Debug Log</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Rexistro de depuración</translation>
     </message>
 </context>
@@ -1037,6 +1071,7 @@ para que poida gardar o ficheiro en Windows.</translation>
     <message>
         <source>Remote paused</source>
         <comment>file transfer widget</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Mando a distancia en pausa</translation>
     </message>
 </context>
@@ -1053,6 +1088,7 @@ para que poida gardar o ficheiro en Windows.</translation>
     <message>
         <source>Transferred files</source>
         <comment>&quot;Headline&quot; of the window</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ficheiros transferidos</translation>
     </message>
 </context>
@@ -1080,6 +1116,7 @@ para que poida gardar o ficheiro en Windows.</translation>
     </message>
     <message>
         <source>Older than 6 months</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Maior de 6 meses</translation>
     </message>
 </context>
@@ -1160,6 +1197,7 @@ para que poida gardar o ficheiro en Windows.</translation>
     </message>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Mover ao círculo &quot;%1&quot;</translation>
     </message>
     <message>
@@ -1169,6 +1207,7 @@ para que poida gardar o ficheiro en Windows.</translation>
     </message>
     <message>
         <source>Blocked</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Bloqueado</translation>
     </message>
 </context>
@@ -1185,6 +1224,7 @@ para que poida gardar o ficheiro en Windows.</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 (sen fontes)</translation>
     </message>
 </context>
@@ -1288,6 +1328,7 @@ para que poida gardar o ficheiro en Windows.</translation>
         <source>After pressing minimize (_) qTox will minimize to tray,
 instead of system taskbar.</source>
         <comment>toolTip for minimize to tray setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Despois de premer minimizar (_) qTox minimizarase na bandexa,
 en lugar da barra de tarefas do sistema.</translation>
     </message>
@@ -1295,16 +1336,19 @@ en lugar da barra de tarefas do sistema.</translation>
         <source>After pressing close (X) qTox will close to tray,
 instead of closing entirely.</source>
         <comment>toolTip for close to tray setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Despois de premer pechar (X), qTox pecharase na bandexa,
 en lugar de pechar por completo.</translation>
     </message>
     <message>
         <source>You can set this on a per-friend basis by right clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Podes configurar isto por amigo facendo clic co botón dereito do rato en amigos individuais.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Engade unha mensaxe de chat cando un usuario se une ou saia dunha conferencia</translation>
     </message>
 </context>
@@ -1364,6 +1408,7 @@ en lugar de pechar por completo.</translation>
     </message>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Estás seguro de que queres borrar todas as mensaxes mostradas?</translation>
     </message>
 </context>
@@ -1516,6 +1561,7 @@ O perfil non contén o seu histórico.</translation>
         <source>This ID allows other Tox users to add and contact you.
 Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Este ID permite que outros usuarios de Tox poidan engadirte e contactar contigo.
 Compárteo cos teus amigos para comezar a conversar.</translation>
     </message>
@@ -1524,10 +1570,12 @@ Compárteo cos teus amigos para comezar a conversar.</translation>
     <name>LoadHistoryDialog</name>
     <message>
         <source>Load history dialog</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Cadro de diálogo de carga do historial</translation>
     </message>
     <message>
         <source>Load history from:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Historial de carga desde:</translation>
     </message>
 </context>
@@ -1672,6 +1720,7 @@ Quizais queira crear un.</translation>
     <message>
         <source>The passwords you&apos;ve entered are different.
 Please make sure to enter the same password twice.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Os contrasinais que introduciu son diferentes.
 Asegúrate de introducir o mesmo contrasinal dúas veces.</translation>
     </message>
@@ -1781,6 +1830,7 @@ Asegúrate de introducir o mesmo contrasinal dúas veces.</translation>
     </message>
     <message>
         <source>Open internal debugging tools</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Abrir ferramentas de depuración internas</translation>
     </message>
     <message>
@@ -1789,6 +1839,7 @@ Asegúrate de introducir o mesmo contrasinal dúas veces.</translation>
     </message>
     <message>
         <source>Open Debugger</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Abre o depurador</translation>
     </message>
 </context>
@@ -1837,10 +1888,12 @@ Asegúrate de introducir o mesmo contrasinal dúas veces.</translation>
     </message>
     <message>
         <source>Hide messages</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ocultar mensaxes</translation>
     </message>
     <message>
         <source>Show messages</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Mostrar mensaxes</translation>
     </message>
 </context>
@@ -1902,6 +1955,7 @@ Asegúrate de introducir o mesmo contrasinal dúas veces.</translation>
     <message>
         <source>%1 - file transfer</source>
         <extracomment>e.g. Bob - file transfer</extracomment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 - transferencia de ficheiros</translation>
     </message>
     <message>
@@ -1910,6 +1964,7 @@ Asegúrate de introducir o mesmo contrasinal dúas veces.</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 convídache a unirte a unha conferencia.</translation>
     </message>
     <message>
@@ -1918,6 +1973,7 @@ Asegúrate de introducir o mesmo contrasinal dúas veces.</translation>
     </message>
     <message>
         <source>Friend request received from %1</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Solicitude de amizade recibida de %1</translation>
     </message>
 </context>
@@ -1998,6 +2054,7 @@ O formato do ficheiro de gardado podería cambiar, o que pode causar a perda de 
     </message>
     <message>
         <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Filtra as mensaxes da conferencia polas claves públicas dos membros da conferencia. Pon aquí as claves públicas, unha por liña.</translation>
     </message>
 </context>
@@ -2013,6 +2070,7 @@ O formato do ficheiro de gardado podería cambiar, o que pode causar a perda de 
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Non se puido cambiar o contrasinal da base de datos, é posible que estea danado ou use o contrasinal antigo.</translation>
     </message>
 </context>
@@ -2168,31 +2226,38 @@ Utilice outra imaxe.</translation>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Non tes permiso para escribir nese lugar. Escolla outro ou cancele o diálogo de gardar.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Produciuse un erro ao gardar o ficheiro</translation>
     </message>
     <message>
         <source>The file you chose could not be saved.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Non se puido gardar o ficheiro que escolliches.</translation>
     </message>
     <message>
         <source>Empty path is unavailable.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">O camiño baleiro non está dispoñible.</translation>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Non se puido cambiar o contrasinal da base de datos, é posible que estea danado ou use o contrasinal antigo.</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Os nomes de usuario Tox non poden exceder %1 caracteres.</translation>
     </message>
     <message>
         <source>Delete profile</source>
         <comment>deletion confirmation title</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Eliminar perfil</translation>
     </message>
     <message>
@@ -2203,6 +2268,7 @@ Utilice outra imaxe.</translation>
     <message>
         <source>Are you sure you want to remove your password?</source>
         <extracomment>deletion confirmation text</extracomment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Estás seguro de que queres eliminar o teu contrasinal?</translation>
     </message>
     <message>
@@ -2210,6 +2276,7 @@ Utilice outra imaxe.</translation>
 Share it with your friends to begin chatting.
 
 This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Este ID permite que outros usuarios de Tox poidan engadirte e contactar contigo.
 Compárteo cos teus amigos para comezar a conversar.
 
@@ -2302,6 +2369,7 @@ Este ID inclúe o código NoSpam (en azul) e a suma de verificación (en gris).<
     </message>
     <message>
         <source>%1 is not a valid Tox address.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 non é un enderezo de Tox válido.</translation>
     </message>
 </context>
@@ -2402,16 +2470,19 @@ Este ID inclúe o código NoSpam (en azul) e a suma de verificación (en gris).<
     <message>
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Reformateando o texto...</translation>
     </message>
     <message>
         <source>%1 message(s) from %2 chats</source>
         <extracomment>e.g. 3 messages from 2 chats</extracomment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 mensaxe(s) de %2 chats</translation>
     </message>
     <message>
         <source>%1 message(s) from %2</source>
         <extracomment>e.g. 2 messages from Bob</extracomment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 mensaxe(s) de %2</translation>
     </message>
     <message>
@@ -2465,22 +2536,27 @@ Este ID inclúe o código NoSpam (en azul) e a suma de verificación (en gris).<
     </message>
     <message>
         <source>Initializing</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Inicialización</translation>
     </message>
     <message>
         <source>Transmitting</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Transmitindo</translation>
     </message>
     <message>
         <source>Finished</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Rematou</translation>
     </message>
     <message>
         <source>Broken</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Roto</translation>
     </message>
     <message>
         <source>Canceled</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Cancelado</translation>
     </message>
     <message>
@@ -2489,26 +2565,32 @@ Este ID inclúe o código NoSpam (en azul) e a suma de verificación (en gris).<
     </message>
     <message>
         <source>Remote paused</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Mando a distancia en pausa</translation>
     </message>
     <message>
         <source>File Name</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Nome do ficheiro</translation>
     </message>
     <message>
         <source>Contact</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Contacto</translation>
     </message>
     <message>
         <source>Progress</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Progreso</translation>
     </message>
     <message>
         <source>Size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Tamaño</translation>
     </message>
     <message>
         <source>Speed</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Velocidade</translation>
     </message>
     <message>
@@ -2517,22 +2599,27 @@ Este ID inclúe o código NoSpam (en azul) e a suma de verificación (en gris).<
     </message>
     <message>
         <source>Control</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Control</translation>
     </message>
     <message>
         <source>You have joined the conference</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Sumácheste á conferencia</translation>
     </message>
     <message>
         <source>You have left the conference</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Saíches da conferencia</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Produciuse un erro ao cargar o historial de chat</translation>
     </message>
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">A versión da base de datos (%1) é máis recente que a que admitimos actualmente (%2). Actualiza qTox.</translation>
     </message>
 </context>
@@ -2642,6 +2729,7 @@ Este ID inclúe o código NoSpam (en azul) e a suma de verificación (en gris).<
     </message>
     <message>
         <source>Select Date Dialog</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Seleccione o diálogo de data</translation>
     </message>
     <message>
@@ -2689,6 +2777,7 @@ Este ID inclúe o código NoSpam (en azul) e a suma de verificación (en gris).<
     </message>
     <message>
         <source>The password is too short.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">O contrasinal é demasiado curto.</translation>
     </message>
 </context>
@@ -2700,14 +2789,17 @@ Este ID inclúe o código NoSpam (en azul) e a suma de verificación (en gris).<
     </message>
     <message>
         <source>Failed to load personal settings</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Produciuse un erro ao cargar a configuración persoal</translation>
     </message>
     <message>
         <source>Unable to upgrade settings from version %1 to version %2. Cannot start qTox.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Non foi posíbel actualizar a configuración da versión %1 á versión %2. Non se pode iniciar qTox.</translation>
     </message>
     <message>
         <source>Failed to load global settings</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Produciuse un erro ao cargar a configuración global</translation>
     </message>
 </context>
@@ -2914,70 +3006,86 @@ Hide formatting characters:
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Use alcumes de cores nas conferencias</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Só notifica as novas mensaxes nas conferencias cando se mencione o teu alcume.</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
         <comment>toolTip for conference positioning</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Se está marcada, as conferencias colocaranse na parte superior da lista de amigos; en caso contrario, colocaranse debaixo de amigos en liña.</translation>
     </message>
     <message>
         <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
         <comment>toolTip for show identicons</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Se está activado, cada contacto sen avatar terá unha icona xerada baseada no seu ID de Tox en lugar da imaxe predeterminada. Require reinicio para aplicar.</translation>
     </message>
     <message>
         <source>Smiley pack:</source>
         <extracomment>Text on smiley pack label</extracomment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Paquete de emoticonos:</translation>
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Se está desactivada, soará a notificación de silencio cando o estado estea Ocupado (pero aínda mostra unha notificación)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Use notificacións de escritorio, p. ex. nun centro de notificacións ou na bandexa do sistema. Sen isto, a notificación só estará visible como unha icona da bandexa intermitente.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Mostra só &quot;mensaxe nova&quot; sen mostrar información potencialmente secreta nas notificacións do escritorio.</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Divide a lista de amigos e a fiestra de chat en ventás móbiles por separado.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Mostra emojis textuais como imaxes coloridas en lugar de emojis de texto ou de fontes en branco/negro.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Selecciona o conxunto de imaxes que queres usar ao renderizar emojis.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Tamaño en píxeles dunha imaxe emoji. Seleccione algo semellante ao tamaño da fonte base.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Estilo base para usar para a IU. Recoméndase Fusion xa que funciona mellor coa temática qTox.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Tema de cor da IU. Use isto para seleccionar o modo escuro.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Se está desactivado, use as notificacións básicas da bandexa do sistema. En caso contrario, intente utilizar o backend de notificacións do seu entorno de escritorio. Desactive isto se observa problemas coas notificacións do escritorio.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Use o backend de notificación específico do sistema se está dispoñible</translation>
     </message>
 </context>
@@ -3104,15 +3212,18 @@ Hide formatting characters:
     </message>
     <message>
         <source>Toxcore failed to start, the application will terminate after you close this message.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Non se puido iniciar Toxcore, a aplicación finalizará despois de pechar esta mensaxe.</translation>
     </message>
     <message>
         <source>Toxcore failed to start with your proxy settings. qTox cannot run; please modify your settings and restart.</source>
         <comment>popup text</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Toxcore non puido iniciar coa túa configuración de proxy. qTox non pode executarse; modifique a súa configuración e reinicie.</translation>
     </message>
     <message>
         <source>Couldn&apos;t send friend request</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Non se puido enviar a solicitude de amizade</translation>
     </message>
     <message numerus="yes">
@@ -3136,10 +3247,12 @@ Hide formatting characters:
     </message>
     <message>
         <source>Change status</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Cambiar o estado</translation>
     </message>
     <message>
         <source>Edit profile</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Editar perfil</translation>
     </message>
     <message>
@@ -3148,14 +3261,17 @@ Hide formatting characters:
     </message>
     <message>
         <source>Add contact...</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Engadir contacto...</translation>
     </message>
     <message>
         <source>Next conversation</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Próxima conversa</translation>
     </message>
     <message>
         <source>Previous conversation</source>
+        <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Conversa previa</translation>
     </message>
     <message>
