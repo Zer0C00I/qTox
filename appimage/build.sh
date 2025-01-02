@@ -36,6 +36,12 @@ if [ -z "${QTOX_SRC_DIR+x}" ]; then
   exit 1
 fi
 
+# https://stackoverflow.com/questions/72978485/git-submodule-update-failed-with-fatal-detected-dubious-ownership-in-reposit
+git config --global --add safe.directory '*'
+
+# Check if we can git describe
+git describe --tags --match 'v*'
+
 # directory paths
 BUILD_DIR=$(realpath .)
 readonly BUILD_DIR
@@ -46,7 +52,7 @@ rm -f appimagetool-*.AppImage
 wget "https://github.com/$(wget -q https://github.com/probonopd/go-appimage/releases/expanded_assets/continuous -O - | grep "appimagetool-.*-x86_64.AppImage" | head -n 1 | cut -d '"' -f 2)"
 chmod +x appimagetool-*.AppImage
 
-# update information to be embeded in AppImage
+# update information to be embedded in AppImage
 #readonly UPDATE_INFO="gh-releases-zsync|TokTok|qTox|latest|qTox-*.x86_64.AppImage.zsync"
 #export GIT_VERSION=$(git -C "${QTOX_SRC_DIR}" rev-parse --short HEAD)
 

@@ -7,8 +7,6 @@
 #include "ui_aboutsettings.h"
 
 #include "src/net/updatecheck.h"
-#include "src/persistence/profile.h"
-#include "src/persistence/settings.h"
 #include "src/version.h"
 #include "src/widget/style.h"
 #include "src/widget/tool/recursivesignalblocker.h"
@@ -20,8 +18,6 @@
 #include <QDesktopServices>
 #include <QPushButton>
 #include <QTimer>
-
-#include <memory>
 
 namespace {
 QString urlEncode(const QString& str)
@@ -67,7 +63,7 @@ AboutForm::AboutForm(UpdateCheck& updateCheck_, QString contactInfo_, Style& sty
 
     replaceVersions();
 
-    if (QString(GIT_VERSION).indexOf(" ") > -1)
+    if (VersionInfo::gitVersion().indexOf(" ") > -1)
         bodyUI->gitVersion->setOpenExternalLinks(false);
 
     eventsInit();
@@ -85,7 +81,7 @@ void AboutForm::replaceVersions()
     QString TOXCORE_VERSION =
         QStringLiteral("%1.%2.%3").arg(tox_version_major()).arg(tox_version_minor()).arg(tox_version_patch());
 
-    bodyUI->youAreUsing->setText(tr("You are using qTox version %1.").arg(QString(GIT_DESCRIBE)));
+    bodyUI->youAreUsing->setText(tr("You are using qTox version %1.").arg(VersionInfo::gitDescribe()));
 
     connect(&updateCheck, &UpdateCheck::updateAvailable, this, &AboutForm::onUpdateAvailable);
     connect(&updateCheck, &UpdateCheck::upToDate, this, &AboutForm::onUpToDate);
@@ -95,9 +91,9 @@ void AboutForm::replaceVersions()
         qDebug() << "AboutForm not showing updates, qTox built without UPDATE_CHECK";
     }
 
-    QString commitLink = "https://github.com/TokTok/qTox/commit/" + QString(GIT_VERSION);
+    QString commitLink = "https://github.com/TokTok/qTox/commit/" + VersionInfo::gitVersion();
     bodyUI->gitVersion->setText(
-        tr("Commit hash: %1").arg(createLink(commitLink, QString(GIT_VERSION))));
+        tr("Commit hash: %1").arg(createLink(commitLink, VersionInfo::gitVersion())));
 
     bodyUI->toxCoreVersion->setText(tr("toxcore version: %1").arg(TOXCORE_VERSION));
     bodyUI->qtVersion->setText(tr("Qt version: %1").arg(QT_VERSION_STR));
@@ -128,8 +124,9 @@ void AboutForm::replaceVersions()
             "&toxcore_version=%5"
             "&qt_version=%6"
             "&os_detail=%7")
-            .arg(urlEncode("tox:" + contactInfo), urlEncode("Bug: "), urlEncode(GIT_DESCRIBE),
-                 urlEncode(GIT_VERSION), urlEncode(TOXCORE_VERSION), urlEncode(QT_VERSION_STR),
+            .arg(urlEncode("tox:" + contactInfo), urlEncode("Bug: "),
+                 urlEncode(VersionInfo::gitDescribe()), urlEncode(VersionInfo::gitVersion()),
+                 urlEncode(TOXCORE_VERSION), urlEncode(QT_VERSION_STR),
                  urlEncode(QSysInfo::prettyProductName())),
         QStringLiteral("<b>%1</b>").arg(tr("Click here to report a bug."))));
 

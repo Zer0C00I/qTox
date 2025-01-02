@@ -7,6 +7,7 @@
 
 #include "src/ipc.h"
 #include "src/net/toxuri.h"
+#include "src/net/updatecheck.h"
 #include "src/nexus.h"
 #include "src/persistence/profile.h"
 #include "src/persistence/settings.h"
@@ -212,7 +213,12 @@ int AppManager::run()
 
     qapp->setApplicationName("qTox");
     qapp->setDesktopFileName("io.github.qtox.qTox");
-    qapp->setApplicationVersion("\nGit commit: " + QString(GIT_VERSION));
+    qapp->setApplicationVersion(QStringLiteral("%1, git commit %2 (%3)")
+                                    .arg(VersionInfo::gitDescribe())
+                                    .arg(VersionInfo::gitVersion())
+                                    .arg(UpdateCheck::isCurrentVersionStable()
+                                             ? QStringLiteral("stable")
+                                             : QStringLiteral("unstable")));
 
     // Install Unicode 6.1 supporting font
     // Keep this as close to the beginning of `main()` as possible, otherwise
@@ -229,7 +235,7 @@ int AppManager::run()
 
     // Process arguments
     QCommandLineParser parser;
-    parser.setApplicationDescription("qTox, version: " + QString(GIT_VERSION));
+    parser.setApplicationDescription("qTox, version: " + VersionInfo::gitVersion());
     parser.addHelpOption();
     parser.addVersionOption();
     parser.addPositionalArgument("uri", tr("Tox URI to parse"));
@@ -307,7 +313,7 @@ int AppManager::run()
     QCoreApplication::addLibraryPath(QCoreApplication::applicationDirPath());
     qapp->addLibraryPath("platforms");
 
-    qDebug() << "commit:" << GIT_VERSION;
+    qDebug() << "commit:" << VersionInfo::gitVersion();
 
     QString profileName;
     bool autoLogin = settings->getAutoLogin();

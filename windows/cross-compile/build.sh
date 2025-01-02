@@ -38,6 +38,12 @@ while (($# > 0)); do
   esac
 done
 
+# https://stackoverflow.com/questions/72978485/git-submodule-update-failed-with-fatal-detected-dubious-ownership-in-reposit
+git config --global --add safe.directory '*'
+
+# Check if we can git describe
+git describe --tags --match 'v*'
+
 # Common directory paths
 
 QTOX_BUILD_DIR="_build-$WINEARCH"

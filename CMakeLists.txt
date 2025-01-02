@@ -220,6 +220,8 @@ if(SMILEYS)
 endif()
 
 set(${PROJECT_NAME}_SOURCES
+    ${CMAKE_CURRENT_BINARY_DIR}/src/version.cpp
+    src/version.h
     src/appmanager.cpp
     src/appmanager.h
     src/friendlist.cpp

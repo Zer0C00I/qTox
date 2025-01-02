@@ -20,6 +20,8 @@ class UpdateCheck : public QObject
     Q_OBJECT
 
 public:
+    static bool isCurrentVersionStable();
+
     explicit UpdateCheck(const Settings& settings_);
 
     constexpr bool canCheck() const

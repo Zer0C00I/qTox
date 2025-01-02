@@ -1,9 +1,0 @@
-/* SPDX-License-Identifier: GPL-3.0-or-later
- * Copyright © 2025 The TokTok team.
- */
-
-#pragma once
-
-#define GIT_DESCRIBE "@GIT_DESCRIBE@"
-#define GIT_VERSION "@GIT_VERSION@"
-#define GIT_DESCRIBE_EXACT "@GIT_DESCRIBE_EXACT@"

@@ -42,24 +42,24 @@ jobs:
 
   verify-signatures:
     name: Verify release asset signatures
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
         with:
-          # Fetch all history so that we can get the last release tag.
-          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0  # We need "master", which we only get with a full fetch.
       - name: Import developer public keys
         run: .ci-scripts/import-developer-keys.sh
       - name: Create identity and release branch
-        if: github.event_name == 'pull_request'
         id: create-identity
         run: |
           .ci-scripts/create-identity.sh
           if ${{ contains(github.head_ref, 'release/v') }}; then
             VERSION=$(echo '${{ github.head_ref }}' | grep -o 'release/v.*' | grep -o 'v[^/]*$')
             echo "next-version=$VERSION" >>$GITHUB_OUTPUT
-            git branch "release/$VERSION" '${{ github.event.pull_request.head.sha }}'
-            git branch release-head '${{ github.event.pull_request.head.sha }}~1'
+            git branch "release/$VERSION"
+            git branch release-head 'HEAD~1'
             git checkout master
             git checkout release-head
           fi
@@ -76,7 +76,6 @@ jobs:
           --verify
           --dryrun
       - name: Verify signatures
-        if: github.event_name == 'pull_request'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: tools/create_release.py
@@ -87,7 +86,7 @@ jobs:
   update-nightly-tag:
     name: Update nightly release tag
     needs: [validate-pr]
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     permissions:
       contents: write
     steps:
@@ -103,7 +102,7 @@ jobs:
   translation-check:
     name: Check for translatable strings
     if: github.event_name == 'pull_request'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - name: Install deps
@@ -119,7 +118,7 @@ jobs:
     name: Clang-Tidy
     needs: [validate-pr]
     if: github.event_name != 'push'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - name: Cache compiler output
@@ -127,10 +126,8 @@ jobs:
         with:
           path: ".cache/ccache"
           key: ${{ github.job }}-ccache
-      - name: Install docker-compose
-        run: sudo apt-get install -y docker-compose
       - name: Run build
-        run: docker-compose run --rm fedora .ci-scripts/build-qtox-linux.sh --build-type Release --full --tidy
+        run: docker compose run --rm fedora .ci-scripts/build-qtox-linux.sh --build-type Release --full --tidy
 
   ################################################################################################
   # Build and test jobs (PR)
@@ -140,7 +137,7 @@ jobs:
     name: Alpine
     needs: [validate-pr]
     if: github.event_name != 'push'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     strategy:
       matrix:
         features: [full]
@@ -152,16 +149,14 @@ jobs:
         with:
           path: ".cache/ccache"
           key: ${{ github.job }}-ccache
-      - name: Install docker-compose
-        run: sudo apt-get install -y docker-compose
       - name: Run build
-        run: docker-compose run --rm alpine .ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }}
+        run: docker compose run --rm alpine .ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }}
 
   build-alpine-static:
     name: Alpine (static)
     needs: [validate-pr]
     if: github.event_name != 'push'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     strategy:
       matrix:
         build_type: [Release]
@@ -172,16 +167,14 @@ jobs:
         with:
           path: ".cache/ccache"
           key: ${{ github.job }}-ccache
-      - name: Install docker-compose
-        run: sudo apt-get install -y docker-compose
       - name: Run build
-        run: docker-compose run --rm alpine-static .ci-scripts/build-qtox-linux-static.sh --build-type ${{ matrix.build_type }}
+        run: docker compose run --rm alpine-static .ci-scripts/build-qtox-linux-static.sh --build-type ${{ matrix.build_type }}
 
   build-debian:
     name: Debian
     needs: [validate-pr]
     if: github.event_name != 'push'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     strategy:
       matrix:
         features: [minimal]
@@ -193,16 +186,14 @@ jobs:
         with:
           path: ".cache/ccache"
           key: ${{ github.job }}-ccache
-      - name: Install docker-compose
-        run: sudo apt-get install -y docker-compose
       - name: Run build
-        run: docker-compose run --rm debian .ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }}
+        run: docker compose run --rm debian .ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }}
 
   build-fedora:
     name: Fedora with ASAN
     needs: [validate-pr]
     if: github.event_name != 'push'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     strategy:
       matrix:
         features: [full]
@@ -214,16 +205,14 @@ jobs:
         with:
           path: ".cache/ccache"
           key: ${{ github.job }}-ccache
-      - name: Install docker-compose
-        run: sudo apt-get install -y docker-compose
       - name: Run build
-        run: docker-compose run --rm fedora .ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }} --sanitize
+        run: docker compose run --rm fedora .ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }} --sanitize
 
   build-ubuntu:
     name: Ubuntu LTS
     needs: [validate-pr]
     if: github.event_name != 'push'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     strategy:
       matrix:
         features: [full]
@@ -235,15 +224,13 @@ jobs:
         with:
           path: ".cache/ccache"
           key: ${{ github.job }}-ccache
-      - name: Install docker-compose
-        run: sudo apt-get install -y docker-compose
       - name: Run build
-        run: docker-compose run --rm ubuntu_lts .ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }}
+        run: docker compose run --rm ubuntu_lts .ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }}
       - name: Code coverage
         run: |
           # https://github.com/actions/runner/issues/491
           if [ "${{ matrix.build_type }}" == "Release" ] && [ "${{ matrix.features }}" == "full" ]; then
-            docker-compose run --rm ubuntu_lts .ci-scripts/lcov.sh
+            docker compose run --rm ubuntu_lts .ci-scripts/lcov.sh
             # Upload report to codecov.io
             bash <(curl -s https://codecov.io/bash) -f coverage.info || echo "Codecov did not collect coverage reports"
           fi
@@ -253,8 +240,8 @@ jobs:
   ################################################################################################
 
   build-appimage:
-    name: AppImage on alpine
-    runs-on: ubuntu-22.04
+    name: AppImage on Alpine
+    runs-on: ubuntu-24.04
     needs: [update-nightly-tag]
     strategy:
       matrix:
@@ -262,15 +249,16 @@ jobs:
         build_type: [Release]
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 100
+          fetch-tags: true
       - name: Cache compiler output
         uses: actions/cache@v4
         with:
           path: ".cache/ccache"
           key: ${{ github.job }}-ccache
-      - name: Install docker-compose
-        run: sudo apt-get install -y docker-compose
       - name: Run build
-        run: docker-compose run --rm -e GITHUB_REPOSITORY=$GITHUB_REPOSITORY -e GITHUB_REF=$GITHUB_REF alpine-appimage ./appimage/build.sh --src-dir /qtox
+        run: docker compose run --rm -e GITHUB_REPOSITORY="$GITHUB_REPOSITORY" -e GITHUB_REF="$GITHUB_REF" alpine-appimage ./appimage/build.sh --src-dir /qtox
       - name: Upload AppImage
         uses: actions/upload-artifact@v4
         with:
@@ -282,7 +270,7 @@ jobs:
         if: contains(github.ref, 'refs/tags/v')
         id: get_version
         run: |
-          VERSION="$(echo $GITHUB_REF | cut -d / -f 3)"
+          VERSION="$(echo "$GITHUB_REF" | cut -d / -f 3)"
           echo "release_appimage=qTox-$VERSION-x86_64.AppImage" >>$GITHUB_OUTPUT
       - name: Rename AppImage for release upload
         if: contains(github.ref, 'refs/tags/v')
@@ -320,7 +308,7 @@ jobs:
   test-appimage:
     name: Test AppImage
     needs: [build-appimage]
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - name: Download artifact from AppImage
@@ -329,15 +317,23 @@ jobs:
           name: qTox-${{ github.sha }}-x86_64-AppImage
       - name: Install AppImage dependencies
         run: sudo apt-get install -y fuse xvfb
+      - name: Determine whether we expect to be stable
+        id: expectation
+        run: |
+          if [ -n "$(echo "$GITHUB_REF" | grep -o 'refs/tags/v.*')" ]; then
+            echo "value= (stable)" >>$GITHUB_OUTPUT
+          else
+            echo "value= (unstable)" >>$GITHUB_OUTPUT
+          fi
       - name: Run AppImage
         run: |
           chmod +x qTox-*.AppImage
-          xvfb-run --auto-servernum ./qTox-*.AppImage --help
+          xvfb-run --auto-servernum ./qTox-*.AppImage --version | grep 'qTox v.*${{ steps.expectation.outputs.value }}' || (xvfb-run --auto-servernum ./qTox-*.AppImage --version && false)
 
   build-android:
     name: Android
     needs: [update-nightly-tag]
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     permissions:
       contents: write
     strategy:
@@ -370,10 +366,8 @@ jobs:
         with:
           path: ".cache/ccache"
           key: ${{ github.job }}-${{ matrix.arch }}-${{ matrix.build_type }}-${{ matrix.version }}-ccache
-      - name: Install docker-compose
-        run: sudo apt-get install -y docker-compose
       - name: Run build
-        run: docker-compose run --rm "android_builder.${{ matrix.arch }}.${{ steps.computed.outputs.artifact_type }}_${{ matrix.version }}" ./android/cross-compile/build.sh --arch "${{ matrix.arch }}" --build-type "${{ matrix.build_type }}"
+        run: docker compose run --rm "android_builder.${{ matrix.arch }}.${{ steps.computed.outputs.artifact_type }}_${{ matrix.version }}" ./android/cross-compile/build.sh --arch "${{ matrix.arch }}" --build-type "${{ matrix.build_type }}"
       - name: Upload Android apk
         uses: actions/upload-artifact@v4
         with:
@@ -383,7 +377,7 @@ jobs:
         if: contains(github.ref, 'refs/tags/v')
         id: get_version
         run: |
-          VERSION="$(echo $GITHUB_REF | cut -d / -f 3)"
+          VERSION="$(echo "$GITHUB_REF" | cut -d / -f 3)"
           echo "release_apk=qTox-$VERSION-${{ matrix.arch }}-${{ steps.computed.outputs.artifact_type }}${{ steps.computed.outputs.suffix }}.apk" >>$GITHUB_OUTPUT
       - name: Rename Android APK for release upload
         if: contains(github.ref, 'refs/tags/v')
@@ -419,11 +413,14 @@ jobs:
   build-flatpak:
     name: Flatpak
     needs: [update-nightly-tag]
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 100
+          fetch-tags: true
       - name: Cache flatpak-builder cache
         uses: actions/cache@v4
         with:
@@ -433,7 +430,7 @@ jobs:
         if: contains(github.ref, 'refs/tags/v')
         id: get_version
         run: |
-          VERSION="$(echo $GITHUB_REF | cut -d / -f 3)"
+          VERSION="$(echo "$GITHUB_REF" | cut -d / -f 3)"
           echo "version_tag=$VERSION" >>$GITHUB_OUTPUT
           echo "release_flatpak=qTox-$VERSION.x86_64.flatpak" >>$GITHUB_OUTPUT
       - name: Point flathub descriptor at the release tag
@@ -442,10 +439,8 @@ jobs:
           --flathub-manifest flatpak/io.github.qtox.qTox.json
           --output flatpak/io.github.qtox.qTox.json
           --git-tag "${{ steps.get_version.outputs.version_tag }}"
-      - name: Install docker-compose
-        run: sudo apt-get install -y docker-compose
       - name: Run build
-        run: docker-compose run --rm flatpak ./flatpak/build.sh
+        run: docker compose run --rm flatpak ./flatpak/build.sh
       - name: Upload flatpak
         uses: actions/upload-artifact@v4
         with:
@@ -485,7 +480,7 @@ jobs:
   test-flatpak:
     name: Test Flatpak
     needs: [build-flatpak]
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - name: Download artifact from Flatpak
@@ -500,8 +495,16 @@ jobs:
           flatpak install --user -y --noninteractive flathub org.kde.Platform/x86_64/6.7
       - name: Install flatpak
         run: flatpak install --user -y --bundle qtox.flatpak
+      - name: Determine whether we expect to be stable
+        id: expectation
+        run: |
+          if [ -n "$(echo "$GITHUB_REF" | grep -o 'refs/tags/v.*')" ]; then
+            echo "value= (stable)" >>$GITHUB_OUTPUT
+          else
+            echo "value= (unstable)" >>$GITHUB_OUTPUT
+          fi
       - name: Run flatpak
-        run: flatpak run io.github.qtox.qTox --help
+        run: flatpak run io.github.qtox.qTox --version | grep 'qTox v.*${{ steps.expectation.outputs.value }}' || (flatpak run io.github.qtox.qTox --version && false)
         env:
           QT_QPA_PLATFORM: offscreen
 
@@ -518,6 +521,9 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 100
+          fetch-tags: true
       - name: Fetch build scripts
         run: git clone --depth=1 https://github.com/TokTok/dockerfiles ".ci-scripts/dockerfiles"
       - name: Cache compiler output
@@ -614,8 +620,16 @@ jobs:
         run: brew install 7zip
       - name: Unpack dmg
         run: 7zz x qTox.dmg qtox.app
+      - name: Determine whether we expect to be stable
+        id: expectation
+        run: |
+          if [ -n "$(echo "$GITHUB_REF" | grep -o 'refs/tags/v.*')" ]; then
+            echo "value= (stable)" >>$GITHUB_OUTPUT
+          else
+            echo "value= (unstable)" >>$GITHUB_OUTPUT
+          fi
       - name: Run qTox
-        run: qtox.app/Contents/MacOS/qTox --help
+        run: qtox.app/Contents/MacOS/qTox --version | grep 'qTox v.*${{ steps.expectation.outputs.value }}' || (qtox.app/Contents/MacOS/qTox --version && false)
 
   build-macos-user:
     name: macOS user
@@ -650,7 +664,7 @@ jobs:
   build-windows:
     name: Windows
     needs: [update-nightly-tag]
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     permissions:
       contents: write
     strategy:
@@ -662,15 +676,16 @@ jobs:
           - build_type: ${{ (github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'packaging') || contains(github.ref, 'refs/tags/v')) && 'Debug' }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 100
+          fetch-tags: true
       - name: Cache compiler output
         uses: actions/cache@v4
         with:
           path: ".cache/ccache"
           key: ${{ github.job }}-${{ matrix.arch }}-${{ matrix.build_type }}-ccache
-      - name: Install docker-compose
-        run: sudo apt-get install -y docker-compose
       - name: Run build
-        run: docker-compose run --rm windows_builder.${{ matrix.arch }} ./windows/cross-compile/build.sh --arch ${{ matrix.arch }} --build-type ${{ matrix.build_type }} --run-tests --src-dir /qtox
+        run: docker compose run --rm windows_builder.${{ matrix.arch }} ./windows/cross-compile/build.sh --arch ${{ matrix.arch }} --build-type ${{ matrix.build_type }} --run-tests --src-dir /qtox
       - name: Upload installer
         if: matrix.build_type == 'release'
         uses: actions/upload-artifact@v4
@@ -730,6 +745,40 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "qtox-nightly-${{ matrix.arch }}-${{ matrix.build_type }}.exe,qtox-nightly-${{ matrix.arch }}-${{ matrix.build_type }}.exe.sha256"
 
+  test-windows:
+    name: Test Windows
+    needs: [build-windows]
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        arch: [i686, x86_64]
+        build_type: [Debug, Release]
+        exclude:
+          - arch: ${{ github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'packaging') && 'i686' }}
+          - build_type: ${{ (github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'packaging') || contains(github.ref, 'refs/tags/v')) && 'Debug' }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download artifact from Windows
+        uses: actions/download-artifact@v4
+        with:
+          name: setup-qtox-${{ matrix.arch }}-${{ matrix.build_type }}.exe
+      - name: Install 7zip
+        run: choco install -y 7zip
+      - name: Unpack exe
+        run: 7z x setup-qtox.exe -oqtox
+      - name: Determine whether we expect to be stable
+        id: expectation
+        shell: bash
+        run: |
+          if [ -n "$(echo "$GITHUB_REF" | grep -o 'refs/tags/v.*')" ]; then
+            echo "value= (stable)" >>$GITHUB_OUTPUT
+          else
+            echo "value= (unstable)" >>$GITHUB_OUTPUT
+          fi
+      - name: Run qTox
+        shell: bash
+        run: qtox/bin/qtox.exe --version | grep 'qTox v.*${{ steps.expectation.outputs.value }}' || (qtox/bin/qtox.exe --version && false)
+
   ################################################################################################
   # Documentation/website jobs
   ################################################################################################
@@ -737,13 +786,14 @@ jobs:
   build-docs:
     name: Docs
     needs: [update-nightly-tag]
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     env:
       DOXYGEN_CONFIG_FILE: doxygen.conf
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 100
+          fetch-tags: true
       - name: Run
         run: .ci-scripts/build-docs.sh
       - name: Deploy

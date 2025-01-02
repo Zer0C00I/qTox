@@ -17,12 +17,13 @@
 #include <QTimer>
 #include <cassert>
 
-#ifdef UPDATE_CHECK_ENABLED
 namespace {
-const QUrl versionUrl{QStringLiteral("https://api.github.com/repos/TokTok/qTox/releases/latest")};
 // Release candidates are ignored, as they are prereleases and don't appear in
 // the response to the releases/latest API call.
-const QString versionRegexString{QStringLiteral(R"(v([0-9]+)\.([0-9]+)\.([0-9]+))")};
+const QRegularExpression versionRegex{QStringLiteral(R"(v([0-9]+)\.([0-9]+)\.([0-9]+))")};
+
+#ifdef UPDATE_CHECK_ENABLED
+const QUrl versionUrl{QStringLiteral("https://api.github.com/repos/TokTok/qTox/releases/latest")};
 
 struct Version
 {
@@ -34,8 +35,7 @@ struct Version
 Version tagToVersion(const QString& tagName)
 {
     // capture tag name to avoid showing update available on dev builds which include hash as part of describe
-    QRegularExpression versionFormat(versionRegexString);
-    auto matches = versionFormat.match(tagName);
+    const auto& matches = versionRegex.match(tagName);
     assert(matches.lastCapturedIndex() == 3);
 
     bool ok;
@@ -77,25 +77,18 @@ bool isUpdateAvailable(const Version& current, const Version& available)
 
     return false;
 }
-
-bool isCurrentVersionStable()
-{
-    const QRegularExpression versionRegex(versionRegexString);
-    auto currentVer = versionRegex.match(GIT_DESCRIBE_EXACT);
-    if (currentVer.hasMatch()) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
+#endif // UPDATE_CHECK_ENABLED
 } // namespace
-#endif
+
+bool UpdateCheck::isCurrentVersionStable()
+{
+    return versionRegex.match(VersionInfo::gitDescribeExact()).hasMatch();
+}
 
 UpdateCheck::UpdateCheck(const Settings& settings_)
     : settings(settings_)
 {
-    qInfo() << "qTox is running version:" << GIT_DESCRIBE;
+    qInfo() << "qTox is running version:" << VersionInfo::gitDescribe();
 #ifdef UPDATE_CHECK_ENABLED
     updateTimer.start(1000 * 60 * 60 * 24 /* 1 day */);
     connect(&updateTimer, &QTimer::timeout, this, &UpdateCheck::checkForUpdate);
@@ -111,7 +104,7 @@ void UpdateCheck::checkForUpdate()
         return;
     }
 
-    if (isCurrentVersionStable() == false) {
+    if (!isCurrentVersionStable()) {
         qWarning() << "Currently running an untested/unstable version of qTox";
         emit versionIsUnstable();
         return;
@@ -150,7 +143,7 @@ void UpdateCheck::handleResponse(QNetworkReply* reply)
         return;
     }
 
-    const auto currentVer = tagToVersion(GIT_DESCRIBE);
+    const auto currentVer = tagToVersion(VersionInfo::gitDescribe());
     const auto availableVer = tagToVersion(latestVersion);
 
     if (isUpdateAvailable(currentVer, availableVer)) {

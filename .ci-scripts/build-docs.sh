@@ -11,7 +11,7 @@ set -eu -o pipefail
 sudo apt-get update -qq
 sudo apt-get install doxygen graphviz
 
-GIT_DESC=$(git describe --tags 2>/dev/null)
+GIT_DESC=$(git describe --tags --match 'v*' 2>/dev/null)
 GIT_CHASH=$(git rev-parse HEAD)
 
 # Append git version to doxygen version string

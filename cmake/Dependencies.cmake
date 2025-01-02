@@ -196,20 +196,6 @@ if(WIN32)
   search_dependency(OPENSSL           PACKAGE openssl)
 endif()
 
-if (NOT GIT_DESCRIBE)
-  execute_process(
-    COMMAND git describe --tags
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-    OUTPUT_VARIABLE GIT_DESCRIBE
-    ERROR_QUIET
-    OUTPUT_STRIP_TRAILING_WHITESPACE
-  )
-
-  if(NOT GIT_DESCRIBE)
-    set(GIT_DESCRIBE "Nightly")
-  endif()
-endif()
-
 if (NOT GIT_VERSION)
   execute_process(
     COMMAND git rev-parse HEAD
@@ -224,9 +210,23 @@ if (NOT GIT_VERSION)
   endif()
 endif()
 
+if (NOT GIT_DESCRIBE)
+  execute_process(
+    COMMAND git describe --tags --match v*
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+    OUTPUT_VARIABLE GIT_DESCRIBE
+    ERROR_QUIET
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+  )
+
+  if(NOT GIT_DESCRIBE)
+    set(GIT_DESCRIBE "Nightly")
+  endif()
+endif()
+
 if (NOT GIT_DESCRIBE_EXACT)
   execute_process(
-    COMMAND git describe --exact-match --tags HEAD
+    COMMAND git describe --tags --match v* --exact-match
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
     OUTPUT_VARIABLE GIT_DESCRIBE_EXACT
     ERROR_QUIET
@@ -238,10 +238,14 @@ if (NOT GIT_DESCRIBE_EXACT)
   endif()
 endif()
 
-# Generate version.h with the above version information.
+message(STATUS "Git version: ${GIT_VERSION}")
+message(STATUS "Git describe: ${GIT_DESCRIBE}")
+message(STATUS "Git describe exact: ${GIT_DESCRIBE_EXACT}")
+
+# Generate version.cpp with the above version information.
 configure_file(
-  ${CMAKE_CURRENT_SOURCE_DIR}/src/version.h.in
-  ${CMAKE_CURRENT_BINARY_DIR}/src/version.h
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/version.cpp.in
+  ${CMAKE_CURRENT_BINARY_DIR}/src/version.cpp
   @ONLY
 )
 

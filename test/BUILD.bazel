@@ -95,5 +95,6 @@ cc_fuzz_test(
     testonly = True,
     srcs = ["persistence/serialize_fuzz_test.cpp"],
     copts = COPTS,
+    tags = ["qt"],
     deps = ["//qtox/src:serialize"],
 )
