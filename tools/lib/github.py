@@ -300,19 +300,20 @@ def create_pr(title: str, body: str, head: str, base: str,
     return pr
 
 
-def find_pr(head: str, base: str) -> Optional[PullRequest]:
-    """Find a PR with the given title, head, and base."""
+def find_pr(head_sha: str, base: str) -> Optional[PullRequest]:
+    """Find a PR with the given title, head.sha, and base."""
     # The HEAD sha may be updated, so we can't use cached API calls.
     response = api_uncached(
         f"/repos/{repository()}/pulls",
         params=(
             ("state", "all"),
-            ("head", f"{actor()}:{head}"),
             ("base", base),
+            ("per_page", 100),
         ),
     )
     for pr in response:
-        return PullRequest.fromJSON(pr)
+        if pr["head"]["sha"] == head_sha:
+            return PullRequest.fromJSON(pr)
     return None
 
 

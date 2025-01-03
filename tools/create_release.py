@@ -295,8 +295,8 @@ def stage_restyled(config: Config, version: str, parent: stage.Stage) -> None:
 
 
 def get_head_pr(config: Config, version: str) -> Optional[github.PullRequest]:
-    return github.find_pr(f"{github.actor()}:{BRANCH_PREFIX}/{version}",
-                          config.main_branch)
+    sha = git.find_commit_sha(release_commit_message(version))
+    return github.find_pr(sha, config.main_branch)
 
 
 def await_head_pr(config: Config, s: stage.Stage,
@@ -305,10 +305,8 @@ def await_head_pr(config: Config, s: stage.Stage,
     for _ in range(10):
         pr = get_head_pr(config, version)
         if pr:
-            sha = git.branch_sha(f"{BRANCH_PREFIX}/{version}")
-            if pr.head_sha == sha:
-                return pr
-            s.progress(f"Waiting for {pr.head_sha} to match {sha}")
+            return pr
+        s.progress(f"Waiting for release PR for {version}")
         stage.sleep(5)
     raise ValueError("Timeout waiting for PR to be created/updated")
 

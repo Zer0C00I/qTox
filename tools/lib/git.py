@@ -517,6 +517,19 @@ def log(branch: str, count: int = 100) -> list[str]:
     ]
 
 
+def find_commit_sha(message: str) -> str:
+    """Find the commit SHA of a commit message."""
+    return (subprocess.check_output(  # nosec
+        [
+            "git",
+            "log",
+            "--format=%H",
+            "--grep",
+            message,
+            "-1",
+        ]).strip().decode("utf-8"))
+
+
 def last_commit_message(branch: str) -> str:
     """Get the last commit message."""
     return log(branch, 1)[0]
