@@ -1,3 +1,9 @@
+<a name="v1.18.1-rc.2"></a>
+
+## v1.18.1-rc.2 (2025-01-03)
+
+Release candidate 2. RC1 didn't have binaries because the CI scripts were broken.
+
 <a name="v1.18.1-rc.1"></a>
 
 ## v1.18.1-rc.1 (2025-01-03)
