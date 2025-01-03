@@ -1688,13 +1688,13 @@ Please make sure to enter the same password twice.</source>
         <source>This optional password is used to encrypt local message data and your profile.
 If you lose this password, there is no way to recover it.
 Press Shift+F1 for more information.</source>
-        <translation type="unfinished">Этот дополнительный пароль используется для шифрования данных локальных сообщений и вашего профиля.
+        <translation>Этот необязательный пароль используется для шифрования локальных сообщений и вашего профиля.
 Если вы потеряете этот пароль, восстановить его будет невозможно.
 Нажмите Shift+F1 для получения дополнительной информации.</translation>
     </message>
     <message>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
-        <translation type="unfinished">Пароль, который вы вводите здесь, является необязательным и шифрует данные сообщения и ваш секретный ключ Tox. Он не шифрует полученные файлы. Данные вашего профиля никогда не отправляются ни на какие серверы. Это не удаленный вход в систему, он локальный только для вашего компьютера. Разработчики qTox не смогут восстановить ваш пароль, если он будет утерян.</translation>
+        <translation>Пароль, который вы вводите здесь, является необязательным и шифрует данные сообщений и ваш приватный (закрытый) ключ Tox. Но он не шифрует полученные файлы. Данные вашего профиля никогда не отправляются куда-либо. И это не удалённый вход в профиль, он происходит лишь локально, на вашем компьютере. Разработчики qTox не смогут восстановить ваш пароль, если он будет утерян.</translation>
     </message>
 </context>
 <context>
