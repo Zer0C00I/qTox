@@ -40,26 +40,25 @@ jobs:
           .ci-scripts/create-identity.sh
           tools/validate_pr.py
 
-  verify-signatures:
-    name: Verify release asset signatures
-    if: github.event_name == 'pull_request'
+  verify-release:
+    name: Verify release
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0  # We need "master", which we only get with a full fetch.
       - name: Import developer public keys
         run: .ci-scripts/import-developer-keys.sh
       - name: Create identity and release branch
+        if: github.event_name == 'pull_request'
         id: create-identity
         run: |
           .ci-scripts/create-identity.sh
           if ${{ contains(github.head_ref, 'release/v') }}; then
             VERSION=$(echo '${{ github.head_ref }}' | grep -o 'release/v.*' | grep -o 'v[^/]*$')
             echo "next-version=$VERSION" >>$GITHUB_OUTPUT
-            git branch "release/$VERSION"
-            git branch release-head 'HEAD~1'
+            git branch "release/$VERSION" '${{ github.event.pull_request.head.sha }}'
+            git branch release-head '${{ github.event.pull_request.head.sha }}~1'
             git checkout master
             git checkout release-head
           fi
@@ -76,6 +75,14 @@ jobs:
           --verify
           --dryrun
       - name: Verify signatures
+        # Run this only once a day to avoid downloading our release assets too
+        # often. We're inflating our numbers a lot this way. It's easy to
+        # calculate the real number of downloads by looking at the number of
+        # .asc downloads, but it feels a bit wrong.
+        #
+        # We still also do this on release PRs, just to not hide this code
+        # away too far behind crons (which we may not look at much).
+        if: github.event_name == 'schedule' || steps.create-identity.outputs.next-version != ''
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: tools/create_release.py
@@ -752,10 +759,9 @@ jobs:
     strategy:
       matrix:
         arch: [i686, x86_64]
-        build_type: [Debug, Release]
+        build_type: [Release]
         exclude:
           - arch: ${{ github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'packaging') && 'i686' }}
-          - build_type: ${{ (github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'packaging') || contains(github.ref, 'refs/tags/v')) && 'Debug' }}
     steps:
       - uses: actions/checkout@v4
       - name: Download artifact from Windows
