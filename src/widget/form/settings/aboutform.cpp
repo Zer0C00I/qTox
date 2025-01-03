@@ -8,6 +8,7 @@
 
 #include "src/net/updatecheck.h"
 #include "src/version.h"
+#include "src/widget/form/settings/textcompose.h"
 #include "src/widget/style.h"
 #include "src/widget/tool/recursivesignalblocker.h"
 #include "src/widget/translator.h"
@@ -18,13 +19,6 @@
 #include <QDesktopServices>
 #include <QPushButton>
 #include <QTimer>
-
-namespace {
-QString urlEncode(const QString& str)
-{
-    return QString::fromUtf8(QUrl::toPercentEncoding(str));
-}
-} // namespace
 
 // index of UI in the QStackedWidget
 enum class updateIndex
@@ -112,6 +106,7 @@ void AboutForm::replaceVersions()
                             tr("Writing Useful Bug Reports",
                                "Replaces `%2` in the `A list of all known…`"))));
 
+    using TextCompose::urlEncode;
     bodyUI->clickToReport->setText(createLink( //
         QStringLiteral(                        //
             "https://github.com/TokTok/qTox/issues/new"
@@ -181,9 +176,7 @@ void AboutForm::onUnstableVersion()
  */
 inline QString AboutForm::createLink(QString path, QString text) const
 {
-    return QString::fromUtf8(
-               "<a href=\"%1\" style=\"text-decoration: underline; color:%2;\">%3</a>")
-        .arg(path, style.getColor(Style::ColorPalette::Link).name(), text);
+    return TextCompose::createLink(style, path, text);
 }
 
 AboutForm::~AboutForm()

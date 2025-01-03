@@ -10,11 +10,9 @@
 #include <QFontDatabase>
 #include <cmath>
 
-#include "src/core/core.h"
-#include "src/core/coreav.h"
 #include "src/persistence/profile.h"
 #include "src/persistence/settings.h"
-#include "src/persistence/smileypack.h"
+#include "src/widget/form/settings/textcompose.h"
 #include "src/widget/form/settingswidget.h"
 #include "src/widget/style.h"
 #include "src/widget/tool/recursivesignalblocker.h"
@@ -160,10 +158,11 @@ const QStringList& GeneralForm::getLocales()
  *
  * This form contains all settings that are not suited to other forms
  */
-GeneralForm::GeneralForm(Settings& settings_, Style& style)
-    : GenericForm(QPixmap(":/img/settings/general.png"), style)
+GeneralForm::GeneralForm(Settings& settings_, Style& style_)
+    : GenericForm(QPixmap(":/img/settings/general.png"), style_)
     , bodyUI{new Ui::GeneralSettings}
     , settings{settings_}
+    , style{style_}
 {
     bodyUI->setupUi(this);
 
@@ -340,4 +339,7 @@ void GeneralForm::on_checkUpdates_stateChanged()
 void GeneralForm::retranslateUi()
 {
     bodyUI->retranslateUi(this);
+    bodyUI->transWeblate->setText(
+        TextCompose::createLink(style, QStringLiteral("https://hosted.weblate.org/projects/qtox/qtox/"),
+                                bodyUI->transWeblate->text()));
 }
