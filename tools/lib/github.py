@@ -234,7 +234,7 @@ def latest_release() -> str:
 
     Includes prereleases.
     """
-    return api(f"/repos/{repository()}/releases/latest")["tag_name"]
+    return str(api(f"/repos/{repository()}/releases/latest")["tag_name"])
 
 
 def prereleases(version: str) -> list[str]:

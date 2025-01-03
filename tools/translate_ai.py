@@ -24,7 +24,7 @@ from functools import cache as memoize
 # </TS>
 
 
-def send_ai_prompt(text: str):
+def send_ai_prompt(text: str) -> None:
     """Sends a prompt to the AI and returns the response."""
     print(text)
 
@@ -45,7 +45,7 @@ def lupdate() -> str:
     raise FileNotFoundError("lupdate not found")
 
 
-def accept_ai_response(response_file: str):
+def accept_ai_response(response_file: str) -> None:
     """Accepts the AI response and updates the translations.
 
     Responses look like this:
@@ -101,7 +101,7 @@ def accept_ai_response(response_file: str):
         ])
 
 
-def main():
+def main() -> None:
     """Generates an AI prompt for translating the Tox client from English to Pirate English.
 
     Usage:

@@ -326,7 +326,7 @@ class TemporaryLanguageCode:
         self.lang = lang
         self.file = file
 
-    def __enter__(self):
+    def __enter__(self) -> None:
         """Replace the language code needed by weblate with the lupdate one."""
         if self.lang.lupdate_code == self.lang.weblate_code:
             return
@@ -339,7 +339,7 @@ class TemporaryLanguageCode:
         with open(self.file, "w") as f:
             f.write(data)
 
-    def __exit__(self, exc_type, exc_value, traceback):
+    def __exit__(self, exc_type: Any, exc_value: Any, traceback: Any) -> None:
         """Revert the language code back to the weblate one."""
         if self.lang.lupdate_code == self.lang.weblate_code:
             return
@@ -353,31 +353,12 @@ class TemporaryLanguageCode:
             f.write(data)
 
 
-def _translate_ts_file(lang: Language, file: str) -> None:
-    """Fill in the untranslated translations in a .ts file.
-
-    Doesn't touch anything other than completely empty translations. Empty
-    translations are marked with <translation type="unfinished"></translation>.
-    """
-    with open(file, "r") as f:
-        dom = minidom.parse(f)  # nosec
-    todo = []
-    if _VALIDATE_LANG:
-        ts_lang = dom.getElementsByTagName("TS")[0].getAttribute("language")
-        if not ts_lang:
-            raise ValueError(f"No language attribute found in TS file {file}")
-        if ts_lang != lang.weblate_code:
-            raise ValueError(f"Language mismatch in TS file {file}: "
-                             f"{ts_lang} != {lang.weblate_code}")
-    for context in dom.getElementsByTagName("context"):
-        for message in context.getElementsByTagName("message"):
-            source = message.getElementsByTagName("source")[0].firstChild
-            if not isinstance(source, minidom.Text):
-                continue
-            translation = _need_translation(lang, source.data, message)
-            if not translation:
-                continue
-            todo.append((source.data, translation[0], message))
+def _translate_todo_list(
+    lang: Language,
+    todo: list[tuple[str, minidom.Node, minidom.Element]],
+    file: str,
+    dom: minidom.Document,
+) -> None:
     try:
         # Write out changes we may have made in the loop above.
         with open(file, "w") as f:
@@ -387,8 +368,7 @@ def _translate_ts_file(lang: Language, file: str) -> None:
             if not translated:
                 continue
             # Clear the translation node of any existing text.
-            for child in translation.childNodes:
-                translation.removeChild(child)
+            translation.childNodes.clear()
             # Add the translation to the translation node.
             translation.appendChild(dom.createTextNode(translated))
             # Add a <translatorcomment> node to the message to indicate
@@ -427,12 +407,40 @@ def _translate_ts_file(lang: Language, file: str) -> None:
             )
 
 
+def _translate_ts_file(lang: Language, file: str) -> None:
+    """Fill in the untranslated translations in a .ts file.
+
+    Doesn't touch anything other than completely empty translations. Empty
+    translations are marked with <translation type="unfinished"></translation>.
+    """
+    with open(file, "r") as f:
+        dom = minidom.parse(f)  # nosec
+    todo: list[tuple[str, minidom.Node, minidom.Element]] = []
+    if _VALIDATE_LANG:
+        ts_lang = dom.getElementsByTagName("TS")[0].getAttribute("language")
+        if not ts_lang:
+            raise ValueError(f"No language attribute found in TS file {file}")
+        if ts_lang != lang.weblate_code:
+            raise ValueError(f"Language mismatch in TS file {file}: "
+                             f"{ts_lang} != {lang.weblate_code}")
+    for context in dom.getElementsByTagName("context"):
+        for message in context.getElementsByTagName("message"):
+            source = message.getElementsByTagName("source")[0].firstChild
+            if not isinstance(source, minidom.Text):
+                continue
+            translation = _need_translation(lang, source.data, message)
+            if not translation:
+                continue
+            todo.append((source.data, translation[0], message))
+    _translate_todo_list(lang, todo, file, dom)
+
+
 def _translate_language(lang: Language) -> None:
     """Translate the strings in the .ts files for a given language."""
     _translate_ts_file(lang, f"translations/{lang.weblate_code}.ts")
 
 
-def main():
+def main() -> None:
     with multiprocessing.Pool() as pool:
         pool.map(_translate_language, _LANGUAGES)
     _progress_done("Translation done.")
