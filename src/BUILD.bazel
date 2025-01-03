@@ -159,7 +159,8 @@ objc_library(
 
 mkstamp(
     name = "version",
-    hdr = "version.h",
+    src = "version.cpp.in",
+    out = "version.cpp",
 )
 
 COPTS = [
