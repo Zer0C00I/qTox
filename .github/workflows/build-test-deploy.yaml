@@ -63,7 +63,6 @@ jobs:
             git checkout master
             git checkout release-head
           fi
-          echo "prev-version=$(git describe --tags --abbrev=0 --match 'v*')" >>$GITHUB_OUTPUT
       - name: Verify release
         if: steps.create-identity.outputs.next-version != ''
         env:
@@ -84,7 +83,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: tools/create_release.py
-          --version "${{ steps.create-identity.outputs.prev-version }}"
+          --version latest
           --upstream origin
           --dryrun
 

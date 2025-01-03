@@ -88,7 +88,8 @@ def parse_args() -> Config:
     )
     parser.add_argument(
         "--version",
-        help="Version to release. Default: next milestone",
+        help="Version to release. The special value 'latest' means the "
+        "current latest release on GitHub. Default: next milestone",
         default="",
     )
     parser.add_argument(
@@ -116,6 +117,11 @@ def stage_version(config: Config) -> str:
         s.ok(git.branch_sha(f"{config.upstream}/{config.main_branch}")[:7])
     with stage.Stage("Version", "Determine the upcoming version") as s:
         if config.version:
+            if config.version == "latest":
+                version = github.latest_release()
+                s.ok(f"Using latest release {version}")
+                return version
+
             require(
                 re.match(git.VERSION_REGEX, config.version) is not None,
                 f"Invalid version: {config.version} "
@@ -285,6 +291,9 @@ def stage_pull_request(
 
 
 def stage_restyled(config: Config, version: str, parent: stage.Stage) -> None:
+    if config.verify:
+        # Can't do this on CI.
+        return
     with stage.Stage("Restyled", "Applying restyled fixes",
                      parent=parent) as s:
         subprocess.run(["hub-restyled"], check=True)  # nosec

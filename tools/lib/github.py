@@ -229,6 +229,14 @@ def open_milestone_issues(milestone: int) -> list[Issue]:
     ]
 
 
+def latest_release() -> str:
+    """Get the name of the current release in the repository.
+
+    Includes prereleases.
+    """
+    return api(f"/repos/{repository()}/releases/latest")["tag_name"]
+
+
 def prereleases(version: str) -> list[str]:
     """Get the names of all prereleases for a given version in the repository."""
     return [
