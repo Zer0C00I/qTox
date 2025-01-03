@@ -1,3 +1,27 @@
+<a name="v1.18.1-rc.1"></a>
+
+## v1.18.1-rc.1 (2025-01-03)
+
+Release Candidate 1.
+
+#### Features
+
+- **Languages:**
+  - Add a weblate link to the settings. ([7024d02c](https://github.com/TokTok/qTox/commit/7024d02cc3ef047c9b98444ff3959b2dcadfb89d))
+  - Translate all of qTox to Pirate English. ([715caf13](https://github.com/TokTok/qTox/commit/715caf13cf2906727bffe7c4b6e964455d1c6bc5))
+  - Add Limburgish translation. ([607ba4d2](https://github.com/TokTok/qTox/commit/607ba4d2cc19de4dba7cab9e783a0ae6821208fc))
+  - Fully translate every supported language. ([779cdb39](https://github.com/TokTok/qTox/commit/779cdb3958a006e02c6c8131c878626a8c0aa2c0))
+- **Login:** Add a tooltip and WhatsThis for the password field. ([04efcf82](https://github.com/TokTok/qTox/commit/04efcf82099c216cd401eb28bc332d86df9b843c), closes [#299](https://github.com/TokTok/qTox/issues/299))
+- **UI:** Better integration with system dark modes. ([ff2a252d](https://github.com/TokTok/qTox/commit/ff2a252d5faee60554d2c64cdc8e45d7f445b2e9))
+
+#### Bug Fixes
+
+- **Languages:** Recover the long lost Pirate translation. ([d10ccdc8](https://github.com/TokTok/qTox/commit/d10ccdc80fa3ee83b27216234029b016fc3ebb61))
+
+#### Performance
+
+- **Video:** Avoid copying frame buffers unnecessarily. ([7e843537](https://github.com/TokTok/qTox/commit/7e8435375c6bb4ba519cb173e8cc8d875fded670))
+
 <a name="v1.18.0"></a>
 
 ## v1.18.0 (2025-01-01)
