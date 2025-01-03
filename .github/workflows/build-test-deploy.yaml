@@ -425,11 +425,19 @@ jobs:
         with:
           fetch-depth: 100
           fetch-tags: true
-      - name: Cache flatpak-builder cache
+      - name: Cache flatpak-builder cache (except ccache)
         uses: actions/cache@v4
         with:
-          path: ".flatpak-builder"
-          key: ${{ github.job }}
+          path: |
+            .flatpak-builder/cache
+            .flatpak-builder/checksums
+            .flatpak-builder/downloads
+          key: ${{ github.job }}-builder
+      - name: Cache flatpak-builder cache (only ccache)
+        uses: actions/cache@v4
+        with:
+          path: ".flatpak-builder/ccache"
+          key: ${{ github.job }}-ccache
       - name: Get tag name for flatpak release file name
         if: contains(github.ref, 'refs/tags/v')
         id: get_version
@@ -484,7 +492,7 @@ jobs:
   test-flatpak:
     name: Test Flatpak
     needs: [build-flatpak]
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v4
       - name: Download artifact from Flatpak
