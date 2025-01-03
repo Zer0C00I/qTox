@@ -47,6 +47,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0  # We need "master", which we only get with a full fetch.
       - name: Import developer public keys
         run: .ci-scripts/import-developer-keys.sh
@@ -57,8 +58,8 @@ jobs:
           if ${{ contains(github.head_ref, 'release/v') }}; then
             VERSION=$(echo '${{ github.head_ref }}' | grep -o 'release/v.*' | grep -o 'v[^/]*$')
             echo "next-version=$VERSION" >>$GITHUB_OUTPUT
-            git branch "release/$VERSION" '${{ github.event.pull_request.head.sha }}'
-            git branch release-head '${{ github.event.pull_request.head.sha }}~1'
+            git branch "release/$VERSION" HEAD
+            git branch release-head 'HEAD~1'
             git checkout master
             git checkout release-head
           fi

@@ -317,6 +317,21 @@ def find_pr(head_sha: str, base: str) -> Optional[PullRequest]:
     return None
 
 
+def find_pr_for_branch(head: str, base: str) -> Optional[PullRequest]:
+    """Find a PR with the given head (actor:branch) and base."""
+    # The branch may be updated, so we can't use cached API calls.
+    response = api_uncached(
+        f"/repos/{repository()}/pulls",
+        params=(
+            ("state", "all"),
+            ("base", base),
+            ("head", head),
+            ("per_page", 100),
+        ),
+    )
+    return PullRequest.fromJSON(response[0]) if response else None
+
+
 def change_pr(number: int, changes: dict[str, str | int]) -> None:
     """Modify a PR with the given number (e.g. reopen by changing "state")."""
     response = requests.patch(

@@ -17,6 +17,7 @@ from lib import stage
 @dataclass
 class Config:
     commit: bool
+    debug: bool = False
 
 
 def parse_args() -> argparse.Namespace:
@@ -28,6 +29,12 @@ def parse_args() -> argparse.Namespace:
         "--commit",
         action=argparse.BooleanOptionalAction,
         help="Stage changes with git add (no commit yet)",
+        default=False,
+    )
+    parser.add_argument(
+        "--debug",
+        action=argparse.BooleanOptionalAction,
+        help="Print debug information",
         default=False,
     )
     return parser.parse_args()
@@ -258,17 +265,18 @@ def check_changelog(failures: list[str], config: Config) -> None:
 
 def main(config: Config) -> None:
     """Main entry point."""
-    print("GIT_BASE_DIR:       ", GIT_BASE_DIR)
-    print("GITHUB_ACTOR:       ", github.actor())
-    print("GITHUB_API_URL:     ", github.api_url())
-    print("GITHUB_BASE_REF:    ", github.base_ref())
-    print("GITHUB_BASE_BRANCH: ", github.base_branch())
-    print("GITHUB_HEAD_REF:    ", github.head_ref())
-    print("GITHUB_PR_BRANCH:   ", github.pr_branch())
-    print("GITHUB_REF_NAME:    ", github.ref_name())
-    print("GITHUB_REPOSITORY:  ", github.repository())
+    if config.debug:
+        print("GIT_BASE_DIR:       ", GIT_BASE_DIR)
+        print("GITHUB_ACTOR:       ", github.actor())
+        print("GITHUB_API_URL:     ", github.api_url())
+        print("GITHUB_BASE_REF:    ", github.base_ref())
+        print("GITHUB_BASE_BRANCH: ", github.base_branch())
+        print("GITHUB_HEAD_REF:    ", github.head_ref())
+        print("GITHUB_PR_BRANCH:   ", github.pr_branch())
+        print("GITHUB_REF_NAME:    ", github.ref_name())
+        print("GITHUB_REPOSITORY:  ", github.repository())
 
-    print("\nRunning checks...\n")
+        print("\nRunning checks...\n")
 
     failures: list[str] = []
 
@@ -287,7 +295,8 @@ def main(config: Config) -> None:
 
     check_changelog(failures, config)
 
-    print(f"\nDebug: {len(github.api_requests)} GitHub API requests made")
+    if config.debug:
+        print(f"\nDebug: {len(github.api_requests)} GitHub API requests made")
 
     if failures:
         print("\nSome checks failed:")

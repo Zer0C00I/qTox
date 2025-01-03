@@ -252,6 +252,7 @@ def stage_pull_request(
         head = f"{github.actor()}:{BRANCH_PREFIX}/{version}"
         base = config.main_branch
         milestone = github.next_milestone()
+        existing_pr = github.find_pr_for_branch(head, base)
         if config.dryrun:
             s.ok("Dry run; not creating a pull request")
             print(f"title: {title}")
@@ -259,9 +260,10 @@ def stage_pull_request(
             print(f"head: {head}")
             print(f"base: {base}")
             print(f"milestone: {milestone}")
+            if existing_pr:
+                print(f"Existing PR: {existing_pr.html_url}")
             return None
 
-        existing_pr = github.find_pr(head, base)
         if existing_pr:
             patch = pr_patch(existing_pr, title, body, milestone.number)
             if not patch:
@@ -323,9 +325,9 @@ def stage_await_checks(config: Config, version: str) -> None:
                 continue
 
             if config.verify:
-                # Remove "Verify release asset signatures" check if we are
+                # Remove "Verify release/signatures" check if we are
                 # running on CI (this is our own check).
-                del checks["Verify release asset signatures"]
+                del checks["Verify release/signatures"]
 
             completed = [
                 c.name for c in checks.values() if c.status == "completed"
