@@ -185,7 +185,7 @@ cc_library(
 
 cc_library(
     name = "src",
-    srcs = [
+    srcs = [":version"] + [
         ":src_moc",
         ":src_ui",
     ] + glob(
@@ -198,7 +198,7 @@ cc_library(
     hdrs = glob(
         ["**/*.h"],
         exclude = ["persistence/serialize.h"],
-    ) + [":version"],
+    ),
     copts = COPTS,
     defines = DEFINES,
     includes = ["."],

@@ -255,8 +255,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 100
-          fetch-tags: true
+          fetch-depth: 0
       - name: Cache compiler output
         uses: actions/cache@v4
         with:
@@ -313,9 +312,11 @@ jobs:
   test-appimage:
     name: Test AppImage
     needs: [build-appimage]
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v4
+        with:
+          sparse-checkout: .ci-scripts
       - name: Download artifact from AppImage
         uses: actions/download-artifact@v4
         with:
@@ -324,16 +325,11 @@ jobs:
         run: sudo apt-get install -y fuse xvfb
       - name: Determine whether we expect to be stable
         id: expectation
-        run: |
-          if [ -n "$(echo "$GITHUB_REF" | grep -o 'refs/tags/v.*')" ]; then
-            echo "value= (stable)" >>$GITHUB_OUTPUT
-          else
-            echo "value= (unstable)" >>$GITHUB_OUTPUT
-          fi
+        run: .ci-scripts/version-regex.sh
       - name: Run AppImage
         run: |
           chmod +x qTox-*.AppImage
-          xvfb-run --auto-servernum ./qTox-*.AppImage --version | grep 'qTox v.*${{ steps.expectation.outputs.value }}' || (xvfb-run --auto-servernum ./qTox-*.AppImage --version && false)
+          xvfb-run --auto-servernum ./qTox-*.AppImage --version | grep '${{ steps.expectation.outputs.regex }}' || (xvfb-run --auto-servernum ./qTox-*.AppImage --version && false)
 
   build-android:
     name: Android
@@ -424,8 +420,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 100
-          fetch-tags: true
+          fetch-depth: 0
       - name: Cache flatpak-builder cache (except ccache)
         uses: actions/cache@v4
         with:
@@ -496,6 +491,8 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v4
+        with:
+          sparse-checkout: .ci-scripts
       - name: Download artifact from Flatpak
         uses: actions/download-artifact@v4
         with:
@@ -510,14 +507,9 @@ jobs:
         run: flatpak install --user -y --bundle qtox.flatpak
       - name: Determine whether we expect to be stable
         id: expectation
-        run: |
-          if [ -n "$(echo "$GITHUB_REF" | grep -o 'refs/tags/v.*')" ]; then
-            echo "value= (stable)" >>$GITHUB_OUTPUT
-          else
-            echo "value= (unstable)" >>$GITHUB_OUTPUT
-          fi
+        run: .ci-scripts/version-regex.sh
       - name: Run flatpak
-        run: flatpak run io.github.qtox.qTox --version | grep 'qTox v.*${{ steps.expectation.outputs.value }}' || (flatpak run io.github.qtox.qTox --version && false)
+        run: flatpak run io.github.qtox.qTox --version | grep '${{ steps.expectation.outputs.regex }}' || (flatpak run io.github.qtox.qTox --version && false)
         env:
           QT_QPA_PLATFORM: offscreen
 
@@ -535,8 +527,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 100
-          fetch-tags: true
+          fetch-depth: 0
       - name: Fetch build scripts
         run: git clone --depth=1 https://github.com/TokTok/dockerfiles ".ci-scripts/dockerfiles"
       - name: Cache compiler output
@@ -624,6 +615,9 @@ jobs:
     permissions:
       contents: write
     steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: .ci-scripts
       - name: Download artifact from macOS distributable (${{ matrix.arch }})
         uses: actions/download-artifact@v4
         with:
@@ -635,14 +629,9 @@ jobs:
         run: 7zz x qTox.dmg qtox.app
       - name: Determine whether we expect to be stable
         id: expectation
-        run: |
-          if [ -n "$(echo "$GITHUB_REF" | grep -o 'refs/tags/v.*')" ]; then
-            echo "value= (stable)" >>$GITHUB_OUTPUT
-          else
-            echo "value= (unstable)" >>$GITHUB_OUTPUT
-          fi
+        run: .ci-scripts/version-regex.sh
       - name: Run qTox
-        run: qtox.app/Contents/MacOS/qTox --version | grep 'qTox v.*${{ steps.expectation.outputs.value }}' || (qtox.app/Contents/MacOS/qTox --version && false)
+        run: qtox.app/Contents/MacOS/qTox --version | grep '${{ steps.expectation.outputs.regex }}' || (qtox.app/Contents/MacOS/qTox --version && false)
 
   build-macos-user:
     name: macOS user
@@ -690,8 +679,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 100
-          fetch-tags: true
+          fetch-depth: 0
       - name: Cache compiler output
         uses: actions/cache@v4
         with:
@@ -770,6 +758,8 @@ jobs:
           - arch: ${{ github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'packaging') && 'i686' }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          sparse-checkout: .ci-scripts
       - name: Download artifact from Windows
         uses: actions/download-artifact@v4
         with:
@@ -781,15 +771,10 @@ jobs:
       - name: Determine whether we expect to be stable
         id: expectation
         shell: bash
-        run: |
-          if [ -n "$(echo "$GITHUB_REF" | grep -o 'refs/tags/v.*')" ]; then
-            echo "value= (stable)" >>$GITHUB_OUTPUT
-          else
-            echo "value= (unstable)" >>$GITHUB_OUTPUT
-          fi
+        run: .ci-scripts/version-regex.sh
       - name: Run qTox
         shell: bash
-        run: qtox/bin/qtox.exe --version | grep 'qTox v.*${{ steps.expectation.outputs.value }}' || (qtox/bin/qtox.exe --version && false)
+        run: qtox/bin/qtox.exe --version | grep '${{ steps.expectation.outputs.regex }}' || (qtox/bin/qtox.exe --version && false)
 
   ################################################################################################
   # Documentation/website jobs
@@ -804,8 +789,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 100
-          fetch-tags: true
+          fetch-depth: 0
       - name: Run
         run: .ci-scripts/build-docs.sh
       - name: Deploy
