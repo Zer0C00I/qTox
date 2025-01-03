@@ -15,3 +15,6 @@ concurrency:
 jobs:
   release:
     uses: TokTok/ci-tools/.github/workflows/release-drafter.yml@master
+
+  release-soon:
+    uses: TokTok/ci-tools/.github/workflows/release-soon.yml@master
