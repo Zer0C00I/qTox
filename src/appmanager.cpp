@@ -409,13 +409,10 @@ int AppManager::run()
         {{"U", "udp"}, tr("Sets UDP <on>/<off>. Default is ON."), "on/off"},
         {{"L", "lan"}, tr("Sets LAN discovery <on>/<off>. UDP off overrides. Default is ON."), "on/off"},
         {{"P", "proxy"}, tr("Sets proxy settings. Default is NONE."), "(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)"},
-    });
 #ifdef UPDATE_CHECK_ENABLED
-    parser.addOption(
-        QCommandLineOption(QStringList() << "u"
-                                         << "update-check",
-                           tr("Checks whether this program is running the latest qTox version.")));
+        {{"u", "update-check"}, tr("Checks whether this program is running the latest qTox version.")},
 #endif // UPDATE_CHECK_ENABLED
+    });
     parser.process(*qapp);
 
     // If update-check is requested, do it and exit.

@@ -307,21 +307,24 @@ bool Settings::verifyProxySettings(const QCommandLineParser& parser)
 
     if (parser.isSet("I")) {
         if (!(IPv6SettingString == ON || IPv6SettingString == OFF)) {
-            qCritical() << "Unable to parse IPv6 setting.";
+            qCritical() << "Unable to parse IPv6 setting (-I was" << IPv6SettingString
+                        << "but should be on/off).";
             return false;
         }
     }
 
     if (parser.isSet("U")) {
         if (!(UDPSettingString == ON || UDPSettingString == OFF)) {
-            qCritical() << "Unable to parse UDP setting.";
+            qCritical() << "Unable to parse UDP setting (-U was" << UDPSettingString
+                        << "but should be on/off).";
             return false;
         }
     }
 
     if (parser.isSet("L")) {
         if (!(LANSettingString == ON || LANSettingString == OFF)) {
-            qCritical() << "Unable to parse LAN setting.";
+            qCritical() << "Unable to parse LAN setting (-L was" << LANSettingString
+                        << "but should be on/off).";
             return false;
         }
     }
@@ -336,7 +339,7 @@ bool Settings::verifyProxySettings(const QCommandLineParser& parser)
     }
 
     if (LANSettingString == ON && UDPSettingString == OFF) {
-        qCritical() << "Incompatible UDP/LAN settings.";
+        qCritical() << "Incompatible UDP/LAN settings: LAN discovery requires UDP.";
         return false;
     }
 
@@ -348,20 +351,21 @@ bool Settings::verifyProxySettings(const QCommandLineParser& parser)
         }
         // Since the first argument isn't 'none', verify format of remaining arguments
         if (proxySettingStrings.size() != 3) {
-            qCritical() << "Invalid number of proxy arguments.";
+            qCritical() << "Invalid number of proxy arguments (should be 3).";
             return false;
         }
 
         if (!(proxySettingStrings[0] == SOCKS5 || proxySettingStrings[0] == HTTP)) {
-            qCritical() << "Unable to parse proxy type.";
+            qCritical() << "Unable to parse proxy type (was" << proxySettingStrings[0]
+                        << "but should be SOCKS5/HTTP).";
             return false;
         }
 
         // TODO(Kriby): Sanity check IPv4/IPv6 addresses/hostnames?
 
-        int portNumber = proxySettingStrings[2].toInt();
-        if (!(portNumber > 0 && portNumber < 65536)) {
-            qCritical() << "Invalid port number range.";
+        const int portNumber = proxySettingStrings[2].toInt();
+        if (!(portNumber >= 1 && portNumber <= 65535)) {
+            qCritical() << "Invalid port number range: was" << portNumber << "but should be 1-65535.";
         }
     }
     return true;
