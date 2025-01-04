@@ -166,7 +166,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Click here to report a bug.</source>
-        <translation>Нажмите здесь, чтобы сообщить об ошибке.</translation>
+        <translation>Нажмите сюда, чтобы сообщить о проблеме с программой.</translation>
     </message>
     <message>
         <source>See a full list of %1 at Github</source>
@@ -1298,12 +1298,12 @@ instead of closing entirely.</source>
     <message>
         <source>Click here if you find errors in a translation and would like to help fix it.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Нажмите здесь, если вы обнаружили ошибки в переводе и хотите помочь их исправить.</translation>
+        <translation>Нажмите сюда, если вы обнаружили ошибки в переводе и хотите помочь их исправить.</translation>
     </message>
     <message>
         <source>Help translate</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Помогите перевести</translation>
+        <translation>Помочь перевести</translation>
     </message>
 </context>
 <context>
