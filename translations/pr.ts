@@ -563,7 +563,7 @@ Take heed, fer higher qualities demand clearer skies and use more bandwidth. If 
     <message>
         <source>SOCKS5</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">SOCKS5</translation>
+        <translation>SOCKS5</translation>
     </message>
     <message>
         <source>HTTP</source>
@@ -608,7 +608,7 @@ Take heed, fer higher qualities demand clearer skies and use more bandwidth. If 
     </message>
     <message>
         <source>Starts new instance and loads specified profile.</source>
-        <translation type="unfinished">Starts new instance &apos;n loads specified profile.</translation>
+        <translation>Starts a new ship &apos;n loads yer chosen face.</translation>
     </message>
     <message>
         <source>profile</source>
@@ -616,7 +616,7 @@ Take heed, fer higher qualities demand clearer skies and use more bandwidth. If 
     </message>
     <message>
         <source>Starts new instance and opens the login screen.</source>
-        <translation type="unfinished">Starts new instance &apos;n opens th&apos; login screen.</translation>
+        <translation>Starts a new ship &apos;n takes ye to the login screen.</translation>
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
@@ -640,7 +640,7 @@ Take heed, fer higher qualities demand clearer skies and use more bandwidth. If 
     </message>
     <message>
         <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translation type="unfinished">(SOCKS5/HTTP/NONE):(WHERE YE BE GOIN&apos;):(WHERE TH&apos; SHIPS COME IN)</translation>
+        <translation>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</translation>
     </message>
     <message>
         <source>Error</source>
