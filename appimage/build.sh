@@ -43,14 +43,17 @@ git config --global --add safe.directory '*'
 git describe --tags --match 'v*'
 
 # directory paths
-BUILD_DIR=$(realpath .)
-readonly BUILD_DIR
-QTOX_APP_DIR="$BUILD_DIR/QTox.AppDir"
-readonly QTOX_APP_DIR
+readonly BUILD_DIR="$(realpath .)"
+readonly QTOX_APP_DIR="$BUILD_DIR/QTox.AppDir"
 
 rm -f appimagetool-*.AppImage
 wget "https://github.com/$(wget -q https://github.com/probonopd/go-appimage/releases/expanded_assets/continuous -O - | grep "appimagetool-.*-x86_64.AppImage" | head -n 1 | cut -d '"' -f 2)"
 chmod +x appimagetool-*.AppImage
+
+# https://github.com/probonopd/go-appimage/blob/fced8b8831039daa246ab355f4e2335074abc206/src/appimagetool/appdirtool.go#L400
+# This line in the appimagetool breaks musl DNS lookups (looking for /EEE/resolv.conf).
+./appimagetool-*.AppImage --appimage-extract
+sed -i -e 's!/EEE!/etc!g' squashfs-root/usr/bin/appimagetool
 
 # update information to be embedded in AppImage
 #readonly UPDATE_INFO="gh-releases-zsync|TokTok|qTox|latest|qTox-*.x86_64.AppImage.zsync"
@@ -71,9 +74,16 @@ cmake --install _build --prefix QTox.AppDir/usr
 export QTDIR=/work/qt
 export LD_LIBRARY_PATH="/work/lib64:$QTDIR/lib"
 
-./appimagetool-*.AppImage --appimage-extract-and-run -s deploy "$QTOX_APP_DIR"/usr/share/applications/*.desktop
+# Copy offscreen/wayland plugins to the app dir.
+mkdir -p "$QTOX_APP_DIR/$QTDIR/plugins/platforms"
+cp -r "$QTDIR/plugins/platforms/libqoffscreen.so" "$QTOX_APP_DIR/$QTDIR/plugins/platforms/"
+cp -r "$QTDIR/plugins/platforms/libqwayland-generic.so" "$QTOX_APP_DIR/$QTDIR/plugins/platforms/"
+# Copy the tls plugins to the app dir, needed for https connections.
+cp -r "$QTDIR/plugins/tls/" "$QTOX_APP_DIR/$QTDIR/plugins/"
+
+squashfs-root/AppRun -s deploy "$QTOX_APP_DIR"/usr/share/applications/*.desktop
 
 # print all links not contained inside the AppDir
 LD_LIBRARY_PATH='' find "$QTOX_APP_DIR" -type f -exec ldd {} \; 2>&1 | grep '=>' | grep -v "$QTOX_APP_DIR"
 
-./appimagetool-*.AppImage --appimage-extract-and-run "$QTOX_APP_DIR"
+squashfs-root/AppRun "$QTOX_APP_DIR"

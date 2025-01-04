@@ -107,6 +107,11 @@ void UpdateCheck::checkForUpdate()
 
     manager.setProxy(settings.getProxy());
     QNetworkRequest request{versionUrl};
+    // If GITHUB_TOKEN is set, use it to increase rate limit.
+    const QByteArray token = qgetenv("GITHUB_TOKEN");
+    if (!token.isEmpty()) {
+        request.setRawHeader("Authorization", "token " + token);
+    }
     manager.get(request);
 #endif
 }

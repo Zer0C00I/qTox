@@ -320,12 +320,12 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: qTox-${{ github.sha }}-x86_64-AppImage
-      - name: Install AppImage dependencies
-        run: sudo apt-get install -y fuse xvfb
       - name: Run AppImage
         run: |
           chmod +x qTox-*.AppImage
           .ci-scripts/smoke-test.sh xvfb-run --auto-servernum ./qTox-*.AppImage
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   build-android:
     name: Android
@@ -504,6 +504,7 @@ jobs:
       - name: Run flatpak
         run: .ci-scripts/smoke-test.sh flatpak run io.github.qtox.qTox
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           QT_QPA_PLATFORM: offscreen
 
   build-macos-distributable:
@@ -622,6 +623,8 @@ jobs:
         run: 7zz x qTox.dmg qtox.app
       - name: Run qTox
         run: .ci-scripts/smoke-test.sh qtox.app/Contents/MacOS/qTox
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   build-macos-user:
     name: macOS user
@@ -761,6 +764,8 @@ jobs:
       - name: Run qTox
         shell: bash
         run: .ci-scripts/smoke-test.sh qtox/bin/qtox.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   ################################################################################################
   # Documentation/website jobs

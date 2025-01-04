@@ -262,6 +262,11 @@ Section "Install"
   File /nonfatal "qtox\platforms\*.*"
   ${SetOutPath} "$INSTDIR\bin"
 
+  ${CreateDirectory} "$INSTDIR\bin\tls"
+  ${SetOutPath} "$INSTDIR\bin\tls"
+  File /nonfatal "qtox\tls\*.*"
+  ${SetOutPath} "$INSTDIR\bin"
+
   # Create shortcuts
   ${CreateDirectory} "$SMPROGRAMS\qTox"
   ${CreateShortCut} "$SMPROGRAMS\qTox\qTox.lnk" "$INSTDIR\${MAIN_APP_EXE}" "" "" ""
