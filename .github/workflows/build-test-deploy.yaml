@@ -322,13 +322,10 @@ jobs:
           name: qTox-${{ github.sha }}-x86_64-AppImage
       - name: Install AppImage dependencies
         run: sudo apt-get install -y fuse xvfb
-      - name: Determine whether we expect to be stable
-        id: expectation
-        run: .ci-scripts/version-regex.sh
       - name: Run AppImage
         run: |
           chmod +x qTox-*.AppImage
-          xvfb-run --auto-servernum ./qTox-*.AppImage --version | grep '${{ steps.expectation.outputs.regex }}' || (xvfb-run --auto-servernum ./qTox-*.AppImage --version && false)
+          .ci-scripts/smoke-test.sh xvfb-run --auto-servernum ./qTox-*.AppImage
 
   build-android:
     name: Android
@@ -504,11 +501,8 @@ jobs:
           flatpak install --user -y --noninteractive flathub org.kde.Platform/x86_64/6.7
       - name: Install flatpak
         run: flatpak install --user -y --bundle qtox.flatpak
-      - name: Determine whether we expect to be stable
-        id: expectation
-        run: .ci-scripts/version-regex.sh
       - name: Run flatpak
-        run: flatpak run io.github.qtox.qTox --version | grep '${{ steps.expectation.outputs.regex }}' || (flatpak run io.github.qtox.qTox --version && false)
+        run: .ci-scripts/smoke-test.sh flatpak run io.github.qtox.qTox
         env:
           QT_QPA_PLATFORM: offscreen
 
@@ -626,11 +620,8 @@ jobs:
         run: brew install 7zip
       - name: Unpack dmg
         run: 7zz x qTox.dmg qtox.app
-      - name: Determine whether we expect to be stable
-        id: expectation
-        run: .ci-scripts/version-regex.sh
       - name: Run qTox
-        run: qtox.app/Contents/MacOS/qTox --version | grep '${{ steps.expectation.outputs.regex }}' || (qtox.app/Contents/MacOS/qTox --version && false)
+        run: .ci-scripts/smoke-test.sh qtox.app/Contents/MacOS/qTox
 
   build-macos-user:
     name: macOS user
@@ -767,13 +758,9 @@ jobs:
         run: choco install -y 7zip
       - name: Unpack exe
         run: 7z x setup-qtox.exe -oqtox
-      - name: Determine whether we expect to be stable
-        id: expectation
-        shell: bash
-        run: .ci-scripts/version-regex.sh
       - name: Run qTox
         shell: bash
-        run: qtox/bin/qtox.exe --version | grep '${{ steps.expectation.outputs.regex }}' || (qtox/bin/qtox.exe --version && false)
+        run: .ci-scripts/smoke-test.sh qtox/bin/qtox.exe
 
   ################################################################################################
   # Documentation/website jobs

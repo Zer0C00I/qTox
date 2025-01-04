@@ -8,7 +8,10 @@ set -eux -o pipefail
 if [ -n "$(echo "$GITHUB_REF" | grep -o 'refs/tags/v.*')" ] ||
   [ -n "$(git tag --points-at HEAD | grep '^v.*')" ] ||
   [ -n "$(git log -1 --pretty=%B | grep '^chore: Release v.*')" ]; then
-  echo "regex=qTox v.* (stable)" >>"$GITHUB_OUTPUT"
+  REGEX="qTox v.* (stable)"
 else
-  echo "regex=qTox v.* (unstable)" >>"$GITHUB_OUTPUT"
+  REGEX="qTox v.* (unstable)"
 fi
+
+"$@" --version | grep "$REGEX" || ("$@" --version && false)
+"$@" --update-check
