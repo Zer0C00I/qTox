@@ -1481,7 +1481,7 @@ e&apos;u do ka&apos;e sfaile lo nu sfaile bu&apos;u la .Windows.zoi ke&apos;a nu
     <message>
         <source>Show contacts&apos; status changes</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ko viska lo tcini selzu&apos;e be lo me lo me lo me lo me lo me lo me lo me lo me lo me lo me lo me lo me lo me lo me lo me lo me lo me lo me lo me lo me lo me lo me lo me lo me</translation>
+        <translation type="unfinished">ko viska ca lo nu lo tcidu tcini be lo pendo cu galfi</translation>
     </message>
     <message>
         <source>Start qTox on operating system startup (current profile).</source>
