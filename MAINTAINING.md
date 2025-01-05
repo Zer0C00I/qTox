@@ -199,7 +199,7 @@ can run locally to automate the pre-tagging process.
   [`tools/update-versions.sh`] script, e.g.
   `tools/update-versions.sh 1.11.0` (don't add the `v` in `v1.11.0`)
 - Update the bootstrap nodelist at `res/nodes.json` from https://nodes.tox.chat/json.
-  This can be done by running [`tools/update-nodes.sh`]
+  This can be done by running [`tools/update_nodes.py`]
 - Generate changelog with [`tools/update_changelog.py`].
   - In a `MAJOR`/`MINOR` release tag should include information that changelog
     is located in the `CHANGELOG.md` file, e.g. `For details see CHANGELOG.md`
@@ -261,7 +261,7 @@ helping for a while, ask to be added to the `TokTok` organization on GitHub.
 [`tools/create_tarballs.py`]: /tools/create_tarballs.py
 [`tools/sign-release-assets.py`]: /tools/sign-release-assets.py
 [`tools/update_changelog.py`]: /tools/update_changelog.py
-[`tools/update-nodes.sh`]: /tools/update-nodes.sh
+[`tools/update_nodes.py`]: /tools/update_nodes.py
 [`tools/update-versions.sh`]: /tools/update-versions.sh
 [`tools/format-code.sh`]: /tools/format-code.sh
 [`tools/validate_pr.py`]: /tools/validate_pr.py
