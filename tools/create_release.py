@@ -64,8 +64,8 @@ def parse_args() -> Config:
     parser.add_argument(
         "--production",
         action=argparse.BooleanOptionalAction,
-        help=
-        "Build a production release. If false (default), build a release candidate.",
+        help=("Build a production release. "
+              "If false (default), build a release candidate."),
         default=False,
     )
     parser.add_argument(
@@ -166,9 +166,8 @@ def stage_branch(config: Config, version: str) -> None:
             s.ok(f"Branch '{release_branch}' already exists; {action}")
         else:
             git.create_branch(release_branch, config.branch)
-            s.ok(
-                f"Branch '{release_branch}' created @ {git.branch_sha(release_branch)[:7]}"
-            )
+            s.ok(f"Branch '{release_branch}' created "
+                 f"@ {git.branch_sha(release_branch)[:7]}")
         require(git.current_branch() == release_branch, git.current_branch())
 
 
@@ -388,9 +387,8 @@ def stage_production_ready(config: Config, version: str) -> None:
                 if i.title != release_commit_message(version)
             ]
             if issues:
-                raise s.fail(
-                    f"{len(issues)} issues are still open for {version}: {m.html_url}"
-                )
+                raise s.fail(f"{len(issues)} issues are still open for "
+                             f"{version}: {m.html_url}")
             s.ok(f"No open issues for {version}")
         else:
             s.ok("Release candidate; not checking milestone")
@@ -434,6 +432,32 @@ def stage_await_merged(config: Config, version: str) -> None:
         raise s.fail("Timeout waiting for PR to be merged")
 
 
+def stage_await_master_build(config: Config, version: str) -> None:
+    """Wait for the master branch to be built."""
+    with stage.Stage(
+            "Await master build",
+            f"Waiting for the {config.main_branch} branch to be built",
+    ) as s:
+        for _ in range(20):  # 20 * 30s = 10 minutes
+            head_sha = git.branch_sha(config.main_branch)
+            builds = github.action_runs(config.main_branch, head_sha)
+            if not builds:
+                s.progress(
+                    f"Waiting for builds to start for {config.main_branch}")
+                stage.sleep(10)
+                continue
+            build = builds[0]
+            if build.conclusion == "failure":
+                raise s.fail(f"Main branch failed to build: {build.html_url}")
+            if build.status == "completed":
+                s.ok("Main branch built")
+                return
+            s.progress(f"Main branch still building: {build.html_url}")
+            stage.sleep(30)
+        raise s.fail(
+            f"Timeout waiting for {config.main_branch} branch to be built")
+
+
 def stage_tag(config: Config, version: str) -> None:
     """Tag the release with and push it to upstream."""
     with stage.Stage("Tag release", "Tagging the release") as s:
@@ -460,8 +484,8 @@ def stage_build_binaries(config: Config, version: str) -> None:
             head_sha = git.branch_sha(version)
             builds = github.action_runs(version, head_sha)
             if not builds:
-                s.progress(
-                    f"Waiting for builds to start for {version} @ {head_sha}")
+                s.progress("Waiting for builds to start for "
+                           f"{version} @ {head_sha}")
                 stage.sleep(10)
                 continue
             build = builds[0]
@@ -532,6 +556,7 @@ def run_stages(config: Config) -> None:
         print(f"Release branch {BRANCH_PREFIX}/{version} already merged.",
               flush=True)
     stage_await_merged(config, version)
+    stage_await_master_build(config, version)
     stage_tag(config, version)
     stage_build_binaries(config, version)
     stage_create_tarballs(version)
