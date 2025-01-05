@@ -1,3 +1,19 @@
+<a name="v1.18.1-rc.3"></a>
+
+## v1.18.1-rc.3 (2025-01-05)
+
+Release candidate 3.
+
+#### Bug Fixes
+
+- Update check is now working on Windows and AppImage ([5b3a3478](https://github.com/TokTok/qTox/commit/5b3a3478298be6e75c2adf2b8e4eb70d2ab0d504))
+- **Audio:** Notifications sounds are no longer cut off. ([1624d3a9](https://github.com/TokTok/qTox/commit/1624d3a95af68ef18c87435a8057301f0426fdfe))
+
+#### Features
+
+- Add a command line option to run the update-check. ([4d5f9f94](https://github.com/TokTok/qTox/commit/4d5f9f9496028a78163e7912708976cc0ce81635))
+- **Security:** Never perform DNS lookups for tox node connections. ([e0cd0b75](https://github.com/TokTok/qTox/commit/e0cd0b75cf20dc468c601352ce929d8f1c31660d))
+
 <a name="v1.18.1-rc.2"></a>
 
 ## v1.18.1-rc.2 (2025-01-03)
