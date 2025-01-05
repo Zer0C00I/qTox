@@ -115,7 +115,8 @@ def main() -> None:
     if os.path.exists("response.txt"):
         accept_ai_response("response.txt")
     ai_prompt = """Please help me translate these strings from English to Pirate English.
-First, here are some examples of translations that have already been done:
+First, here are some examples of translations that have already been done. The comment
+is the context in which the string is used. It does not need to be translated.
 
 ```
 """
@@ -129,29 +130,24 @@ First, here are some examples of translations that have already been done:
             source = message.getElementsByTagName("source")[0].firstChild
             if not isinstance(source, minidom.Text):
                 continue
+            comment = message.getElementsByTagName("comment")
             translation = message.getElementsByTagName(
                 "translation")[0].firstChild
             if isinstance(translation,
                           minidom.Text) and translation.data != "":
                 if source.data == translation.data:
                     continue
-                examples.append(
-                    f"<source>{source.data}</source>\n"
-                    f"<translation>{translation.data}</translation>\n")
+                example = f"<source>{source.data}</source>\n"
+                if comment and isinstance(comment[0].firstChild, minidom.Text):
+                    example += f"<comment>{comment[0].firstChild.data}</comment>\n"
+                example += f"<translation>{translation.data}</translation>\n"
+                examples.append(example)
 
     # random shuffle examples
     random.shuffle(examples)
     ai_prompt += "\n".join(examples[:30])
 
-    ai_prompt += """```
-
-Now, please translate all of the following 50 strings, try to be
-creative and avoid making the translation the same as the source. Don't repeat
-the example translations. Use a code block for all the translations. Please
-preserve any newlines in the source strings when translating.
-
-```
-"""
+    ai_prompt += "```"
 
     # 3. get all the source strings that have no translation and are type="unfinished".
     # Ask the AI to translate them.
@@ -162,15 +158,34 @@ preserve any newlines in the source strings when translating.
             source = message.getElementsByTagName("source")[0].firstChild
             if not isinstance(source, minidom.Text):
                 continue
+            comment = message.getElementsByTagName("comment")
             translation = message.getElementsByTagName("translation")[0]
-            if (not translation.firstChild or
-                (isinstance(translation.firstChild, minidom.Text)
-                 and not translation.firstChild.data)
-                ) and translation.getAttribute("type") == "unfinished":
-                requests.append(f"<source>{source.data}</source>\n")
+            if not translation.getAttribute("type") == "unfinished":
+                continue
+            translated = (translation.firstChild.data if translation.firstChild
+                          and isinstance(translation.firstChild, minidom.Text)
+                          else None)
+            if not translated or translated == source.data:
+                request = f"<source>{source.data}</source>\n"
+                if comment and isinstance(comment[0].firstChild, minidom.Text):
+                    request += f"<comment>{comment[0].firstChild.data}</comment>\n"
+                requests.append(request)
 
+    requests = list(set(requests))
     random.shuffle(requests)
-    ai_prompt += "\n".join(requests[:50])
+    requests = requests[:50]
+
+    ai_prompt += f"""
+
+Now, please translate all of the following {len(requests)} strings, try to be
+creative and avoid making the translation the same as the source. Don't repeat
+the example translations. Use a code block for all the translations. Please
+preserve any newlines in the source strings when translating. Don't translate
+the comment.
+
+```
+"""
+    ai_prompt += "\n".join(requests)
     ai_prompt += "```"
 
     # 4. send the prompt to the AI and get the response.
