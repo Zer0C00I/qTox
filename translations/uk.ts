@@ -636,7 +636,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Checks whether this program is running the latest qTox version.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Перевіряє, чи працює ця програма з останньою версією qTox.</translation>
+        <translation>Перевіряє, чи використовується остання версія qTox.</translation>
     </message>
 </context>
 <context>
