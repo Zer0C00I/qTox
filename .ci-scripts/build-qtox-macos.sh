@@ -16,10 +16,7 @@ fi
 
 source "$SCRIPT_DIR/dockerfiles/qtox/build_utils.sh"
 
-SCRIPT_ARCH="macos-$(uname -m)"
-
-# kind of a hack.. but we want to extract DEP_PREFIX from it
-parse_arch --arch "$SCRIPT_ARCH" --supported "$SCRIPT_ARCH" --dep qtox
+DEP_PREFIX="$SCRIPT_DIR/dockerfiles/local-deps"
 
 if [ "$1" == "user" ]; then
   CMAKE=cmake

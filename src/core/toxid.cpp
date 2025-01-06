@@ -42,13 +42,16 @@ ToxId::ToxId()
 }
 
 /**
+ * @brief The copy constructor.
+ * @param other ToxId to copy.
+ */
+ToxId::ToxId(const ToxId& other) = default;
+
+/**
  * @brief The move constructor.
  * @param other ToxId to move from.
  */
-ToxId::ToxId(ToxId&& other)
-    : toxId(std::move(other.toxId))
-{
-}
+ToxId::ToxId(ToxId&& other) = default;
 
 /**
  * @brief Create a Tox ID from a QString.

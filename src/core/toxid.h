@@ -23,6 +23,7 @@ public:
     static constexpr int numHexChars = size * 2;
 
     ToxId();
+    ToxId(const ToxId& other);
     ToxId(ToxId&& other);
     explicit ToxId(const QString& id);
     explicit ToxId(const QByteArray& rawId);

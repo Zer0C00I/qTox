@@ -383,7 +383,7 @@ Then, install [toxcore](https://github.com/TokTok/c-toxcore/blob/master/INSTALL.
 
 ```bash
 git clone --depth=1 https://github.com/TokTok/dockerfiles
-dockerfiles/qtox/build_toxcore_linux.sh
+dockerfiles/qtox/build_toxcore_system.sh
 ```
 
 Finally, build qTox.
