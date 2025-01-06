@@ -99,7 +99,6 @@
         <file>themes/dark/fileTransferInstance/yes.svg</file>
         <file>themes/dark/fileTransferWidget/fileDone.svg</file>
         <file>themes/dark/friendList/friendList.qss</file>
-        <file>themes/dark/genericChatForm/genericChatForm.qss</file>
         <file>themes/dark/genericChatRoomWidget/genericChatRoomWidget.qss</file>
         <file>themes/dark/loginScreen/loginScreen.qss</file>
         <file>themes/dark/msgEdit/msgEdit.qss</file>
@@ -168,7 +167,6 @@
         <file>themes/default/fileTransferInstance/yes.svg</file>
         <file>themes/default/fileTransferWidget/fileDone.svg</file>
         <file>themes/default/friendList/friendList.qss</file>
-        <file>themes/default/genericChatForm/genericChatForm.qss</file>
         <file>themes/default/genericChatRoomWidget/genericChatRoomWidget.qss</file>
         <file>themes/default/loginScreen/loginScreen.qss</file>
         <file>themes/default/msgEdit/msgEdit.qss</file>

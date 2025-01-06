@@ -5,7 +5,6 @@
 
 #include "genericchatform.h"
 
-#include "src/chatlog/chatlinecontentproxy.h"
 #include "src/chatlog/chatwidget.h"
 #include "src/chatlog/content/filetransferwidget.h"
 #include "src/chatlog/content/timestamp.h"
@@ -18,12 +17,10 @@
 #include "src/persistence/smileypack.h"
 #include "src/widget/chatformheader.h"
 #include "src/widget/contentdialog.h"
-#include "src/widget/contentdialogmanager.h"
 #include "src/widget/contentlayout.h"
 #include "src/widget/emoticonswidget.h"
 #include "src/widget/form/chatform.h"
 #include "src/widget/form/loadhistorydialog.h"
-#include "src/widget/maskablepixmapwidget.h"
 #include "src/widget/searchform.h"
 #include "src/widget/style.h"
 #include "src/widget/tool/chattextedit.h"
@@ -367,7 +364,6 @@ QDateTime GenericChatForm::getLatestTime() const
 
 void GenericChatForm::reloadTheme()
 {
-    setStyleSheet(style.getStylesheet("genericChatForm/genericChatForm.qss", settings));
     msgEdit->setStyleSheet(style.getStylesheet("msgEdit/msgEdit.qss", settings)
                            + fontToCss(settings.getChatMessageFont(), "QTextEdit"));
 
