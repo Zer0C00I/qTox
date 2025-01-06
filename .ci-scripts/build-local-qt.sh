@@ -7,6 +7,11 @@
 set -euo pipefail
 
 readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
-. "$SCRIPT_DIR/macos_install_deps.sh"
+. "$SCRIPT_DIR/local_install_deps.sh"
 
-install_deps qt
+install_deps \
+  qtbase \
+  qttools \
+  qtsvg \
+  qtimageformats \
+  qtwayland

@@ -554,10 +554,10 @@ jobs:
         run: ccache --set-config=max_size=200M --set-config=cache_dir="$PWD/.cache/ccache" && ccache --show-config
       - name: Build dependencies (only Qt)
         if: steps.cache-qt.outputs.cache-hit != 'true'
-        run: .ci-scripts/build-macos-qt.sh ${{ matrix.arch }}
+        run: .ci-scripts/build-local-qt.sh ${{ matrix.arch }}
       - name: Build dependencies (except Qt)
         if: steps.cache-deps.outputs.cache-hit != 'true'
-        run: .ci-scripts/build-macos-deps.sh ${{ matrix.arch }}
+        run: .ci-scripts/build-local-deps.sh ${{ matrix.arch }}
       - name: Install the Apple certificate
         env:
           BUILD_CERTIFICATE_BASE64: ${{ secrets.APPLE_BUILD_CERTIFICATE_BASE64 }}

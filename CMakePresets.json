@@ -15,7 +15,7 @@
         "CMAKE_BUILD_TYPE": "RelWithDebInfo",
         "CMAKE_COMPILE_WARNING_AS_ERROR": true,
         "CMAKE_EXPORT_COMPILE_COMMANDS": true,
-        "CMAKE_PREFIX_PATH": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/cmake",
+        "CMAKE_PREFIX_PATH": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/cmake;${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/x86_64-linux-gnu/cmake",
         "CMAKE_OSX_DEPLOYMENT_TARGET": "12",
         "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/qt/lib/cmake/Qt6/qt.toolchain.cmake"
       }
@@ -35,7 +35,7 @@
         "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_COMPILE_WARNING_AS_ERROR": true,
         "CMAKE_EXPORT_COMPILE_COMMANDS": true,
-        "CMAKE_PREFIX_PATH": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/cmake",
+        "CMAKE_PREFIX_PATH": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/cmake;${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/x86_64-linux-gnu/cmake",
         "CMAKE_OSX_DEPLOYMENT_TARGET": "12",
         "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/qt-asan/lib/cmake/Qt6/qt.toolchain.cmake"
       }
@@ -54,7 +54,7 @@
         "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_COMPILE_WARNING_AS_ERROR": true,
         "CMAKE_EXPORT_COMPILE_COMMANDS": true,
-        "CMAKE_PREFIX_PATH": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/cmake",
+        "CMAKE_PREFIX_PATH": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/cmake;${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/x86_64-linux-gnu/cmake",
         "CMAKE_OSX_DEPLOYMENT_TARGET": "12",
         "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/qt-tsan/lib/cmake/Qt6/qt.toolchain.cmake"
       }
@@ -74,7 +74,7 @@
         "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_COMPILE_WARNING_AS_ERROR": true,
         "CMAKE_EXPORT_COMPILE_COMMANDS": true,
-        "CMAKE_PREFIX_PATH": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/cmake",
+        "CMAKE_PREFIX_PATH": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/cmake;${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/x86_64-linux-gnu/cmake",
         "CMAKE_OSX_DEPLOYMENT_TARGET": "12"
       }
     },
@@ -92,7 +92,7 @@
         "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_COMPILE_WARNING_AS_ERROR": true,
         "CMAKE_EXPORT_COMPILE_COMMANDS": true,
-        "CMAKE_PREFIX_PATH": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/cmake",
+        "CMAKE_PREFIX_PATH": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/cmake;${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/x86_64-linux-gnu/cmake",
         "CMAKE_OSX_DEPLOYMENT_TARGET": "12"
       }
     },
@@ -109,7 +109,7 @@
         "CMAKE_BUILD_TYPE": "RelWithDebInfo",
         "CMAKE_COMPILE_WARNING_AS_ERROR": true,
         "CMAKE_EXPORT_COMPILE_COMMANDS": true,
-        "CMAKE_PREFIX_PATH": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/cmake",
+        "CMAKE_PREFIX_PATH": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/cmake;${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/x86_64-linux-gnu/cmake",
         "CMAKE_OSX_DEPLOYMENT_TARGET": "12"
       }
     }
