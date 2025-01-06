@@ -4,7 +4,7 @@
  */
 
 #include "smileypack.h"
-#include "src/persistence/settings.h"
+#include "src/persistence/ismileysettings.h"
 
 #include <QDir>
 #include <QDomElement>
@@ -87,6 +87,19 @@ bool isAscii(const QString& string)
     constexpr auto asciiExtMask = 0x80;
 
     return (string.toUtf8()[0] & asciiExtMask) == 0;
+}
+
+/**
+ * Single-character ASCII sequences like "0" can be emojis, but we want to avoid matching them
+ * directly. For these, we require ":" before and after the sequence, e.g. ":0:".
+ */
+QString singleCharAsciiEmoticon(const QString& emoji)
+{
+    if (emoji.length() == 1 && isAscii(emoji)) {
+        return QStringLiteral(":") % emoji % QStringLiteral(":");
+    }
+
+    return emoji;
 }
 
 } // namespace
@@ -221,7 +234,8 @@ void SmileyPack::load(const QString& filename)
         QDomElement stringElement = node.firstChildElement(childName);
         QStringList emoticonList;
         while (!stringElement.isNull()) {
-            QString emoticon = stringElement.text().replace("<", "&lt;").replace(">", "&gt;");
+            QString emoticon = singleCharAsciiEmoticon(
+                stringElement.text().replace("<", "&lt;").replace(">", "&gt;"));
             emoticonToPath.insert(emoticon, iconPath);
             emoticonList.append(emoticon);
             stringElement = stringElement.nextSibling().toElement();
@@ -281,9 +295,7 @@ QString SmileyPack::smileyfied(const QString& msg)
     QString result(msg);
 
     int replaceDiff = 0;
-    QRegularExpressionMatchIterator iter = smilify.globalMatch(result);
-    while (iter.hasNext()) {
-        QRegularExpressionMatch match = iter.next();
+    for (const auto& match : smilify.globalMatch(result)) {
         int startPos = match.capturedStart();
         int keyLength = match.capturedLength();
         QString imgRichText = SmileyPack::getAsRichText(match.captured());
