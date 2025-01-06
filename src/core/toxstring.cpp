@@ -6,6 +6,8 @@
 #include "toxstring.h"
 
 #include <QByteArray>
+#include <QDebug>
+#include <QSet>
 #include <QString>
 
 #include <cassert>
@@ -72,11 +74,21 @@ size_t ToxString::size() const
 QString ToxString::getQString() const
 {
     const auto tainted = QString::fromUtf8(string).toStdU32String();
+    QSet<std::pair<QChar::Category, char32_t>> removed;
     std::u32string cleaned;
-    std::copy_if(tainted.cbegin(), tainted.cend(), std::back_inserter(cleaned), [](char32_t c) {
+    std::copy_if(tainted.cbegin(), tainted.cend(), std::back_inserter(cleaned), [&removed](char32_t c) {
+        const auto category = QChar::category(c);
         // Cf (Other_Format) is to allow skin-color modifiers for emojis.
-        return QChar::isPrint(c) || QChar::category(c) == QChar::Category::Other_Format;
+        // We also allow newlines, which are Other_Control, but we need them for multi-line messages.
+        if (QChar::isPrint(c) || category == QChar::Category::Other_Format || c == '\n') {
+            return true;
+        }
+        removed.insert({category, c});
+        return false;
     });
+    if (!removed.isEmpty()) {
+        qWarning() << "Removed non-printable characters from a string:" << removed;
+    }
     return QString::fromStdU32String(cleaned);
 }
 

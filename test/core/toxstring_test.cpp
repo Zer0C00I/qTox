@@ -28,6 +28,7 @@ private slots:
     void handshakeEmojiTest();
     void coloredEmojiTest();
     void combiningCharacterTest();
+    void multiLineTest();
 
 private:
     /* Test Strings */
@@ -344,6 +345,28 @@ void TestToxString::combiningCharacterTest()
         // U+0320 Combining Minus Sign Below
         // U+0337 Combining Short Solidus Overlay
         {QStringLiteral(u"o\u0303\u0337\u0320"), QStringLiteral(u"o\u0303\u0337\u0320")},
+    };
+
+    for (const auto& testCase : testCases) {
+        QCOMPARE(ToxString(testCase.input).getQString(), testCase.expected);
+    }
+}
+
+/**
+ * @brief Check that we can encode and decode multi-line strings.
+ *
+ * We do remove "\r" but keep "\n".
+ */
+void TestToxString::multiLineTest()
+{
+    const struct TestCase
+    {
+        QString input;
+        QString expected;
+    } testCases[] = {
+        {QStringLiteral("Hello,\nWorld!"), QStringLiteral("Hello,\nWorld!")},
+        {QStringLiteral("Hello,\r\nWorld!"), QStringLiteral("Hello,\nWorld!")},
+        {QStringLiteral("Hello,\rWorld!"), QStringLiteral("Hello,World!")},
     };
 
     for (const auto& testCase : testCases) {
