@@ -1,3 +1,17 @@
+<a name="v1.18.1"></a>
+
+## v1.18.1 (2025-01-06)
+
+A pretty quick turnaround to the next release here, fixing an issue with the release builder workflows that caused release builds from v1.18.0 to claim they are unstable and untested.
+
+Besides that, here are some highlights:
+
+- We have significantly increased the translation coverage using Google Translate (and for Lojban, Baidu translate). All but two languages are now fully automatically translated. In many cases, this automated translation is not perfect, so we've also added a link next to the language selector to our Weblate page where you can fix translations you think could be improved.
+- Using LLMs, we have finished the Pirate English translation, so: Ahoy! Come aboard the qTox ship, and set sail with this scurvy-free release! We've battened down the hatches and plugged some leaks, so no more unstable builds claimin' to be untested. Shiver me timbers, we've even charted new waters with more translations than ye can shake a parrot at!
+- You can now run `qtox --update-check` on the command line to quickly see what the latest version is and what version you are running without starting the GUI. This might be useful for anyone who wants to write scripts around that.
+
+Finally, we have tightened the security of qTox by avoiding any DNS lookups in the Tox bootstrap path. This means qTox will work properly even if you have no DNS server, and importantly, you will not leak access to the Tox network to any DNS servers. The only place where we still do DNS lookups is in the update check (which connects to the GitHub API), but you can disable that.
+
 <a name="v1.18.1-rc.3"></a>
 
 ## v1.18.1-rc.3 (2025-01-05)
