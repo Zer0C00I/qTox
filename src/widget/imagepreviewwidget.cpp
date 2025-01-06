@@ -16,10 +16,17 @@
 namespace {
 QPixmap pixmapFromFile(const QString& filename)
 {
-    static const QStringList previewExtensions = {"png", "jpeg", "jpg", "gif", "svg",
-                                                  "PNG", "JPEG", "JPG", "GIF", "SVG"};
+    static const QStringList previewExtensions = {
+        "gif",  // Graphics Interchange Format
+        "jpeg", // Joint Photographic Experts Group
+        "jpg",  // Joint Photographic Experts Group
+        "png",  // Portable Network Graphics
+        "qoi",  // Quite OK Image Format
+        "svg",  // Scalable Vector Graphics
+        "webp", // WebP
+    };
 
-    if (!previewExtensions.contains(QFileInfo(filename).suffix())) {
+    if (!previewExtensions.contains(QFileInfo(filename).suffix().toLower())) {
         return QPixmap();
     }
 

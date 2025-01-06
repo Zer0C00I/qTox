@@ -22,7 +22,9 @@ int main(int argc, char* argv[])
 }
 
 #ifdef QT_STATIC
+// All platforms support offscreen rendering for testing.
 Q_IMPORT_PLUGIN(QOffscreenIntegrationPlugin)
+
 #if defined(Q_OS_LINUX)
 Q_IMPORT_PLUGIN(QLinuxFbIntegrationPlugin)
 Q_IMPORT_PLUGIN(QVncIntegrationPlugin)
@@ -32,5 +34,9 @@ Q_IMPORT_PLUGIN(QXcbIntegrationPlugin)
 Q_IMPORT_PLUGIN(QCocoaIntegrationPlugin)
 #else
 #error "No static linking supported for platform"
+#endif
+
+#ifdef QTOX_USE_KIMG_QOI
+Q_IMPORT_PLUGIN(QOIPlugin)
 #endif
 #endif // QT_STATIC

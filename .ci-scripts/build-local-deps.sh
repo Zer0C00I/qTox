@@ -22,4 +22,5 @@ install_deps \
   hunspell \
   extra_cmake_modules \
   sonnet \
+  kimageformats \
   toxcore

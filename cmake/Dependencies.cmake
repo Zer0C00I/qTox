@@ -193,9 +193,27 @@ if(APPLE)
 endif()
 
 if(WIN32)
-  set(ALL_LIBRARIES ${ALL_LIBRARIES} strmiids)
+  add_dependency(strmiids)
   # Qt doesn't provide openssl on windows
   search_dependency(OPENSSL           PACKAGE openssl)
+endif()
+
+if(QT_FEATURE_static)
+  add_dependency(Qt6::QOffscreenIntegrationPlugin)
+  if(LINUX)
+    add_dependency(
+      Qt6::QLinuxFbIntegrationPlugin
+      Qt6::QVncIntegrationPlugin
+      Qt6::QXcbIntegrationPlugin
+      Qt6::QWaylandIntegrationPlugin)
+  endif()
+  find_library(KIMG_QOI_LIBRARY kimg_qoi
+               PATHS "${QT6_INSTALL_PREFIX}/plugins/imageformats")
+  if(KIMG_QOI_LIBRARY)
+    message(STATUS "Found QOI imageformats plugin: ${KIMG_QOI_LIBRARY}")
+    add_dependency(${KIMG_QOI_LIBRARY})
+    set_property(SOURCE src/main.cpp APPEND PROPERTY COMPILE_DEFINITIONS QTOX_USE_KIMG_QOI)
+  endif()
 endif()
 
 if (NOT GIT_VERSION)
