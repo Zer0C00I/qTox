@@ -5,6 +5,8 @@
 
 set -eux
 
+ccache --zero-stats
+
 cmake \
   -DCMAKE_TOOLCHAIN_FILE=/sysroot/static-toolchain.cmake \
   -DCMAKE_PREFIX_PATH=/sysroot/opt/qt/lib/cmake \
@@ -23,3 +25,5 @@ cmake --build _build-static
 ls -lh _build-static/qtox
 file _build-static/qtox
 QT_QPA_PLATFORM=offscreen _build-static/qtox --help
+
+ccache --show-stats

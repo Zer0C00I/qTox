@@ -79,6 +79,8 @@ fi
 
 export PKG_CONFIG_PATH=/windows/lib64/pkgconfig
 
+ccache --zero-stats
+
 # Spell check on windows currently not supported, disable
 if [[ "$BUILD_TYPE" == "Release" ]]; then
   cmake -DCMAKE_TOOLCHAIN_FILE=/build/windows-toolchain.cmake \
@@ -104,6 +106,8 @@ elif [[ "$BUILD_TYPE" == "Debug" ]]; then
 fi
 
 cmake --build "$QTOX_BUILD_DIR"
+
+ccache --show-stats
 
 mkdir -p "$QTOX_PREFIX_DIR"
 cp "$QTOX_BUILD_DIR/qtox.exe" "$QTOX_PREFIX_DIR"

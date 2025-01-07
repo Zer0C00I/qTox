@@ -87,6 +87,8 @@ SRCDIR=/qtox
 export CTEST_OUTPUT_ON_FAILURE=1
 export QT_QPA_PLATFORM=offscreen
 
+ccache --zero-stats
+
 if [ "$MINIMAL" -eq 1 ]; then
   BUILD_DIR=_build-minimal
   cmake "$SRCDIR" \
@@ -113,6 +115,8 @@ else
 fi
 
 cmake --build "$BUILD_DIR"
+
+ccache --show-stats
 
 if [ ! -z "${TIDY+x}" ]; then
   run-clang-tidy -quiet -fix -format -p "$BUILD_DIR" \

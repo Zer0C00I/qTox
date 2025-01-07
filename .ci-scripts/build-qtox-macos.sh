@@ -30,6 +30,8 @@ else
 fi
 
 build_qtox() {
+  ccache --zero-stats
+
   # Explicitly include with -isystem to avoid warnings from system headers.
   # CMake will use -I instead of -isystem, so we need to set it manually.
   "$CMAKE" \
@@ -48,6 +50,8 @@ build_qtox() {
   ctest --output-on-failure --parallel "$(sysctl -n hw.ncpu)" --test-dir _build
   cmake --install _build
   cp _build/qTox.dmg "$BIN_NAME"
+
+  ccache --show-stats
 }
 
 check() {
