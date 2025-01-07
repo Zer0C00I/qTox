@@ -73,8 +73,13 @@ if [ ! -z "${GUI_TESTS+x}" ]; then
 fi
 
 if [ ! -z "${TIDY+x}" ]; then
-  export CXX=clang++
-  export CC=clang
+  if [ -f /usr/local/bin/clang-fake ]; then
+    export CXX=clang-fake
+    export CC=clang-fake
+  else
+    export CXX=clang++
+    export CC=clang
+  fi
   CMAKE_ARGS+=("-DCMAKE_EXPORT_COMPILE_COMMANDS=ON")
 fi
 
@@ -83,31 +88,35 @@ export CTEST_OUTPUT_ON_FAILURE=1
 export QT_QPA_PLATFORM=offscreen
 
 if [ "$MINIMAL" -eq 1 ]; then
+  BUILD_DIR=_build-minimal
   cmake "$SRCDIR" \
     -DCMAKE_BUILD_TYPE="$BUILD_TYPE" \
     -DSTRICT_OPTIONS=ON \
     -DUBSAN=ON \
-    -GNinja \
     -DSMILEYS=OFF \
     -DUPDATE_CHECK=OFF \
     -DSPELL_CHECK=OFF \
+    -GNinja \
+    "-B$BUILD_DIR" \
     "${CMAKE_ARGS[@]}"
 else
+  BUILD_DIR=_build-full
   cmake "$SRCDIR" \
     -DCMAKE_BUILD_TYPE="$BUILD_TYPE" \
     -DSTRICT_OPTIONS=ON \
     -DUBSAN=ON \
-    -GNinja \
     -DCODE_COVERAGE=ON \
     -DUPDATE_CHECK=ON \
+    -GNinja \
+    "-B$BUILD_DIR" \
     "${CMAKE_ARGS[@]}"
 fi
 
-cmake --build .
+cmake --build "$BUILD_DIR"
 
 if [ ! -z "${TIDY+x}" ]; then
-  run-clang-tidy -header-filter=.* src/ audio/src/ audio/include test/src/ \
+  run-clang-tidy -p "$BUILD_DIR" -header-filter=.* src/ audio/src/ audio/include test/src/ \
     test/include util/src/ util/include/
 else
-  ctest -j"$(nproc)"
+  ctest -j"$(nproc)" --test-dir "$BUILD_DIR" --output-on-failure
 fi
