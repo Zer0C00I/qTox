@@ -85,8 +85,6 @@ if [[ "$BUILD_TYPE" == "Release" ]]; then
     -DCMAKE_LIBRARY_PATH=/windows/lib64 \
     -DCMAKE_PREFIX_PATH=/windows \
     -DCMAKE_BUILD_TYPE=Release \
-    -DSPELL_CHECK=OFF \
-    -DUPDATE_CHECK=ON \
     -DSTRICT_OPTIONS=ON \
     -DTEST_CROSSCOMPILING_EMULATOR=wine \
     -GNinja \
@@ -97,8 +95,6 @@ elif [[ "$BUILD_TYPE" == "Debug" ]]; then
     -DCMAKE_LIBRARY_PATH=/windows/lib64 \
     -DCMAKE_PREFIX_PATH=/windows \
     -DCMAKE_BUILD_TYPE=Debug \
-    -DSPELL_CHECK=OFF \
-    -DUPDATE_CHECK=ON \
     -DSTRICT_OPTIONS=ON \
     -DTEST_CROSSCOMPILING_EMULATOR=wine \
     -GNinja \
@@ -177,6 +173,19 @@ find "$QTOX_PREFIX_DIR" -iname '*.exe' >exes
 # Create a list of dlls that are loaded during the runtime (not listed in the PE
 # import table, thus ldd doesn't print those)
 echo "$QTOX_PREFIX_DIR/iconengines/qsvgicon.dll
+$QTOX_PREFIX_DIR/imageformats/kimg_ani.dll
+$QTOX_PREFIX_DIR/imageformats/kimg_hdr.dll
+$QTOX_PREFIX_DIR/imageformats/kimg_pcx.dll
+$QTOX_PREFIX_DIR/imageformats/kimg_pfm.dll
+$QTOX_PREFIX_DIR/imageformats/kimg_pic.dll
+$QTOX_PREFIX_DIR/imageformats/kimg_psd.dll
+$QTOX_PREFIX_DIR/imageformats/kimg_pxr.dll
+$QTOX_PREFIX_DIR/imageformats/kimg_qoi.dll
+$QTOX_PREFIX_DIR/imageformats/kimg_ras.dll
+$QTOX_PREFIX_DIR/imageformats/kimg_rgb.dll
+$QTOX_PREFIX_DIR/imageformats/kimg_sct.dll
+$QTOX_PREFIX_DIR/imageformats/kimg_tga.dll
+$QTOX_PREFIX_DIR/imageformats/kimg_xcf.dll
 $QTOX_PREFIX_DIR/imageformats/qgif.dll
 $QTOX_PREFIX_DIR/imageformats/qicns.dll
 $QTOX_PREFIX_DIR/imageformats/qico.dll
@@ -186,6 +195,8 @@ $QTOX_PREFIX_DIR/imageformats/qtga.dll
 $QTOX_PREFIX_DIR/imageformats/qtiff.dll
 $QTOX_PREFIX_DIR/imageformats/qwbmp.dll
 $QTOX_PREFIX_DIR/imageformats/qwebp.dll
+$QTOX_PREFIX_DIR/kf6/sonnet/sonnet_hunspell.dll
+$QTOX_PREFIX_DIR/kf6/sonnet/sonnet_ispellchecker.dll
 $QTOX_PREFIX_DIR/platforms/qdirect2d.dll
 $QTOX_PREFIX_DIR/platforms/qminimal.dll
 $QTOX_PREFIX_DIR/platforms/qoffscreen.dll
