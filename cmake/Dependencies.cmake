@@ -207,13 +207,20 @@ if(QT_FEATURE_static)
       Qt6::QXcbIntegrationPlugin
       Qt6::QWaylandIntegrationPlugin)
   endif()
-  find_library(KIMG_QOI_LIBRARY kimg_qoi
-               PATHS "${QT6_INSTALL_PREFIX}/plugins/imageformats")
-  if(KIMG_QOI_LIBRARY)
-    message(STATUS "Found QOI imageformats plugin: ${KIMG_QOI_LIBRARY}")
-    add_dependency(${KIMG_QOI_LIBRARY})
-    set_property(SOURCE src/main.cpp APPEND PROPERTY COMPILE_DEFINITIONS QTOX_USE_KIMG_QOI)
-  endif()
+  set(KIMG_FORMATS qoi)
+  foreach(fmt ${KIMG_FORMATS})
+    # fmt toupper
+    string(TOUPPER ${fmt} fmt_lib)
+    find_library(KIMG_${fmt_lib}_LIBRARY kimg_${fmt}
+                PATHS "${QT6_INSTALL_PREFIX}/plugins/imageformats")
+    if(KIMG_${fmt_lib}_LIBRARY)
+      message(STATUS "Found ${fmt_lib} imageformats plugin: ${KIMG_${fmt}_LIBRARY}")
+      add_dependency(${KIMG_${fmt_lib}_LIBRARY})
+      set_property(SOURCE src/main.cpp APPEND PROPERTY COMPILE_DEFINITIONS QTOX_USE_KIMG_${fmt_lib})
+    else()
+      message(STATUS "Did not find ${fmt_lib} imageformats plugin")
+    endif()
+  endforeach()
 endif()
 
 if (NOT GIT_VERSION)
