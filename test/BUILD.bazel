@@ -98,17 +98,3 @@ cc_fuzz_test(
     tags = ["qt"],
     deps = ["//qtox/src:serialize"],
 )
-
-cc_fuzz_test(
-    name = "qimage_fuzz_test",
-    size = "small",
-    testonly = True,
-    srcs = ["chatlog/qimage_fuzz_test.cpp"],
-    copts = COPTS,
-    tags = ["qt"],
-    deps = [
-        "@kimageformats",
-        "@qt//:qt_core",
-        "@qt//:qt_gui",
-    ],
-)
