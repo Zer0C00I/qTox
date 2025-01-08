@@ -79,8 +79,8 @@ QString ToxString::getQString() const
     std::copy_if(tainted.cbegin(), tainted.cend(), std::back_inserter(cleaned), [&removed](char32_t c) {
         const auto category = QChar::category(c);
         // Cf (Other_Format) is to allow skin-color modifiers for emojis.
-        // We also allow newlines, which are Other_Control, but we need them for multi-line messages.
-        if (QChar::isPrint(c) || category == QChar::Category::Other_Format || c == '\n') {
+        // We also allow newlines and tabs, which are Other_Control, and covered by isSpace.
+        if (QChar::isPrint(c) || QChar::isSpace(c) || category == QChar::Category::Other_Format) {
             return true;
         }
         removed.insert({category, c});

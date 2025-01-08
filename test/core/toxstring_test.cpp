@@ -29,6 +29,7 @@ private slots:
     void coloredEmojiTest();
     void combiningCharacterTest();
     void multiLineTest();
+    void tabTest();
 
 private:
     /* Test Strings */
@@ -354,8 +355,6 @@ void TestToxString::combiningCharacterTest()
 
 /**
  * @brief Check that we can encode and decode multi-line strings.
- *
- * We do remove "\r" but keep "\n".
  */
 void TestToxString::multiLineTest()
 {
@@ -365,13 +364,22 @@ void TestToxString::multiLineTest()
         QString expected;
     } testCases[] = {
         {QStringLiteral("Hello,\nWorld!"), QStringLiteral("Hello,\nWorld!")},
-        {QStringLiteral("Hello,\r\nWorld!"), QStringLiteral("Hello,\nWorld!")},
-        {QStringLiteral("Hello,\rWorld!"), QStringLiteral("Hello,World!")},
+        {QStringLiteral("Hello,\r\nWorld!"), QStringLiteral("Hello,\r\nWorld!")},
+        {QStringLiteral("Hello,\rWorld!"), QStringLiteral("Hello,\rWorld!")},
     };
 
     for (const auto& testCase : testCases) {
         QCOMPARE(ToxString(testCase.input).getQString(), testCase.expected);
     }
+}
+
+/**
+ * @brief Check that we can encode and decode tabs.
+ */
+void TestToxString::tabTest()
+{
+    QCOMPARE(ToxString(QStringLiteral("Hello,\tWorld!")).getQString(),
+             QStringLiteral("Hello,\tWorld!"));
 }
 
 QTEST_GUILESS_MAIN(TestToxString)
