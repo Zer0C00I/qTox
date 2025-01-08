@@ -14,7 +14,6 @@
 #include "src/persistence/settings.h"
 #include "src/widget/style.h"
 #include "src/widget/translator.h"
-#include <iostream>
 
 #include <QAction>
 #include <QApplication>
@@ -27,8 +26,6 @@
 
 #include <algorithm>
 #include <cassert>
-#include <set>
-
 
 namespace {
 
@@ -899,9 +896,6 @@ void ChatWidget::checkVisibility()
     auto upperBound = std::lower_bound(lowerBound, chatLineStorage->end(),
                                        getVisibleRect().bottom(), ChatLine::lessThanBSRectTop);
 
-    const ChatLine::Ptr lastLineBeforeVisible =
-        lowerBound == chatLineStorage->begin() ? ChatLine::Ptr() : *std::prev(lowerBound);
-
     // set visibility
     QList<ChatLine::Ptr> newVisibleLines;
     for (auto itr = lowerBound; itr != upperBound; ++itr) {
@@ -920,7 +914,7 @@ void ChatWidget::checkVisibility()
     visibleLines = newVisibleLines;
 
     if (!visibleLines.isEmpty()) {
-        emit firstVisibleLineChanged(lastLineBeforeVisible, visibleLines.at(0));
+        emit firstVisibleLineChanged(visibleLines.at(0));
     }
 }
 

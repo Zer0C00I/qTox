@@ -141,7 +141,6 @@ GenericChatForm::GenericChatForm(const Core& core_, const Chat* chat, IChatLog& 
                                 messageBoxManager, this);
     searchForm->hide();
     dateInfo->setAlignment(Qt::AlignHCenter);
-    dateInfo->setVisible(false);
 
     // settings
     connect(&settings, &Settings::emojiFontPointSizeChanged, chatWidget, &ChatWidget::forceRelayout);
@@ -701,20 +700,12 @@ void GenericChatForm::goToCurrentDate()
     chatWidget->jumpToIdx(chatLog.getNextIdx());
 }
 
-void GenericChatForm::updateShowDateInfo(const ChatLine::Ptr& prevLine, const ChatLine::Ptr& topLine)
+void GenericChatForm::updateShowDateInfo(const ChatLine::Ptr& topLine)
 {
-    // If the dateInfo is visible we need to pretend the top line is the one
-    // covered by the date to prevent oscillations
-    const auto effectiveTopLine = (dateInfo->isVisible() && prevLine) ? prevLine : topLine;
+    const auto date = getTime(topLine);
 
-    const auto date = getTime(effectiveTopLine);
-
-    if (date.isValid() && date.date() != QDate::currentDate()) {
-        const auto dateText = QStringLiteral("<b>%1<\b>").arg(date.toString(settings.getDateFormat()));
-        dateInfo->setText(dateText);
-        dateInfo->setVisible(true);
-    } else {
-        dateInfo->setVisible(false);
+    if (date.isValid()) {
+        dateInfo->setText(QStringLiteral("<b>%1<\b>").arg(date.toString(settings.getDateFormat())));
     }
 }
 

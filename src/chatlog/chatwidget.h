@@ -61,7 +61,7 @@ public:
 
 signals:
     void selectionChanged();
-    void firstVisibleLineChanged(const ChatLine::Ptr& prevLine, const ChatLine::Ptr& firstLine);
+    void firstVisibleLineChanged(const ChatLine::Ptr& topLine);
 
     void messageNotFoundShow(SearchDirection direction);
     void renderFinished();

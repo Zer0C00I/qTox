@@ -8,7 +8,6 @@
 #include "src/chatlog/chatmessage.h"
 #include "src/core/toxpk.h"
 #include "src/model/ichatlog.h"
-#include "src/widget/searchtypes.h"
 
 #include <QMenu>
 #include <QWidget>
@@ -102,7 +101,7 @@ protected slots:
     void onLoadHistory();
     void onExportChat();
     void searchFormShow();
-    void updateShowDateInfo(const ChatLine::Ptr& prevLine, const ChatLine::Ptr& topLine);
+    void updateShowDateInfo(const ChatLine::Ptr& topLine);
     void goToCurrentDate();
 
 private:
