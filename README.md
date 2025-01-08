@@ -1,6 +1,6 @@
 # qTox
 
-This is an unofficial fork ot qTox. As noted on the official qTox repository, be careful
+This is an unofficial fork of qTox. As noted on the official qTox repository, be careful
 about official ones. However, we do have C++ experience and some resources to maintain
 qTox going forward, so feel free to try it out, file issues against us, and make pull
 requests here.
@@ -36,14 +36,7 @@ It was fun working with all of you and I learned a lot!
 <img src="https://hosted.weblate.org/widgets/qtox/-/svg-badge.svg"
      alt="Translate on Weblate" />
 </a>
-<a href="https://gitter.im/qtox/qTox?utm_source=badge">
-<img src="https://badges.gitter.im/Join Chat.svg" alt="Gitter">
-</a>
-<a href="https://github.com/qTox/release-schedule/blob/master/README.md">
-<img src="https://qtox.github.io/release-schedule/status.svg"
-title="Week of Merges: population of Merges increases!
-Week of Testing: Your mana regenerates!" />
-</a></p>
+</p>
 
 ---
 
@@ -56,7 +49,6 @@ the encrypted peer-to-peer Tox protocol.
 **[Install/Build] |**
 **[Roadmap] |**
 **[Report bugs] |**
-**[Jenkins builds] |**
 **[Mailing list] |**
 **IRC:** [#qtox@libera.chat]
 
@@ -196,7 +188,6 @@ AED3 1134 9C23 A123 E5C4  AA4B 139C A045 3DA2 D773
 [Install/Build]: /INSTALL.md
 [IRC logs]: https://github.com/qTox/qtox-irc-logs
 [issues that need help]: https://github.com/qTox/qTox/labels/help%20wanted
-[Jenkins builds]: https://build.tox.chat/
 [Mailing list]: https://lists.tox.chat
 [From Source]: /INSTALL.md#linux
 [qTox-dev mailing list]: https://lists.tox.chat/listinfo/qtox-dev
