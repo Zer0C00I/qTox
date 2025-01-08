@@ -173,27 +173,10 @@ find "$QTOX_PREFIX_DIR" -iname '*.exe' >exes
 # Create a list of dlls that are loaded during the runtime (not listed in the PE
 # import table, thus ldd doesn't print those)
 echo "$QTOX_PREFIX_DIR/iconengines/qsvgicon.dll
-$QTOX_PREFIX_DIR/imageformats/kimg_ani.dll
-$QTOX_PREFIX_DIR/imageformats/kimg_hdr.dll
-$QTOX_PREFIX_DIR/imageformats/kimg_pcx.dll
-$QTOX_PREFIX_DIR/imageformats/kimg_pfm.dll
-$QTOX_PREFIX_DIR/imageformats/kimg_pic.dll
-$QTOX_PREFIX_DIR/imageformats/kimg_psd.dll
-$QTOX_PREFIX_DIR/imageformats/kimg_pxr.dll
 $QTOX_PREFIX_DIR/imageformats/kimg_qoi.dll
-$QTOX_PREFIX_DIR/imageformats/kimg_ras.dll
-$QTOX_PREFIX_DIR/imageformats/kimg_rgb.dll
-$QTOX_PREFIX_DIR/imageformats/kimg_sct.dll
-$QTOX_PREFIX_DIR/imageformats/kimg_tga.dll
-$QTOX_PREFIX_DIR/imageformats/kimg_xcf.dll
 $QTOX_PREFIX_DIR/imageformats/qgif.dll
-$QTOX_PREFIX_DIR/imageformats/qicns.dll
-$QTOX_PREFIX_DIR/imageformats/qico.dll
 $QTOX_PREFIX_DIR/imageformats/qjpeg.dll
 $QTOX_PREFIX_DIR/imageformats/qsvg.dll
-$QTOX_PREFIX_DIR/imageformats/qtga.dll
-$QTOX_PREFIX_DIR/imageformats/qtiff.dll
-$QTOX_PREFIX_DIR/imageformats/qwbmp.dll
 $QTOX_PREFIX_DIR/imageformats/qwebp.dll
 $QTOX_PREFIX_DIR/kf6/sonnet/sonnet_hunspell.dll
 $QTOX_PREFIX_DIR/kf6/sonnet/sonnet_ispellchecker.dll
