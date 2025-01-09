@@ -330,7 +330,7 @@ void Test10to11::test10to11()
 {
     QVERIFY(testDatabaseFile.open());
     testDatabaseFile.close();
-    auto db = std::shared_ptr<RawDatabase>{new RawDatabase{testDatabaseFile.fileName(), {}, {}}};
+    auto db = RawDatabase::open(testDatabaseFile.fileName(), {}, {});
     QVERIFY(db->execNow(RawDatabase::Query{QStringLiteral("PRAGMA foreign_keys = ON;")}));
     createSchemaAtVersion(db, DbUtility::schema10);
     QVector<RawDatabase::Query> setupQueries;
