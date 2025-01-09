@@ -46,7 +46,7 @@ def create_tarballs(tag: str, tmpdir: str) -> None:
                 "git",
                 "archive",
                 "--format=tar",
-                "--prefix=qTox-{tag}/",
+                f"--prefix=qTox-{tag}/",
                 tag,
                 f"--output={tarname}",
             ],
