@@ -5,7 +5,9 @@
  */
 
 #include "coreav.h"
+
 #include "core.h"
+
 #include "audio/iaudiosettings.h"
 #include "src/model/conference.h"
 #include "src/model/friend.h"
@@ -21,10 +23,9 @@
 #include <QTimer>
 #include <QtConcurrent/QtConcurrentRun>
 
-#include <tox/toxav.h>
-
 #include <cassert>
 #include <memory>
+#include <tox/toxav.h>
 
 /**
  * @fn void CoreAV::avInvite(uint32_t friendId, bool video)

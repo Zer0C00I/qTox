@@ -5,8 +5,6 @@
 
 #include "widget.h"
 
-#include <cassert>
-
 #include <QActionGroup>
 #include <QClipboard>
 #include <QDebug>
@@ -18,6 +16,8 @@
 #include <QString>
 #include <QSvgRenderer>
 #include <QWindow>
+
+#include <cassert>
 #include <memory>
 #ifdef Q_OS_MAC
 #include <QMenuBar>
@@ -33,6 +33,7 @@
 #include "friendwidget.h"
 #include "maskablepixmapwidget.h"
 #include "splitterrestorer.h"
+
 #include "audio/audio.h"
 #include "form/conferenceform.h"
 #include "src/chatlog/content/filetransferwidget.h"

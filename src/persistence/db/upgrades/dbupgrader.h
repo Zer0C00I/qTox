@@ -5,10 +5,10 @@
 
 #pragma once
 
+#include "src/persistence/db/rawdatabase.h"
+
 #include <memory>
 #include <utility>
-
-#include "src/persistence/db/rawdatabase.h"
 
 class RawDatabase;
 class IMessageBoxManager;

@@ -5,10 +5,10 @@
 
 #pragma once
 
+#include "src/core/toxfile.h"
+
 #include <QTime>
 #include <QWidget>
-
-#include "src/core/toxfile.h"
 
 class CoreFile;
 

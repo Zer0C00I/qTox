@@ -16,6 +16,7 @@
 
 #ifdef Q_OS_MACOS
 #include <QDebug>
+
 #include <CoreFoundation/CoreFoundation.h>
 #include <IOKit/IOKitLib.h>
 #include <IOKit/hidsystem/IOHIDLib.h>

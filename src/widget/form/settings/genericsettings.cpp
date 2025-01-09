@@ -4,12 +4,14 @@
  */
 
 #include "genericsettings.h"
+
 #include "src/widget/style.h"
 
 #include <QCheckBox>
 #include <QComboBox>
 #include <QEvent>
 #include <QSpinBox>
+
 #include <utility>
 
 /**

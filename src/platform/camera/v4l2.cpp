@@ -10,6 +10,7 @@
 
 #if defined(USING_V4L)
 #include <QDebug>
+
 #include <cerrno>
 #include <dirent.h>
 #include <fcntl.h>

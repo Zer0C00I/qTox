@@ -8,6 +8,7 @@
 #include <QCoreApplication>
 #include <QSignalSpy>
 #include <QtTest/QtTest>
+
 #include <csignal>
 #include <unistd.h>
 

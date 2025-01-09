@@ -8,8 +8,10 @@
 
 #include "src/model/conference.h"
 #include "src/widget/tool/chattextedit.h"
+
 #include <QMap>
 #include <QString>
+
 #include <utility>
 
 class TabCompleter : public QObject

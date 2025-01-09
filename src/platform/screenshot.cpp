@@ -5,6 +5,7 @@
 #include "screenshot.h"
 
 #include "screenshot_dbus.h"
+
 #include "src/widget/tool/abstractscreenshotgrabber.h"
 
 AbstractScreenshotGrabber* Platform::createScreenshotGrabber(QWidget* parent)

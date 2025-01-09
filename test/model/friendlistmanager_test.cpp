@@ -7,6 +7,7 @@
 
 #include <QSignalSpy>
 #include <QTest>
+
 #include <memory>
 #include <utility>
 

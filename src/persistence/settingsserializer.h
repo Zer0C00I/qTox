@@ -11,6 +11,7 @@
 #include <QSettings>
 #include <QString>
 #include <QVector>
+
 #include <utility>
 
 class SettingsSerializer

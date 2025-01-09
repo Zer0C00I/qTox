@@ -25,6 +25,7 @@
 #include <QNetworkProxy>
 #include <QObject>
 #include <QPixmap>
+
 #include <utility>
 
 class Profile;

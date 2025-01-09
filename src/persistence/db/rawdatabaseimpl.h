@@ -14,8 +14,8 @@
 #include <QString>
 #include <QThread>
 #include <QVariant>
-
 #include <queue>
+
 #include <atomic>
 #include <memory>
 #include <vector>

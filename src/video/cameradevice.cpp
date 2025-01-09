@@ -16,6 +16,7 @@ extern "C"
 }
 #include "cameradevice.h"
 #include "scopedavdictionary.h"
+
 #include "src/persistence/settings.h"
 
 #include <QDebug>
@@ -23,6 +24,7 @@ extern "C"
 #include <QMutexLocker>
 #include <QScreen>
 #include <QVector>
+
 #include <utility>
 
 // no longer needed when avformat version < 59 is no longer supported

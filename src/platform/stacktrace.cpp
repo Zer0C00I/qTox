@@ -5,6 +5,7 @@
 #include "stacktrace.h"
 
 #include <QDebug>
+
 #include <cstring>
 #include <cxxabi.h> // __cxa_demangle (GNU-like dependency)
 

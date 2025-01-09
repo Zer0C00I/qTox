@@ -4,8 +4,10 @@
  */
 
 #include "src/core/toxfile.h"
+
 #include <QFile>
 #include <QRegularExpression>
+
 #include <tox/tox.h>
 #include <utility>
 

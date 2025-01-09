@@ -4,7 +4,17 @@
  */
 
 #include "userinterfaceform.h"
+
 #include "ui_userinterfacesettings.h"
+
+#include "src/persistence/profile.h"
+#include "src/persistence/settings.h"
+#include "src/persistence/smileypack.h"
+#include "src/widget/form/settingswidget.h"
+#include "src/widget/style.h"
+#include "src/widget/tool/recursivesignalblocker.h"
+#include "src/widget/translator.h"
+#include "src/widget/widget.h"
 
 #include <QDebug>
 #include <QFileDialog>
@@ -15,15 +25,6 @@
 #include <QStyleFactory>
 #include <QTime>
 #include <QVector>
-
-#include "src/persistence/profile.h"
-#include "src/persistence/settings.h"
-#include "src/persistence/smileypack.h"
-#include "src/widget/form/settingswidget.h"
-#include "src/widget/style.h"
-#include "src/widget/tool/recursivesignalblocker.h"
-#include "src/widget/translator.h"
-#include "src/widget/widget.h"
 
 /**
  * @class UserInterfaceForm

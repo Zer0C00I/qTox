@@ -3,6 +3,21 @@
  * Copyright © 2024-2025 The TokTok team.
  */
 
+#include "profile.h"
+
+#include "profilelocker.h"
+#include "settings.h"
+
+#include "src/core/core.h"
+#include "src/core/coreav.h"
+#include "src/core/corefile.h"
+#include "src/net/avatarbroadcaster.h"
+#include "src/net/bootstrapnodeupdater.h"
+#include "src/nexus.h"
+#include "src/widget/tool/identicon.h"
+#include "src/widget/tool/imessageboxmanager.h"
+#include "src/widget/widget.h"
+
 #include <QBuffer>
 #include <QDebug>
 #include <QDir>
@@ -15,19 +30,6 @@
 #include <memory>
 #include <sodium.h>
 #include <utility>
-
-#include "profile.h"
-#include "profilelocker.h"
-#include "settings.h"
-#include "src/core/core.h"
-#include "src/core/coreav.h"
-#include "src/core/corefile.h"
-#include "src/net/avatarbroadcaster.h"
-#include "src/net/bootstrapnodeupdater.h"
-#include "src/nexus.h"
-#include "src/widget/tool/identicon.h"
-#include "src/widget/tool/imessageboxmanager.h"
-#include "src/widget/widget.h"
 
 namespace {
 enum class LoadToxDataError

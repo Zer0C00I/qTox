@@ -4,6 +4,7 @@
  */
 
 #include "sessionchatlog.h"
+
 #include "src/conferencelist.h"
 #include "src/friendlist.h"
 #include "src/model/conference.h"

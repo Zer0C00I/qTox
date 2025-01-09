@@ -3,18 +3,19 @@
  * Copyright © 2024-2025 The TokTok team.
  */
 
-#include <QDebug>
-#include <cassert>
-#include <utility>
-
-#include <tox/tox.h>
-
 #include "profile.h"
 #include "settings.h"
+
 #include "db/rawdatabase.h"
 #include "db/upgrades/dbupgrader.h"
 #include "src/core/chatid.h"
 #include "src/core/toxpk.h"
+
+#include <QDebug>
+
+#include <cassert>
+#include <tox/tox.h>
+#include <utility>
 
 namespace {
 MessageState getMessageState(bool isPending, bool isBroken)

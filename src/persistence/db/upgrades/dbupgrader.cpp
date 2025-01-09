@@ -4,6 +4,7 @@
  */
 
 #include "dbupgrader.h"
+
 #include "src/core/chatid.h"
 #include "src/core/toxpk.h"
 #include "src/persistence/db/rawdatabase.h"
@@ -13,6 +14,7 @@
 #include <QDebug>
 #include <QString>
 #include <QTranslator>
+
 #include <utility>
 
 namespace {

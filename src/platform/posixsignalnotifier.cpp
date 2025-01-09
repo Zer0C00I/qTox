@@ -13,7 +13,6 @@
 
 #include <array>
 #include <atomic>
-
 #include <cerrno>
 #include <csignal>      // sigaction()
 #include <sys/socket.h> // socketpair()

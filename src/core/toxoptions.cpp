@@ -9,10 +9,10 @@
 #include "src/core/toxlogger.h"
 #include "util/toxcoreerrorparser.h"
 
-#include <tox/tox.h>
-
 #include <QByteArray>
 #include <QDebug>
+
+#include <tox/tox.h>
 #include <utility>
 
 /**

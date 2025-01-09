@@ -5,14 +5,14 @@
 
 #include "rawdatabaseimpl.h"
 
-#include <cassert>
-#include <tox/toxencryptsave.h>
-
 #include <QCoreApplication>
 #include <QDebug>
 #include <QFile>
 #include <QMetaObject>
 #include <QMutexLocker>
+
+#include <cassert>
+#include <tox/toxencryptsave.h>
 #include <utility>
 
 /**

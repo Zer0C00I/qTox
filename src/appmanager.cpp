@@ -25,6 +25,7 @@
 #include <QFontDatabase>
 #include <QMessageBox>
 #include <QObject>
+
 #include <memory>
 
 namespace {

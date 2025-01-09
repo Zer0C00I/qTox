@@ -4,8 +4,10 @@
  */
 
 #include "maskablepixmapwidget.h"
+
 #include <QPainter>
 #include <QStyle>
+
 #include <utility>
 
 /**

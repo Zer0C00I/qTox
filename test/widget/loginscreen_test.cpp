@@ -1,13 +1,13 @@
 #include "src/widget/loginscreen.h"
 
+#include "src/persistence/paths.h"
+#include "src/widget/style.h"
+
 #include <QDebug>
 #include <QLineEdit>
 #include <QProcessEnvironment>
 #include <QPushButton>
 #include <QTest>
-
-#include "src/persistence/paths.h"
-#include "src/widget/style.h"
 
 namespace {
 std::pair<QPixmap, QPixmap> compareScreenshot(QWidget* widget, const QString& path)

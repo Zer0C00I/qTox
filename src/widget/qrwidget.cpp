@@ -5,13 +5,14 @@
 
 
 #include "qrwidget.h"
+
 #include <QBuffer>
 #include <QDebug>
 #include <QImage>
 #include <QPainter>
-#include <qrencode.h>
 
 #include <cerrno>
+#include <qrencode.h>
 
 /**
  * @file qrwidget.cpp

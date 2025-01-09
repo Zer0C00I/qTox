@@ -6,6 +6,7 @@
 #pragma once
 
 #include "src/widget/tool/abstractscreenshotgrabber.h"
+
 #include <QObject>
 #include <QPixmap>
 #include <QPointer>
