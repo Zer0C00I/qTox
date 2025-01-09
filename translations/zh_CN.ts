@@ -2995,6 +2995,17 @@ Hide formatting characters:
         <source>Use system-specific notification backend if available</source>
         <translation>如果可用，使用系统特定的通知后端</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">显示聊天中发送和接收的图像的预览。将鼠标悬停在内联预览上可显示更大的预览。</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">图像预览</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

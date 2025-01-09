@@ -3115,6 +3115,17 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Izmantojiet sistēmai raksturīgu paziņojumu aizmugursistēmu, ja tāda ir pieejama</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Rādīt nosūtīto un saņemto attēlu priekšskatījumus tērzēšanas sarunās. Virziet kursoru virs iekļautā priekšskatījuma, lai parādītu lielāku priekšskatījumu.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Attēla priekšskatījums</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

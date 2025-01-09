@@ -3147,6 +3147,17 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">利用可能な場合はシステム固有の通知バックエンドを使用する</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">チャットで送受信した画像のプレビューを表示します。インライン プレビューの上にマウスを移動すると、大きなプレビューが表示されます。</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">画像プレビュー</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

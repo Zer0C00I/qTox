@@ -3593,6 +3593,17 @@ e.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">samtci skari temci .i ko pilno ti tezu&apos;e lo nu cuxna lo manku tcini</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">.i ko viska lo se viska be lo se benji gi&apos;e cpacu lo pixra ne&apos;i lo nu casnu ko virnu lo nenri viska tezu&apos;e lo nu jarco lo barda se viska</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">pixra vitke</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

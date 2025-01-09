@@ -10,7 +10,6 @@
 #include "src/core/icoresettings.h"
 #include "src/core/idebugsettings.h"
 #include "src/core/toxencrypt.h"
-#include "src/core/toxfile.h"
 #include "src/persistence/iconferencesettings.h"
 #include "src/persistence/ifriendsettings.h"
 #include "src/persistence/inotificationsettings.h"
@@ -206,6 +205,7 @@ signals:
     void compactLayoutChanged(bool enabled);
     void sortingModeChanged(FriendListSortingMode mode);
     void showIdenticonsChanged(bool enabled);
+    void imagePreviewChanged(bool enabled);
 
     // ChatView
     void useEmoticonsChanged(bool enabled);
@@ -523,6 +523,9 @@ public:
     bool getShowIdenticons() const;
     void setShowIdenticons(bool value);
 
+    bool getImagePreview() const;
+    void setImagePreview(bool newValue);
+
     bool getAutoLogin() const;
     void setEnableConferencesColor(bool state);
     bool getEnableConferencesColor() const;
@@ -600,6 +603,7 @@ private:
     bool desktopNotify;
     bool notifySystemBackend;
     bool showWindow;
+    bool imagePreview;
     bool notifySound;
     bool notifyHide;
     bool busySound;

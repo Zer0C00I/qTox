@@ -8,7 +8,6 @@
 #include <QTime>
 #include <QWidget>
 
-#include "src/chatlog/chatlinecontent.h"
 #include "src/core/toxfile.h"
 
 class CoreFile;

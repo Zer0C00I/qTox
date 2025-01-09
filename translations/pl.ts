@@ -3043,6 +3043,17 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Jeśli jest dostępny, użyj systemu powiadomień specyficznego dla systemu</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Pokaż podglądy wysłanych i odebranych obrazów na czatach. Najedź kursorem na podgląd wbudowany, aby wyświetlić większy podgląd.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Podgląd obrazu</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

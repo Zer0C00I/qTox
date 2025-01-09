@@ -3282,6 +3282,17 @@ Skrij znake za oblikovanje:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Če je na voljo, uporabite zaledni sistem za obvestila</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Prikaži predogled poslanih in prejetih slik v klepetih. Premaknite miškin kazalec nad vgrajeni predogled, da prikažete večji predogled.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Predogled slike</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

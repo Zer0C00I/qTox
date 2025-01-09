@@ -3460,6 +3460,17 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">가능한 경우 시스템별 알림 백엔드 사용</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">채팅에서 보내고 받은 이미지의 미리보기를 표시합니다. 인라인 미리보기 위로 마우스를 가져가면 더 큰 미리보기가 표시됩니다.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">이미지 미리보기</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

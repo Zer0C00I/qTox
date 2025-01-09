@@ -3506,6 +3506,17 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">使用系統特定的通知後端（如果可用）</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">顯示聊天中發送和接收的影像的預覽。將滑鼠懸停在內聯預覽上可顯示更大的預覽。</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">圖像預覽</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

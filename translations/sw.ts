@@ -3644,6 +3644,17 @@ Ficha vibambo vya uumbizaji:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Tumia mandharinyuma ya arifa mahususi ya mfumo ikiwa inapatikana</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Onyesha muhtasari wa picha zilizotumwa na kupokewa kwenye gumzo. Elea juu ya onyesho la kuchungulia la ndani ili kuonyesha onyesho kubwa zaidi.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Onyesho la Kuchungulia Picha</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

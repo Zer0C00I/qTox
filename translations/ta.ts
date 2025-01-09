@@ -3391,6 +3391,17 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">சிஸ்டம் சார்ந்த அறிவிப்பு பின்தளத்தில் இருந்தால் பயன்படுத்தவும்</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">அரட்டைகளில் அனுப்பப்பட்ட மற்றும் பெறப்பட்ட படங்களுக்கான மாதிரிக்காட்சிகளைக் காட்டு. பெரிய மாதிரிக்காட்சியைக் காட்ட, இன்லைன் மாதிரிக்காட்சியின் மேல் வட்டமிடுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">பட முன்னோட்டம்</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

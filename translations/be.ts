@@ -3114,6 +3114,17 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Выкарыстоўвайце бэкэнд апавяшчэнняў для канкрэтнай сістэмы, калі ён даступны</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Паказаць папярэдні прагляд адпраўленых і атрыманых малюнкаў у чатах. Навядзіце курсор мышы на ўбудаваны папярэдні прагляд, каб паказаць большы папярэдні прагляд.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Папярэдні прагляд выявы</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

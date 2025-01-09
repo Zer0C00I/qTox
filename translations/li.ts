@@ -3650,6 +3650,17 @@ Opmaakteikens verberge:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Datumformaat:</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Veurbeelde toene veur verstuurde en ontvange aafbeeldinge in chats. Houw de muis euver de inline-veurbeeld um ‘n groetere veurbeeld weer te geve.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Aafbeeldingveurbeeld</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

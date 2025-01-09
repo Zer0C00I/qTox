@@ -191,6 +191,7 @@ void Settings::loadGlobal()
         separateWindow = s.value("separateWindow", false).toBool();
         dontGroupWindows = s.value("dontGroupWindows", false).toBool();
         showIdenticons = s.value("showIdenticons", true).toBool();
+        imagePreview = s.value("imagePreview", true).toBool();
 
         const QString DEFAULT_SMILEYS = ":/smileys/EmojiOne/emoticons.xml";
         smileyPack = s.value("smileyPack", DEFAULT_SMILEYS).toString();
@@ -660,6 +661,7 @@ void Settings::saveGlobal()
         s.setValue("dontGroupWindows", dontGroupWindows);
         s.setValue("conferencePosition", conferencePosition);
         s.setValue("showIdenticons", showIdenticons);
+        s.setValue("imagePreview", imagePreview);
 
         s.setValue("smileyPack", smileyPack);
         s.setValue("emojiFontPointSize", emojiFontPointSize);
@@ -2014,6 +2016,19 @@ void Settings::setShowIdenticons(bool value)
 {
     if (setVal(showIdenticons, value)) {
         emit showIdenticonsChanged(value);
+    }
+}
+
+bool Settings::getImagePreview() const
+{
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
+    return imagePreview;
+}
+
+void Settings::setImagePreview(bool newValue)
+{
+    if (setVal(imagePreview, newValue)) {
+        emit imagePreviewChanged(newValue);
     }
 }
 

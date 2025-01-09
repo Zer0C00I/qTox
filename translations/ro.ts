@@ -3011,6 +3011,17 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Utilizați backend-ul de notificare specific sistemului, dacă este disponibil</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Afișați previzualizări pentru imaginile trimise și primite în chat-uri. Treceți cursorul peste previzualizarea inline pentru a afișa o previzualizare mai mare.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Previzualizare imagine</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

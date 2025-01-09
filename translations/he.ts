@@ -3621,6 +3621,17 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">השתמש בקצה האחורי של התראות ספציפי למערכת אם זמין</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">הצג תצוגה מקדימה של תמונות שנשלחו והתקבלו בצ&apos;אטים. רחף מעל התצוגה המקדימה המוטבעת כדי להציג תצוגה מקדימה גדולה יותר.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">תצוגה מקדימה של תמונה</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

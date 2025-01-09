@@ -3106,6 +3106,17 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Користите позадину за обавештења специфична за систем ако је доступна</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Прикажи прегледе за послате и примљене слике у ћаскањима. Пређите курсором преко уграђеног прегледа да бисте приказали већи преглед.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Преглед слике</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

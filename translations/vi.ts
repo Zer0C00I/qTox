@@ -3014,6 +3014,17 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Sử dụng phụ trợ thông báo dành riêng cho hệ thống nếu có</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Hiển thị bản xem trước cho hình ảnh đã gửi và nhận trong cuộc trò chuyện. Di chuột qua bản xem trước nội tuyến để hiển thị bản xem trước lớn hơn.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Xem trước hình ảnh</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

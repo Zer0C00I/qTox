@@ -3441,6 +3441,17 @@ Skjul formateringstegn:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Brug systemspecifik notifikations-backend, hvis tilgængelig</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Vis forhåndsvisninger af sendte og modtagne billeder i chats. Hold markøren over den indbyggede forhåndsvisning for at få vist en større forhåndsvisning.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Billedforhåndsvisning</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

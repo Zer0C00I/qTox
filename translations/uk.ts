@@ -3012,6 +3012,17 @@ Hide formatting characters:
         <source>UI color theme. Use this to select dark mode.</source>
         <translation>Колірна тема інтерфейсу. Використовуйте це для вибору темного режиму.</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Показувати попередній перегляд надісланих і отриманих зображень у чатах. Наведіть курсор на вбудований попередній перегляд, щоб відобразити попередній перегляд у більшому розмірі.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Попередній перегляд зображення</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

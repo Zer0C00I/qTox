@@ -3008,6 +3008,17 @@ Formatierungszeichen ausblenden:
         <source>Use system-specific notification backend if available</source>
         <translation>Systemspezifisches Benachrichtigungs-Backend verwenden, falls verfügbar</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Vorschauen für gesendete und empfangene Bilder in Chats anzeigen. Bewegen Sie den Mauszeiger über die Inline-Vorschau, um eine größere Vorschau anzuzeigen.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Bildvorschau</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

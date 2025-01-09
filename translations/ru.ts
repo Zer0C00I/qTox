@@ -3006,6 +3006,17 @@ Hide formatting characters:
         <source>Use system-specific notification backend if available</source>
         <translation>Использовать определенный системой бэкэнд уведомлений, если он доступен</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Показывать предварительный просмотр отправленных и полученных изображений в чатах. Наведите указатель мыши на встроенный предварительный просмотр, чтобы отобразить предварительный просмотр большего размера.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Предварительный просмотр изображения</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

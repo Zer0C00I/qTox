@@ -3639,6 +3639,17 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">উপলব্ধ থাকলে সিস্টেম-নির্দিষ্ট বিজ্ঞপ্তি ব্যাকএন্ড ব্যবহার করুন</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">চ্যাটে পাঠানো এবং প্রাপ্ত ছবিগুলির পূর্বরূপ দেখান। একটি বৃহত্তর প্রিভিউ প্রদর্শন করতে ইনলাইন প্রিভিউয়ের উপর হোভার করুন।</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ছবির পূর্বরূপ</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

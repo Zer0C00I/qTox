@@ -3008,6 +3008,17 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Utilizza il backend di notifica specifico del sistema, se disponibile</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Mostra le anteprime delle immagini inviate e ricevute nelle chat. Passa il mouse sopra l&apos;anteprima in linea per visualizzare un&apos;anteprima più grande.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Anteprima dell&apos;immagine</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

@@ -16,8 +16,6 @@
 #include <QTime>
 #include <QVector>
 
-#include "src/core/core.h"
-#include "src/core/coreav.h"
 #include "src/persistence/profile.h"
 #include "src/persistence/settings.h"
 #include "src/persistence/smileypack.h"
@@ -77,6 +75,7 @@ UserInterfaceForm::UserInterfaceForm(SmileyPack& smileyPack_, Settings& settings
     bodyUI->notifySystemBackend->setEnabled(settings.getNotify() && settings.getDesktopNotify());
 
     bodyUI->showWindow->setChecked(settings.getShowWindow());
+    bodyUI->cbImagePreview->setChecked(settings.getImagePreview());
 
     bodyUI->cbConferencePosition->setChecked(settings.getConferencePosition());
     bodyUI->cbCompactLayout->setChecked(settings.getCompactLayout());
@@ -296,6 +295,11 @@ void UserInterfaceForm::on_busySound_stateChanged()
 void UserInterfaceForm::on_showWindow_stateChanged()
 {
     settings.setShowWindow(bodyUI->showWindow->isChecked());
+}
+
+void UserInterfaceForm::on_cbImagePreview_stateChanged()
+{
+    settings.setImagePreview(bodyUI->cbImagePreview->isChecked());
 }
 
 void UserInterfaceForm::on_conferenceOnlyNotifyWhenMentioned_stateChanged()

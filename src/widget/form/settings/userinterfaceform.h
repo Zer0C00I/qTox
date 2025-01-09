@@ -44,6 +44,7 @@ private slots:
     void on_notifyHide_stateChanged(int value);
     void on_busySound_stateChanged();
     void on_showWindow_stateChanged();
+    void on_cbImagePreview_stateChanged();
     void on_conferenceOnlyNotifyWhenMentioned_stateChanged();
     void on_cbCompactLayout_stateChanged();
     void on_cbSeparateWindow_stateChanged();

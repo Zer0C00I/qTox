@@ -3637,6 +3637,17 @@ Fshih karakteret e formatimit:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Përdorni bazën e njoftimeve specifike për sistemin nëse është e disponueshme</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Shfaq pamjet paraprake për imazhet e dërguara dhe të marra në biseda. Zhvendoseni mbi pamjen paraprake në linjë për të shfaqur një pamje paraprake më të madhe.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Pamja paraprake e imazhit</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

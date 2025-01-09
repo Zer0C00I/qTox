@@ -3611,6 +3611,17 @@ Fela sniðstafi:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Notaðu kerfissértæka bakenda tilkynninga ef það er til staðar</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Sýna forskoðun fyrir sendar og mótteknar myndir í spjalli. Farðu yfir innbyggðu forskoðunina til að sýna stærri forskoðun.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Forskoðun mynd</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

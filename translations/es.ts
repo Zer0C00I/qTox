@@ -2998,6 +2998,17 @@ Hide formatting characters:
         <source>Use system-specific notification backend if available</source>
         <translation>Utilizar el backend de notificación específico del sistema si está disponible</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Muestra vistas previas de imágenes enviadas y recibidas en los chats. Pase el cursor sobre la vista previa en línea para mostrar una vista previa más grande.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Vista previa de imagen</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

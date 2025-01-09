@@ -3155,6 +3155,17 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ئەگەر بار بولسا سىستېمىغا مۇناسىۋەتلىك ئۇقتۇرۇش ئارقا سۇپىسىنى ئىشلىتىڭ</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">پاراڭلاردا ئەۋەتىلگەن ۋە تاپشۇرۇۋالغان رەسىملەرنىڭ ئالدىن كۆزىتىشلىرىنى كۆرسىتىڭ. چوڭراق ئالدىن كۆرۈش ئۈچۈن ئىچكى كۆرۈنۈشنى بېسىپ ئۆتۈڭ.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">رەسىم ئالدىن كۆرۈش</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

@@ -2999,6 +2999,17 @@ Opmaaktekens verbergen:
         <source>Use system-specific notification backend if available</source>
         <translation>Gebruik systeemspecifieke notificatie-backend indien beschikbaar</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Toon voorbeelden van verzonden en ontvangen afbeeldingen in chats. Beweeg over het inline voorbeeld om een ​​groter voorbeeld weer te geven.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Afbeeldingsvoorbeeld</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

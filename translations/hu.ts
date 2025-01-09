@@ -3092,6 +3092,17 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Használjon rendszerspecifikus értesítési háttérprogramot, ha elérhető</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Az elküldött és fogadott képek előnézetének megjelenítése a csevegésben. Nagyobb előnézet megjelenítéséhez vigye az egérmutatót a soros előnézet fölé.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Kép előnézete</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

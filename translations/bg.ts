@@ -3009,6 +3009,17 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Използвайте специфичен за системата бекенд за уведомяване, ако има такъв</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Показване на визуализации за изпратени и получени изображения в чатове. Задръжте курсора на мишката върху вградения преглед, за да покажете по-голям преглед.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Визуализация на изображението</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

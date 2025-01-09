@@ -3031,6 +3031,17 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Kasutage süsteemipõhist teavituste taustaprogrammi, kui see on saadaval</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Saate vestlustes kuvada saadetud ja vastuvõetud piltide eelvaateid. Suurema eelvaate kuvamiseks hõljutage kursorit tekstisisese eelvaate kohal.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Pildi eelvaade</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

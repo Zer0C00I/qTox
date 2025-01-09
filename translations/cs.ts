@@ -3034,6 +3034,17 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Pokud je k dispozici, použijte systém upozornění</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Zobrazovat náhledy odeslaných a přijatých obrázků v chatech. Umístěním ukazatele myši na vložený náhled zobrazíte větší náhled.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Náhled obrázku</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

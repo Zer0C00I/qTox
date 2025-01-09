@@ -3000,6 +3000,15 @@ Hide formatting characters:
         <source>UI color theme. Use this to select dark mode.</source>
         <translation type="unfinished">Colors o&apos; th&apos; helm. Use this ta choose dark mode.</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translation type="unfinished">Show a glimpse o&apos; sent &apos;n&apos; received images in chats. Hover over th&apos; inline preview ta display a larger &apos;un.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translation type="unfinished">Glimpse at th&apos; image</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

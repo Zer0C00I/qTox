@@ -3618,6 +3618,17 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">اگر دستیاب ہو تو سسٹم کے لیے مخصوص نوٹیفکیشن بیک اینڈ استعمال کریں۔</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">چیٹس میں بھیجی گئی اور موصول ہونے والی تصاویر کے لیے پیش نظارہ دکھائیں۔ ایک بڑا پیش منظر دکھانے کے لیے ان لائن پیش نظارہ پر ہوور کریں۔</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">تصویری پیش نظارہ</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

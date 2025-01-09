@@ -3013,6 +3013,17 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Bruk systemspesifikk varslingsstøtte hvis tilgjengelig</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Vis forhåndsvisninger for sendte og mottatte bilder i chatter. Hold markøren over den innebygde forhåndsvisningen for å vise en større forhåndsvisning.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Forhåndsvisning av bilde</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

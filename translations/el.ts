@@ -3143,6 +3143,17 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Χρησιμοποιήστε το backend ειδοποιήσεων για το συγκεκριμένο σύστημα, εάν είναι διαθέσιμο</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Εμφάνιση προεπισκοπήσεων για απεσταλμένες και ληφθείσες εικόνες σε συνομιλίες. Τοποθετήστε το δείκτη του ποντικιού πάνω από την ενσωματωμένη προεπισκόπηση για να εμφανιστεί μια μεγαλύτερη προεπισκόπηση.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Προεπισκόπηση εικόνας</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

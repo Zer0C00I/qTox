@@ -3642,6 +3642,17 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">තිබේ නම් පද්ධති-විශේෂිත දැනුම්දීම් පසුබිම භාවිතා කරන්න</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">කතාබස් තුළ යැවූ සහ ලැබුණු පින්තූර සඳහා පෙරදසුන් පෙන්වන්න. විශාල පෙරදසුනක් පෙන්වීමට පේළිගත පෙරදසුන මත සැරිසරන්න.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">රූප පෙරදසුන</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

@@ -3100,6 +3100,17 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">در صورت موجود بودن از اعلانات خاص سیستم استفاده کنید</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">نمایش پیش نمایش برای تصاویر ارسالی و دریافتی در چت. ماوس را روی پیش‌نمایش درون خطی نگه دارید تا پیش‌نمایش بزرگ‌تری نمایش داده شود.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">پیش نمایش تصویر</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

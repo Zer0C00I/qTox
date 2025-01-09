@@ -3443,6 +3443,17 @@ Kaŝi formatajn signojn:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Uzu sistemo-specifan sciigan backend se disponebla</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Montru antaŭrigardojn por senditaj kaj ricevitaj bildoj en babilejoj. Ŝvebu super la enlinia antaŭrigardo por montri pli grandan antaŭrigardon.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Bilda Antaŭrigardo</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

@@ -7,7 +7,6 @@
 #include "ui_filetransferwidget.h"
 
 #include "src/core/corefile.h"
-#include "src/model/exiftransform.h"
 #include "src/persistence/settings.h"
 #include "src/widget/style.h"
 #include "src/widget/tool/imessageboxmanager.h"
@@ -22,6 +21,7 @@
 #include <QMessageBox>
 #include <QMouseEvent>
 #include <QPainter>
+#include <QPainterPath>
 #include <QVariantAnimation>
 
 #include <cassert>
@@ -86,6 +86,12 @@ FileTransferWidget::FileTransferWidget(QWidget* parent, CoreFile& _coreFile, Tox
     // Set lastStatus to anything but the file's current value, this forces an update
     lastStatus = file.status == ToxFile::FINISHED ? ToxFile::INITIALIZING : ToxFile::FINISHED;
     updateWidget(file);
+
+    connect(&settings, &Settings::imagePreviewChanged, this, [this](bool) {
+        if (fileInfo.status == ToxFile::FINISHED) {
+            showPreview(fileInfo.filePath);
+        }
+    });
 
     setFixedHeight(64);
 }
@@ -478,8 +484,12 @@ void FileTransferWidget::handleButton(QPushButton* btn)
 
 void FileTransferWidget::showPreview(const QString& filename)
 {
-    ui->previewButton->setIconFromFile(filename);
-    ui->previewButton->show();
+    if (settings.getImagePreview()) {
+        ui->previewButton->setIconFromFile(filename);
+        ui->previewButton->show();
+    } else {
+        ui->previewButton->hide();
+    }
 }
 
 void FileTransferWidget::onLeftButtonClicked()

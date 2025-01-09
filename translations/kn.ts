@@ -3626,6 +3626,17 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ಲಭ್ಯವಿದ್ದರೆ ಸಿಸ್ಟಂ-ನಿರ್ದಿಷ್ಟ ಅಧಿಸೂಚನೆ ಬ್ಯಾಕೆಂಡ್ ಬಳಸಿ</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ಚಾಟ್‌ಗಳಲ್ಲಿ ಕಳುಹಿಸಿದ ಮತ್ತು ಸ್ವೀಕರಿಸಿದ ಚಿತ್ರಗಳಿಗಾಗಿ ಪೂರ್ವವೀಕ್ಷಣೆಗಳನ್ನು ತೋರಿಸಿ. ದೊಡ್ಡ ಪೂರ್ವವೀಕ್ಷಣೆಯನ್ನು ಪ್ರದರ್ಶಿಸಲು ಇನ್‌ಲೈನ್ ಪೂರ್ವವೀಕ್ಷಣೆಯ ಮೇಲೆ ಸುಳಿದಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ಚಿತ್ರ ಪೂರ್ವವೀಕ್ಷಣೆ</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

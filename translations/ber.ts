@@ -3577,6 +3577,17 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ⴰⵙⴻⵏⵜⴻⵍ ⵏ ⵢⵉⵏⵉ ⵏ UI. ⵙⴻⵇⴷⴻⵛ ⴰⵢⴰ ⴰⴽⴽⴻⵏ ⴰⴷ ⵜⴻⴼⵔⴻⵏⴹ ⴰⴹⵔⵉⵙ ⵏ ⵜⵍⴻⵎⵎⴰⵙⵜ.</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ⵙⴽⴻⵏⴷ ⵜⵉⵡⵡⵓⵔⴰ ⵏ ⵜⵓⴳⵏⵉⵡⵉⵏ ⵢⴻⵜⵜⵡⴰⵣⴻⵏ ⴷ ⵜⵉⴷ ⵢⴻⵜⵜⵡⴰⵇⴱⴰⵍ ⴷⴻⴳ ⵜⵎⴻⵙⵍⴰⵢⵉⵏ. ⵃⴰⴷⴻⵔ ⴰⴼⵓⵙⵉⴽ ⵖⴻⴼ ⵜⵎⵓⵖⵍⵉ ⵏ ⵓⵙⵎⴻⵍ ⴰⴽⴽⴻⵏ ⴰⴷ ⴷⵜⴻⵙⵙⴻⴽⵏⴻⴹ ⵜⴰⵎⵓⵖⵍⵉ ⵜⴰⵎⴻⵇⵔⴰⵏⵜ.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ⴰⵙⴻⴽⵛⴻⵎ ⵏ ⵜⵓⴳⵏⴰ</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

@@ -3008,6 +3008,17 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Varsa sisteme özel bildirim arka ucunu kullanın</translation>
     </message>
+    <message>
+        <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
+        <comment>tooltip for Image preview setting</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Sohbetlerde gönderilen ve alınan görsellerin önizlemelerini gösterin. Daha büyük bir önizleme görüntülemek için satır içi önizlemenin üzerine gelin.</translation>
+    </message>
+    <message>
+        <source>Image preview</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Resim Önizleme</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>
