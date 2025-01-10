@@ -954,22 +954,6 @@ geçersiz karakterler _ olarak değiştirildi.</translation>
         <translation>Form</translation>
     </message>
     <message>
-        <source>10Mb</source>
-        <translation>10Mb</translation>
-    </message>
-    <message>
-        <source>0kb/s</source>
-        <translation>0kb/s</translation>
-    </message>
-    <message>
-        <source>ETA:10:10</source>
-        <translation>ETA:10:10</translation>
-    </message>
-    <message>
-        <source>Filename</source>
-        <translation>Dosya adı</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Göndermek için bekliyor...</translation>

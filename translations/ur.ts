@@ -1123,26 +1123,6 @@ so you can save the file on Windows.</source>
         <translation type="unfinished">فارم</translation>
     </message>
     <message>
-        <source>10Mb</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">10 ایم بی</translation>
-    </message>
-    <message>
-        <source>0kb/s</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">0kb/s</translation>
-    </message>
-    <message>
-        <source>ETA:10:10</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ETA:10:10</translation>
-    </message>
-    <message>
-        <source>Filename</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">فائل کا نام</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>

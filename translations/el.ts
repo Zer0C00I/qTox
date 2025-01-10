@@ -990,22 +990,6 @@ so you can save the file on Windows.</source>
         <translation>Φόρμα</translation>
     </message>
     <message>
-        <source>10Mb</source>
-        <translation>10Mβ</translation>
-    </message>
-    <message>
-        <source>0kb/s</source>
-        <translation>0κβ/δ</translation>
-    </message>
-    <message>
-        <source>ETA:10:10</source>
-        <translation>ΕΧΜ:10:10</translation>
-    </message>
-    <message>
-        <source>Filename</source>
-        <translation>Όνομα αρχείου</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Αναμονή για αποστολή...</translation>

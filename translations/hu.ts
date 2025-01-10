@@ -979,22 +979,6 @@ so you can save the file on Windows.</source>
         <translation>Űrlap</translation>
     </message>
     <message>
-        <source>10Mb</source>
-        <translation>10MB</translation>
-    </message>
-    <message>
-        <source>0kb/s</source>
-        <translation>0kB/s</translation>
-    </message>
-    <message>
-        <source>ETA:10:10</source>
-        <translation>Hátralévő idő:10:10</translation>
-    </message>
-    <message>
-        <source>Filename</source>
-        <translation>Fájlnév</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Várakozás elküldésre...</translation>

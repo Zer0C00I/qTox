@@ -1152,26 +1152,6 @@ zodet geer ut bestand op Windows kin opsjlaon.</translation>
         <translation type="unfinished">Formulier</translation>
     </message>
     <message>
-        <source>Filename</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Bestandsnaom</translation>
-    </message>
-    <message>
-        <source>10Mb</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">10Mb</translation>
-    </message>
-    <message>
-        <source>0kb/s</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">0kb/s</translation>
-    </message>
-    <message>
-        <source>ETA:10:10</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ETA:10:10</translation>
-    </message>
-    <message>
         <source>Location not writable</source>
         <comment>Title of permissions popup</comment>
         <translatorcomment>Automated translation.</translatorcomment>

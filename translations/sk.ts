@@ -959,26 +959,6 @@ so you can save the file on Windows.</translation>
         <translation>Formulář</translation>
     </message>
     <message>
-        <source>10Mb</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>10Mb</translation>
-    </message>
-    <message>
-        <source>0kb/s</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>0kb/s</translation>
-    </message>
-    <message>
-        <source>ETA:10:10</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>ETA:10:10</translation>
-    </message>
-    <message>
-        <source>Filename</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>Názov súboru</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Čaká sa na odoslanie...</translation>

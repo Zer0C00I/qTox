@@ -156,7 +156,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>Filename</string>
+             <string notr="true">Filename</string>
             </property>
            </widget>
           </item>
@@ -225,7 +225,7 @@
                 </sizepolicy>
                </property>
                <property name="text">
-                <string>10Mb</string>
+                <string notr="true">10Mb</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -241,7 +241,7 @@
                 </sizepolicy>
                </property>
                <property name="text">
-                <string>0kb/s</string>
+                <string notr="true">0kb/s</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -257,7 +257,7 @@
                 </sizepolicy>
                </property>
                <property name="text">
-                <string>ETA:10:10</string>
+                <string notr="true">ETA:10:10</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

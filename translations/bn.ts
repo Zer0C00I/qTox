@@ -1144,26 +1144,6 @@ so you can save the file on Windows.</source>
         <translation type="unfinished">ফর্ম</translation>
     </message>
     <message>
-        <source>10Mb</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation></translation>
-    </message>
-    <message>
-        <source>0kb/s</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation></translation>
-    </message>
-    <message>
-        <source>ETA:10:10</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Filename</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ফাইলের নাম</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>

@@ -957,22 +957,6 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
         <translation>Forma</translation>
     </message>
     <message>
-        <source>10Mb</source>
-        <translation>10 Mb</translation>
-    </message>
-    <message>
-        <source>0kb/s</source>
-        <translation>0 KB/s</translation>
-    </message>
-    <message>
-        <source>ETA:10:10</source>
-        <translation>Liko: 10:10</translation>
-    </message>
-    <message>
-        <source>Filename</source>
-        <translation>Failo pavadinimas</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Laukiama gavėjo...</translation>

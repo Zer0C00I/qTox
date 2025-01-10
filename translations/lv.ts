@@ -967,26 +967,6 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
         <translation>Forma</translation>
     </message>
     <message>
-        <source>10Mb</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>10Mb</translation>
-    </message>
-    <message>
-        <source>0kb/s</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>0kb/s</translation>
-    </message>
-    <message>
-        <source>ETA:10:10</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>Atlicis: 10:10</translation>
-    </message>
-    <message>
-        <source>Filename</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>Faila nosaukums</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Gaida nosūtīšanu ...</translation>

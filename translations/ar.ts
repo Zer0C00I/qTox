@@ -1029,22 +1029,6 @@ so you can save the file on Windows.</source>
         <translation>النوع</translation>
     </message>
     <message>
-        <source>10Mb</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>0kb/s</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>ETA:10:10</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Filename</source>
-        <translation>اسم الملف</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>انتظار للارسال...</translation>

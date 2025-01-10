@@ -954,22 +954,6 @@ de forma que possa guardar o ficheiro no Windows.</translation>
         <translation>Formulário</translation>
     </message>
     <message>
-        <source>10Mb</source>
-        <translation>10Mb</translation>
-    </message>
-    <message>
-        <source>0kb/s</source>
-        <translation>0kb/s</translation>
-    </message>
-    <message>
-        <source>ETA:10:10</source>
-        <translation>Tempo estimado:10:10</translation>
-    </message>
-    <message>
-        <source>Filename</source>
-        <translation>Nome do ficheiro</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>A esperar para enviar...</translation>

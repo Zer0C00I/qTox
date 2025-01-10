@@ -1124,26 +1124,6 @@ e&apos;u do ka&apos;e sfaile lo nu sfaile bu&apos;u la .Windows.zoi ke&apos;a nu
         <translation type="unfinished">fi&apos;o samci&apos;e</translation>
     </message>
     <message>
-        <source>10Mb</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation type="unfinished">10MB</translation>
-    </message>
-    <message>
-        <source>0kb/s</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation type="unfinished">0 kbit/s</translation>
-    </message>
-    <message>
-        <source>ETA:10:10</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation type="unfinished">ETA:10:10</translation>
-    </message>
-    <message>
-        <source>Filename</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation type="unfinished">loi sfailcmene</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>

@@ -954,22 +954,6 @@ joten voit tallentaa tiedoston Windowsissa.</translation>
         <translation>Kenttä</translation>
     </message>
     <message>
-        <source>10Mb</source>
-        <translation>10 Mt</translation>
-    </message>
-    <message>
-        <source>0kb/s</source>
-        <translation>0 kb/s</translation>
-    </message>
-    <message>
-        <source>ETA:10:10</source>
-        <translation>ETA:10:10</translation>
-    </message>
-    <message>
-        <source>Filename</source>
-        <translation>Tiedostonimi</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Odotetaan lähettämistä...</translation>

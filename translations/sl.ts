@@ -1005,22 +1005,6 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
         <translation>Nastavitve</translation>
     </message>
     <message>
-        <source>10Mb</source>
-        <translation>10Mb</translation>
-    </message>
-    <message>
-        <source>0kb/s</source>
-        <translation>0kb/s</translation>
-    </message>
-    <message>
-        <source>ETA:10:10</source>
-        <translation>Čas:10:10</translation>
-    </message>
-    <message>
-        <source>Filename</source>
-        <translation>Ime datoteke</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Čakanje na pošiljanje...</translation>

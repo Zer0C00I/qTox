@@ -943,26 +943,6 @@ so you can save the file on Windows.</source>
         <translation>Formulier</translation>
     </message>
     <message>
-        <source>10Mb</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation></translation>
-    </message>
-    <message>
-        <source>0kb/s</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation></translation>
-    </message>
-    <message>
-        <source>ETA:10:10</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Filename</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>Bestandsnaam</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Wachten voor te versturen…</translation>

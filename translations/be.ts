@@ -987,26 +987,6 @@ so you can save the file on Windows.</source>
         <translation>Форма</translation>
     </message>
     <message>
-        <source>10Mb</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>10 МБ</translation>
-    </message>
-    <message>
-        <source>0kb/s</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>0 КБ/сек</translation>
-    </message>
-    <message>
-        <source>ETA:10:10</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>Разліковы час заканчэння: 10:10</translation>
-    </message>
-    <message>
-        <source>Filename</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>Імя файла</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Чаканне адпраўкі...</translation>

@@ -956,22 +956,6 @@ slik at du kan lagre filen på Windows.</translation>
         <translation>Skjema</translation>
     </message>
     <message>
-        <source>10Mb</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>0kb/s</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>ETA:10:10</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Filename</source>
-        <translation>Filnavn</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Venter på å sende...</translation>

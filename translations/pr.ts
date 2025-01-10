@@ -948,26 +948,6 @@ so ye can stash th&apos; file on Windows.</translation>
         <translation type="unfinished">Shape</translation>
     </message>
     <message>
-        <source>10Mb</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation type="unfinished">10 Meg</translation>
-    </message>
-    <message>
-        <source>0kb/s</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation type="unfinished">Nothin&apos; comin&apos; in</translation>
-    </message>
-    <message>
-        <source>ETA:10:10</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation type="unfinished">Time o&apos; Arrival: 10:10</translation>
-    </message>
-    <message>
-        <source>Filename</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>Parcel tag</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Awaitin&apos; approval...</translation>

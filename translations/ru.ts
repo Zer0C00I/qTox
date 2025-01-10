@@ -953,22 +953,6 @@ so you can save the file on Windows.</source>
         <translation>От</translation>
     </message>
     <message>
-        <source>10Mb</source>
-        <translation>10Mb</translation>
-    </message>
-    <message>
-        <source>0kb/s</source>
-        <translation>0 КБ/c</translation>
-    </message>
-    <message>
-        <source>ETA:10:10</source>
-        <translation>Осталось:10:10</translation>
-    </message>
-    <message>
-        <source>Filename</source>
-        <translation>Имя файла</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Ожидание отправки...</translation>
