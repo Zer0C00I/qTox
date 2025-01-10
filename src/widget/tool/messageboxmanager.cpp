@@ -114,14 +114,12 @@ bool MessageBoxManager::askQuestion(const QString& title, const QString& msg, co
 
 void MessageBoxManager::confirmExecutableOpen(const QFileInfo& file)
 {
-    static const QStringList dangerousExtensions = {"app",  "bat",     "com",    "cpl",  "dmg",
-                                                    "exe",  "hta",     "jar",    "js",   "jse",
-                                                    "lnk",  "msc",     "msh",    "msh1", "msh1xml",
-                                                    "msh2", "msh2xml", "mshxml", "msi",  "msp",
-                                                    "pif",  "ps1",     "ps1xml", "ps2",  "ps2xml",
-                                                    "psc1", "psc2",    "py",     "reg",  "scf",
-                                                    "sh",   "src",     "vb",     "vbe",  "vbs",
-                                                    "ws",   "wsc",     "wsf",    "wsh"};
+    static const QStringList dangerousExtensions = {
+        "app", "bat", "com",    "cpl",  "dmg",     "exe",  "hta",     "jar",    "js",  "jse",
+        "lnk", "msc", "msh",    "msh1", "msh1xml", "msh2", "msh2xml", "mshxml", "msi", "msp",
+        "pif", "ps1", "ps1xml", "ps2",  "ps2xml",  "psc1", "psc2",    "py",     "reg", "scf",
+        "sh",  "src", "vb",     "vbe",  "vbs",     "ws",   "wsc",     "wsf",    "wsh",
+    };
 
     if (dangerousExtensions.contains(file.suffix())) {
         bool answer = askQuestion(tr("Executable file", "popup title"),
@@ -146,20 +144,17 @@ void MessageBoxManager::confirmExecutableOpen(const QFileInfo& file)
 // Private implementations
 void MessageBoxManager::_showInfo(const QString& title, const QString& msg)
 {
-    QMessageBox messageBox(QMessageBox::Information, title, msg, QMessageBox::Ok, this);
-    messageBox.exec();
+    QMessageBox::information(this, title, msg);
 }
 
 void MessageBoxManager::_showWarning(const QString& title, const QString& msg)
 {
-    QMessageBox messageBox(QMessageBox::Warning, title, msg, QMessageBox::Ok, this);
-    messageBox.exec();
+    QMessageBox::warning(this, title, msg);
 }
 
 void MessageBoxManager::_showError(const QString& title, const QString& msg)
 {
-    QMessageBox messageBox(QMessageBox::Critical, title, msg, QMessageBox::Ok, this);
-    messageBox.exec();
+    QMessageBox::critical(this, title, msg);
 }
 
 

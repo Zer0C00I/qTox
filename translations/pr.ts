@@ -1541,7 +1541,7 @@ Share it with yer mateys ta start jawin&apos;.</translation>
     </message>
     <message>
         <source>Load</source>
-        <translation type="unfinished">Bring it aboard</translation>
+        <translation>Bring aboard</translation>
     </message>
     <message>
         <source>Load Profile</source>
@@ -1597,7 +1597,7 @@ Best make one.</translation>
     </message>
     <message>
         <source>Import</source>
-        <translation type="unfinished">Bring from elsewhere</translation>
+        <translation>Recruit</translation>
     </message>
     <message>
         <source>Username input field</source>

@@ -141,27 +141,26 @@ void LoginScreen::onCreateNewProfile()
     QString pass = ui->newPass->text();
 
     if (name.isEmpty()) {
-        QMessageBox::critical(this, tr("Couldn't create a new profile"),
-                              tr("The username must not be empty."));
+        emit failure(tr("Couldn't create a new profile"), tr("The username must not be empty."));
         return;
     }
 
     if (pass.size() != 0 && pass.size() < 6) {
-        QMessageBox::critical(this, tr("Couldn't create a new profile"),
-                              tr("The password must be at least 6 characters long."));
+        emit failure(tr("Couldn't create a new profile"),
+                     tr("The password must be at least 6 characters long."));
         return;
     }
 
     if (ui->newPassConfirm->text() != pass) {
-        QMessageBox::critical(this, tr("Couldn't create a new profile"),
-                              tr("The passwords you've entered are different.\nPlease make sure to "
-                                 "enter the same password twice."));
+        emit failure(tr("Couldn't create a new profile"),
+                     tr("The passwords you've entered are different.\n"
+                        "Please make sure to enter the same password twice."));
         return;
     }
 
     if (Profile::exists(name, paths)) {
-        QMessageBox::critical(this, tr("Couldn't create a new profile"),
-                              tr("A profile with this name already exists."));
+        emit failure(tr("Couldn't create a new profile"),
+                     tr("A profile with this name already exists."));
         return;
     }
 

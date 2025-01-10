@@ -14,6 +14,7 @@
 #include "src/model/status.h"
 #include "src/persistence/profile.h"
 #include "src/widget/style.h"
+#include "src/widget/tool/imessageboxmanager.h"
 #include "src/widget/widget.h"
 #include "video/camerasource.h"
 #include "widget/loginscreen.h"
@@ -58,7 +59,7 @@ Nexus::Nexus(Settings& settings_, IMessageBoxManager& messageBoxManager_,
     , messageBoxManager{messageBoxManager_}
     , ipc{ipc_}
 {
-    QObject::connect(this, &Nexus::saveGlobal, &settings, &Settings::saveGlobal);
+    connect(this, &Nexus::saveGlobal, &settings, &Settings::saveGlobal);
 }
 
 Nexus::~Nexus()
@@ -170,7 +171,7 @@ int Nexus::showLogin(const QString& profileName)
     // This is awkward because the core is in the profile
     // The connection order ensures profile will be ready for bootstrap for now
     connect(this, &Nexus::currentProfileChanged, this, &Nexus::bootstrapWithProfile);
-    int returnval = loginScreen.exec();
+    const int returnval = loginScreen.exec();
     if (returnval == QDialog::Rejected) {
         // Kriby: This will terminate the main application loop, necessary until we refactor
         // away the split startup/return to login behavior.
@@ -201,17 +202,21 @@ void Nexus::connectLoginScreen(const LoginScreen& loginScreen)
     // TODO(kriby): Move connect sequences to a controller class object instead
 
     // Nexus -> LoginScreen
-    QObject::connect(this, &Nexus::profileLoaded, &loginScreen, &LoginScreen::onProfileLoaded);
-    QObject::connect(this, &Nexus::profileLoadFailed, &loginScreen, &LoginScreen::onProfileLoadFailed);
+    connect(this, &Nexus::profileLoaded, &loginScreen, &LoginScreen::onProfileLoaded);
+    connect(this, &Nexus::profileLoadFailed, &loginScreen, &LoginScreen::onProfileLoadFailed);
     // LoginScreen -> Nexus
-    QObject::connect(&loginScreen, &LoginScreen::createNewProfile, this, &Nexus::onCreateNewProfile);
-    QObject::connect(&loginScreen, &LoginScreen::loadProfile, this, &Nexus::onLoadProfile);
+    connect(&loginScreen, &LoginScreen::createNewProfile, this, &Nexus::onCreateNewProfile);
+    connect(&loginScreen, &LoginScreen::loadProfile, this, &Nexus::onLoadProfile);
     // LoginScreen -> Settings
-    QObject::connect(&loginScreen, &LoginScreen::autoLoginChanged, &settings, &Settings::setAutoLogin);
-    QObject::connect(&loginScreen, &LoginScreen::autoLoginChanged, &settings, &Settings::saveGlobal);
+    connect(&loginScreen, &LoginScreen::autoLoginChanged, &settings, &Settings::setAutoLogin);
+    connect(&loginScreen, &LoginScreen::autoLoginChanged, &settings, &Settings::saveGlobal);
     // Settings -> LoginScreen
-    QObject::connect(&settings, &Settings::autoLoginChanged, &loginScreen,
-                     &LoginScreen::onAutoLoginChanged);
+    connect(&settings, &Settings::autoLoginChanged, &loginScreen, &LoginScreen::onAutoLoginChanged);
+    // LoginScreen -> QMessageBox
+    connect(&loginScreen, &LoginScreen::failure, this,
+            [this](const QString& title, const QString& message) {
+                messageBoxManager.showError(title, message);
+            });
 }
 
 void Nexus::showMainGUI()
