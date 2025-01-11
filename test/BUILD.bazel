@@ -64,12 +64,15 @@ cc_library(
     ],
 )
 
+UI_TESTS = ["loginscreen_test"]
+
 [qt_test(
     name = src[src.rindex("/") + 1:-4],
     size = "small",
     src = src,
     copts = COPTS,
     mocopts = ["-Iqtox"],
+    tags = ["ui"] if src[src.rindex("/") + 1:-4] in UI_TESTS else [],
     deps = [
         ":dbutility",
         ":mock",
@@ -80,6 +83,7 @@ cc_library(
         "@qt//:qt_core",
         "@qt//:qt_gui",
         "@qt//:qt_network",
+        "@qt//:qt_widgets",
     ],
 ) for src in glob(
     ["**/*_test.cpp"],
@@ -106,7 +110,10 @@ qt_test(
     src = "model/exiftransform_test.cpp",
     copts = COPTS,
     mocopts = ["-Iqtox"],
-    deps = ["//qtox/src:exiftransform"],
+    deps = [
+        "//qtox/src:exiftransform",
+        "@qt//:qt_gui",
+    ],
 )
 
 cc_fuzz_test(
