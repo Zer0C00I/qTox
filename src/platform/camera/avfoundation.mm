@@ -119,26 +119,26 @@ QVector<VideoMode> avfoundation::getDeviceModes(const QString& devName)
     if (index >= [devices count]) {
         // It's a desktop capture.
         return result;
-    } else {
-        AVCaptureDevice* device = [devices objectAtIndex:index];
+    }
 
-        if (device == nil) {
-            qWarning() << "Device not found:" << devName;
-            return result;
-        }
+    AVCaptureDevice* device = [devices objectAtIndex:index];
 
-        for (AVCaptureDeviceFormat* format in [device formats]) {
-            CMFormatDescriptionRef formatDescription = static_cast<CMFormatDescriptionRef>(
-                [format performSelector:@selector(formatDescription)]);
-            CMVideoDimensions dimensions = CMVideoFormatDescriptionGetDimensions(formatDescription);
+    if (device == nil) {
+        qWarning() << "Device not found:" << devName;
+        return result;
+    }
 
-            for (AVFrameRateRange* range in format.videoSupportedFrameRateRanges) {
-                VideoMode mode;
-                mode.width = dimensions.width;
-                mode.height = dimensions.height;
-                mode.fps = range.maxFrameRate;
-                result.append(mode);
-            }
+    for (AVCaptureDeviceFormat* format in [device formats]) {
+        CMFormatDescriptionRef formatDescription = static_cast<CMFormatDescriptionRef>(
+            [format performSelector:@selector(formatDescription)]);
+        CMVideoDimensions dimensions = CMVideoFormatDescriptionGetDimensions(formatDescription);
+
+        for (AVFrameRateRange* range in format.videoSupportedFrameRateRanges) {
+            VideoMode mode;
+            mode.width = dimensions.width;
+            mode.height = dimensions.height;
+            mode.fps = range.maxFrameRate;
+            result.append(mode);
         }
     }
 

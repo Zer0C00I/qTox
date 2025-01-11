@@ -108,6 +108,7 @@ struct DBusPortalImage
     QImage image;
 };
 
+Q_DECL_UNUSED
 QDBusArgument& operator<<(QDBusArgument& argument, const DBusPortalImage& image)
 {
     argument.beginStructure();
@@ -118,6 +119,7 @@ QDBusArgument& operator<<(QDBusArgument& argument, const DBusPortalImage& image)
     return argument;
 }
 
+Q_DECL_UNUSED
 const QDBusArgument& operator>>(const QDBusArgument& argument, DBusPortalImage& image)
 {
     QString type;
@@ -142,6 +144,7 @@ struct DBusNotifyImage
     QImage image;
 };
 
+Q_DECL_UNUSED
 QDBusArgument& operator<<(QDBusArgument& argument, const DBusNotifyImage& image)
 {
     const QImage rgba = image.image.convertToFormat(QImage::Format_RGBA8888);
@@ -157,6 +160,7 @@ QDBusArgument& operator<<(QDBusArgument& argument, const DBusNotifyImage& image)
     return argument;
 }
 
+Q_DECL_UNUSED
 const QDBusArgument& operator>>(const QDBusArgument& argument, DBusNotifyImage& image)
 {
     int width;

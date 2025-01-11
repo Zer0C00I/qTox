@@ -8,6 +8,7 @@
 #include "src/model/sessionchatlog.h"
 
 #include <QtTest/QtTest>
+#include <memory>
 
 namespace {
 const QString TEST_USERNAME = "qTox Tester #1";
@@ -66,10 +67,9 @@ private:
  */
 void TestSessionChatLog::init()
 {
-    friendList = std::unique_ptr<FriendList>(new FriendList());
-    conferenceList = std::unique_ptr<ConferenceList>(new ConferenceList());
-    chatLog =
-        std::unique_ptr<SessionChatLog>(new SessionChatLog(idHandler, *friendList, *conferenceList));
+    friendList = std::make_unique<FriendList>();
+    conferenceList = std::make_unique<ConferenceList>();
+    chatLog = std::make_unique<SessionChatLog>(idHandler, *friendList, *conferenceList);
 }
 
 /**

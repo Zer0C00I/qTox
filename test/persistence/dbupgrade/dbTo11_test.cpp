@@ -55,9 +55,9 @@ void appendAddPeersQueries(std::vector<RawDatabase::Query>& setupQueries)
 
 void appendVerifyChatsQueries(std::vector<RawDatabase::Query>& verifyQueries)
 {
-    verifyQueries.emplace_back(
-        RawDatabase::Query{QStringLiteral("SELECT COUNT(*) FROM chats"),
-                           [&](const QVector<QVariant>& row) { QVERIFY(row[0].toLongLong() == 3); }});
+    verifyQueries.emplace_back( //
+        QStringLiteral("SELECT COUNT(*) FROM chats"),
+        [&](const QVector<QVariant>& row) { QVERIFY(row[0].toLongLong() == 3); });
 
     struct Functor
     {
@@ -69,14 +69,14 @@ void appendVerifyChatsQueries(std::vector<RawDatabase::Query>& verifyQueries)
         }
     };
 
-    verifyQueries.emplace_back(RawDatabase::Query{QStringLiteral("SELECT uuid FROM chats"), Functor()});
+    verifyQueries.emplace_back(QStringLiteral("SELECT uuid FROM chats"), Functor());
 }
 
 void appendVerifyAuthorsQueries(std::vector<RawDatabase::Query>& verifyQueries)
 {
-    verifyQueries.emplace_back(
-        RawDatabase::Query{QStringLiteral("SELECT COUNT(*) FROM authors"),
-                           [&](const QVector<QVariant>& row) { QVERIFY(row[0].toLongLong() == 3); }});
+    verifyQueries.emplace_back( //
+        QStringLiteral("SELECT COUNT(*) FROM authors"),
+        [&](const QVector<QVariant>& row) { QVERIFY(row[0].toLongLong() == 3); });
 
     struct Functor
     {
@@ -89,8 +89,7 @@ void appendVerifyAuthorsQueries(std::vector<RawDatabase::Query>& verifyQueries)
         }
     };
 
-    verifyQueries.emplace_back(
-        RawDatabase::Query{QStringLiteral("SELECT public_key FROM authors"), Functor()});
+    verifyQueries.emplace_back(QStringLiteral("SELECT public_key FROM authors"), Functor());
 }
 
 void appendAddAliasesQueries(std::vector<RawDatabase::Query>& setupQueries)
@@ -115,9 +114,9 @@ void appendAddAliasesQueries(std::vector<RawDatabase::Query>& setupQueries)
 
 void appendVerifyAliasesQueries(std::vector<RawDatabase::Query>& verifyQueries)
 {
-    verifyQueries.emplace_back(
-        RawDatabase::Query{QStringLiteral("SELECT COUNT(*) FROM aliases"),
-                           [&](const QVector<QVariant>& row) { QVERIFY(row[0].toLongLong() == 3); }});
+    verifyQueries.emplace_back( //
+        QStringLiteral("SELECT COUNT(*) FROM aliases"),
+        [&](const QVector<QVariant>& row) { QVERIFY(row[0].toLongLong() == 3); });
 
     struct Functor
     {
@@ -128,36 +127,35 @@ void appendVerifyAliasesQueries(std::vector<RawDatabase::Query>& verifyQueries)
         }
     };
 
-    verifyQueries.emplace_back(
-        RawDatabase::Query{QStringLiteral("SELECT display_name FROM aliases"), Functor()});
+    verifyQueries.emplace_back(QStringLiteral("SELECT display_name FROM aliases"), Functor());
 }
 
 void appendAddAChatMessagesQueries(std::vector<RawDatabase::Query>& setupQueries)
 {
-    setupQueries.emplace_back(RawDatabase::Query{
+    setupQueries.emplace_back( //
         QStringLiteral(
             "INSERT INTO history (id, message_type, timestamp, chat_id) VALUES (1, 'T', 0, '%1')")
-            .arg(aPeerId)});
+            .arg(aPeerId));
     setupQueries.emplace_back(
         RawDatabase::Query{QStringLiteral("INSERT INTO text_messages (id, message_type, "
                                           "sender_alias, message) VALUES (1, 'T', '%1', ?)")
                                .arg(aAliasId),
                            {QStringLiteral("Message 1 from A to Self").toUtf8()}});
 
-    setupQueries.emplace_back(RawDatabase::Query{
+    setupQueries.emplace_back( //
         QStringLiteral(
             "INSERT INTO history (id, message_type, timestamp, chat_id) VALUES (2, 'T', 0, '%1')")
-            .arg(aPeerId)});
+            .arg(aPeerId));
     setupQueries.emplace_back(
         RawDatabase::Query{QStringLiteral("INSERT INTO text_messages (id, message_type, "
                                           "sender_alias, message) VALUES (2, 'T', '%1', ?)")
                                .arg(aAliasDuplicateId),
                            {QStringLiteral("Message 2 from A to Self").toUtf8()}});
 
-    setupQueries.emplace_back(RawDatabase::Query{
+    setupQueries.emplace_back( //
         QStringLiteral(
             "INSERT INTO history (id, message_type, timestamp, chat_id) VALUES (10, 'F', 0, '%1')")
-            .arg(aPeerDuplicateId)});
+            .arg(aPeerDuplicateId));
     setupQueries.emplace_back(RawDatabase::Query{
         QStringLiteral(
             "INSERT INTO file_transfers (id, message_type, sender_alias, file_restart_id, "
@@ -169,62 +167,63 @@ void appendAddAChatMessagesQueries(std::vector<RawDatabase::Query>& setupQueries
 
 void appendVerifyAChatMessagesQueries(std::vector<RawDatabase::Query>& verifyQueries)
 {
-    verifyQueries.emplace_back(
-        RawDatabase::Query{QStringLiteral("SELECT COUNT(*) FROM history WHERE chat_id = '%1'").arg(aChatId),
-                           [&](const QVector<QVariant>& row) { QVERIFY(row[0].toLongLong() == 3); }});
-    verifyQueries.emplace_back(RawDatabase::Query{
+    verifyQueries.emplace_back( //
+        QStringLiteral("SELECT COUNT(*) FROM history WHERE chat_id = '%1'").arg(aChatId),
+        [&](const QVector<QVariant>& row) { QVERIFY(row[0].toLongLong() == 3); });
+    verifyQueries.emplace_back( //
         QStringLiteral("SELECT COUNT(*) FROM text_messages WHERE sender_alias = '%1'").arg(aAliasId),
-        [&](const QVector<QVariant>& row) { QVERIFY(row[0].toLongLong() == 2); }});
-    verifyQueries.emplace_back(RawDatabase::Query{
+        [&](const QVector<QVariant>& row) { QVERIFY(row[0].toLongLong() == 2); });
+    verifyQueries.emplace_back( //
         QStringLiteral("SELECT COUNT(*) FROM file_transfers WHERE sender_alias = '%1'").arg(aAliasId),
-        [&](const QVector<QVariant>& row) { QVERIFY(row[0].toLongLong() == 1); }});
+        [&](const QVector<QVariant>& row) { QVERIFY(row[0].toLongLong() == 1); });
 }
 
 void appendAddBChatMessagesQueries(std::vector<RawDatabase::Query>& setupQueries)
 {
-    setupQueries.emplace_back(RawDatabase::Query{
+    setupQueries.emplace_back( //
         QStringLiteral(
             "INSERT INTO history (id, message_type, timestamp, chat_id) VALUES (3, 'T', 0, '%1')")
-            .arg(bPeerId)});
+            .arg(bPeerId));
     setupQueries.emplace_back(
         RawDatabase::Query{QStringLiteral("INSERT INTO text_messages (id, message_type, "
                                           "sender_alias, message) VALUES (3, 'T', '%1', ?)")
                                .arg(bAliasId),
                            {QStringLiteral("Message 1 from B to Self").toUtf8()}});
 
-    setupQueries.emplace_back(RawDatabase::Query{
+    setupQueries.emplace_back( //
         QStringLiteral(
             "INSERT INTO history (id, message_type, timestamp, chat_id) VALUES (4, 'T', 0, '%1')")
-            .arg(bPeerId)});
+            .arg(bPeerId));
     setupQueries.emplace_back(
         RawDatabase::Query{QStringLiteral("INSERT INTO text_messages (id, message_type, "
                                           "sender_alias, message) VALUES (4, 'T', '%1', ?)")
                                .arg(selfAliasId),
                            {QStringLiteral("Message 1 from Self to B").toUtf8()}});
 
-    setupQueries.emplace_back(RawDatabase::Query{
+    setupQueries.emplace_back( //
         QStringLiteral(
             "INSERT INTO history (id, message_type, timestamp, chat_id) VALUES (5, 'T', 0, '%1')")
-            .arg(bPeerId)});
+            .arg(bPeerId));
     setupQueries.emplace_back(
         RawDatabase::Query{QStringLiteral("INSERT INTO text_messages (id, message_type, "
                                           "sender_alias, message) VALUES (5, 'T', '%1', ?)")
                                .arg(selfAliasId),
                            {QStringLiteral("Pending message 1 from Self to B").toUtf8()}});
-    setupQueries.emplace_back(
-        RawDatabase::Query{QStringLiteral("INSERT INTO faux_offline_pending (id) VALUES (5)")});
+    setupQueries.emplace_back( //
+        QStringLiteral("INSERT INTO faux_offline_pending (id) VALUES (5)"));
 
-    setupQueries.emplace_back(RawDatabase::Query{
+    setupQueries.emplace_back( //
         QStringLiteral(
             "INSERT INTO history (id, message_type, timestamp, chat_id) VALUES (8, 'S', 0, '%1')")
-            .arg(bPeerId)});
-    setupQueries.emplace_back(RawDatabase::Query{QStringLiteral(
-        "INSERT INTO system_messages (id, message_type, system_message_type) VALUES (8, 'S', 1)")});
+            .arg(bPeerId));
+    setupQueries.emplace_back( //
+        QStringLiteral("INSERT INTO system_messages (id, message_type, system_message_type) VALUES "
+                       "(8, 'S', 1)"));
 
-    setupQueries.emplace_back(RawDatabase::Query{
+    setupQueries.emplace_back( //
         QStringLiteral(
             "INSERT INTO history (id, message_type, timestamp, chat_id) VALUES (9, 'F', 0, '%1')")
-            .arg(bPeerId)});
+            .arg(bPeerId));
     setupQueries.emplace_back(RawDatabase::Query{
         QStringLiteral(
             "INSERT INTO file_transfers (id, message_type, sender_alias, file_restart_id, "
@@ -236,48 +235,47 @@ void appendAddBChatMessagesQueries(std::vector<RawDatabase::Query>& setupQueries
 
 void appendVerifyBChatMessagesQueries(std::vector<RawDatabase::Query>& verifyQueries)
 {
-    verifyQueries.emplace_back(
-        RawDatabase::Query{QStringLiteral("SELECT COUNT(*) FROM history WHERE chat_id = '%1'").arg(bChatId),
-                           [&](const QVector<QVariant>& row) { QVERIFY(row[0].toLongLong() == 5); }});
-    verifyQueries.emplace_back(
-        RawDatabase::Query{QStringLiteral("SELECT COUNT(*) FROM history JOIN text_messages ON "
-                                          "history.id = text_messages.id WHERE chat_id = '%1'")
-                               .arg(bChatId),
-                           [&](const QVector<QVariant>& row) { QVERIFY(row[0].toLongLong() == 3); }});
-    verifyQueries.emplace_back(
-        RawDatabase::Query{QStringLiteral(
-                               "SELECT COUNT(*) FROM history JOIN faux_offline_pending ON "
-                               "history.id = faux_offline_pending.id WHERE chat_id = '%1'")
-                               .arg(bChatId),
-                           [&](const QVector<QVariant>& row) { QVERIFY(row[0].toLongLong() == 1); }});
-    verifyQueries.emplace_back(RawDatabase::Query{
+    verifyQueries.emplace_back( //
+        QStringLiteral("SELECT COUNT(*) FROM history WHERE chat_id = '%1'").arg(bChatId),
+        [&](const QVector<QVariant>& row) { QVERIFY(row[0].toLongLong() == 5); });
+    verifyQueries.emplace_back( //
+        QStringLiteral("SELECT COUNT(*) FROM history JOIN text_messages ON "
+                       "history.id = text_messages.id WHERE chat_id = '%1'")
+            .arg(bChatId),
+        [&](const QVector<QVariant>& row) { QVERIFY(row[0].toLongLong() == 3); });
+    verifyQueries.emplace_back( //
+        QStringLiteral("SELECT COUNT(*) FROM history JOIN faux_offline_pending ON "
+                       "history.id = faux_offline_pending.id WHERE chat_id = '%1'")
+            .arg(bChatId),
+        [&](const QVector<QVariant>& row) { QVERIFY(row[0].toLongLong() == 1); });
+    verifyQueries.emplace_back( //
         QStringLiteral("SELECT COUNT(*) FROM file_transfers WHERE sender_alias = '%1'").arg(selfAliasId),
-        [&](const QVector<QVariant>& row) { QVERIFY(row[0].toLongLong() == 1); }});
-    verifyQueries.emplace_back(
-        RawDatabase::Query{QStringLiteral("SELECT COUNT(*) FROM history JOIN system_messages ON "
-                                          "history.id = system_messages.id WHERE chat_id = '%1'")
-                               .arg(bChatId),
-                           [&](const QVector<QVariant>& row) { QVERIFY(row[0].toLongLong() == 1); }});
+        [&](const QVector<QVariant>& row) { QVERIFY(row[0].toLongLong() == 1); });
+    verifyQueries.emplace_back( //
+        QStringLiteral("SELECT COUNT(*) FROM history JOIN system_messages ON "
+                       "history.id = system_messages.id WHERE chat_id = '%1'")
+            .arg(bChatId),
+        [&](const QVector<QVariant>& row) { QVERIFY(row[0].toLongLong() == 1); });
 }
 
 void appendAddCChatMessagesQueries(std::vector<RawDatabase::Query>& setupQueries)
 {
-    setupQueries.emplace_back(RawDatabase::Query{
+    setupQueries.emplace_back( //
         QStringLiteral(
             "INSERT INTO history (id, message_type, timestamp, chat_id) VALUES (6, 'T', 0, '%1')")
-            .arg(cPeerId)});
+            .arg(cPeerId));
     setupQueries.emplace_back(
         RawDatabase::Query{QStringLiteral("INSERT INTO text_messages (id, message_type, "
                                           "sender_alias, message) VALUES (6, 'T', '%1', ?)")
                                .arg(selfAliasId),
                            {QStringLiteral("Message 1 from Self to B").toUtf8()}});
-    setupQueries.emplace_back(
-        RawDatabase::Query{QStringLiteral("INSERT INTO broken_messages (id) VALUES (6)")});
+    setupQueries.emplace_back( //
+        QStringLiteral("INSERT INTO broken_messages (id) VALUES (6)"));
 
-    setupQueries.emplace_back(RawDatabase::Query{
+    setupQueries.emplace_back( //
         QStringLiteral(
             "INSERT INTO history (id, message_type, timestamp, chat_id) VALUES (7, 'T', 0, '%1')")
-            .arg(cPeerId)});
+            .arg(cPeerId));
     setupQueries.emplace_back(
         RawDatabase::Query{QStringLiteral("INSERT INTO text_messages (id, message_type, "
                                           "sender_alias, message) VALUES (7, 'T', '%1', ?)")
@@ -287,19 +285,19 @@ void appendAddCChatMessagesQueries(std::vector<RawDatabase::Query>& setupQueries
 
 void appendVerifyCChatMessagesQueries(std::vector<RawDatabase::Query>& verifyQueries)
 {
-    verifyQueries.emplace_back(
-        RawDatabase::Query{QStringLiteral("SELECT COUNT(*) FROM history WHERE chat_id = '%1'").arg(cChatId),
-                           [&](const QVector<QVariant>& row) { QVERIFY(row[0].toLongLong() == 2); }});
-    verifyQueries.emplace_back(
-        RawDatabase::Query{QStringLiteral("SELECT COUNT(*) FROM history JOIN broken_messages ON "
-                                          "history.id = broken_messages.id WHERE chat_id = '%1'")
-                               .arg(cChatId),
-                           [&](const QVector<QVariant>& row) { QVERIFY(row[0].toLongLong() == 1); }});
-    verifyQueries.emplace_back(
-        RawDatabase::Query{QStringLiteral("SELECT COUNT(*) FROM history JOIN text_messages ON "
-                                          "history.id = text_messages.id WHERE chat_id = '%1'")
-                               .arg(cChatId),
-                           [&](const QVector<QVariant>& row) { QVERIFY(row[0].toLongLong() == 2); }});
+    verifyQueries.emplace_back( //
+        QStringLiteral("SELECT COUNT(*) FROM history WHERE chat_id = '%1'").arg(cChatId),
+        [&](const QVector<QVariant>& row) { QVERIFY(row[0].toLongLong() == 2); });
+    verifyQueries.emplace_back( //
+        QStringLiteral("SELECT COUNT(*) FROM history JOIN broken_messages ON "
+                       "history.id = broken_messages.id WHERE chat_id = '%1'")
+            .arg(cChatId),
+        [&](const QVector<QVariant>& row) { QVERIFY(row[0].toLongLong() == 1); });
+    verifyQueries.emplace_back( //
+        QStringLiteral("SELECT COUNT(*) FROM history JOIN text_messages ON "
+                       "history.id = text_messages.id WHERE chat_id = '%1'")
+            .arg(cChatId),
+        [&](const QVector<QVariant>& row) { QVERIFY(row[0].toLongLong() == 2); });
 }
 
 void appendAddHistoryQueries(std::vector<RawDatabase::Query>& setupQueries)

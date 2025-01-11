@@ -9,7 +9,6 @@
 #include "src/model/conferencemessagedispatcher.h"
 #include "src/model/message.h"
 #include "src/persistence/iconferencesettings.h"
-#include "src/persistence/settings.h"
 #include "util/interface.h"
 
 #include "mock/mockconferencequery.h"
@@ -19,6 +18,7 @@
 #include <QtTest/QtTest>
 
 #include <deque>
+#include <memory>
 #include <set>
 
 #include <tox/tox.h> // tox_max_message_length
@@ -140,19 +140,18 @@ TestConferenceMessageDispatcher::TestConferenceMessageDispatcher() = default;
  */
 void TestConferenceMessageDispatcher::init()
 {
-    friendList = std::unique_ptr<FriendList>(new FriendList());
-    conferenceSettings = std::unique_ptr<MockConferenceSettings>(new MockConferenceSettings());
-    conferenceQuery = std::unique_ptr<MockConferenceQuery>(new MockConferenceQuery());
-    coreIdHandler = std::unique_ptr<MockCoreIdHandler>(new MockCoreIdHandler());
-    g = std::unique_ptr<Conference>(new Conference(0, ConferenceId(), "TestConference", false, "me",
-                                                   *conferenceQuery, *coreIdHandler, *friendList));
-    messageSender = std::unique_ptr<MockConferenceMessageSender>(new MockConferenceMessageSender());
-    sharedProcessorParams = std::unique_ptr<MessageProcessor::SharedParams>(
-        new MessageProcessor::SharedParams(tox_max_message_length()));
-    messageProcessor = std::unique_ptr<MessageProcessor>(new MessageProcessor(*sharedProcessorParams));
-    conferenceMessageDispatcher = std::unique_ptr<ConferenceMessageDispatcher>(
-        new ConferenceMessageDispatcher(*g, *messageProcessor, *coreIdHandler, *messageSender,
-                                        *conferenceSettings));
+    friendList = std::make_unique<FriendList>();
+    conferenceSettings = std::make_unique<MockConferenceSettings>();
+    conferenceQuery = std::make_unique<MockConferenceQuery>();
+    coreIdHandler = std::make_unique<MockCoreIdHandler>();
+    g = std::make_unique<Conference>(0, ConferenceId(), "TestConference", false, "me",
+                                     *conferenceQuery, *coreIdHandler, *friendList);
+    messageSender = std::make_unique<MockConferenceMessageSender>();
+    sharedProcessorParams = std::make_unique<MessageProcessor::SharedParams>(tox_max_message_length());
+    messageProcessor = std::make_unique<MessageProcessor>(*sharedProcessorParams);
+    conferenceMessageDispatcher =
+        std::make_unique<ConferenceMessageDispatcher>(*g, *messageProcessor, *coreIdHandler,
+                                                      *messageSender, *conferenceSettings);
 
     connect(conferenceMessageDispatcher.get(), &ConferenceMessageDispatcher::messageSent, this,
             &TestConferenceMessageDispatcher::onMessageSent);
@@ -174,7 +173,7 @@ void TestConferenceMessageDispatcher::testSignals()
     conferenceMessageDispatcher->sendMessage(false, "test");
 
     // For conferences we pair our sent and completed signals since we have no receiver reports
-    QVERIFY(outgoingMessages.size() == 0);
+    QVERIFY(outgoingMessages.empty());
     QVERIFY(!sentMessages.empty());
     QVERIFY(sentMessages.front().isAction == false);
     QVERIFY(sentMessages.front().content == "test");
@@ -227,7 +226,7 @@ void TestConferenceMessageDispatcher::testSelfReceive()
 {
     uint8_t selfId[ToxPk::size] = {0};
     conferenceMessageDispatcher->onMessageReceived(ToxPk(selfId), false, "Test");
-    QVERIFY(receivedMessages.size() == 0);
+    QVERIFY(receivedMessages.empty());
 
     uint8_t id[ToxPk::size] = {1};
     conferenceMessageDispatcher->onMessageReceived(ToxPk(id), false, "Test");

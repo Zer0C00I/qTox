@@ -12,6 +12,7 @@
 #include <QtTest/QtTest>
 
 #include <deque>
+#include <memory>
 #include <set>
 
 #include <tox/tox.h> // tox_max_message_length
@@ -112,15 +113,14 @@ TestFriendMessageDispatcher::TestFriendMessageDispatcher() = default;
  */
 void TestFriendMessageDispatcher::init()
 {
-    f = std::unique_ptr<Friend>(new Friend(0, ToxPk()));
+    f = std::make_unique<Friend>(0, ToxPk());
     f->setStatus(Status::Status::Online);
-    messageSender = std::unique_ptr<MockFriendMessageSender>(new MockFriendMessageSender());
-    sharedProcessorParams = std::unique_ptr<MessageProcessor::SharedParams>(
-        new MessageProcessor::SharedParams(tox_max_message_length()));
+    messageSender = std::make_unique<MockFriendMessageSender>();
+    sharedProcessorParams = std::make_unique<MessageProcessor::SharedParams>(tox_max_message_length());
 
-    messageProcessor = std::unique_ptr<MessageProcessor>(new MessageProcessor(*sharedProcessorParams));
-    friendMessageDispatcher = std::unique_ptr<FriendMessageDispatcher>(
-        new FriendMessageDispatcher(*f, *messageProcessor, *messageSender));
+    messageProcessor = std::make_unique<MessageProcessor>(*sharedProcessorParams);
+    friendMessageDispatcher =
+        std::make_unique<FriendMessageDispatcher>(*f, *messageProcessor, *messageSender);
 
     connect(friendMessageDispatcher.get(), &FriendMessageDispatcher::messageSent, this,
             &TestFriendMessageDispatcher::onMessageSent);

@@ -71,7 +71,7 @@ QString generateContent(const QHash<const Friend*, size_t>& friendNotifications,
                         const QHash<const Conference*, size_t>& conferenceNotifications,
                         QString lastMessage, const ToxPk& sender)
 {
-    assert(friendNotifications.size() > 0 || conferenceNotifications.size() > 0);
+    assert(!friendNotifications.empty() || !conferenceNotifications.empty());
 
     auto numChats = getNumChats(friendNotifications, conferenceNotifications);
     if (numChats > 1) {
