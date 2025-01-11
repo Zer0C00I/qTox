@@ -16,5 +16,4 @@ Checks: "-*
 , readability-inconsistent-declaration-parameter-name
 "
 WarningsAsErrors: "*"
-ExcludeHeaderFilterRegex: "/usr/.*"
 HeaderFilterRegex: ".*"

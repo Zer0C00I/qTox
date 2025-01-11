@@ -128,7 +128,10 @@ jobs:
       - name: Cache compiler output
         uses: actions/cache@v4
         with:
-          path: ".cache/ccache"
+          path: |
+            .cache/ccache
+            .cache/clangd
+            .lsp_tidy_cache
           key: ${{ github.job }}-ccache
       - name: Run build
         run: docker compose run --rm fedora .ci-scripts/build-qtox-linux.sh --build-type Release --full --tidy || (git diff --exit-code && false)

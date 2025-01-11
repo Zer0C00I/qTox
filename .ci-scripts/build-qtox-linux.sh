@@ -31,6 +31,10 @@ while (($# > 0)); do
       TIDY=1
       shift
       ;;
+    --tidy-fix)
+      TIDY_FIX=1
+      shift
+      ;;
     --build-type)
       BUILD_TYPE="$2"
       shift 2
@@ -119,14 +123,18 @@ cmake --build "$BUILD_DIR"
 ccache --show-stats
 
 if [ ! -z "${TIDY+x}" ]; then
-  run-clang-tidy -quiet -fix -format -p "$BUILD_DIR" \
-    audio/include \
-    audio/src/ \
-    src/ \
-    test/include \
-    test/src/ \
-    util/include/ \
-    util/src/
+  if [ ! -z "${TIDY_FIX+x}" ]; then
+    run-clang-tidy -quiet -fix -format -p "$BUILD_DIR" \
+      audio/include/ \
+      audio/src/ \
+      src/ \
+      test/include/ \
+      test/src/ \
+      util/include/ \
+      util/src/
+  else
+    tools/lsp_tidy.py --compile-commands-dir "$BUILD_DIR"
+  fi
 else
   ctest -j"$(nproc)" --test-dir "$BUILD_DIR" --output-on-failure
 fi
