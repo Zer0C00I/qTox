@@ -132,7 +132,7 @@ set(AUTORCC_OPTIONS ${AUTORCC_OPTIONS} -format-version 1)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-exceptions")
 
 # Hardening flags (ASLR, warnings, etc)
-set(POSITION_INDEPENDENT_CODE True)
+set(CMAKE_POSITION_INDEPENDENT_CODE True)
 
 if(NOT WIN32 AND NOT HAIKU)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fstack-protector-all")
