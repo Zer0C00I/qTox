@@ -11,7 +11,6 @@
 
 #include <QObject>
 #include <QtTest/QtTest>
-#include <memory>
 
 namespace {
 class MockNotificationSettings : public INotificationSettings
@@ -224,19 +223,23 @@ void TestNotificationGenerator::testMultipleFriendSourceMessages()
 
 void TestNotificationGenerator::testMultipleConferenceSourceMessages()
 {
-    Conference g(0, ConferenceId(QByteArray(32, 0)), "conferenceName", false, "selfName",
-                 *conferenceQuery, *coreIdHandler, *friendList);
+    Conference g1(0, ConferenceId(QByteArray(32, 0)), "conferenceName1", false, "selfName",
+                  *conferenceQuery, *coreIdHandler, *friendList);
     Conference g2(1, ConferenceId(QByteArray(32, 1)), "conferenceName2", false, "selfName",
                   *conferenceQuery, *coreIdHandler, *friendList);
 
-    auto sender = conferenceQuery->getConferencePeerPk(0, 0);
-    g.updateUsername(sender, "sender1");
+    auto sender_g1 = conferenceQuery->getConferencePeerPk(0, 1);
+    g1.updateUsername(sender_g1, "sender1");
 
-    notificationGenerator->conferenceMessageNotification(&g, sender, "test1");
-    auto notificationData = notificationGenerator->conferenceMessageNotification(&g2, sender, "test1");
+    auto sender_g2 = conferenceQuery->getConferencePeerPk(1, 1);
+    g2.updateUsername(sender_g2, "sender1");
+
+    notificationGenerator->conferenceMessageNotification(&g1, sender_g1, "test1");
+    auto notificationData =
+        notificationGenerator->conferenceMessageNotification(&g2, sender_g2, "test1");
 
     QCOMPARE(notificationData.title, "2 message(s) from 2 chats");
-    QCOMPARE(notificationData.message, "conferenceName, conferenceName2");
+    QCOMPARE(notificationData.message, "conferenceName1, conferenceName2");
 }
 
 void TestNotificationGenerator::testMixedSourceMessages()
