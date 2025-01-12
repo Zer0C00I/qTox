@@ -134,7 +134,7 @@ jobs:
             .lsp_tidy_cache
           key: ${{ github.job }}-ccache
       - name: Run build
-        run: docker compose run --rm fedora .ci-scripts/build-qtox-linux.sh --build-type Release --full --tidy || (git diff --exit-code && false)
+        run: docker compose run --rm fedora .ci-scripts/build-qtox-linux.sh --build-type Debug --full --tidy || (git diff --exit-code && false)
 
   ################################################################################################
   # Build and test jobs (PR)

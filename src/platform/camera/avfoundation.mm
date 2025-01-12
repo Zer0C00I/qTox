@@ -10,6 +10,7 @@
 #include <QMutex>
 #include <QObject>
 
+#ifdef Q_OS_MACOS
 #import <AVFoundation/AVFoundation.h>
 
 namespace {
@@ -144,3 +145,4 @@ QVector<VideoMode> avfoundation::getDeviceModes(const QString& devName)
 
     return result;
 }
+#endif // Q_OS_MACOS

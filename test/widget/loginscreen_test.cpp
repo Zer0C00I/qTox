@@ -82,7 +82,10 @@ void TestLoginScreen::testCreateProfileBadPassword()
 
     QString error;
     connect(&loginScreen, &LoginScreen::failure, this,
-            [&error](const QString& title, const QString& message) { error = message; });
+            [&error](const QString& title, const QString& message) {
+                std::ignore = title;
+                error = message;
+            });
 
     loginScreen.findChild<QLineEdit*>("newUsername")->setText("test-user");
     loginScreen.findChild<QLineEdit*>("newPass")->setText("password");

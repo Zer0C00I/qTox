@@ -85,6 +85,9 @@ if [ ! -z "${TIDY+x}" ]; then
     export CC=clang
   fi
   CMAKE_ARGS+=("-DCMAKE_EXPORT_COMPILE_COMMANDS=ON")
+  # Need to enable GUI tests so we can run clang-tidy on them.
+  # We don't actually run them.
+  CMAKE_ARGS+=("-DGUI_TESTS=ON")
 fi
 
 SRCDIR=/qtox

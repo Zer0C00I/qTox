@@ -7,7 +7,7 @@ import hashlib
 import itertools
 import json
 import os
-import shlex
+import re
 import subprocess  # nosec
 from dataclasses import dataclass
 from typing import Any
@@ -91,55 +91,61 @@ class File:
         return f"file://{self.fullpath}"
 
 
-def _remove_output_flags(command: tuple[str, ...]) -> tuple[str, ...]:
-    """Remove output flags "-o$file" or "-o $file" and compile flag "-c" from the command."""
-    new_command = []
-    skip = False
-    for arg in command:
-        if skip:
-            skip = False
-            continue
-        if arg == "-o":
-            skip = True
-            continue
-        if arg.startswith("-o"):
-            continue
-        if arg == "-c":
-            continue
-        new_command.append(arg)
-    return tuple(new_command)
+class Preprocessor:
+    # Hashes of the preprocessed files
+    _hashes: dict[str, str]
+    # List of all source files (not in _build)
+    _sources: tuple[File, ...]
 
+    def __init__(self, config: Config) -> None:
+        # Walk config.root_path, find all .cpp, .h, .mm files and load them.
+        loaded_files: dict[str, str] = {}
+        sources: list[File] = []
+        print("Loading files...", flush=True)
+        for root, _, files in os.walk(config.root_path):
+            for filename in files:
+                if filename.endswith((".cpp", ".h", ".mm", ".moc")):
+                    if filename.startswith("qrc_") or filename in (
+                            "moc_predefs.h",
+                            "mocs_compilation.cpp",
+                    ):
+                        continue
+                    if filename in loaded_files:
+                        raise ValueError("Duplicate file: "
+                                         f"{filename} ({root})")
+                    if "_build" not in root:
+                        sources.append(
+                            File(config, os.path.join(root, filename)))
+                    with open(os.path.join(root, filename), "r") as f:
+                        loaded_files[filename] = f.read()
+        self._sources = tuple(set(sources))
+        print(f"Preprocessing {len(loaded_files)} files...", flush=True)
+        # Map from filename to list of #include base-names.
+        includes: dict[str, list[str]] = {}
+        for filename, content in loaded_files.items():
+            includes[filename] = []
+            for line in content.split("\n"):
+                if match := re.match(r"#\s*include\s*\"(.+)\"", line):
+                    includes[filename].append(os.path.basename(match.group(1)))
+        # Preprocess all files.
+        self._hashes = {}
+        for filename in loaded_files.keys():
+            self._hashes[filename] = self._sha256(filename, includes)
 
-async def _preprocess(command: tuple[str, ...]) -> str:
-    command = _remove_output_flags(command) + ("-E", )
-    proc = await asyncio.create_subprocess_exec("clang",
-                                                *command[1:],
-                                                stdout=subprocess.PIPE)
-    stdout, _ = await proc.communicate()
-    return stdout.decode()
+    def _sha256(self, filename: str, includes: dict[str, list[str]]) -> str:
+        """Recursively resolve all includes, hash the result."""
+        if filename not in includes:
+            raise ValueError(f"File not found: {filename}")
+        return hashlib.sha256("".join(
+            self._sha256(include, includes)
+            for include in includes[filename]).encode()).hexdigest()
 
+    def sha256(self, file: File) -> str:
+        return self._hashes[os.path.basename(file.path)]
 
-@dataclass
-class CompileCommand:
-    file: File
-    command: tuple[str, ...]
-    sha: Optional[str] = None
-
-    async def sha256(self) -> str:
-        if not self.sha:
-            self.sha = hashlib.sha256(
-                ("".join(self.command) +
-                 await _preprocess(self.command)).encode()).hexdigest()
-        return self.sha
-
-
-def _compile_commands(config: Config, path: str) -> tuple[CompileCommand, ...]:
-    with open(path, "r") as f:
-        return tuple(
-            CompileCommand(
-                File(config, entry["file"]),
-                tuple(shlex.split(entry["command"])),
-            ) for entry in json.load(f) if "_build" not in entry["file"])
+    @property
+    def sources(self) -> tuple[File, ...]:
+        return self._sources
 
 
 @dataclass
@@ -243,8 +249,11 @@ class Clangd:
         response: dict[str, Any] = json.loads(content.decode())
         return response
 
-    async def _invoke(self, method: str, params: dict[str,
-                                                      Any]) -> dict[str, Any]:
+    async def _invoke(
+        self,
+        method: str,
+        params: dict[str, Any],
+    ) -> dict[str, Any]:
         self._rpc(next(self._rpc_id), method, params)
         # Receive the response
         result: dict[str, Any] = (await self._receive())["result"]
@@ -360,11 +369,14 @@ class CachingClangd:
     _cache_path: str
     _cache: dict[str, list[Diagnostic]]
     _clangd: Clangd
+    _pp: Preprocessor
 
-    def __init__(self, config: Config, clangd: Clangd) -> None:
+    def __init__(self, config: Config, clangd: Clangd,
+                 pp: Preprocessor) -> None:
         self._sem = asyncio.Semaphore(os.cpu_count() or 4)
         self._cache_path = config.cache_file
         self._clangd = clangd
+        self._pp = pp
         if os.path.exists(self._cache_path):
             with open(self._cache_path, "r") as f:
                 self._cache = {
@@ -387,40 +399,40 @@ class CachingClangd:
         os.rename(self._cache_path + ".new", self._cache_path)
 
     async def _diagnostics_for(
-        self, cmd: CompileCommand
-    ) -> AsyncGenerator[tuple[CompileCommand, list[Diagnostic]], None]:
+            self,
+            file: File) -> AsyncGenerator[tuple[File, list[Diagnostic]], None]:
         async with self._sem:
-            print(f"Analyzing {cmd.file.path}", flush=True)
-            sha = await cmd.sha256()
+            print(f"Analyzing {file.path}", flush=True)
+            sha = self._pp.sha256(file)
             if sha not in self._cache:
-                self._clangd.open(cmd.file)
+                self._clangd.open(file)
             else:
-                yield cmd, self._cache[sha]
+                yield file, self._cache[sha]
 
     async def _receive_diagnostics(
-        self, todo: dict[str, CompileCommand]
-    ) -> AsyncGenerator[tuple[CompileCommand, list[Diagnostic]], None]:
+        self, todo: dict[str, File]
+    ) -> AsyncGenerator[tuple[File, list[Diagnostic]], None]:
         async for uri, diags in self._clangd.receive_diagnostics():
-            cmd = todo.get(uri, None)
-            if not cmd:
+            file = todo.get(uri, None)
+            if not file:
                 continue
-            self._cache[await cmd.sha256()] = diags
+            self._cache[self._pp.sha256(file)] = diags
             self._save()
-            yield cmd, diags
+            yield file, diags
 
     async def diagnostics(
-        self, cmds: tuple[CompileCommand, ...]
-    ) -> AsyncGenerator[tuple[CompileCommand, list[Diagnostic]], None]:
-        todo = {cmd.file.uri: cmd for cmd in cmds}
+        self, files: tuple[File, ...]
+    ) -> AsyncGenerator[tuple[File, list[Diagnostic]], None]:
+        todo = {file.uri: file for file in files}
         results = _join(
-            *(self._diagnostics_for(cmd) for cmd in cmds),
+            *(self._diagnostics_for(file) for file in files),
             self._receive_diagnostics(todo),
         )
         async for result in results:
             if result is not None:
-                cmd, diags = result
-                yield cmd, diags
-                del todo[cmd.file.uri]
+                file, diags = result
+                yield file, diags
+                del todo[file.uri]
                 if not todo:
                     break
 
@@ -472,18 +484,16 @@ def _print_diagnostic(file: File, diagnostics: Iterable[Diagnostic]) -> None:
 
 
 async def main(config: Config) -> None:
-    cmds = _compile_commands(
-        config,
-        os.path.join(config.compile_commands_dir, "compile_commands.json"))
+    preprocessor = Preprocessor(config)
     with await Clangd.create(config) as clangd:
         await clangd.initialize()
 
-        cache = CachingClangd(config, clangd)
+        cache = CachingClangd(config, clangd, preprocessor)
 
         has_errors = False
         # Print diagnostics as they come in
-        async for cmd, diags in cache.diagnostics(cmds):
-            _print_diagnostic(cmd.file, diags)
+        async for file, diags in cache.diagnostics(preprocessor.sources):
+            _print_diagnostic(file, diags)
             has_errors |= any(diag.severity == 1 for diag in diags)
             if config.fatal_errors and has_errors:
                 exit(1)
