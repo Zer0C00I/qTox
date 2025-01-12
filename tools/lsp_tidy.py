@@ -478,9 +478,15 @@ def _print_diagnostic(file: File, diagnostics: Iterable[Diagnostic]) -> None:
             column_start = diag.column_start
             column_end = diag.column_end
             location = f"{file.path}:{line_start + 1}:{column_start + 1}:"
-            msg = f"{_bold(location)} {severity}: {diag.message}\n{lines[line_start].rstrip()}"
-            carets = " " * column_start + "^" * (column_end - column_start)
-            print(f"{msg}\n{carets}", flush=True)
+            message = [f"{_bold(location)} {severity}: {diag.message}"]
+            if line_start > len(lines):
+                raise ValueError(f"Invalid line number {line_start}: "
+                                 f"{file.path} only has {len(lines)} lines")
+            if line_start < len(lines):
+                message.append(lines[line_start].rstrip())
+                message.append(" " * column_start + "^" *
+                               (column_end - column_start))
+            print("\n".join(message), flush=True)
 
 
 async def main(config: Config) -> None:

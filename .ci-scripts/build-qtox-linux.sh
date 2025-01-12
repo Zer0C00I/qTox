@@ -76,6 +76,10 @@ if [ ! -z "${GUI_TESTS+x}" ]; then
   CMAKE_ARGS+=("-DGUI_TESTS=ON")
 fi
 
+if [ "$BUILD_TYPE" = "Debug" ]; then
+  CMAKE_ARGS+=("-DREPR_RCC=ON")
+fi
+
 if [ ! -z "${TIDY+x}" ]; then
   if [ -f /usr/local/bin/clang-fake ]; then
     export CXX=clang-fake
