@@ -120,13 +120,19 @@ endif()
 set(CMAKE_AUTOMOC ON)
 # Run resource compilation automatically
 set(CMAKE_AUTORCC ON)
-# Enable maximum compression
-set(AUTORCC_OPTIONS -compress 9 -threshold 0)
+
+# Set resource compilation options.
+
+# Enable maximum compression.
+set(AUTORCC_OPTIONS -compress 9)
 
 # Drop the file modification time of source files from generated files to help
 # with reproducible builds. We do not use QFileInfo.lastModified so this has no
 # unwanted side effects.
-set(AUTORCC_OPTIONS ${AUTORCC_OPTIONS} -format-version 1)
+set(AUTORCC_OPTIONS ${AUTORCC_OPTIONS} -format-version 1 --compress-algo zlib)
+
+# Apply resource compilation options.
+set(CMAKE_AUTORCC_OPTIONS ${AUTORCC_OPTIONS})
 
 # Disable exceptions (Qt doesn't use them, we don't need them).
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-exceptions")
