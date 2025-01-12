@@ -1,3 +1,28 @@
+<a name="v1.18.2-rc.1"></a>
+
+## v1.18.2-rc.1 (2025-01-12)
+
+Getting ready for a release. Here's a release candidate.
+
+#### Bug Fixes
+
+- cmake `AUTORCC_OPTIONS` global setting ([80f7cbb8](https://github.com/TokTok/qTox/commit/80f7cbb8a003413d0df04d467a5560aaac61b0e6))
+- cmake `POSITION_INDEPENDENT_CODE` global setting ([027e8e02](https://github.com/TokTok/qTox/commit/027e8e020d9aebbb1ab4b0dd475ea3f3936d90a4))
+- **Chat:**
+  - Allow tab characters in incoming messages. ([2f70ebf7](https://github.com/TokTok/qTox/commit/2f70ebf7a7efb345844e58d658d094f2be3f9286))
+  - Always show the date at the top of the chat. ([0883a0b6](https://github.com/TokTok/qTox/commit/0883a0b60822521b8fb0b8ebf85c74af7ef7c1ca))
+  - No longer turn regular ASCII into emoticons. ([03692eca](https://github.com/TokTok/qTox/commit/03692ecace9b57546e94a543344a9d175e81efef))
+  - Correctly display newlines in incoming chat messages. ([b70b3138](https://github.com/TokTok/qTox/commit/b70b31386e159f71e5db83aec5eaedaec671d4dc), closes [#386](https://github.com/TokTok/qTox/issues/386))
+- **Security:** Fix heap buffer overflow in receiving pictures. ([4b75e633](https://github.com/TokTok/qTox/commit/4b75e633539dbf3b96701ff53a7049335fefa01d))
+- **UI:** Message edit context menu now changes colour to hover/selection. ([7e168439](https://github.com/TokTok/qTox/commit/7e1684398dae512e511f92075c23b6cedd2cebc8), closes [#387](https://github.com/TokTok/qTox/issues/387))
+- **tools:** Use tag strings in release tarballs. ([6e0b9a70](https://github.com/TokTok/qTox/commit/6e0b9a709574a4a11fa8c1870b41bf9139c4e09b))
+
+#### Features
+
+- **Chat:** Add spelling check and QOI support to Windows builds. ([165449c2](https://github.com/TokTok/qTox/commit/165449c25493441a363ea8f9274711df8a7e5e1f))
+- **Pictures:** Add QOI image format support. ([87707a5d](https://github.com/TokTok/qTox/commit/87707a5d2a1503fa450a05f7ad332bf0ea4fa196))
+- **Settings:** Add an option to disable image previews. ([823fde42](https://github.com/TokTok/qTox/commit/823fde429a7a014868f532c2877cf80388af67e9))
+
 <a name="v1.18.1"></a>
 
 ## v1.18.1 (2025-01-06)
