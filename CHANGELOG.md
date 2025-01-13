@@ -1,3 +1,15 @@
+<a name="v1.18.2"></a>
+
+## v1.18.2 (2025-01-13)
+
+This is a security-focussed release that also comes with some bugfixes.
+
+- We've added QOI image support and dropped some image support plugins that we haven't properly vetted.
+- We have added fuzzing tests for all the image plugins we do use (and filed some bugs for the ones we don't yet use).
+- We've fixed a heap buffer overflow in exif handling. This overflow was not a vulnerability (it was an out of bounds read that would mess up image rotations when receiving broken exif data).
+- We've added a setting to disable automatic image previews in chat. If you're very security-conscious and you have friends you don't trust, you may want to disable image previews. In the future, we'll add a per-friend setting for this.
+- We've fixed some bugs that caused multi-line messages to be received as a single line. This was caused by our defense-in-depth security measures that were a little too strict.
+
 <a name="v1.18.2-rc.1"></a>
 
 ## v1.18.2-rc.1 (2025-01-12)
