@@ -81,7 +81,7 @@ public:
     {
     }
 
-    MockConference(QString nameStr)
+    explicit MockConference(QString nameStr)
         : name(std::move(nameStr))
     {
     }

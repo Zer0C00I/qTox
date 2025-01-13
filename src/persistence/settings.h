@@ -685,7 +685,7 @@ private:
     struct friendProp
     {
         friendProp() = delete;
-        friendProp(QString addr_)
+        explicit friendProp(QString addr_)
             : addr(std::move(addr_))
         {
         }

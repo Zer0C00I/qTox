@@ -12,7 +12,7 @@
 class ImagePreviewButton : public QPushButton
 {
 public:
-    ImagePreviewButton(QWidget* parent = nullptr)
+    explicit ImagePreviewButton(QWidget* parent = nullptr)
         : QPushButton(parent)
     {
     }

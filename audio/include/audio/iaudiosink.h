@@ -95,7 +95,7 @@ public:
     virtual void startLoop() = 0;
     virtual void stopLoop() = 0;
 
-    virtual operator bool() const = 0;
+    virtual explicit operator bool() const = 0;
 
 signals:
     DECLARE_SIGNAL(finishedPlaying, void);

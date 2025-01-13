@@ -17,7 +17,7 @@ class ToxOptions
 public:
     ~ToxOptions();
     ToxOptions(ToxOptions&& from);
-    operator Tox_Options*();
+    Tox_Options* get();
     const char* getProxyAddrData() const;
     static std::unique_ptr<ToxOptions> makeToxOptions(const QByteArray& savedata,
                                                       const ICoreSettings& s);

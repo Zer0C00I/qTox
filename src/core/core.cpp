@@ -135,7 +135,7 @@ ToxCorePtr Core::makeToxCore(const QByteArray& savedata, const ICoreSettings& se
     }
 
     Tox_Err_New tox_err;
-    core->tox = ToxPtr(tox_new(*toxOptions, &tox_err));
+    core->tox = ToxPtr(tox_new(toxOptions->get(), &tox_err));
 
     switch (tox_err) {
     case TOX_ERR_NEW_OK:
@@ -151,7 +151,7 @@ ToxCorePtr Core::makeToxCore(const QByteArray& savedata, const ICoreSettings& se
     case TOX_ERR_NEW_PORT_ALLOC:
         if (toxOptions->getIPv6Enabled()) {
             toxOptions->setIPv6Enabled(false);
-            core->tox = ToxPtr(tox_new(*toxOptions, &tox_err));
+            core->tox = ToxPtr(tox_new(toxOptions->get(), &tox_err));
             if (tox_err == TOX_ERR_NEW_OK) {
                 qWarning() << "Core failed to start with IPv6, falling back to IPv4. LAN discovery "
                               "may not work properly.";
@@ -541,7 +541,7 @@ void Core::onConferencePeerListChange(Tox* tox, uint32_t conferenceId, void* vCo
 {
     std::ignore = tox;
     const auto core = static_cast<Core*>(vCore);
-    qDebug("Conference %d peerlist changed", conferenceId);
+    qDebug("Conference %u peerlist changed", conferenceId);
     // no saveRequest, this callback is called on every connection to conference peer, not just on brand new peers
     emit core->conferencePeerlistChanged(conferenceId);
 }

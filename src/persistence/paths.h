@@ -21,7 +21,7 @@ public:
         NonPortable /** Force non-portable mode */
     };
 
-    Paths(Portable mode = Portable::Auto);
+    explicit Paths(Portable mode = Portable::Auto);
 
     bool setPortable(bool portable);
     bool isPortable() const;

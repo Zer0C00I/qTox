@@ -1,4 +1,5 @@
 Checks: "-*
+, google-explicit-constructor
 , modernize-avoid-bind
 , modernize-deprecated-headers
 , modernize-loop-convert

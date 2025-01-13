@@ -21,7 +21,7 @@ class IAudioSource : public QObject
 public:
     ~IAudioSource() override = default;
 
-    virtual operator bool() const = 0;
+    virtual explicit operator bool() const = 0;
 
 signals:
     void frameAvailable(const int16_t* pcm, size_t sample_count, uint8_t channels,

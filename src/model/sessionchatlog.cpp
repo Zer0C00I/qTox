@@ -9,33 +9,20 @@
 
 #include <QDebug>
 #include <QtGlobal>
-#include <mutex>
 
 namespace {
 
+constexpr QDate invalidDate;
+
 /**
- * lower_bound needs two way comparisons. This adaptor allows us to compare
- * between a Message and QDateTime in both directions
+ * This function allows us to compare between a Message and QDateTime.
  */
-struct MessageDateAdaptor
+QDate toDate(const std::pair<const ChatLogIdx, ChatLogItem>& item)
 {
-    static const QDateTime invalidDateTime;
-    MessageDateAdaptor(const std::pair<const ChatLogIdx, ChatLogItem>& item)
-        : timestamp(item.second.getContentType() == ChatLogItem::ContentType::message
-                        ? item.second.getContentAsMessage().message.timestamp
-                        : invalidDateTime)
-    {
-    }
-
-    MessageDateAdaptor(const QDateTime& timestamp_)
-        : timestamp(timestamp_)
-    {
-    }
-
-    const QDateTime& timestamp;
-};
-
-const QDateTime MessageDateAdaptor::invalidDateTime;
+    return item.second.getContentType() == ChatLogItem::ContentType::message
+               ? item.second.getContentAsMessage().message.timestamp.date()
+               : invalidDate;
+}
 
 /**
  * @brief The search types all can be represented as some regular expression. This function
@@ -86,9 +73,8 @@ std::map<ChatLogIdx, ChatLogItem>::const_iterator
 firstItemAfterDate(QDate date, const std::map<ChatLogIdx, ChatLogItem>& items)
 {
     return std::lower_bound(items.begin(), items.end(), date.startOfDay(),
-                            [](const MessageDateAdaptor& a, const MessageDateAdaptor& b) {
-                                return a.timestamp.date() < b.timestamp.date();
-                            });
+                            [](const std::pair<const ChatLogIdx, ChatLogItem>& a,
+                               const QDateTime& b) { return toDate(a) < b.date(); });
 }
 
 QString resolveToxPk(FriendList& friendList, ConferenceList& conferenceList, const ToxPk& pk)

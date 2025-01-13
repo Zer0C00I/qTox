@@ -681,7 +681,7 @@ void RawDatabaseImpl::compileAndExecute(Transaction& trans)
 
     // Add transaction commands if necessary
     if (trans.queries.size() > 1) {
-        trans.queries.insert(trans.queries.begin(), {"BEGIN;"});
+        trans.queries.insert(trans.queries.begin(), Query{"BEGIN;"});
         trans.queries.emplace_back("COMMIT;");
     }
 

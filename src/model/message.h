@@ -84,7 +84,7 @@ public:
         QRegularExpression pubKeyMention;
     };
 
-    MessageProcessor(const SharedParams& sharedParams_);
+    explicit MessageProcessor(const SharedParams& sharedParams_);
 
     std::vector<Message> processOutgoingMessage(bool isAction, const QString& content);
     Message processIncomingCoreMessage(bool isAction, const QString& message);

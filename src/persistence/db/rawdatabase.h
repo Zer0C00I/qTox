@@ -46,8 +46,8 @@ public:
     class Query
     {
     public:
-        Query(QString query_, QVector<QByteArray> blobs_ = {},
-              const std::function<void(RowId)>& insertCallback_ = {})
+        explicit Query(QString query_, QVector<QByteArray> blobs_ = {},
+                       const std::function<void(RowId)>& insertCallback_ = {})
             : query{query_.toUtf8()}
             , blobs{std::move(blobs_)}
             , insertCallback{insertCallback_}

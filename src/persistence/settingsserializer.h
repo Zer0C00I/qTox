@@ -24,7 +24,7 @@ public:
         ArrayValue = 3,
         ArrayEnd = 4,
     };
-    SettingsSerializer(QString filePath_, const ToxEncrypt* passKey_ = nullptr);
+    explicit SettingsSerializer(QString filePath_, const ToxEncrypt* passKey_ = nullptr);
 
     static bool isSerializedFormat(QString filePath);
 

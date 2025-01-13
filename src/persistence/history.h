@@ -38,19 +38,19 @@ enum class HistMessageContentType
 class HistMessageContent
 {
 public:
-    HistMessageContent(QString message)
+    explicit HistMessageContent(QString message)
         : data(std::make_shared<QString>(std::move(message)))
         , type(HistMessageContentType::message)
     {
     }
 
-    HistMessageContent(ToxFile file)
+    explicit HistMessageContent(ToxFile file)
         : data(std::make_shared<ToxFile>(std::move(file)))
         , type(HistMessageContentType::file)
     {
     }
 
-    HistMessageContent(SystemMessage systemMessage)
+    explicit HistMessageContent(SystemMessage systemMessage)
         : data(std::make_shared<SystemMessage>(std::move(systemMessage)))
         , type(HistMessageContentType::system)
     {

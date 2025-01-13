@@ -45,7 +45,7 @@ const char* ToxOptions::getProxyAddrData() const
     return proxyAddrData.constData();
 }
 
-ToxOptions::operator Tox_Options*()
+Tox_Options* ToxOptions::get()
 {
     return options;
 }
@@ -71,13 +71,13 @@ std::unique_ptr<ToxOptions> ToxOptions::makeToxOptions(const QByteArray& savedat
 
     auto toxOptions = std::unique_ptr<ToxOptions>(new ToxOptions(tox_opts, proxyAddr.toUtf8()));
     // register log first, to get messages as early as possible
-    tox_options_set_log_callback(*toxOptions, ToxLogger::onLogMessage);
+    tox_options_set_log_callback(toxOptions->get(), ToxLogger::onLogMessage);
 
     // savedata
-    tox_options_set_savedata_type(*toxOptions, savedata.isNull() ? TOX_SAVEDATA_TYPE_NONE
-                                                                 : TOX_SAVEDATA_TYPE_TOX_SAVE);
-    tox_options_set_savedata_data(*toxOptions, reinterpret_cast<const uint8_t*>(savedata.data()),
-                                  savedata.size());
+    tox_options_set_savedata_type(toxOptions->get(), savedata.isNull() ? TOX_SAVEDATA_TYPE_NONE
+                                                                       : TOX_SAVEDATA_TYPE_TOX_SAVE);
+    tox_options_set_savedata_data(toxOptions->get(),
+                                  reinterpret_cast<const uint8_t*>(savedata.data()), savedata.size());
 
     // IPv6 needed for LAN discovery, but can crash some weird routers. On by default, can be
     // disabled in options.
@@ -98,9 +98,9 @@ std::unique_ptr<ToxOptions> ToxOptions::makeToxOptions(const QByteArray& savedat
     }
 
     // No proxy by default
-    tox_options_set_proxy_type(*toxOptions, TOX_PROXY_TYPE_NONE);
-    tox_options_set_proxy_host(*toxOptions, nullptr);
-    tox_options_set_proxy_port(*toxOptions, 0);
+    tox_options_set_proxy_type(toxOptions->get(), TOX_PROXY_TYPE_NONE);
+    tox_options_set_proxy_host(toxOptions->get(), nullptr);
+    tox_options_set_proxy_port(toxOptions->get(), 0);
 
     if (proxyType != ICoreSettings::ProxyType::ptNone) {
         if (static_cast<uint32_t>(proxyAddr.length()) > tox_max_hostname_length()) {
@@ -109,13 +109,13 @@ std::unique_ptr<ToxOptions> ToxOptions::makeToxOptions(const QByteArray& savedat
             qDebug() << "Using proxy" << proxyAddr << ":" << proxyPort;
             // protection against changes in Tox_Proxy_Type enum
             if (proxyType == ICoreSettings::ProxyType::ptSOCKS5) {
-                tox_options_set_proxy_type(*toxOptions, TOX_PROXY_TYPE_SOCKS5);
+                tox_options_set_proxy_type(toxOptions->get(), TOX_PROXY_TYPE_SOCKS5);
             } else if (proxyType == ICoreSettings::ProxyType::ptHTTP) {
-                tox_options_set_proxy_type(*toxOptions, TOX_PROXY_TYPE_HTTP);
+                tox_options_set_proxy_type(toxOptions->get(), TOX_PROXY_TYPE_HTTP);
             }
 
-            tox_options_set_proxy_host(*toxOptions, toxOptions->getProxyAddrData());
-            tox_options_set_proxy_port(*toxOptions, proxyPort);
+            tox_options_set_proxy_host(toxOptions->get(), toxOptions->getProxyAddrData());
+            tox_options_set_proxy_port(toxOptions->get(), proxyPort);
 
             if (!forceTCP) {
                 qDebug() << "Proxy and UDP enabled. This is a security risk. Forcing TCP only.";
@@ -125,11 +125,11 @@ std::unique_ptr<ToxOptions> ToxOptions::makeToxOptions(const QByteArray& savedat
     }
 
     // network options
-    tox_options_set_udp_enabled(*toxOptions, !forceTCP);
-    tox_options_set_ipv6_enabled(*toxOptions, enableIPv6);
-    tox_options_set_local_discovery_enabled(*toxOptions, enableLanDiscovery);
-    tox_options_set_start_port(*toxOptions, 0);
-    tox_options_set_end_port(*toxOptions, 0);
+    tox_options_set_udp_enabled(toxOptions->get(), !forceTCP);
+    tox_options_set_ipv6_enabled(toxOptions->get(), enableIPv6);
+    tox_options_set_local_discovery_enabled(toxOptions->get(), enableLanDiscovery);
+    tox_options_set_start_port(toxOptions->get(), 0);
+    tox_options_set_end_port(toxOptions->get(), 0);
 
     return toxOptions;
 }

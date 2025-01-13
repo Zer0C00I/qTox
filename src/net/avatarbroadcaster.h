@@ -15,7 +15,7 @@ class AvatarBroadcaster : public QObject
 {
     Q_OBJECT
 public:
-    AvatarBroadcaster(Core& _core);
+    explicit AvatarBroadcaster(Core& _core);
 
     void setAvatar(QByteArray data);
     void sendAvatarTo(uint32_t friendId);

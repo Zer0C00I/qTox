@@ -30,7 +30,7 @@ public:
     void startLoop() override;
     void stopLoop() override;
 
-    operator bool() const override;
+    explicit operator bool() const override;
 
     uint getSourceId() const;
     void kill();

@@ -13,7 +13,8 @@ class ActivateDialog : public QDialog
 {
     Q_OBJECT
 public:
-    ActivateDialog(Style& style, QWidget* parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
+    explicit ActivateDialog(Style& style, QWidget* parent = nullptr,
+                            Qt::WindowFlags f = Qt::WindowFlags());
     bool event(QEvent* event) override;
 
 public slots:

@@ -86,7 +86,7 @@ RawDatabase::Query generateHistoryTableInsertion(char type, const QDateTime& tim
             .arg(time.toMSecsSinceEpoch());
     addChatIdSubQuery(queryString, boundParams, chatId);
     queryString += ");";
-    return {queryString, boundParams};
+    return RawDatabase::Query{queryString, boundParams};
 }
 
 /**
@@ -418,7 +418,7 @@ RawDatabase::Query History::generateFileFinished(RowId id, bool success, const Q
 {
     auto file_state = success ? ToxFile::FINISHED : ToxFile::CANCELED;
     if (filePath.length()) {
-        return {
+        return RawDatabase::Query{
             QStringLiteral( //
                 "UPDATE file_transfers "
                 "SET file_state = %1, file_path = ?, file_hash = ?"
@@ -428,7 +428,7 @@ RawDatabase::Query History::generateFileFinished(RowId id, bool success, const Q
             QVector<QByteArray>{filePath.toUtf8(), fileHash},
         };
     }
-    return {
+    return RawDatabase::Query{
         QStringLiteral( //
             "UPDATE file_transfers "
             "SET file_state = %1 "

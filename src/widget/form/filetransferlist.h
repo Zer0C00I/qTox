@@ -41,7 +41,7 @@ class Model : public QAbstractTableModel
 {
     Q_OBJECT
 public:
-    Model(FriendList& friendList, QObject* parent = nullptr);
+    explicit Model(FriendList& friendList, QObject* parent = nullptr);
     ~Model() override = default;
 
     void onFileUpdated(const ToxFile& file);
