@@ -440,7 +440,10 @@ def stage_await_master_build(config: Config, version: str) -> None:
     ) as s:
         for _ in range(20):  # 20 * 30s = 10 minutes
             head_sha = git.branch_sha(config.main_branch)
-            builds = github.action_runs(config.main_branch, head_sha)
+            builds = [
+                run for run in github.action_runs(config.main_branch, head_sha)
+                if run.path == ".github/workflows/build-test-deploy.yaml"
+            ]
             if not builds:
                 s.progress(
                     f"Waiting for builds to start for {config.main_branch}")
@@ -482,7 +485,10 @@ def stage_build_binaries(config: Config, version: str) -> None:
                      "Waiting for binaries to be built") as s:
         for _ in range(20):  # 20 * 30s = 10 minutes
             head_sha = git.branch_sha(version)
-            builds = github.action_runs(version, head_sha)
+            builds = [
+                run for run in github.action_runs(version, head_sha)
+                if run.path == ".github/workflows/build-test-deploy.yaml"
+            ]
             if not builds:
                 s.progress("Waiting for builds to start for "
                            f"{version} @ {head_sha}")

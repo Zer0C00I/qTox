@@ -405,6 +405,7 @@ class ActionRun:
     status: str
     conclusion: str
     html_url: str
+    path: str
 
     @staticmethod
     def fromJSON(run: dict[str, Any]) -> "ActionRun":
@@ -415,6 +416,7 @@ class ActionRun:
             status=str(run["status"]),
             conclusion=str(run["conclusion"]),
             html_url=str(run["html_url"]),
+            path=str(run["path"]),
         )
 
 
