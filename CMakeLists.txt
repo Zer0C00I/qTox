@@ -447,6 +447,8 @@ set(${PROJECT_NAME}_SOURCES
     src/platform/desktop_notifications/desktopnotifybackend.h
     src/platform/posixsignalnotifier.cpp
     src/platform/posixsignalnotifier.h
+    src/platform/stacktrace.cpp
+    src/platform/stacktrace.h
     src/platform/timer.h
     src/platform/timer_osx.cpp
     src/platform/timer_win.cpp

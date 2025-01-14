@@ -90,6 +90,7 @@ UI_TESTS = ["loginscreen_test"]
     exclude = [
         "model/exiftransform_test.cpp",
         "persistence/dbschema_test.cpp",
+        "platform/stacktrace_test.cpp",
         "**/*_fuzz_test.cpp",
     ],
 )]
@@ -113,6 +114,18 @@ qt_test(
     deps = [
         "//qtox/src:exiftransform",
         "@qt//:qt_gui",
+    ],
+)
+
+qt_test(
+    name = "stacktrace_test",
+    size = "small",
+    src = "platform/stacktrace_test.cpp",
+    copts = COPTS,
+    mocopts = ["-Iqtox"],
+    deps = [
+        "//qtox/src:stacktrace",
+        "@qt//:qt_core",
     ],
 )
 

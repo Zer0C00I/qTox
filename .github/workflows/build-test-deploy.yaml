@@ -194,7 +194,7 @@ jobs:
           path: ".cache/ccache"
           key: ${{ github.job }}-ccache
       - name: Run build
-        run: docker compose run --rm debian .ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }}
+        run: docker compose run --rm debian .ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }} --sanitize
 
   build-fedora:
     name: Fedora with ASAN

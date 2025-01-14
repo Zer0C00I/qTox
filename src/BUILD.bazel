@@ -198,6 +198,23 @@ cc_library(
 )
 
 cc_library(
+    name = "stacktrace",
+    srcs = ["platform/stacktrace.cpp"],
+    hdrs = ["platform/stacktrace.h"],
+    copts = COPTS + [
+        "-DQTOX_USE_LIBUNWIND",
+        "-Iexternal/libunwind/include",
+        "-I$(GENDIR)/external/libunwind/include",
+    ],
+    tags = ["qt"],
+    visibility = ["//qtox:__subpackages__"],
+    deps = [
+        "@libunwind",
+        "@qt//:qt_core",
+    ],
+)
+
+cc_library(
     name = "src",
     srcs = [":version"] + [
         ":src_moc",
@@ -231,6 +248,7 @@ cc_library(
     deps = [
         ":exiftransform",
         ":serialize",
+        ":stacktrace",
         "//c-toxcore",
         "//qtox:res_lib",
         "//qtox/audio",

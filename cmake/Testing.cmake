@@ -64,10 +64,11 @@ auto_test(widget/form/settings generalform "" "")
 # These are heavily dependent on specific Qt versions to be pixel-perfect, so
 # if they fail with new versions, it's not necessarily a bug.
 # TODO(iphydf): Add an easier way to regenerate golden images.
-if (GUI_TESTS)
+if(GUI_TESTS)
   auto_test(widget loginscreen "${TEST_RESOURCES}" "")
 endif()
 
-if (UNIX)
+if(UNIX)
   auto_test(platform posixsignalnotifier "" "")
+  auto_test(platform stacktrace "" "")
 endif()

@@ -6,6 +6,8 @@
 #include "posixsignalnotifier.h"
 
 #ifndef Q_OS_WIN
+#include "src/platform/stacktrace.h"
+
 #include <QDebug>
 #include <QSocketNotifier>
 
@@ -52,6 +54,54 @@ void signalHandler(int signum)
 
 constexpr std::initializer_list<int> terminatingSignals{SIGHUP, SIGINT, SIGQUIT, SIGTERM};
 constexpr std::initializer_list<int> usrSignals{SIGUSR1, SIGUSR2};
+constexpr std::initializer_list<int> crashSignals{SIGSEGV, SIGILL, SIGFPE, SIGABRT, SIGBUS, SIGSYS};
+
+// Give it 128 KiB, should be enough for what we're doing in the crash handler.
+static uint8_t alternate_stack[128 * 1024];
+
+void installCrashHandler()
+{
+    qDebug() << "Installing crash handler";
+
+    stack_t ss = {};
+    ss.ss_sp = alternate_stack;
+    ss.ss_size = sizeof(alternate_stack);
+    ss.ss_flags = 0;
+
+    if (sigaltstack(&ss, nullptr) != 0) {
+        qFatal("sigaltstack failed");
+    }
+
+    struct sigaction action = {};
+    sigemptyset(&action.sa_mask);
+
+#ifdef Q_OS_MACOS
+    /* for some reason backtrace() doesn't work on macOS
+       when we use an alternate stack */
+    action.sa_flags = SA_SIGINFO;
+#else
+    action.sa_flags = SA_SIGINFO | SA_ONSTACK;
+#endif
+
+    action.sa_handler = [](int sig) {
+        // Uninstall the signal handler to avoid infinite recursion.
+        constexpr struct sigaction default_action = {};
+        ::sigaction(sig, &default_action, nullptr);
+
+        // Print to qCritical, which will write to the log file, if possible.
+        // This might crash more or fail allocations. It's best effort.
+        qCritical("Crash signal %d received", sig);
+        Stacktrace::process([](const Stacktrace::Frame& frame) { qCritical() << frame; });
+
+        // We let the handler return to trigger the default action.
+    };
+
+    for (auto s : crashSignals) {
+        if (::sigaction(s, &action, nullptr)) {
+            qFatal("Failed to setup crash signal %d, error = %d", s, errno);
+        }
+    }
+}
 
 } // namespace
 
@@ -143,6 +193,8 @@ PosixSignalNotifier::PosixSignalNotifier()
 
     notifier = new QSocketNotifier(g_signalSocketPair[1], QSocketNotifier::Read, this);
     connect(notifier, &QSocketNotifier::activated, this, &PosixSignalNotifier::onSignalReceived);
+
+    installCrashHandler();
 }
 #else  // Q_OS_WIN
 PosixSignalNotifier::~PosixSignalNotifier() = default;

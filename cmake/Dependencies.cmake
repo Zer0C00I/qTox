@@ -114,7 +114,7 @@ function(search_dependency pkg)
     include_directories(${${pkg}${maybe_static}_INCLUDE_DIRS})
 
     foreach(flag ${${pkg}${maybe_static}_CFLAGS_OTHER})
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${flag}" PARENT_SCOPE)
+      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${flag}" PARENT_SCOPE)
     endforeach()
 
     set(ALL_LIBRARIES ${ALL_LIBRARIES} ${${pkg}${maybe_static}_LIBRARIES} PARENT_SCOPE)
@@ -199,6 +199,14 @@ if(WIN32)
   add_dependency(strmiids)
   # Qt doesn't provide openssl on windows
   search_dependency(OPENSSL           PACKAGE openssl)
+endif()
+
+if(NOT WIN32)
+  search_dependency(LIBUNWIND         PACKAGE libunwind OPTIONAL)
+  if(LIBUNWIND_FOUND)
+    message(STATUS "Using libunwind for stack traces")
+    set_property(SOURCE src/platform/stacktrace.cpp APPEND PROPERTY COMPILE_DEFINITIONS QTOX_USE_LIBUNWIND)
+  endif()
 endif()
 
 if(QT_FEATURE_static)
