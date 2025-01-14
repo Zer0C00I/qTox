@@ -645,7 +645,11 @@ void GenericChatForm::quoteSelectedText()
 void GenericChatForm::copyLink()
 {
     QString linkText = copyLinkAction->data().toString();
-    QApplication::clipboard()->setText(linkText);
+    auto* clipboard = QApplication::clipboard();
+    clipboard->setText(linkText, QClipboard::Clipboard);
+    if (clipboard->supportsSelection()) {
+        clipboard->setText(linkText, QClipboard::Selection);
+    }
 }
 
 void GenericChatForm::searchFormShow()
