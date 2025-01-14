@@ -825,6 +825,11 @@ takže můžete soubor uložit i v systému Windows.</translation>
         <source>unmute</source>
         <translation>nahlas</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">zkopírovat ID partnera</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

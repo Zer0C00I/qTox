@@ -927,6 +927,11 @@ so you can save the file on Windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">取消靜音</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">複製對等 ID</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

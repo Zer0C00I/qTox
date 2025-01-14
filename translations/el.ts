@@ -858,6 +858,11 @@ so you can save the file on Windows.</source>
         <source>unmute</source>
         <translation>Άρση σίγασης</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">αντιγράψτε το peer ID</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

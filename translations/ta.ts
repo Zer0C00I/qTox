@@ -884,6 +884,11 @@ so you can save the file on Windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">முடக்கு</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">பியர் ஐடியை நகலெடுக்கவும்</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

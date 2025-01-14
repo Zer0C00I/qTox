@@ -826,6 +826,11 @@ so you can save the file on Windows.</translation>
         <source>unmute</source>
         <translation>zrušiť stlmenie</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">kopírovať ID partnera</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

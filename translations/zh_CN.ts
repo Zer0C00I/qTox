@@ -819,6 +819,11 @@ so you can save the file on Windows.</source>
         <source>unmute</source>
         <translation>取消静音</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">复制对等 ID</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

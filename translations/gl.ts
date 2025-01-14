@@ -850,6 +850,11 @@ para que poida gardar o ficheiro en Windows.</translation>
         <source>unmute</source>
         <translation>non silenciar</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">copiar o ID do compañeiro</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

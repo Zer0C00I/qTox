@@ -991,6 +991,11 @@ so you can save the file on Windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ಅನ್‌ಮ್ಯೂಟ್ ಮಾಡಿ</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ಪೀರ್ ಐಡಿ ನಕಲಿಸಿ</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

@@ -1001,6 +1001,11 @@ zodet geer ut bestand op Windows kin opsjlaon.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">oontdempe</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">kopieer peer ID</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

@@ -849,6 +849,11 @@ so you can save the file on Windows.</source>
         <source>unmute</source>
         <translation>رفع حالت بی‌صدا</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">شناسه همتا را کپی کنید</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

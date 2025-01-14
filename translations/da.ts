@@ -909,6 +909,11 @@ så du kan gemme filen på Windows.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">slå lyden til</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">kopier peer-id</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

@@ -825,6 +825,11 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
         <source>unmute</source>
         <translation>įjungti garsą</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">nukopijuoti kolegos ID</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

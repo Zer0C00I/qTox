@@ -973,6 +973,11 @@ so you can save the file on Windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">چالو</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ہم مرتبہ کی شناخت کاپی کریں۔</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

@@ -980,6 +980,11 @@ e&apos;u do ka&apos;e sfaile lo nu sfaile bu&apos;u la .Windows.zoi ke&apos;a nu
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">no drata</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">fukpi sampyvla sampyvla</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

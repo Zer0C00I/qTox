@@ -823,6 +823,11 @@ joten voit tallentaa tiedoston Windowsissa.</translation>
         <source>unmute</source>
         <translation>poista mykistys</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">kopioi vertaistunnus</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

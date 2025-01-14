@@ -999,6 +999,11 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">acha kunyamazisha</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">nakala kitambulisho cha rika</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

@@ -820,6 +820,10 @@ so ye can stash th&apos; file on Windows.</translation>
         <source>unmute</source>
         <translation type="unfinished">give tongue</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

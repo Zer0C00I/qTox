@@ -994,6 +994,11 @@ so you can save the file on Windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">নিঃশব্দ</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">পিয়ার আইডি কপি করুন</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

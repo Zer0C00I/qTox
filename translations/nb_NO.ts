@@ -825,6 +825,11 @@ slik at du kan lagre filen på Windows.</translation>
         <source>unmute</source>
         <translation>opphev forstumming</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">kopier peer-ID</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

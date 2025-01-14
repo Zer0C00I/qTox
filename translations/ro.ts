@@ -824,6 +824,11 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
         <source>unmute</source>
         <translation>cu sunet</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">copiați ID-ul de peer</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

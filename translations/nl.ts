@@ -821,6 +821,11 @@ zodat u het bestand op Windows kunt opslaan.</translation>
         <source>unmute</source>
         <translation>ontdempen</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">kopieer peer-ID</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

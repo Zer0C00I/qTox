@@ -871,6 +871,11 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">vklopi zvok</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">kopiraj ID vrstnika</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

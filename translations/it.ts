@@ -823,6 +823,11 @@ in modo da poter salvare il file su Windows.</translation>
         <source>unmute</source>
         <translation>riattivare l&apos;audio</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">copiare l&apos;ID peer</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

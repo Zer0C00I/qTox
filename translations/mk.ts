@@ -863,6 +863,11 @@ so you can save the file on Windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">вклучи звук</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">копирајте идентификација на врсници</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

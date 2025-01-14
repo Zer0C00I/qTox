@@ -822,6 +822,11 @@ so you can save the file on Windows.</source>
         <source>unmute</source>
         <translation>bỏ tắt tiếng</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">sao chép ID ngang hàng</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

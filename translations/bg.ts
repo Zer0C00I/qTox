@@ -824,6 +824,11 @@ so you can save the file on Windows.</source>
         <source>unmute</source>
         <translation>отглуши</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">копиране на peer ID</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

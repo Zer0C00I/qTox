@@ -823,6 +823,11 @@ ja sa saad seda faili nüüd Windowsis salvestada.</translation>
         <source>unmute</source>
         <translation>lülita heli sisse</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">kopeeri partneri ID</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

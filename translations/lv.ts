@@ -834,6 +834,11 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
         <source>unmute</source>
         <translation>ieslēgt skaņu</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">kopēt vienaudžu&#xa0;ID</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

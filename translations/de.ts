@@ -822,6 +822,11 @@ um sie in Windows speichern zu können.</translation>
         <source>unmute</source>
         <translation>Stummschaltung aufheben</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Peer-ID kopieren</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

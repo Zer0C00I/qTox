@@ -824,6 +824,11 @@ geçersiz karakterler _ olarak değiştirildi.</translation>
         <source>unmute</source>
         <translation>sesi aç</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">eş kimliğini kopyala</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

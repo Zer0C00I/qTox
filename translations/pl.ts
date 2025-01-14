@@ -833,6 +833,11 @@ więc możesz zapisać ten plik na systemie Windows.</translation>
         <source>unmute</source>
         <translation>wyłącz wyciszenie</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">skopiuj identyfikator partnera</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

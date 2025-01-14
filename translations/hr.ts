@@ -851,6 +851,11 @@ tako da možete spremiti datoteku na Windows.</translation>
         <source>unmute</source>
         <translation>iključi zvuk</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">kopiraj peer ID</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

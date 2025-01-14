@@ -8,23 +8,21 @@
 #include "tabcompleter.h"
 #include "src/chatlog/chatwidget.h"
 #include "src/chatlog/content/text.h"
-#include "src/core/conferenceid.h"
 #include "src/core/core.h"
 #include "src/core/coreav.h"
 #include "src/friendlist.h"
 #include "src/model/conference.h"
 #include "src/model/friend.h"
-#include "src/persistence/iconferencesettings.h"
 #include "src/persistence/settings.h"
 #include "src/widget/chatformheader.h"
 #include "src/widget/conferencewidget.h"
 #include "src/widget/flowlayout.h"
 #include "src/widget/form/chatform.h"
-#include "src/widget/maskablepixmapwidget.h"
 #include "src/widget/style.h"
-#include "src/widget/tool/croppinglabel.h"
 #include "src/widget/translator.h"
 
+#include <QApplication>
+#include <QClipboard>
 #include <QDragEnterEvent>
 #include <QMimeData>
 #include <QPushButton>
@@ -431,6 +429,8 @@ void ConferenceForm::onLabelContextMenuRequested(const QPoint& localPos)
     }
     contextMenu->setStyleSheet(style.getStylesheet(PEER_LABEL_STYLE_SHEET_PATH, settings));
 
+    auto* copyIdAction = contextMenu->addAction(tr("copy peer ID"));
+
     const QAction* selectedItem = contextMenu->exec(pos);
     if (selectedItem == toggleMuteAction) {
         if (isPeerBlocked) {
@@ -443,6 +443,12 @@ void ConferenceForm::onLabelContextMenuRequested(const QPoint& localPos)
         }
 
         settings.setBlockList(blockList);
+    } else if (selectedItem == copyIdAction) {
+        auto* clipboard = QApplication::clipboard();
+        clipboard->setText(peerPk.toString(), QClipboard::Clipboard);
+        if (clipboard->supportsSelection()) {
+            clipboard->setText(peerPk.toString(), QClipboard::Selection);
+        }
     }
 }
 

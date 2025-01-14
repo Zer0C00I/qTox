@@ -824,6 +824,11 @@ så att du kan spara filen i Windows.</translation>
         <source>unmute</source>
         <translation>slå på ljud</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">kopiera peer-ID</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

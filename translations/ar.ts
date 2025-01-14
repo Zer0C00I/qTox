@@ -893,6 +893,11 @@ so you can save the file on Windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">إلغاء كتم الصوت</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">نسخ معرف النظير</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

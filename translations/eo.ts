@@ -930,6 +930,11 @@ do vi povas konservi la dosieron en Vindozo.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">malmute</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">kopii samran ID</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

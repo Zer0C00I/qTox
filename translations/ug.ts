@@ -862,6 +862,11 @@ so you can save the file on Windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">unmute</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">تورداشلارنىڭ كىملىكىنى كۆپەيتىڭ</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

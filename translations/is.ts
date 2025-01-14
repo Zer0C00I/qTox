@@ -979,6 +979,11 @@ svo þú getur vistað skrána á Windows.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">slökkva á hljóði</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">afrita jafningjaauðkenni</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

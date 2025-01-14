@@ -863,6 +863,11 @@ Windows にファイルを保存できるようになります。</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>ミュート解除</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ピアIDをコピーする</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

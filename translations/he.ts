@@ -978,6 +978,11 @@ so you can save the file on Windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">בטל השתקה</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">העתק מזהה עמיתים</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

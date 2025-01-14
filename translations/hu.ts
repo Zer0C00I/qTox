@@ -848,6 +848,11 @@ so you can save the file on Windows.</source>
         <source>unmute</source>
         <translation>némítás kikapcsolása</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">másolja a társazonosítót</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>

@@ -997,6 +997,11 @@ so you can save the file on Windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">නිහඬ නොකරන්න</translation>
     </message>
+    <message>
+        <source>copy peer ID</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">peer ID පිටපත් කරන්න</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>
