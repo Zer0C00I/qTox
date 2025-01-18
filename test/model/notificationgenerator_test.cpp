@@ -144,8 +144,8 @@ void TestNotificationGenerator::testSingleFriendMessage()
     Friend f(0, ToxPk());
     f.setName("friendName");
     auto notificationData = notificationGenerator->friendMessageNotification(&f, "test");
-    QVERIFY(notificationData.title == "friendName");
-    QVERIFY(notificationData.message == "test");
+    QCOMPARE(notificationData.title, "friendName");
+    QCOMPARE(notificationData.message, "test");
 }
 
 void TestNotificationGenerator::testMultipleFriendMessages()
@@ -154,12 +154,12 @@ void TestNotificationGenerator::testMultipleFriendMessages()
     f.setName("friendName");
     notificationGenerator->friendMessageNotification(&f, "test");
     auto notificationData = notificationGenerator->friendMessageNotification(&f, "test2");
-    QVERIFY(notificationData.title == "2 message(s) from friendName");
-    QVERIFY(notificationData.message == "test2");
+    QCOMPARE(notificationData.title, "2 message(s) from friendName");
+    QCOMPARE(notificationData.message, "test2");
 
     notificationData = notificationGenerator->friendMessageNotification(&f, "test3");
-    QVERIFY(notificationData.title == "3 message(s) from friendName");
-    QVERIFY(notificationData.message == "test3");
+    QCOMPARE(notificationData.title, "3 message(s) from friendName");
+    QCOMPARE(notificationData.message, "test3");
 }
 
 void TestNotificationGenerator::testNotificationClear()
@@ -173,8 +173,8 @@ void TestNotificationGenerator::testNotificationClear()
     notificationGenerator->onNotificationActivated();
 
     auto notificationData = notificationGenerator->friendMessageNotification(&f, "test2");
-    QVERIFY(notificationData.title == "friendName");
-    QVERIFY(notificationData.message == "test2");
+    QCOMPARE(notificationData.title, "friendName");
+    QCOMPARE(notificationData.message, "test2");
 }
 
 void TestNotificationGenerator::testConferenceMessage()
@@ -185,8 +185,8 @@ void TestNotificationGenerator::testConferenceMessage()
     g.updateUsername(sender, "sender1");
 
     auto notificationData = notificationGenerator->conferenceMessageNotification(&g, sender, "test");
-    QVERIFY(notificationData.title == "conferenceName");
-    QVERIFY(notificationData.message == "sender1: test");
+    QCOMPARE(notificationData.title, "conferenceName");
+    QCOMPARE(notificationData.message, "sender1: test");
 }
 
 void TestNotificationGenerator::testMultipleConferenceMessages()
@@ -203,8 +203,8 @@ void TestNotificationGenerator::testMultipleConferenceMessages()
     notificationGenerator->conferenceMessageNotification(&g, sender, "test1");
 
     auto notificationData = notificationGenerator->conferenceMessageNotification(&g, sender2, "test2");
-    QVERIFY(notificationData.title == "2 message(s) from conferenceName");
-    QVERIFY(notificationData.message == "sender2: test2");
+    QCOMPARE(notificationData.title, "2 message(s) from conferenceName");
+    QCOMPARE(notificationData.message, "sender2: test2");
 }
 
 void TestNotificationGenerator::testMultipleFriendSourceMessages()
@@ -218,8 +218,8 @@ void TestNotificationGenerator::testMultipleFriendSourceMessages()
     notificationGenerator->friendMessageNotification(&f, "test1");
     auto notificationData = notificationGenerator->friendMessageNotification(&f2, "test2");
 
-    QVERIFY(notificationData.title == "2 message(s) from 2 chats");
-    QVERIFY(notificationData.message == "friend1, friend2");
+    QCOMPARE(notificationData.title, "2 message(s) from 2 chats");
+    QCOMPARE(notificationData.message, "friend1, friend2");
 }
 
 void TestNotificationGenerator::testMultipleConferenceSourceMessages()
@@ -235,8 +235,8 @@ void TestNotificationGenerator::testMultipleConferenceSourceMessages()
     notificationGenerator->conferenceMessageNotification(&g, sender, "test1");
     auto notificationData = notificationGenerator->conferenceMessageNotification(&g2, sender, "test1");
 
-    QVERIFY(notificationData.title == "2 message(s) from 2 chats");
-    QVERIFY(notificationData.message == "conferenceName, conferenceName2");
+    QCOMPARE(notificationData.title, "2 message(s) from 2 chats");
+    QCOMPARE(notificationData.message, "conferenceName, conferenceName2");
 }
 
 void TestNotificationGenerator::testMixedSourceMessages()
@@ -269,8 +269,8 @@ void TestNotificationGenerator::testFileTransfer()
     auto notificationData =
         notificationGenerator->fileTransferNotification(&f, "file", 5 * 1024 * 1024 /* 5MB */);
 
-    QVERIFY(notificationData.title == "friend - file transfer");
-    QVERIFY(notificationData.message == "file (5.00MiB)");
+    QCOMPARE(notificationData.title, "friend - file transfer");
+    QCOMPARE(notificationData.message, "file (5.00MiB)");
 }
 
 void TestNotificationGenerator::testFileTransferAfterMessage()
@@ -282,8 +282,8 @@ void TestNotificationGenerator::testFileTransferAfterMessage()
     auto notificationData =
         notificationGenerator->fileTransferNotification(&f, "file", 5 * 1024 * 1024 /* 5MB */);
 
-    QVERIFY(notificationData.title == "2 message(s) from friend");
-    QVERIFY(notificationData.message == "Incoming file transfer");
+    QCOMPARE(notificationData.title, "2 message(s) from friend");
+    QCOMPARE(notificationData.message, "Incoming file transfer");
 }
 
 void TestNotificationGenerator::testConferenceInvitation()
@@ -293,8 +293,8 @@ void TestNotificationGenerator::testConferenceInvitation()
 
     auto notificationData = notificationGenerator->conferenceInvitationNotification(&f);
 
-    QVERIFY(notificationData.title == "friend invites you to join a conference.");
-    QVERIFY(notificationData.message == "");
+    QCOMPARE(notificationData.title, "friend invites you to join a conference.");
+    QCOMPARE(notificationData.message, "");
 }
 
 void TestNotificationGenerator::testConferenceInviteUncounted()
@@ -306,8 +306,8 @@ void TestNotificationGenerator::testConferenceInviteUncounted()
     notificationGenerator->conferenceInvitationNotification(&f);
     auto notificationData = notificationGenerator->friendMessageNotification(&f, "test2");
 
-    QVERIFY(notificationData.title == "2 message(s) from friend");
-    QVERIFY(notificationData.message == "test2");
+    QCOMPARE(notificationData.title, "2 message(s) from friend");
+    QCOMPARE(notificationData.message, "test2");
 }
 
 void TestNotificationGenerator::testFriendRequest()
@@ -316,8 +316,10 @@ void TestNotificationGenerator::testFriendRequest()
 
     auto notificationData = notificationGenerator->friendRequestNotification(sender, "request");
 
-    QVERIFY(notificationData.title == "Friend request received from 0000000000000000000000000000000000000000000000000000000000000000");
-    QVERIFY(notificationData.message == "request");
+    QCOMPARE(notificationData.title,
+             "Friend request received from "
+             "0000000000000000000000000000000000000000000000000000000000000000");
+    QCOMPARE(notificationData.message, "request");
 }
 
 void TestNotificationGenerator::testFriendRequestUncounted()
@@ -330,8 +332,8 @@ void TestNotificationGenerator::testFriendRequestUncounted()
     notificationGenerator->friendRequestNotification(sender, "request");
     auto notificationData = notificationGenerator->friendMessageNotification(&f, "test2");
 
-    QVERIFY(notificationData.title == "2 message(s) from friend");
-    QVERIFY(notificationData.message == "test2");
+    QCOMPARE(notificationData.title, "2 message(s) from friend");
+    QCOMPARE(notificationData.message, "test2");
 }
 
 void TestNotificationGenerator::testSimpleFriendMessage()
@@ -343,8 +345,8 @@ void TestNotificationGenerator::testSimpleFriendMessage()
 
     auto notificationData = notificationGenerator->friendMessageNotification(&f, "test");
 
-    QVERIFY(notificationData.title == "New message");
-    QVERIFY(notificationData.message == "");
+    QCOMPARE(notificationData.title, "New message");
+    QCOMPARE(notificationData.message, "");
 }
 
 void TestNotificationGenerator::testSimpleFileTransfer()
@@ -356,8 +358,8 @@ void TestNotificationGenerator::testSimpleFileTransfer()
 
     auto notificationData = notificationGenerator->fileTransferNotification(&f, "file", 0);
 
-    QVERIFY(notificationData.title == "Incoming file transfer");
-    QVERIFY(notificationData.message == "");
+    QCOMPARE(notificationData.title, "Incoming file transfer");
+    QCOMPARE(notificationData.message, "");
 }
 
 void TestNotificationGenerator::testSimpleConferenceMessage()
@@ -370,8 +372,8 @@ void TestNotificationGenerator::testSimpleConferenceMessage()
     notificationSettings->setNotifyHide(true);
 
     auto notificationData = notificationGenerator->conferenceMessageNotification(&g, sender, "test");
-    QVERIFY(notificationData.title == "New conference message");
-    QVERIFY(notificationData.message == "");
+    QCOMPARE(notificationData.title, "New conference message");
+    QCOMPARE(notificationData.message, "");
 }
 
 void TestNotificationGenerator::testSimpleFriendRequest()
@@ -382,8 +384,8 @@ void TestNotificationGenerator::testSimpleFriendRequest()
 
     auto notificationData = notificationGenerator->friendRequestNotification(sender, "request");
 
-    QVERIFY(notificationData.title == "Friend request received");
-    QVERIFY(notificationData.message == "");
+    QCOMPARE(notificationData.title, "Friend request received");
+    QCOMPARE(notificationData.message, "");
 }
 
 void TestNotificationGenerator::testSimpleConferenceInvite()
@@ -394,8 +396,8 @@ void TestNotificationGenerator::testSimpleConferenceInvite()
     notificationSettings->setNotifyHide(true);
     auto notificationData = notificationGenerator->conferenceInvitationNotification(&f);
 
-    QVERIFY(notificationData.title == "Conference invite received");
-    QVERIFY(notificationData.message == "");
+    QCOMPARE(notificationData.title, "Conference invite received");
+    QCOMPARE(notificationData.message, "");
 }
 
 void TestNotificationGenerator::testSimpleMessageToggle()
@@ -411,8 +413,8 @@ void TestNotificationGenerator::testSimpleMessageToggle()
 
     auto notificationData = notificationGenerator->friendMessageNotification(&f, "test2");
 
-    QVERIFY(notificationData.title == "2 message(s) from friend");
-    QVERIFY(notificationData.message == "test2");
+    QCOMPARE(notificationData.title, "2 message(s) from friend");
+    QCOMPARE(notificationData.message, "test2");
 }
 
 QTEST_GUILESS_MAIN(TestNotificationGenerator)
