@@ -239,7 +239,7 @@ void TestNotificationGenerator::testMultipleConferenceSourceMessages()
         notificationGenerator->conferenceMessageNotification(&g2, sender_g2, "test1");
 
     QCOMPARE(notificationData.title, "conferenceName2");
-    QCOMPARE(notificationData.message, "test1");
+    QCOMPARE(notificationData.message, "sender1: test1");
 }
 
 void TestNotificationGenerator::testMixedSourceMessages()
