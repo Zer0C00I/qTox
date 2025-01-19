@@ -3107,6 +3107,41 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Attēla priekšskatījums</translation>
     </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maksimālais ziņojumu skaits (vienā sarunā), kas ielādēts no tērzēšanas
+vēstures. Samaziniet to, lai uzlabotu veiktspēju. Pārāk mazs skaitlis var
+izraisīt ritjoslas pazušanu.</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maksimālais tērzēšanas
+žurnāla skata lielums</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ritināšanas laikā no tērzēšanas vēstures ielādējamo ziņojumu skaits. Pārāk
+mazs skaitlis var izraisīt ritjoslas pazušanu.</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Tērzēšanas žurnāla
+gabala lielums</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Tērzēšana
+s
+žurnāls:</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

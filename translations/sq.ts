@@ -3628,6 +3628,43 @@ Fshih karakteret e formatimit:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Pamja paraprake e imazhit</translation>
     </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Numri maksimal i mesazheve (për bisedë) të ngarkuar nga historiku i
+bisedës. Uleni këtë për të përmirësuar performancën. Një numër shumë i
+ulët këtu mund të shkaktojë zhdukjen e shiritit të lëvizjes.</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Madhësia maksimale e
+pamjes së regjistrit të
+bisedës</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Numri i mesazheve për t&apos;u ngarkuar nga historiku i bisedës gjatë lëvizjes.
+Një numër shumë i ulët këtu mund të shkaktojë zhdukjen e shiritit të
+lëvizjes.</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Madhësia e pjesës
+së regjistrit të
+bisedës</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ditari i
+bisedës:</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

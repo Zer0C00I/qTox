@@ -3277,6 +3277,40 @@ Skrij znake za oblikovanje:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Predogled slike</translation>
     </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Največje število sporočil (na pogovor), naloženih iz zgodovine klepetov.
+Zmanjšajte to vrednost, da izboljšate delovanje. Prenizko število tukaj
+lahko povzroči, da drsni trak izgine.</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Največja velikost pogleda
+dnevnika klepeta</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Število sporočil, ki se naložijo iz zgodovine klepetov med premikanjem.
+Prenizko število tukaj lahko povzroči, da drsni trak izgine.</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Velikost kosa
+dnevnika klepeta</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Dnevnik
+klepeta:</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

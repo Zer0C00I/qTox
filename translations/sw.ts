@@ -3635,6 +3635,41 @@ Ficha vibambo vya uumbizaji:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Onyesho la Kuchungulia Picha</translation>
     </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Idadi ya juu zaidi ya ujumbe (kwa kila mazungumzo) iliyopakiwa kutoka
+kwenye historia ya gumzo. Punguza hii ili kuboresha utendaji. Nambari ya
+chini sana hapa inaweza kusababisha upau wa kusogeza kutoweka.</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Upeo wa ukubwa wa
+mwonekano wa logi</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Idadi ya ujumbe wa kupakia kutoka kwa historia ya gumzo wakati wa
+kusogeza. Nambari ya chini sana hapa inaweza kusababisha upau wa kusogeza
+kutoweka.</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ukubwa wa logi ya
+gumzo</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">logi ya
+gumzo:</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

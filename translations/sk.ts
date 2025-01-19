@@ -3014,6 +3014,41 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ukážka obrázka</translation>
     </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maximálny počet správ (na konverzáciu) načítaných z histórie rozhovoru.
+Znížte túto hodnotu, aby ste zlepšili výkon. Príliš nízke číslo môže
+spôsobiť zmiznutie posúvača.</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maximálna veľkosť
+zobrazenia denníka
+rozhovoru</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Počet správ, ktoré sa majú načítať z histórie rozhovoru pri posúvaní.
+Príliš nízke číslo môže spôsobiť zmiznutie posúvača.</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Veľkosť časti
+denníka rozhovoru</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Denník ro
+zhovoru:</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

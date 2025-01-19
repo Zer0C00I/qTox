@@ -3004,6 +3004,44 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Anteprima dell&apos;immagine</translation>
     </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Numero massimo di messaggi (per conversazione) caricati dalla cronologia
+chat. Diminuirlo per migliorare le prestazioni. Un numero troppo basso
+potrebbe far scomparire la barra di scorrimento.</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Dimensione massima della
+visualizzazione del
+registro della chat</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Numero di messaggi da caricare dalla cronologia chat durante lo
+scorrimento. Un numero troppo basso potrebbe far scomparire la barra di
+scorrimento.</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Dimensioni del
+blocco del registro
+della chat</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Registro
+della
+chat:</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

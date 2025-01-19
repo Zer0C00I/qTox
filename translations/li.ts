@@ -3641,6 +3641,40 @@ Opmaakteikens verberge:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Aafbeeldingveurbeeld</translation>
     </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maximum aantal boodsjappe (per gesprek) gelaoje oet de chatgesjiedenis.
+Verminder dit um de prestaties te verbetere. ‘n Te lieg getal hei kin de
+scrollbalk verdwijne.</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maximale
+chatlogweergavegrootte</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Aontal boodsjappe die motte were gelaoje oet de chatgesjiedenis bij ‘t
+scrolle. ‘n Te lieg getal hei kin de scrollbalk verdwijne.</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Grootte vaan de
+stukke vaan ‘t
+chatlogboek</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Chatlog:</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

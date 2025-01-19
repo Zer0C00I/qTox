@@ -3092,6 +3092,39 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">پیش نمایش تصویر</translation>
     </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">حداکثر تعداد پیام (در هر مکالمه) بارگیری شده از تاریخچه چت. برای بهبود
+عملکرد، این را کاهش دهید. یک عدد خیلی کم در اینجا ممکن است باعث ناپدید
+شدن نوار پیمایش شود.</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">حداکثر اندازه نمایش گزارش
+چت</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">تعداد پیام‌هایی که هنگام پیمایش از تاریخچه چت بارگیری می‌شوند. یک عدد خیلی
+کم در اینجا ممکن است باعث ناپدید شدن نوار پیمایش شود.</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">اندازه قطعه گزارش
+چت</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">گزارش چت:</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

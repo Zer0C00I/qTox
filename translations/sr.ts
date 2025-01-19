@@ -3098,6 +3098,40 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Преглед слике</translation>
     </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Максималан број порука (по конверзацији) учитаних из историје ћаскања.
+Смањите ово да бисте побољшали перформансе. Пренизак број овде може
+довести до нестанка траке за померање.</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Максимална величина
+приказа дневника ћаскања</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Број порука за учитавање из историје ћаскања приликом померања. Пренизак
+број овде може довести до нестанка траке за померање.</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Величина дела
+дневника ћаскања</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Дневник
+ћаскања:</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

@@ -3009,6 +3009,40 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Forhåndsvisning av bilde</translation>
     </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maksimalt antall meldinger (per samtale) lastet inn fra chatteloggen.
+Reduser dette for å forbedre ytelsen. Et for lavt tall her kan føre til
+at rullefeltet forsvinner.</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maksimal
+chatloggvisningsstørrelse</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Antall meldinger som skal lastes fra chatteloggen når du ruller. Et for
+lavt tall her kan føre til at rullefeltet forsvinner.</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Chat logg chunk
+størrelse</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Chat-
+logg:</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

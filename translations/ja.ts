@@ -3152,6 +3152,35 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>画像プレビュー</translation>
     </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">チャット履歴からロードされるメッセージ (会話あたり)
+の最大数。パフォーマンスを向上させるには、これを減らします。ここの数値が小さすぎると、スクロール バーが消えてしまう可能性があります。</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">チャットログの最大表示サイズ</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">スクロール時にチャット履歴から読み込むメッセージの数。ここの数値が小さすぎると、スクロール バーが消えてしまう可能性があります。</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">チャットログのチャンクサイズ</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">チャットログ:</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

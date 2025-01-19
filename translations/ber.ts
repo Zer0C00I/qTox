@@ -3568,6 +3568,40 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ⴰⵙⴻⴽⵛⴻⵎ ⵏ ⵜⵓⴳⵏⴰ</translation>
     </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ⴰⵎⴹⴰⵏ ⴰⵄⵍⴰⵢⴰⵏ ⵏ ⵢⵉⵣⴻⵏ (ⵉ ⵢⴰⵍ ⴰⵎⵙⴰⵡⴰⵍ) ⵢⴻⵜⵜⵡⴰⵛⴰⵔⴳⴻⵏ ⵙⴻⴳ ⵓⵎⴻⵣⵔⵓⵢ ⵏ
+ⵜⵎⴻⵙⵍⵉⵡⵜ. ⵙⵏⴻⵇⵙ ⴰⵢⴰ ⴰⴽⴽⴻⵏ ⴰⴷ ⵜⴻⵙⵙⴻⵍⵀⵓⴹ ⴰⵅⴻⴷⴷⵉⵎ. ⴰⵎⴹⴰⵏ ⴷ ⴰⵎⴻⵥⵢⴰⵏ ⴰⵟⴰⵙ ⴷⴰⴳⵉ
+ⵢⴻⵣⵎⴻⵔ ⴰⴷ ⵢⴻⵙⵙⵉⵡⴻⴹ ⴰⴷ ⵢⴻⴼⴼⴻⵖ ⵓⴹⵔⵉⵙ ⵏ ⵓⵙⵎⴻⵍ.</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ⵜⴰⵊⵓⵎⵎⴰ ⵜⴰⵎⴻⵇⵇⵔⴰⵏⵜ ⵏ ⵓⵎⵓⵖ
+ⵏ ⵓⵖⵎⵉⵙ ⵏ ⵓⵎⴻⵙⵍⴰⵢ</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ⴰⵎⴹⴰⵏ ⵏ ⵢⵉⵣⴻⵏ ⴰⵔⴰ ⵜⵉⴷⵜⴻⵙⵙⵓⴼⵖⴻⴹ ⵙⴻⴳ ⵓⵎⴻⵣⵔⵓⵢ ⵏ ⵜⵎⴻⵙⵍⵉⵡⵜ ⵎⵉ ⴰⵔⴰ ⵜⵉⴷⵜⴻⵙⵙⵓⴼⵖⴻⴹ.
+ⴰⵎⴹⴰⵏ ⴷ ⴰⵎⴻⵥⵢⴰⵏ ⴰⵟⴰⵙ ⴷⴰⴳⵉ ⵢⴻⵣⵎⴻⵔ ⴰⴷ ⵢⴻⵙⵙⵉⵡⴻⴹ ⴰⴷ ⵢⴻⴼⴼⴻⵖ ⵓⴹⵔⵉⵙ ⵏ ⵓⵙⵎⴻⵍ.</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ⵜⴰⵊⵓⵎⵎⴰ ⵏ ⵓⵃⵔⵉⵛ ⵏ
+ⵓⵖⵎⵉⵙ ⵏ ⵓⵎⴻⵙⵍⴰⵢ</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ⴰⵖⵎⵉⵙ ⵏ
+ⵓⵎⴻⵙⵍⴰⵢ:</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

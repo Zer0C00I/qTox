@@ -2967,6 +2967,29 @@ Hide formatting characters:
         <source>Image preview</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

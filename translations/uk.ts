@@ -3008,6 +3008,41 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Попередній перегляд зображення</translation>
     </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Максимальна кількість повідомлень (на розмову), завантажених з історії
+чату. Зменште це значення, щоб покращити продуктивність. Занадто низьке
+значення може спричинити зникнення смуги прокрутки.</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Максимальний розмір
+перегляду журналу чату</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Кількість повідомлень для завантаження з історії чату під час
+прокручування. Занадто низьке значення може спричинити зникнення смуги
+прокрутки.</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Розмір блоку
+журналу чату</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Журнал
+чату:</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

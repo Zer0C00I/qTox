@@ -3031,6 +3031,40 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Vaizdo peržiūra</translation>
     </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Didžiausias pranešimų skaičius (vienam pokalbiui), įkeltas iš pokalbių
+istorijos. Sumažinkite tai, kad pagerintumėte našumą. Dėl per mažo
+skaičiaus slinkties juosta gali išnykti.</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maksimalus pokalbių
+žurnalo peržiūros dydis</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Pranešimų, kuriuos reikia įkelti iš pokalbių istorijos slenkant, skaičius.
+Dėl per mažo skaičiaus slinkties juosta gali išnykti.</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Pokalbių žurnalo
+gabalo dydis</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Pokalbių
+žurnalas:</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

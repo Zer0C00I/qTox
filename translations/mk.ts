@@ -3150,6 +3150,43 @@ Hide formatting characters:
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Преглед на слика</translation>
     </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Максимален број пораки (по разговор) вчитани од историјата на разговор.
+Намалете го ова за да ги подобрите перформансите. Премалиот број овде
+може да предизвика исчезнување на лентата за лизгање.</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Максимална големина на
+приказ на дневникот за
+разговор</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Број на пораки што треба да се вчитаат од историјата на разговор при
+лизгање. Премалиот број овде може да предизвика исчезнување на лентата за
+лизгање.</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Големина на парче
+дневник на разговор</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Дневник
+на разгов
+ори:</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>
