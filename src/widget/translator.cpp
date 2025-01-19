@@ -77,7 +77,7 @@ void Translator::translate(const QString& localeName)
  * @param f Function, which will called.
  * @param owner Widget to retranslate.
  */
-void Translator::registerHandler(const std::function<void()>& f, void* owner)
+void Translator::registerHandler(const std::function<void()>& f, QObject* owner)
 {
     const QMutexLocker<QMutex> locker{&lock};
     callbacks.push_back({owner, f});
@@ -87,7 +87,7 @@ void Translator::registerHandler(const std::function<void()>& f, void* owner)
  * @brief Unregisters all handlers of an owner.
  * @param owner Owner to unregister.
  */
-void Translator::unregister(void* owner)
+void Translator::unregister(QObject* owner)
 {
     const QMutexLocker<QMutex> locker{&lock};
     callbacks.erase(std::remove_if(begin(callbacks), end(callbacks),

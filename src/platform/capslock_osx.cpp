@@ -17,19 +17,27 @@
 
 bool Platform::capsLockEnabled()
 {
-    const auto mdict = IOServiceMatching(kIOHIDSystemClass);
-    const auto ios = IOServiceGetMatchingService(kIOMainPortDefault, mdict);
-    if (!ios) {
-        if (mdict) {
-            CFRelease(mdict);
+    static io_service_t service = 0;
+
+    if (!service) {
+        mach_port_t main_port;
+        if (__builtin_available(macOS 12.0, *)) {
+            IOMainPort(MACH_PORT_NULL, &main_port);
+        } else {
+            IOMasterPort(MACH_PORT_NULL, &main_port);
         }
+        const auto mdict = IOServiceMatching(kIOHIDSystemClass);
+        service = IOServiceGetMatchingService(main_port, mdict);
+    }
+
+    if (!service) {
         qWarning("IOServiceGetMatchingService() failed");
         return false;
     }
 
     io_connect_t ioc;
-    auto kr = IOServiceOpen(ios, mach_task_self(), kIOHIDParamConnectType, &ioc);
-    IOObjectRelease(ios);
+    auto kr = IOServiceOpen(service, mach_task_self(), kIOHIDParamConnectType, &ioc);
+    IOObjectRelease(service);
     if (kr != KERN_SUCCESS) {
         qWarning("IOServiceOpen() failed: %x", kr);
         return false;

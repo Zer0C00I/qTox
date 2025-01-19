@@ -11,17 +11,18 @@
 #include <QVector>
 #include <functional>
 
+class QObject;
 class QTranslator;
 
 class Translator
 {
 public:
     static void translate(const QString& localeName);
-    static void registerHandler(const std::function<void()>& f, void* owner);
-    static void unregister(void* owner);
+    static void registerHandler(const std::function<void()>& f, QObject* owner);
+    static void unregister(QObject* owner);
 
 private:
-    using Callback = QPair<void*, std::function<void()>>;
+    using Callback = QPair<QObject*, std::function<void()>>;
     static QVector<Callback> callbacks;
     static QMutex lock;
     static QTranslator* core_translator;

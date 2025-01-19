@@ -15,8 +15,11 @@
 #include <QtCore/qsystemdetection.h>
 
 #ifdef Q_OS_MACOS
+#include <QDebug>
 #include <CoreFoundation/CoreFoundation.h>
 #include <IOKit/IOKitLib.h>
+#include <IOKit/hidsystem/IOHIDLib.h>
+#include <IOKit/hidsystem/IOHIDParameter.h>
 
 uint32_t Platform::getIdleTime()
 {
@@ -24,16 +27,26 @@ uint32_t Platform::getIdleTime()
     // relevant code introduced to Pidgin in:
     // https://hg.pidgin.im/pidgin/main/diff/8ff1c408ef3e/src/gtkidle.c
     static io_service_t service = 0;
-    CFTypeRef property;
-    uint64_t idleTime_ns = 0;
 
     if (!service) {
-        mach_port_t master;
-        IOMainPort(MACH_PORT_NULL, &master);
-        service = IOServiceGetMatchingService(master, IOServiceMatching("IOHIDSystem"));
+        mach_port_t main_port;
+        if (__builtin_available(macOS 12.0, *)) {
+            IOMainPort(MACH_PORT_NULL, &main_port);
+        } else {
+            IOMasterPort(MACH_PORT_NULL, &main_port);
+        }
+        const auto mdict = IOServiceMatching(kIOHIDSystemClass);
+        service = IOServiceGetMatchingService(main_port, mdict);
     }
 
-    property = IORegistryEntryCreateCFProperty(service, CFSTR("HIDIdleTime"), kCFAllocatorDefault, 0);
+    if (!service) {
+        qWarning("IOServiceGetMatchingService() failed");
+        return 0;
+    }
+
+    const auto property =
+        IORegistryEntryCreateCFProperty(service, CFSTR("HIDIdleTime"), kCFAllocatorDefault, 0);
+    uint64_t idleTime_ns = 0;
     CFNumberGetValue(static_cast<CFNumberRef>(property), kCFNumberSInt64Type, &idleTime_ns);
     CFRelease(property);
 
