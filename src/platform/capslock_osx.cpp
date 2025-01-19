@@ -17,7 +17,7 @@
 
 bool Platform::capsLockEnabled()
 {
-    static io_service_t service = 0;
+    static io_service_t service{};
 
     if (!service) {
         mach_port_t main_port;

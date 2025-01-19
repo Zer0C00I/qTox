@@ -26,7 +26,7 @@ uint32_t Platform::getIdleTime()
     // https://hg.pidgin.im/pidgin/main/file/13e4ae613a6a/pidgin/gtkidle.c
     // relevant code introduced to Pidgin in:
     // https://hg.pidgin.im/pidgin/main/diff/8ff1c408ef3e/src/gtkidle.c
-    static io_service_t service = 0;
+    static io_service_t service{};
 
     if (!service) {
         mach_port_t main_port;
