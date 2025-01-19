@@ -5,27 +5,29 @@
 # Copyright © 2024-2025 The TokTok team
 
 # Fail out on error
-set -eu -o pipefail
+set -eux -o pipefail
 
-readonly BIN_NAME="qTox-$2.dmg"
+MACOS_BUILD_TYPE="${1:-dist}"
+MACOS_ARCH="${2:-arm64}"
+MACOS_VERSION="${3:-12.0}"
+
+readonly BIN_NAME="qTox-$MACOS_ARCH-$MACOS_VERSION.dmg"
 
 SCRIPT_DIR=$(dirname "$(realpath "$0")")
 if [ ! -d "$SCRIPT_DIR/dockerfiles" ]; then
   git clone --depth=1 https://github.com/TokTok/dockerfiles "$SCRIPT_DIR/dockerfiles"
 fi
 
-source "$SCRIPT_DIR/dockerfiles/qtox/build_utils.sh"
-
 DEP_PREFIX="$SCRIPT_DIR/dockerfiles/local-deps"
 
-if [ "$1" == "user" ]; then
+if [ "$MACOS_BUILD_TYPE" == "user" ]; then
   CMAKE=cmake
   PREFIX_PATH="$(brew --prefix qt@6)"
-elif [ "$1" == "dist" ]; then
+elif [ "$MACOS_BUILD_TYPE" == "dist" ]; then
   CMAKE="$DEP_PREFIX/qt/bin/qt-cmake"
   PREFIX_PATH="$DEP_PREFIX;$(brew --prefix qt@6)"
 else
-  echo "Unknown arg $1"
+  echo "Unknown arg $MACOS_BUILD_TYPE"
   exit 1
 fi
 
@@ -41,7 +43,7 @@ build_qtox() {
     -DSPELL_CHECK=OFF \
     -DSTRICT_OPTIONS=ON \
     -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_OSX_DEPLOYMENT_TARGET="$MACOS_MINIMUM_SUPPORTED_VERSION" \
+    -DCMAKE_OSX_DEPLOYMENT_TARGET="$MACOS_VERSION" \
     -DCMAKE_PREFIX_PATH="$PREFIX_PATH" \
     -GNinja \
     -B_build \

@@ -30,6 +30,7 @@ esac
 ARCH="${1:-$(uname -m)}"
 BUILD_TYPE="${2:-release}"
 SANITIZE="${3:-}"
+MACOS_VERSION="${4:-12.0}"
 
 install_deps() {
   DEP_PREFIX="$SCRIPT_DIR/dockerfiles/local-deps"
@@ -41,7 +42,7 @@ install_deps() {
     else
       SCRIPT="$SCRIPT_DIR/dockerfiles/qtox/build_$dep.sh"
     fi
-    "$SCRIPT" --arch "$SYSTEM-$ARCH" --libtype "static" --buildtype "$BUILD_TYPE" --sanitize "$SANITIZE" --prefix "$DEP_PREFIX"
+    "$SCRIPT" --arch "$SYSTEM-$ARCH" --libtype "static" --buildtype "$BUILD_TYPE" --sanitize "$SANITIZE" --prefix "$DEP_PREFIX" --macos "$MACOS_VERSION"
     popd
     rm -rf "external/$dep"
   done

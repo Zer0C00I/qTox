@@ -24,7 +24,10 @@ bool Platform::capsLockEnabled()
         if (__builtin_available(macOS 12.0, *)) {
             IOMainPort(MACH_PORT_NULL, &main_port);
         } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
             IOMasterPort(MACH_PORT_NULL, &main_port);
+#pragma clang diagnostic pop
         }
         const auto mdict = IOServiceMatching(kIOHIDSystemClass);
         service = IOServiceGetMatchingService(main_port, mdict);
