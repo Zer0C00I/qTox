@@ -164,11 +164,13 @@ if (NOT TOXCORE_FOUND)
   search_dependency(TOXAV           PACKAGE libtoxav)
 endif()
 
-search_dependency(LIBSODIUM           PACKAGE libsodium)
-search_dependency(OPUS                PACKAGE opus)
-search_dependency(VPX                 PACKAGE vpx)
+search_dependency(LIBSODIUM         PACKAGE libsodium)
+search_dependency(OPUS              PACKAGE opus)
+search_dependency(VPX               PACKAGE vpx)
 
 search_dependency(OPENAL            PACKAGE openal)
+
+search_dependency(V4L2              PACKAGE v4l2 LIBRARY v4l2 OPTIONAL)
 
 if (ANDROID)
   find_library(OPENSL_LIBRARY NAMES OpenSLES)

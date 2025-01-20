@@ -1,14 +1,32 @@
 ---
-bazel-opt_task:
-  timeout_in: 10m
-  container:
-    image: toxchat/toktok-stack:latest-release
-    cpu: 8
-    memory: 6G
+freebsd_task:
+  timeout_in: 15m
+  freebsd_instance:
+    image_family: freebsd-14-1
+  env:
+    CCACHE_DIR: $CIRRUS_WORKING_DIR/ccache
+    CCACHE_MAXSIZE: "150M"
+  ccache_cache:
+    folder: $CCACHE_DIR
   configure_script:
-    - /src/workspace/tools/inject-repo qtox
+    - PAGER=cat ASSUME_ALWAYS_YES=YES pkg install
+        ccache
+        cmake
+        ffmpeg
+        git
+        libXScrnSaver
+        libexif
+        libqrencode
+        libv4l
+        kf6-sonnet
+        ninja
+        openal-soft
+        pkgconf
+        qt6-base
+        qt6-svg
+        qt6-tools
+        sqlcipher
+        toxcore
+        v4l_compat
   test_all_script:
-    - cd /src/workspace && bazel
-        --max_idle_secs=5
-        test -k
-        //qtox/...
+    - cmake -B _build -G Ninja . && cmake --build _build && cmake --install _build
