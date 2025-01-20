@@ -15,5 +15,5 @@ jobs:
 
     steps:
       - checkout
-      - run: .circleci/bazel-test
-          //qtox/...
+      - run: /src/workspace/tools/inject-repo qtox
+      - run: cd /src/workspace && bazel test -k -- //qtox/...

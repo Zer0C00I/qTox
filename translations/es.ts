@@ -2623,10 +2623,6 @@ Este ID incluye el código NoSpam (en azul), y la suma de comprobación (en gris
         <translation>antes de la fecha</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translation>00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translation>Distingue mayúsculas y minúsculas</translation>
     </message>

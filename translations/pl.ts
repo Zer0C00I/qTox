@@ -2666,10 +2666,6 @@ To ID zawiera kod NoSpam (w kolorze niebieskim) oraz sumę kontrolną (w kolorze
         <translation>przed datą</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translation>00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translation>Wielkość liter ma znaczenie</translation>
     </message>

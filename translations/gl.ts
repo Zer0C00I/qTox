@@ -2711,10 +2711,6 @@ Este ID inclúe o código NoSpam (en azul) e a suma de verificación (en gris).<
         <translation>antes da data</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translation>00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translation>Maiúsculas e minúsculas</translation>
     </message>

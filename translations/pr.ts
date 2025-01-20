@@ -2617,11 +2617,6 @@ This ID has th&apos; NoSpam code (in blue), &apos;n&apos; th&apos; checksum (in 
         <translation type="unfinished">afore th&apos; date</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translation type="unfinished">Matchin&apos; th&apos; case</translation>
     </message>

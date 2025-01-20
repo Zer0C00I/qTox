@@ -2631,10 +2631,6 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
         <translation>tarihten önce</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translation>00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translation>Büyük/küçük harf duyarlı</translation>
     </message>

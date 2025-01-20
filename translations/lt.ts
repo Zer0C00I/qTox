@@ -2654,10 +2654,6 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
         <translation>prieš datą</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translation>00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translation>Skirti raidžių dydį</translation>
     </message>

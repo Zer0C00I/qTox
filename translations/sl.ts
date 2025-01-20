@@ -2849,11 +2849,6 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
         <translation type="unfinished">pred datumom</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Razlikuje med velikimi in malimi črkami</translation>

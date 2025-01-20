@@ -3007,11 +3007,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished">날짜 이전</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">대소문자 구분</translation>

@@ -2635,10 +2635,6 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinza).</translation>
         <translation>antes da data</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translation>00/00/0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translation>Observar maiúsculas e minúsculas</translation>
     </message>

@@ -2631,10 +2631,6 @@ Cet identifiant comprend le code NoSpam (en bleu) et la somme de contrôle (en g
         <translation>avant la date</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translation>00/00/0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translation>Sensible aux majuscules et minuscules</translation>
     </message>

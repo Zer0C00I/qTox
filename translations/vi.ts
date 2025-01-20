@@ -2633,10 +2633,6 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
         <translation>trước ngày</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translation>00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translation>Phải nhập đúng kí tự viết hoa hay viết thường</translation>
     </message>

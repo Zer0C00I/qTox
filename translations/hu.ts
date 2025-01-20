@@ -2705,10 +2705,6 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel) és az ellenőrző
         <translation>dátum előtti</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translation>00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translation>Kis/nagybetű érzékeny</translation>
     </message>

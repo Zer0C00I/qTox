@@ -3152,11 +3152,6 @@ Deildu því með vinum þínum til að byrja að spjalla.
         <translation type="unfinished">fyrir dagsetningu</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Hástafaviðkvæmur</translation>

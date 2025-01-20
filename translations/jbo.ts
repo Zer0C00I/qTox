@@ -3134,11 +3134,6 @@ le samselcmi cu mapti le blanu zoi gy. NoSpam .gy. joi le checksum zoi gy. gray<
         <translation type="unfinished">in the last&quot; &quot;7 days</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">junta</translation>

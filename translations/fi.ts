@@ -2648,10 +2648,6 @@ Tämä ID sisältää spammin estävän koodin(joka on sinisellä), ja tarkistus
         <translation>päivään asti</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translation>00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translation>Merkkikokoriippuvainen</translation>
     </message>

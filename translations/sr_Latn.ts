@@ -2612,10 +2612,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translation type="unfinished"></translation>
     </message>

@@ -2702,10 +2702,6 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
         <translation>līdz datumam</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translation>00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translation>Ieskaitot reģistru</translation>
     </message>

@@ -2630,10 +2630,6 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <translation>înainte de data</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translation>00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translation>Caz sensibil</translation>
     </message>

@@ -2715,10 +2715,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>пре датума</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translation>00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translation>Осетљиво на величину слова</translation>
     </message>

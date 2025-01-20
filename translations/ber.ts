@@ -3118,11 +3118,6 @@ IDa ⵢⴻⵙⵄⴰ ⴰⴽⴰⵔⴰⵎ ⵏ NoSpam (ⵙ ⵜⴼⴻⵍⵡⵉⵜ), �
         <translation type="unfinished">ⵙⴻⵏⴷ ⵏ ⵡⴰⵙⵙ</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ⵢⴻⵜⵜⵃⵓⵍⴼⵓ ⵙ ⵢⵉⵙⴻⴽⴽⵉⵍⴻⵏ ⵉⵎⴻⵇⵇⵔⴰⵏⴻⵏ</translation>

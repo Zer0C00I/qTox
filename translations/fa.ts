@@ -2709,10 +2709,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>قبل از تاریخ</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translation>00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translation>حساس به بزرگ یا کوچک بودن حروف</translation>
     </message>

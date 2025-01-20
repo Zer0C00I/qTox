@@ -2711,10 +2711,6 @@ Ovaj ID uključuje NoSpam kod (plavo) i kontrolni zbroj (sivo).</translation>
         <translation>prije datuma</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translation>00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translation>Razlikovanje veličine slova</translation>
     </message>

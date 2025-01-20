@@ -2722,10 +2722,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>да даты</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translation>00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translation>Улічваючы рэгістр</translation>
     </message>
