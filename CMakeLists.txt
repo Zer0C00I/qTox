@@ -447,6 +447,9 @@ set(${PROJECT_NAME}_SOURCES
     src/platform/desktop_notifications/desktopnotifybackend.h
     src/platform/posixsignalnotifier.cpp
     src/platform/posixsignalnotifier.h
+    src/platform/screenshot_dbus.cpp
+    src/platform/screenshot.cpp
+    src/platform/screenshot.h
     src/platform/stacktrace.cpp
     src/platform/stacktrace.h
     src/platform/timer.h
@@ -578,6 +581,8 @@ set(${PROJECT_NAME}_SOURCES
     src/widget/splitterrestorer.h
     src/widget/style.cpp
     src/widget/style.h
+    src/widget/tool/abstractscreenshotgrabber.cpp
+    src/widget/tool/abstractscreenshotgrabber.h
     src/widget/tool/activatedialog.cpp
     src/widget/tool/activatedialog.h
     src/widget/tool/adjustingscrollarea.cpp

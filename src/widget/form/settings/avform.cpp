@@ -194,8 +194,11 @@ void AVForm::on_videoModesComboBox_currentIndexChanged(int index)
             open(devName, mode);
         };
 
-        // note: grabber is self-managed and will destroy itself when done
-        ScreenshotGrabber* screenshotGrabber = new ScreenshotGrabber;
+        // We're not using the platform-specific grabber here, because all we want is a rectangle
+        // selection. We don't actually need a screenshot to be taken.
+        //
+        // Note: grabber is self-managed and will destroy itself when done.
+        ScreenshotGrabber* screenshotGrabber = new ScreenshotGrabber(this);
 
         connect(screenshotGrabber, &ScreenshotGrabber::regionChosen, this, onGrabbed,
                 Qt::QueuedConnection);

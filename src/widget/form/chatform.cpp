@@ -4,7 +4,6 @@
  */
 
 #include "chatform.h"
-#include "src/chatlog/chatlinecontentproxy.h"
 #include "src/chatlog/chatmessage.h"
 #include "src/chatlog/chatwidget.h"
 #include "src/chatlog/content/filetransferwidget.h"
@@ -16,17 +15,17 @@
 #include "src/model/status.h"
 #include "src/nexus.h"
 #include "src/persistence/history.h"
-#include "src/persistence/offlinemsgengine.h"
 #include "src/persistence/profile.h"
 #include "src/persistence/settings.h"
+#include "src/platform/screenshot.h"
 #include "src/video/netcamview.h"
 #include "src/widget/chatformheader.h"
 #include "src/widget/contentdialogmanager.h"
 #include "src/widget/form/loadhistorydialog.h"
 #include "src/widget/imagepreviewwidget.h"
-#include "src/widget/maskablepixmapwidget.h"
 #include "src/widget/searchform.h"
 #include "src/widget/style.h"
+#include "src/widget/tool/abstractscreenshotgrabber.h"
 #include "src/widget/tool/callconfirmwidget.h"
 #include "src/widget/tool/chattextedit.h"
 #include "src/widget/tool/croppinglabel.h"
@@ -36,6 +35,7 @@
 
 #include <QApplication>
 #include <QClipboard>
+#include <QDragEnterEvent>
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QMessageBox>
@@ -567,11 +567,14 @@ void ChatForm::onScreenshotClicked()
     QTimer::singleShot(SCREENSHOT_GRABBER_OPENING_DELAY, this, &ChatForm::hideFileMenu);
 }
 
-void ChatForm::doScreenshot() const
+void ChatForm::doScreenshot()
 {
-    // note: grabber is self-managed and will destroy itself when done
-    ScreenshotGrabber* grabber = new ScreenshotGrabber;
-    connect(grabber, &ScreenshotGrabber::screenshotTaken, this, &ChatForm::previewImage);
+    // Note: grabber is self-managed and will destroy itself when done.
+    AbstractScreenshotGrabber* grabber = Platform::createScreenshotGrabber(this);
+    if (grabber == nullptr) {
+        grabber = new ScreenshotGrabber(this);
+    }
+    connect(grabber, &AbstractScreenshotGrabber::screenshotTaken, this, &ChatForm::previewImage);
     grabber->showGrabber();
 }
 

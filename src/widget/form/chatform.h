@@ -16,7 +16,6 @@
 #include "src/model/status.h"
 #include "src/persistence/history.h"
 #include "src/video/netcamview.h"
-#include "src/widget/tool/screenshotgrabber.h"
 
 class CallConfirmWidget;
 class ContentDialogManager;
@@ -97,7 +96,7 @@ private slots:
     void previewImage(const QPixmap& pixmap);
     void cancelImagePreview();
     void sendImageFromPreview();
-    void doScreenshot() const;
+    void doScreenshot();
     void onCopyStatusMessage();
 
     void callUpdateFriendActivity();

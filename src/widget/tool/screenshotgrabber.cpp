@@ -20,8 +20,8 @@
 #include "toolboxgraphicsitem.h"
 #include "src/widget/widget.h"
 
-ScreenshotGrabber::ScreenshotGrabber()
-    : QObject()
+ScreenshotGrabber::ScreenshotGrabber(QObject* parent)
+    : AbstractScreenshotGrabber(parent)
     , mKeysBlocked(false)
     , scene(nullptr)
     , mQToxVisible(true)

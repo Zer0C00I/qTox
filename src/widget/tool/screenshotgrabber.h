@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include "src/widget/tool/abstractscreenshotgrabber.h"
 #include <QObject>
 #include <QPixmap>
 #include <QPointer>
@@ -20,25 +21,20 @@ class ScreenGrabberChooserRectItem;
 class ScreenGrabberOverlayItem;
 class ToolBoxGraphicsItem;
 
-class ScreenshotGrabber : public QObject
+class ScreenshotGrabber : public AbstractScreenshotGrabber
 {
     Q_OBJECT
 public:
-    ScreenshotGrabber();
+    explicit ScreenshotGrabber(QObject* parent);
     ~ScreenshotGrabber() override;
 
     bool eventFilter(QObject* object, QEvent* event) override;
 
-    void showGrabber();
+    void showGrabber() override;
 
-public slots:
+private slots:
     void acceptRegion();
     void reInit();
-
-signals:
-    void screenshotTaken(const QPixmap& pixmap);
-    void regionChosen(QRect region);
-    void rejected();
 
 private:
     friend class ScreenGrabberOverlayItem;
