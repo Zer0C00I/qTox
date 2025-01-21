@@ -1,0 +1,30 @@
+#!/bin/sh
+
+set -eux -o pipefail
+
+run_test() {
+  pushd /src/workspace
+  bazel test -k -- //qtox/...
+  popd
+}
+
+sed -i -e 's/build --config=remote-http/build --config=remote-grpc/' /src/workspace/.local.bazelrc
+
+# Baseline: run the tests in the toktok-stack image, before any changes.
+run_test
+
+/src/workspace/tools/inject-repo qtox
+
+# For each commit between master and the current branch, run the tests.
+if [ -n "${CIRCLE_COMPARE_URL:-}" ]; then
+  cd /src/workspace/qtox
+  git remote add upstream https://github.com/TokTok/qTox
+  git fetch upstream master
+  readarray -t COMMITS < <(git rev-list --reverse upstream/master..HEAD)
+  for commit in "${COMMITS[@]}"; do
+    git checkout "$commit"
+    run_test
+  done
+else
+  run_test
+fi
