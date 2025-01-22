@@ -1928,6 +1928,11 @@ Pressione Shift+F1 para obter mais informações.</translation>
         <source>Friend request received from %1</source>
         <translation>Pedido de amizade recebido de %1</translation>
     </message>
+    <message>
+        <source>Incoming call</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Chamada recebida</translation>
+    </message>
 </context>
 <context>
     <name>PasswordEdit</name>
@@ -2411,16 +2416,6 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
         <translation>Reformatando o texto...</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2 chats</source>
-        <extracomment>e.g. 3 messages from 2 chats</extracomment>
-        <translation>%1 mensagem(s) de %2 conversa(s)</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2</source>
-        <extracomment>e.g. 2 messages from Bob</extracomment>
-        <translation>%1 mensagem(s) de %2</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>

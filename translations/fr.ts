@@ -1926,6 +1926,11 @@ Appuyez sur Maj+F1 pour plus d&apos;informations.</translation>
         <source>Friend request received from %1</source>
         <translation>Demande d&apos;amitié reçue de %1</translation>
     </message>
+    <message>
+        <source>Incoming call</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Appel entrant</translation>
+    </message>
 </context>
 <context>
     <name>PasswordEdit</name>
@@ -2409,16 +2414,6 @@ Cet identifiant comprend le code NoSpam (en bleu) et la somme de contrôle (en g
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
         <translation>Reformatage du texte ...</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2 chats</source>
-        <extracomment>e.g. 3 messages from 2 chats</extracomment>
-        <translation>%1 message(s) de %2 chat(s)</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2</source>
-        <extracomment>e.g. 2 messages from Bob</extracomment>
-        <translation>%1 message(s) de %2</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>

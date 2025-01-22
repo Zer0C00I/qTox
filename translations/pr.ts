@@ -1913,6 +1913,10 @@ Press Shift+F1 fer more information.</translation>
         <source>Friend request received from %1</source>
         <translation>Some bucko (%1) wants ta be hearties with ya</translation>
     </message>
+    <message>
+        <source>Incoming call</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PasswordEdit</name>
@@ -2395,16 +2399,6 @@ This ID has th&apos; NoSpam code (in blue), &apos;n&apos; th&apos; checksum (in 
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
         <translation type="unfinished">Sprucin&apos; up th&apos; words...</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2 chats</source>
-        <extracomment>e.g. 3 messages from 2 chats</extracomment>
-        <translation type="unfinished">%1 scroll(s) from %2 chatterboxes</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2</source>
-        <extracomment>e.g. 2 messages from Bob</extracomment>
-        <translation type="unfinished">%1 scroll(s) from %2</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>

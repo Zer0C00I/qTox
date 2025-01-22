@@ -1951,6 +1951,11 @@ Naciśnij Shift+F1, aby uzyskać więcej informacji.</translation>
         <source>Friend request received from %1</source>
         <translation>Otrzymano prośbę o dodanie do znajomych od %1</translation>
     </message>
+    <message>
+        <source>Incoming call</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Połączenie przychodzące</translation>
+    </message>
 </context>
 <context>
     <name>PasswordEdit</name>
@@ -2442,16 +2447,6 @@ To ID zawiera kod NoSpam (w kolorze niebieskim) oraz sumę kontrolną (w kolorze
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
         <translation>Przeformatowywanie tekstu...</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2 chats</source>
-        <extracomment>e.g. 3 messages from 2 chats</extracomment>
-        <translation>%1 wiadomość(i) z %2 rozmów</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2</source>
-        <extracomment>e.g. 2 messages from Bob</extracomment>
-        <translation>%1 wiadomość(i) od %2</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>

@@ -1905,6 +1905,10 @@ Press Shift+F1 for more information.</source>
         <source>Friend request received from %1</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Incoming call</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PasswordEdit</name>
@@ -2384,16 +2388,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2 chats</source>
-        <extracomment>e.g. 3 messages from 2 chats</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2</source>
-        <extracomment>e.g. 2 messages from Bob</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -1926,6 +1926,11 @@ Nhấn Shift+F1 để biết thêm thông tin.</translation>
         <source>Friend request received from %1</source>
         <translation>Đã nhận được yêu cầu kết bạn từ %1</translation>
     </message>
+    <message>
+        <source>Incoming call</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Cuộc gọi đến</translation>
+    </message>
 </context>
 <context>
     <name>PasswordEdit</name>
@@ -2409,16 +2414,6 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
         <translation>Đang định dạng lại văn bản...</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2 chats</source>
-        <extracomment>e.g. 3 messages from 2 chats</extracomment>
-        <translation>%1 tin nhắn từ %2 cuộc trò chuyện</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2</source>
-        <extracomment>e.g. 2 messages from Bob</extracomment>
-        <translation>%1 tin nhắn từ %2</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>

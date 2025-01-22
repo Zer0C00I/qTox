@@ -2005,6 +2005,11 @@ Press Shift+F1 for more information.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Примено барање за пријателство од %1</translation>
     </message>
+    <message>
+        <source>Incoming call</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Дојдовен повик</translation>
+    </message>
 </context>
 <context>
     <name>PasswordEdit</name>
@@ -2507,18 +2512,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <comment>Waiting for text to be reformatted</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Се преформатира текст...</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2 chats</source>
-        <extracomment>e.g. 3 messages from 2 chats</extracomment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 порака(и) од %2 разговори</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2</source>
-        <extracomment>e.g. 2 messages from Bob</extracomment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 порака(и) од %2</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>

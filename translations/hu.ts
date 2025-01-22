@@ -1969,6 +1969,11 @@ További információért nyomja meg a Shift+F1 billentyűkombinációt.</transl
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ismerős felkérés érkezett tőle: %1</translation>
     </message>
+    <message>
+        <source>Incoming call</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Bejövő hívás</translation>
+    </message>
 </context>
 <context>
     <name>PasswordEdit</name>
@@ -2465,18 +2470,6 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel) és az ellenőrző
         <comment>Waiting for text to be reformatted</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Szöveg újraformázása...</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2 chats</source>
-        <extracomment>e.g. 3 messages from 2 chats</extracomment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 üzenet %2 csevegéstől</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2</source>
-        <extracomment>e.g. 2 messages from Bob</extracomment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 üzenet a következőtől: %2</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>

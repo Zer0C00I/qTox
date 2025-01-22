@@ -1926,6 +1926,11 @@ Daha fazla bilgi için Shift+F1 tuşlarına basın.</translation>
         <source>Friend request received from %1</source>
         <translation>%1 kişisinden arkadaşlık isteği alındı</translation>
     </message>
+    <message>
+        <source>Incoming call</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Gelen arama</translation>
+    </message>
 </context>
 <context>
     <name>PasswordEdit</name>
@@ -2409,16 +2414,6 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
         <translation>Metin yeniden biçimlendiriliyor...</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2 chats</source>
-        <extracomment>e.g. 3 messages from 2 chats</extracomment>
-        <translation>%1 ileti, %2 sohbetten</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2</source>
-        <extracomment>e.g. 2 messages from Bob</extracomment>
-        <translation>%1 ileti, %2&apos;den</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>

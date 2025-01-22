@@ -2334,6 +2334,11 @@ Druk op Shift+F1 veur mie informatie.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Vrundverzeuk ontvange vaan %1</translation>
     </message>
+    <message>
+        <source>Incoming call</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Inkomende oproep</translation>
+    </message>
 </context>
 <context>
     <name>PasswordEdit</name>
@@ -2804,18 +2809,6 @@ Deze ID umvat de NoSpam-code (in blauw) en de checksum (in gries).</translation>
         <comment>Waiting for text to be reformatted</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Teks herformatere...</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2 chats</source>
-        <extracomment>e.g. 3 messages from 2 chats</extracomment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 beriech(e) vaan %2 gesprekke</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2</source>
-        <extracomment>e.g. 2 messages from Bob</extracomment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 boodsjap(e) vaan %2</translation>
     </message>
     <message>
         <source>online</source>

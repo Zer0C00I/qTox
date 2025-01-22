@@ -1934,6 +1934,11 @@ Plural:10–20,30,40,..</translatorcomment>
         <source>Friend request received from %1</source>
         <translation>Kontakto užklausa gauta iš %1</translation>
     </message>
+    <message>
+        <source>Incoming call</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Įeinantis skambutis</translation>
+    </message>
 </context>
 <context>
     <name>PasswordEdit</name>
@@ -2417,16 +2422,6 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
         <translation>Performatuojamas tekstas...</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2 chats</source>
-        <extracomment>e.g. 3 messages from 2 chats</extracomment>
-        <translation>%1 žinutė (-ės) iš %2 pokalbių</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2</source>
-        <extracomment>e.g. 2 messages from Bob</extracomment>
-        <translation>%1 žinutė (-ės) iš %2</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>

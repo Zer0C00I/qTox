@@ -1917,6 +1917,11 @@ Druk op Shift+F1 voor meer informatie.</translation>
         <source>Friend request received from %1</source>
         <translation>Vriendschapsverzoek ontvangen van %1</translation>
     </message>
+    <message>
+        <source>Incoming call</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Inkomend gesprek</translation>
+    </message>
 </context>
 <context>
     <name>PasswordEdit</name>
@@ -2400,16 +2405,6 @@ Deze ID bevat de NoSpam-code (in het blauw) en de checksum (in het grijs).</tran
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
         <translation>Tekst opmaak...</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2 chats</source>
-        <extracomment>e.g. 3 messages from 2 chats</extracomment>
-        <translation>%1 bericht(en) van %2 chats</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2</source>
-        <extracomment>e.g. 2 messages from Bob</extracomment>
-        <translation>%1 bericht(en) van %2</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>

@@ -1932,6 +1932,11 @@ Stiskněte Shift+F1 pro další informace.</translation>
         <source>Friend request received from %1</source>
         <translation>Přijata žádost o přidání od %1</translation>
     </message>
+    <message>
+        <source>Incoming call</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Příchozí hovor</translation>
+    </message>
 </context>
 <context>
     <name>PasswordEdit</name>
@@ -2415,16 +2420,6 @@ ID zahrnuje kód NoSpam (modře) a kontrolní součet (šedě).</translation>
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
         <translation>Přeformátování textu…</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2 chats</source>
-        <extracomment>e.g. 3 messages from 2 chats</extracomment>
-        <translation>%1 zpráva(y) ze %2 vláken</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2</source>
-        <extracomment>e.g. 2 messages from Bob</extracomment>
-        <translation>%1 zpráva(y) od uživatele %2</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>

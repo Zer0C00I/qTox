@@ -1925,6 +1925,11 @@ Apăsați Shift+F1 pentru mai multe informații.</translation>
         <source>Friend request received from %1</source>
         <translation>Cerere de prietenie primită de la %1</translation>
     </message>
+    <message>
+        <source>Incoming call</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Apel primit</translation>
+    </message>
 </context>
 <context>
     <name>PasswordEdit</name>
@@ -2408,16 +2413,6 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
         <translation>Se reformatează textul...</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2 chats</source>
-        <extracomment>e.g. 3 messages from 2 chats</extracomment>
-        <translation>%1 mesaj(e) de la %2 discuții</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2</source>
-        <extracomment>e.g. 2 messages from Bob</extracomment>
-        <translation>%1 mesaj(e) de la %2</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>

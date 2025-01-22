@@ -1934,6 +1934,11 @@ Ak toto heslo stratíte, neexistuje spôsob, ako ho obnoviť.
         <source>Friend request received from %1</source>
         <translation>Žiadosť o priateľstvo prijatá od %1</translation>
     </message>
+    <message>
+        <source>Incoming call</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Prichádzajúci hovor</translation>
+    </message>
 </context>
 <context>
     <name>PasswordEdit</name>
@@ -2417,16 +2422,6 @@ Toto ID obsahuje kód NoSpam (modrou) a kontrolný súčet (šedou).</translatio
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
         <translation>Preformátovanie textu...</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2 chats</source>
-        <extracomment>e.g. 3 messages from 2 chats</extracomment>
-        <translation>%1 správ(a) z %2 chatov</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2</source>
-        <extracomment>e.g. 2 messages from Bob</extracomment>
-        <translation>%1 správ(a) z %2</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>

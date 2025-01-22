@@ -1933,6 +1933,11 @@ Tryck på Skift+F1 för mer information.</translation>
         <source>Friend request received from %1</source>
         <translation>Vänförfrågan mottagen från %1</translation>
     </message>
+    <message>
+        <source>Incoming call</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Inkommande samtal</translation>
+    </message>
 </context>
 <context>
     <name>PasswordEdit</name>
@@ -2416,18 +2421,6 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
         <translation>Omformaterar text...</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2 chats</source>
-        <extracomment>e.g. 3 messages from 2 chats</extracomment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 meddelande(n) från %2 chattar</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2</source>
-        <extracomment>e.g. 2 messages from Bob</extracomment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 meddelande(n) från %2</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>

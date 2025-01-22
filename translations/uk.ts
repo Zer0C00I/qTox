@@ -1927,6 +1927,11 @@ Press Shift+F1 for more information.</source>
         <source>Friend request received from %1</source>
         <translation>Отримано запит на додавання в друзі від %1</translation>
     </message>
+    <message>
+        <source>Incoming call</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Вхідний дзвінок</translation>
+    </message>
 </context>
 <context>
     <name>PasswordEdit</name>
@@ -2413,16 +2418,6 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
         <translation>Переформатування тексту...</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2 chats</source>
-        <extracomment>e.g. 3 messages from 2 chats</extracomment>
-        <translation>%1 повідомлення(ій) із %2 чатів</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2</source>
-        <extracomment>e.g. 2 messages from Bob</extracomment>
-        <translation>%1 повідомлення(ій) від %2</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>

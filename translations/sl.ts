@@ -2047,6 +2047,11 @@ Za več informacij pritisnite Shift+F1.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Prejeta prošnja za prijateljstvo od %1</translation>
     </message>
+    <message>
+        <source>Incoming call</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Dohodni klic</translation>
+    </message>
 </context>
 <context>
     <name>PasswordEdit</name>
@@ -2590,18 +2595,6 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
         <comment>Waiting for text to be reformatted</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Preoblikovanje besedila ...</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2 chats</source>
-        <extracomment>e.g. 3 messages from 2 chats</extracomment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 sporočilo(a) iz %2 klepetov</translation>
-    </message>
-    <message>
-        <source>%1 message(s) from %2</source>
-        <extracomment>e.g. 2 messages from Bob</extracomment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 sporočila od %2</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
