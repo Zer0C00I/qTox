@@ -55,7 +55,7 @@ void FriendList::removeFriend(const ToxPk& friendPk, Settings& settings, bool fa
 
 void FriendList::clear()
 {
-    for (auto friendPtr : friendList)
+    for (auto* friendPtr : friendList)
         delete friendPtr;
     friendList.clear();
 }

@@ -56,7 +56,7 @@ constexpr std::initializer_list<int> usrSignals{SIGUSR1, SIGUSR2};
 constexpr std::initializer_list<int> crashSignals{SIGSEGV, SIGILL, SIGFPE, SIGABRT, SIGBUS, SIGSYS};
 
 // Give it 128 KiB, should be enough for what we're doing in the crash handler.
-static uint8_t alternate_stack[128 * 1024];
+uint8_t alternate_stack[128 * 1024];
 
 void installCrashHandler()
 {

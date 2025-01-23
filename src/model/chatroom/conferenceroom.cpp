@@ -63,20 +63,20 @@ void ConferenceRoom::inviteFriend(const ToxPk& pk)
 bool ConferenceRoom::possibleToOpenInNewWindow() const
 {
     const auto conferenceId = conference->getPersistentId();
-    const auto dialogs = dialogsManager->getConferenceDialogs(conferenceId);
+    auto* const dialogs = dialogsManager->getConferenceDialogs(conferenceId);
     return (dialogs == nullptr) || dialogs->chatroomCount() > 1;
 }
 
 bool ConferenceRoom::canBeRemovedFromWindow() const
 {
     const auto conferenceId = conference->getPersistentId();
-    const auto dialogs = dialogsManager->getConferenceDialogs(conferenceId);
+    auto* const dialogs = dialogsManager->getConferenceDialogs(conferenceId);
     return (dialogs != nullptr) && dialogs->hasChat(conferenceId);
 }
 
 void ConferenceRoom::removeConferenceFromDialogs()
 {
     const auto conferenceId = conference->getPersistentId();
-    auto dialogs = dialogsManager->getConferenceDialogs(conferenceId);
+    auto* dialogs = dialogsManager->getConferenceDialogs(conferenceId);
     dialogs->removeConference(conferenceId);
 }

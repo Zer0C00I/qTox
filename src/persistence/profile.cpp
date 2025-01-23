@@ -407,7 +407,7 @@ QStringList Profile::getFilesByExt(QString extension, Paths& paths)
  * @brief Scan for profile, automatically importing them if needed.
  * @warning NOT thread-safe.
  */
-const QStringList Profile::getAllProfileNames(Paths& paths)
+QStringList Profile::getAllProfileNames(Paths& paths)
 {
     profiles.clear();
     const QStringList toxFiles = getFilesByExt("tox", paths);

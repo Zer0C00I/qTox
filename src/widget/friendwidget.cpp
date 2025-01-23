@@ -57,7 +57,7 @@ FriendWidget::FriendWidget(std::shared_ptr<FriendChatroom> chatroom_, bool compa
     statusPic.setPixmap(QPixmap(Status::getIconPath(Status::Status::Offline)));
     statusPic.setMargin(3);
 
-    auto frnd = chatroom->getFriend();
+    auto* frnd = chatroom->getFriend();
     nameLabel->setText(frnd->getDisplayedName());
     // update alias when edited
     connect(nameLabel, &CroppingLabel::editFinished, frnd, &Friend::setAlias);
@@ -96,12 +96,12 @@ void FriendWidget::onContextMenuCalled(QContextMenuEvent* event)
     QMenu menu;
 
     if (chatroom->possibleToOpenInNewWindow()) {
-        const auto openChatWindow = menu.addAction(tr("Open chat in new window"));
+        auto* const openChatWindow = menu.addAction(tr("Open chat in new window"));
         connect(openChatWindow, &QAction::triggered, this, [this]() { emit newWindowOpened(this); });
     }
 
     if (chatroom->canBeRemovedFromWindow()) {
-        const auto removeChatWindow = menu.addAction(tr("Remove chat from this window"));
+        auto* const removeChatWindow = menu.addAction(tr("Remove chat from this window"));
         connect(removeChatWindow, &QAction::triggered, this, &FriendWidget::removeChatWindow);
     }
 
@@ -109,28 +109,28 @@ void FriendWidget::onContextMenuCalled(QContextMenuEvent* event)
     QMenu* inviteMenu =
         menu.addMenu(tr("Invite to conference", "Menu to invite a friend to a conference"));
     inviteMenu->setEnabled(chatroom->canBeInvited());
-    const auto newConferenceAction = inviteMenu->addAction(tr("To new conference"));
+    auto* const newConferenceAction = inviteMenu->addAction(tr("To new conference"));
     connect(newConferenceAction, &QAction::triggered, chatroom.get(),
             &FriendChatroom::inviteToNewConference);
     inviteMenu->addSeparator();
 
     for (const auto& conference : chatroom->getConferences()) {
-        const auto conferenceAction =
+        auto* const conferenceAction =
             inviteMenu->addAction(tr("Invite to conference '%1'").arg(conference.name));
         connect(conferenceAction, &QAction::triggered, this,
                 [this, conference] { chatroom->inviteFriend(conference.conference); });
     }
 
     const auto circleId = chatroom->getCircleId();
-    auto circleMenu =
+    auto* circleMenu =
         menu.addMenu(tr("Move to circle...", "Menu to move a friend into a different circle"));
 
-    const auto newCircleAction = circleMenu->addAction(tr("To new circle"));
+    auto* const newCircleAction = circleMenu->addAction(tr("To new circle"));
     connect(newCircleAction, &QAction::triggered, this, &FriendWidget::moveToNewCircle);
 
     if (circleId != -1) {
         const auto circleName = chatroom->getCircleName();
-        const auto removeCircleAction =
+        auto* const removeCircleAction =
             circleMenu->addAction(tr("Remove from circle '%1'").arg(circleName));
         connect(removeCircleAction, &QAction::triggered, this, &FriendWidget::removeFromCircle);
     }
@@ -143,11 +143,11 @@ void FriendWidget::onContextMenuCalled(QContextMenuEvent* event)
         circleMenu->addAction(action);
     }
 
-    const auto setAlias = menu.addAction(tr("Set alias..."));
+    auto* const setAlias = menu.addAction(tr("Set alias..."));
     connect(setAlias, &QAction::triggered, nameLabel, &CroppingLabel::editBegin);
 
     menu.addSeparator();
-    auto autoAccept =
+    auto* autoAccept =
         menu.addAction(tr("Auto accept files from this friend", "context menu entry"));
     autoAccept->setCheckable(true);
     autoAccept->setChecked(!chatroom->autoAcceptEnabled());
@@ -156,7 +156,7 @@ void FriendWidget::onContextMenuCalled(QContextMenuEvent* event)
 
     if (chatroom->friendCanBeRemoved()) {
         const auto friendPk = chatroom->getFriend()->getPublicKey();
-        const auto removeAction =
+        auto* const removeAction =
             menu.addAction(tr("Remove friend", "Menu to remove the friend from the friend list"));
         connect(
             removeAction, &QAction::triggered, this,
@@ -164,7 +164,7 @@ void FriendWidget::onContextMenuCalled(QContextMenuEvent* event)
     }
 
     menu.addSeparator();
-    const auto aboutWindow = menu.addAction(tr("Show details"));
+    auto* const aboutWindow = menu.addAction(tr("Show details"));
     connect(aboutWindow, &QAction::triggered, this, &FriendWidget::showDetails);
 
     const auto pos = event->globalPos();
@@ -189,9 +189,10 @@ getCircleAndFriendList(const Friend* frnd, FriendWidget* fw, Settings& settings)
 {
     const auto pk = frnd->getPublicKey();
     const auto circleId = settings.getFriendCircleID(pk);
-    auto circleWidget = CircleWidget::getFromID(circleId);
-    auto w = circleWidget != nullptr ? static_cast<QWidget*>(circleWidget) : static_cast<QWidget*>(fw);
-    auto friendList = qobject_cast<FriendListWidget*>(w->parentWidget());
+    auto* circleWidget = CircleWidget::getFromID(circleId);
+    auto* w =
+        circleWidget != nullptr ? static_cast<QWidget*>(circleWidget) : static_cast<QWidget*>(fw);
+    auto* friendList = qobject_cast<FriendListWidget*>(w->parentWidget());
     return std::make_tuple(circleWidget, friendList);
 }
 
@@ -199,7 +200,7 @@ getCircleAndFriendList(const Friend* frnd, FriendWidget* fw, Settings& settings)
 
 void FriendWidget::moveToNewCircle()
 {
-    const auto frnd = chatroom->getFriend();
+    auto* const frnd = chatroom->getFriend();
     CircleWidget* circleWidget;
     FriendListWidget* friendList;
     std::tie(circleWidget, friendList) = getCircleAndFriendList(frnd, this, settings);
@@ -220,7 +221,7 @@ void FriendWidget::moveToNewCircle()
 
 void FriendWidget::removeFromCircle()
 {
-    const auto frnd = chatroom->getFriend();
+    auto* const frnd = chatroom->getFriend();
     CircleWidget* circleWidget;
     FriendListWidget* friendList;
     std::tie(circleWidget, friendList) = getCircleAndFriendList(frnd, this, settings);
@@ -240,12 +241,12 @@ void FriendWidget::removeFromCircle()
 
 void FriendWidget::moveToCircle(int newCircleId)
 {
-    const auto frnd = chatroom->getFriend();
+    auto* const frnd = chatroom->getFriend();
     const auto pk = frnd->getPublicKey();
     const auto oldCircleId = settings.getFriendCircleID(pk);
     auto& s = settings;
-    auto oldCircleWidget = CircleWidget::getFromID(oldCircleId);
-    auto newCircleWidget = CircleWidget::getFromID(newCircleId);
+    auto* oldCircleWidget = CircleWidget::getFromID(oldCircleId);
+    auto* newCircleWidget = CircleWidget::getFromID(newCircleId);
 
     if (newCircleWidget != nullptr) {
         newCircleWidget->addFriendWidget(this, frnd->getStatus());
@@ -275,10 +276,10 @@ void FriendWidget::changeAutoAccept(bool enable)
 }
 void FriendWidget::showDetails()
 {
-    const auto frnd = chatroom->getFriend();
-    const auto iAbout = new AboutFriend(frnd, &settings, profile);
+    auto* const frnd = chatroom->getFriend();
+    auto* const iAbout = new AboutFriend(frnd, &settings, profile);
     std::unique_ptr<IAboutFriend> about = std::unique_ptr<IAboutFriend>(iAbout);
-    const auto aboutUser =
+    auto* const aboutUser =
         new AboutFriendForm(std::move(about), settings, style, messageBoxManager, this);
     connect(aboutUser, &AboutFriendForm::historyRemoved, this, &FriendWidget::friendHistoryRemoved);
     aboutUser->show();
@@ -306,7 +307,7 @@ void FriendWidget::setActive(bool active_)
 
 void FriendWidget::updateStatusLight()
 {
-    const auto frnd = chatroom->getFriend();
+    auto* const frnd = chatroom->getFriend();
     const bool event = frnd->getEventFlag();
     statusPic.setPixmap(QPixmap(Status::getIconPath(frnd->getStatus(), event)));
 
@@ -326,7 +327,7 @@ void FriendWidget::updateStatusLight()
 
 QString FriendWidget::getStatusString() const
 {
-    const auto frnd = chatroom->getFriend();
+    auto* const frnd = chatroom->getFriend();
     const int status = static_cast<int>(frnd->getStatus());
     const bool event = frnd->getEventFlag();
 
@@ -359,7 +360,7 @@ bool FriendWidget::isConference() const
 
 bool FriendWidget::isOnline() const
 {
-    const auto frnd = getFriend();
+    const auto* const frnd = getFriend();
     return Status::isOnline(frnd->getStatus());
 }
 
@@ -375,7 +376,7 @@ QString FriendWidget::getNameItem() const
 
 QDateTime FriendWidget::getLastActivity() const
 {
-    const auto frnd = chatroom->getFriend();
+    auto* const frnd = chatroom->getFriend();
     return settings.getFriendActivity(frnd->getPublicKey());
 }
 
@@ -401,7 +402,7 @@ void FriendWidget::resetEventFlags()
 
 void FriendWidget::onAvatarSet(const ToxPk& friendPk, const QPixmap& pic)
 {
-    const auto frnd = chatroom->getFriend();
+    auto* const frnd = chatroom->getFriend();
     if (friendPk != frnd->getPublicKey()) {
         return;
     }
@@ -412,7 +413,7 @@ void FriendWidget::onAvatarSet(const ToxPk& friendPk, const QPixmap& pic)
 
 void FriendWidget::onAvatarRemoved(const ToxPk& friendPk)
 {
-    const auto frnd = chatroom->getFriend();
+    auto* const frnd = chatroom->getFriend();
     if (friendPk != frnd->getPublicKey()) {
         return;
     }

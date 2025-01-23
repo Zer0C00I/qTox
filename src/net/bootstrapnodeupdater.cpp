@@ -113,7 +113,6 @@ void jsonNodeToDhtServer(const QJsonObject& node, QList<DhtServer>& outList)
     server.ipv4 = ipv4_address;
     server.ipv6 = ipv6_address;
     outList.append(server);
-    return;
 }
 
 QList<DhtServer> jsonToNodeList(const QJsonDocument& nodeList)

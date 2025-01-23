@@ -70,14 +70,13 @@ public:
     static QPixmap scaleSvgImage(const QString& path, uint32_t width, uint32_t height);
 
     Style() = default;
-    const QString getStylesheet(const QString& filename, const Settings& settings,
-                                const QFont& baseFont = QFont());
-    const QString getStylesheet(const QString& filename, int themeColor,
-                                const QFont& baseFont = QFont());
-    const QString getImagePath(const QString& filename, const Settings& settings);
-    const QString getImagePath(const QString& filename, int themeColor);
+    QString getStylesheet(const QString& filename, const Settings& settings,
+                          const QFont& baseFont = QFont());
+    QString getStylesheet(const QString& filename, int themeColor, const QFont& baseFont = QFont());
+    QString getImagePath(const QString& filename, const Settings& settings);
+    QString getImagePath(const QString& filename, int themeColor);
     QColor getColor(ColorPalette entry);
-    const QString resolve(const QString& filename, int themeColor, const QFont& baseFont = QFont());
+    QString resolve(const QString& filename, int themeColor, const QFont& baseFont = QFont());
     void setThemeColor(int themeColor, int color);
     void setThemeColor(const QColor& color);
     void initPalette(int themeColor);

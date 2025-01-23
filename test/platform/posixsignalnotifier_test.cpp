@@ -26,7 +26,7 @@ constexpr int TIMEOUT = 2;
 void TestPosixSignalNotifier::checkUsrSignalHandling()
 {
     PosixSignalNotifier& psn = PosixSignalNotifier::globalInstance();
-    psn.watchUsrSignals();
+    PosixSignalNotifier::watchUsrSignals();
     QSignalSpy spy(&psn, &PosixSignalNotifier::usrSignal);
     kill(getpid(), SIGUSR1);
 
@@ -51,7 +51,7 @@ void sighandler(int sig)
 void TestPosixSignalNotifier::checkIgnoreExtraSignals()
 {
     PosixSignalNotifier& psn = PosixSignalNotifier::globalInstance();
-    psn.watchSignal(SIGUSR1);
+    PosixSignalNotifier::watchSignal(SIGUSR1);
     QSignalSpy spy(&psn, &PosixSignalNotifier::terminatingSignal);
 
     // To avoid killing
@@ -69,7 +69,7 @@ void TestPosixSignalNotifier::checkIgnoreExtraSignals()
 void TestPosixSignalNotifier::checkTermSignalsHandling()
 {
     PosixSignalNotifier& psn = PosixSignalNotifier::globalInstance();
-    psn.watchCommonTerminatingSignals();
+    PosixSignalNotifier::watchCommonTerminatingSignals();
     QSignalSpy spy(&psn, &PosixSignalNotifier::terminatingSignal);
 
     const std::initializer_list<int> termSignals = {SIGHUP, SIGINT, SIGQUIT, SIGTERM};

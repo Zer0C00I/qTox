@@ -54,7 +54,7 @@ QList<Conference*> ConferenceList::getAllConferences()
 {
     QList<Conference*> res;
 
-    for (auto it : conferenceList)
+    for (auto* it : conferenceList)
         res.append(it);
 
     return res;
@@ -62,7 +62,7 @@ QList<Conference*> ConferenceList::getAllConferences()
 
 void ConferenceList::clear()
 {
-    for (auto conferenceptr : conferenceList)
+    for (auto* conferenceptr : conferenceList)
         delete conferenceptr;
     conferenceList.clear();
 }

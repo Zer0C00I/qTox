@@ -12,7 +12,7 @@
 namespace ExifTransform {
 Orientation getOrientation(QByteArray imageData)
 {
-    auto data = imageData.constData();
+    const auto* data = imageData.constData();
     auto size = imageData.size();
 
     ExifData* exifData = exif_data_new_from_data(reinterpret_cast<const unsigned char*>(data), size);

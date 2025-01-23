@@ -53,7 +53,7 @@ private:
 
     void removeAll(IFriendListItem* item);
     bool cmpByName(const IFriendListItemPtr& itemA, const IFriendListItemPtr& itemB) const;
-    bool cmpByActivity(const IFriendListItemPtr& itemA, const IFriendListItemPtr& itemB);
+    static bool cmpByActivity(const IFriendListItemPtr& itemA, const IFriendListItemPtr& itemB);
 
     bool byName = true;
     bool hideCircles = false;

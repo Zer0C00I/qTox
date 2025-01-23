@@ -84,7 +84,7 @@ private:
     void readIni();
     void removeValue(const QString& key);
     void removeGroup(int group);
-    void writePackedVariant(QDataStream& dataStream, const QVariant& v);
+    static void writePackedVariant(QDataStream& dataStream, const QVariant& v);
 
 private:
     QString path;

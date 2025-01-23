@@ -21,7 +21,7 @@ class AboutFriend : public QObject, public IAboutFriend
     Q_OBJECT
 
 public:
-    AboutFriend(const Friend* f_, IFriendSettings* const settings, Profile& profile);
+    AboutFriend(const Friend* f_, IFriendSettings* settings, Profile& profile);
 
     QString getName() const override;
     QString getStatusMessage() const override;

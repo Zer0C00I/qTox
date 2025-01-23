@@ -47,8 +47,9 @@ private slots:
     void onDialogActivate();
 
 private:
-    ContentDialog* focusDialog(const ChatId& id,
-                               const QHash<std::reference_wrapper<const ChatId>, ContentDialog*>& list);
+    static ContentDialog*
+    focusDialog(const ChatId& id,
+                const QHash<std::reference_wrapper<const ChatId>, ContentDialog*>& list);
 
     ContentDialog* currentDialog = nullptr;
 

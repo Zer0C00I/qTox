@@ -145,9 +145,9 @@ void ContentDialog::closeEvent(QCloseEvent* event)
 FriendWidget* ContentDialog::addFriend(std::shared_ptr<FriendChatroom> chatroom, GenericChatForm* form)
 {
     const auto compact = settings.getCompactLayout();
-    auto frnd = chatroom->getFriend();
+    auto* frnd = chatroom->getFriend();
     const auto& friendPk = frnd->getPublicKey();
-    auto friendWidget =
+    auto* friendWidget =
         new FriendWidget(chatroom, compact, settings, style, messageBoxManager, profile);
     emit connectFriendWidget(*friendWidget);
     chatWidgets[friendPk] = friendWidget;
@@ -168,10 +168,10 @@ FriendWidget* ContentDialog::addFriend(std::shared_ptr<FriendChatroom> chatroom,
 ConferenceWidget* ContentDialog::addConference(std::shared_ptr<ConferenceRoom> chatroom,
                                                GenericChatForm* form)
 {
-    const auto g = chatroom->getConference();
+    auto* const g = chatroom->getConference();
     const auto& conferenceId = g->getPersistentId();
     const auto compact = settings.getCompactLayout();
-    auto conferenceWidget = new ConferenceWidget(chatroom, compact, settings, style);
+    auto* conferenceWidget = new ConferenceWidget(chatroom, compact, settings, style);
     chatWidgets[conferenceId] = conferenceWidget;
     conferenceLayout.addSortedWidget(conferenceWidget);
     chatForms[conferenceId] = form;
@@ -186,7 +186,7 @@ ConferenceWidget* ContentDialog::addConference(std::shared_ptr<ConferenceRoom> c
 
 void ContentDialog::removeFriend(const ToxPk& friendPk)
 {
-    auto chatroomWidget = qobject_cast<FriendWidget*>(chatWidgets[friendPk]);
+    auto* chatroomWidget = qobject_cast<FriendWidget*>(chatWidgets[friendPk]);
     disconnect(chatroomWidget->getFriend(), &Friend::aliasChanged, this,
                &ContentDialog::updateFriendWidget);
 
@@ -215,7 +215,7 @@ void ContentDialog::removeFriend(const ToxPk& friendPk)
 
 void ContentDialog::removeConference(const ConferenceId& conferenceId)
 {
-    auto chatroomWidget = qobject_cast<ConferenceWidget*>(chatWidgets[conferenceId]);
+    auto* chatroomWidget = qobject_cast<ConferenceWidget*>(chatWidgets[conferenceId]);
     // Need to find replacement to show here instead.
     if (activeChatroomWidget == chatroomWidget) {
         cycleChats(true, false);
@@ -597,13 +597,13 @@ void ContentDialog::activate(GenericChatroomWidget* widget)
 
 void ContentDialog::updateFriendStatus(const ToxPk& friendPk, Status::Status status)
 {
-    auto widget = qobject_cast<FriendWidget*>(chatWidgets.value(friendPk));
+    auto* widget = qobject_cast<FriendWidget*>(chatWidgets.value(friendPk));
     addFriendWidget(widget, status);
 }
 
 void ContentDialog::updateChatStatusLight(const ChatId& chatId)
 {
-    auto widget = chatWidgets.value(chatId);
+    auto* widget = chatWidgets.value(chatId);
     if (widget != nullptr) {
         widget->updateStatusLight();
     }
@@ -611,7 +611,7 @@ void ContentDialog::updateChatStatusLight(const ChatId& chatId)
 
 bool ContentDialog::isChatActive(const ChatId& chatId) const
 {
-    auto widget = chatWidgets.value(chatId);
+    auto* widget = chatWidgets.value(chatId);
     if (widget == nullptr) {
         return false;
     }
@@ -622,7 +622,7 @@ bool ContentDialog::isChatActive(const ChatId& chatId) const
 // TODO: Connect to widget directly
 void ContentDialog::setStatusMessage(const ToxPk& friendPk, const QString& message)
 {
-    auto widget = chatWidgets.value(friendPk);
+    auto* widget = chatWidgets.value(friendPk);
     if (widget != nullptr) {
         widget->setStatusMsg(message);
     }

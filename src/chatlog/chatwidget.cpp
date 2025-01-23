@@ -73,7 +73,7 @@ void renderMessageRaw(const QString& displayName, bool isSelf, bool colorizeName
     // correlate ChatMessages created here, however a logic bug could turn into
     // a crash due to this dangerous cast. The alternative would be to make
     // ChatLine a QObject which I didn't think was worth it.
-    auto chatMessage = static_cast<ChatMessage*>(chatLine.get());
+    auto* chatMessage = static_cast<ChatMessage*>(chatLine.get());
 
     if (chatMessage != nullptr) {
         if (chatLogMessage.state == MessageState::complete) {
@@ -850,7 +850,7 @@ void ChatWidget::handleSearchResult(SearchResult result, SearchDirection directi
         auto msg = (*chatLineStorage)[searchPos.logIdx];
         scrollToLine(msg);
 
-        auto text = qobject_cast<Text*>(msg->getContent(1));
+        auto* text = qobject_cast<Text*>(msg->getContent(1));
         text->selectText(result.exp, std::make_pair(result.start, result.len));
     };
 
@@ -1424,9 +1424,9 @@ void ChatWidget::renderFile(QString displayName, ToxFile file, bool isSelf, QDat
                                                              timestamp, documentCache, settings,
                                                              style, messageBoxManager);
     } else {
-        auto proxy = static_cast<ChatLineContentProxy*>(chatMessage->getContent(1));
+        auto* proxy = static_cast<ChatLineContentProxy*>(chatMessage->getContent(1));
         assert(proxy->getWidgetType() == ChatLineContentProxy::FileTransferWidgetType);
-        auto ftWidget = static_cast<FileTransferWidget*>(proxy->getWidget());
+        auto* ftWidget = static_cast<FileTransferWidget*>(proxy->getWidget());
         ftWidget->onFileTransferUpdate(file);
     }
 }
@@ -1474,7 +1474,7 @@ void ChatWidget::disableSearchText()
     }
 
     auto line = (*chatLineStorage)[searchPos.logIdx];
-    auto text = qobject_cast<Text*>(line->getContent(1));
+    auto* text = qobject_cast<Text*>(line->getContent(1));
     text->deselectText();
 }
 

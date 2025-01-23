@@ -374,7 +374,7 @@ bool Settings::verifyProxySettings(const QCommandLineParser& parser)
         // TODO(Kriby): Sanity check IPv4/IPv6 addresses/hostnames?
 
         const int portNumber = proxySettingStrings[2].toInt();
-        if (!(portNumber >= 1 && portNumber <= 65535)) {
+        if (portNumber < 1 || portNumber > 65535) {
             qCritical() << "Invalid port number range: was" << portNumber << "but should be 1-65535.";
         }
     }

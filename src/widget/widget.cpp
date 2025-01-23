@@ -260,7 +260,7 @@ void Widget::init()
     core = &profile.getCore();
 
     sharedMessageProcessorParams =
-        std::make_unique<MessageProcessor::SharedParams>(core->getMaxMessageSize());
+        std::make_unique<MessageProcessor::SharedParams>(Core::getMaxMessageSize());
 
     chatListWidget =
         new FriendListWidget(*core, this, settings, style, *messageBoxManager, *friendList,
@@ -634,7 +634,7 @@ Widget::~Widget()
         removeFriend(f, true);
     }
 
-    for (auto form : chatForms) {
+    for (auto* form : chatForms) {
         delete form;
     }
 
@@ -1053,7 +1053,7 @@ void Widget::playNotificationSound(IAudioSink::Sound sound, bool loop)
     const bool busySound = settings.getBusySound();
     const bool notifySound = settings.getNotifySound();
 
-    if (!settings.getAudioOutDevEnabled() || !(notifySound && (!isBusy || busySound))) {
+    if (!settings.getAudioOutDevEnabled() || !notifySound || (isBusy && !busySound)) {
         // don't try to play sounds if audio is disabled
         return;
     }
@@ -1176,13 +1176,13 @@ void Widget::addFriend(uint32_t friendId, const ToxPk& friendPk)
     settings.updateFriendAddress(friendPk.toString());
 
     Friend* newFriend = friendList->addFriend(friendId, friendPk, settings);
-    auto rawChatroom =
+    auto* rawChatroom =
         new FriendChatroom(newFriend, contentDialogManager.get(), *core, settings, *conferenceList);
     const std::shared_ptr<FriendChatroom> chatroom(rawChatroom);
     const auto compact = settings.getCompactLayout();
-    auto widget = new FriendWidget(chatroom, compact, settings, style, *messageBoxManager, profile);
+    auto* widget = new FriendWidget(chatroom, compact, settings, style, *messageBoxManager, profile);
     connectFriendWidget(*widget);
-    auto history = profile.getHistory();
+    auto* history = profile.getHistory();
 
     auto friendMessageDispatcher =
         std::make_shared<FriendMessageDispatcher>(*newFriend,
@@ -1194,7 +1194,7 @@ void Widget::addFriend(uint32_t friendId, const ToxPk& friendPk)
     auto chatHistory =
         std::make_shared<ChatHistory>(*newFriend, history, *core, settings,
                                       *friendMessageDispatcher, *friendList, *conferenceList);
-    auto friendForm =
+    auto* friendForm =
         new ChatForm(profile, newFriend, *chatHistory, *friendMessageDispatcher, *documentCache,
                      *smileyPack, cameraSource, settings, style, *messageBoxManager,
                      *contentDialogManager, *friendList, *conferenceList, this);
@@ -1447,7 +1447,7 @@ void Widget::addFriendDialog(const Friend* frnd, ContentDialog* dialog)
         onAddClicked();
     }
 
-    auto form = chatForms[friendPk];
+    auto* form = chatForms[friendPk];
     auto chatroom = friendChatRooms[friendPk];
     FriendWidget* friendWidget = contentDialogManager->addFriendToDialog(dialog, chatroom, form);
 
@@ -1500,9 +1500,9 @@ void Widget::addConferenceDialog(const Conference* conference, ContentDialog* di
         onAddClicked();
     }
 
-    auto chatForm = conferenceForms[conferenceId].data();
+    auto* chatForm = conferenceForms[conferenceId].data();
     auto chatroom = conferenceRooms[conferenceId];
-    auto conferenceWidget = contentDialogManager->addConferenceToDialog(dialog, chatroom, chatForm);
+    auto* conferenceWidget = contentDialogManager->addConferenceToDialog(dialog, chatroom, chatForm);
 
     auto removeConference = qOverload<const ConferenceId&>(&Widget::removeConference);
     connect(conferenceWidget, &ConferenceWidget::removeConference, this, removeConference);
@@ -1737,7 +1737,7 @@ void Widget::removeFriend(Friend* f, bool fake)
     }
 
     const ToxPk friendPk = f->getPublicKey();
-    auto widget = friendWidgets[friendPk];
+    auto* widget = friendWidgets[friendPk];
     widget->setAsInactiveChatroom();
     if (widget == activeChatroomWidget) {
         activeChatroomWidget = nullptr;
@@ -1766,7 +1766,7 @@ void Widget::removeFriend(Friend* f, bool fake)
 
     friendWidgets.remove(friendPk);
 
-    auto chatForm = chatForms[friendPk];
+    auto* chatForm = chatForms[friendPk];
     chatForms.remove(friendPk);
     delete chatForm;
 
@@ -2037,7 +2037,7 @@ void Widget::onConferencePeerAudioPlaying(uint32_t conferencenumber, ToxPk peerP
     const ConferenceId& conferenceId = conferenceList->id2Key(conferencenumber);
     assert(conferenceList->findConference(conferenceId));
 
-    auto form = conferenceForms[conferenceId].data();
+    auto* form = conferenceForms[conferenceId].data();
     form->peerAudioPlaying(peerPk);
 }
 
@@ -2065,7 +2065,7 @@ void Widget::removeConference(Conference* c, bool fake)
                    << "but ConferenceWidget doesn't exist";
         return;
     }
-    auto widget = conferenceWidgetIt.value();
+    auto* widget = conferenceWidgetIt.value();
     widget->setAsInactiveChatroom();
     if (static_cast<GenericChatroomWidget*>(widget) == activeChatroomWidget) {
         activeChatroomWidget = nullptr;
@@ -2128,18 +2128,18 @@ Conference* Widget::createConference(uint32_t conferencenumber, const Conference
             av->invalidateConferenceCallPeerSource(*newConference, user);
         });
     }
-    auto rawChatroom =
+    auto* rawChatroom =
         new ConferenceRoom(newConference, contentDialogManager.get(), *core, *friendList);
     const std::shared_ptr<ConferenceRoom> chatroom(rawChatroom);
 
     const auto compact = settings.getCompactLayout();
-    auto widget = new ConferenceWidget(chatroom, compact, settings, style);
+    auto* widget = new ConferenceWidget(chatroom, compact, settings, style);
     auto messageDispatcher =
         std::make_shared<ConferenceMessageDispatcher>(*newConference,
                                                       MessageProcessor(*sharedMessageProcessorParams),
                                                       *core, *core, settings);
 
-    auto history = profile.getHistory();
+    auto* history = profile.getHistory();
     // Note: We do not have to connect the message dispatcher signals since
     // ChatHistory hooks them up in a very specific order
     auto chatHistory = std::make_shared<ChatHistory>(*newConference, history, *core, settings,
@@ -2158,9 +2158,9 @@ Conference* Widget::createConference(uint32_t conferencenumber, const Conference
                 });
     conferenceAlertConnections.insert(conferenceId, notifyReceivedConnection);
 
-    auto form = new ConferenceForm(*core, newConference, *chatHistory, *messageDispatcher, settings,
-                                   *documentCache, *smileyPack, style, *messageBoxManager,
-                                   *friendList, *conferenceList);
+    auto* form = new ConferenceForm(*core, newConference, *chatHistory, *messageDispatcher,
+                                    settings, *documentCache, *smileyPack, style,
+                                    *messageBoxManager, *friendList, *conferenceList);
     connect(&settings, &Settings::nameColorsChanged, form, &GenericChatForm::setColorizedNames);
     form->setColorizedNames(settings.getEnableConferencesColor());
     conferenceMessageDispatchers[conferenceId] = messageDispatcher;
@@ -2362,7 +2362,7 @@ void Widget::onConferenceSendFailed(uint32_t conferencenumber)
     assert(conferenceList->findConference(conferenceId));
 
     const auto curTime = QDateTime::currentDateTime();
-    auto form = conferenceForms[conferenceId].data();
+    auto* form = conferenceForms[conferenceId].data();
     form->addSystemInfoMessage(curTime, SystemMessageType::messageSendFailed, {});
 }
 
@@ -2459,7 +2459,7 @@ void Widget::reloadTheme()
 {
     setStyleSheet("");
     const QWidgetList wgts = findChildren<QWidget*>();
-    for (auto x : wgts) {
+    for (auto* x : wgts) {
         x->setStyleSheet("");
     }
 

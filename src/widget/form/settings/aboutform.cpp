@@ -50,7 +50,7 @@ AboutForm::AboutForm(UpdateCheck& updateCheck_, QString contactInfo_, Style& sty
 {
     bodyUI->setupUi(this);
 
-    bodyUI->updateStack->setVisible(updateCheck.canCheck());
+    bodyUI->updateStack->setVisible(UpdateCheck::canCheck());
     bodyUI->unstableVersion->setVisible(false);
     connect(&updateCheck, &UpdateCheck::versionIsUnstable, this, &AboutForm::onUnstableVersion);
 
@@ -83,7 +83,7 @@ void AboutForm::replaceVersions()
     connect(&updateCheck, &UpdateCheck::upToDate, this, &AboutForm::onUpToDate);
     connect(&updateCheck, &UpdateCheck::updateCheckFailed, this, &AboutForm::onUpdateCheckFailed);
 
-    if (!updateCheck.canCheck()) {
+    if (!UpdateCheck::canCheck()) {
         qDebug() << "AboutForm not showing updates, qTox built without UPDATE_CHECK";
     }
 

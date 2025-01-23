@@ -51,8 +51,8 @@ public:
 
 private:
     IProfileInfo::SetAvatarResult createAvatarFromFile(QFile& file, QByteArray& avatar);
-    IProfileInfo::SetAvatarResult byteArrayToPng(QByteArray inData, QByteArray& outPng);
-    IProfileInfo::SetAvatarResult scalePngToAvatar(QByteArray& avatar);
+    static IProfileInfo::SetAvatarResult byteArrayToPng(QByteArray inData, QByteArray& outPng);
+    static IProfileInfo::SetAvatarResult scalePngToAvatar(QByteArray& avatar);
     Profile* const profile;
     Core* const core;
     Settings& settings;

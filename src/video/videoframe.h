@@ -141,7 +141,7 @@ private:
     class FrameBufferKey
     {
     public:
-        FrameBufferKey(const int width, const int height, const int pixFmt, const bool lineAligned);
+        FrameBufferKey(int width, int height, int pixFmt, bool lineAligned);
 
         // Explicitly state default constructor/destructor
 
@@ -175,13 +175,12 @@ private:
     };
 
 private:
-    static FrameBufferKey getFrameKey(const QSize& frameSize, const int pixFmt, const int linesize);
-    static FrameBufferKey getFrameKey(const QSize& frameSize, const int pixFmt,
-                                      const bool frameAligned);
+    static FrameBufferKey getFrameKey(const QSize& frameSize, int pixFmt, int linesize);
+    static FrameBufferKey getFrameKey(const QSize& frameSize, int pixFmt, bool frameAligned);
 
-    AVFrame* retrieveAVFrame(const QSize& dimensions, const int pixelFormat, const bool requireAligned);
-    AVFrame* generateAVFrame(const QSize& dimensions, const int pixelFormat, const bool requireAligned);
-    AVFrame* storeAVFrame(AVFrame* frame, const QSize& dimensions, const int pixelFormat);
+    AVFrame* retrieveAVFrame(const QSize& dimensions, int pixelFormat, bool requireAligned);
+    AVFrame* generateAVFrame(const QSize& dimensions, int pixelFormat, bool requireAligned);
+    AVFrame* storeAVFrame(AVFrame* frame, const QSize& dimensions, int pixelFormat);
 
     void deleteFrameBuffer();
 

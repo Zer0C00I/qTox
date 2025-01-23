@@ -251,7 +251,7 @@ int AppManager::startGui(QCommandLineParser& parser)
 
     // Windows platform plugins DLL hell fix
     QCoreApplication::addLibraryPath(QCoreApplication::applicationDirPath());
-    qapp->addLibraryPath("platforms");
+    QApplication::addLibraryPath("platforms");
 
     qDebug() << "Commit:" << VersionInfo::gitVersion();
     qDebug() << "Process ID:" << QCoreApplication::applicationPid();
@@ -381,14 +381,14 @@ int AppManager::run()
             });
     PosixSignalNotifier::watchUsrSignals();
 
-    qapp->setApplicationName("qTox");
-    qapp->setDesktopFileName("io.github.qtox.qTox");
-    qapp->setApplicationVersion(QStringLiteral("%1, git commit %2 (%3)")
-                                    .arg(VersionInfo::gitDescribe())
-                                    .arg(VersionInfo::gitVersion())
-                                    .arg(UpdateCheck::isCurrentVersionStable()
-                                             ? QStringLiteral("stable")
-                                             : QStringLiteral("unstable")));
+    QApplication::setApplicationName("qTox");
+    QApplication::setDesktopFileName("io.github.qtox.qTox");
+    QApplication::setApplicationVersion(QStringLiteral("%1, git commit %2 (%3)")
+                                            .arg(VersionInfo::gitDescribe())
+                                            .arg(VersionInfo::gitVersion())
+                                            .arg(UpdateCheck::isCurrentVersionStable()
+                                                     ? QStringLiteral("stable")
+                                                     : QStringLiteral("unstable")));
 
     // Install Unicode 6.1 supporting font
     // Keep this as close to the beginning of `main()` as possible, otherwise
@@ -437,13 +437,13 @@ int AppManager::run()
         updateCheck->checkForUpdate();
         connect(updateCheck, &UpdateCheck::updateCheckFailed, qapp.get(), &QApplication::quit);
         connect(updateCheck, &UpdateCheck::complete, this,
-                [this](QString currentVersion, QString latestVersion, const QUrl& link) {
+                [](QString currentVersion, QString latestVersion, const QUrl& link) {
                     const QString message =
                         QStringLiteral("Current version: %1\nLatest version: %2\n%3\n")
                             .arg(currentVersion, latestVersion, link.toString());
                     // Output to stdout.
                     QTextStream(stdout) << message;
-                    qapp->quit();
+                    QApplication::quit();
                 });
     } else {
         const int result = startGui(parser);
@@ -452,7 +452,7 @@ int AppManager::run()
         }
     }
 
-    return qapp->exec();
+    return QApplication::exec();
 }
 
 AppManager::~AppManager() = default;

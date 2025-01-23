@@ -24,7 +24,7 @@ public:
 
     explicit UpdateCheck(const Settings& settings_, QObject* parent = nullptr);
 
-    constexpr bool canCheck() const
+    static constexpr bool canCheck()
     {
 #ifdef UPDATE_CHECK_ENABLED
         return true;

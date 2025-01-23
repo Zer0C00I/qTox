@@ -538,7 +538,7 @@ void Core::onConferenceMessage(Tox* tox, uint32_t conferenceId, uint32_t peerId,
 void Core::onConferencePeerListChange(Tox* tox, uint32_t conferenceId, void* vCore)
 {
     std::ignore = tox;
-    const auto core = static_cast<Core*>(vCore);
+    auto* const core = static_cast<Core*>(vCore);
     qDebug("Conference %u peerlist changed", conferenceId);
     // no saveRequest, this callback is called on every connection to conference peer, not just on brand new peers
     emit core->conferencePeerlistChanged(conferenceId);
@@ -1316,7 +1316,7 @@ QString Core::getFriendUsername(uint32_t friendNumber) const
     return ToxString(nameBuf.data(), nameSize).getQString();
 }
 
-uint64_t Core::getMaxMessageSize() const
+uint64_t Core::getMaxMessageSize()
 {
     /*
      * TODO: Remove this hack; the reported max message length we receive from c-toxcore

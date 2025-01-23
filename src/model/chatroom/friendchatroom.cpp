@@ -113,7 +113,7 @@ void FriendChatroom::inviteFriend(const Conference* conference)
 QVector<ConferenceToDisplay> FriendChatroom::getConferences() const
 {
     QVector<ConferenceToDisplay> conferences;
-    for (const auto conference : conferenceList.getAllConferences()) {
+    for (auto* const conference : conferenceList.getAllConferences()) {
         const auto name = getShortName(conference->getName());
         const ConferenceToDisplay conferenceToDisplay = {name, conference};
         conferences.push_back(conferenceToDisplay);
@@ -157,27 +157,27 @@ void FriendChatroom::resetEventFlags()
 bool FriendChatroom::possibleToOpenInNewWindow() const
 {
     const auto friendPk = frnd->getPublicKey();
-    const auto dialogs = dialogsManager->getFriendDialogs(friendPk);
+    auto* const dialogs = dialogsManager->getFriendDialogs(friendPk);
     return (dialogs == nullptr) || dialogs->chatroomCount() > 1;
 }
 
 bool FriendChatroom::canBeRemovedFromWindow() const
 {
     const auto friendPk = frnd->getPublicKey();
-    const auto dialogs = dialogsManager->getFriendDialogs(friendPk);
+    auto* const dialogs = dialogsManager->getFriendDialogs(friendPk);
     return (dialogs != nullptr) && dialogs->hasChat(friendPk);
 }
 
 bool FriendChatroom::friendCanBeRemoved() const
 {
     const auto friendPk = frnd->getPublicKey();
-    const auto dialogs = dialogsManager->getFriendDialogs(friendPk);
+    auto* const dialogs = dialogsManager->getFriendDialogs(friendPk);
     return (dialogs == nullptr) || !dialogs->hasChat(friendPk);
 }
 
 void FriendChatroom::removeFriendFromDialogs()
 {
     const auto friendPk = frnd->getPublicKey();
-    auto dialogs = dialogsManager->getFriendDialogs(friendPk);
+    auto* dialogs = dialogsManager->getFriendDialogs(friendPk);
     dialogs->removeFriend(friendPk);
 }

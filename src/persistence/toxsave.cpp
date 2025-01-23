@@ -30,7 +30,7 @@ ToxSave::~ToxSave()
 
 bool ToxSave::toxSaveEventHandler(const QByteArray& eventData, void* userData)
 {
-    auto toxSave = static_cast<ToxSave*>(userData);
+    auto* toxSave = static_cast<ToxSave*>(userData);
 
     if (!eventData.endsWith(".tox")) {
         return false;

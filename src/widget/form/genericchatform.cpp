@@ -516,7 +516,7 @@ void GenericChatForm::addSystemInfoMessage(const QDateTime& datetime, SystemMess
     chatLog.addSystemMessage(systemMessage);
 }
 
-QDateTime GenericChatForm::getTime(const ChatLine::Ptr& chatLine) const
+QDateTime GenericChatForm::getTime(const ChatLine::Ptr& chatLine)
 {
     if (chatLine) {
         Timestamp* const timestamp = qobject_cast<Timestamp*>(chatLine->getContent(2));
@@ -584,7 +584,7 @@ bool GenericChatForm::eventFilter(QObject* object, QEvent* event)
     if (object != fileButton && object != fileFlyout)
         return false;
 
-    auto wObject = qobject_cast<QWidget*>(object);
+    auto* wObject = qobject_cast<QWidget*>(object);
     if ((wObject == nullptr) || !wObject->isEnabled())
         return false;
 

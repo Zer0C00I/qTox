@@ -357,7 +357,7 @@ private slots:
     void testSetConferencesOnTop();
 
 private:
-    std::unique_ptr<FriendListManager> createManagerWithItems(const QVector<IFriendListItem*> itemsVec);
+    std::unique_ptr<FriendListManager> createManagerWithItems(QVector<IFriendListItem*> itemsVec);
 };
 
 void TestFriendListManager::testAddFriendListItem()
@@ -367,13 +367,13 @@ void TestFriendListManager::testAddFriendListItem()
     FriendItemsBuilder listBuilder;
 
     auto checkFunc = [&](const QVector<IFriendListItem*> itemsVec) {
-        for (auto item : itemsVec) {
+        for (auto* item : itemsVec) {
             manager->addFriendListItem(item);
         }
         QCOMPARE(manager->getItems().size(), itemsVec.size());
         QCOMPARE(spy.count(), itemsVec.size());
         spy.clear();
-        for (auto item : itemsVec) {
+        for (auto* item : itemsVec) {
             manager->removeFriendListItem(item);
         }
         QCOMPARE(manager->getItems().size(), 0);
@@ -433,7 +433,7 @@ void TestFriendListManager::testSortByActivity()
     QCOMPARE(manager->getPositionsChanged(), false);
     QCOMPARE(manager->getItems().size(), sortedVec.size());
     for (int i = 0; i < sortedVec.size(); ++i) {
-        auto fromManager = manager->getItems().at(i).get();
+        auto* fromManager = manager->getItems().at(i).get();
         auto fromSortedVec = sortedVec.at(i);
         QCOMPARE(fromManager->getNameItem(), fromSortedVec->getNameItem());
     }
@@ -601,7 +601,7 @@ TestFriendListManager::createManagerWithItems(const QVector<IFriendListItem*> it
 {
     std::unique_ptr<FriendListManager> manager = std::make_unique<FriendListManager>(0, this);
 
-    for (auto item : itemsVec) {
+    for (auto* item : itemsVec) {
         manager->addFriendListItem(item);
     }
 

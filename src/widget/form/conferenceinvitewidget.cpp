@@ -63,7 +63,7 @@ void ConferenceInviteWidget::retranslateUi()
  * @brief Returns infomation about invitation - e.g., who and when sent
  * @return Invite information object
  */
-const ConferenceInvite ConferenceInviteWidget::getInviteInfo() const
+ConferenceInvite ConferenceInviteWidget::getInviteInfo() const
 {
     return inviteInfo;
 }

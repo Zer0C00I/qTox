@@ -223,7 +223,7 @@ void OpenAL::reinitInput(const QString& inDevDesc)
     locker.unlock();
     // this must happen outside `audioLock`, to avoid a deadlock when
     // a slot on AlSource::invalidate tries to create a new source immediately.
-    for (auto& source : bakSources) {
+    for (const auto& source : bakSources) {
         source->kill();
     }
 }
@@ -242,7 +242,7 @@ bool OpenAL::reinitOutput(const QString& outDevDesc)
     locker.unlock();
     // this must happen outside `audioLock`, to avoid a deadlock when
     // a slot on AlSink::invalidate tries to create a new source immediately.
-    for (auto& sink : bakSinks) {
+    for (const auto& sink : bakSinks) {
         sink->kill();
     }
 
@@ -265,7 +265,7 @@ std::unique_ptr<IAudioSink> OpenAL::makeSink()
     ALuint sid;
     alGenSources(1, &sid);
 
-    const auto sink = new AlSink(*this, sid);
+    auto* const sink = new AlSink(*this, sid);
     if (sink == nullptr) {
         return {};
     }
@@ -512,7 +512,7 @@ void OpenAL::cleanupSound()
 
     auto sinkIt = soundSinks.begin();
     while (sinkIt != soundSinks.end()) {
-        auto sink = *sinkIt;
+        auto* sink = *sinkIt;
         const ALuint sourceId = sink->getSourceId();
         ALint state = 0;
 
@@ -532,7 +532,7 @@ void OpenAL::playAudioBuffer(uint sourceId, const int16_t* data, int samples, un
     assert(channels == 1 || channels == 2);
     const QMutexLocker<QRecursiveMutex> locker(&audioLock);
 
-    if (!((alOutDev != nullptr) && outputInitialized))
+    if ((alOutDev == nullptr) || !outputInitialized)
         return;
 
     ALuint bufids[BUFFER_COUNT];
@@ -665,7 +665,7 @@ void OpenAL::doInput()
     }
 
     // NOTE(sudden6): this loop probably doesn't scale too well with many sources
-    for (auto source : sources) {
+    for (auto* source : sources) {
         emit source->volumeAvailable(volume);
     }
     if (!isActive) {
@@ -673,7 +673,7 @@ void OpenAL::doInput()
     }
 
     // NOTE(sudden6): this loop probably doesn't scale too well with many sources
-    for (auto source : sources) {
+    for (auto* source : sources) {
         emit source->frameAvailable(inputBuffer, AUDIO_FRAME_SAMPLE_COUNT_PER_CHANNEL,
                                     inputChannels, AUDIO_SAMPLE_RATE);
     }

@@ -38,7 +38,7 @@ ContentDialog* ContentDialogManager::current()
 
 bool ContentDialogManager::chatWidgetExists(const ChatId& chatId)
 {
-    const auto dialog = chatDialogs.value(chatId, nullptr);
+    auto* const dialog = chatDialogs.value(chatId, nullptr);
     if (dialog == nullptr) {
         return false;
     }
@@ -50,7 +50,7 @@ FriendWidget* ContentDialogManager::addFriendToDialog(ContentDialog* dialog,
                                                       std::shared_ptr<FriendChatroom> chatroom,
                                                       GenericChatForm* form)
 {
-    auto friendWidget = dialog->addFriend(chatroom, form);
+    auto* friendWidget = dialog->addFriend(chatroom, form);
     const auto& friendPk = friendWidget->getFriend()->getPublicKey();
 
     ContentDialog* lastDialog = getFriendDialog(friendPk);
@@ -66,7 +66,7 @@ ConferenceWidget* ContentDialogManager::addConferenceToDialog(ContentDialog* dia
                                                               std::shared_ptr<ConferenceRoom> chatroom,
                                                               GenericChatForm* form)
 {
-    auto conferenceWidget = dialog->addConference(chatroom, form);
+    auto* conferenceWidget = dialog->addConference(chatroom, form);
     const auto& conferenceId = conferenceWidget->getConference()->getPersistentId();
 
     ContentDialog* lastDialog = getConferenceDialog(conferenceId);
@@ -80,7 +80,7 @@ ConferenceWidget* ContentDialogManager::addConferenceToDialog(ContentDialog* dia
 
 void ContentDialogManager::focusChat(const ChatId& chatId)
 {
-    auto dialog = focusDialog(chatId, chatDialogs);
+    auto* dialog = focusDialog(chatId, chatDialogs);
     if (dialog != nullptr) {
         dialog->focusChat(chatId);
     }
@@ -112,7 +112,7 @@ ContentDialog* ContentDialogManager::focusDialog(
 
 void ContentDialogManager::updateFriendStatus(const ToxPk& friendPk)
 {
-    auto dialog = chatDialogs.value(friendPk);
+    auto* dialog = chatDialogs.value(friendPk);
     if (dialog == nullptr) {
         return;
     }
@@ -128,7 +128,7 @@ void ContentDialogManager::updateFriendStatus(const ToxPk& friendPk)
 
 void ContentDialogManager::updateConferenceStatus(const ConferenceId& conferenceId)
 {
-    auto dialog = chatDialogs.value(conferenceId);
+    auto* dialog = chatDialogs.value(conferenceId);
     if (dialog == nullptr) {
         return;
     }
@@ -141,7 +141,7 @@ void ContentDialogManager::updateConferenceStatus(const ConferenceId& conference
 
 bool ContentDialogManager::isChatActive(const ChatId& chatId)
 {
-    const auto dialog = chatDialogs.value(chatId);
+    auto* const dialog = chatDialogs.value(chatId);
     if (dialog == nullptr) {
         return false;
     }

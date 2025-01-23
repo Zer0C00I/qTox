@@ -68,7 +68,7 @@ public:
     ~Core() override;
 
     static const QString TOX_EXT;
-    uint64_t getMaxMessageSize() const;
+    static uint64_t getMaxMessageSize();
     QString getPeerName(const ToxPk& id) const;
     QVector<uint32_t> getFriendList() const;
     ConferenceId getConferencePersistentId(uint32_t conferenceNumber) const override;
@@ -161,7 +161,7 @@ signals:
     void friendRemoved(uint32_t friendId);
     void friendLastSeenChanged(uint32_t friendId, const QDateTime& dateTime);
 
-    void emptyConferenceCreated(uint32_t conferencenumber, const ConferenceId conferenceId,
+    void emptyConferenceCreated(uint32_t conferencenumber, ConferenceId conferenceId,
                                 const QString& title = QString());
     void conferenceInviteReceived(const ConferenceInvite& inviteInfo);
     void conferenceMessageReceived(uint32_t conferencenumber, uint32_t peernumber,

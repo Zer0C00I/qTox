@@ -62,7 +62,7 @@ private:
     static bool tryRemoveFile(const QString& filepath);
 
     void updateWidget(const ToxFile& file);
-    void updateBackgroundColor(const ToxFile::FileStatus status);
+    void updateBackgroundColor(ToxFile::FileStatus status);
 
 private:
     CoreFile& coreFile;

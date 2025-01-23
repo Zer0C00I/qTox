@@ -64,7 +64,7 @@ public:
         CallEnd
     };
 
-    inline static QString getSound(Sound s)
+    static QString getSound(Sound s)
     {
         switch (s) {
         case Sound::Test:

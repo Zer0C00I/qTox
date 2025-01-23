@@ -17,7 +17,7 @@ public:
         return int(children.size());
     }
 
-    int columnCount() const
+    static int columnCount()
     {
         return 3;
     }
@@ -115,7 +115,7 @@ QModelIndex DebugObjectTreeModel::index(int row, int column, const QModelIndex& 
     TreeItem* parentItem =
         parent.isValid() ? static_cast<TreeItem*>(parent.internalPointer()) : root_.get();
 
-    if (auto* childItem = parentItem->child(row))
+    if (const auto* childItem = parentItem->child(row))
         return createIndex(row, column, childItem);
     return {};
 }
@@ -145,8 +145,8 @@ int DebugObjectTreeModel::rowCount(const QModelIndex& parent) const
 int DebugObjectTreeModel::columnCount(const QModelIndex& parent) const
 {
     if (parent.isValid())
-        return static_cast<TreeItem*>(parent.internalPointer())->columnCount();
-    return root_->columnCount();
+        return DebugObjectTreeModel::TreeItem::columnCount();
+    return DebugObjectTreeModel::TreeItem::columnCount();
 }
 
 QVariant DebugObjectTreeModel::data(const QModelIndex& index, int role) const

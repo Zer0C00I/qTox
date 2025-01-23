@@ -129,7 +129,7 @@ protected:
 
 private:
     void retranslateUi();
-    bool isActiveFileTransfer(ChatLine::Ptr l);
+    static bool isActiveFileTransfer(ChatLine::Ptr l);
     void handleMultiClickEvent();
     void moveSelectionRectUpIfSelected(int offset);
     void moveSelectionRectDownIfSelected(int offset);

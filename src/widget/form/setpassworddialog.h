@@ -20,8 +20,10 @@ public:
     {
         Rejected = QDialog::Rejected,
         Accepted = QDialog::Accepted,
-        Tertiary
+        Tertiary = Accepted + 1,
     };
+    static_assert(Rejected != Accepted && Accepted != Tertiary, "ReturnCode values must be unique");
+
     explicit SetPasswordDialog(QString body_, QString extraButton, QWidget* parent = nullptr);
     ~SetPasswordDialog() override;
     QString getPassword();

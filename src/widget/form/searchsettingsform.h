@@ -34,15 +34,15 @@ private:
     Style& style;
 
     void updateStartDateLabel();
-    void setUpdate(const bool isUpdate_);
+    void setUpdate(bool isUpdate_);
 
 private slots:
-    void onStartSearchSelected(const int index);
-    void onRegisterClicked(const bool checked);
-    void onWordsOnlyClicked(const bool checked);
-    void onRegularClicked(const bool checked);
+    void onStartSearchSelected(int index);
+    void onRegisterClicked(bool checked);
+    void onWordsOnlyClicked(bool checked);
+    void onRegularClicked(bool checked);
     void onChoiceDate();
 
 signals:
-    void updateSettings(const bool isUpdate);
+    void updateSettings(bool isUpdate);
 };

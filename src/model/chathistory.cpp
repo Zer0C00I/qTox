@@ -255,7 +255,7 @@ void ChatHistory::onFileTransferBrokenUnbroken(const ToxPk& sender, const ToxFil
 void ChatHistory::onMessageReceived(const ToxPk& sender, const Message& message)
 {
     if (canUseHistory()) {
-        auto& chatId = chat.getPersistentId();
+        const auto& chatId = chat.getPersistentId();
         auto displayName = chat.getDisplayedName(sender);
         auto content = message.content;
         if (message.isAction) {
@@ -272,7 +272,7 @@ void ChatHistory::onMessageSent(DispatchedMessageId id, const Message& message)
 {
     if (canUseHistory()) {
         auto selfPk = coreIdHandler.getSelfPublicKey();
-        auto& chatId = chat.getPersistentId();
+        const auto& chatId = chat.getPersistentId();
 
         auto content = message.content;
         if (message.isAction) {

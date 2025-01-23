@@ -106,7 +106,7 @@ protected slots:
 
 private:
     void retranslateUi();
-    QDateTime getTime(const ChatLine::Ptr& chatLine) const;
+    static QDateTime getTime(const ChatLine::Ptr& chatLine);
 
 protected:
     void adjustFileMenuPosition();

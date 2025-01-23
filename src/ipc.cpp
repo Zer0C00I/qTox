@@ -33,7 +33,7 @@ const char* getCurUsername()
 
 QString getIpcKey()
 {
-    auto* user = getCurUsername();
+    const auto* user = getCurUsername();
     if (user == nullptr) {
         qWarning() << "Failed to get current username. Will use a global IPC.";
         user = "";

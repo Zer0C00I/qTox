@@ -19,10 +19,8 @@ extern "C"
 
 #include "src/persistence/settings.h"
 
-#include <QDebug>
 #include <QMutex>
 #include <QMutexLocker>
-#include <QScreen>
 #include <QVector>
 
 #include <utility>

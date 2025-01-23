@@ -22,7 +22,7 @@ class ConferenceInviteWidget : public QWidget
 public:
     ConferenceInviteWidget(QWidget* parent, ConferenceInvite invite, Settings& settings, Core& core);
     void retranslateUi();
-    const ConferenceInvite getInviteInfo() const;
+    ConferenceInvite getInviteInfo() const;
 
 signals:
     void accepted(const ConferenceInvite& invite);

@@ -36,7 +36,7 @@ class RawDatabaseImpl final : QObject, public RawDatabase
 
 private:
     static void regexp(sqlite3_context* ctx, int argc, sqlite3_value** argv,
-                       const QRegularExpression::PatternOptions cs);
+                       QRegularExpression::PatternOptions cs);
 
     /**
      * @struct Transaction
@@ -109,7 +109,7 @@ protected slots:
 
 private:
     void compileAndExecute(Transaction& trans);
-    QString anonymizeQuery(const QByteArray& query);
+    static QString anonymizeQuery(const QByteArray& query);
     bool openEncryptedDatabaseAtLatestSupportedVersion(const QString& hexKey);
     bool updateSavedCipherParameters(const QString& hexKey, SqlCipherParams newParams);
     bool setCipherParameters(SqlCipherParams params, const QString& database = {});

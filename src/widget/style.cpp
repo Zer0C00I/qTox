@@ -157,13 +157,12 @@ QString Style::getThemeFolder(int themeColor)
     return fullPath % QDir::separator();
 }
 
-const QString Style::getStylesheet(const QString& filename, const Settings& settings,
-                                   const QFont& baseFont)
+QString Style::getStylesheet(const QString& filename, const Settings& settings, const QFont& baseFont)
 {
     return getStylesheet(filename, settings.getThemeColor(), baseFont);
 }
 
-const QString Style::getStylesheet(const QString& filename, int themeColor, const QFont& baseFont)
+QString Style::getStylesheet(const QString& filename, int themeColor, const QFont& baseFont)
 {
     const QString fullPath = getThemeFolder(themeColor) + filename;
     const std::pair<const QString, const QFont> cacheKey(fullPath, baseFont);
@@ -178,12 +177,12 @@ const QString Style::getStylesheet(const QString& filename, int themeColor, cons
     return newStylesheet;
 }
 
-const QString Style::getImagePath(const QString& filename, const Settings& settings)
+QString Style::getImagePath(const QString& filename, const Settings& settings)
 {
     return getImagePath(filename, settings.getThemeColor());
 }
 
-const QString Style::getImagePath(const QString& filename, int themeColor)
+QString Style::getImagePath(const QString& filename, int themeColor)
 {
     QString fullPath = getThemeFolder(themeColor) + filename;
 
@@ -233,7 +232,7 @@ QFont Style::getFont(Font font)
     return fonts.at(font);
 }
 
-const QString Style::resolve(const QString& filename, int themeColor, const QFont& baseFont)
+QString Style::resolve(const QString& filename, int themeColor, const QFont& baseFont)
 {
     const QString themePath = getThemeFolder(themeColor);
     QString fullPath = themePath + filename;

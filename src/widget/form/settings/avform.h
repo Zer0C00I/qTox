@@ -43,7 +43,7 @@ private:
     void getVideoDevices();
 
     static int getModeSize(VideoMode mode);
-    void selectBestModes(QVector<VideoMode>& allVideoModes);
+    static void selectBestModes(QVector<VideoMode>& allVideoModes);
     void fillCameraModesComboBox();
     void fillScreenModesComboBox();
     void fillAudioQualityComboBox();

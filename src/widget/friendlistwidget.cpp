@@ -161,12 +161,12 @@ void FriendListWidget::sortByMode()
         QVector<IFriendListItem*> friendItems; // Items that are not included in the circle
         int posByName = 0;                     // Needed for scroll contacts
         // Linking a friend with a circle and setting scroll position
-        for (auto& i : itemsTmp) {
+        for (const auto& i : itemsTmp) {
             if (i->isFriend() && i->getCircleId() >= 0) {
                 CircleWidget* circleWgt = CircleWidget::getFromID(i->getCircleId());
                 if (circleWgt != nullptr) {
                     // Place a friend in the circle and continue
-                    FriendWidget* frndTmp = qobject_cast<FriendWidget*>((i.get())->getWidget());
+                    FriendWidget* frndTmp = qobject_cast<FriendWidget*>((i)->getWidget());
                     circleWgt->addFriendWidget(frndTmp, frndTmp->getFriend()->getStatus());
                     continue;
                 }
@@ -195,7 +195,7 @@ void FriendListWidget::sortByMode()
                 return a->getName().toUpper() < b->getName().toUpper();
             });
 
-            for (auto circle : circles) {
+            for (auto* circle : circles) {
 
                 const QVector<std::shared_ptr<IFriendListItem>> itemsInCircle =
                     getItemsFromCircle(circle);
@@ -236,7 +236,7 @@ void FriendListWidget::sortByMode()
 
         const QVector<std::shared_ptr<IFriendListItem>> itemsTmp = manager->getItems();
 
-        for (auto& i : itemsTmp) {
+        for (const auto& i : itemsTmp) {
             listLayout->addWidget(i->getWidget());
         }
 
@@ -252,12 +252,12 @@ void FriendListWidget::sortByMode()
         manager->applyFilter();
 
         // Insert widgets to CategoryWidget
-        for (auto& i : itemsTmp) {
+        for (const auto& i : itemsTmp) {
             if (i->isFriend()) {
                 const int timeIndex = static_cast<int>(getTimeBucket(i->getLastActivity()));
                 QWidget* widget = activityLayout->itemAt(timeIndex)->widget();
                 CategoryWidget* categoryWidget = qobject_cast<CategoryWidget*>(widget);
-                FriendWidget* frnd = qobject_cast<FriendWidget*>((i.get())->getWidget());
+                FriendWidget* frnd = qobject_cast<FriendWidget*>((i)->getWidget());
                 if (!isVisible() || (isVisible() && frnd->isVisible())) {
                     categoryWidget->addFriendWidget(frnd, frnd->getFriend()->getStatus());
                 }

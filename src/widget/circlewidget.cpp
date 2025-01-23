@@ -97,7 +97,7 @@ void CircleWidget::contextMenuEvent(QContextMenuEvent* event)
             FriendListWidget* friendListWidget = static_cast<FriendListWidget*>(parentWidget());
             moveFriendWidgets(friendListWidget);
 
-            friendListWidget->removeCircleWidget(this);
+            FriendListWidget::removeCircleWidget(this);
 
             const int replacedCircle = settings.removeCircle(id);
 

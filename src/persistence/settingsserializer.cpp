@@ -140,10 +140,8 @@ void SettingsSerializer::beginWriteArray(const QString& prefix, int size)
         if (size > 0)
             index->size = std::max(index->size, size);
     } else {
-        if (size < 0)
-            size = 0;
         array = arrays.size();
-        arrays.push_back({group, size, prefix, {}});
+        arrays.push_back({group, std::max(size, 0), prefix, {}});
         arrayIndex = -1;
     }
 }
@@ -483,8 +481,7 @@ void SettingsSerializer::readIni()
                 continue;
             groupsToKill.append(g);
 
-            if (groupArrayIndex > a.size)
-                a.size = groupArrayIndex;
+            a.size = std::max(a.size, groupArrayIndex);
 
             // Associate the values for this array index
             for (int vi = values.size() - 1; vi >= 0; vi--) {

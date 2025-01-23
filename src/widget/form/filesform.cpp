@@ -260,7 +260,7 @@ QVariant Model::data(const QModelIndex& index, int role) const
     case Column::fileName:
         return files[row].fileName;
     case Column::contact: {
-        auto f = friendList.findFriend(friendList.id2Key(files[row].friendId));
+        auto* f = friendList.findFriend(friendList.id2Key(files[row].friendId));
         if (f == nullptr) {
             qWarning("Invalid friend for file transfer");
             return "Unknown";
@@ -374,7 +374,7 @@ bool Delegate::editorEvent(QEvent* event, QAbstractItemModel* model,
 {
     if (toFileTransferListColumn(index.column()) == Column::control) {
         if (event->type() == QEvent::MouseButtonPress) {
-            auto mouseEvent = reinterpret_cast<QMouseEvent*>(event);
+            auto* mouseEvent = reinterpret_cast<QMouseEvent*>(event);
             const auto pos = mouseEvent->pos();
             const auto posRect = pauseRect(option);
             const auto stRect = stopRect(option);

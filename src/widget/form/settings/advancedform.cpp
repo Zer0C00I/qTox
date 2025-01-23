@@ -191,11 +191,7 @@ void AdvancedForm::on_proxyAddr_editingFinished()
 
 void AdvancedForm::on_proxyPort_valueChanged(int port)
 {
-    if (port <= 0) {
-        port = 0;
-    }
-
-    settings.setProxyPort(port);
+    settings.setProxyPort(std::max(port, 0));
 }
 
 void AdvancedForm::on_proxyType_currentIndexChanged(int index)

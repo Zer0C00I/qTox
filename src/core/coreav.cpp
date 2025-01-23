@@ -887,7 +887,7 @@ void CoreAV::videoFrameCallback(ToxAV* toxAV, uint32_t friendNum, uint16_t w, ui
                                 int32_t yStride, int32_t uStride, int32_t vStride, void* vSelf)
 {
     std::ignore = toxAV;
-    auto self = static_cast<CoreAV*>(vSelf);
+    auto* self = static_cast<CoreAV*>(vSelf);
     // This callback should come from the CoreAV thread
     assert(QThread::currentThread() == self->coreAvThread.get());
     const QReadLocker locker{&self->callsLock};

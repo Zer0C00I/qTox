@@ -68,8 +68,8 @@ private:
     void retranslateUi();
     void addFriendRequestWidget(const QString& friendAddress_, const QString& message_);
     void removeFriendRequestWidget(QWidget* friendWidget);
-    void retranslateAcceptButton(QPushButton* acceptButton);
-    void retranslateRejectButton(QPushButton* rejectButton);
+    static void retranslateAcceptButton(QPushButton* acceptButton);
+    static void retranslateRejectButton(QPushButton* rejectButton);
     void deleteFriendRequest(const ToxId& toxId_);
     void setIdFromClipboard();
     QString getMessage() const;
