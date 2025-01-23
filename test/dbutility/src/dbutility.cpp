@@ -12,10 +12,11 @@
 #include <array>
 #include <vector>
 
-const std::array<QString, 11> DbUtility::testFileList =
-    {"testCreation.db", "testIsNewDbTrue.db", "testIsNewDbFalse.db", "test0to1.db",
-     "test1to2.db",     "test2to3.db",        "test3to4.db",         "test4to5.db",
-     "test5to6.db",     "test6to7.db",        "test9to10.db"};
+const std::array<QString, 11> DbUtility::testFileList = {
+    "testCreation.db", "testIsNewDbTrue.db", "testIsNewDbFalse.db", "test0to1.db",
+    "test1to2.db",     "test2to3.db",        "test3to4.db",         "test4to5.db",
+    "test5to6.db",     "test6to7.db",        "test9to10.db",
+};
 
 // db schemas can be select with "SELECT name, sql FROM sqlite_master;" on the database.
 const std::vector<DbUtility::SqliteMasterEntry> DbUtility::schema0{
@@ -200,24 +201,23 @@ bool DbUtility::SqliteMasterEntry::operator==(const DbUtility::SqliteMasterEntry
 void DbUtility::verifyDb(std::shared_ptr<RawDatabase> db,
                          const std::vector<DbUtility::SqliteMasterEntry>& expectedSql)
 {
-    QVERIFY(db->execNow(RawDatabase::Query(QStringLiteral("SELECT name, sql FROM sqlite_master;"),
-                                           [&](const QVector<QVariant>& row) {
-                                               const QString tableName = row[0].toString();
-                                               if (row[1].isNull()) {
-                                                   // implicit indexes are automatically created for primary key constraints and unique constraints
-                                                   // so their existence is already covered by the table creation SQL
-                                                   return;
-                                               }
-                                               QString tableSql = row[1].toString();
-                                               // table and column names can be quoted. UPDATE
-                                               // TABLE automatically quotes the new names, but
-                                               // this has no functional impact on the schema. Strip
-                                               // quotes for comparison so that our created schema
-                                               // matches schema made from UPDATE TABLEs.
-                                               const QString unquotedTableSql = tableSql.remove("\"");
-                                               SqliteMasterEntry entry{tableName, unquotedTableSql};
-                                               QVERIFY(std::find(expectedSql.begin(),
-                                                                 expectedSql.end(), entry)
-                                                       != expectedSql.end());
-                                           })));
+    QVERIFY(db->execNow(RawDatabase::Query{
+        QStringLiteral("SELECT name, sql FROM sqlite_master;"),
+        [&](const QVector<QVariant>& row) {
+            const QString tableName = row[0].toString();
+            if (row[1].isNull()) {
+                // implicit indexes are automatically created for primary key constraints and unique
+                // constraints so their existence is already covered by the table creation SQL
+                return;
+            }
+            // table and column names can be quoted. UPDATE
+            // TABLE automatically quotes the new names, but
+            // this has no functional impact on the schema. Strip
+            // quotes for comparison so that our created schema
+            // matches schema made from UPDATE TABLEs.
+            const QString tableSql = row[1].toString().remove(QStringLiteral("\""));
+            const SqliteMasterEntry entry{tableName, tableSql};
+            QVERIFY(std::find(expectedSql.begin(), expectedSql.end(), entry) != expectedSql.end());
+        },
+    }));
 }

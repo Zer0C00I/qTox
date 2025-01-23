@@ -1048,9 +1048,9 @@ void Widget::setStatusMessage(const QString& statusMessage)
  */
 void Widget::playNotificationSound(IAudioSink::Sound sound, bool loop)
 {
-    bool isBusy = core->getStatus() == Status::Status::Busy;
-    bool busySound = settings.getBusySound();
-    bool notifySound = settings.getNotifySound();
+    const bool isBusy = core->getStatus() == Status::Status::Busy;
+    const bool busySound = settings.getBusySound();
+    const bool notifySound = settings.getNotifySound();
 
     if (!settings.getAudioOutDevEnabled() || !(notifySound && (!isBusy || busySound))) {
         // don't try to play sounds if audio is disabled

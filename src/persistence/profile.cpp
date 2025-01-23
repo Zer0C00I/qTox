@@ -408,8 +408,8 @@ QStringList Profile::getFilesByExt(QString extension, Paths& paths)
 const QStringList Profile::getAllProfileNames(Paths& paths)
 {
     profiles.clear();
-    QStringList toxFiles = getFilesByExt("tox", paths);
-    QStringList iniFiles = getFilesByExt("ini", paths);
+    const QStringList toxFiles = getFilesByExt("tox", paths);
+    const QStringList iniFiles = getFilesByExt("ini", paths);
     for (const QString& toxFile : toxFiles) {
         if (!iniFiles.contains(toxFile)) {
             Settings::createPersonal(paths, toxFile);
@@ -893,8 +893,8 @@ QStringList Profile::remove()
  */
 bool Profile::rename(QString newName)
 {
-    QString path = paths.getSettingsDirPath() + name;
-    QString newPath = paths.getSettingsDirPath() + newName;
+    const QString path = paths.getSettingsDirPath() + name;
+    const QString newPath = paths.getSettingsDirPath() + newName;
 
     if (!ProfileLocker::lock(newName, paths)) {
         return false;

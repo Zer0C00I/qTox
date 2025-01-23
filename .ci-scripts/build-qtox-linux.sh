@@ -132,6 +132,7 @@ ccache --show-stats
 if [ ! -z "${TIDY+x}" ]; then
   if [ ! -z "${TIDY_FIX+x}" ]; then
     run-clang-tidy -quiet -fix -format -p "$BUILD_DIR" \
+      -exclude-header-filter '/usr/.*' \
       audio/include/ \
       audio/src/ \
       src/ \
