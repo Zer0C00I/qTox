@@ -5,10 +5,8 @@
 
 #pragma once
 
-#include "src/chatlog/chatmessage.h"
 #include "src/core/receiptnum.h"
 #include "src/model/message.h"
-#include "src/persistence/db/rawdatabase.h"
 
 #include <QDateTime>
 #include <QMap>

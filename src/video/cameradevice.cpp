@@ -30,9 +30,9 @@ extern "C"
 // no longer needed when avformat version < 59 is no longer supported
 using AvFindInputFormatRet = decltype(av_find_input_format(""));
 
-#include "src/platform/camera/avfoundation.h"
-#include "src/platform/camera/directshow.h"
-#include "src/platform/camera/v4l2.h"
+#include "src/platform/camera/avfoundation.h" // IWYU pragma: keep
+#include "src/platform/camera/directshow.h"   // IWYU pragma: keep
+#include "src/platform/camera/v4l2.h"         // IWYU pragma: keep
 
 /**
  * @class CameraDevice

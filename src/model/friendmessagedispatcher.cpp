@@ -6,7 +6,6 @@
 #include "friendmessagedispatcher.h"
 
 #include "src/model/status.h"
-#include "src/persistence/settings.h"
 
 FriendMessageDispatcher::FriendMessageDispatcher(Friend& f_, MessageProcessor processor_,
                                                  ICoreFriendMessageSender& messageSender_)

@@ -52,6 +52,7 @@ class ConferenceRoom;
 class ConferenceInvite;
 class ConferenceInviteForm;
 class ConferenceWidget;
+class DocumentCache;
 class MaskablePixmapWidget;
 class ProfileForm;
 class ProfileInfo;

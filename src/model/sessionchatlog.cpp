@@ -8,6 +8,7 @@
 #include "src/conferencelist.h"
 #include "src/friendlist.h"
 #include "src/model/conference.h"
+#include "src/model/friend.h"
 
 #include <QDebug>
 #include <QtGlobal>

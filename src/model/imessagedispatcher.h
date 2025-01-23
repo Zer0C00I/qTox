@@ -6,14 +6,13 @@
 #pragma once
 
 #include "src/model/brokenmessagereason.h"
-#include "src/model/friend.h"
-#include "src/model/message.h"
 #include "util/strongtype.h"
 
 #include <QObject>
 #include <QString>
 
-#include <cstdint>
+struct Message;
+class ToxPk;
 
 using DispatchedMessageId = NamedType<size_t, struct SentMessageIdTag, Orderable, Incrementable>;
 Q_DECLARE_METATYPE(DispatchedMessageId)

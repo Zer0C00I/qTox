@@ -21,7 +21,6 @@
 #include "src/widget/friendlistlayout.h"
 #include "src/widget/friendwidget.h"
 #include "src/widget/style.h"
-#include "src/widget/tool/adjustingscrollarea.h"
 #include "src/widget/translator.h"
 #include "src/widget/widget.h"
 

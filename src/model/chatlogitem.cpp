@@ -5,9 +5,6 @@
 
 #include "chatlogitem.h"
 
-#include "src/model/conference.h"
-#include "src/model/friend.h"
-
 #include <cassert>
 #include <utility>
 

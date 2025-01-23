@@ -5,10 +5,7 @@
 
 #include "videosurface.h"
 
-#include "src/core/core.h"
 #include "src/friendlist.h"
-#include "src/model/friend.h"
-#include "src/persistence/settings.h"
 #include "src/video/videoframe.h"
 #include "src/widget/friendwidget.h"
 #include "src/widget/style.h"

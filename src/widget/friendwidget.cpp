@@ -14,7 +14,6 @@
 #include "src/friendlist.h"
 #include "src/model/about/aboutfriend.h"
 #include "src/model/chatroom/friendchatroom.h"
-#include "src/model/conference.h"
 #include "src/model/friend.h"
 #include "src/model/status.h"
 #include "src/persistence/settings.h"

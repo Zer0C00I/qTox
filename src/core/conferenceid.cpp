@@ -57,5 +57,5 @@ int ConferenceId::getSize() const
 
 std::unique_ptr<ChatId> ConferenceId::clone() const
 {
-    return std::unique_ptr<ChatId>(new ConferenceId(*this));
+    return std::make_unique<ConferenceId>(*this);
 }

@@ -8,7 +8,6 @@
 #include "serialize.h"
 
 #include "src/core/toxencrypt.h"
-#include "src/persistence/profile.h"
 
 #include <QDebug>
 #include <QFile>
@@ -16,6 +15,7 @@
 
 #include <cassert>
 #include <memory>
+#include <tox/toxencryptsave.h>
 #include <utility>
 
 /**

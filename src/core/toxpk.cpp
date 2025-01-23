@@ -78,5 +78,5 @@ int ToxPk::getSize() const
 
 std::unique_ptr<ChatId> ToxPk::clone() const
 {
-    return std::unique_ptr<ChatId>(new ToxPk(*this));
+    return std::make_unique<ToxPk>(*this);
 }

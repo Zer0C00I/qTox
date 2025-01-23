@@ -3,7 +3,7 @@
  * Copyright © 2024-2025 The TokTok team.
  */
 
-#include "capslock.h"
+#include "capslock.h" // IWYU pragma: associated
 
 #ifdef QTOX_PLATFORM_EXT
 #include <QtCore/qsystemdetection.h>

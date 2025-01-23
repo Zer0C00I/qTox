@@ -9,6 +9,8 @@
 #include "v4l2.h"
 
 #if defined(USING_V4L)
+#include "src/video/videomode.h"
+
 #include <QDebug>
 
 #include <cerrno>

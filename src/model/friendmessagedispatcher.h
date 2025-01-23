@@ -14,8 +14,6 @@
 #include <QObject>
 #include <QString>
 
-#include <cstdint>
-
 class FriendMessageDispatcher : public IMessageDispatcher
 {
     Q_OBJECT

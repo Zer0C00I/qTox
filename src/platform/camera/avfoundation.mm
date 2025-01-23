@@ -11,6 +11,8 @@
 #include <QObject>
 
 #ifdef Q_OS_MACOS
+#include "src/video/videomode.h"
+
 #import <AVFoundation/AVFoundation.h>
 
 namespace {

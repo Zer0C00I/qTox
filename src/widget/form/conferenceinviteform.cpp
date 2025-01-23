@@ -5,8 +5,6 @@
 
 #include "conferenceinviteform.h"
 
-#include "ui_mainwindow.h"
-
 #include "src/core/core.h"
 #include "src/model/conferenceinvite.h"
 #include "src/persistence/settings.h"
@@ -19,6 +17,7 @@
 #include <QGroupBox>
 #include <QLabel>
 #include <QPushButton>
+#include <QScrollArea>
 #include <QSignalMapper>
 #include <QVBoxLayout>
 #include <QWindow>

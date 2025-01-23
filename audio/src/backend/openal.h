@@ -17,7 +17,6 @@
 
 #include <AL/al.h>
 #include <AL/alc.h>
-#include <atomic>
 #include <cassert>
 #include <cmath>
 #include <memory>

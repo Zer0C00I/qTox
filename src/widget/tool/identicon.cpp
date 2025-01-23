@@ -5,8 +5,6 @@
 
 #include "identicon.h"
 
-#include "src/core/toxpk.h"
-
 #include <QColor>
 #include <QCryptographicHash>
 #include <QDebug>

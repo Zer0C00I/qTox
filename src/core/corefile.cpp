@@ -12,7 +12,6 @@
 
 #include "src/model/status.h"
 #include "src/model/toxclientstandards.h"
-#include "src/persistence/settings.h"
 #include "util/toxcoreerrorparser.h"
 
 #include <QDebug>

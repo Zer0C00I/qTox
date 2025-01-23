@@ -8,17 +8,12 @@
 #include "mock/mockbootstraplistgenerator.h"
 #include "mock/mockcoresettings.h"
 #include "src/core/icoresettings.h"
-#include "src/core/toxoptions.h"
 #include "src/model/ibootstraplistgenerator.h"
-#include "src/net/bootstrapnodeupdater.h"
-#include "src/persistence/settings.h"
 
 #include <QSignalSpy>
 #include <QtGlobal>
 #include <QtTest/QtTest>
 
-#include <iostream>
-#include <limits>
 #include <memory>
 
 Q_DECLARE_METATYPE(QList<DhtServer>)

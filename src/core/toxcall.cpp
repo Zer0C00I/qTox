@@ -8,7 +8,6 @@
 #include "audio/audio.h"
 #include "src/core/coreav.h"
 #include "src/model/conference.h"
-#include "src/persistence/settings.h"
 #include "src/video/camerasource.h"
 #include "src/video/corevideosource.h"
 

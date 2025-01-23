@@ -7,7 +7,7 @@
 
 #include <QMetaObject>
 
-#include <functional>
+#include <functional> // IWYU pragma: keep
 
 /**
  * @file interface.h

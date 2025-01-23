@@ -6,13 +6,13 @@
 
 #pragma once
 
-#include "src/video/videomode.h"
-
 #include <QPair>
 #include <QString>
 #include <QVector>
 
 #ifdef Q_OS_WIN
+struct VideoMode;
+
 namespace DirectShow {
 QVector<QPair<QString, QString>> getDeviceList();
 QVector<VideoMode> getDeviceModes(QString devName);

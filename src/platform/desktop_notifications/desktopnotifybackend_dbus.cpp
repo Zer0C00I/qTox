@@ -2,7 +2,7 @@
  * Copyright © 2024-2025 The TokTok team.
  */
 
-#include "desktopnotifybackend.h"
+#include "desktopnotifybackend.h" // IWYU pragma: associated
 
 #include <QDebug>
 

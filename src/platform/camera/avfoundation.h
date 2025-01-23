@@ -4,13 +4,13 @@
  */
 #pragma once
 
-#include "src/video/videomode.h"
-
 #include <QPair>
 #include <QString>
 #include <QVector>
 
 #ifdef Q_OS_MACOS
+struct VideoMode;
+
 namespace avfoundation {
 bool isDesktopCapture(const QString& devName);
 bool hasPermission(const QString& devName);

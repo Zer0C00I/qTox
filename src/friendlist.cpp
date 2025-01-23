@@ -5,7 +5,6 @@
 
 #include "friendlist.h"
 
-#include "src/core/chatid.h"
 #include "src/core/toxpk.h"
 #include "src/model/friend.h"
 #include "src/persistence/settings.h"

@@ -15,8 +15,6 @@
 #include <QVBoxLayout>
 #include <QWindow>
 
-#include <memory>
-
 DebugWidget::DebugWidget(Paths& paths, Style& style, Widget* parent)
     : QWidget(parent, Qt::Window)
 {

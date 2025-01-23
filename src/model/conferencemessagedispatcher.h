@@ -14,8 +14,6 @@
 #include <QObject>
 #include <QString>
 
-#include <cstdint>
-
 class IConferenceSettings;
 
 class ConferenceMessageDispatcher : public IMessageDispatcher

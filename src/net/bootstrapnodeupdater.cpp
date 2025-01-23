@@ -5,7 +5,6 @@
 
 #include "bootstrapnodeupdater.h"
 
-#include "src/core/toxid.h"
 #include "src/core/toxpk.h"
 #include "src/persistence/paths.h"
 

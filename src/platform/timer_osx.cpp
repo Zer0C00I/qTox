@@ -9,7 +9,7 @@
  * <https://hg.pidgin.im/pidgin/main/file/13e4ae613a6a/COPYRIGHT> ).
  */
 
-#include "src/platform/timer.h"
+#include "src/platform/timer.h" // IWYU pragma: associated
 
 #ifdef QTOX_PLATFORM_EXT
 #include <QtCore/qsystemdetection.h>

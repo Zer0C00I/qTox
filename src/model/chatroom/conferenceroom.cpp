@@ -12,7 +12,6 @@
 #include "src/model/dialogs/idialogsmanager.h"
 #include "src/model/friend.h"
 #include "src/model/status.h"
-#include "src/persistence/settings.h"
 
 ConferenceRoom::ConferenceRoom(Conference* conference_, IDialogsManager* dialogsManager_,
                                Core& core_, FriendList& friendList_)

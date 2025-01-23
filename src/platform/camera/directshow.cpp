@@ -5,9 +5,11 @@
  */
 
 
-#include "directshow.h"
+#include "directshow.h" // IWYU pragma: keep
 
 #ifdef Q_OS_WIN
+#include "src/video/videomode.h"
+
 // Because of replacing to incorrect order, which leads to building failing,
 // this region is ignored for clang-format
 // clang-format off

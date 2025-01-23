@@ -9,7 +9,6 @@
 
 #include <QUrl>
 
-#include <memory>
 class QTimer;
 class QString;
 class UpdateCheck;

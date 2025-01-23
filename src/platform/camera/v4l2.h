@@ -4,13 +4,13 @@
  */
 #pragma once
 
-#include "src/video/videomode.h"
-
 #include <QPair>
 #include <QString>
 #include <QVector>
 
 #if (defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD)) && !defined(ANDROID)
+struct VideoMode;
+
 #define USING_V4L 1
 namespace v4l2 {
 QVector<VideoMode> getDeviceModes(QString devName);

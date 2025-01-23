@@ -5,24 +5,24 @@
 
 #pragma once
 
-
-#include "ui_removechatdialog.h"
-
-#include "src/model/friend.h"
-
 #include <QDialog>
 
+#include <memory>
 
-class RemoveChatDialog : public QDialog
+namespace Ui {
+class RemoveChatDialog;
+}
+
+class Chat;
+
+class RemoveChatDialog final : public QDialog
 {
     Q_OBJECT
 public:
     explicit RemoveChatDialog(QWidget* parent, const Chat& contact);
+    ~RemoveChatDialog() override;
 
-    bool removeHistory() const
-    {
-        return ui.removeHistory->isChecked();
-    }
+    bool removeHistory() const;
 
     bool accepted() const
     {
@@ -33,6 +33,6 @@ public slots:
     void onAccepted();
 
 protected:
-    Ui_RemoveChatDialog ui;
+    std::unique_ptr<Ui::RemoveChatDialog> ui;
     bool _accepted = false;
 };

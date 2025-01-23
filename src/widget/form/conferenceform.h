@@ -8,7 +8,6 @@
 #include "genericchatform.h"
 
 #include "src/core/toxpk.h"
-#include "src/persistence/iconferencesettings.h"
 
 #include <QMap>
 

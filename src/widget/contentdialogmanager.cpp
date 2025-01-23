@@ -12,8 +12,6 @@
 #include "src/widget/conferencewidget.h"
 #include "src/widget/friendwidget.h"
 
-#include <tuple>
-
 namespace {
 void removeDialog(ContentDialog* dialog,
                   QHash<std::reference_wrapper<const ChatId>, ContentDialog*>& dialogs)

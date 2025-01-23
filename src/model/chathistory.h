@@ -6,13 +6,14 @@
 #pragma once
 
 #include "ichatlog.h"
-#include "sessionchatlog.h"
 
-#include "src/model/brokenmessagereason.h"
-#include "src/persistence/history.h"
+#include "src/model/imessagedispatcher.h"
+#include "src/model/sessionchatlog.h"
 
 #include <QSet>
 
+class Chat;
+class ICoreIdHandler;
 class Settings;
 class FriendList;
 class ConferenceList;

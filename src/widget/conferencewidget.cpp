@@ -9,10 +9,8 @@
 
 #include "form/conferenceform.h"
 #include "src/conferencelist.h"
-#include "src/core/core.h"
 #include "src/friendlist.h"
 #include "src/model/conference.h"
-#include "src/model/friend.h"
 #include "src/model/status.h"
 #include "src/widget/friendwidget.h"
 #include "src/widget/style.h"

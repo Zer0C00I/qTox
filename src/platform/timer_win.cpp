@@ -3,7 +3,7 @@
  * Copyright © 2024-2025 The TokTok team.
  */
 
-#include "src/platform/timer.h"
+#include "src/platform/timer.h" // IWYU pragma: associated
 
 #ifdef QTOX_PLATFORM_EXT
 #include <QtCore/qsystemdetection.h>

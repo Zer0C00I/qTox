@@ -5,6 +5,8 @@
 
 #pragma once
 
+#include "src/core/toxpk.h"
+
 #include <QHash>
 
 #include <cstdint>
