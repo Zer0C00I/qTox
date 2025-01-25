@@ -642,7 +642,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Starts in portable mode; loads profile from this directory.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Запускается в портативном режиме; загружает профиль из этого каталога.</translation>
+        <translation>Запускается в портативном режиме; загружает профиль из этого каталога.</translation>
     </message>
 </context>
 <context>
@@ -828,7 +828,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>copy peer ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">скопировать идентификатор узла</translation>
+        <translation>скопировать идентификатор узла</translation>
     </message>
 </context>
 <context>
@@ -1927,7 +1927,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Incoming call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Входящий звонок</translation>
+        <translation>Входящий звонок</translation>
     </message>
 </context>
 <context>
@@ -2990,46 +2990,43 @@ Hide formatting characters:
         <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
         <comment>tooltip for Image preview setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Показывать предварительный просмотр отправленных и полученных изображений в чатах. Наведите указатель мыши на встроенный предварительный просмотр, чтобы отобразить предварительный просмотр большего размера.</translation>
+        <translation>Показывать предварительный просмотр отправленных и полученных изображений в чатах. Наведите указатель мыши на встроенный предварительный просмотр, чтобы отобразить предварительный просмотр большего размера.</translation>
     </message>
     <message>
         <source>Image preview</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Предварительный просмотр изображения</translation>
+        <translation>Предварительный просмотр изображения</translation>
     </message>
     <message>
         <source>Maximum number of messages (per conversation) loaded from chat history.
 Decrease this to improve performance. A too low number here may cause the
 scroll bar to disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Максимальное количество сообщений (за разговор), загруженных из истории
-чата. Уменьшите это значение, чтобы улучшить производительность. Слишком
-маленькое значение здесь может привести к исчезновению полосы прокрутки.</translation>
+        <translation>Максимальное количество сообщений (на диалог), загруженных из истории чата.
+Уменьшите это значение, чтобы улучшить производительность.
+Слишком низкое значение может привести к исчезновению полосы прокрутки.</translation>
     </message>
     <message>
         <source>Maximum chat log view size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Максимальный размер
-просмотра журнала чата</translation>
+        <translation>Максимальный размер журнала чата</translation>
     </message>
     <message>
         <source>Number of messages to load from the chat history when scrolling. A too low
 number here may cause the scroll bar to disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Количество сообщений, загружаемых из истории чата при прокрутке. Слишком
-маленькое значение здесь может привести к исчезновению полосы прокрутки.</translation>
+        <translation>Количество сообщений для загрузки из истории чата при пролистывании.
+Слишком низкое значение может привести к исчезновению полосы прокрутки.</translation>
     </message>
     <message>
         <source>Chat log chunk size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Размер фрагмента
-журнала чата</translation>
+        <translation>Размер фрагмента журнала чата</translation>
     </message>
     <message>
         <source>Chat log:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Журнал
-чата:</translation>
+        <translation>Журнал чата:</translation>
     </message>
 </context>
 <context>
