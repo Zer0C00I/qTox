@@ -912,8 +912,7 @@ void History::markAsDelivered(RowId messageId)
 bool History::historyAccessBlocked()
 {
     if (!settings.getEnableLogging()) {
-        assert(false);
-        qCritical() << "Blocked history access while history is disabled";
+        qDebug() << "Blocked history access while history is disabled";
         return true;
     }
 
