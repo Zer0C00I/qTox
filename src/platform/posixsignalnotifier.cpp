@@ -5,7 +5,7 @@
 
 #include "posixsignalnotifier.h"
 
-#ifndef Q_OS_WIN
+#if !defined(Q_OS_WIN) && !defined(Q_OS_WASM)
 #include "src/platform/stacktrace.h"
 
 #include <QDebug>

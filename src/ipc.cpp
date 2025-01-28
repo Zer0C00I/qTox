@@ -18,7 +18,7 @@
 #endif
 
 namespace {
-#ifndef ANDROID
+#if QT_CONFIG(sharedmemory)
 #ifdef Q_OS_WIN
 const char* getCurUsername()
 {
@@ -58,7 +58,7 @@ QString getIpcKey()
 
 IPC::IPC(uint32_t profileId_)
     : profileId{profileId_}
-#ifndef ANDROID
+#if QT_CONFIG(sharedmemory)
     , globalMemory{getIpcKey()}
 #endif
 {
@@ -81,7 +81,7 @@ IPC::IPC(uint32_t profileId_)
     std::uniform_int_distribution<uint64_t> distribution;
     globalId = distribution(rng);
     qDebug() << "Our global IPC ID is" << globalId;
-#ifdef ANDROID
+#if !QT_CONFIG(sharedmemory)
     return;
 #else
     if (globalMemory.create(sizeof(IPCMemory))) {
@@ -108,7 +108,7 @@ IPC::IPC(uint32_t profileId_)
 
 IPC::~IPC()
 {
-#ifndef ANDROID
+#if QT_CONFIG(sharedmemory)
     if (!globalMemory.lock()) {
         qWarning() << "Failed to lock in ~IPC";
         return;
@@ -139,7 +139,7 @@ time_t IPC::postEvent(const QString& name, const QByteArray& data, uint32_t dest
         return 0;
     }
 
-#ifdef ANDROID
+#if !QT_CONFIG(sharedmemory)
     std::ignore = dest;
     return 0;
 #else
@@ -175,7 +175,7 @@ time_t IPC::postEvent(const QString& name, const QByteArray& data, uint32_t dest
 
 bool IPC::isCurrentOwner()
 {
-#ifdef ANDROID
+#if !QT_CONFIG(sharedmemory)
     return false;
 #else
     if (globalMemory.lock()) {
@@ -207,7 +207,7 @@ void IPC::unregisterEventHandler(const QString& name)
 
 bool IPC::isEventAccepted(time_t time)
 {
-#ifdef ANDROID
+#if !QT_CONFIG(sharedmemory)
     std::ignore = time;
     return false;
 #else
@@ -250,7 +250,7 @@ bool IPC::waitUntilAccepted(time_t postTime, int32_t timeout /*=-1*/)
 
 bool IPC::isAttached() const
 {
-#ifdef ANDROID
+#if !QT_CONFIG(sharedmemory)
     return false;
 #else
     return globalMemory.isAttached();
@@ -305,7 +305,7 @@ bool IPC::runEventHandler(IPCEventHandler handler, const QByteArray& arg, void* 
 
 void IPC::processEvents()
 {
-#ifdef ANDROID
+#if !QT_CONFIG(sharedmemory)
     timer.start();
     return;
 #else
@@ -368,7 +368,7 @@ void IPC::processEvents()
  */
 bool IPC::isCurrentOwnerNoLock()
 {
-#ifdef ANDROID
+#if !QT_CONFIG(sharedmemory)
     return false;
 #else
     const void* const data = globalMemory.data();
@@ -382,7 +382,7 @@ bool IPC::isCurrentOwnerNoLock()
 
 IPC::IPCMemory* IPC::global()
 {
-#ifdef ANDROID
+#if !QT_CONFIG(sharedmemory)
     return nullptr;
 #else
     return static_cast<IPCMemory*>(globalMemory.data());

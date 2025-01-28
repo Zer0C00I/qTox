@@ -133,6 +133,10 @@ search_dependency(LIBQRENCODE         PACKAGE libqrencode)
 search_dependency(LIBSWSCALE          PACKAGE libswscale)
 search_dependency(SQLCIPHER           PACKAGE sqlcipher)
 
+if(EMSCRIPTEN)
+  search_dependency(TOMCRYPT          LIBRARY tomcrypt)
+endif()
+
 if(APPLE)
   search_dependency(LIBCRYPTO         PACKAGE libcrypto)
 endif()
@@ -212,7 +216,9 @@ if(NOT WIN32)
 endif()
 
 if(QT_FEATURE_static)
-  add_dependency(Qt6::QOffscreenIntegrationPlugin)
+  if(NOT EMSCRIPTEN)
+    add_dependency(Qt6::QOffscreenIntegrationPlugin)
+  endif()
   if(LINUX)
     add_dependency(
       Qt6::QLinuxFbIntegrationPlugin

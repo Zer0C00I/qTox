@@ -81,7 +81,7 @@ private:
     QTimer timer;
     uint64_t globalId;
     uint32_t profileId;
-#ifndef ANDROID
+#if QT_CONFIG(sharedmemory)
     QSharedMemory globalMemory;
 #endif
     mutable std::mutex eventHandlersMutex;

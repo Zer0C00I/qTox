@@ -140,8 +140,11 @@ endif()
 # Apply resource compilation options.
 set(CMAKE_AUTORCC_OPTIONS ${AUTORCC_OPTIONS})
 
-# Disable exceptions (Qt doesn't use them, we don't need them).
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-exceptions")
+# Emscripten needs -fexceptions at link time.
+if(NOT EMSCRIPTEN)
+  # Disable exceptions (Qt doesn't use them, we don't need them).
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-exceptions")
+endif()
 
 # Hardening flags (ASLR, warnings, etc)
 set(CMAKE_POSITION_INDEPENDENT_CODE True)
@@ -702,6 +705,10 @@ set_target_properties(
 
 if(FULLY_STATIC)
   target_link_options(${PROJECT_NAME} PRIVATE -static-pie)
+endif()
+
+if(EMSCRIPTEN)
+  target_link_options(${PROJECT_NAME} PRIVATE -sASYNCIFY -lidbfs.js)
 endif()
 
 if(BUILD_TESTING)

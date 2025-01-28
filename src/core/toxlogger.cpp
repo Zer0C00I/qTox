@@ -29,7 +29,9 @@ void onLogMessage(Tox* tox, Tox_Log_Level level, const char* file, uint32_t line
 
     switch (level) {
     case TOX_LOG_LEVEL_TRACE:
-        return; // trace level generates too much noise to enable by default
+        // trace level generates too much noise to enable by default
+        QMessageLogger(file, line, func).debug(toxcore) << message;
+        return;
     case TOX_LOG_LEVEL_DEBUG:
         QMessageLogger(file, line, func).debug(toxcore) << message;
         break;

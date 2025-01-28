@@ -18,7 +18,7 @@
 
 #include <cassert>
 
-#if defined(QT_STATIC)
+#if defined(QT_STATIC) && !defined(Q_OS_WASM)
 extern "C"
 {
     typedef void alsoftLogCallback(void* userptr, char level, const char* message, int length) noexcept;
@@ -58,7 +58,7 @@ constexpr unsigned int BUFFER_COUNT = 16;
 constexpr uint32_t AUDIO_CHANNELS = 2;
 
 namespace logcat {
-#if defined(QT_STATIC)
+#if defined(QT_STATIC) && !defined(Q_OS_WASM)
 Q_LOGGING_CATEGORY(openal, "openal")
 #endif
 Q_LOGGING_CATEGORY(audio, "qtox.audio")
@@ -69,7 +69,7 @@ OpenAL::OpenAL(IAudioSettings& _settings)
     : settings{_settings}
     , audioThread{new QThread}
 {
-#if defined(QT_STATIC)
+#if defined(QT_STATIC) && !defined(Q_OS_WASM)
     alsoft_set_log_callback(
         [](void* userptr, char level, const char* message, int length) noexcept {
             std::ignore = userptr;

@@ -28,6 +28,34 @@
 
 #include <memory>
 
+#ifdef Q_OS_WASM
+#include <emscripten.h>
+
+namespace {
+const QString wasmConfigPath = QStringLiteral("/home/web_user/qTox");
+
+bool mountIndexedDbFilesystem()
+{
+    EM_ASM(console.log('Creating config directory: /home/web_user/qTox');
+           FS.mkdir('/home/web_user/qTox');
+           // TODO(iphydf): Figure out why this blocks profile creation.
+           // console.log('Mounting IndexedDB filesystem to /home/web_user/qTox');
+           // FS.mount(IDBFS, {}, '/home/web_user/qTox');
+           // console.log('Syncing filesystem');
+           // FS.syncfs(true, function(err) {
+           //     if (err) {
+           //         console.error('Failed to sync filesystem:', err);
+           //     } else {
+           //         console.log('Filesystem mounted');
+           //     }
+           // });
+    );
+
+    return true;
+}
+} // namespace
+#endif
+
 namespace {
 // logMessageHandler and associated data must be static due to qInstallMessageHandler's
 // inability to register a void* to get back to a class
@@ -249,6 +277,10 @@ int AppManager::startGui(QCommandLineParser& parser)
     logFileFile.storeRelaxed(mainLogFilePtr); // atomically set the logFile
 #endif
 
+#ifdef Q_OS_WASM
+    mountIndexedDbFilesystem();
+#endif
+
     // Windows platform plugins DLL hell fix
     QCoreApplication::addLibraryPath(QCoreApplication::applicationDirPath());
     QApplication::addLibraryPath("platforms");
@@ -421,12 +453,17 @@ int AppManager::run()
         {{"u", "update-check"}, tr("Checks whether this program is running the latest qTox version.")},
 #endif // UPDATE_CHECK_ENABLED
     });
+#ifdef Q_OS_WASM
+    // Set to portable mode and TCP-only for WASM.
+    parser.process({"qtox", "-D", wasmConfigPath, "-U", "off", "-L", "off"});
+#else
     parser.process(*qapp);
+#endif
 
     if (parser.isSet("portable")) {
         // We don't go through settings here, because we're not making qTox
         // portable (which moves files around). Instead, we start up in
-        // portable mode as a one-off.
+        // portable mode from the beginning without having to move any files.
         settings->getPaths().setPortable(true);
         settings->getPaths().setPortablePath(parser.value("portable"));
     }

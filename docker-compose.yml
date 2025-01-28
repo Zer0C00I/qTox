@@ -74,3 +74,6 @@ services:
   windows_builder.x86_64:
     image: toxchat/qtox:windows-builder.x86_64
     <<: *shared_params
+  wasm_builder:
+    image: toxchat/qtox:wasm-builder
+    <<: *shared_params
