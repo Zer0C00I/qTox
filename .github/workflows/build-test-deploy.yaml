@@ -716,8 +716,6 @@ jobs:
     name: WebAssembly
     needs: [update-nightly-tag]
     runs-on: ubuntu-24.04
-    permissions:
-      contents: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -729,16 +727,43 @@ jobs:
           key: ${{ github.job }}-ccache
       - name: Run build
         run: docker compose run --rm wasm_builder platform/wasm/build.sh
+      - name: Copy Pages artifact to default directory
+        run: mkdir _site && cp
+          _build-wasm/qtloader.js
+          _build-wasm/qtlogo.svg
+          _build-wasm/qtox.js
+          _build-wasm/qtox.wasm
+          _site/ && cp
+          _build-wasm/qtox.html
+          _site/index.html
       - name: Upload zip
         uses: actions/upload-artifact@v4
         with:
-          name: qtox-wasm.zip
-          path: |
-            _build-wasm/qtloader.js
-            _build-wasm/qtlogo.svg
-            _build-wasm/qtox.html
-            _build-wasm/qtox.js
-            _build-wasm/qtox.wasm
+          name: qtox-wasm
+          path: _site
+
+  deploy-wasm:
+    name: Deploy WebAssembly
+    needs: [build-wasm]
+    environment:
+      name: netlify
+      url: ${{ steps.deployment.outputs.NETLIFY_LIVE_URL }}
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Download Pages artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: qtox-wasm
+          path: _site
+      - name: Deploy to Netlify
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        id: deployment
+        uses: jsmrcaga/action-netlify-deploy@v2.0.0
+        with:
+          NETLIFY_SITE_ID: a65b05dd-7edb-4bb9-a3ee-a27007e0ca3d
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_DEPLOY_TO_PROD: true
+          build_directory: _site
 
   build-windows:
     name: Windows
