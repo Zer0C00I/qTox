@@ -763,7 +763,7 @@ jobs:
       - name: Deploy to Netlify
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         id: deployment
-        run:
+        run: |
           netlify deploy --dir _site --prod | tee netlify.log
           echo "NETLIFY_LIVE_URL=$(grep 'Website URL:' netlify.log | grep -o 'https://[^ ]*')" >>$GITHUB_ENV
         env:
