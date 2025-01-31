@@ -729,6 +729,7 @@ jobs:
         run: docker compose run --rm wasm_builder platform/wasm/build.sh
       - name: Copy Pages artifact to default directory
         run: mkdir _site && cp
+          platform/wasm/_headers
           _build-wasm/qtloader.js
           _build-wasm/qtlogo.svg
           _build-wasm/qtox.js
