@@ -755,15 +755,19 @@ jobs:
         with:
           name: qtox-wasm
           path: _site
+      - name: Install Netlify CLI
+        run: npm install -g netlify-cli
+      - name: Check that Netlify CLI works
+        run: netlify version
       - name: Deploy to Netlify
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         id: deployment
-        uses: jsmrcaga/action-netlify-deploy@v2.0.0
-        with:
+        run:
+          netlify deploy --dir _site --prod | tee netlify.log
+          echo "NETLIFY_LIVE_URL=$(grep 'Website URL:' netlify.log | grep -o 'https://[^ ]*')" >>$GITHUB_ENV
+        env:
           NETLIFY_SITE_ID: a65b05dd-7edb-4bb9-a3ee-a27007e0ca3d
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_DEPLOY_TO_PROD: true
-          build_directory: _site
 
   build-windows:
     name: Windows
