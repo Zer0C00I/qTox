@@ -2888,7 +2888,7 @@ Hide formatting characters:
     </message>
     <message>
         <source>Notify</source>
-        <translation>Нотифицирай</translation>
+        <translation>Известяване</translation>
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
@@ -2904,7 +2904,7 @@ Hide formatting characters:
     </message>
     <message>
         <source>Notify via desktop notifications</source>
-        <translation>Нотифицирай чрез десктоп нотификации</translation>
+        <translation>Известяване с известията на работния плот</translation>
     </message>
     <message>
         <source>Hide message sender and contents</source>
