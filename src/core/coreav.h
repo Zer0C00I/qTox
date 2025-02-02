@@ -123,6 +123,9 @@ private:
 private:
     // atomic because potentially accessed by different threads
     std::atomic<IAudioControl*> audio;
+    // atomic flag showing that we do not need to accept frames as the cancel
+    // call request was sent.
+    std::atomic<bool> isCancelling;
     std::unique_ptr<ToxAV, ToxAVDeleter> toxav;
     std::unique_ptr<QThread> coreAvThread;
     QTimer* iterateTimer = nullptr;
