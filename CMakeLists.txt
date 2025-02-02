@@ -715,6 +715,7 @@ if(BUILD_TESTING)
   include(Testing)
 endif()
 include(Installation)
+include(Package)
 
 if(DEFINED ENV{IN_NIX_SHELL})
   # the qtox binary must be "wrapped" to find the Qt platform plugin and other

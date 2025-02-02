@@ -53,6 +53,14 @@ update_appdata() {
   sed -ri "s|(<release version=\"$VERSION_PATTERN\" date=\").{10}\"|\1$isodate\"|g" io.github.qtox.qTox.appdata.xml
 }
 
+update_package_cmake() {
+  cd "$BASE_DIR"/cmake/
+  IFS="." read -ra version_parts <<<"$@"
+  sed -ri "s|(set\(CPACK_PACKAGE_VERSION_MAJOR ).+|\1 ${version_parts[0]}\)|g" "Package.cmake"
+  sed -ri "s|(set\(CPACK_PACKAGE_VERSION_MINOR ).+|\1 ${version_parts[1]}\)|g" "Package.cmake"
+  sed -ri "s|(set\(CPACK_PACKAGE_VERSION_PATCH ).+|\1 ${version_parts[2]}\)|g" "Package.cmake"
+}
+
 # exit if supplied arg is not a version
 is_version() {
   if [[ ! $@ =~ $VERSION_PATTERN ]]; then
@@ -71,6 +79,7 @@ main() {
     update_windows "$@"
     update_readme "$@"
     update_appdata "$@"
+    update_package_cmake "$@"
   else
     # TODO: actually check whether there is a GNU sed on macOS
     echo "macOS' sed not supported. Get a proper one."
