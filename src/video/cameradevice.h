@@ -37,6 +37,7 @@ public:
     static QString getDefaultDeviceName(Settings& settings);
 
     static bool isScreen(const QString& devName);
+    static const QString NONE;
 
 private:
     CameraDevice(QString devName_, AVFormatContext* context_);

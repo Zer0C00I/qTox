@@ -202,7 +202,7 @@ void avLogCallback(void* obj, int level, const char* fmt, va_list args)
 
 CameraSource::CameraSource(Settings& settings_)
     : deviceThread{new QThread}
-    , deviceName{"none"}
+    , deviceName{CameraDevice::NONE}
     , device{nullptr}
     , mode{}
     , cctx{nullptr}
@@ -275,7 +275,7 @@ void CameraSource::setupDevice(const QString& deviceName_, const VideoMode& mode
 
     deviceName = deviceName_;
     mode = mode_;
-    isNone_ = (deviceName == "none");
+    isNone_ = (deviceName == CameraDevice::NONE);
 
     if ((subscriptions != 0) && !isNone_) {
         openDevice();
@@ -357,7 +357,7 @@ void CameraSource::openDevice()
     }
 
     const QWriteLocker locker{&streamMutex};
-    if (subscriptions == 0) {
+    if (subscriptions == 0 || deviceName == CameraDevice::NONE) {
         return;
     }
 
