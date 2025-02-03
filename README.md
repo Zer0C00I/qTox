@@ -54,11 +54,11 @@ the encrypted peer-to-peer Tox protocol.
 
 ---
 
-| Windows                                          | Linux                                                                              | macOS (Apple silicon)      | macOS (Intel)              | FreeBSD              |
-| ------------------------------------------------ | ---------------------------------------------------------------------------------- | -------------------------- | -------------------------- | -------------------- |
-| **[64 bit release]**                             | **[Arch]**, **[Debian]**, **[Fedora]**, **[Gentoo]**, **[openSUSE]**, **[Ubuntu]** | **[Latest ARM64 release]** | **[Latest Intel release]** | **[Package & Port]** |
-| [32 bit release]                                 | **[Flatpak (64 bit)]**                                                             | [Building instructions]    | [Building instructions]    |
-| [64 bit][64nightly], [32 bit][32nightly] nightly | [From Source], [Flatpak nightly (64 bit)]                                          | [Latest ARM64 nightly]     | [Latest Intel nightly]     |
+| Windows                                          | Linux                                                                              | macOS (Apple silicon)                                     | macOS (Intel)                                             | FreeBSD              |
+| ------------------------------------------------ | ---------------------------------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | -------------------- |
+| **[64 bit release]**                             | **[Arch]**, **[Debian]**, **[Fedora]**, **[Gentoo]**, **[openSUSE]**, **[Ubuntu]** | **[Latest ARM64 release 12+]**                            | **[Latest Intel release 12+]**                            | **[Package & Port]** |
+| [32 bit release]                                 | **[Flatpak (64 bit)]**                                                             | [Building instructions]                                   | [Building instructions]                                   |
+| [64 bit][64nightly], [32 bit][32nightly] nightly | [From Source], [Flatpak nightly (64 bit)]                                          | [Latest ARM64 nightly 12+], [Latest ARM64 nightly 10.15+] | [Latest Intel nightly 12+], [Latest Intel nightly 10.15+] |
 
 _**Bold** options are recommended._
 
@@ -178,10 +178,12 @@ AED3 1134 9C23 A123 E5C4  AA4B 139C A045 3DA2 D773
 [Contributing]: /CONTRIBUTING.md#how-to-start-contributing
 [Debian]: https://packages.debian.org/search?keywords=qtox
 [easy issues]: https://github.com/qTox/qTox/labels/E-easy
-[Latest ARM64 release]: https://github.com/TokTok/qTox/releases/download/v1.18.2/qTox-arm64.dmg
-[Latest Intel release]: https://github.com/TokTok/qTox/releases/download/v1.18.2/qTox-x86_64.dmg
-[Latest ARM64 nightly]: https://github.com/TokTok/qTox/releases/download/nightly/qTox-nightly-arm64.dmg
-[Latest Intel nightly]: https://github.com/TokTok/qTox/releases/download/nightly/qTox-nightly-x86_64.dmg
+[Latest ARM64 release 12+]: https://github.com/TokTok/qTox/releases/download/v1.18.2/qTox-arm64.dmg
+[Latest Intel release 12+]: https://github.com/TokTok/qTox/releases/download/v1.18.2/qTox-x86_64.dmg
+[Latest ARM64 nightly 12+]: https://github.com/TokTok/qTox/releases/download/nightly/qTox-nightly-arm64-12.0.dmg
+[Latest Intel nightly 12+]: https://github.com/TokTok/qTox/releases/download/nightly/qTox-nightly-x86_64-12.0.dmg
+[Latest ARM64 nightly 10.15+]: https://github.com/TokTok/qTox/releases/download/nightly/qTox-nightly-arm64-10.15.dmg
+[Latest Intel nightly 10.15+]: https://github.com/TokTok/qTox/releases/download/nightly/qTox-nightly-x86_64-10.15.dmg
 [Fedora]: /INSTALL.md#fedora
 [Gentoo]: /INSTALL.md#gentoo
 [openSUSE]: /INSTALL.md#opensuse

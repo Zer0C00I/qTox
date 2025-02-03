@@ -11,4 +11,6 @@
 !src/
 !util/
 !CMakeLists.txt
+!LICENSE
+!README.md
 !res.qrc
