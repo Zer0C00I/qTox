@@ -487,6 +487,16 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
         <source>Save file</source>
         <translation>Datei speichern</translation>
     </message>
+    <message>
+        <source>Invalid proxy address</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ungültige Proxy -Adresse</translation>
+    </message>
+    <message>
+        <source>Please enter a valid IP address or hostname for the proxy setting.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Bitte geben Sie eine gültige IP -Adresse oder einen gültigen Hostnamen für die Proxy -Einstellung ein.</translation>
+    </message>
 </context>
 <context>
     <name>AdvancedSettings</name>

@@ -487,6 +487,14 @@ Take heed, fer higher qualities demand clearer skies and use more bandwidth. If 
         <source>Save file</source>
         <translation>Store parcel</translation>
     </message>
+    <message>
+        <source>Invalid proxy address</source>
+        <translation type="unfinished">Yer proxy be cursed</translation>
+    </message>
+    <message>
+        <source>Please enter a valid IP address or hostname for the proxy setting.</source>
+        <translation type="unfinished">Enter a proper IP address or port name fer th&apos; proxy, ye scurvy dog.</translation>
+    </message>
 </context>
 <context>
     <name>AdvancedSettings</name>
@@ -1884,7 +1892,7 @@ Press Shift+F1 fer more information.</translation>
     </message>
     <message>
         <source>Incoming call</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ahoy, someone&apos;s callin&apos;!</translation>
     </message>
 </context>
 <context>
@@ -2975,7 +2983,7 @@ here may cause th&apos; scroll bar ta vanish.</translation>
     </message>
     <message>
         <source>Chat log chunk size</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Size o&apos; yer chat scroll</translation>
     </message>
     <message>
         <source>Chat log:</source>
