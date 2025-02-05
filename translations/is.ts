@@ -219,30 +219,6 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Valmynd</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation>notandanafn</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">stöðuskilaboð</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Notuð samnefni:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">SAGA NÁNANAÐARNA</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Samþykkja sjálfkrafa skrár frá tengilið ef stillt er</translation>
@@ -293,9 +269,9 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
         <translation type="unfinished">Saga fjarlægð</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Þetta er almenningslykill vinar þíns, notaðu hann til að staðfesta auðkenni hans í gegnum aðra rás. Þú getur ekki sent þetta til annarra svo þeir geti bætt þessum tengilið við.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">Þetta er almenningslykill vinar þíns, notaðu hann til að staðfesta auðkenni hans í gegnum aðra rás. Þú getur ekki sent þetta til annarra svo þeir geti bætt þessum tengilið við.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

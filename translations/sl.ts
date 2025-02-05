@@ -206,26 +206,6 @@ kar lahko povzroči težave z video klici.</translation>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translation>Okno sporočila</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation>uporabniško ime</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation>sporočilo o stanju</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation>Uporabljeni vzdevki:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translation>ZGODOVINA VZDEVKOV</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translation>Samodejno sprejemanje datotek iz kontakta (če nastavljen)</translation>
     </message>
@@ -266,9 +246,9 @@ kar lahko povzroči težave z video klici.</translation>
         <translation>Zgodovina izbrisana</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To je javni ključ vašega prijatelja, uporabite ga za preverjanje njegove identitete prek drugega kanala. Tega ne morete poslati drugim osebam, da lahko dodajo ta stik.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">To je javni ključ vašega prijatelja, uporabite ga za preverjanje njegove identitete prek drugega kanala. Tega ne morete poslati drugim osebam, da lahko dodajo ta stik.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

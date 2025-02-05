@@ -197,26 +197,6 @@ which may lead to problems with video calls.</source>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translation>Диалог</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation>потребителско име</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation>съобщение за състояние</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation>Използвани псевдоними:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translation>ИСТОРИЯ НА ПСЕВДОНИМИ</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translation>Ако е отметнато, изпратените от този контакт файлове се приемат автоматично</translation>
     </message>
@@ -257,7 +237,7 @@ which may lead to problems with video calls.</source>
         <translation>Кореспонденцията е премахната</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
         <translation>Това е публичният ключ на контакта. Използвайте го само за да потвърдите самоличността му чрез друг канал. Не можете да го изпращате на други хора с цел да го добавят като контакт.</translation>
     </message>
     <message>

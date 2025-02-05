@@ -237,39 +237,14 @@ wat kin leie tot probleme mit videogesprekke.</translation>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Dialoogvenster</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">gebruukersnaom</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">statusberiech</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dit is de openbare sleutel vaan dien vrund, gebruuk deze um hun identiteit te verifiëre via ‘n aander kanaal. Geer kin dit neet nao andere lui sjikke zodet ze dit kontak kinne toevoege.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">Dit is de openbare sleutel vaan dien vrund, gebruuk deze um hun identiteit te verifiëre via ‘n aander kanaal. Geer kin dit neet nao andere lui sjikke zodet ze dit kontak kinne toevoege.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Openbare sleutel (geen ToxID):</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Gebruukde aliases:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">GESCHIEDTE VAN ALIASES</translation>
     </message>
     <message>
         <source>Automatically accept files from contact if set</source>

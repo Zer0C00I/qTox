@@ -196,26 +196,6 @@ wat kan leiden tot problemen met videogesprekken.</translation>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translation>Dialoogvenster</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation>gebruikersnaam</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation>statusbericht</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation>Gebruikte aliassen:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translation>ALIASGESCHIEDENIS</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translation>Indien ingesteld automatisch bestanden van dit contact aanvaarden</translation>
     </message>
@@ -256,8 +236,8 @@ wat kan leiden tot problemen met videogesprekken.</translation>
         <translation>Geschiedenis verwijderd</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dit is de publieke sleutel van jouw vriend, gebruik het om zijn/haar identiteit te bevestigen over een ander kanaal. Je kan dit niet naar andere mensen sturen om dit contact toe te voegen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <translation>Dit is de publieke sleutel van jouw vriend, gebruik het om zijn/haar identiteit te bevestigen over een ander kanaal. Je kan dit niet naar andere mensen sturen om dit contact toe te voegen.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

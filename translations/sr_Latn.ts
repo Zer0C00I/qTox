@@ -192,26 +192,6 @@ which may lead to problems with video calls.</source>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translation>Dijalog</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation>orisničko ime</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation>statusna poruka</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation>Korišćeni alijasi:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translation>ISTORIJAT ALIJASA</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translation>Ukoliko je postavljeno automatski prihvata fajlove od kontakata</translation>
     </message>
@@ -252,7 +232,7 @@ which may lead to problems with video calls.</source>
         <translation>Istorijat je uklonjen</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

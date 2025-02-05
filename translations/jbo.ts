@@ -227,31 +227,6 @@ so&apos;o roi lo nu do jungau cu na banzu xamgu lo ka zgana lo nu zgana lo vidni
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">cpana</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">cmene cmene</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">kadni notci</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">pilno cmima:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">histori be lo ani</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">jaginai ciska</translation>
@@ -302,9 +277,9 @@ so&apos;o roi lo nu do jungau cu na banzu xamgu lo ka zgana lo nu zgana lo vidni
         <translation type="unfinished">lu citri pu vimcu</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ti me lo javni ckiku pe lo pendo be do gi&apos;e pilno lo nu jundi lo selcmi be vo&apos;a va&apos;o lo drata kanali do na kakne lo nu benji ti lo drata prenu mu&apos;i lo nu ko&apos;a kakne lo nu jmina lo vi cuntu.&lt;/ &lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">ti me lo javni ckiku pe lo pendo be do gi&apos;e pilno lo nu jundi lo selcmi be vo&apos;a va&apos;o lo drata kanali do na kakne lo nu benji ti lo drata prenu mu&apos;i lo nu ko&apos;a kakne lo nu jmina lo vi cuntu.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

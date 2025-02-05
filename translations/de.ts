@@ -196,26 +196,6 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translation>Dialog</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation>Benutzername</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation>Statusmeldung</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation>Verwendete Nutzernamen:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translation>Verlauf der verwendeten Nutzernamen</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translation>Nimmt Dateien dieses Kontaktes automatisch an, wenn aktiviert</translation>
     </message>
@@ -256,8 +236,8 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
         <translation>Chatverlauf gelöscht</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dies ist der öffentliche Schlüssel deines Freundes; verwende diesen, um seine Identität über einen anderen Kanal zu überprüfen. Diesen Schlüssel kann man nicht an andere Personen schicken, damit sie diesen Kontakt hinzufügen können.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <translation>Dies ist der öffentliche Schlüssel deines Freundes; verwende diesen, um seine Identität über einen anderen Kanal zu überprüfen. Diesen Schlüssel kann man nicht an andere Personen schicken, damit sie diesen Kontakt hinzufügen können.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

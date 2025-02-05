@@ -217,31 +217,6 @@ which may lead to problems with video calls.</source>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">דיאלוג</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">שם משתמש</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הודעת סטטוס</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">כינויים בשימוש:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">היסטוריה של כינויים</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">קבל אוטומטית קבצים מאיש קשר אם מוגדר</translation>
@@ -292,9 +267,9 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">ההיסטוריה הוסרה</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;זהו המפתח הציבורי של חברך, השתמש בו כדי לאמת את זהותו דרך ערוץ אחר. אתה לא יכול לשלוח את זה לאנשים אחרים כדי שהם יוכלו להוסיף איש קשר זה.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">זהו המפתח הציבורי של חברך, השתמש בו כדי לאמת את זהותו דרך ערוץ אחר. אתה לא יכול לשלוח את זה לאנשים אחרים כדי שהם יוכלו להוסיף איש קשר זה.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

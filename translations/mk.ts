@@ -203,26 +203,6 @@ which may lead to problems with video calls.</source>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translation>Дијалог</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation>корисничко име</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation>статусна порака</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation>Користени прекари:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translation>ИСТОРИЈА НА ПРЕКАРИ</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translation>Ако е поставено, автоматски прифаќај датотеки од контакт</translation>
     </message>
@@ -263,9 +243,9 @@ which may lead to problems with video calls.</source>
         <translation>Историјата е отстранета</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ова е јавниот клуч на вашиот пријател, користете го за да го потврдите неговиот идентитет преку друг канал. Не можете да го испратите ова на други луѓе за да можат да го додадат овој контакт.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">Ова е јавниот клуч на вашиот пријател, користете го за да го потврдите неговиот идентитет преку друг канал. Не можете да го испратите ова на други луѓе за да можат да го додадат овој контакт.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

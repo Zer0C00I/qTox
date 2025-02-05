@@ -232,31 +232,6 @@ which may lead to problems with video calls.</source>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ডায়ালগ</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ব্যবহারকারীর নাম</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">অবস্থা বার্তা</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ব্যবহৃত উপনাম:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ALIASES ইতিহাস</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">সেট থাকলে স্বয়ংক্রিয়ভাবে পরিচিতি থেকে ফাইল গ্রহণ করুন</translation>
@@ -307,9 +282,9 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">ইতিহাস মুছে ফেলা হয়েছে</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;এটি আপনার বন্ধুর সর্বজনীন কী, অন্য চ্যানেলের মাধ্যমে তাদের পরিচয় যাচাই করতে এটি ব্যবহার করুন৷ আপনি এটি অন্য লোকেদের কাছে পাঠাতে পারবেন না যাতে তারা এই পরিচিতি যোগ করতে পারে৷&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;৷</translation>
+        <translation type="unfinished">এটি আপনার বন্ধুর সর্বজনীন কী, অন্য চ্যানেলের মাধ্যমে তাদের পরিচয় যাচাই করতে এটি ব্যবহার করুন৷ আপনি এটি অন্য লোকেদের কাছে পাঠাতে পারবেন না যাতে তারা এই পরিচিতি যোগ করতে পারে৷৷</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

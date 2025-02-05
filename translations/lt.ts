@@ -197,26 +197,6 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translation>Dialogas</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation>Naudotojo vardas</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation>Būsena</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation>Naudoti slapyvardžiai:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translation>SLAPYVARDŽIŲ ISTORIJA</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translation>Jeigu nustatyta, automatiškai priimti failus iš šio kontakto</translation>
     </message>
@@ -257,8 +237,8 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
         <translation>Žurnalas išvalytas</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tai yra jūsų draugo viešasis raktas, naudokite jį, norėdami patvirtinti draugo tapatybę kitu kanalu. Jūs negalite siųsti šio rakto kitiems asmenims, kad jie pridėtų šį kontaktą.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <translation>Tai yra jūsų draugo viešasis raktas, naudokite jį, norėdami patvirtinti draugo tapatybę kitu kanalu. Jūs negalite siųsti šio rakto kitiems asmenims, kad jie pridėtų šį kontaktą.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

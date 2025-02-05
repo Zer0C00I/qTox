@@ -203,26 +203,6 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translation>Párbeszédablak</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation>felhasználónév</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation>állapotüzenet</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation>Használt nevek:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translation>NÉV ELŐZMÉNYEK</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translation>Automatikusan elfogad fájlokat a partnertől ha engedélyezve van</translation>
     </message>
@@ -263,8 +243,8 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
         <translation>Előzmények eltávolítva</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ez az ismerősének a nyilvános kulcsa, ezzel ellenőrizheti személyazonosságát egy másik csatornán keresztül. Ezt nem tudja elküldeni másoknak, így ők hozzáadhatják ezt a személyt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <translation>Ez az ismerősének a nyilvános kulcsa, ezzel ellenőrizheti személyazonosságát egy másik csatornán keresztül. Ezt nem tudja elküldeni másoknak, így ők hozzáadhatják ezt a személyt.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

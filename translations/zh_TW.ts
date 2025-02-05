@@ -206,26 +206,6 @@ which may lead to problems with video calls.</source>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translation type="unfinished">對話方塊</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation type="unfinished">使用者名稱</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation type="unfinished">狀態訊息</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation type="unfinished">使用的別名：</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translation type="unfinished">別名歷史</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">如果設置，自動接受聯絡人的文件</translation>
@@ -270,9 +250,9 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">已移除歷史記錄</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;這是您朋友的公鑰，用它透過另一個管道驗證他們的身份。您無法將此資訊傳送給其他人，以便他們可以新增此聯絡人。</translation>
+        <translation type="unfinished">這是您朋友的公鑰，用它透過另一個管道驗證他們的身份。您無法將此資訊傳送給其他人，以便他們可以新增此聯絡人。</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

@@ -196,26 +196,6 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translation>Dialog</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation>nume de utilizator</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation>Mesaj de stare</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation>Aliasurile folosite:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translation>ISTORIA ALIASELOR</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translation>Acceptă automat fișiere din contact dacă este setat</translation>
     </message>
@@ -256,8 +236,8 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
         <translation>Istorie eliminată</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Aceasta este cheia publică a prietenului tău, folosește-o pentru a-și verifica identitatea prin alt canal. Nu puteți trimite acest lucru altor persoane pentru a putea adăuga acest contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <translation>Aceasta este cheia publică a prietenului tău, folosește-o pentru a-și verifica identitatea prin alt canal. Nu puteți trimite acest lucru altor persoane pentru a putea adăuga acest contact.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

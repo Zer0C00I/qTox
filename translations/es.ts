@@ -196,26 +196,6 @@ lo que puede provocar problemas en las videollamadas.</translation>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translation>Diálogo</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation>nombre del usuario</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation>mensaje de estado</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation>Alias usados:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translation>HISTORIAL DE ALIAS</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translation>Aceptar automáticamente archivos de los contactos si esta establecido</translation>
     </message>
@@ -256,8 +236,8 @@ lo que puede provocar problemas en las videollamadas.</translation>
         <translation>Historial eliminado</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Esta es la clave pública de su amigo, utilícela para verificar su identidad a través de otro canal. No puedes enviarla a otras personas para que puedan agregar este contacto.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <translation>Esta es la clave pública de su amigo, utilícela para verificar su identidad a través de otro canal. No puedes enviarla a otras personas para que puedan agregar este contacto.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

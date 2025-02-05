@@ -209,28 +209,6 @@ which may lead to problems with video calls.</source>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">الحوار</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation type="unfinished">اسم المستخدم</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation type="unfinished">الحالة</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation type="unfinished">الاسم:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تاريخ الأسماء المستعارة</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translation type="unfinished">قبول الملفات تلقائيا من جهة الاتصال المسجلة</translation>
     </message>
@@ -272,9 +250,9 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">تم مسح السجل</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;هذا هو المفتاح العام لصديقك، استخدمه للتحقق من هويته عبر قناة أخرى. لا يمكنك إرسال هذا إلى أشخاص آخرين حتى يتمكنوا من إضافة جهة الاتصال هذه.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">هذا هو المفتاح العام لصديقك، استخدمه للتحقق من هويته عبر قناة أخرى. لا يمكنك إرسال هذا إلى أشخاص آخرين حتى يتمكنوا من إضافة جهة الاتصال هذه.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

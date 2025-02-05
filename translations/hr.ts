@@ -203,26 +203,6 @@ Ponekad vaša veza možda nije dovoljno dobra da podnese višu kvalitetu videa,
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translation>Dijalog</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation>korisničko ime</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation>poruka stanja</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation>Korišteni pseudonimi:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translation>POVIJEST PSEUDONIMA</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translation>Automatski prihvati datoteke od ove osobe, ako je postavljeno</translation>
     </message>
@@ -263,8 +243,8 @@ Ponekad vaša veza možda nije dovoljno dobra da podnese višu kvalitetu videa,
         <translation>Povijest je uklonjena</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ovo je javni ključ tvog prijatelja, pomoću njega možeš provjeriti njegov identitet na drugom kanalu. Ne možeš ga poslati drugima, da bi ga oni mogli dodati.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <translation>Ovo je javni ključ tvog prijatelja, pomoću njega možeš provjeriti njegov identitet na drugom kanalu. Ne možeš ga poslati drugima, da bi ga oni mogli dodati.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

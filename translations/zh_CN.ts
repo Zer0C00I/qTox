@@ -196,26 +196,6 @@ which may lead to problems with video calls.</source>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translation>对话框</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation>用户名</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation>状态消息</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation>已用的别名：</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translation>曾用的别名</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translation>如果设置则自动接收来自联系人的文件</translation>
     </message>
@@ -256,8 +236,8 @@ which may lead to problems with video calls.</source>
         <translation>已删除历史记录</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;这是您朋友的公钥，使用它通过其它渠道来验证朋友的身份。您不能将该密钥发送给其他人以使他们可以添加该朋友为联系人。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <translation>这是您朋友的公钥，使用它通过其它渠道来验证朋友的身份。您不能将该密钥发送给其他人以使他们可以添加该朋友为联系人。</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

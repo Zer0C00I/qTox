@@ -237,31 +237,6 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Mazungumzo</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">jina la mtumiaji</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ujumbe wa hali</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Lakabu zilizotumika:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">HISTORIA YA AJIRA</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Kubali faili kiotomatiki kutoka kwa anwani ikiwa imewekwa</translation>
@@ -312,9 +287,9 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
         <translation type="unfinished">Historia imeondolewa</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Huu ni ufunguo wa umma wa rafiki yako, utumie kuthibitisha utambulisho wake kupitia kituo kingine. Huwezi kutuma hii kwa watu wengine ili waweze kuongeza anwani hii.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">Huu ni ufunguo wa umma wa rafiki yako, utumie kuthibitisha utambulisho wake kupitia kituo kingine. Huwezi kutuma hii kwa watu wengine ili waweze kuongeza anwani hii.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

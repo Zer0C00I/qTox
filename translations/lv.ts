@@ -200,26 +200,6 @@ kas var radīt video zvanu problēmas.</translation>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translation>Dialogs</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation>lietotāja vārds</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation>statusa ziņojums</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation>Izmantotie pseidonīmi:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translation>PSEIDONĪMU VĒSTURE</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translation>Automātiski pieņemt failus no izvēlētā kontakta</translation>
     </message>
@@ -260,8 +240,8 @@ kas var radīt video zvanu problēmas.</translation>
         <translation>Vēsture ir dzēsta</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Šī ir Jūsu drauga publiskā atslēga, pielietojiet to, lai pārbaudītu savu identitāti, izmantojot citu kanālu. To nevar nosūtīt citiem cilvēkiem, lai viņi varētu pievienot šo kontaktu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <translation>Šī ir Jūsu drauga publiskā atslēga, pielietojiet to, lai pārbaudītu savu identitāti, izmantojot citu kanālu. To nevar nosūtīt citiem cilvēkiem, lai viņi varētu pievienot šo kontaktu.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

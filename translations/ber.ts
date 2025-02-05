@@ -222,31 +222,6 @@ which may lead to problems with video calls.</source>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ⴰⴷⵉⵡⴻⵏⵏⵉ</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ⵉⵙⴻⵎ ⵏ ⵓⵙⴻⵇⴷⴰⵛ</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ⵉⵣⴻⵏ ⵏ ⵜⴻⴳⵏⵉⵜ</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ⵉⵙⴻⵎ ⵏ ⵓⵙⵎⴻⴽⵜⵉ ⵢⴻⵜⵜⵡⴰⵙⵇⴻⴷⵛⴻⵏ:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">AMEZRUY N YISMAWEN</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ⵇⴱⴻⵍ ⵙ ⵡⵓⴷⴻⵎ ⴰⵡⵓⵔⵎⴰⵏ ⵉⴼⵓⵢⵍⴰ ⵙⴻⴳ ⵓⵎⴻⵙⵍⴰⵢ ⵎⴰ ⵢⴻⵍⵍⴰ ⵢⴻⵜⵜⵡⴰⵙⴱⴻⴷⴷ</translation>
@@ -294,9 +269,9 @@ which may lead to problems with video calls.</source>
         <translation>ⵉⵜⵜⵡⴰⴽⴽⵙ ⵓⵎⵣⵔⵓⵢ</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">&lt;ⵀⵜⵎⵍ&gt;&lt;ⵀⴻⴰⴷ/&gt;&lt;body&gt;&lt;p&gt;Tagi ⴷ ⵜⴰⵙⴰⵔⵓⵜ ⵜⴰⵖⴻⵍⵏⴰⵡⵜ ⵏ ⵓⵎⴻⴷⴷⴰⴽⴻⵍⵉⴽ, ⵙⵙⴻⵇⴷⴻⵛⵉⵜⵜ ⴰⴽⴽⴻⵏ ⴰⴷ ⵜⴻⵙⵙⴻⴼⵇⴻⴷ ⵜⴰⵎⴰⴳⵉⵜⵏⵙⴻⵏ ⵙ ⵜⵜⴰⵡⵉⵍ ⵏⵏⵉⴹⴻⵏ. ⵓⵔ ⵜⴻⵣⵎⵉⵔⴻⴹ ⴰⵔⴰ ⴰⴷ ⵜⴰⵣⵏⴻⴹ ⴰⵢⴰ ⵉ ⵢⵉⵎⴷⴰⵏⴻⵏ ⵢⴰⴹⵏⵉⵏ ⴰⴽⴽⴻⵏ ⴰⴷ ⵣⴻⵎⵔⴻⵏ ⴰⴷ ⵔⵏⵓⵏ ⴰⵎⵢⴰⴳⴻⵔⴰ.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">ⵡⴰⴷ ⴰⵢⴷ ⵉⴳⴰⵏ ⵜⴰⵙⵓⵔⵉⴼⵜ ⵜⴰⴳⴷⵓⴷⴰⵏⵜ ⵏ ⵓⵎⴷⴷⴰⴽⴽⵍ ⵏⵏⵓⵏ, ⵙⵙⵎⵔⵙ ⵜ ⵃⵎⴰ ⴰⴷ ⵜⵙⵙⵎⵔⵙⵎ ⵜⴰⵎⴰⴳⵉⵜ ⵏⵏⵙⵏ ⵙ ⵜⴱⵔⵉⴷⵜ ⵏ ⵢⴰⵏ ⵓⴱⵔⵉⴷ ⵢⴰⴹⵏ. ⵓⵔ ⵜⵣⵎⵉⵔⴷ ⴰⴷ ⵜⵣⵔⵉⴷ ⴰⵢⴰ ⵉ ⵉⵡⴷⴰⵏ ⵢⴰⴹⵏⵉⵏ ⵃⵎⴰ ⴰⴷ ⵥⴹⴰⵕⵏ ⴰⴷ ⵔⵏⵓⵏ ⴰⵙⵖⵍ ⴰⴷ.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

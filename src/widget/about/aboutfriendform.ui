@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string notr="true">{{username}}</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_4">
    <item>
@@ -23,7 +23,7 @@
          <item>
           <widget class="QLabel" name="userName">
            <property name="text">
-            <string>username</string>
+            <string notr="true">{{username}}</string>
            </property>
            <property name="textFormat">
             <enum>Qt::PlainText</enum>
@@ -48,7 +48,7 @@
             <bool>false</bool>
            </property>
            <property name="text">
-            <string>status message</string>
+            <string notr="true">{{status message}}</string>
            </property>
            <property name="textFormat">
             <enum>Qt::PlainText</enum>
@@ -112,7 +112,7 @@
      <item row="0" column="0">
       <widget class="QLabel" name="label_5">
        <property name="toolTip">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</string>
        </property>
        <property name="layoutDirection">
         <enum>Qt::LeftToRight</enum>
@@ -150,48 +150,7 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_4">
-       <property name="text">
-        <string>Used aliases:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QLabel" name="aliases">
-       <property name="text">
-        <string>HISTORY OF ALIASES</string>
-       </property>
-       <property name="textFormat">
-        <enum>Qt::PlainText</enum>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="0" colspan="2">
-      <widget class="QCheckBox" name="autoacceptfile">
-       <property name="accessibleDescription">
-        <string>Automatically accept files from contact if set</string>
-       </property>
-       <property name="text">
-        <string>Auto-accept files</string>
-       </property>
-      </widget>
-     </item>
-     <item row="8" column="0">
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>Default directory to save files:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="8" column="1">
-      <widget class="QPushButton" name="selectSaveDir">
-       <property name="text">
-        <string>Auto-accept for this contact is disabled</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0" colspan="2">
+     <item row="1" column="0" colspan="2">
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
         <widget class="QLabel" name="label_2">
@@ -221,13 +180,37 @@
        </item>
       </layout>
      </item>
-     <item row="4" column="0" colspan="2">
+     <item row="2" column="0" colspan="2">
       <widget class="QCheckBox" name="autoConferenceInvite">
        <property name="accessibleDescription">
         <string>Automatically accept conference invitations from this contact if set.</string>
        </property>
        <property name="text">
         <string>Auto-accept conference invites</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" colspan="2">
+      <widget class="QCheckBox" name="autoacceptfile">
+       <property name="accessibleDescription">
+        <string>Automatically accept files from contact if set</string>
+       </property>
+       <property name="text">
+        <string>Auto-accept files</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Default directory to save files:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QPushButton" name="selectSaveDir">
+       <property name="text">
+        <string>Auto-accept for this contact is disabled</string>
        </property>
       </widget>
      </item>

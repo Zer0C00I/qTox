@@ -203,26 +203,6 @@ which may lead to problems with video calls.</source>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translation>Дыялог</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation>імя карыстальніка</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation>паведамленне аб стане</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation>Ужытыя псеўданімы:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translation>ГІСТОРЫЯ ПСЕЎДАНІМАЎ</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translation>Аўтаматычна прымаць файлы ад кантактаў, калі зададзеная</translation>
     </message>
@@ -263,8 +243,8 @@ which may lead to problems with video calls.</source>
         <translation>Гісторыя выдаленая</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Гэта адкрыты ключ вашага сябра, выкарыстоўвайце яго, каб пацвердзіць яго асобу з дапамогай іншага канала. Вы не можаце адправіць гэта іншым людзям, каб яны маглі дадаць гэты кантакт.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <translation>Гэта адкрыты ключ вашага сябра, выкарыстоўвайце яго, каб пацвердзіць яго асобу з дапамогай іншага канала. Вы не можаце адправіць гэта іншым людзям, каб яны маглі дадаць гэты кантакт.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

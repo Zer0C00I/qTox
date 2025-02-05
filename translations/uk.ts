@@ -196,26 +196,6 @@ which may lead to problems with video calls.</source>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translation>Діалог</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation>ім&apos;я користувача</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation>статус</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation>Псевдоніми, що використовуються:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translation>ІСТОРІЯ ПСЕВДОНІМІВ</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translation>Автоматично приймати файли від контакту, якщо встановлено</translation>
     </message>
@@ -256,8 +236,8 @@ which may lead to problems with video calls.</source>
         <translation>Історія видалена</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Це відкритий (публічний) ключ вашого друга, використовуйте його для підтвердження його особистості через інший канал. Ви не можете надсилати його іншим людям, щоб вони могли додати цей контакт.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <translation>Це відкритий (публічний) ключ вашого друга, використовуйте його для підтвердження його особистості через інший канал. Ви не можете надсилати його іншим людям, щоб вони могли додати цей контакт.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

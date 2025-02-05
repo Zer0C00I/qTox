@@ -230,31 +230,6 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Dialogu</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">emri i përdoruesit</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">mesazh statusi</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pseudonimet e përdorura:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">HISTORIA E PASTESAVE</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Prano automatikisht skedarët nga kontakti nëse është caktuar</translation>
@@ -305,9 +280,9 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
         <translation type="unfinished">Historia u hoq</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ky është çelësi publik i mikut tuaj, përdorni atë për të verifikuar identitetin e tij nëpërmjet një kanali tjetër. Nuk mund t&apos;ua dërgosh këtë njerëzve të tjerë që të mund ta shtojnë këtë kontakt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">Ky është çelësi publik i mikut tuaj, përdorni atë për të verifikuar identitetin e tij nëpërmjet një kanali tjetër. Nuk mund t&apos;ua dërgosh këtë njerëzve të tjerë që të mund ta shtojnë këtë kontakt.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

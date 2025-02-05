@@ -197,26 +197,6 @@ o que pode levar a problemas com as videochamadas.</translation>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translation>Diálogo</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation>nome de usuário</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation>mensagem de status</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation>Pseudônimos usados:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translation>HISTÓRICO DE PSEUDÔNIMOS</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translation>Se marcado, aceita automaticamente arquivos do contato</translation>
     </message>
@@ -257,8 +237,8 @@ o que pode levar a problemas com as videochamadas.</translation>
         <translation>Histórico apagado</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Essa é a chave pública do seu amigo, use-a para confirmar sua identidade por meio de outro canal. Você não pode enviar isso para outras pessoas para que elas possam adicionar esse contato.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <translation>Essa é a chave pública do seu amigo, use-a para confirmar sua identidade por meio de outro canal. Você não pode enviar isso para outras pessoas para que elas possam adicionar esse contato.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

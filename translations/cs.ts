@@ -197,26 +197,6 @@ může dojít během video hovoru k výpadkům či jiným problémům.</translat
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translation>Dialogové okno</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation>uživatelské jméno</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation>zpráva o stavu</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation>Používané přezdívky:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translation>HISTORIE PŘEZDÍVEK</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translation>Pokud je povoleno, budou automaticky přijímány soubory od tohoto kontaktu</translation>
     </message>
@@ -257,8 +237,8 @@ může dojít během video hovoru k výpadkům či jiným problémům.</translat
         <translation>Historie odstraněna</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Toto je veřejný klíč vašeho přítele, použijte jej k ověření své identity prostřednictvím jiného kanálu. Tuto zprávu nemůžete poslat jiným lidem, aby mohli tento kontakt přidat.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <translation>Toto je veřejný klíč vašeho přítele, použijte jej k ověření své identity prostřednictvím jiného kanálu. Tuto zprávu nemůžete poslat jiným lidem, aby mohli tento kontakt přidat.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

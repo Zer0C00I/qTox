@@ -197,26 +197,6 @@ vilket kan leda till problem med videosamtal.</translation>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translation>Dialogruta</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation>användarnamn</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation>statusmeddelande</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation>Använda alias:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translation>HISTORIK AV ALIAS</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translation>Acceptera filer automatiskt från kontakt om angivet</translation>
     </message>
@@ -257,8 +237,8 @@ vilket kan leda till problem med videosamtal.</translation>
         <translation>Historik borttagen</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Detta är din väns offentliga nyckel, använd den för att verifiera dennes identitet via annan kanal. Du kan inte skicka detta till andra människor, så att de kan lägga till denna kontakt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <translation>Detta är din väns offentliga nyckel, använd den för att verifiera dennes identitet via annan kanal. Du kan inte skicka detta till andra människor, så att de kan lägga till denna kontakt.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

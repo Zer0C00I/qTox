@@ -211,31 +211,6 @@ which may lead to problems with video calls.</source>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ڈائیلاگ</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">صارف نام</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">حیثیت کا پیغام</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">استعمال شدہ عرفی نام:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">عرفی ناموں کی تاریخ</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">اگر سیٹ ہو تو رابطہ سے فائلوں کو خود بخود قبول کریں۔</translation>
@@ -286,9 +261,9 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">تاریخ ہٹا دی گئی۔</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;یہ آپ کے دوست کی عوامی کلید ہے، اسے دوسرے چینل کے ذریعے ان کی شناخت کی تصدیق کے لیے استعمال کریں۔ آپ اسے دوسرے لوگوں کو نہیں بھیج سکتے تاکہ وہ اس رابطہ کو شامل کر سکیں۔&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">یہ آپ کے دوست کی عوامی کلید ہے، اسے دوسرے چینل کے ذریعے ان کی شناخت کی تصدیق کے لیے استعمال کریں۔ آپ اسے دوسرے لوگوں کو نہیں بھیج سکتے تاکہ وہ اس رابطہ کو شامل کر سکیں۔</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

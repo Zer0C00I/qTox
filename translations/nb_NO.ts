@@ -197,26 +197,6 @@ noe som kan forårsake problemer i videosamtaler.</translation>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translation>Dialogvindu</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation>brukernavn</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation>statusmelding</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation>Brukte alias:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translation>ALIASHISTORIKK</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translation>Automatisk godta filer fra kontakt hvis valgt</translation>
     </message>
@@ -257,8 +237,8 @@ noe som kan forårsake problemer i videosamtaler.</translation>
         <translation>Historikk fjernet</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dette er den offentlige nøkkelen til din venn, bruk den til å bekrefte identiteten deres via en annen kanal. Du kan ikke sende dette til andre folk slik at de kan legge til denne kontakten.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <translation>Dette er den offentlige nøkkelen til din venn, bruk den til å bekrefte identiteten deres via en annen kanal. Du kan ikke sende dette til andre folk slik at de kan legge til denne kontakten.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

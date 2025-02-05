@@ -203,26 +203,6 @@ which may lead to problems with video calls.</source>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translation>Παράθυρο διαλόγου</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation>όνομα χρήστη</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation>μήνυμα κατάστασης</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation>Χρησιμοποιούμενα ψευδώνυμα:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translation>ΙΣΤΟΡΙΚΟ ΨΕΥΔΩΝΥΜΩΝ</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translation>Αυτόματη λήψη αρχείων από μια επαφή, εάν είναι επιλεγμένο</translation>
     </message>
@@ -263,9 +243,9 @@ which may lead to problems with video calls.</source>
         <translation>Το ιστορικό διεγράφη</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Αυτό είναι το δημόσιο κλειδί του φίλου σας, χρησιμοποιήστε το για να επαληθεύσετε την ταυτότητά του μέσω άλλου καναλιού. Δεν μπορείτε να το στείλετε σε άλλα άτομα, ώστε να μπορούν να προσθέσουν αυτήν την επαφή.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">Αυτό είναι το δημόσιο κλειδί του φίλου σας, χρησιμοποιήστε το για να επαληθεύσετε την ταυτότητά του μέσω άλλου καναλιού. Δεν μπορείτε να το στείλετε σε άλλα άτομα, ώστε να μπορούν να προσθέσουν αυτήν την επαφή.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

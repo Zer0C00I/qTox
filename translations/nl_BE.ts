@@ -192,26 +192,6 @@ which may lead to problems with video calls.</source>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translation>Dialoog</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation>gebruikersnaam</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation>statusbericht</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation>Gebruikte aliassen:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translation>ALIASGESCHIEDENIS</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translation>Indien ingesteld automatisch bestanden van dit contact aanvaarden</translation>
     </message>
@@ -252,7 +232,7 @@ which may lead to problems with video calls.</source>
         <translation>Geschiedenis verwijderd</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -196,26 +196,6 @@ Take heed, fer higher qualities demand clearer skies and use more bandwidth. If 
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translation type="unfinished">Dialog</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation type="unfinished">Name</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation type="unfinished">Status report</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation type="unfinished">Past aliases:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translation type="unfinished">RECORD O&apos; ALIASES</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translation type="unfinished">Welcome all parcels</translation>
     </message>
@@ -256,7 +236,7 @@ Take heed, fer higher qualities demand clearer skies and use more bandwidth. If 
         <translation type="unfinished">All messages burnt</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
         <translation type="unfinished">This be the public key o&apos; yer matey, use it ta verify their identity via another channel. Ye can&apos;t send this ta other people so they can add this contact.</translation>
     </message>
     <message>

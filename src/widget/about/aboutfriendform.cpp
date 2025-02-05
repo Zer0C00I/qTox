@@ -34,8 +34,6 @@ AboutFriendForm::AboutFriendForm(std::unique_ptr<IAboutFriend> about_, Settings&
     , messageBoxManager{messageBoxManager_}
 {
     ui->setupUi(this);
-    ui->label_4->hide();
-    ui->aliases->hide();
 
     connect(ui->buttonBox, &QDialogButtonBox::accepted, this, &AboutFriendForm::onAcceptedClicked);
     connect(ui->autoacceptfile, &QCheckBox::clicked, this, &AboutFriendForm::onAutoAcceptDirClicked);

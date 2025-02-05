@@ -197,26 +197,6 @@ Rýchlosť vášho pripojenia nemusí byť vždy dostačujúca pre vyššiu kval
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translation>Dialóg</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation>používateľské meno</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation>Správa o stave</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation>Používané prezývky:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translation>HISTÓRIA PREZÝVOK</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translation>Ak je zaškrtnuté, automaticky prijímať súbory od tohto kontaktu</translation>
     </message>
@@ -257,8 +237,8 @@ Rýchlosť vášho pripojenia nemusí byť vždy dostačujúca pre vyššiu kval
         <translation>História bola odstránená</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Toto je verejný kľúč vášho priateľa, použite ho na overenie jeho totožnosti prostredníctvom iného kanála. Tento kľúč nie je možné poslať iným ľuďom, aby si pridali tento kontakt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <translation>Toto je verejný kľúč vášho priateľa, použite ho na overenie jeho totožnosti prostredníctvom iného kanála. Tento kľúč nie je možné poslať iným ľuďom, aby si pridali tento kontakt.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

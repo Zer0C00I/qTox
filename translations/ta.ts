@@ -209,26 +209,6 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translation type="unfinished">உரையாடல்</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation type="unfinished">பயனர்பெயர்</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation type="unfinished">நிலைச்செய்தி</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation type="unfinished">பயன்பாட்டலுள்ள மாற்றுப்பெயர்கள்:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translation type="unfinished">இதுவரை பயன்படுத்தப்பட்ட மாற்றுப்பெயர்கள்</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translation type="unfinished">அவ்வாறு அமைக்கப்பட்டிருந்தால் தொடர்பிடமிருந்து கோப்புகளைத் தன்னிச்சையாக ஏற்க</translation>
     </message>
@@ -269,9 +249,9 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
         <translation type="unfinished">வரலாறு அகற்றப்பட்டது</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;இது உங்கள் நண்பரின் பொது விசை, இதைப் பயன்படுத்தி மற்றொரு சேனல் மூலம் அவரது அடையாளத்தைச் சரிபார்க்கவும். நீங்கள் இதை மற்றவர்களுக்கு அனுப்ப முடியாது, அதனால் அவர்கள் இந்தத் தொடர்பைச் சேர்க்கலாம்.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">இது உங்கள் நண்பரின் பொது விசை, இதைப் பயன்படுத்தி மற்றொரு சேனல் மூலம் அவரது அடையாளத்தைச் சரிபார்க்கவும். நீங்கள் இதை மற்றவர்களுக்கு அனுப்ப முடியாது, அதனால் அவர்கள் இந்தத் தொடர்பைச் சேர்க்கலாம்.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

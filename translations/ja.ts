@@ -203,26 +203,6 @@ which may lead to problems with video calls.</source>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translation>ダイアログ</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation>ユーザー名</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation>ステータスメッセージ</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation>使用したエイリアス:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translation>エイリアスの履歴</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translation>設定した場合、連絡先からのファイルを自動的に承認します</translation>
     </message>
@@ -263,9 +243,9 @@ which may lead to problems with video calls.</source>
         <translation>履歴を削除しました</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;これは友人の公開キーです。別のチャネルで友人の身元を確認するために使用します。これを他の人に送信して、他の人がこの連絡先を追加することはできません。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>これは友人の公開キーです。別のチャネルで友人の身元を確認するために使用します。これを他の人に送信して、他の人がこの連絡先を追加することはできません。</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

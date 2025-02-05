@@ -197,26 +197,6 @@ mikä voi johtaa ongelmiin videopuheluissa.</translation>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translation>Dialogi</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation>käyttäjänimi</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation>tilaviesti</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation>Käytetyt aliakset:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translation>ALIASTEN HISTORIA</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translation>Hyväksyy automaattisesti tiedostot kontaktilta, jos valittuna</translation>
     </message>
@@ -257,8 +237,8 @@ mikä voi johtaa ongelmiin videopuheluissa.</translation>
         <translation>Historia poistettu</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tämä on ystäväsi julkinen avain, käytä sitä vahvistaaksesi hänen identiteettinsä toisen kanavan kautta. Et voi lähettää tätä toiselle ihmiselle, joten he voisivat lisätä tämän kontaktin.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <translation>Tämä on ystäväsi julkinen avain, käytä sitä vahvistaaksesi hänen identiteettinsä toisen kanavan kautta. Et voi lähettää tätä toiselle ihmiselle, joten he voisivat lisätä tämän kontaktin.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

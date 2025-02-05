@@ -204,28 +204,6 @@ hvilket kan føre til problemer med videoopkald.</translation>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Dialog</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation type="unfinished">brugernavn</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation type="unfinished">statusmeddelelse</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation type="unfinished">Brugte aliaser:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">HISTORIE OM ALIASES</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Accepter automatisk filer fra kontakt, hvis indstillet</translation>
@@ -271,9 +249,9 @@ hvilket kan føre til problemer med videoopkald.</translation>
         <translation type="unfinished">Historik fjernet</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dette er din vens offentlige nøgle. Brug den til at bekræfte deres identitet via en anden kanal. Du kan ikke sende dette til andre personer, så de kan tilføje denne kontakt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">Dette er din vens offentlige nøgle. Brug den til at bekræfte deres identitet via en anden kanal. Du kan ikke sende dette til andre personer, så de kan tilføje denne kontakt.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>

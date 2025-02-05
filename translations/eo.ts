@@ -217,26 +217,6 @@ kio povas konduki al problemoj kun videovokoj.</translation>
 <context>
     <name>AboutFriendForm</name>
     <message>
-        <source>Dialog</source>
-        <translation type="unfinished">Dialogo</translation>
-    </message>
-    <message>
-        <source>username</source>
-        <translation type="unfinished">uzantnomo</translation>
-    </message>
-    <message>
-        <source>status message</source>
-        <translation type="unfinished">statmesaĝo</translation>
-    </message>
-    <message>
-        <source>Used aliases:</source>
-        <translation type="unfinished">Kromnomoj uzataj:</translation>
-    </message>
-    <message>
-        <source>HISTORY OF ALIASES</source>
-        <translation type="unfinished">HISTORIO DE KROMNOMOJ</translation>
-    </message>
-    <message>
         <source>Automatically accept files from contact if set</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Aŭtomate akceptu dosierojn de kontakto se agordita</translation>
@@ -285,9 +265,9 @@ kio povas konduki al problemoj kun videovokoj.</translation>
         <translation type="unfinished">Historio forigita</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ĉi tiu estas la publika ŝlosilo de via amiko, uzu ĝin por kontroli ilian identecon per alia kanalo. Vi ne povas sendi ĉi tion al aliaj homoj por ke ili povu aldoni ĉi tiun kontakton.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">Ĉi tiu estas la publika ŝlosilo de via amiko, uzu ĝin por kontroli ilian identecon per alia kanalo. Vi ne povas sendi ĉi tion al aliaj homoj por ke ili povu aldoni ĉi tiun kontakton.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>
