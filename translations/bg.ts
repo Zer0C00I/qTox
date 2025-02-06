@@ -1232,19 +1232,19 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Your status is changed to Away after set period of inactivity.</source>
-        <translation>Вашето състояние се променя на Отсъстващ след определен период на бездействие.</translation>
+        <translation>Състоянието се променя на „Отсъстващ“ след определен период на бездействие.</translation>
     </message>
     <message>
         <source>Start qTox on operating system startup (current profile).</source>
-        <translation>Зарежда qTox при стартиране на операционната система (текущия профил)</translation>
+        <translation>Стартиране на qTox с операционната система (текущия профил).</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
-        <translation>Директория по подразбиране за запазване на файлове:</translation>
+        <translation>Подразбирана папка за приетите на файлове:</translation>
     </message>
     <message>
         <source>Check for updates</source>
-        <translation>Проверка за актуализация</translation>
+        <translation>Проверка за обновяване</translation>
     </message>
     <message>
         <source>Spell checking</source>
@@ -1252,7 +1252,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Max autoaccept file size (0 to disable):</source>
-        <translation>Максимален размер за автоматично приемане на файл (0 за забрана):</translation>
+        <translation>Ограничение на размера на файла при автоматично приемане (0 – изключва):</translation>
     </message>
     <message>
         <source> MB</source>
@@ -1262,34 +1262,34 @@ so you can save the file on Windows.</source>
         <source>After pressing minimize (_) qTox will minimize to tray,
 instead of system taskbar.</source>
         <comment>toolTip for minimize to tray setting</comment>
-        <translation>При минимизиране (_) qTox ще отиде в системната
-лента, вместо в лентата за задачи.</translation>
+        <translation>При скриване qTox ще отиде в областта за известия,
+вместо в лентата за задачи.</translation>
     </message>
     <message>
         <source>After pressing close (X) qTox will close to tray,
 instead of closing entirely.</source>
         <comment>toolTip for close to tray setting</comment>
-        <translation>При затваряне (X) qTox ще отиде в системната
-лента, вместо да се изключи.</translation>
+        <translation>При затваряне qTox ще отиде в областта за известия,
+вместо да се изключи.</translation>
     </message>
     <message>
         <source>You can set this on a per-friend basis by right clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
-        <translation>Може да зададете това на база приятел с десен клик върху отделните приятели.</translation>
+        <translation>Можете да зададете и на всеки контакт по отделно с десен бутон на мишката.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
-        <translation type="unfinished">Съобщение в чата, когато потребител се присъедини или напусне група</translation>
+        <translation>Получаване на съобщение, когато потребител се присъедини или напусне групов разговор</translation>
     </message>
     <message>
         <source>Click here if you find errors in a translation and would like to help fix it.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Щракнете тук, ако откриете грешки в превод и искате да помогнете за коригирането им.</translation>
+        <translation>Посетете ако откриете грешки в превода и искате да помогнете за поправката им.</translation>
     </message>
     <message>
         <source>Help translate</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Помогнете с превода</translation>
+        <translation>Помощ с превод</translation>
     </message>
 </context>
 <context>
@@ -1300,15 +1300,15 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Smileys</source>
-        <translation>Емотикони</translation>
+        <translation>Емоции</translation>
     </message>
     <message>
         <source>Send file(s)</source>
-        <translation>Изпрати файл/ове</translation>
+        <translation>Изпращане на файл</translation>
     </message>
     <message>
         <source>Save chat log</source>
-        <translation>Запазване на логовете от чата</translation>
+        <translation>Запазване на кореспонденцията</translation>
     </message>
     <message>
         <source>Clear displayed messages</source>
@@ -1316,11 +1316,11 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Send a screenshot</source>
-        <translation>Изпрати скрийншот</translation>
+        <translation>Изпращане на екранна снимка</translation>
     </message>
     <message>
         <source>Quote selected text</source>
-        <translation>Цитирай маркиран текст</translation>
+        <translation>Цитиране на избраното</translation>
     </message>
     <message>
         <source>Copy link address</source>
@@ -1332,23 +1332,23 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Search in text</source>
-        <translation>Търсене в текста</translation>
+        <translation>Търсене в разговора</translation>
     </message>
     <message>
         <source>Go to current date</source>
-        <translation>Отидете на днешна дата</translation>
+        <translation>Към днешната дата</translation>
     </message>
     <message>
         <source>Load chat history...</source>
-        <translation>Зареждане на хронология на разговора…</translation>
+        <translation>Зареждане на кореспонденция…</translation>
     </message>
     <message>
         <source>Export to file</source>
-        <translation>Изнасяне към файл</translation>
+        <translation>Изнасяне на кореспонденция</translation>
     </message>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
-        <translation>Сигурни ли сте, че желаете да бъдат премахнати всички показани съобщения?</translation>
+        <translation>Желаете ли да бъдат премахнати всички показани съобщения?</translation>
     </message>
 </context>
 <context>
@@ -1359,11 +1359,11 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Tox ID</source>
-        <translation>Идентификатор на Tox</translation>
+        <translation>Tox ID</translation>
     </message>
     <message>
         <source>Your Tox ID (click to copy)</source>
-        <translation>Вашият идентификатор на Tox (щракнете, за да го копирате)</translation>
+        <translation>Вашият Tox ID (щракнете, за да го копирате)</translation>
     </message>
     <message>
         <source>Rename</source>
@@ -1379,25 +1379,25 @@ instead of closing entirely.</source>
         <source>Allows you to export your Tox profile to a file.
 Profile does not contain your history.</source>
         <comment>tooltip for profile exporting button</comment>
-        <translation>Дава възможност да изнесете вашия профил във файл.
-Профилът не съдържа история.</translation>
+        <translation>Дава възможност да изнесете профила във файл.
+Профилът не съдържа кореспонденция.</translation>
     </message>
     <message>
         <source>Delete</source>
         <comment>delete profile button</comment>
-        <translation>Изтрий</translation>
+        <translation>Премахване</translation>
     </message>
     <message>
         <source>This QR code contains your Tox ID. You may share this with your friends as well.</source>
-        <translation>Този код на QR съдържа вашия идентификатор на Tox. Можете да го споделите и с приятелите си.</translation>
+        <translation>QR, съдържащ вашия Tox ID. Можете да го споделите и с приятелите си.</translation>
     </message>
     <message>
         <source>Save image</source>
-        <translation>Запази изображение</translation>
+        <translation>Запазване на изображението</translation>
     </message>
     <message>
         <source>Copy image</source>
-        <translation>Копиране на изображение</translation>
+        <translation>Копиране на изображението</translation>
     </message>
     <message>
         <source>Profile</source>
@@ -1406,17 +1406,17 @@ Profile does not contain your history.</source>
     <message>
         <source>Rename profile.</source>
         <comment>tooltip for renaming profile button</comment>
-        <translation>Преименува профила.</translation>
+        <translation>Преименуване на профила.</translation>
     </message>
     <message>
         <source>Delete profile.</source>
         <comment>delete profile button tooltip</comment>
-        <translation>Изтрива профила.</translation>
+        <translation>Премахване на профила.</translation>
     </message>
     <message>
         <source>Go back to the login screen</source>
         <comment>tooltip for logout button</comment>
-        <translation>Върни се обратно към екрана за вход</translation>
+        <translation>Връщане към екрана за вход</translation>
     </message>
     <message>
         <source>Logout</source>
@@ -1466,11 +1466,11 @@ Profile does not contain your history.</source>
     </message>
     <message>
         <source>Rename profile.</source>
-        <translation>Преименува профила</translation>
+        <translation>Преименуване на профила.</translation>
     </message>
     <message>
         <source>Delete profile.</source>
-        <translation>Изтрива профила</translation>
+        <translation>Премахване на профила.</translation>
     </message>
     <message>
         <source>Export profile</source>
