@@ -709,6 +709,10 @@ endif()
 
 if(EMSCRIPTEN)
   target_link_options(${PROJECT_NAME} PRIVATE -sASYNCIFY -lidbfs.js)
+
+  # Turn off testing, because there's no offscreen plugin.
+  message(STATUS "Disabling testing for Emscripten")
+  set(BUILD_TESTING OFF)
 endif()
 
 if(BUILD_TESTING)

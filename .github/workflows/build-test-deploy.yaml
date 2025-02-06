@@ -743,33 +743,6 @@ jobs:
           name: qtox-wasm
           path: _site
 
-  deploy-wasm:
-    name: Deploy WebAssembly
-    needs: [build-wasm]
-    environment:
-      name: netlify
-      url: ${{ steps.deployment.outputs.NETLIFY_LIVE_URL }}
-    runs-on: ubuntu-24.04
-    steps:
-      - name: Download Pages artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: qtox-wasm
-          path: _site
-      - name: Install Netlify CLI
-        run: npm install -g netlify-cli
-      - name: Check that Netlify CLI works
-        run: netlify version
-      - name: Deploy to Netlify
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-        id: deployment
-        run: |
-          netlify deploy --dir _site --prod | tee netlify.log
-          echo "NETLIFY_LIVE_URL=$(grep 'Website URL:' netlify.log | grep -o 'https://[^ ]*')" >>$GITHUB_ENV
-        env:
-          NETLIFY_SITE_ID: a65b05dd-7edb-4bb9-a3ee-a27007e0ca3d
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-
   build-windows:
     name: Windows
     needs: [update-nightly-tag]
