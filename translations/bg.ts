@@ -790,7 +790,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Select all</source>
-        <translation>Избор на всички</translation>
+        <translation>Избиране на всичко</translation>
     </message>
 </context>
 <context>
@@ -798,16 +798,16 @@ so you can save the file on Windows.</source>
     <message>
         <source>Rename circle</source>
         <comment>Menu for renaming a circle</comment>
-        <translation>Преименувай кръг</translation>
+        <translation>Преименуване на списък</translation>
     </message>
     <message>
         <source>Remove circle</source>
         <comment>Menu for removing a circle</comment>
-        <translation>Премахни кръг</translation>
+        <translation>Премахване на списък</translation>
     </message>
     <message>
         <source>Open all in new window</source>
-        <translation>Отваряне на всичко в прозорец</translation>
+        <translation type="unfinished">Отваряне на всичко в прозорец</translation>
     </message>
 </context>
 <context>
@@ -816,44 +816,44 @@ so you can save the file on Windows.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation>
-            <numerusform>%n участник в разговора</numerusform>
-            <numerusform>%n участници в разговора</numerusform>
+            <numerusform>%n събеседник</numerusform>
+            <numerusform>%n събеседници</numerusform>
         </translation>
     </message>
     <message>
         <source>mute</source>
-        <translation>заглуши</translation>
+        <translation>заглушаване</translation>
     </message>
     <message>
         <source>unmute</source>
-        <translation>отглуши</translation>
+        <translation>премахване на зглушаването</translation>
     </message>
     <message>
         <source>copy peer ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">копиране на peer ID</translation>
+        <translation>копиране идентификатора на възела</translation>
     </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished">Групи</translation>
+        <translation>Групови разговори</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation type="unfinished">Създай нова група</translation>
+        <translation>Създаване на групов разговор</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation type="unfinished">Покани за групи</translation>
+        <translation>Покани за групови разговори</translation>
     </message>
 </context>
 <context>
     <name>ConferenceInviteWidget</name>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
-        <translation>Поканен от %1на %2 в %3.</translation>
+        <translation>Покана от %1 на %2 в %3.</translation>
     </message>
     <message>
         <source>Join</source>
@@ -861,7 +861,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Decline</source>
-        <translation>Откажи</translation>
+        <translation>Отказване</translation>
     </message>
 </context>
 <context>
@@ -869,26 +869,26 @@ so you can save the file on Windows.</source>
     <message>
         <source>Quit conference</source>
         <comment>Menu to quit a conference</comment>
-        <translation>Изход от групата</translation>
+        <translation>Изход от груповия разговор</translation>
     </message>
     <message>
         <source>Set title...</source>
-        <translation>Задай надпис...</translation>
+        <translation>Задаване на заглавие…</translation>
     </message>
     <message>
         <source>Open chat in new window</source>
-        <translation>Отваряне на чата в прозорец</translation>
+        <translation>Преместване в отделен прозорец</translation>
     </message>
     <message>
         <source>Remove chat from this window</source>
-        <translation>Премахване на чата от прозореца</translation>
+        <translation>Връщане в главния прозорец</translation>
     </message>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation>
-            <numerusform>%n участник в разговора</numerusform>
-            <numerusform>%n участници в разговора</numerusform>
+            <numerusform>%n събеседник</numerusform>
+            <numerusform>%n събеседници</numerusform>
         </translation>
     </message>
     <message>
@@ -904,21 +904,21 @@ so you can save the file on Windows.</source>
     <name>Core</name>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
-        <translation>/me преглага приятелство, &quot;%1&quot;</translation>
+        <translation>/me търси контакти, &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation type="unfinished">Групов чат %1</translation>
+        <translation>Групов разговор %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
         <comment>Error while sending friend request</comment>
-        <translation>Недействителен идентификатор на Tox</translation>
+        <translation>Неприемлив идентификатор на Tox</translation>
     </message>
     <message>
         <source>You need to write a message with your request</source>
         <comment>Error while sending friend request</comment>
-        <translation>Трябва да напишете съобщение заедно с вашата молба</translation>
+        <translation>Трябва да напишете съобщение заедно със заявката</translation>
     </message>
     <message>
         <source>Your message is too long!</source>
@@ -928,7 +928,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
-        <translation>Контактът вече е добавен</translation>
+        <translation>Контактът е вече добавен</translation>
     </message>
 </context>
 <context>
@@ -936,7 +936,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Debug Log</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Дневник за отстраняване на грешки</translation>
+        <translation>Дневник за отстраняване на дефекти</translation>
     </message>
     <message>
         <source>Auto-reload</source>
@@ -954,7 +954,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Debug Log</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Дневник за отстраняване на грешки</translation>
+        <translation>Дневник за отстраняване на дефекти</translation>
     </message>
 </context>
 <context>
@@ -966,61 +966,61 @@ so you can save the file on Windows.</source>
     <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
-        <translation>Чакане за изпращане...</translation>
+        <translation>Изчакване преди изпращане…</translation>
     </message>
     <message>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
-        <translation>Приеми за да получиш този файл</translation>
+        <translation>За да получите файла го приемете</translation>
     </message>
     <message>
         <source>Location not writable</source>
         <comment>Title of permissions popup</comment>
-        <translation>Неможе да се записва на това място</translation>
+        <translation>Грешка при запазване</translation>
     </message>
     <message>
         <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation>Вие нямате позволение да пишете в тази директория. Изберете друга, или отменете диалога.</translation>
+        <translation>Нямате права за писане в тази папка. Изберете друга или откажете.</translation>
     </message>
     <message>
         <source>Save a file</source>
         <comment>Title of the file saving dialog</comment>
-        <translation>Запазете файл</translation>
+        <translation>Запазване</translation>
     </message>
     <message>
         <source>Paused</source>
         <comment>file transfer widget</comment>
-        <translation>Паузирано</translation>
+        <translation>Пауза</translation>
     </message>
     <message>
         <source>Resuming...</source>
         <comment>file transfer widget</comment>
-        <translation>Възобновяване...</translation>
+        <translation>Продължаване…</translation>
     </message>
     <message>
         <source>Open file</source>
-        <translation>Отвори файл</translation>
+        <translation>Отваряне</translation>
     </message>
     <message>
         <source>Open file directory</source>
-        <translation>Отвори файл директория</translation>
+        <translation>Отваряне на папката с файла</translation>
     </message>
     <message>
         <source>Pause transfer</source>
-        <translation>Паузирай трансфер</translation>
+        <translation>Слага пренасянето на файла на пауза</translation>
     </message>
     <message>
         <source>Cancel transfer</source>
-        <translation>Отмени трансфер</translation>
+        <translation>Отказ от файла</translation>
     </message>
     <message>
         <source>Resume transfer</source>
-        <translation>Възобнови трансфер</translation>
+        <translation>Продължаване преноса на файла</translation>
     </message>
     <message>
         <source>Accept transfer</source>
-        <translation>Приеми трансфер</translation>
+        <translation>Приемане на файла</translation>
     </message>
     <message>
         <source>Remote paused</source>
@@ -1075,51 +1075,51 @@ so you can save the file on Windows.</source>
     <name>FriendWidget</name>
     <message>
         <source>Set alias...</source>
-        <translation>Задай псевдоним...</translation>
+        <translation>Задаване на псевдоним…</translation>
     </message>
     <message>
         <source>Auto accept files from this friend</source>
         <comment>context menu entry</comment>
-        <translation>Автоматично получаване на файлове от приятел</translation>
+        <translation>Автоматично приемане на файловете от този контакт</translation>
     </message>
     <message>
         <source>Invite to conference</source>
         <comment>Menu to invite a friend to a conference</comment>
-        <translation>Изпращане на покана</translation>
+        <translation>Покана за групов разговор</translation>
     </message>
     <message>
         <source>Choose an auto accept directory</source>
         <comment>popup title</comment>
-        <translation>Изберете папка за автоматично приемане</translation>
+        <translation>Изберете папката, в която се приемат файлове</translation>
     </message>
     <message>
         <source>Open chat in new window</source>
-        <translation>Отваряне на чата в прозорец</translation>
+        <translation>Преместване в отделен прозорец</translation>
     </message>
     <message>
         <source>Remove chat from this window</source>
-        <translation>Премахване на разговора от прозореца</translation>
+        <translation>Връщане в главния прозорец</translation>
     </message>
     <message>
         <source>To new conference</source>
-        <translation type="unfinished">Нова група</translation>
+        <translation>Нов групов разговор</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation type="unfinished">Покани в групата &apos;%1&apos;</translation>
+        <translation>Покана в групов разговор „%1“</translation>
     </message>
     <message>
         <source>Move to circle...</source>
         <comment>Menu to move a friend into a different circle</comment>
-        <translation>Премести в кръг...</translation>
+        <translation>Преместване в списък…</translation>
     </message>
     <message>
         <source>To new circle</source>
-        <translation>Нов кръг</translation>
+        <translation>В нов списък</translation>
     </message>
     <message>
         <source>Remove from circle &apos;%1&apos;</source>
-        <translation>Премахни от кръг &apos;%1&apos;</translation>
+        <translation>Премахване от списъка „%1“</translation>
     </message>
     <message>
         <source>Show details</source>
@@ -1147,7 +1147,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
-        <translation>Премести в кръг &quot;%1&quot;</translation>
+        <translation>Преместване в списъка „%1“</translation>
     </message>
     <message>
         <source>Remove friend</source>
@@ -1173,7 +1173,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>%1 (no fonts)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 (без шрифтове)</translation>
+        <translation>%1 (няма шрифтове)</translation>
     </message>
 </context>
 <context>
@@ -1184,31 +1184,31 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>The translation may not load until qTox restarts.</source>
-        <translation>Преводът няма да се промени, докато не рестартирате qTox.</translation>
+        <translation>Езикът няма да се промени, докато не рестартирате qTox.</translation>
     </message>
     <message>
         <source>Close to tray</source>
-        <translation>Затваряне в областта за уведомяване</translation>
+        <translation>Затваряне в областта за известия</translation>
     </message>
     <message>
         <source>Minimize to tray</source>
-        <translation>Минимизиране в областта за уведомяване</translation>
+        <translation>Скриване в областта за известия</translation>
     </message>
     <message>
         <source>Set to 0 to disable</source>
-        <translation>Посочете 0, за да забраните</translation>
+        <translation>Задайте 0, за да изключите</translation>
     </message>
     <message>
         <source>Start in tray</source>
-        <translation>Стартиране в областта за уведомяване</translation>
+        <translation>Стартиране в областта за известия</translation>
     </message>
     <message>
         <source>Show contacts&apos; status changes</source>
-        <translation>Показване на промените на статуса на контактите ви</translation>
+        <translation>Показване на промените на състоянието на контактите</translation>
     </message>
     <message>
         <source>Auto away after (0 to disable):</source>
-        <translation>Направи ме автоматично Отсъстващ след (0 за деактивиране):</translation>
+        <translation>Автоматично „Отсъстващ“ след (0 – изключва):</translation>
     </message>
     <message>
         <source>Language:</source>
@@ -1216,21 +1216,21 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Show system tray icon</source>
-        <translation>Икона в системната лента</translation>
+        <translation>Пиктограма в системната лента</translation>
     </message>
     <message>
         <source>Enable light tray icon.</source>
         <comment>toolTip for light icon setting</comment>
-        <translation>Активиране на светла икона в областта за уведомяване.</translation>
+        <translation>Светла пиктограма в областта за известия.</translation>
     </message>
     <message>
         <source>Light icon</source>
-        <translation>Светла икона</translation>
+        <translation>Светла пиктограма</translation>
     </message>
     <message>
         <source>qTox will start minimized in tray.</source>
         <comment>toolTip for Start in tray setting</comment>
-        <translation>qTox ще се включи минимизиран в областта за уведомяване.</translation>
+        <translation>qTox ще се стартира областта за известия.</translation>
     </message>
     <message>
         <source>Autostart</source>
@@ -1702,7 +1702,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation type="unfinished">Създаване на групов разговор</translation>
+        <translation>Създаване на групов разговор</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -3071,7 +3071,7 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation type="unfinished">Създаване на нова група...</translation>
+        <translation>Създаване на групов разговор…</translation>
     </message>
     <message>
         <source>Add new circle...</source>
