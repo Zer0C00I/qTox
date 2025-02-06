@@ -611,18 +611,22 @@ lo que puede provocar problemas en las videollamadas.</translation>
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Establece IPv6 &lt;on&gt;/&lt;off&gt;. El valor predeterminado es ON.</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Establece UDP &lt;on&gt;/&lt;off&gt;. Por defecto es ON.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Establece el descubrimiento de LAN &lt;activado&gt;/&lt;desactivado&gt;. UDP deshabilitado elimina esta opción. El valor predeterminado es ACTIVADO.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
+        <comment>NONE should not be translated, it is a flag value</comment>
         <translation>Establece la configuración del proxy. Por defecto es NINGUNO.</translation>
     </message>
     <message>

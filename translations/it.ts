@@ -612,18 +612,22 @@ il che può portare a problemi con le videochiamate.</translation>
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Imposta IPv6 &lt;on&gt;/&lt;off&gt;. Default su ON.</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Imposta UDP &lt;on&gt;/&lt;off&gt;. Default su ON.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Imposta il LAN Discovery &lt;on&gt;/&lt;off&gt;. Disabilita automaticamente UDP. Default su ON.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
+        <comment>NONE should not be translated, it is a flag value</comment>
         <translation>Imposta il proxy. Di default non attivo.</translation>
     </message>
     <message>

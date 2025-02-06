@@ -612,18 +612,22 @@ o que pode levar a problemas com as videochamadas.</translation>
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Define IPv6 &lt;ativado&gt;/&lt;desativado&gt;. O padrão é ATIVADO.</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Define UDP &lt;ativado&gt;/&lt;desativado&gt;. O padrão é ATIVADO.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Define a descoberta da LAN &lt;ativada&gt;/&lt;desativada&gt;. O UDP desativado elimina esta opção. O padrão é ATIVADA.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
+        <comment>NONE should not be translated, it is a flag value</comment>
         <translation>Define as configurações de proxy. O padrão é NENHUM.</translation>
     </message>
     <message>

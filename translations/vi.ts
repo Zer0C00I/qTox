@@ -611,18 +611,22 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Đặt IPv6 &lt;bật&gt; / &lt;tắt&gt;. Mặc định là BẬT.</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Đặt UDP &lt;bật&gt; / &lt;tắt&gt;. Mặc định là BẬT.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Đặt LAN discovery &lt;bật&gt; / &lt;tắt&gt;. Ghi đè tắt UDP. Mặc định là BẬT.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
+        <comment>NONE should not be translated, it is a flag value</comment>
         <translation>Đặt cài đặt proxy. Mặc định là KHÔNG.</translation>
     </message>
     <message>

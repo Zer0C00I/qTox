@@ -634,21 +634,25 @@ Ponekad vaša veza možda nije dovoljno dobra da podnese višu kvalitetu videa,
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Postavlja IPv6 &lt;on&gt;/&lt;off&gt;. Zadana postavka je UKLJUČENO.</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Postavlja UDP &lt;on&gt;/&lt;off&gt;. Zadana postavka je UKLJUČENO.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Postavlja &lt;on&gt;/&lt;off&gt; otkrivanje LAN-a. UDP off nadjačava. Zadana postavka je UKLJUČENO.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
+        <comment>NONE should not be translated, it is a flag value</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Postavlja proxy postavke. Zadana postavka je NIJEDAN.</translation>
     </message>

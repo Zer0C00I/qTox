@@ -724,21 +724,25 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">מגדיר את IPv6 &lt;on&gt;/&lt;off&gt;. ברירת המחדל היא ON.</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">מגדיר את UDP &lt;on&gt;/&lt;off&gt;. ברירת המחדל היא ON.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">מגדיר גילוי LAN &lt;on&gt;/&lt;off&gt;. ביטולי UDP. ברירת המחדל היא ON.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
+        <comment>NONE should not be translated, it is a flag value</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">מגדיר הגדרות פרוקסי. ברירת המחדל היא NONE.</translation>
     </message>

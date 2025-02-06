@@ -746,21 +746,25 @@ wat kin leie tot probleme mit videogesprekke.</translation>
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Stel IPv6 &lt;aan&gt;/&lt;aaf&gt; in. Standaard is AAN.</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Stelt UDP &lt;aan&gt;/&lt;aaf&gt; in. Standaard is AAN.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Stelt LAN-ontdèkking &lt;aan&gt;/&lt;aaf&gt; in. UDP off overrides. Standaard is AAN.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
+        <comment>NONE should not be translated, it is a flag value</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Stelt proxy-instellinge in. Standaard is GEEN.</translation>
     </message>

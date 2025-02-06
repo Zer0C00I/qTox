@@ -59,13 +59,13 @@ sed -i -e 's!/EEE!/etc!g' squashfs-root/usr/bin/appimagetool
 #readonly UPDATE_INFO="gh-releases-zsync|TokTok|qTox|latest|qTox-*.x86_64.AppImage.zsync"
 #export GIT_VERSION=$(git -C "${QTOX_SRC_DIR}" rev-parse --short HEAD)
 
-export PKG_CONFIG_PATH=/work/lib/pkgconfig
+export PKG_CONFIG_PATH=/opt/buildhome/lib/pkgconfig
 
 echo "$QTOX_APP_DIR"
 cmake "$QTOX_SRC_DIR" \
   -G Ninja \
   -DCMAKE_BUILD_TYPE=Release \
-  -DCMAKE_PREFIX_PATH="/work/lib64/cmake;/work/qt/lib/cmake" \
+  -DCMAKE_PREFIX_PATH="/opt/buildhome/lib64/cmake;/opt/buildhome/qt/lib/cmake" \
   -DCMAKE_INSTALL_PREFIX=/usr \
   -DUPDATE_CHECK=ON \
   -B _build
@@ -73,8 +73,8 @@ cmake --build _build
 #rm -fr QTox.AppDir
 cmake --install _build --prefix QTox.AppDir/usr
 
-export QTDIR=/work/qt
-export LD_LIBRARY_PATH="/work/lib:/work/lib64:$QTDIR/lib"
+export QTDIR=/opt/buildhome/qt
+export LD_LIBRARY_PATH="/opt/buildhome/lib:/opt/buildhome/lib64:$QTDIR/lib"
 
 # Copy offscreen/wayland plugins to the app dir.
 mkdir -p "$QTOX_APP_DIR/$QTDIR/plugins/platforms"

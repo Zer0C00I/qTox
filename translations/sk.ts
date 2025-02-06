@@ -613,18 +613,22 @@ Rýchlosť vášho pripojenia nemusí byť vždy dostačujúca pre vyššiu kval
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Nastaví IPv6 na &lt;zapnuté&gt;/&lt;vypnuté&gt;. Predvolená hodnota je zapnuté.</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Nastaví UDP na &lt;zapnuté&gt;/&lt;vypnuté&gt;. Predvolená hodnota je zapnuté.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Nastaví zisťovanie cez LAN na &lt;zapnuté&gt;/&lt;vypnuté&gt;. Vypnuté UDP má prednosť. Predvolená hodnota je zapnuté.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
+        <comment>NONE should not be translated, it is a flag value</comment>
         <translation>Nastaví nastavenia proxy. Predvolená hodnota je žiadne.</translation>
     </message>
     <message>

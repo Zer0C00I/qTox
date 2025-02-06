@@ -612,18 +612,22 @@ mikä voi johtaa ongelmiin videopuheluissa.</translation>
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Kytke IPv6 &lt;päälle&gt;/&lt;pois&gt;. IPv6 on oletuksenä PÄÄLLÄ.</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Kytke UDP &lt;päällä&gt;/&lt;pois&gt;. Oletukena PÄÄLLÄ.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Asettaa lähiverkon etsinnän &lt;päälle&gt;/&lt;pois&gt;. Ei toimi jos UDP ei ole käytössä. Oletksena asetus on PÄÄLLÄ.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
+        <comment>NONE should not be translated, it is a flag value</comment>
         <translation>Aseta proxy-asetukset. Oletaksena proxy ei ole käytössä.</translation>
     </message>
     <message>

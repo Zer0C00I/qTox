@@ -633,21 +633,25 @@ o que pode provocar problemas coas videochamadas.</translation>
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Establece IPv6 &lt;activado&gt;/&lt;desactivado&gt;. O predeterminado é ON.</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Establece UDP &lt;activado&gt;/&lt;desactivado&gt;. O predeterminado é ON.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Establece o descubrimento da LAN &lt;on&gt;/&lt;off&gt;. Desactivación de UDP anula. O predeterminado é ON.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
+        <comment>NONE should not be translated, it is a flag value</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Establece a configuración do proxy. O predeterminado é NINGUNHA.</translation>
     </message>

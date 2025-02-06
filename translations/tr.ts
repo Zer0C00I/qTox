@@ -614,18 +614,22 @@ bu da video görüşmelerinde sorunlara yol açabilir.</translation>
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>IPv6&apos;yı &lt;açık&gt;/&lt;kapalı&gt; olarak ayarlar. Öntanımlı olarak AÇIK&apos;tır.</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>UDP&apos;yi &lt;açık&gt;/&lt;kapalı&gt; olarak ayarlar. Öntanımlı olarak AÇIK&apos;tır.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>LAN keşfini &lt;açık&gt;/&lt;kapalı&gt; olarak ayarlar. UDP&apos;yi kapatmak geçersiz kılar. Öntanımlı olarak AÇIK&apos;tır.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
+        <comment>NONE should not be translated, it is a flag value</comment>
         <translation>Vekil ayarlarını belirler. Öntanımlı olarak YOK&apos;tur.</translation>
     </message>
     <message>

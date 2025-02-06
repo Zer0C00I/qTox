@@ -616,21 +616,25 @@ kas var radīt video zvanu problēmas.</translation>
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Iestata IPv6 &lt;ieslēgts&gt;/&lt;izslēgts&gt;. Noklusējums ir IESLĒGTS.</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Iestata UDP &lt;ieslēgts&gt;/&lt;izslēgts&gt;. Noklusējums ir IESLĒGTS.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Iestata LAN atklāšanu &lt;ieslēgts&gt;/&lt;izslēgts&gt;. UDP izslēgšanas ignorēšana. Noklusējums ir IESLĒGTS.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
+        <comment>NONE should not be translated, it is a flag value</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Iestata starpniekservera iestatījumus. Noklusējums ir NEVIENS.</translation>
     </message>

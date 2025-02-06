@@ -1,12 +1,12 @@
 #!/bin/bash
 
-source "/work/emsdk/emsdk_env.sh"
+source "/opt/buildhome/emsdk/emsdk_env.sh"
 
-export PKG_CONFIG_PATH="/work/lib/pkgconfig"
+export PKG_CONFIG_PATH="/opt/buildhome/lib/pkgconfig"
 
 emcmake cmake \
   -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
-  -DCMAKE_FIND_ROOT_PATH="/work;/work/qt" \
+  -DCMAKE_FIND_ROOT_PATH="/opt/buildhome;/opt/buildhome/qt" \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DSTRICT_OPTIONS=ON \
   -DBUILD_TESTING=OFF \

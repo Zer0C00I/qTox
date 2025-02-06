@@ -58,7 +58,11 @@ if [ -z "$ARCH" ]; then
   exit 1
 fi
 
-if [[ "$ARCH" != "i686" ]] && [[ "$ARCH" != "x86_64" ]]; then
+if [[ "$ARCH" == "i686" ]]; then
+  export WINE=/usr/lib/wine/wine
+elif [[ "$ARCH" == "x86_64" ]]; then
+  export WINE=/usr/lib/wine/wine64
+else
   echo "Error: Incorrect architecture was specified. Please specify either 'i686' or 'x86_64', case sensitive, as the first argument to the script."
   exit 1
 fi
@@ -88,7 +92,7 @@ if [[ "$BUILD_TYPE" == "Release" ]]; then
     -DCMAKE_PREFIX_PATH=/windows \
     -DCMAKE_BUILD_TYPE=Release \
     -DSTRICT_OPTIONS=ON \
-    -DTEST_CROSSCOMPILING_EMULATOR=wine \
+    -DTEST_CROSSCOMPILING_EMULATOR="$WINE" \
     -GNinja \
     "-B$QTOX_BUILD_DIR" \
     "$QTOX_SRC_DIR"
@@ -98,7 +102,7 @@ elif [[ "$BUILD_TYPE" == "Debug" ]]; then
     -DCMAKE_PREFIX_PATH=/windows \
     -DCMAKE_BUILD_TYPE=Debug \
     -DSTRICT_OPTIONS=ON \
-    -DTEST_CROSSCOMPILING_EMULATOR=wine \
+    -DTEST_CROSSCOMPILING_EMULATOR="$WINE" \
     -GNinja \
     -DCMAKE_EXE_LINKER_FLAGS="-mconsole" \
     "-B$QTOX_BUILD_DIR" \
@@ -118,7 +122,7 @@ export WINEPREFIX="$PWD/$QTOX_BUILD_DIR/.wine"
 
 # Check if our main binary runs (just to see if any DLL errors happen early on).
 # This also initialises the wine directory for tests (avoiding race conditions).
-wine "$QTOX_PREFIX_DIR/qtox.exe" --help
+"$WINE" "$QTOX_PREFIX_DIR/qtox.exe" --help
 
 # Run tests
 set +u

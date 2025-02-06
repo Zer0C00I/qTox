@@ -613,18 +613,22 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Nustato IPv6 &lt;įjungta&gt;/&lt;išjungta&gt;. Numatytoji reikšmė yra ĮJUNGTA.</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Nustato UDP &lt;įjungta&gt;/&lt;išjungta&gt;. Numatytoji reikšmė yra ĮJUNGTA.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Nustato LAN aptikimą &lt;įjungta&gt;/&lt;išjungta&gt;. UDP išjungimas turi viršenybę. Numatytasis yra ĮJUNGTA.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
+        <comment>NONE should not be translated, it is a flag value</comment>
         <translation>Nustato įgaliotojo serverio nustatymus. Numatytoji reikšmė yra NĖRA.</translation>
     </message>
     <message>

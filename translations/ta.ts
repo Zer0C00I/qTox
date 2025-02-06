@@ -661,21 +661,25 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">IPv6 &lt;on&gt;/&lt;off&gt; ஐ அமைக்கிறது. இயல்புநிலை இயக்கத்தில் உள்ளது.</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">UDPயை &lt;on&gt;/&lt;off&gt; அமைக்கிறது. இயல்புநிலை இயக்கத்தில் உள்ளது.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">LAN கண்டுபிடிப்பை &lt;on&gt;/&lt;off&gt; அமைக்கிறது. UDP முடக்கப்பட்டுள்ளது. இயல்புநிலை இயக்கத்தில் உள்ளது.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
+        <comment>NONE should not be translated, it is a flag value</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ப்ராக்ஸி அமைப்புகளை அமைக்கிறது. இயல்புநிலை இல்லை.</translation>
     </message>

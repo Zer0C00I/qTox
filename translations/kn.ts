@@ -737,21 +737,25 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">IPv6 &lt;on&gt;/&lt;off&gt; ಅನ್ನು ಹೊಂದಿಸುತ್ತದೆ. ಡೀಫಾಲ್ಟ್ ಆನ್ ಆಗಿದೆ.</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">UDP ಅನ್ನು &lt;on&gt;/&lt;off&gt; ಹೊಂದಿಸುತ್ತದೆ. ಡೀಫಾಲ್ಟ್ ಆನ್ ಆಗಿದೆ.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">LAN ಅನ್ವೇಷಣೆಯನ್ನು &lt;on&gt;/&lt;off&gt; ಹೊಂದಿಸುತ್ತದೆ. UDP ಆಫ್ ಅತಿಕ್ರಮಿಸುತ್ತದೆ. ಡೀಫಾಲ್ಟ್ ಆನ್ ಆಗಿದೆ.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
+        <comment>NONE should not be translated, it is a flag value</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ಪ್ರಾಕ್ಸಿ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಹೊಂದಿಸುತ್ತದೆ. ಡೀಫಾಲ್ಟ್ ಅಲ್ಲ.</translation>
     </message>

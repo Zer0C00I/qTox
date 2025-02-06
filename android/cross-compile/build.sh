@@ -28,7 +28,7 @@ export QT_ANDROID_KEYSTORE_ALIAS=mydomain
 export QT_ANDROID_KEYSTORE_STORE_PASS=aoeuaoeu
 export QT_ANDROID_KEYSTORE_KEY_PASS=aoeuaoeu
 
-/work/android/qt/bin/qt-cmake \
+/opt/buildhome/android/qt/bin/qt-cmake \
   -DCMAKE_BUILD_TYPE="$BUILD_TYPE" \
   -DQT_ANDROID_SIGN_APK=ON \
   -DSPELL_CHECK=OFF \

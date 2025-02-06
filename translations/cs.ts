@@ -613,18 +613,22 @@ může dojít během video hovoru k výpadkům či jiným problémům.</translat
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Nastavuje IPv6 &lt;povoleno&gt;/&lt;zakázáno&gt;. Výchozí je POVOLENO.</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Nastavuje UDP &lt;povoleno&gt;/&lt;zakázáno&gt;. Výchozí je POVOLENO.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Nastavuje vyhledávání v Místní síti (LAN discovery) &lt;povoleno&gt;/&lt;zakázáno&gt;. Přepíše UDP zakázáno. Výchozí je POVOLENO.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
+        <comment>NONE should not be translated, it is a flag value</comment>
         <translation>Nastavení proxy serveru. Výchozí je NONE (žádný).</translation>
     </message>
     <message>

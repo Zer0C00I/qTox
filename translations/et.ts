@@ -612,18 +612,22 @@ mis võib põhjustada probleeme videokõnedega.</translation>
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Saad IPv6 võrguprotokolli kasutamise &lt;sisse&gt;/&lt;välja&gt; lülitada. Vaikimisi on ta kasutusel.</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Saad UPD võrguprotokolli kasutamise &lt;sisse&gt;/&lt;välja&gt; lülitada. Vaikimisi on ta kasutusel.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Saad seadmete tuvastamise kohtvõrgus &lt;sisse&gt;/&lt;välja&gt; lülitada. Vaikimisi on ta kasutusel.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
+        <comment>NONE should not be translated, it is a flag value</comment>
         <translation>Saad seadistada puhverserveri kasutamise. Vaikimisi on puhverserver seadistamata.</translation>
     </message>
     <message>

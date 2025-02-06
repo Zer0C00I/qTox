@@ -719,21 +719,25 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">IPv6 &lt;on&gt;/&lt;off&gt; سیٹ کرتا ہے۔ ڈیفالٹ آن ہے۔</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">UDP سیٹ کرتا ہے &lt;on&gt;/&lt;off&gt;۔ ڈیفالٹ آن ہے۔</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">LAN دریافت سیٹ کرتا ہے &lt;on&gt;/&lt;off&gt;۔ UDP آف اوور رائیڈز۔ ڈیفالٹ آن ہے۔</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
+        <comment>NONE should not be translated, it is a flag value</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">پراکسی سیٹنگز سیٹ کرتا ہے۔ ڈیفالٹ کوئی نہیں ہے۔</translation>
     </message>

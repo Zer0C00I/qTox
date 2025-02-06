@@ -611,18 +611,22 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Setați IPv6 &lt;pornit&gt;/&lt;oprit&gt;. Implicit este PORNIT.</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Setați UDP &lt;pornit&gt;/&lt;oprit&gt;. Implicit este PORNIT.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Setați descoperire LAN &lt;pornit&gt;/&lt;oprit&gt;. UDP suprascriere oprita. Implicit este PORNIT.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
+        <comment>NONE should not be translated, it is a flag value</comment>
         <translation>Setează setările proxy. Valoarea implicită este NIMIC.</translation>
     </message>
     <message>

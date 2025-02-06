@@ -612,18 +612,22 @@ ce qui peut entraîner des problèmes lors des appels vidéo.</translation>
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Définit IPv6 &lt;on&gt;/&lt;off&gt;. La valeur par défaut est ON.</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Définit UDP &lt;on&gt;/&lt;off&gt;. La valeur par défaut est ON.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Définit la découverte LAN &lt;on&gt;/&lt;off&gt;. UDP &quot;off&quot; élimine cette option. La valeur par défaut est ON.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
+        <comment>NONE should not be translated, it is a flag value</comment>
         <translation>Définit les paramètres du proxy. La valeur par défaut est AUCUN.</translation>
     </message>
     <message>

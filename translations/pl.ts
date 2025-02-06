@@ -619,18 +619,22 @@ co może powodować problemy z rozmowami wideo.</translation>
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Ustawia IPv6 &lt;włączone&gt;/&lt;wyłączone&gt;. Domyślnie jest WŁĄCZONE.</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Ustawia UDP &lt;włączone&gt;/&lt;wyłączone&gt;. Domyślnie jest WŁĄCZONE.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
+        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translation>Ustawia wykrywanie w sieci LAN &lt;włączone&gt;/&lt;wyłączone&gt;. Wyłączenie UDP nadpisuje. Domyślnie jest WŁĄCZONE.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
+        <comment>NONE should not be translated, it is a flag value</comment>
         <translation>Określa ustawienia serwera proxy. Wartość domyślna to BRAK.</translation>
     </message>
     <message>
