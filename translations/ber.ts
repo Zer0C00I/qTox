@@ -318,12 +318,6 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ⵜⵣⴻⵎⵔⴻⴹ ⴰⴷ ⵜⴻⵙⵙⴻⴽⵏⴻⴹ ⵉⵎⴻⵙⵍⴰⵢⴻⵏ ⵖⴻⴼ ⵓⵙⵎⴻⵍⴰ ⴷⴰⴳⵉ.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ⴼⵔⴻⵏ ⴰⴹⵔⵉⵙ ⵏ ⵓⵇⴱⴰⵍ ⵙ ⵡⵓⴷⴻⵎ ⴰⵡⵓⵔⵎⴰⵏ</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -1102,11 +1096,6 @@ so you can save the file on Windows.</source>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ⴳⴻⵜⵯⴷ</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
@@ -1298,12 +1287,6 @@ so you can save the file on Windows.</source>
         <translation type="unfinished">ⵙⴽⴻⵏ ⵜⵉⴼⴻⵙⵙⴰⵙⵉⵏ</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ⴼⵔⴻⵏ ⴰⴹⵔⵉⵙ ⵏ ⵓⵇⴱⴰⵍ ⵙ ⵜⵉⵎⵎⴰⴷⵉⵙ</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ⵉⵣⴻⵏ ⴰⵎⴰⵢⵏⵓ</translation>
@@ -1350,12 +1333,6 @@ so you can save the file on Windows.</source>
         <source>General</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ⵓⵎⴰⵜⴰ</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ⴼⵔⴻⵏ ⴰⴹⵔⵉⵙ ⵏ ⵓⵇⴱⴰⵍ ⵙ ⵜⵉⵎⵎⴰⴷⵉⵙ</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2717,6 +2694,14 @@ IDa ⵢⴻⵙⵄⴰ ⴰⴽⴰⵔⴰⵎ ⵏ NoSpam (ⵙ ⵜⴼⴻⵍⵡⵉⵜ), �
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">ⴼⵔⴻⵏ ⴰⴹⵔⵉⵙ ⵏ ⵓⵇⴱⴰⵍ ⵙ ⵡⵓⴷⴻⵎ ⴰⵡⵓⵔⵎⴰⵏ</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -3065,11 +3050,6 @@ IDa ⵢⴻⵙⵄⴰ ⴰⴽⴰⵔⴰⵎ ⵏ NoSpam (ⵙ ⵜⴼⴻⵍⵡⵉⵜ), �
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ⴳⴻⵜⵯⴷ</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translatorcomment>Automated translation.</translatorcomment>

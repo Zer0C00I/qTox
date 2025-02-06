@@ -275,11 +275,6 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
         <source>You can save comments about this contact here.</source>
         <translation>Puteți salva comentarii despre acest contact aici.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translation>Alegeți un director de acceptare automată</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -943,11 +938,6 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>Formă</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Așteptați trimiterea...</translation>
@@ -1105,11 +1095,6 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
         <translation>Arata detaliile</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Alegeți un director de acceptare automată</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translation>Mesaj nou</translation>
     </message>
@@ -1149,11 +1134,6 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
     <message>
         <source>General</source>
         <translation>General</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Alegeți un director de acceptare automată</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2290,6 +2270,14 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Alegeți un director de acceptare automată</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2590,10 +2578,6 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation>Formă</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translation>Începe căutare:</translation>

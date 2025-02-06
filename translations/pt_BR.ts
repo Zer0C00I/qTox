@@ -276,11 +276,6 @@ o que pode levar a problemas com as videochamadas.</translation>
         <source>You can save comments about this contact here.</source>
         <translation>Você pode salvar comentários sobre esse contato aqui.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translation>Escolha um diretório para aceitar arquivos automaticamente</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -946,11 +941,6 @@ de forma que você possa salvar o arquivo no Windows.</translation>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>Formulário</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Esperando para enviar...</translation>
@@ -1108,11 +1098,6 @@ de forma que você possa salvar o arquivo no Windows.</translation>
         <translation>Mostrar detalhes</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Escolher um diretório para aceitar arquivos automaticamente</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translation>Nova mensagem</translation>
     </message>
@@ -1152,11 +1137,6 @@ de forma que você possa salvar o arquivo no Windows.</translation>
     <message>
         <source>General</source>
         <translation>Geral</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Escolher um diretório para aceitar arquivos automaticamente</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2295,6 +2275,14 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinza).</translation>
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Escolha um diretório para aceitar arquivos automaticamente</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2595,10 +2583,6 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinza).</translation>
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation>Formulário</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translation>Iniciar busca:</translation>

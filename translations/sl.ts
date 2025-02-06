@@ -295,12 +295,6 @@ kar lahko povzroči težave z video klici.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Tukaj lahko shranite komentarje o tem stiku.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Izberite imenik za samodejno sprejemanje</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -996,10 +990,6 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translation>Nastavitve</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Čakanje na pošiljanje...</translation>
@@ -1127,11 +1117,6 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
         <translation>Samodejno sprejmi datoteke od te osebe</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Izberi mapo za avtomatsko sprejemanje datotek</translation>
-    </message>
-    <message>
         <source>Open chat in new window</source>
         <translation>Odpri klepet v novem oknu</translation>
     </message>
@@ -1205,11 +1190,6 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
     <message>
         <source>General</source>
         <translation>Splošno</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Izberi mapo za avtomatsko sprejemanje datotek</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2462,6 +2442,14 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Izberite imenik za samodejno sprejemanje</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2802,10 +2790,6 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation type="unfinished">Nastavitve</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translatorcomment>Automated translation.</translatorcomment>

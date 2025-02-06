@@ -11,6 +11,7 @@
 #include "src/persistence/settings.h"
 #include "src/widget/form/settings/textcompose.h"
 #include "src/widget/form/settingswidget.h"
+#include "src/widget/popup.h"
 #include "src/widget/style.h"
 #include "src/widget/tool/recursivesignalblocker.h"
 #include "src/widget/translator.h"
@@ -311,12 +312,11 @@ void GeneralForm::on_autoacceptFiles_stateChanged()
 void GeneralForm::on_autoSaveFilesDir_clicked()
 {
     const QString previousDir = settings.getGlobalAutoAcceptDir();
-    QString directory =
-        QFileDialog::getExistingDirectory(Q_NULLPTR,
-                                          tr("Choose an auto accept directory", "popup title"),
-                                          QDir::homePath());
-    if (directory.isEmpty()) // cancel was pressed
+    QString directory = Popup::getAutoAcceptDir(this, QDir::homePath());
+    if (directory.isEmpty()) {
+        // cancel was pressed
         directory = previousDir;
+    }
 
     settings.setGlobalAutoAcceptDir(directory);
     bodyUI->autoSaveFilesDir->setText(directory);

@@ -19,6 +19,7 @@
 #include "src/persistence/settings.h"
 #include "src/widget/about/aboutfriendform.h"
 #include "src/widget/form/chatform.h"
+#include "src/widget/popup.h"
 #include "src/widget/style.h"
 #include "src/widget/tool/croppinglabel.h"
 #include "src/widget/widget.h"
@@ -265,10 +266,7 @@ void FriendWidget::changeAutoAccept(bool enable)
 {
     if (enable) {
         const auto oldDir = chatroom->getAutoAcceptDir();
-        const auto newDir =
-            QFileDialog::getExistingDirectory(Q_NULLPTR,
-                                              tr("Choose an auto accept directory", "popup title"),
-                                              oldDir);
+        const auto newDir = Popup::getAutoAcceptDir(this, oldDir);
         chatroom->setAutoAcceptDir(newDir);
     } else {
         chatroom->disableAutoAccept();

@@ -275,11 +275,6 @@ which may lead to problems with video calls.</source>
         <source>You can save comments about this contact here.</source>
         <translation>Вы можете сохранять заметки об этом контакте здесь.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translation>Выберите папку для автоматического приёма файлов</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -944,10 +939,6 @@ so you can save the file on Windows.</source>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translation>От</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Ожидание отправки...</translation>
@@ -1106,11 +1097,6 @@ so you can save the file on Windows.</source>
         <translation>О контакте</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Выбрать папку для автоматического приёма</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translation>Новое сообщение</translation>
     </message>
@@ -1146,11 +1132,6 @@ so you can save the file on Windows.</source>
 </context>
 <context>
     <name>GeneralForm</name>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Выбрать папку для автоматического приёма</translation>
-    </message>
     <message>
         <source>General</source>
         <translation>Общие</translation>
@@ -2289,6 +2270,14 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Выберите папку для автоматического приёма файлов</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2589,10 +2578,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation>Форма</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translation>Начать поиск:</translation>

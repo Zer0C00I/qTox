@@ -287,12 +287,6 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ide mentheti a névjegyhez fűzött megjegyzéseit.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Válasszon egy automatikus elfogadási könyvtárat</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -970,10 +964,6 @@ so you can save the file on Windows.</source>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translation>Űrlap</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Várakozás elküldésre...</translation>
@@ -1101,11 +1091,6 @@ so you can save the file on Windows.</source>
         <translation>Fájlok automatikus elfogadása e partnertől</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Válasszon egy mappát az automatikus fájlfogadáshoz</translation>
-    </message>
-    <message>
         <source>Open chat in new window</source>
         <translation>Chat megnyitása új ablakban</translation>
     </message>
@@ -1179,11 +1164,6 @@ so you can save the file on Windows.</source>
     <message>
         <source>General</source>
         <translation>Általános</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Válasszon egy mappát az automatikus elfogadáshoz</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2345,6 +2325,14 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel) és az ellenőrző
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Válasszon egy automatikus elfogadási könyvtárat</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2663,10 +2651,6 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel) és az ellenőrző
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation>Űrlap</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translation>Keresés indítása:</translation>

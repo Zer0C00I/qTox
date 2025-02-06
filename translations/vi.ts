@@ -276,11 +276,6 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
         <source>You can save comments about this contact here.</source>
         <translation>Bạn có thể lưu ý kiến về liên hệ này tại đây.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translation>Chọn một thư mục tự động chấp nhận</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -943,11 +938,6 @@ so you can save the file on Windows.</source>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>Biểu mẫu</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Đang gửi...</translation>
@@ -1105,11 +1095,6 @@ so you can save the file on Windows.</source>
         <translation>Hiện chi tiết</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Chọn một thư mục tự động chấp nhận</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translation>Tin nhắn mới</translation>
     </message>
@@ -1149,11 +1134,6 @@ so you can save the file on Windows.</source>
     <message>
         <source>General</source>
         <translation>Chung</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Chọn một thư mục tự động chấp nhận</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2291,6 +2271,14 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Chọn một thư mục tự động chấp nhận</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2593,10 +2581,6 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation>Biểu mẫu</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translation>Bắt đầu tìm kiếm:</translation>

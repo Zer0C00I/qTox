@@ -275,11 +275,6 @@ wat kan leiden tot problemen met videogesprekken.</translation>
         <source>You can save comments about this contact here.</source>
         <translation>Hier kun je opmerkingen over dit contact opslaan.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translation>Kies een bestandsmap voor automatisch accepteren</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -939,10 +934,6 @@ zodat u het bestand op Windows kunt opslaan.</translation>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translation>Formulier</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Wachten om te versturen…</translation>
@@ -1080,11 +1071,6 @@ zodat u het bestand op Windows kunt opslaan.</translation>
         <translation>Bestanden van deze vriend automatisch aanvaarden</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Kies een map om automatisch aanvaarde bestanden op te slaan</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translation>Nieuw bericht</translation>
     </message>
@@ -1143,11 +1129,6 @@ zodat u het bestand op Windows kunt opslaan.</translation>
     <message>
         <source>General</source>
         <translation>Algemeen</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Kies een map om automatisch aanvaarde bestanden op te slaan</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2282,6 +2263,14 @@ Deze ID bevat de NoSpam-code (in het blauw) en de checksum (in het grijs).</tran
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Kies een bestandsmap voor automatisch accepteren</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2582,10 +2571,6 @@ Deze ID bevat de NoSpam-code (in het blauw) en de checksum (in het grijs).</tran
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation>Formulier</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translation>Zoekopdracht starten:</translation>

@@ -291,12 +291,6 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>この連絡先に関するコメントをここに保存できます。</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation>自動承認ディレクトリを選択してください</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -986,10 +980,6 @@ Windows にファイルを保存できるようになります。</translation>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translation>フォーム</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>送信を待機しています…</translation>
@@ -1150,11 +1140,6 @@ Windows にファイルを保存できるようになります。</translation>
         <translation>詳細を表示</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>自動承認したファイルの保存場所を選択</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translation>新しいメッセージ</translation>
     </message>
@@ -1192,11 +1177,6 @@ Windows にファイルを保存できるようになります。</translation>
 </context>
 <context>
     <name>GeneralForm</name>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>自動承認したファイルの保存場所を選択</translation>
-    </message>
     <message>
         <source>General</source>
         <translation>一般</translation>
@@ -2374,6 +2354,14 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">自動承認ディレクトリを選択してください</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2703,10 +2691,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation>フォーム</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translatorcomment>Automated translation.</translatorcomment>

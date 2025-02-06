@@ -276,11 +276,6 @@ mis võib põhjustada probleeme videokõnedega.</translation>
         <source>You can save comments about this contact here.</source>
         <translation>Selle kasutaja kommentaarid kirjuta siia.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translation>Vali kaust, kuhu automaatselt vastu võetud failid salvestame</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -946,10 +941,6 @@ ja sa saad seda faili nüüd Windowsis salvestada.</translation>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translation>Aken</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Ootan, et saata...</translation>
@@ -1099,11 +1090,6 @@ ja sa saad seda faili nüüd Windowsis salvestada.</translation>
         <translation>Näita üksikasju</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Vali kaust, kuhu automaatselt vastuvõetavad failid paigutatakse</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translation>Uus sõnum</translation>
     </message>
@@ -1147,11 +1133,6 @@ ja sa saad seda faili nüüd Windowsis salvestada.</translation>
 </context>
 <context>
     <name>GeneralForm</name>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Vali kaust, kuhu automaatselt vastuvõetavad failid laetakse</translation>
-    </message>
     <message>
         <source>General</source>
         <translation>Üldine</translation>
@@ -2295,6 +2276,14 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Vali kaust, kuhu automaatselt vastu võetud failid salvestame</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2610,10 +2599,6 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation>Vorm</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translation>Alusta otsingut:</translation>

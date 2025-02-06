@@ -271,11 +271,6 @@ which may lead to problems with video calls.</source>
         <source>You can save comments about this contact here.</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -934,11 +929,6 @@ so you can save the file on Windows.</source>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>Obrazac</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Čekam na slanje...</translation>
@@ -1097,11 +1087,6 @@ so you can save the file on Windows.</source>
         <translation>Prikaži detalje</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Izaberte fasciklu za automatski prijem</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translation>Nova poruka</translation>
     </message>
@@ -1141,11 +1126,6 @@ so you can save the file on Windows.</source>
     <message>
         <source>General</source>
         <translation>Opšte</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Izaberite fasciklu za automatski prijem</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2270,6 +2250,14 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2570,10 +2558,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation type="unfinished">Obrazac</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translation type="unfinished"></translation>

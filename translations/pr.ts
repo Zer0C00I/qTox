@@ -275,11 +275,6 @@ Take heed, fer higher qualities demand clearer skies and use more bandwidth. If 
         <source>You can save comments about this contact here.</source>
         <translation>Scrawl down any observations yer havin&apos; about this matey.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translation type="unfinished">Pick a chest fer auto-acceptin&apos; parcels</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -936,11 +931,6 @@ so ye can stash th&apos; file on Windows.</translation>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation type="unfinished">Shape</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Awaitin&apos; approval...</translation>
@@ -1102,11 +1092,6 @@ so ye can stash th&apos; file on Windows.</translation>
         <translation>Examine</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Pick a parcel-chest</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translation>New writin&apos;</translation>
     </message>
@@ -1142,11 +1127,6 @@ so ye can stash th&apos; file on Windows.</translation>
     <message>
         <source>General</source>
         <translation type="unfinished">Th&apos; Whole Ship</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Pick a chest fer auto-accepting parcels</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2275,6 +2255,14 @@ This ID has th&apos; NoSpam code (in blue), &apos;n&apos; th&apos; checksum (in 
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Pick a chest fer auto-acceptin&apos; parcels</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2575,10 +2563,6 @@ This ID has th&apos; NoSpam code (in blue), &apos;n&apos; th&apos; checksum (in 
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation type="unfinished">Shape</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translation type="unfinished">Start searchin&apos;:</translation>

@@ -279,11 +279,6 @@ kas var radīt video zvanu problēmas.</translation>
         <source>You can save comments about this contact here.</source>
         <translation>Jūs varat saglabāt kontaktpersonas komentārus.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translation>Atlasīt automātiskās pieņemšanas mapi</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -957,11 +952,6 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>Forma</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Gaida nosūtīšanu ...</translation>
@@ -1120,11 +1110,6 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
         <translation>Rādīt detalizētu informāciju</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Izvēlieties automātiskās pieņemšanas mapi</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translation>Jauna ziņa</translation>
     </message>
@@ -1165,11 +1150,6 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     <message>
         <source>General</source>
         <translation>Vispārīgi</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Izvēlieties automātiskās pieņemšanas mapi</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2339,6 +2319,14 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Atlasīt automātiskās pieņemšanas mapi</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2660,10 +2648,6 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation>Forma</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translation>Sākt meklēšanu:</translation>

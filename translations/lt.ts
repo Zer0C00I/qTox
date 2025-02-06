@@ -276,11 +276,6 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
         <source>You can save comments about this contact here.</source>
         <translation>Čia galite išsaugoti komentarus apie šį kontaktą.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translation>Pasirinkite katalogą automatiniam priėmimui</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -948,10 +943,6 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translation>Forma</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Laukiama gavėjo...</translation>
@@ -1101,11 +1092,6 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
         <translation>Rodyti profilį</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Pasirinkite katalogą priimamiems failams</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translation>Nauja žinutė</translation>
     </message>
@@ -1152,11 +1138,6 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
     <message>
         <source>General</source>
         <translation>Bendrosios</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Pasirinkite priimamų failų katalogą</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2299,6 +2280,14 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Pasirinkite katalogą automatiniam priėmimui</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2614,10 +2603,6 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation>Forma</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translation>Pradėti paiešką:</translation>

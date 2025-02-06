@@ -8,21 +8,12 @@
 #include "ui_aboutfriendform.h"
 
 #include "src/core/toxpk.h"
+#include "src/widget/popup.h"
 #include "src/widget/style.h"
 #include "src/widget/tool/imessageboxmanager.h"
 
 #include <QFileDialog>
 #include <QMessageBox>
-
-namespace {
-QString getAutoAcceptDir(const QString& dir)
-{
-    //: popup title
-    const QString title = AboutFriendForm::tr("Choose an auto-accept directory");
-    return QFileDialog::getExistingDirectory(Q_NULLPTR, title, dir);
-}
-
-} // namespace
 
 AboutFriendForm::AboutFriendForm(std::unique_ptr<IAboutFriend> about_, Settings& settings_,
                                  Style& style_, IMessageBoxManager& messageBoxManager_, QWidget* parent)
@@ -82,7 +73,7 @@ void AboutFriendForm::onAutoAcceptDirClicked()
             return QString{};
         }
 
-        return getAutoAcceptDir(about->getAutoAcceptDir());
+        return Popup::getAutoAcceptDir(this, about->getAutoAcceptDir());
     }();
 
     about->setAutoAcceptDir(dir);
@@ -119,7 +110,7 @@ void AboutFriendForm::onAutoConferenceInvite()
 
 void AboutFriendForm::onSelectDirClicked()
 {
-    const QString dir = getAutoAcceptDir(about->getAutoAcceptDir());
+    const QString dir = Popup::getAutoAcceptDir(this, about->getAutoAcceptDir());
     about->setAutoAcceptDir(dir);
 }
 

@@ -276,11 +276,6 @@ ce qui peut entraîner des problèmes lors des appels vidéo.</translation>
         <source>You can save comments about this contact here.</source>
         <translation>Vous pouvez enregistrer ici des commentaires sur ce contact.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translation>Sélectionner un répertoire d&apos;acceptation automatique</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -945,10 +940,6 @@ afin que vous puissiez enregistrer le fichier sur windows.</translation>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translation>Formulaire</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>En attente d&apos;envoi...</translation>
@@ -1106,11 +1097,6 @@ afin que vous puissiez enregistrer le fichier sur windows.</translation>
         <translation>Hors ligne</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Sélectionner un répertoire d&apos;acceptation automatique</translation>
-    </message>
-    <message>
         <source>Open chat in new window</source>
         <translation>Ouvrir la discussion dans une nouvelle fenêtre</translation>
     </message>
@@ -1149,11 +1135,6 @@ afin que vous puissiez enregistrer le fichier sur windows.</translation>
     <message>
         <source>General</source>
         <translation>Général</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Sélectionner un répertoire d&apos;acceptation automatique</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2291,6 +2272,14 @@ Cet identifiant comprend le code NoSpam (en bleu) et la somme de contrôle (en g
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Sélectionner un répertoire d&apos;acceptation automatique</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2591,10 +2580,6 @@ Cet identifiant comprend le code NoSpam (en bleu) et la somme de contrôle (en g
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation>Formulaire</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translation>Lancer la recherche :</translation>

@@ -276,11 +276,6 @@ může dojít během video hovoru k výpadkům či jiným problémům.</translat
         <source>You can save comments about this contact here.</source>
         <translation>Sem můžete přidat poznámky k tomuto kontaktu.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translation>Zvolte složku pro ukládání přijatých souborů</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -948,10 +943,6 @@ takže můžete soubor uložit i v systému Windows.</translation>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translation>Rámec</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Čekáme na odeslání...</translation>
@@ -1089,11 +1080,6 @@ takže můžete soubor uložit i v systému Windows.</translation>
         <translation>Automaticky přijímat soubory od tohoto kontaktu</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Vyberte sloužku pro automatický příjem</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translation>Nová zpráva</translation>
     </message>
@@ -1149,11 +1135,6 @@ takže můžete soubor uložit i v systému Windows.</translation>
 </context>
 <context>
     <name>GeneralForm</name>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Vyberte sloužku pro automatický příjem</translation>
-    </message>
     <message>
         <source>General</source>
         <translation>Obecné</translation>
@@ -2297,6 +2278,14 @@ ID zahrnuje kód NoSpam (modře) a kontrolní součet (šedě).</translation>
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Zvolte složku pro ukládání přijatých souborů</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2613,10 +2602,6 @@ ID zahrnuje kód NoSpam (modře) a kontrolní součet (šedě).</translation>
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation>Rámec</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translation>Zahájit vyhledávání:</translation>

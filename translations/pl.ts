@@ -278,11 +278,6 @@ co może powodować problemy z rozmowami wideo.</translation>
         <source>You can save comments about this contact here.</source>
         <translation>Tutaj możesz dodać komentarz do kontaktu.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translation>Wybierz folder dla automatycznie przyjętych plików</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -957,10 +952,6 @@ więc możesz zapisać ten plik na systemie Windows.</translation>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translation>Od</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translatorcomment>better translation?</translatorcomment>
@@ -1128,11 +1119,6 @@ więc możesz zapisać ten plik na systemie Windows.</translation>
         <translation>Usuń z &apos;%1&apos; kręgu</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Wybierz domyślną ścieżkę dla plików</translation>
-    </message>
-    <message>
         <source>To new conference</source>
         <translation type="unfinished">Do nowej grupy</translation>
     </message>
@@ -1163,12 +1149,6 @@ więc możesz zapisać ten plik na systemie Windows.</translation>
     <message>
         <source>General</source>
         <translation>Główne</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translatorcomment>better translation?</translatorcomment>
-        <translation>Wybierz domyślną ścieżkę dla plików</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2322,6 +2302,14 @@ To ID zawiera kod NoSpam (w kolorze niebieskim) oraz sumę kontrolną (w kolorze
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Wybierz folder dla automatycznie przyjętych plików</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2626,10 +2614,6 @@ To ID zawiera kod NoSpam (w kolorze niebieskim) oraz sumę kontrolną (w kolorze
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation>Od</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translation>Rozpocznij wyszukiwanie:</translation>

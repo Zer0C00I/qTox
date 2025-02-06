@@ -329,12 +329,6 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ಈ ಸಂಪರ್ಕದ ಕುರಿತು ನೀವು ಕಾಮೆಂಟ್‌ಗಳನ್ನು ಇಲ್ಲಿ ಉಳಿಸಬಹುದು.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ಸ್ವಯಂ ಸ್ವೀಕರಿಸುವ ಡೈರೆಕ್ಟರಿಯನ್ನು ಆರಿಸಿ</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -1125,11 +1119,6 @@ so you can save the file on Windows.</source>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ಫಾರ್ಮ್</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
@@ -1321,12 +1310,6 @@ so you can save the file on Windows.</source>
         <translation type="unfinished">ವಿವರಗಳನ್ನು ತೋರಿಸಿ</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ಸ್ವಯಂ ಸ್ವೀಕರಿಸುವ ಡೈರೆಕ್ಟರಿಯನ್ನು ಆಯ್ಕೆಮಾಡಿ</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translation type="unfinished">ಹೊಸ ಸಂದೇಶ</translation>
     </message>
@@ -1371,12 +1354,6 @@ so you can save the file on Windows.</source>
         <source>General</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ಸಾಮಾನ್ಯ</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ಸ್ವಯಂ ಸ್ವೀಕರಿಸುವ ಡೈರೆಕ್ಟರಿಯನ್ನು ಆಯ್ಕೆಮಾಡಿ</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2748,6 +2725,14 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">ಸ್ವಯಂ ಸ್ವೀಕರಿಸುವ ಡೈರೆಕ್ಟರಿಯನ್ನು ಆರಿಸಿ</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -3114,11 +3099,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ಫಾರ್ಮ್</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translatorcomment>Automated translation.</translatorcomment>

@@ -336,12 +336,6 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Unaweza kuhifadhi maoni kuhusu mtu huyu hapa.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Chagua saraka ya kukubali kiotomatiki</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -1134,11 +1128,6 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fomu</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
@@ -1330,12 +1319,6 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
         <translation type="unfinished">Onyesha maelezo</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Chagua saraka ya kukubali kiotomatiki</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ujumbe mpya</translation>
@@ -1383,12 +1366,6 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
         <source>General</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Mkuu</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Chagua saraka ya kukubali kiotomatiki</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2763,6 +2740,14 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Chagua saraka ya kukubali kiotomatiki</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -3130,11 +3115,6 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fomu</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translatorcomment>Automated translation.</translatorcomment>

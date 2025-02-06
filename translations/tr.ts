@@ -277,11 +277,6 @@ bu da video görüşmelerinde sorunlara yol açabilir.</translation>
         <source>You can save comments about this contact here.</source>
         <translation>Bu kişi hakkındaki yorumları buraya kaydedebilirsiniz.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translation>Otomatik olarak kabul etme dizini seç</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -945,10 +940,6 @@ geçersiz karakterler _ olarak değiştirildi.</translation>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translation>Form</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Göndermek için bekliyor...</translation>
@@ -1095,11 +1086,6 @@ geçersiz karakterler _ olarak değiştirildi.</translation>
         <translation>Bu arkadaştan gelen dosyaları sormadan kabul et</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Sormadan kabul etme dizini seç</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translation>Yeni ileti</translation>
     </message>
@@ -1147,11 +1133,6 @@ geçersiz karakterler _ olarak değiştirildi.</translation>
 </context>
 <context>
     <name>GeneralForm</name>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Sormadan kabul etme dizini seç</translation>
-    </message>
     <message>
         <source>General</source>
         <translation>Genel</translation>
@@ -2291,6 +2272,14 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Otomatik olarak kabul etme dizini seç</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2591,10 +2580,6 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation>Form</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translation>Aramayı başlat:</translation>

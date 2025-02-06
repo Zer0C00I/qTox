@@ -287,12 +287,6 @@ o que pode provocar problemas coas videochamadas.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Podes gardar comentarios sobre este contacto aquí.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Escolla un directorio de aceptación automática</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -972,11 +966,6 @@ para que poida gardar o ficheiro en Windows.</translation>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>Formulario</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Quérese enviar...</translation>
@@ -1137,11 +1126,6 @@ para que poida gardar o ficheiro en Windows.</translation>
         <translation>Amosar detalles</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Elixa un cartafol para os aceptados automáticamente</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translation>Nova mensaxe</translation>
     </message>
@@ -1183,11 +1167,6 @@ para que poida gardar o ficheiro en Windows.</translation>
     <message>
         <source>General</source>
         <translation>Xeral</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Elixa un cartafol para aceptados automáticamente</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2351,6 +2330,14 @@ Este ID inclúe o código NoSpam (en azul) e a suma de verificación (en gris).<
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Escolla un directorio de aceptación automática</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2669,10 +2656,6 @@ Este ID inclúe o código NoSpam (en azul) e a suma de verificación (en gris).<
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation>Formulario</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translation>Comezar a buscar:</translation>

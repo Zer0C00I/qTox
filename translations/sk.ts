@@ -276,11 +276,6 @@ Rýchlosť vášho pripojenia nemusí byť vždy dostačujúca pre vyššiu kval
         <source>You can save comments about this contact here.</source>
         <translation>Tu si môžete uložiť informácie o tomto kontakte.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translation>Vybrať priečinok pre automatické prijímanie</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -949,11 +944,6 @@ so you can save the file on Windows.</translation>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>Formulář</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Čaká sa na odoslanie...</translation>
@@ -1111,11 +1101,6 @@ so you can save the file on Windows.</translation>
         <translation>Zobraziť podrobnosti</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Zvoľte priečinok pre automatické prijímanie</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translation>Nová správa</translation>
     </message>
@@ -1155,11 +1140,6 @@ so you can save the file on Windows.</translation>
     <message>
         <source>General</source>
         <translation>Všeobecné</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Zvoľte priečinok pre automatické prijímanie</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2299,6 +2279,14 @@ Toto ID obsahuje kód NoSpam (modrou) a kontrolný súčet (šedou).</translatio
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Vybrať priečinok pre automatické prijímanie</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2601,10 +2589,6 @@ Toto ID obsahuje kód NoSpam (modrou) a kontrolný súčet (šedou).</translatio
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation>Formulár</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translation>Spustiť hľadanie:</translation>

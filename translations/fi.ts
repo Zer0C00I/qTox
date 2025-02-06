@@ -276,11 +276,6 @@ mikä voi johtaa ongelmiin videopuheluissa.</translation>
         <source>You can save comments about this contact here.</source>
         <translation>Voit tallentaa kommentit tästä kontaktista tänne.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translation>Valitse automaattihyväksynnän sijainti</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -945,10 +940,6 @@ joten voit tallentaa tiedoston Windowsissa.</translation>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translation>Kenttä</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Odotetaan lähettämistä...</translation>
@@ -1094,11 +1085,6 @@ joten voit tallentaa tiedoston Windowsissa.</translation>
         <translation>Hyväksy tiedostot automaattisesti tältä kontaktilta</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Valitse hakemisto automaattisesti hyväksyttäville tiedostoille</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translation>Uusi viesti</translation>
     </message>
@@ -1149,11 +1135,6 @@ joten voit tallentaa tiedoston Windowsissa.</translation>
     <message>
         <source>General</source>
         <translation>Yleiset</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Valitse hakemisto automaattisesti hyväksyttäville tiedostoille</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2293,6 +2274,14 @@ Tämä ID sisältää spammin estävän koodin(joka on sinisellä), ja tarkistus
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Valitse automaattihyväksynnän sijainti</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2608,10 +2597,6 @@ Tämä ID sisältää spammin estävän koodin(joka on sinisellä), ja tarkistus
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation>Lomake</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translation>Aloita etsintä:</translation>

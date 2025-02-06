@@ -276,11 +276,6 @@ noe som kan forårsake problemer i videosamtaler.</translation>
         <source>You can save comments about this contact here.</source>
         <translation>Du kan lagre kommentarer om denne kontakten her.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translation>Velg en mappe for automatiske nedlastninger</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -947,10 +942,6 @@ slik at du kan lagre filen på Windows.</translation>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translation>Skjema</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Venter på å sende...</translation>
@@ -1088,11 +1079,6 @@ slik at du kan lagre filen på Windows.</translation>
         <translation>Auto-aksepter filer fra denne kontakten</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Velg en mappe for auto-aksepterte filer</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translation>Ny melding</translation>
     </message>
@@ -1151,11 +1137,6 @@ slik at du kan lagre filen på Windows.</translation>
     <message>
         <source>General</source>
         <translation>Generelt</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Velg en mappe for auto-aksepterte filer</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2293,6 +2274,14 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Velg en mappe for automatiske nedlastninger</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2595,10 +2584,6 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation>Skjema</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translation>Søk:</translation>

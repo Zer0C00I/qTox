@@ -275,11 +275,6 @@ which may lead to problems with video calls.</source>
         <source>You can save comments about this contact here.</source>
         <translation>Ви можете зберігати коментарі про цей контакт тут.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translation>Виберіть каталог для автоматичного приймання</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -942,10 +937,6 @@ so you can save the file on Windows.</source>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Очікування передачі...</translation>
@@ -1115,11 +1106,6 @@ so you can save the file on Windows.</source>
         <translation>Не в мережі</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Оберіть теку, для автоматичного отримання файлів</translation>
-    </message>
-    <message>
         <source>To new conference</source>
         <translation>До нової конференції</translation>
     </message>
@@ -1146,11 +1132,6 @@ so you can save the file on Windows.</source>
     <message>
         <source>General</source>
         <translation>Основні</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Оберіть теку, для автоматичного отримання файлів</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2292,6 +2273,14 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Виберіть каталог для автоматичного приймання</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2595,10 +2584,6 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation>Форма</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translation>Почати пошук:</translation>

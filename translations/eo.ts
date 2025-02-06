@@ -313,12 +313,6 @@ kio povas konduki al problemoj kun videovokoj.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Vi povas konservi komentojn pri ĉi tiu kontakto ĉi tie.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Elektu aŭtomate akceptan dosierujon</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -1060,11 +1054,6 @@ do vi povas konservi la dosieron en Vindozo.</translation>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Formo</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Atendante por sendi...</translation>
@@ -1238,12 +1227,6 @@ do vi povas konservi la dosieron en Vindozo.</translation>
         <translation>Montri detalojn</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Elektu aŭtomate akceptan dosierujon</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translation>Nova mesaĝo</translation>
     </message>
@@ -1282,12 +1265,6 @@ do vi povas konservi la dosieron en Vindozo.</translation>
 </context>
 <context>
     <name>GeneralForm</name>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Elektu aŭtomate akceptan dosierujon</translation>
-    </message>
     <message>
         <source>General</source>
         <translatorcomment>Automated translation.</translatorcomment>
@@ -2609,6 +2586,14 @@ Kunhavigu ĝin kun viaj amikoj por komenci babili.
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Elektu aŭtomate akceptan dosierujon</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2959,11 +2944,6 @@ Kunhavigu ĝin kun viaj amikoj por komenci babili.
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Formo</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translatorcomment>Automated translation.</translatorcomment>

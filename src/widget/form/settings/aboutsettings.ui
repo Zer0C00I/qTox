@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string notr="true">Form</string>
+   <string notr="true">{{about settings}}</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>

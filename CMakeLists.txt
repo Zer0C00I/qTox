@@ -578,6 +578,8 @@ set(${PROJECT_NAME}_SOURCES
     src/widget/notificationscrollarea.h
     src/widget/passwordedit.cpp
     src/widget/passwordedit.h
+    src/widget/popup.cpp
+    src/widget/popup.h
     src/widget/qrwidget.cpp
     src/widget/qrwidget.h
     src/widget/splitterrestorer.cpp

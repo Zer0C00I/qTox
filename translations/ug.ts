@@ -291,12 +291,6 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">بۇ ئالاقىگە مۇناسىۋەتلىك باھالارنى بۇ يەردىن ساقلىۋالالايسىز.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ئاپتوماتىك قوبۇل قىلىدىغان مۇندەرىجىنى تاللاڭ</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -985,11 +979,6 @@ so you can save the file on Windows.</source>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>جەدۋەل</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>يوللاشنى ساقلاۋاتىدۇ...</translation>
@@ -1150,11 +1139,6 @@ so you can save the file on Windows.</source>
         <translation>تەپسىلاتى</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>قۇبۇل قىلىش مۇندەرىجىسى تاللاڭ</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translation>يېڭى ئۇچۇر</translation>
     </message>
@@ -1196,11 +1180,6 @@ so you can save the file on Windows.</source>
     <message>
         <source>General</source>
         <translation>ئورتاق</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>قۇبۇل قىلىش مۇندەرىجىسى تاللاڭ</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2378,6 +2357,14 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">ئاپتوماتىك قوبۇل قىلىدىغان مۇندەرىجىنى تاللاڭ</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2707,10 +2694,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation type="unfinished">جەدۋەل</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translatorcomment>Automated translation.</translatorcomment>

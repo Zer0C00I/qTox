@@ -326,12 +326,6 @@ so&apos;o roi lo nu do jungau cu na banzu xamgu lo ka zgana lo nu zgana lo vidni
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">do ka&apos;e nurxru lo pinka be lo vi cuntu</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ko cuxna lo ka tolcmi lo karce</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -1109,11 +1103,6 @@ e&apos;u do ka&apos;e sfaile lo nu sfaile bu&apos;u la .Windows.zoi ke&apos;a nu
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation type="unfinished">fi&apos;o samci&apos;e</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
@@ -1305,12 +1294,6 @@ e&apos;u do ka&apos;e sfaile lo nu sfaile bu&apos;u la .Windows.zoi ke&apos;a nu
         <translation type="unfinished">ko jarco lo ctila</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ko cuxna lo&apos;i selsau lo&apos;i karce</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">notci notci</translation>
@@ -1356,12 +1339,6 @@ e&apos;u do ka&apos;e sfaile lo nu sfaile bu&apos;u la .Windows.zoi ke&apos;a nu
         <source>General</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">cnima</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ko cuxna lo&apos;i selsau lo&apos;i karce</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2722,6 +2699,14 @@ le samselcmi cu mapti le blanu zoi gy. NoSpam .gy. joi le checksum zoi gy. gray<
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">ko cuxna lo ka tolcmi lo karce</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -3081,11 +3066,6 @@ le samselcmi cu mapti le blanu zoi gy. NoSpam .gy. joi le checksum zoi gy. gray<
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">fi&apos;o samci&apos;e</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translatorcomment>Automated translation.</translatorcomment>

@@ -287,12 +287,6 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Овде можете сачувати коментаре о овом контакту.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Изаберите директоријум за аутоматско прихватање</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -975,11 +969,6 @@ so you can save the file on Windows.</source>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>Образац</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Чекам на слање...</translation>
@@ -1140,11 +1129,6 @@ so you can save the file on Windows.</source>
         <translation>Прикажи детаље</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Изаберте фасциклу за аутоматски пријем</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translation>Нова порука</translation>
     </message>
@@ -1186,11 +1170,6 @@ so you can save the file on Windows.</source>
     <message>
         <source>General</source>
         <translation>Опште</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Изаберите фасциклу за самостални пријем</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2355,6 +2334,14 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Изаберите директоријум за аутоматско прихватање</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2673,10 +2660,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation>Образац</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translation>Почетак претраге:</translation>

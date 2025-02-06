@@ -276,11 +276,6 @@ o que pode levar a problemas com as vídeo-chamadas.</translation>
         <source>You can save comments about this contact here.</source>
         <translation>Pode guardar comentários sobre esse contacto aqui.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translation>Escolha um diretório para aceitar ficheiros automaticamente</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -945,10 +940,6 @@ de forma que possa guardar o ficheiro no Windows.</translation>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translation>Formulário</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>A esperar para enviar...</translation>
@@ -1086,11 +1077,6 @@ de forma que possa guardar o ficheiro no Windows.</translation>
         <translation>Aceitar ficheiros deste contacto automaticamente</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Escolher uma pasta para onde aceitar ficheiros automaticamente</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translation>Nova mensagem</translation>
     </message>
@@ -1149,11 +1135,6 @@ de forma que possa guardar o ficheiro no Windows.</translation>
     <message>
         <source>General</source>
         <translation>Geral</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Escolher uma pasta para onde aceitar ficheiros automaticamente</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2293,6 +2274,14 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Escolha um diretório para aceitar ficheiros automaticamente</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2608,10 +2597,6 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation>Formulário</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translation>Iniciar procura:</translation>

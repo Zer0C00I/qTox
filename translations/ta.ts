@@ -298,12 +298,6 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">இந்தத் தொடர்பைப் பற்றிய கருத்துகளை இங்கே சேமிக்கலாம்.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">தானாக ஏற்கும் கோப்பகத்தைத் தேர்ந்தெடுக்கவும்</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -1007,11 +1001,6 @@ so you can save the file on Windows.</source>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>படிவம்</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>அனுப்பக் காத்திருப்பிலுள்ளது...</translation>
@@ -1172,11 +1161,6 @@ so you can save the file on Windows.</source>
         <translation>விவரங்களைக் காட்டு</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation type="unfinished">தன்னிச்சையேற்புக்கான கோப்பகத்தைத் தேர்வு செய்க</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translation>புதிய செய்தி</translation>
     </message>
@@ -1218,11 +1202,6 @@ so you can save the file on Windows.</source>
     <message>
         <source>General</source>
         <translation type="unfinished">பொதுப்படை</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation type="unfinished">தன்னிச்சையேற்புக்கான கோப்பகத்தைத் தேர்வு செய்க</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2539,6 +2518,14 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">தானாக ஏற்கும் கோப்பகத்தைத் தேர்ந்தெடுக்கவும்</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2890,10 +2877,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation type="unfinished">படிவம்</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translatorcomment>Automated translation.</translatorcomment>

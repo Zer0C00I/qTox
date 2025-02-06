@@ -275,11 +275,6 @@ lo que puede provocar problemas en las videollamadas.</translation>
         <source>You can save comments about this contact here.</source>
         <translation>Puedes guardar comentarios acerca de este contacto aquí.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translation>Elige un directorio para descargas automáticas</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -940,10 +935,6 @@ para que puedas guardar el archivo en windows.</translation>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translation>Plantilla</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Envío en espera...</translation>
@@ -1113,11 +1104,6 @@ para que puedas guardar el archivo en windows.</translation>
         <translation>Desconectado</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Elige un directorio para descargas automáticas</translation>
-    </message>
-    <message>
         <source>Open chat in new window</source>
         <translation>Abrir chat en una nueva ventana</translation>
     </message>
@@ -1144,11 +1130,6 @@ para que puedas guardar el archivo en windows.</translation>
     <message>
         <source>General</source>
         <translation>General</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Elige un directorio para transferencias automáticas</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2283,6 +2264,14 @@ Este ID incluye el código NoSpam (en azul), y la suma de comprobación (en gris
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Elige un directorio para descargas automáticas</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2583,10 +2572,6 @@ Este ID incluye el código NoSpam (en azul), y la suma de comprobación (en gris
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation>Formulario</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translation>Iniciar búsqueda:</translation>

@@ -287,12 +287,6 @@ Ponekad vaša veza možda nije dovoljno dobra da podnese višu kvalitetu videa,
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ovdje možete spremiti komentare o ovom kontaktu.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Odaberite imenik s automatskim prihvaćanjem</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -974,10 +968,6 @@ tako da možete spremiti datoteku na Windows.</translation>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translation>Obrazac</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Čekanje na slanje …</translation>
@@ -1105,11 +1095,6 @@ tako da možete spremiti datoteku na Windows.</translation>
         <translation>Automatski prihvati datoteke ovog prijatelja</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Odaberi direktorij za automatsko prihvaćanje</translation>
-    </message>
-    <message>
         <source>Open chat in new window</source>
         <translation>Otvori čavrljanje u novom prozoru</translation>
     </message>
@@ -1183,11 +1168,6 @@ tako da možete spremiti datoteku na Windows.</translation>
     <message>
         <source>General</source>
         <translation>Opće</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Odaberi direktorij za automatsko prihvaćanje</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2351,6 +2331,14 @@ Ovaj ID uključuje NoSpam kod (plavo) i kontrolni zbroj (sivo).</translation>
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Odaberite imenik s automatskim prihvaćanjem</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2669,10 +2657,6 @@ Ovaj ID uključuje NoSpam kod (plavo) i kontrolni zbroj (sivo).</translation>
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation>Obrazac</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translation>Započni pretragu:</translation>

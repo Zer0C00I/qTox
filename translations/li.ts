@@ -317,12 +317,6 @@ wat kin leie tot probleme mit videogesprekke.</translation>
         <translation type="unfinished">Geer kin hei opmerkinge euver dit kontak opsjlaon.</translation>
     </message>
     <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kies un automatische acceptatiemap</translation>
-    </message>
-    <message>
         <source>Confirmation</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Bevestiging</translation>
@@ -1137,11 +1131,6 @@ zodet geer ut bestand op Windows kin opsjlaon.</translation>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Formulier</translation>
-    </message>
-    <message>
         <source>Location not writable</source>
         <comment>Title of permissions popup</comment>
         <translatorcomment>Automated translation.</translatorcomment>
@@ -1344,12 +1333,6 @@ zodet geer ut bestand op Windows kin opsjlaon.</translation>
         <translation type="unfinished">Details toene</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kies un automatische acceptatiemap</translation>
-    </message>
-    <message>
         <source>Online</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Online</translation>
@@ -1386,12 +1369,6 @@ zodet geer ut bestand op Windows kin opsjlaon.</translation>
         <source>%1 (no fonts)</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 (geen lettertype)</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kies un automatische acceptatiemap</translation>
     </message>
     <message>
         <source>General</source>
@@ -2769,6 +2746,14 @@ Deze ID umvat de NoSpam-code (in blauw) en de checksum (in gries).</translation>
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Kies un automatische acceptatiemap</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>%1 is not a valid Tox address.</source>
@@ -3136,11 +3121,6 @@ Deze ID umvat de NoSpam-code (in blauw) en de checksum (in gries).</translation>
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Formulier</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translatorcomment>Automated translation.</translatorcomment>

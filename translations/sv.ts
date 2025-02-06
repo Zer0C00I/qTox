@@ -276,11 +276,6 @@ vilket kan leda till problem med videosamtal.</translation>
         <source>You can save comments about this contact here.</source>
         <translation>Du kan spara kommentarer om denna kontakt här.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translation>Välj en mapp för automatisk accepterade</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -946,10 +941,6 @@ så att du kan spara filen i Windows.</translation>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translation>Formulär</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Väntar på att skicka...</translation>
@@ -1074,12 +1065,6 @@ så att du kan spara filen i Windows.</translation>
         <translation>Bjud in till grupp</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translatorcomment>Hmm, hard one. Got any better?</translatorcomment>
-        <translation>Välj en acceptera-automatiskt-katalog</translation>
-    </message>
-    <message>
         <source>Open chat in new window</source>
         <translation>Öppna chatt i nytt fönster</translation>
     </message>
@@ -1151,11 +1136,6 @@ så att du kan spara filen i Windows.</translation>
     <message>
         <source>General</source>
         <translation>Allmänt</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Välj en acceptera-automatiskt-katalog</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2298,6 +2278,14 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Välj en mapp för automatisk accepterade</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2613,10 +2601,6 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation>Formulär</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translation>Börja sök:</translation>

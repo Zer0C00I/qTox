@@ -287,12 +287,6 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Вы можаце захоўваць каментарыі аб гэтым кантакце тут.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Выберыце каталог з аўтаматычным прыняццем</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -977,11 +971,6 @@ so you can save the file on Windows.</source>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>Форма</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Чаканне адпраўкі...</translation>
@@ -1142,11 +1131,6 @@ so you can save the file on Windows.</source>
         <translation>Паказаць дэталі</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Выбраць каталог для аўтаматычна прынятых файлаў</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translation>Новае паведамленне</translation>
     </message>
@@ -1188,11 +1172,6 @@ so you can save the file on Windows.</source>
     <message>
         <source>General</source>
         <translation>Агульныя</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translation>Выбраць каталог для аўтаматычна прынятых файлаў</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2362,6 +2341,14 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Выберыце каталог з аўтаматычным прыняццем</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2680,10 +2667,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation>Форма</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translation>Пачаць шукаць:</translation>

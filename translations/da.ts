@@ -298,12 +298,6 @@ hvilket kan føre til problemer med videoopkald.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Du kan gemme kommentarer om denne kontakt her.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vælg en auto-accept mappe</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -1036,11 +1030,6 @@ så du kan gemme filen på Windows.</translation>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation type="unfinished">Form</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translation>Venter på at sende...</translation>
@@ -1207,12 +1196,6 @@ så du kan gemme filen på Windows.</translation>
         <translation type="unfinished">Vis detaljer</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vælg en autoaccepter-mappe</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translation>Ny besked</translation>
     </message>
@@ -1267,12 +1250,6 @@ så du kan gemme filen på Windows.</translation>
         <source>General</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Generel</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vælg en autoaccepter-mappe</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2589,6 +2566,14 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Vælg en auto-accept mappe</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -2943,10 +2928,6 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translation type="unfinished">Form</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translatorcomment>Automated translation.</translatorcomment>

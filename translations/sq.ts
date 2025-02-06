@@ -329,12 +329,6 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ju mund të ruani komentet rreth këtij kontakti këtu.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Zgjidhni një direktori të pranimit automatik</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -1127,11 +1121,6 @@ kështu që mund ta ruani skedarin në Windows.</translation>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Forma</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
@@ -1323,12 +1312,6 @@ kështu që mund ta ruani skedarin në Windows.</translation>
         <translation type="unfinished">Trego detajet</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Zgjidhni një direktori të pranimit automatik</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Mesazh i ri</translation>
@@ -1376,12 +1359,6 @@ kështu që mund ta ruani skedarin në Windows.</translation>
         <source>General</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Gjeneral</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Zgjidhni një direktori të pranimit automatik</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2756,6 +2733,14 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Zgjidhni një direktori të pranimit automatik</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -3123,11 +3108,6 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Forma</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translatorcomment>Automated translation.</translatorcomment>

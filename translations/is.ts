@@ -318,12 +318,6 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Þú getur vistað athugasemdir um þennan tengilið hér.</translation>
     </message>
-    <message>
-        <source>Choose an auto-accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Veldu sjálfvirka samþykkisskrá</translation>
-    </message>
 </context>
 <context>
     <name>AboutSettings</name>
@@ -1115,11 +1109,6 @@ svo þú getur vistað skrána á Windows.</translation>
 <context>
     <name>FileTransferWidget</name>
     <message>
-        <source>Form</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Form</translation>
-    </message>
-    <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
@@ -1311,12 +1300,6 @@ svo þú getur vistað skrána á Windows.</translation>
         <translation type="unfinished">Sýna upplýsingar</translation>
     </message>
     <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Veldu sjálfvirka samþykkisskrá</translation>
-    </message>
-    <message>
         <source>New message</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ný skilaboð</translation>
@@ -1364,12 +1347,6 @@ svo þú getur vistað skrána á Windows.</translation>
         <source>General</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Almennt</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <comment>popup title</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Veldu sjálfvirka samþykkisskrá</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -2733,6 +2710,14 @@ Deildu því með vinum þínum til að byrja að spjalla.
     </message>
 </context>
 <context>
+    <name>QFileDialog</name>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Veldu sjálfvirka samþykkisskrá</translation>
+    </message>
+</context>
+<context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -3100,11 +3085,6 @@ Deildu því með vinum þínum til að byrja að spjalla.
 </context>
 <context>
     <name>SearchSettingsForm</name>
-    <message>
-        <source>Form</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Form</translation>
-    </message>
     <message>
         <source>Start search:</source>
         <translatorcomment>Automated translation.</translatorcomment>
