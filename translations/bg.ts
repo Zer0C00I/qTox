@@ -13,11 +13,11 @@
     </message>
     <message>
         <source>Disabled</source>
-        <translation>Изключен</translation>
+        <translation>Изключено</translation>
     </message>
     <message>
         <source>Select region</source>
-        <translation>Изберете област</translation>
+        <translation>Избиране на област от екрана</translation>
     </message>
     <message>
         <source>Screen %1</source>
@@ -29,19 +29,19 @@
     </message>
     <message>
         <source>Gain</source>
-        <translation>Сила на звука при запис</translation>
+        <translation>Усилване</translation>
     </message>
     <message>
         <source>Playback device</source>
-        <translation>Устройство за възпроизвеждане</translation>
+        <translation>Възпроизвеждащо устройство</translation>
     </message>
     <message>
         <source>Capture device</source>
-        <translation>Устройство за запис</translation>
+        <translation>Записващо устройство</translation>
     </message>
     <message>
         <source>Volume</source>
-        <translation>Сила на звука при възпроизвеждане</translation>
+        <translation>Сила на звука</translation>
     </message>
     <message>
         <source>Video Settings</source>
@@ -57,10 +57,10 @@ The higher values, the better video quality your friends may get.
 Note though that with better video quality there is needed better internet connection.
 Sometimes your connection may not be good enough to handle higher video quality,
 which may lead to problems with video calls.</source>
-        <translation>Задайте резолюцията на вашата камера.
-Колкото по-големи са стойностите, толкова по-качествено видео вашите приятели може да получат.
-Имайте предвид, че с по-добро качество на видеото е нужна и по-бърза връзка.
-Понякога вашата връзка може да не е достатъчно добра за да се справи с по-качествено видео,
+        <translation>Задайте разделителната способност на камерата.
+Колкото по-големи са стойностите, толкова по-качествено изображение ще получат събеседниците ви.
+Имайте предвид, че по-доброто качество на картината изисква по-бърза връзка.
+Понякога връзката може да не е достатъчно добра, за да пренесе по-качествена картина,
 което може да доведе до проблеми с видео разговорите.</translation>
     </message>
     <message>
@@ -69,7 +69,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Rescan devices</source>
-        <translation>Повторно сканиране на устройствата</translation>
+        <translation>Повторно търсене на устройства</translation>
     </message>
     <message>
         <source>Test Sound</source>
@@ -81,31 +81,31 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>High (64 kBps)</source>
-        <translation>Високо (64 kбита/с)</translation>
+        <translation>Високо (64 kб/с)</translation>
     </message>
     <message>
         <source>Medium (32 kBps)</source>
-        <translation>Средно (32 kбита/с)</translation>
+        <translation>Средно (32 kб/с)</translation>
     </message>
     <message>
         <source>Low (16 kBps)</source>
-        <translation>Ниско (16 kбита/с)</translation>
+        <translation>Ниско (16 kб/с)</translation>
     </message>
     <message>
         <source>Very low (8 kBps)</source>
-        <translation>Много ниско (8 kбита/с)</translation>
+        <translation>Много ниско (8 kб/с)</translation>
     </message>
     <message>
         <source>Threshold</source>
-        <translation>Прагова стойност</translation>
+        <translation>Праг</translation>
     </message>
     <message>
         <source>Use slider to set the volume of your speakers.</source>
-        <translation>Използвайте плъзгача, за да настроите силата на звука на високоговорителите.</translation>
+        <translation>Чрез плъзгача задайте силата на звука през високоговорителите.</translation>
     </message>
     <message>
         <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to reduce bandwidth usage.</source>
-        <translation>Качество на звука. Намалете настройката, ако нямате необходимия трафик или ако искате да намалите използването му.</translation>
+        <translation>Качество на предавания звук. Намалете стойността, ако скоростта на мрежата не е достатъчно висока или ако искате да намалите количеството на трафика.</translation>
     </message>
     <message>
         <source>Set resolution of your camera.
@@ -113,85 +113,85 @@ The higher values, the better video quality your friends may get.
 Note that with better video quality, you use more bandwidth.
 Sometimes your connection may not be good enough to handle higher video quality,
 which may lead to problems with video calls.</source>
-        <translation>Задайте разделителна способност на камерата ви.
-Колкото по-голяма е стойността, толкова по-високо е качеството, което приятелите ви получават.
-Имайте впредвид следното— по-доброто качество изисква повече мрежови трафик.
-Понякога вашата връзка може да не е способна да предава голяма разделителна способност,
-което може да доведе до проблеми при видео обаждания.</translation>
+        <translation>Задайте разделителната способност на камерата.
+Колкото по-големи са стойностите, толкова по-качествено изображение ще получат събеседниците ви.
+Имайте предвид, че по-доброто качество на картината изразходва повече трафик.
+Понякога връзката може да не е достатъчно добра, за да пренесе по-качествена картина,
+което може да доведе до проблеми с видео разговорите.</translation>
     </message>
     <message>
         <source>Play a test sound while changing the output volume.</source>
-        <translation>Звук за проверка със смяна на силата.</translation>
+        <translation>Възпроизвежда пробен звук при смяна на силата на изходния звук.</translation>
     </message>
     <message>
         <source>Use slider to set the gain of your input device ranging from %1dB to %2dB.</source>
-        <translation>Използвайте плъзгача за промяна усилването на вх. устройство с диапазон от %1dB до %2dB.</translation>
+        <translation>Чрез плъзгача задайте усилване на входното устройство в диапазона от %1dB до %2dB.</translation>
     </message>
     <message>
         <source>Use slider to set the activation volume for your input device.</source>
-        <translation>Използвайте плъзгача за задаване на пряг на активиране на вашето входно устройство.</translation>
+        <translation>Чрез плъзгача задайте силата на звука, над която да се задейства входното устройство.</translation>
     </message>
 </context>
 <context>
     <name>AboutForm</name>
     <message>
         <source>About</source>
-        <translation>За програмата</translation>
+        <translation>Относно</translation>
     </message>
     <message>
         <source>Original author: %1</source>
-        <translation>Оригинален автор: %1</translation>
+        <translation>Първи автор: %1</translation>
     </message>
     <message>
         <source>You are using qTox version %1.</source>
-        <translation>Вие ползвате qTox версия %1.</translation>
+        <translation>Ползвате qTox издание %1.</translation>
     </message>
     <message>
         <source>Commit hash: %1</source>
-        <translation>Хеш на commit: %1</translation>
+        <translation>Отпечатък: %1</translation>
     </message>
     <message>
         <source>toxcore version: %1</source>
-        <translation>toxcore версия: %1</translation>
+        <translation>Издание на toxcore: %1</translation>
     </message>
     <message>
         <source>Qt version: %1</source>
-        <translation>Qt версия: %1</translation>
+        <translation>Издание на Qt: %1</translation>
     </message>
     <message>
         <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
-        <translation>Списък с всички известни дефекти може да намерите в нашия %1 в Github. Ако се натъкнете на дефекти или уязвимост в сигурността на qTox, докладвайте спрямо насоките в статията %2.</translation>
+        <translation>Списък с известните дефекти може да намерите в %1 в Гитхъб. Ако откриете дефект или уязвимост в сигурността на qTox съобщете за нея съгласно указанията в статията %2.</translation>
     </message>
     <message>
         <source>Click here to report a bug.</source>
-        <translation>Щракнете тук, за да докладвате за бъг.</translation>
+        <translation>Съобщете за дефект.</translation>
     </message>
     <message>
         <source>See a full list of %1 at Github</source>
         <comment>`%1` is replaced with translation of word `contributors`</comment>
-        <translation>Вижте пълен списък със %1 при Github</translation>
+        <translation>Вижте списъка със %1 в Гитхъб</translation>
     </message>
     <message>
         <source>bug-tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
-        <translation>списък с дефекти</translation>
+        <translation>система за управление на дефекти</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
         <comment>Replaces `%2` in the `A list of all known…`</comment>
-        <translation>Писане на издържани доклади за дефекти</translation>
+        <translation>Писане на издържани съобщения за дефекти</translation>
     </message>
     <message>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
-        <translation>сътрудници</translation>
+        <translation>сътрудниците</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Тази версия на qTox се поддържа от екипа на TokTok след архивирането на оригиналния проект qTox.</translation>
+        <translation>Това издание на qTox, след архивиране на оригиналния проект, се поддържа от екипа на TokTok.</translation>
     </message>
 </context>
 <context>
@@ -218,15 +218,15 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Automatically accept files from contact if set</source>
-        <translation>Автоматично приемане на файлове от контакт, ако е зададено</translation>
+        <translation>Ако е отметнато, изпратените от този контакт файлове се приемат автоматично</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
-        <translation>Директория по подразбиране за запазване на файлове:</translation>
+        <translation>Подразбирана папка за файлове:</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation>Ръчен</translation>
+        <translation>Ръчно</translation>
     </message>
     <message>
         <source>Audio</source>
@@ -234,31 +234,31 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Audio + Video</source>
-        <translation>Аудио + Видео</translation>
+        <translation>Аудио и видео</translation>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation type="unfinished">Автоматично приемане на покани за групов чат от този контакт ако е включено.</translation>
+        <translation>Ако е отметнато, поканите за групови разговори от този контакт се приемат автоматично</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
-        <translation>Изтрий история (операцията не може да се отмени!)</translation>
+        <translation>Премахване на кореспонденцията (действието е необратимо)</translation>
     </message>
     <message>
         <source>Notes</source>
-        <translation>Бележки</translation>
+        <translation>Бележка</translation>
     </message>
     <message>
         <source>Input field for notes about the contact</source>
-        <translation>Въведи бележка за абонат</translation>
+        <translation>Текстово поле за бележка относно контакта</translation>
     </message>
     <message>
         <source>History removed</source>
-        <translation>Историята е премахната</translation>
+        <translation>Кореспонденцията е премахната</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Това е публичният ключ на вашия приятел. Използвайте го за да потвърдите тяхната идентичност чрез друг канал. Не можете да го изпратите на други хора, за да добавят в контакти.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>Това е публичният ключ на контакта. Използвайте го само за да потвърдите самоличността му чрез друг канал. Не можете да го изпращате на други хора с цел да го добавят като контакт.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>
@@ -270,11 +270,11 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Are you sure to remove %1 chat history?</source>
-        <translation>Сигурни ли сте, че искате да изтриете историята на чата с %1?</translation>
+        <translation>Желаете ли кореспонденцията с контакта %1 да бъде премахната?</translation>
     </message>
     <message>
         <source>Failed to remove chat history with %1!</source>
-        <translation>Грешка при премахване на историята на чата с %1!</translation>
+        <translation>Грешка при премахване на кореспонденцията с контакта %1!</translation>
     </message>
     <message>
         <source>Auto-accept files</source>
@@ -282,7 +282,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Auto-accept for this contact is disabled</source>
-        <translation>Автоматичното приемане за този контакт е забранено</translation>
+        <translation>Автоматичното приемане е изключено</translation>
     </message>
     <message>
         <source>Auto-accept call:</source>
@@ -290,23 +290,23 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation type="unfinished">Автоматично приемане на покани за групи</translation>
+        <translation>Автоматично приемане на покани за групови разговори</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
-        <translation>Тук можете да запишете коментар за този контакт.</translation>
+        <translation>Можете да напишете бележка за контакта.</translation>
     </message>
     <message>
         <source>Choose an auto-accept directory</source>
         <extracomment>popup title</extracomment>
-        <translation>Изберете папка за автоматично приемане</translation>
+        <translation>Изберете папката, в която се приемат файлове</translation>
     </message>
 </context>
 <context>
     <name>AboutSettings</name>
     <message>
         <source>Version</source>
-        <translation>Версия</translation>
+        <translation>Издание</translation>
     </message>
     <message>
         <source>License</source>
@@ -318,43 +318,43 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Known Issues</source>
-        <translation>Познати проблеми</translation>
+        <translation>Известни дефекти</translation>
     </message>
     <message>
         <source>Open update download link</source>
-        <translation>Отвори линка за изтегляне на актуализация</translation>
+        <translation>Отваря препратката за изтегляне на обновяване</translation>
     </message>
     <message>
         <source>Update available</source>
-        <translation>Налична актуализация</translation>
+        <translation>Налично е ново издание</translation>
     </message>
     <message>
         <source>qTox is up to date ✓</source>
-        <translation>qTox е актуален</translation>
+        <translation>qTox е обновен ✓</translation>
     </message>
     <message>
         <source>Currently running an untested/unstable version of qTox</source>
-        <translation>В момента използвате непроверено/нестабилно издание на qTox</translation>
+        <translation>Използвате неизпитано или нестабилно издание на qTox</translation>
     </message>
 </context>
 <context>
     <name>AddFriendForm</name>
     <message>
         <source>Add Friends</source>
-        <translation>Добавяне на приятели</translation>
+        <translation>Добавяне на контакти</translation>
     </message>
     <message>
         <source>Send friend request</source>
         <translatorcomment>Не ми харесва, но други не са измислени, и го използва Facebook</translatorcomment>
-        <translation>Изпратете покана за приятелство</translation>
+        <translation>Изпращане на искане за контакт</translation>
     </message>
     <message>
         <source>Couldn&apos;t add friend</source>
-        <translation>Неуспешно прибавяне на приятел</translation>
+        <translation>Грешка при добавяне на контакт</translation>
     </message>
     <message>
         <source>Invalid Tox ID format</source>
-        <translation>Недействителен формат на идентификатора на Tox</translation>
+        <translation>Неправилен формат на идентификатора на Tox</translation>
     </message>
     <message>
         <source>Add a friend</source>
@@ -366,7 +366,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Accept</source>
-        <translation>Приемам</translation>
+        <translation>Приемане</translation>
     </message>
     <message>
         <source>Reject</source>
@@ -378,37 +378,37 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Friend request message</source>
-        <translation>Молба за приятелство</translation>
+        <translation>Съобщение при заявка за контакт</translation>
     </message>
     <message>
         <source>Type message to send with the friend request or leave empty to send a default message</source>
-        <translation>Напиши съобщение към поканата за приятелство или остави празно за да се изпрати със стандартно съобщение</translation>
+        <translation>Въведете съобщение, което да бъде изпратено със заявката за контакт, или оставете празно, за да изпратите съобщението по подразбиране</translation>
     </message>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
         <extracomment>When trying to add your own Tox ID as friend</extracomment>
-        <translation>Не можете да добавите себе си като контакт!</translation>
+        <translation>Не трябва да добавяте себе си като контакт!</translation>
     </message>
     <message>
         <source>Open contact list</source>
-        <translation>Отваряне на списък с контакти</translation>
+        <translation>Отваряне на файл с контакти</translation>
     </message>
     <message>
         <source>Couldn&apos;t open file</source>
-        <translation>Не може да се отвори файла</translation>
+        <translation>Файлът не може да бъде отворен</translation>
     </message>
     <message>
         <source>Couldn&apos;t open the contact file</source>
         <extracomment>Error message when trying to open a contact list file to import</extracomment>
-        <translation>Не може да се отвори файла с контакти</translation>
+        <translation>Грешка при отваряне на файл с контакти</translation>
     </message>
     <message>
         <source>Invalid file</source>
-        <translation>Невалиден файл</translation>
+        <translation>Неприемлив файл</translation>
     </message>
     <message>
         <source>We couldn&apos;t find any contacts to import in this file!</source>
-        <translation>Не са намерени контакти за зареждане в този файл!</translation>
+        <translation>В този файл не са намерени контакти!</translation>
     </message>
     <message>
         <source>Tox ID</source>
@@ -427,27 +427,27 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Send friend requests</source>
-        <translation>Изпращане на покани за контакт</translation>
+        <translation>Изпращане на заявка за контакт</translation>
     </message>
     <message>
         <source>%1 here! Tox me maybe?</source>
         <extracomment>Default message in friend requests if the field is left blank. Write something appropriate!</extracomment>
-        <translation>%1 е тук! Да ми пишеш в Tox?</translation>
+        <translation>Здравей, %1 е! Да ми пишеш в Tox?</translation>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
-        <translation>Внасяне на списък с контакти, по един идентификатор на Tox на ред</translation>
+        <translation>Внасяне на списък с контакти, по един идентификатор на ред</translation>
     </message>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
         <translation>
-            <numerusform>В готовност за прибавяне на %n контакт(и), натиснете изпращане за да потвърдите</numerusform>
-            <numerusform>В готовност за прибавяне на %n контакти, натиснете изпращане за да потвърдите</numerusform>
+            <numerusform>В готовност за внасяне на %n контакт, натиснете изпращане за потвърждаване</numerusform>
+            <numerusform>В готовност за внасяне на %n контакта, натиснете изпращане за потвърждаване</numerusform>
         </translation>
     </message>
     <message>
         <source>Import contacts</source>
-        <translation>Зареждане на контакти</translation>
+        <translation>Внасяне на контакти</translation>
     </message>
     <message>
         <source>Tox ID, 76 hexadecimal characters</source>
@@ -456,7 +456,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>%1 Tox ID is invalid</source>
         <comment>Tox address error</comment>
-        <translation>Идентификаторът на Tox %1 е недействителен</translation>
+        <translation>%1 е недействителен идентификатор на Tox</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
@@ -480,15 +480,15 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>IMPORTANT NOTE</source>
-        <translation>ВАЖНО СЪОБЩЕНИЕ</translation>
+        <translation>ВНИМАНИЕ</translation>
     </message>
     <message>
         <source>Reset settings</source>
-        <translation>Рестартирай настройките</translation>
+        <translation>Нулиране на настройки</translation>
     </message>
     <message>
         <source>All settings will be reset to default. Are you sure?</source>
-        <translation>Всички настройки ще се рестартират по подразбиране. Сигурни ли сте?</translation>
+        <translation>Всички настройки ще бъдат нулирани до стойностите им по подразбиране. Потвърждавате ли?</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -500,19 +500,19 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Logs (*.log)</source>
-        <translation>Логове (* .log)</translation>
+        <translation>Дневници (* .log)</translation>
     </message>
     <message>
         <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
-        <translation>Освен ако %1 не знаете какво правите, %2 променяйте нищо по-долу. Промените, направени тук, могат да доведат до проблеми с qTox и дори загуба на данни, например история.%3</translation>
+        <translation>Освен ако %1 не знаете какво правите, %2 променяйте нищо тук. Промените, направени тук, могат да доведат до проблеми с qTox и дори загуба на данни, например кореспонденция.%3</translation>
     </message>
     <message>
         <source>Changes here are applied only after restarting qTox.</source>
-        <translation>Промените тук се прилагат само след рестартиране на qTox.</translation>
+        <translation>Промените тук се прилагат само след рестарт на qTox.</translation>
     </message>
     <message>
         <source>Save file</source>
-        <translation>Запазване на файла</translation>
+        <translation>Запазване на файл</translation>
     </message>
 </context>
 <context>
@@ -520,33 +520,33 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Save settings to the working directory instead of the usual conf dir</source>
         <extracomment>describes makeToxPortable checkbox</extracomment>
-        <translation>Запазване на настройките в работната директория вместо в директорията по подразбиране</translation>
+        <translation>Запазване на настройките в работната папка вместо в подразбираната папка</translation>
     </message>
     <message>
         <source>Make Tox portable</source>
-        <translation>Направете Tox портативен</translation>
+        <translation>Преносим режим</translation>
     </message>
     <message>
         <source>Reset to default settings</source>
-        <translation>Възстановяване на настройки по подразбиране</translation>
+        <translation>Заводски настройки</translation>
     </message>
     <message>
         <source>Portable</source>
-        <translation>Преносим</translation>
+        <translation>Преносимост</translation>
     </message>
     <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
-        <translation>Активиране на IPv6 (Препоръчително)</translation>
+        <translation>Включване на IPv6 (препоръчително)</translation>
     </message>
     <message>
         <source>Enable UDP (recommended)</source>
         <extracomment>Text on checkbox to disable UDP</extracomment>
-        <translation>Активиране на UDP (Препоръчително)</translation>
+        <translation>Включване на UDP (препоръчително)</translation>
     </message>
     <message>
         <source>Proxy type:</source>
-        <translation>Тип прокси:</translation>
+        <translation>Вид прокси:</translation>
     </message>
     <message>
         <source>Address:</source>
@@ -560,11 +560,11 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>None</source>
-        <translation>Липсва</translation>
+        <translation>Без прокси</translation>
     </message>
     <message>
         <source>Debug</source>
-        <translation>Дебъг</translation>
+        <translation>Отстраняване на дефекти</translation>
     </message>
     <message>
         <source>Export Debug Log</source>
@@ -576,32 +576,32 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Enable LAN discovery</source>
-        <translation>Разрешете LAN откриване</translation>
+        <translation>Откриване в местната мрежа (LAN)</translation>
     </message>
     <message>
         <source>Connection settings</source>
-        <translation>Настройки за свързване</translation>
+        <translation>Настройки на връзката</translation>
     </message>
     <message>
         <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
         <extracomment>force tcp checkbox tooltip</extracomment>
-        <translation>Деактивирането на това допуска, напр., Tox върху Tor. въпреки че това натоварва мрежата, използвайте само при необходимест.</translation>
+        <translation>Ако не е отметнато дава възможност да използвате Tox през Tor. Това, обаче, натоварва мрежата на Tox, за това използвайте само при необходимост.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Активиране на инструментите за отстраняване на грешки (само за разработчици)</translation>
+        <translation>Инструменти за отстраняване на дефекти (за разработчици)</translation>
     </message>
 </context>
 <context>
     <name>AppManager</name>
     <message>
         <source>Tox URI to parse</source>
-        <translation>Tox URI за подаване</translation>
+        <translation>Адрес на Tox, който да бъде обработен</translation>
     </message>
     <message>
         <source>Starts new instance and loads specified profile.</source>
-        <translation>Стартира нова инстанция и зарежда избран профил.</translation>
+        <translation>Стартира нов екземпляр и зарежда избрания профил.</translation>
     </message>
     <message>
         <source>profile</source>
@@ -609,52 +609,52 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Starts new instance and opens the login screen.</source>
-        <translation>Стартира ново копие и отваря екрана за вписване.</translation>
+        <translation>Стартира ново екземпляр и отваря екрана за вход.</translation>
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <translation>Задай IPv6 &lt;вкл.&gt;/&lt;изкл.&gt;. по подр. е ВКЛ.</translation>
+        <translation>Задава IPv6 &lt;on&gt;/&lt;off&gt;. По подразбиране е ON.</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <translation>Задай UDP &lt;вкл.&gt;/&lt;изкл.&gt;. по подр. е ВКЛ.</translation>
+        <translation>Задава UDP &lt;on&gt;/&lt;off&gt;. По подразбиране е ON.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <translation>Задай LAN откриване на &lt;вкл.&gt;/&lt;изкл.&gt;. UDP изключено го пренаписва. по подр. е ВКЛ.</translation>
+        <translation>Задава откриване в местната мрежа на &lt;on&gt;/&lt;off&gt;. По подразбиране е ON.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
-        <translation>Задава настройки на прокси сървър. По подразбиране е „Липсва“</translation>
+        <translation>Задава настройки на прокси сървър. По подразбиране е NONE.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Грешка</translation>
+        <translation>Грешка</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
-        <translation>Грешка при автоматично зареждане на профил.</translation>
+        <translation>Грешка при автоматично зареждане на профила.</translation>
     </message>
     <message>
         <source>Checks whether this program is running the latest qTox version.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Проверява дали тази програма изпълнява най-новата версия на qTox.</translation>
+        <translation>Проверява дали qTox е последно издание.</translation>
     </message>
     <message>
         <source>Starts in portable mode; loads profile from this directory.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Стартира в преносим режим; зарежда профил от тази директория.</translation>
+        <translation>Стартира в преносим режим; зарежда профил от указаната папка.</translation>
     </message>
 </context>
 <context>
     <name>ChatForm</name>
     <message>
         <source>Send a file</source>
-        <translation>Изпрати файл</translation>
+        <translation>Изпращане на файл</translation>
     </message>
     <message>
         <source>qTox wasn&apos;t able to open %1</source>
-        <translation>qTox неуспя да отвори %1</translation>
+        <translation>Файлът „%1“ не може да бъде отворен.</translation>
     </message>
     <message>
         <source>Call duration: </source>
@@ -662,20 +662,20 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Unable to open</source>
-        <translation>Неупешно отваряне</translation>
+        <translation>Грешка при отваряне</translation>
     </message>
     <message>
         <source>Bad idea</source>
-        <translation>Лоша идея</translation>
+        <translation>Това няма да проработи</translation>
     </message>
     <message>
         <source>Failed to open temporary file</source>
         <comment>Temporary file for screenshot</comment>
-        <translation>Неуспешно отваряне на временен файл</translation>
+        <translation>Грешка при отваряне на временен файл</translation>
     </message>
     <message>
         <source>qTox wasn&apos;t able to save the screenshot</source>
-        <translation>qTox неуспя да запази скрийншота</translation>
+        <translation>Грешка при запазване на екранната снимка</translation>
     </message>
     <message>
         <source>Copy</source>
@@ -683,91 +683,91 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>You&apos;re trying to send a sequential file, which is not going to work!</source>
-        <translation>Опитвате да изпратите последователен файл, който няма да работи!</translation>
+        <translation>Изпращате файл за последователно четене, което няма да работи!</translation>
     </message>
     <message>
         <source>Filename contained illegal characters</source>
-        <translation>Името на файла съдържа недействителни символи</translation>
+        <translation>Името на файла съдържа недопустими символи</translation>
     </message>
     <message>
         <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
-        <translation>Невалидните знаци бяха преобразувани в _
-за да запазите файла в Уиндоус.</translation>
+        <translation>Недопустимите символи са заместени с „_“,
+за да можете да запазите файла.</translation>
     </message>
 </context>
 <context>
     <name>ChatFormHeader</name>
     <message>
         <source>Can&apos;t start audio call</source>
-        <translation>Звуковото обаждане не може да започне</translation>
+        <translation>Гласовият разговор не може бъде започнат</translation>
     </message>
     <message>
         <source>Start audio call</source>
-        <translation>Започни звуково обаждане</translation>
+        <translation>Започване на гласов разговор</translation>
     </message>
     <message>
         <source>End audio call</source>
-        <translation>Приключи звуково обаждане</translation>
+        <translation>Завършване на гласов разговор</translation>
     </message>
     <message>
         <source>Cancel audio call</source>
-        <translation>Отложи звуково обаждане</translation>
+        <translation>Отказ на гласов разговор</translation>
     </message>
     <message>
         <source>Accept audio call</source>
-        <translation>Приеми звуково обаждане</translation>
+        <translation>Приемане на гласов разговор</translation>
     </message>
     <message>
         <source>Can&apos;t start video call</source>
-        <translation>Видео обаждането не може да започне</translation>
+        <translation>Видео разговорът не може да бъде започнат</translation>
     </message>
     <message>
         <source>Start video call</source>
-        <translation>Започни видео обаждане</translation>
+        <translation>Започване на видео разговор</translation>
     </message>
     <message>
         <source>End video call</source>
-        <translation>Приключи видео обаждане</translation>
+        <translation>Завършване на видео разговор</translation>
     </message>
     <message>
         <source>Cancel video call</source>
-        <translation>Отложи видео обаждане</translation>
+        <translation>Отказ на видео разговор</translation>
     </message>
     <message>
         <source>Accept video call</source>
-        <translation>Приеми видео обаждане</translation>
+        <translation>Приемане на видео разговор</translation>
     </message>
     <message>
         <source>Sound can be disabled only during a call</source>
-        <translation>Звукът може да бъде изключен само по време на обаждане</translation>
+        <translation>Звукът може да бъде изключван само по време на разговор</translation>
     </message>
     <message>
         <source>Unmute call</source>
-        <translation>Пусни звук в обаждането</translation>
+        <translation>Разговор със звук</translation>
     </message>
     <message>
         <source>Mute call</source>
-        <translation>Заглуши обаждането</translation>
+        <translation>Разговор без звук</translation>
     </message>
     <message>
         <source>Microphone can be muted only during a call</source>
-        <translation>Микрофонът може да бъде заглушен само по време на обаждане</translation>
+        <translation>Микрофонът може да бъде изключван само по време на разговор</translation>
     </message>
     <message>
         <source>Unmute microphone</source>
-        <translation>Включи микрофон</translation>
+        <translation>Включване на микрофона</translation>
     </message>
     <message>
         <source>Mute microphone</source>
-        <translation>Заглуши микрофон</translation>
+        <translation>Изключване на микрофона</translation>
     </message>
 </context>
 <context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
-        <translation>Въведете съобщението си тук...</translation>
+        <translation>Въведете съобщение…</translation>
     </message>
 </context>
 <context>
@@ -1791,7 +1791,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Debug</source>
-        <translation type="unfinished">Дебъг</translation>
+        <translation>Отстраняване на дефекти</translation>
     </message>
     <message>
         <source>Open Debugger</source>
@@ -2048,7 +2048,7 @@ If you are getting spammed with friend requests, change the NoSpam.</source>
     </message>
     <message>
         <source>Unable to open this file.</source>
-        <translation>Неуспешно отваряне на този файл.</translation>
+        <translation>Грешка при отваряне на файл.</translation>
     </message>
     <message>
         <source>Unable to read this image.</source>
@@ -2714,7 +2714,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Add a friend</source>
         <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation>Добавяне на приятел</translation>
+        <translation>Добавяне на контакт</translation>
     </message>
     <message>
         <source>Do you want to add %1 as a friend?</source>
@@ -3215,7 +3215,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Debug</source>
         <comment>title of the window</comment>
-        <translation type="unfinished">Дебъг</translation>
+        <translation>Отстраняване на дефекти</translation>
     </message>
 </context>
 </TS>
