@@ -941,12 +941,12 @@ so you can save the file on Windows.</source>
     <message>
         <source>Auto-reload</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Автоматично презареждане</translation>
+        <translation>Автоматично презареждане</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Автоматично превъртане</translation>
+        <translation>Автоматично прелистване</translation>
     </message>
 </context>
 <context>
@@ -1008,7 +1008,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Pause transfer</source>
-        <translation>Слага пренасянето на файла на пауза</translation>
+        <translation>Слага изтеглянето на файла на пауза</translation>
     </message>
     <message>
         <source>Cancel transfer</source>
@@ -1016,7 +1016,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Resume transfer</source>
-        <translation>Продължаване преноса на файла</translation>
+        <translation>Продължаване на изтеглянето на файла</translation>
     </message>
     <message>
         <source>Accept transfer</source>
@@ -1032,7 +1032,7 @@ so you can save the file on Windows.</source>
     <name>FilesForm</name>
     <message>
         <source>Downloads</source>
-        <translation>Изтеглени</translation>
+        <translation>Получени</translation>
     </message>
     <message>
         <source>Uploads</source>
@@ -1184,7 +1184,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>The translation may not load until qTox restarts.</source>
-        <translation>Езикът няма да се промени, докато не рестартирате qTox.</translation>
+        <translation>Езикът няма да се промени, без рестартиране на qTox.</translation>
     </message>
     <message>
         <source>Close to tray</source>
@@ -1216,7 +1216,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Show system tray icon</source>
-        <translation>Пиктограма в системната лента</translation>
+        <translation>Пиктограма в областта за известия</translation>
     </message>
     <message>
         <source>Enable light tray icon.</source>
@@ -1230,7 +1230,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>qTox will start minimized in tray.</source>
         <comment>toolTip for Start in tray setting</comment>
-        <translation>qTox ще се стартира областта за известия.</translation>
+        <translation>qTox ще стартира в областта за известия.</translation>
     </message>
     <message>
         <source>Autostart</source>
@@ -1238,7 +1238,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Set where files will be saved.</source>
-        <translation>Определи място за запазване на файлове.</translation>
+        <translation>Задайте къде да бъдат запазвани файловете.</translation>
     </message>
     <message>
         <source>Autoaccept files</source>
