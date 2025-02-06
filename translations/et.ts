@@ -648,6 +648,12 @@ mis võib põhjustada probleeme videokõnedega.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Käivitub kaasaskantavas režiimis; laadib profiili sellest kataloogist.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">tee</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

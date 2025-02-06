@@ -689,6 +689,12 @@ kar lahko povzroči težave z video klici.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Zažene se v prenosnem načinu; naloži profil iz tega imenika.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">pot</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

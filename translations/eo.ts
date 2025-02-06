@@ -735,6 +735,12 @@ kio povas konduki al problemoj kun videovokoj.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Komenciĝas en portebla reĝimo; ŝarĝas profilon el ĉi tiu dosierujo.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">vojo</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

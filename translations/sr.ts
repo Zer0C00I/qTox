@@ -674,6 +674,12 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Покреће се у преносивом режиму; учитава профил из овог директоријума.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Стаза</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

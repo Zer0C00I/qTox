@@ -443,7 +443,9 @@ int AppManager::run()
     parser.addPositionalArgument("uri", tr("Tox URI to parse"));
     parser.addOptions({
         {{"p", "profile"}, tr("Starts new instance and loads specified profile."), tr("profile")},
-        {{"D", "portable"}, tr("Starts in portable mode; loads profile from this directory."), "dir"},
+        {{"D", "portable"},
+         tr("Starts in portable mode; loads profile from this directory."),
+         tr("path", "directory in file system")},
         {{"l", "login"}, tr("Starts new instance and opens the login screen.")},
         {{"I", "ipv6"},
          tr("Sets IPv6 <on>/<off>. Default is ON.",

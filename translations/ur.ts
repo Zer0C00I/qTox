@@ -761,6 +761,12 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">پورٹیبل موڈ میں شروع ہوتا ہے؛ اس ڈائریکٹری سے پروفائل لوڈ کرتا ہے۔</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">راستہ</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

@@ -787,6 +787,12 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Huanza katika hali ya kubebeka; hupakia wasifu kutoka kwa saraka hii.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">njia</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

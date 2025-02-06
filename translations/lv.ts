@@ -657,6 +657,12 @@ kas var radīt video zvanu problēmas.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Sākas portatīvajā režīmā; ielādē profilu no šī direktorija.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ceļš</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

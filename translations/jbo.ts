@@ -771,6 +771,12 @@ so&apos;o roi lo nu do jungau cu na banzu xamgu lo ka zgana lo nu zgana lo vidni
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">cfari lo ka se bevri sazycimdytcini; cfari kibycpa lo nu samterci&apos;e lo vi karce</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">pluta</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

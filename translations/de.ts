@@ -646,6 +646,12 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Startet im tragbaren Modus; lädt das Profil aus diesem Verzeichnis.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Pfad</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

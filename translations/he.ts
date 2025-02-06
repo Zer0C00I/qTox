@@ -766,6 +766,12 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">מתחיל במצב נייד; טוען פרופיל מהספרייה הזו.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">נתיב</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

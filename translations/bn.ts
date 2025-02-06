@@ -782,6 +782,12 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">পোর্টেবল মোডে শুরু হয়; এই ডিরেক্টরি থেকে প্রোফাইল লোড করে।</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">পাথ</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

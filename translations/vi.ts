@@ -647,6 +647,12 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Bắt đầu ở chế độ di động; tải hồ sơ từ thư mục này.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Đường dẫn</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

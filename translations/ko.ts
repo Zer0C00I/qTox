@@ -703,6 +703,12 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">휴대용 모드에서 시작됩니다. 이 디렉터리에서 프로필을 로드합니다.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">경로</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

@@ -705,6 +705,12 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">يبدأ في الوضع المحمول. تحميل الملف الشخصي من هذا الدليل.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">المسار</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

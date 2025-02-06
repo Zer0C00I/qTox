@@ -644,6 +644,11 @@ Take heed, fer higher qualities demand clearer skies and use more bandwidth. If 
         <source>Starts in portable mode; loads profile from this directory.</source>
         <translation>Starts in stowaway mode; loads yer face from this here hold.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

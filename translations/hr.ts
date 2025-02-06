@@ -674,6 +674,12 @@ Ponekad vaša veza možda nije dovoljno dobra da podnese višu kvalitetu videa,
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Pokreće se u prijenosnom načinu rada; učitava profil iz ovog direktorija.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">put</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

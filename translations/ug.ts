@@ -682,6 +682,12 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ئېلىپ يۈرۈشكە ئەپلىك ھالەتتە باشلىنىدۇ بۇ مۇندەرىجىدىن ئارخىپ يۈكلەيدۇ.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">يول</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

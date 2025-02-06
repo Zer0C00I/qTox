@@ -649,6 +649,12 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>Стартира в преносим режим; зарежда профил от указаната папка.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">път</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

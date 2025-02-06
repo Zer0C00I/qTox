@@ -672,6 +672,12 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Hordozható módban indul; betölti a profilt ebből a könyvtárból.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">elérési út</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

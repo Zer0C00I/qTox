@@ -649,6 +649,12 @@ Rýchlosť vášho pripojenia nemusí byť vždy dostačujúca pre vyššiu kval
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Spustí sa v prenosnom režime; načíta profil z tohto adresára.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Cesta</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

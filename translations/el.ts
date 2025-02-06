@@ -681,6 +681,12 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ξεκινά σε φορητή λειτουργία. φορτώνει το προφίλ από αυτόν τον κατάλογο.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">διαδρομή</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

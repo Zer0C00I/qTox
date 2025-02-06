@@ -675,6 +675,12 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Запускаецца ў партатыўным рэжыме; загружае профіль з гэтага каталога.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Шлях</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

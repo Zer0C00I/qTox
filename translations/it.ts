@@ -648,6 +648,12 @@ il che può portare a problemi con le videochiamate.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Si avvia in modalità portatile; carica il profilo da questa directory.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">percorso</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

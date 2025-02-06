@@ -645,6 +645,12 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">以便携模式启动；从此目录加载配置文件。</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">路径</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

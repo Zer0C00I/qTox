@@ -715,6 +715,12 @@ hvilket kan føre til problemer med videoopkald.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Starter i bærbar tilstand; indlæser profil fra denne mappe.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">sti</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

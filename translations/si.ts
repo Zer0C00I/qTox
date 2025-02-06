@@ -785,6 +785,12 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">අතේ ගෙන යා හැකි ආකාරයෙන් ආරම්භ වේ; මෙම නාමාවලියෙන් පැතිකඩ පූරණය කරයි.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">මාර්ගය</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

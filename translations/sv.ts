@@ -649,6 +649,12 @@ vilket kan leda till problem med videosamtal.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Startar i portabelt läge; laddar profil från denna katalog.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">sökväg</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

@@ -647,6 +647,12 @@ lo que puede provocar problemas en las videollamadas.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Comienza en modo portátil; carga el perfil desde este directorio.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ruta</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

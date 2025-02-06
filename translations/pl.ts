@@ -655,6 +655,12 @@ co może powodować problemy z rozmowami wideo.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Uruchamia się w trybie przenośnym; ładuje profil z tego katalogu.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ścieżka</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

@@ -788,6 +788,12 @@ wat kin leie tot probleme mit videogesprekke.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Begint in draagbare modus; laad ‘t profiel oet deze map.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">weeg</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

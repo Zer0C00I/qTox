@@ -682,6 +682,12 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Започнува во пренослив режим; го вчитува профилот од овој директориум.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">патека</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

@@ -648,6 +648,12 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>Запускается в портативном режиме; загружает профиль из этого каталога.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Путь</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

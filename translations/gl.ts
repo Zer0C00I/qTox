@@ -673,6 +673,12 @@ o que pode provocar problemas coas videochamadas.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Comeza en modo portátil; carga o perfil deste directorio.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Camiño</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

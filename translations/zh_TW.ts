@@ -721,6 +721,12 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">以便攜模式啟動；從此目錄載入設定檔。</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">路徑</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

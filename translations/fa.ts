@@ -672,6 +672,12 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">در حالت قابل حمل شروع می شود. نمایه را از این دایرکتوری بارگیری می کند.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">مسیر</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

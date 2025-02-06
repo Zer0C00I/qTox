@@ -779,6 +779,12 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ಪೋರ್ಟಬಲ್ ಮೋಡ್ನಲ್ಲಿ ಪ್ರಾರಂಭವಾಗುತ್ತದೆ; ಈ ಡೈರೆಕ್ಟರಿಯಿಂದ ಪ್ರೊಫೈಲ್ ಅನ್ನು ಲೋಡ್ ಮಾಡುತ್ತದೆ.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ಮಾರ್ಗ</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

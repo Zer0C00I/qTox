@@ -650,6 +650,12 @@ bu da video görüşmelerinde sorunlara yol açabilir.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Taşınabilir modda başlar; profili bu dizinden yükler.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Yol</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

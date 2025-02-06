@@ -649,6 +649,12 @@ může dojít během video hovoru k výpadkům či jiným problémům.</translat
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Spustí se v přenosném režimu; načte profil z tohoto adresáře.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">path</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

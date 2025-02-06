@@ -767,6 +767,12 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Byrjar í flytjanlegum ham; hleður prófíl úr þessari möppu.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Slóð</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

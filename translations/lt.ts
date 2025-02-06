@@ -649,6 +649,12 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Paleidžiamas nešiojamuoju režimu; įkelia profilį iš šio katalogo.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">kelias</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

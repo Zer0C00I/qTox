@@ -780,6 +780,12 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Fillon në modalitetin portativ; ngarkon profilin nga kjo direktori.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Rruga</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

@@ -648,6 +648,12 @@ mikä voi johtaa ongelmiin videopuheluissa.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Käynnistyy kannettavassa tilassa; lataa profiilin tästä hakemistosta.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">polku</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

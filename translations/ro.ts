@@ -647,6 +647,12 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Pornește în modul portabil; încarcă profilul din acest director.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Calea</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

@@ -640,6 +640,11 @@ which may lead to problems with video calls.</source>
         <source>Starts in portable mode; loads profile from this directory.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

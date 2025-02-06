@@ -703,6 +703,12 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">போர்ட்டபிள் பயன்முறையில் தொடங்குகிறது; இந்த கோப்பகத்திலிருந்து சுயவிவரத்தை ஏற்றுகிறது.</translation>
     </message>
+    <message>
+        <source>path</source>
+        <comment>directory in file system</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">பாதை</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>
