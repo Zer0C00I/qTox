@@ -1672,7 +1672,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Your status</source>
-        <translation>Вашия статус</translation>
+        <translation>Вашето състояние</translation>
     </message>
     <message>
         <source>Add friends</source>
@@ -1700,23 +1700,23 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Open profile</source>
-        <translation>Отваряне на профил</translation>
+        <translation>Отваря профила</translation>
     </message>
     <message>
         <source>Open profile page when clicked</source>
-        <translation>Отваряне на профил страницата при кликване</translation>
+        <translation>Отваря формуляра на профила при натискане</translation>
     </message>
     <message>
         <source>Status message input</source>
-        <translation>Въвеждане на съобщение за състоянието</translation>
+        <translation>Текстово поле за въвеждане на съобщение за състоянието</translation>
     </message>
     <message>
         <source>Set your status message that will be shown to others</source>
-        <translation>Задаване на вашето съобщение за състояние, което ще бъде показано на другите</translation>
+        <translation>Задайте съобщението за състояние, което ще бъде показано на другите</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation>Статус</translation>
+        <translation>Състояние</translation>
     </message>
     <message>
         <source>Set availability status</source>
@@ -3041,7 +3041,7 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>Status</source>
-        <translation>Статус</translation>
+        <translation>Състояние</translation>
     </message>
     <message>
         <source>Your name</source>
