@@ -237,7 +237,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
-        <translation>Це відкритий (публічний) ключ вашого друга, використовуйте його для підтвердження його особистості через інший канал. Ви не можете надсилати його іншим людям, щоб вони могли додати цей контакт.</translation>
+        <translation>Це відкритий (публічний) ключ вашого друга, використовуйте його, щоб підтвердити особистість друга через інший канал. Його не можна використовувати для надсилання іншим людям, щоб вони додали цей контакт.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>
@@ -491,12 +491,12 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Invalid proxy address</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Недійсна проксі -адреса</translation>
+        <translation>Неправильна адреса проксі</translation>
     </message>
     <message>
         <source>Please enter a valid IP address or hostname for the proxy setting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Введіть дійсну IP -адресу або ім&apos;я хоста для налаштування проксі.</translation>
+        <translation>Будь ласка, введіть дійсну IP адресу або ім&apos;я хоста в налаштуваннях проксі.</translation>
     </message>
 </context>
 <context>
@@ -597,22 +597,22 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation>Встановлює IPv6 &lt;увімкнено&gt;/&lt;вимкнено&gt;. За замовчуванням УВІМКНЕНО.</translation>
+        <translation>Встановлює IPv6 &lt;on&gt;/&lt;off&gt;. За замовчуванням встановлено ON (УВІМКНУТО).</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation>Встановлює UDP &lt;увімкнено&gt;/&lt;вимкнено&gt;. За замовчуванням УВІМКНЕНО.</translation>
+        <translation>Встановлює UDP &lt;on&gt;/&lt;off&gt;. За замовчуванням встановлено ON (УВІМКНУТО).</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
         <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation>Встановлює виявлення локальної мережі (LAN) &lt;увімкнено&gt;/&lt;вимкнено&gt;. Перевизначає вимкнений UDP. За замовчуванням УВІМКНЕНО.</translation>
+        <translation>Встановлює виявлення локальної мережі (LAN) &lt;on&gt;/&lt;off&gt;. Перевизначає вимкнений UDP. За замовчуванням встановлено ON (УВІМКНЕНО).</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
         <comment>NONE should not be translated, it is a flag value</comment>
-        <translation>Встановлює налаштування проксі-сервера. За замовчуванням НЕМАЄ.</translation>
+        <translation>Встановлює налаштування проксі-сервера. За замовчуванням встановлено NONE (НЕМАЄ).</translation>
     </message>
     <message>
         <source>Error</source>
@@ -636,7 +636,7 @@ which may lead to problems with video calls.</source>
         <source>path</source>
         <comment>directory in file system</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Шлях</translation>
+        <translation>шлях</translation>
     </message>
 </context>
 <context>
@@ -2287,7 +2287,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Choose an auto-accept directory</source>
         <comment>popup title</comment>
-        <translation type="unfinished">Виберіть каталог для автоматичного приймання</translation>
+        <translation>Виберіть папку для автоматичного приймання файлів</translation>
     </message>
 </context>
 <context>
