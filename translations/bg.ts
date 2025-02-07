@@ -638,7 +638,7 @@ which may lead to problems with video calls.</source>
         <source>path</source>
         <comment>directory in file system</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">път</translation>
+        <translation>папка</translation>
     </message>
 </context>
 <context>
@@ -1416,44 +1416,44 @@ Profile does not contain your history.</source>
     </message>
     <message>
         <source>Remove password</source>
-        <translation>Премахване на парола</translation>
+        <translation>Премахване на паролата</translation>
     </message>
     <message>
         <source>Change password</source>
-        <translation>Промени парола</translation>
+        <translation>Смяна на паролата</translation>
     </message>
     <message>
         <source>Remove your password and encryption from your profile.</source>
         <comment>Tooltip for the `Remove password` button.</comment>
-        <translation>Премахва паролата и криптиране от профила.</translation>
+        <translation>Премахва паролата и шифроването от профила.</translation>
     </message>
     <message>
         <source>Name input</source>
-        <translation>Въвеждане на име</translation>
+        <translation>Текстово поле за име</translation>
     </message>
     <message>
         <source>Name visible to contacts</source>
-        <translation>Име видимо за контакти</translation>
+        <translation>Име, видимо от контактите</translation>
     </message>
     <message>
         <source>Status message input</source>
-        <translation>Въвеждане на съобщение за състояние</translation>
+        <translation>Текстово поле за състоянието</translation>
     </message>
     <message>
         <source>Status message visible to contacts</source>
-        <translation>Съобщението за състояние е видимо за контакти</translation>
+        <translation>Съобщение за състоянието, видимо от контактите</translation>
     </message>
     <message>
         <source>Your Tox ID</source>
-        <translation>Вашият идентификатор на Tox</translation>
+        <translation>Вашият Tox ID</translation>
     </message>
     <message>
         <source>Save QR image as file</source>
-        <translation>Запишете QR изображение като файл</translation>
+        <translation>Запазва изображението с QR във файл</translation>
     </message>
     <message>
         <source>Copy QR image to clipboard</source>
-        <translation>Копиране на изображението на QR</translation>
+        <translation>Копира изображението с QR</translation>
     </message>
     <message>
         <source>Rename profile.</source>
@@ -1465,15 +1465,15 @@ Profile does not contain your history.</source>
     </message>
     <message>
         <source>Export profile</source>
-        <translation>Изнасяне на профил</translation>
+        <translation>Изнасяне на профила</translation>
     </message>
     <message>
         <source>Remove password from profile</source>
-        <translation>Премахване на парола от профил</translation>
+        <translation>Премахване на паролата от профила</translation>
     </message>
     <message>
         <source>Change profile password</source>
-        <translation>Промяна на паролата на профила</translation>
+        <translation>Променяне на паролата на профила</translation>
     </message>
     <message>
         <source>My name:</source>
@@ -1481,7 +1481,7 @@ Profile does not contain your history.</source>
     </message>
     <message>
         <source>My status:</source>
-        <translation>Моят статус:</translation>
+        <translation>Състояние:</translation>
     </message>
     <message>
         <source>My profile</source>
@@ -1491,26 +1491,26 @@ Profile does not contain your history.</source>
         <source>This ID allows other Tox users to add and contact you.
 Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
-        <translation>Този идентификатор дава възможност на други потребители на Tox да ви добавят и да се свързват с вас.
-Споделете го с приятелите си, за да започнете да общувате.</translation>
+        <translation>Идентификаторът дава възможност на другите потребители на Tox да се свързват с вас.
+За да започнете да общувате го споделете с приятелите си.</translation>
     </message>
 </context>
 <context>
     <name>LoadHistoryDialog</name>
     <message>
         <source>Load history dialog</source>
-        <translation>Прозорец за зареждане на история</translation>
+        <translation>Внасяне на кореспонденция</translation>
     </message>
     <message>
         <source>Load history from:</source>
-        <translation>Зареждане на историята от:</translation>
+        <translation>Внасяне на кореспонденцията от:</translation>
     </message>
 </context>
 <context>
     <name>LoginScreen</name>
     <message>
         <source>Username:</source>
-        <translation>Потребителско име:</translation>
+        <translation>Потребител:</translation>
     </message>
     <message>
         <source>Password:</source>
@@ -1518,7 +1518,7 @@ Share it with your friends to begin chatting.</source>
     </message>
     <message>
         <source>Confirm:</source>
-        <translation>Потвърди:</translation>
+        <translation>Парола, отново:</translation>
     </message>
     <message>
         <source>Password strength: %p%</source>
@@ -1526,11 +1526,11 @@ Share it with your friends to begin chatting.</source>
     </message>
     <message>
         <source>Create Profile</source>
-        <translation>Създай профил</translation>
+        <translation>Създаване на профил</translation>
     </message>
     <message>
         <source>If the profile does not have a password, qTox can skip the login screen</source>
-        <translation>Ако профилът няма парола, qTox може да пропусне екрана за вход</translation>
+        <translation>Ако профилът няма парола, qTox може да прескочи екрана за вход</translation>
     </message>
     <message>
         <source>Load automatically</source>
@@ -1546,7 +1546,7 @@ Share it with your friends to begin chatting.</source>
     </message>
     <message>
         <source>New Profile</source>
-        <translation>Добавяне на профил</translation>
+        <translation>Нов профил</translation>
     </message>
     <message>
         <source>Load Profile</source>
@@ -1554,7 +1554,7 @@ Share it with your friends to begin chatting.</source>
     </message>
     <message>
         <source>Couldn&apos;t create a new profile</source>
-        <translation>Неуспешно създаване на нов профил</translation>
+        <translation>Грешка при създаване на профил</translation>
     </message>
     <message>
         <source>The username must not be empty.</source>
@@ -1562,7 +1562,7 @@ Share it with your friends to begin chatting.</source>
     </message>
     <message>
         <source>The password must be at least 6 characters long.</source>
-        <translation>Паролата трябва да е дълга поне 6 символа.</translation>
+        <translation>Паролата трябва да бъде дълга най-малко 6 знака.</translation>
     </message>
     <message>
         <source>A profile with this name already exists.</source>
@@ -1570,27 +1570,27 @@ Share it with your friends to begin chatting.</source>
     </message>
     <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
-        <translation>Профилите защитени с парола, немогат да бъдат заредени автоматично.</translation>
+        <translation>Профилите защитени с парола, не могат да бъдат заредени автоматично.</translation>
     </message>
     <message>
         <source>Couldn&apos;t load profile</source>
-        <translation>Неуспешно зареждане на профил</translation>
+        <translation>Грешка при зареждане на профил</translation>
     </message>
     <message>
         <source>There is no selected profile.
 
 You may want to create one.</source>
-        <translation>Няма избран профил.
+        <translation>Не е избран профил.
 
-Може да създадете нов.</translation>
+Може да създадете нов профил.</translation>
     </message>
     <message>
         <source>Couldn&apos;t load this profile</source>
-        <translation>Неуспешно зареждане на профил</translation>
+        <translation>Грешка при зареждане на профил</translation>
     </message>
     <message>
         <source>This profile is already in use.</source>
-        <translation>Този профил вече се използва.</translation>
+        <translation>Този профил в момента е зареден.</translation>
     </message>
     <message>
         <source>Wrong password.</source>
@@ -1602,27 +1602,27 @@ You may want to create one.</source>
     </message>
     <message>
         <source>Password input field, you can leave it empty (no password), or type at least 6 characters</source>
-        <translation>Поле за въвеждане на парола, може да го оставите празно (без парола), или напишете поне 6 символа</translation>
+        <translation>Поле за въвеждане на парола, може да го оставите празно (без парола), или въведете най-малко 6 знака</translation>
     </message>
     <message>
         <source>Password confirmation field</source>
-        <translation>Поле за потвърждение на паролата</translation>
+        <translation>Поле за потвърждаване на паролата</translation>
     </message>
     <message>
         <source>Create a new profile button</source>
-        <translation>Създаване на нов профилен бутон</translation>
+        <translation>Бутон за създаване на нов профил</translation>
     </message>
     <message>
         <source>Profile list</source>
-        <translation>Списък на профил</translation>
+        <translation>Списък с профили</translation>
     </message>
     <message>
         <source>List of profiles</source>
-        <translation>Списък на профили</translation>
+        <translation>Списък на профилите</translation>
     </message>
     <message>
         <source>Password input</source>
-        <translation>Въвеждане на парола</translation>
+        <translation>Текстово поле за въвеждане на парола</translation>
     </message>
     <message>
         <source>Load automatically checkbox</source>
@@ -1634,15 +1634,15 @@ You may want to create one.</source>
     </message>
     <message>
         <source>Load selected profile button</source>
-        <translation>Зареждане на избрания профилен бутон</translation>
+        <translation>Бутон за зареждане на избрания профил</translation>
     </message>
     <message>
         <source>New profile creation page</source>
-        <translation>Страницата за създаване на нов профил</translation>
+        <translation>Формуляр за създаване на профил</translation>
     </message>
     <message>
         <source>Loading existing profile page</source>
-        <translation>Зареждане на съществуваща профил страница</translation>
+        <translation>Формуляр за зареждане на съществуващ профил</translation>
     </message>
     <message>
         <source>The passwords you&apos;ve entered are different.
@@ -1654,20 +1654,21 @@ Please make sure to enter the same password twice.</source>
         <source>This optional password is used to encrypt local message data and your profile.
 If you lose this password, there is no way to recover it.
 Press Shift+F1 for more information.</source>
-        <translation type="unfinished">Тази незадължителна парола се използва за криптиране на локални данни за съобщения и вашия профил.
-Ако загубите тази парола, няма начин да я възстановите.
-Натиснете Shift+F1 за повече информация.</translation>
+        <translation>Паролата не е незадължителна, но се използва за шифроване
+на кореспонденцията и профила на това устройства.
+Ако загубите тази парола, няма начин да бъде възстановена.
+За подробности натиснете Shift + F1.</translation>
     </message>
     <message>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
-        <translation type="unfinished">Паролата, която въвеждате тук, не е задължителна и криптира данните от съобщението и вашия секретен ключ за Tox. Не криптира получените файлове. Данните от вашия профил никога не се изпращат до сървъри. Това не е отдалечено влизане, то е само локално за вашия компютър. Разработчиците на qTox няма да могат да възстановят вашата парола, ако я загубите.</translation>
+        <translation>Паролата, която въвеждате тук, не е задължителна и шифрова кореспонденцията и частния ключ на Tox, но не шифрова получените файлове. Данните от вашия профил никога не се изпращат до сървъри. Това не е отдалечен вход, входът се случва само на това устройство. Ако загубите паролата, разработчиците на qTox не могат да я възстановят.</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
         <source>Your name</source>
-        <translation>Вашеto имe</translation>
+        <translation>Вашето име</translation>
     </message>
     <message>
         <source>Your status</source>
@@ -1683,7 +1684,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>View completed file transfers</source>
-        <translation>Преглед на завършените файлови трансфери</translation>
+        <translation>Преглед на прехвърлените файлове</translation>
     </message>
     <message>
         <source>Change your settings</source>
@@ -1691,7 +1692,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Close</source>
-        <translation>Затвори</translation>
+        <translation>Затваряне</translation>
     </message>
     <message>
         <source>...</source>
@@ -1911,7 +1912,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Incoming call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Входящо повикване</translation>
+        <translation>Входящо обаждане</translation>
     </message>
 </context>
 <context>
@@ -2640,7 +2641,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Confirm:</source>
-        <translation>Потвърждаване:</translation>
+        <translation>Парола, отново:</translation>
     </message>
     <message>
         <source>Password:</source>
@@ -2664,22 +2665,22 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Password input</source>
-        <translation>Въвеждане на парола</translation>
+        <translation>Текстово поле за въвеждане на парола</translation>
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
-        <translation>Поле за въвеждане на парола, минимум 6 символа</translation>
+        <translation>Поле за въвеждане на парола, минимум 6 знака</translation>
     </message>
     <message>
         <source>The password is too short.</source>
-        <translation>паролата е твърде кратка.</translation>
+        <translation>Паролата е твърде кратка.</translation>
     </message>
 </context>
 <context>
     <name>Settings</name>
     <message>
         <source>Circle #%1</source>
-        <translation>Кръг #%1</translation>
+        <translation>Списък №%1</translation>
     </message>
     <message>
         <source>Failed to load personal settings</source>
