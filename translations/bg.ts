@@ -723,7 +723,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>End video call</source>
-        <translation>Завършване на видео разговор</translation>
+        <translation>Завършване на видео разговора</translation>
     </message>
     <message>
         <source>Cancel video call</source>
@@ -995,7 +995,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Pause transfer</source>
-        <translation>Слага изтеглянето на файла на пауза</translation>
+        <translation>Слага прехвърлянето на файла на пауза</translation>
     </message>
     <message>
         <source>Cancel transfer</source>
@@ -1003,7 +1003,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Resume transfer</source>
-        <translation>Продължаване на изтеглянето на файла</translation>
+        <translation>Продължаване на прехвърлянето на файла</translation>
     </message>
     <message>
         <source>Accept transfer</source>
@@ -1720,7 +1720,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Set availability status</source>
-        <translation>Задаване на състояние за достъп</translation>
+        <translation>Задава състоянието на достъпност</translation>
     </message>
     <message>
         <source>Contact search</source>
@@ -1728,7 +1728,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Contact search input for known friends</source>
-        <translation>Входно поле за търсене на известни приятели</translation>
+        <translation>Текстово поле за търсене на въведени контакти</translation>
     </message>
     <message>
         <source>Sorting and visibility</source>
@@ -1736,27 +1736,27 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Set friends sorting and visibility</source>
-        <translation>Задайте сортиране и видимост на приятели</translation>
+        <translation>Задава сортирането и видимостта на контактите</translation>
     </message>
     <message>
         <source>Open Add friends page</source>
-        <translation>Отвори страницата за добавяне на приятели</translation>
+        <translation>Отваря страницата за добавяне на контакти</translation>
     </message>
     <message>
         <source>Conference</source>
-        <translation type="unfinished">Групов разговор</translation>
+        <translation>Групов разговор</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation type="unfinished">Управление на групов разговор</translation>
+        <translation>Отваря формуляра за управление на групови разговори</translation>
     </message>
     <message>
         <source>File transfers history</source>
-        <translation>История на файлови трансфери</translation>
+        <translation>Хронология на прехвърлените файлове</translation>
     </message>
     <message>
         <source>Open File transfers history</source>
-        <translation>Отвори историята на файловите трансфери</translation>
+        <translation>Отваря хронологията на прехвърлените файлове</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -1764,12 +1764,12 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Open Settings</source>
-        <translation>Отворете настройките</translation>
+        <translation>Отваря настройките</translation>
     </message>
     <message>
         <source>Open internal debugging tools</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Отворете вътрешни инструменти за отстраняване на грешки</translation>
+        <translation>Отваряне на инструментите за отстраняване на дефекти за разработчици</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -1778,7 +1778,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Отворете Debugger</translation>
+        <translation>Отваря отстраняване на дефекти</translation>
     </message>
 </context>
 <context>
@@ -1791,7 +1791,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
         <comment>popup text</comment>
-        <translation>Поискали сте qTox да отвори изпълним файл. Изпълнимите файлове могат да навредят на компютъра. Сигурни ли сте, че желаете файлът да бъде отворен?</translation>
+        <translation>Искате qTox да отвори изпълним файл. Изпълнимите файлове могат да повредят компютъра. Желаете ли да файлът да бъде отворен?</translation>
     </message>
 </context>
 <context>
@@ -1806,7 +1806,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Toggle video preview</source>
-        <translation>Превключи видео преглед</translation>
+        <translation>Превключва прегледа на видео</translation>
     </message>
     <message>
         <source>Mute audio</source>
@@ -1814,23 +1814,23 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Mute microphone</source>
-        <translation>Заглушаване на микрофона</translation>
+        <translation>Изключване на микрофона</translation>
     </message>
     <message>
         <source>End video call</source>
-        <translation>Прекратяване на видеоразговор</translation>
+        <translation>Завършване на видео разговора</translation>
     </message>
     <message>
         <source>Exit full screen</source>
-        <translation>Излизане от цял екран</translation>
+        <translation>Изход от цял екран</translation>
     </message>
     <message>
         <source>Hide messages</source>
-        <translation>Скриване на съобщения</translation>
+        <translation>Скриване на съобщенията</translation>
     </message>
     <message>
         <source>Show messages</source>
-        <translation>Показване на съобщения</translation>
+        <translation>Показване на съобщенията</translation>
     </message>
 </context>
 <context>
@@ -1848,20 +1848,20 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Minimize</source>
         <comment>macOS Menu bar</comment>
-        <translation>Минимизирай</translation>
+        <translation>Свиване</translation>
     </message>
     <message>
         <source>Bring All to Front</source>
         <comment>macOS Menu bar</comment>
-        <translation>Извеждане на всички на преден план</translation>
+        <translation>Всички на преден план</translation>
     </message>
     <message>
         <source>Exit Full Screen</source>
-        <translation>Изход от Цял екран</translation>
+        <translation>Изход от цял екран</translation>
     </message>
     <message>
         <source>Enter Full Screen</source>
-        <translation>Влизане в Цял екран</translation>
+        <translation>Цял екран</translation>
     </message>
 </context>
 <context>
@@ -1869,7 +1869,7 @@ Press Shift+F1 for more information.</source>
     <message numerus="yes">
         <source>Unread message(s)</source>
         <translation>
-            <numerusform>Непрочетено/и съобщение/я</numerusform>
+            <numerusform>Непрочетено съобщение</numerusform>
             <numerusform>Непрочетени съобщения</numerusform>
         </translation>
     </message>
@@ -1882,32 +1882,32 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>New conference message</source>
-        <translation type="unfinished">Ново групово съобщение</translation>
+        <translation>Ново съобщение в групов разговор</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
-        <translation>Получаване на входящ файл</translation>
+        <translation>Получаване на файл</translation>
     </message>
     <message>
         <source>%1 - file transfer</source>
         <extracomment>e.g. Bob - file transfer</extracomment>
-        <translation>%1 - файлов трансфер</translation>
+        <translation>%1 – прехвърляне на файл</translation>
     </message>
     <message>
         <source>Conference invite received</source>
-        <translation type="unfinished">Поканата за група е приета</translation>
+        <translation>Поканата за групов разговор е приета</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
-        <translation type="unfinished">%1 ви кани да се пресъедините към група.</translation>
+        <translation>Покана от %1 за присъединяване към групов разговор.</translation>
     </message>
     <message>
         <source>Friend request received</source>
-        <translation>Поканата за контакт е приета</translation>
+        <translation>Получена е заявка за контакт</translation>
     </message>
     <message>
         <source>Friend request received from %1</source>
-        <translation>Получена приятелска покана %1</translation>
+        <translation>Получена е заявка за контакт от %1</translation>
     </message>
     <message>
         <source>Incoming call</source>
@@ -1919,7 +1919,7 @@ Press Shift+F1 for more information.</source>
     <name>PasswordEdit</name>
     <message>
         <source>Caps-lock enabled</source>
-        <translation>КЛАВИШ ЗА ГЛАВНИ БУКВИ ВКЛЮЧЕН</translation>
+        <translation>Клавишът за въвеждане на главни букви е включен</translation>
     </message>
 </context>
 <context>
@@ -1934,7 +1934,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Do you want to permanently delete all chat history?</source>
-        <translation>Искате ли да изтриете всичката чат история завинаги?</translation>
+        <translation>Желаете ли цялата кореспонденция да бъде премахната?</translation>
     </message>
 </context>
 <context>
@@ -1942,35 +1942,35 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Your friends will be able to see when you are typing.</source>
         <comment>tooltip for typing notifications setting</comment>
-        <translation>Вашите приятели ще могат да виждат, когато пишете.</translation>
+        <translation>Вашите кореспонденти ще виждат кога въвеждате съобщение.</translation>
     </message>
     <message>
         <source>Chat history keeping is still in development.
 Save format changes are possible, which may result in data loss.</source>
         <comment>toolTip for Keep History setting</comment>
-        <translation>Пазенето на чат история, все още е в разработка.
-Промени във формата за запазване са възможни, което може да доведе до загуба на данни.</translation>
+        <translation>Запазването на кореспонденциите все още е в разработка.
+Възможни са промени във форма̀та на запис, което може да доведе до загуба на данни.</translation>
     </message>
     <message>
         <source>Send typing notifications</source>
-        <translation>Изпрати уведомления за писане</translation>
+        <translation>Индикация при въвеждане на съобщения</translation>
     </message>
     <message>
         <source>Keep chat history</source>
-        <translation>Пази чат история</translation>
+        <translation>Запазване на кореспонденцията</translation>
     </message>
     <message>
         <source>NoSpam is part of your Tox ID.
 If you are being spammed with friend requests, you should change your NoSpam.
 People will be unable to add you with your old ID, but you will keep your current friends.</source>
         <comment>toolTip for nospam</comment>
-        <translation>NoSpam е част от идентификатора на Tox.
-Ако получавате нежелани покани за контакт променете вашия NoSpam.
-Хората няма да могат да ви добавят със стария ви идентификатор, но ще запазите настоящите си контакти.</translation>
+        <translation>Полето АнтиСпам е част от Tox ID.
+Ако получавате нежелани заявки за контакт променете стойността му.
+Хората няма да могат да ви добавят със стария идентификатор, но ще запазите си контакти.</translation>
     </message>
     <message>
         <source>NoSpam</source>
-        <translation>Без спам</translation>
+        <translation>АнтиСпам</translation>
     </message>
     <message>
         <source>NoSpam is a part of your ID that can be changed at will.
