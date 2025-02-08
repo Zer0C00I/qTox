@@ -628,7 +628,8 @@ set(${PROJECT_NAME}_SOURCES
     src/widget/widget.h)
 
 if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
-  set(${PROJECT_NAME}_RESOURCES ${${PROJECT_NAME}_RESOURCES} windows/qtox.rc)
+  set(${PROJECT_NAME}_RESOURCES ${${PROJECT_NAME}_RESOURCES}
+                                platform/windows/qtox.rc)
 endif()
 
 add_definitions(-DQT_MESSAGELOGCONTEXT=1)
@@ -703,7 +704,7 @@ set_target_properties(
   PROPERTIES QT_ANDROID_TARGET_SDK_VERSION 34
              QT_ANDROID_MIN_SDK_VERSION 24
              QT_ANDROID_PACKAGE_SOURCE_DIR
-             "${CMAKE_CURRENT_SOURCE_DIR}/android/${Qt6Core_VERSION}")
+             "${CMAKE_CURRENT_SOURCE_DIR}/platform/android/${Qt6Core_VERSION}")
 
 if(FULLY_STATIC)
   target_link_options(${PROJECT_NAME} PRIVATE -static-pie)

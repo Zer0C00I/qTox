@@ -162,7 +162,7 @@ if [[ "$BUILD_TYPE" == "Release" ]]; then
   cp -r "$QTOX_PREFIX_DIR"/* ./qtox
   rm ./qtox/*.zip
 
-  cp -r "$QTOX_SRC_DIR"/windows/* .
+  cp -r "$QTOX_SRC_DIR"/platform/windows/* .
   # Select the installer script for the correct architecture
   if [[ "$ARCH" == "i686" ]]; then
     makensis qtox.nsi
@@ -206,7 +206,7 @@ rm -f dlls-required
 
 # Create a tree of all required dlls
 # Assumes all .exe files are directly in $QTOX_PREFIX_DIR, not in subdirs
-windows/cross-compile/check-dlls "-j$(nproc)" \
+platform/windows/cross-compile/check-dlls "-j$(nproc)" \
   EXES="$(cat exes runtime-dlls)" \
   ARCH="$ARCH" \
   BUILD_DIR="$QTOX_BUILD_DIR" \

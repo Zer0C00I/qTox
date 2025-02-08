@@ -100,7 +100,9 @@ def has_diff(config: Config, *files: str) -> bool:
 
 def check_flathub_descriptor_dependencies(failures: list[str],
                                           config: Config) -> None:
-    """Runs flatpak/update_flathub_descriptor_dependencies.py and checks if it made any changes."""
+    """Runs platform/flatpak/update_flathub_descriptor_dependencies.py and
+    checks if it made any changes.
+    """
     with stage.Stage("Flathub dependencies",
                      "Update flathub descriptor dependencies",
                      failures) as check:
@@ -108,7 +110,7 @@ def check_flathub_descriptor_dependencies(failures: list[str],
                                              "io.github.qtox.qTox.json")
         subprocess.run(  # nosec
             [
-                "flatpak/update_flathub_descriptor_dependencies.py",
+                "platform/flatpak/update_flathub_descriptor_dependencies.py",
                 "--quiet",
                 "--flathub-manifest",
                 flathub_manifest_path,
@@ -183,10 +185,10 @@ def check_package_versions(failures: list[str], config: Config) -> None:
         )
         files = (
             "README.md",
-            "macos/Info.plist",
+            "platform/macos/Info.plist",
+            "platform/windows/qtox.nsi",
+            "platform/windows/qtox64.nsi",
             "res/io.github.qtox.qTox.appdata.xml",
-            "windows/qtox.nsi",
-            "windows/qtox64.nsi",
         )
         if has_diff(config, *files):
             if config.commit:

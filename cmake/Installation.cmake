@@ -10,7 +10,7 @@
 
 if(APPLE)
   set_target_properties(${PROJECT_NAME} PROPERTIES
-    MACOSX_BUNDLE_INFO_PLIST "${CMAKE_SOURCE_DIR}/macos/Info.plist")
+    MACOSX_BUNDLE_INFO_PLIST "${CMAKE_SOURCE_DIR}/platform/macos/Info.plist")
 
   set(BUNDLE_PATH "${CMAKE_BINARY_DIR}/${PROJECT_NAME}.app")
 
@@ -19,7 +19,7 @@ if(APPLE)
 
   install(CODE "
   message(STATUS \"Creating dmg image\")
-  execute_process(COMMAND ${CMAKE_SOURCE_DIR}/macos/createdmg ${CMAKE_SOURCE_DIR} ${BUNDLE_PATH})
+  execute_process(COMMAND ${CMAKE_SOURCE_DIR}/platform/macos/createdmg ${CMAKE_SOURCE_DIR} ${BUNDLE_PATH})
   " COMPONENT Runtime
   )
 else()

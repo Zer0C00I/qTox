@@ -31,11 +31,11 @@ ignorePaths:
   - "LICENSE*"
   - "_build*/**"
   - "doxygen.conf"
-  - "macos/createdmg"
   - "moc_*.cpp"
+  - "platform/macos/createdmg"
+  - "platform/windows/cross-compile/check-dlls"
   - "security/**"
   - "translations/README.md"
-  - "windows/cross-compile/check-dlls"
 words:
   - "aatest"
   - "abeni"

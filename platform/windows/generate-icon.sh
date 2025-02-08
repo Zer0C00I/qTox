@@ -24,7 +24,7 @@
 #   icoutils 0.31.0
 
 # Black, gray and transparent colors from Windows 16-color palette
-base64 -d <<< R0lGODlhBAABAPEAAAAAAAAAAICAgMDAwCH5BAEAAAAALAAAAAAEAAEAAAIDjAYFADs= > pal.gif
+base64 -d <<<R0lGODlhBAABAPEAAAAAAAAAAICAgMDAwCH5BAEAAAAALAAAAAAEAAEAAAIDjAYFADs= >pal.gif
 # Generate 32 bpp images
 convert -background none -depth 8 qtox.svg qtox_256_256_32.png
 convert -resize 64x64 qtox_256_256_32.png qtox_64_64_32.png
@@ -59,6 +59,6 @@ icotool -c -t 32 \
   qtox_32_32_32.png \
   qtox_24_24_32.png \
   qtox_16_16_32.png \
-  > qtox.ico
+  >qtox.ico
 # Show debug information
 icotool -l qtox.ico

@@ -376,7 +376,7 @@ cd qTox
 Then install required dependencies available via `brew`.
 
 ```bash
-brew bundle --file macos/Brewfile
+brew bundle --file platform/macos/Brewfile
 ```
 
 Then, install [toxcore](https://github.com/TokTok/c-toxcore/blob/master/INSTALL.md).
@@ -410,7 +410,7 @@ under MSYS should also work.
 
 ### Cross-compile from Linux
 
-See [`windows/cross-compile`](windows/cross-compile).
+See [`platform/windows/cross-compile`](platform/windows/cross-compile).
 
 ## Compile-time switches
 

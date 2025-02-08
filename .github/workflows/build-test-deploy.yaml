@@ -264,7 +264,7 @@ jobs:
           path: ".cache/ccache"
           key: ${{ github.job }}-ccache
       - name: Run build
-        run: docker compose run --rm -e GITHUB_REPOSITORY="$GITHUB_REPOSITORY" -e GITHUB_REF="$GITHUB_REF" alpine-appimage ./appimage/build.sh --src-dir /qtox
+        run: docker compose run --rm -e GITHUB_REPOSITORY="$GITHUB_REPOSITORY" -e GITHUB_REF="$GITHUB_REF" alpine-appimage platform/appimage/build.sh --src-dir /qtox
       - name: Upload AppImage
         uses: actions/upload-artifact@v4
         with:
@@ -390,7 +390,7 @@ jobs:
           path: ".cache/ccache"
           key: ${{ github.job }}-${{ matrix.arch }}-${{ matrix.build_type }}-${{ matrix.version }}-ccache
       - name: Run build
-        run: docker compose run --rm "android_builder.${{ matrix.arch }}.${{ steps.computed.outputs.artifact_type }}_${{ matrix.version }}" ./android/cross-compile/build.sh --arch "${{ matrix.arch }}" --build-type "${{ matrix.build_type }}"
+        run: docker compose run --rm "android_builder.${{ matrix.arch }}.${{ steps.computed.outputs.artifact_type }}_${{ matrix.version }}" platform/android/cross-compile/build.sh --arch "${{ matrix.arch }}" --build-type "${{ matrix.build_type }}"
       - name: Upload Android apk
         uses: actions/upload-artifact@v4
         with:
@@ -465,12 +465,12 @@ jobs:
           echo "release_flatpak=qTox-$VERSION.x86_64.flatpak" >>$GITHUB_OUTPUT
       - name: Point flathub descriptor at the release tag
         if: contains(github.ref, 'refs/tags/v')
-        run: flatpak/localize_flathub_descriptor.py
-          --flathub-manifest flatpak/io.github.qtox.qTox.json
-          --output flatpak/io.github.qtox.qTox.json
+        run: platform/flatpak/localize_flathub_descriptor.py
+          --flathub-manifest platform/flatpak/io.github.qtox.qTox.json
+          --output platform/flatpak/io.github.qtox.qTox.json
           --git-tag "${{ steps.get_version.outputs.version_tag }}"
       - name: Run build
-        run: docker compose run --rm flatpak ./flatpak/build.sh
+        run: docker compose run --rm flatpak platform/flatpak/build.sh
       - name: Upload flatpak
         uses: actions/upload-artifact@v4
         with:
@@ -580,7 +580,7 @@ jobs:
           key: ${{ github.job }}-${{ matrix.arch }}-${{ matrix.macos }}-local-deps
       - name: Homebrew dependencies to build dependencies
         run: |
-          brew bundle --file ./macos/Brewfile-DepBuildDeps
+          brew bundle --file platform/macos/Brewfile-DepBuildDeps
           sed -i '' -e 's/MAXIMUM_UNMOUNTING_ATTEMPTS=3/MAXIMUM_UNMOUNTING_ATTEMPTS=15/' "$(realpath "$(which create-dmg)")"
       - name: Set up ccache
         run: ccache --set-config=max_size=200M --set-config=cache_dir="$PWD/.cache/ccache" && ccache --show-config
@@ -703,7 +703,7 @@ jobs:
           key: ${{ github.job }}-${{ matrix.arch }}-ccache
       - name: Homebrew
         run: |
-          brew bundle --file ./macos/Brewfile
+          brew bundle --file platform/macos/Brewfile
           sed -i '' -e 's/MAXIMUM_UNMOUNTING_ATTEMPTS=3/MAXIMUM_UNMOUNTING_ATTEMPTS=15/' "$(realpath "$(which create-dmg)")"
       - name: Set up ccache
         run: ccache --set-config=max_size=200M --set-config=cache_dir="$PWD/.cache/ccache" && ccache --show-config
@@ -756,7 +756,7 @@ jobs:
           path: ".cache/ccache"
           key: ${{ github.job }}-${{ matrix.arch }}-${{ matrix.build_type }}-ccache
       - name: Run build
-        run: docker compose run --rm windows_builder.${{ matrix.arch }} ./windows/cross-compile/build.sh --arch ${{ matrix.arch }} --build-type ${{ matrix.build_type }} --run-tests --src-dir /qtox
+        run: docker compose run --rm windows_builder.${{ matrix.arch }} platform/windows/cross-compile/build.sh --arch ${{ matrix.arch }} --build-type ${{ matrix.build_type }} --run-tests --src-dir /qtox
       - name: Upload installer
         if: matrix.build_type == 'release'
         uses: actions/upload-artifact@v4
