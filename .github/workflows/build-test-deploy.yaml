@@ -727,16 +727,6 @@ jobs:
           key: ${{ github.job }}-ccache
       - name: Run build
         run: docker compose run --rm wasm_builder platform/wasm/build.sh
-      - name: Copy Pages artifact to default directory
-        run: mkdir _site && cp
-          platform/wasm/_headers
-          _build-wasm/qtloader.js
-          _build-wasm/qtlogo.svg
-          _build-wasm/qtox.js
-          _build-wasm/qtox.wasm
-          _site/ && cp
-          _build-wasm/qtox.html
-          _site/index.html
       - name: Upload zip
         uses: actions/upload-artifact@v4
         with:

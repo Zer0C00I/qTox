@@ -3,17 +3,6 @@ FROM toxchat/qtox:wasm-builder AS builder
 COPY . .
 RUN platform/wasm/build.sh
 
-RUN mkdir _site \
- && cp \
- _build-wasm/qtloader.js \
- _build-wasm/qtlogo.svg \
- _build-wasm/qtox.js \
- _build-wasm/qtox.wasm \
- _site \
- && cp \
- _build-wasm/qtox.html \
- _site/index.html
-
 FROM alpine:3.21 AS venv
 
 RUN apk add curl \

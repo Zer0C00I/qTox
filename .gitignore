@@ -58,6 +58,3 @@ target/
 # IDE support
 /compile_commands.json
 /.lsp_tidy_cache
-
-# Local Netlify folder
-.netlify

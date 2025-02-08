@@ -15,3 +15,15 @@ emcmake cmake \
   -H.
 
 cmake --build _build-wasm
+
+mkdir -p _site
+cp \
+  platform/wasm/_headers \
+  _build-wasm/qtloader.js \
+  _build-wasm/qtlogo.svg \
+  _build-wasm/qtox.js \
+  _build-wasm/qtox.wasm \
+  _site
+cp \
+  _build-wasm/qtox.html \
+  _site/index.html
