@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -eux -o pipefail
+
 source "/opt/buildhome/emsdk/emsdk_env.sh"
 
 export PKG_CONFIG_PATH="/opt/buildhome/lib/pkgconfig"
@@ -23,7 +25,7 @@ cp \
   _build-wasm/qtlogo.svg \
   _build-wasm/qtox.js \
   _build-wasm/qtox.wasm \
-  _site
+  _site/
 cp \
   _build-wasm/qtox.html \
   _site/index.html

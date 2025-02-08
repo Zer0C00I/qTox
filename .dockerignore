@@ -3,6 +3,7 @@
 !audio/
 !cmake/
 !img/
+!platform/wasm/_headers
 !platform/wasm/build.sh
 !res/**/*
 !themes/
