@@ -2905,7 +2905,7 @@ Hide formatting characters:
     </message>
     <message>
         <source>Hide message sender and contents</source>
-        <translation>Скриване на изпращача и съдържанието</translation>
+        <translation>Скриване на подателя и съдържанието</translation>
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
