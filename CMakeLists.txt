@@ -495,6 +495,8 @@ set(${BINARY_NAME}_SOURCES
     src/widget/chatformheader.h
     src/widget/circlewidget.cpp
     src/widget/circlewidget.h
+    src/widget/commondialogs.cpp
+    src/widget/commondialogs.h
     src/widget/contentdialog.cpp
     src/widget/contentdialog.h
     src/widget/contentdialogmanager.cpp

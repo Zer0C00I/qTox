@@ -330,10 +330,6 @@ wat kan leiden tot problemen met videogesprekken.</translation>
         <translation>Ongeldig Tox-ID formaat</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation>Vriend toevoegen</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translation>Vriendschapsverzoeken</translation>
     </message>
@@ -435,6 +431,10 @@ wat kan leiden tot problemen met videogesprekken.</translation>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
         <translation>76 hexadecimale tekens</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Vriend toevoegen</translation>
     </message>
 </context>
 <context>
@@ -799,6 +799,19 @@ zodat u het bestand op Windows kunt opslaan.</translation>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translation type="unfinished">Locatie niet schrijfbaar</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">Je hebt geen toestemming om naar die locatie te schrijven. Kies een andere locatie of annuleer het dialoogvenster Opslaan.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -952,16 +965,6 @@ zodat u het bestand op Windows kunt opslaan.</translation>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translation>Aanvaard om dit bestand te ontvangen</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Locatie niet schrijfbaar</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>Je hebt geen toegang om een bestand op deze locatie op te slaan. Kies een andere locatie of annuleer het opslaan.</translation>
     </message>
     <message>
         <source>Paused</source>
@@ -1437,10 +1440,6 @@ Dit bestand bevat geen chatgeschiedenis.</translation>
         <translation>Invoer voor statusbericht</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translation>Statusbericht zichtbaar voor contacten</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translation>Je Tox-ID</translation>
     </message>
@@ -1490,6 +1489,10 @@ Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
         <translation>Met deze ID kunnen andere Tox-gebruikers je toevoegen en contact met je opnemen.
 Deel het met je vrienden om te beginnen met chatten.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">Je statusbericht instellen, dat aan anderen getoond zal worden</translation>
     </message>
 </context>
 <context>
@@ -1582,10 +1585,6 @@ Deel het met je vrienden om te beginnen met chatten.</translation>
         <translation>Profielen beschermd met wachtwoord kunnen niet automatisch geladen worden.</translation>
     </message>
     <message>
-        <source>Couldn&apos;t load profile</source>
-        <translation>Kon profiel niet laden</translation>
-    </message>
-    <message>
         <source>There is no selected profile.
 
 You may want to create one.</source>
@@ -1659,6 +1658,10 @@ Druk op Shift+F1 voor meer informatie.</translation>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">Het wachtwoord dat u hier invoert, is optioneel en codeert berichtgegevens en uw geheime Tox-sleutel. Het codeert de ontvangen bestanden niet. Uw profielgegevens worden nooit naar servers verzonden. Dit is geen externe login, het is alleen lokaal op uw computer. qTox-ontwikkelaars kunnen uw wachtwoord niet herstellen als u het kwijtraakt.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">Wachtwoordinvoerveld, minimaal 6 tekens</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1669,14 +1672,6 @@ Druk op Shift+F1 voor meer informatie.</translation>
     <message>
         <source>Your status</source>
         <translation>Je status</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation>…</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translation>Vrienden toevoegen</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -1773,6 +1768,10 @@ Druk op Shift+F1 voor meer informatie.</translation>
     <message>
         <source>Open Debugger</source>
         <translation>Debugger openen</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Vriend toevoegen</translation>
     </message>
 </context>
 <context>
@@ -2042,11 +2041,6 @@ Gebruik een andere afbeelding.</translation>
         <translation>Kon het profiel niet hernoemen naar ‘%1’</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Locatie niet schrijfbaar</translation>
-    </message>
-    <message>
         <source>Are you sure you want to delete this profile?</source>
         <comment>deletion confirmation text</comment>
         <translation>Weet je zeker dat je dit profiel wilt verwijderen?</translation>
@@ -2152,11 +2146,6 @@ Gebruik een andere afbeelding.</translation>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
         <translation>Afbeeldingen (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>Je hebt geen toestemming om naar die locatie te schrijven. Kies een andere locatie of annuleer het dialoogvenster Opslaan.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -2630,10 +2619,6 @@ Deze ID bevat de NoSpam-code (in het blauw) en de checksum (in het grijs).</tran
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translation>Je wachtwoord instellen</translation>
-    </message>
-    <message>
         <source>The password doesn&apos;t match.</source>
         <translation>Het wachtwoord komt niet overeen.</translation>
     </message>
@@ -2669,6 +2654,10 @@ Deze ID bevat de NoSpam-code (in het blauw) en de checksum (in het grijs).</tran
         <source>The password is too short.</source>
         <translation>Het wachtwoord is te kort.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">Profielwachtwoord instellen</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -2692,11 +2681,6 @@ Deze ID bevat de NoSpam-code (in het blauw) en de checksum (in het grijs).</tran
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation>Vriend toevoegen</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translation>Wil je %1 als vriend toevoegen?</translation>
     </message>
@@ -2717,6 +2701,11 @@ Deze ID bevat de NoSpam-code (in het blauw) en de checksum (in het grijs).</tran
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
         <translation>Annuleren</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">Vriend toevoegen</translation>
     </message>
 </context>
 <context>
@@ -2739,10 +2728,6 @@ Deze ID bevat de NoSpam-code (in het blauw) en de checksum (in het grijs).</tran
     <message>
         <source>Base font:</source>
         <translation>Basislettertype:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation>px</translation>
     </message>
     <message>
         <source>Size: </source>

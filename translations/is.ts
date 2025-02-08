@@ -379,11 +379,6 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
         <translation type="unfinished">Sendu vinabeiðni</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Bættu við vini</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Vinabeiðnir</translation>
@@ -512,6 +507,10 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
         <extracomment>Tox ID format description</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">76 sextánstafir</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Bæta við vini</translation>
     </message>
 </context>
 <context>
@@ -950,6 +949,19 @@ svo þú getur vistað skrána á Windows.</translation>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translation type="unfinished">Staðsetning ekki skrifanleg</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">Þú hefur ekki leyfi til að skrifa á þá staðsetningu. Veldu annan eða hættu við vistunargluggann.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -1129,18 +1141,6 @@ svo þú getur vistað skrána á Windows.</translation>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Samþykkja að fá þessa skrá</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Staðsetning ekki skrifanleg</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Þú hefur ekki leyfi til að skrifa þá staðsetningu. Veldu annan eða hættu við vistunargluggann.</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1716,11 +1716,6 @@ Prófíllinn inniheldur ekki ferilinn þinn.</translation>
         <translation type="unfinished">Inntak stöðuskilaboða</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Stöðuskilaboð sýnileg tengiliðum</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Tox auðkenni þitt</translation>
@@ -1782,6 +1777,10 @@ Share it with your friends to begin chatting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Þetta auðkenni gerir öðrum Tox notendum kleift að bæta við og hafa samband við þig.
 Deildu því með vinum þínum til að byrja að spjalla.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">Stilltu stöðuskilaboðin þín sem verða sýnd öðrum</translation>
     </message>
 </context>
 <context>
@@ -1867,11 +1866,6 @@ Deildu því með vinum þínum til að byrja að spjalla.</translation>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ekki er hægt að hlaða sniðum með lykilorði sjálfkrafa.</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ekki tókst að hlaða prófíl</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1980,6 +1974,10 @@ Ef þú tapar þessu lykilorði er engin leið til að endurheimta það.
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">Lykilorðið sem þú slærð inn hér er valfrjálst og dulkóðar skilaboðagögn og Tox leynilykilinn þinn. Það dulkóðar ekki skrár sem berast. Prófílgögnin þín eru aldrei send á neina netþjóna. Þetta er ekki fjarinnskráning, hún er aðeins staðbundin fyrir tölvuna þína. qTox forritarar munu ekki geta endurheimt lykilorðið þitt ef það glatast.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">Innsláttarreitur lykilorðs, minnst 6 stafir að lengd</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1992,16 +1990,6 @@ Ef þú tapar þessu lykilorði er engin leið til að endurheimta það.
         <source>Your status</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Staðan þín</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">...</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Bættu vinum við</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -2122,6 +2110,10 @@ Ef þú tapar þessu lykilorði er engin leið til að endurheimta það.
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Opnaðu Debugger</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Bæta við vini</translation>
     </message>
 </context>
 <context>
@@ -2447,12 +2439,6 @@ Vinsamlegast notaðu aðra mynd.</translation>
         <translation type="unfinished">Gat ekki endurnefna prófílinn í &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Staðsetning ekki skrifanleg</translation>
-    </message>
-    <message>
         <source>Nothing to remove</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ekkert til að fjarlægja</translation>
@@ -2576,12 +2562,6 @@ Vinsamlegast notaðu aðra mynd.</translation>
         <comment>filetype filter</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Myndir (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Þú hefur ekki leyfi til að skrifa á þá staðsetningu. Veldu annan eða hættu við vistunargluggann.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -3154,11 +3134,6 @@ Deildu því með vinum þínum til að byrja að spjalla.
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Stilltu lykilorðið þitt</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Staðfesta:</translation>
@@ -3201,6 +3176,10 @@ Deildu því með vinum þínum til að byrja að spjalla.
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Lykilorðið er of stutt.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">Stilltu lykilorð fyrir prófíl</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -3228,12 +3207,6 @@ Deildu því með vinum þínum til að byrja að spjalla.
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Bættu við vini</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Viltu bæta %1 við sem vini?</translation>
@@ -3260,6 +3233,11 @@ Deildu því með vinum þínum til að byrja að spjalla.
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Hætta við</translation>
     </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">Bæta við vini</translation>
+    </message>
 </context>
 <context>
     <name>UserInterfaceForm</name>
@@ -3285,11 +3263,6 @@ Deildu því með vinum þínum til að byrja að spjalla.
         <source>Base font:</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Grunn leturgerð:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">PX</translation>
     </message>
     <message>
         <source>Size: </source>

@@ -331,10 +331,6 @@ o que pode levar a problemas com as vídeo-chamadas.</translation>
         <translation>Formato inválido da Referência do Tox</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation>Adicionar um contacto</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translation>Solicitações de amizade</translation>
     </message>
@@ -436,6 +432,10 @@ o que pode levar a problemas com as vídeo-chamadas.</translation>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
         <translation>76 caracteres hexadecimais</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Adicionar contacto</translation>
     </message>
 </context>
 <context>
@@ -801,6 +801,19 @@ de forma que possa guardar o ficheiro no Windows.</translation>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translation type="unfinished">Localização sem permissão de escrita</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">Não possui permissão de escrita nesse diretório. Escolha outro ou cancele a operação.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -958,16 +971,6 @@ de forma que possa guardar o ficheiro no Windows.</translation>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translation>Aceite para poder receber este ficheiro</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Localização sem permissão de escrita</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>Não tem permissão de escrita aqui. Escolha outro local ou cancele a operação.</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1445,10 +1448,6 @@ O perfil não contém o seu histórico.</translation>
         <translation>Introduzir mensagem de estado</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translation>Mensagem de estado visível para os contactos</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translation>A sua Referência do Tox</translation>
     </message>
@@ -1498,6 +1497,10 @@ Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
         <translation>Este ID permite que outros utilizadores do Tox adicionem e entrem em contacto consigo.
 Partilhe-o com os seus amigos para começar a conversar.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">Defina a sua mensagem de estado que será mostrada aos outros</translation>
     </message>
 </context>
 <context>
@@ -1591,10 +1594,6 @@ Partilhe-o com os seus amigos para começar a conversar.</translation>
         <translation>Os perfis protegidos por palavra-passe não podem ser carregados automaticamente.</translation>
     </message>
     <message>
-        <source>Couldn&apos;t load profile</source>
-        <translation>Não foi possível carregar o perfil</translation>
-    </message>
-    <message>
         <source>There is no selected profile.
 
 You may want to create one.</source>
@@ -1668,6 +1667,10 @@ Pressione Shift+F1 para obter mais informações.</translation>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">A senha inserida aqui é opcional e criptografa os dados da mensagem e sua chave secreta Tox. Não criptografa os arquivos recebidos. Os dados do seu perfil nunca são enviados para nenhum servidor. Este não é um login remoto, é apenas local no seu computador. Os desenvolvedores do qTox não serão capazes de recuperar sua senha se perdida.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">Campo de entrada da palavra-passe, mínimo de 6 caracteres</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1678,14 +1681,6 @@ Pressione Shift+F1 para obter mais informações.</translation>
     <message>
         <source>Your status</source>
         <translation>O seu estado</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation>...</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translation>Adicionar contactos</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -1784,6 +1779,10 @@ Pressione Shift+F1 para obter mais informações.</translation>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Abra o depurador</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Adicionar contacto</translation>
     </message>
 </context>
 <context>
@@ -2049,11 +2048,6 @@ Por favor escolha outra.</translation>
         <translation>Não foi possível alterar o nome do perfil para &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Localização sem permissão de escrita</translation>
-    </message>
-    <message>
         <source>Are you sure you want to delete this profile?</source>
         <comment>deletion confirmation text</comment>
         <translation>Tem a certeza de que quer eliminar este perfil?</translation>
@@ -2163,11 +2157,6 @@ Por favor escolha outra.</translation>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
         <translation>Imagens (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>Não possui permissão de escrita nesse diretório. Escolha outro ou cancele a operação.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -2657,10 +2646,6 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translation>Definir a sua palavra-passe</translation>
-    </message>
-    <message>
         <source>The password doesn&apos;t match.</source>
         <translation>As palavras-passe não são iguais.</translation>
     </message>
@@ -2696,6 +2681,10 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
         <source>The password is too short.</source>
         <translation>Palavra-passe muito curta.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">Definir a palavra-passe do perfil</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -2722,11 +2711,6 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation>Adicionar um contacto</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translation>Quer adicionar %1 aos seus contactos?</translation>
     </message>
@@ -2747,6 +2731,11 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
         <translation>Cancelar</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">Adicionar contacto</translation>
     </message>
 </context>
 <context>
@@ -2769,10 +2758,6 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
     <message>
         <source>Base font:</source>
         <translation>Fonte de base:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation>px</translation>
     </message>
     <message>
         <source>Size: </source>

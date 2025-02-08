@@ -9,6 +9,7 @@
 
 #include "src/core/corefile.h"
 #include "src/persistence/settings.h"
+#include "src/widget/commondialogs.h"
 #include "src/widget/style.h"
 #include "src/widget/tool/imessageboxmanager.h"
 #include "src/widget/widget.h"
@@ -134,11 +135,8 @@ void FileTransferWidget::acceptTransfer(const QString& filepath)
 
     // test if writable
     if (!tryRemoveFile(filepath)) {
-        messageBoxManager
-            .showWarning(tr("Location not writable", "Title of permissions popup"),
-                         tr("You do not have permission to write that location. Choose another, or "
-                            "cancel the save dialog.",
-                            "text of permissions popup"));
+        const auto text = CommonDialogs::NoWritePermission();
+        messageBoxManager.showWarning(text.first, text.second);
         return;
     }
 

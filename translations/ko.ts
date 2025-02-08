@@ -350,10 +350,6 @@ which may lead to problems with video calls.</source>
         <translation>친구 요청하기</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation>친구 추가</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translation>친구 요청</translation>
     </message>
@@ -469,6 +465,10 @@ which may lead to problems with video calls.</source>
         <extracomment>Tox ID format description</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">76개의 16진수 문자</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">친구 추가</translation>
     </message>
 </context>
 <context>
@@ -872,6 +872,19 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translation type="unfinished">위치를 쓸 수 없음</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">해당 위치에 쓸 수 있는 권한이 없습니다. 다른 것을 선택하거나 저장 대화 상자를 취소하세요.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -1044,18 +1057,6 @@ so you can save the file on Windows.</source>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translation>수신수락</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">위치를 쓸 수 없음</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">해당 위치에 쓸 권한이 없습니다. 다른 것을 선택하거나 저장 대화 상자를 취소하세요.</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1599,11 +1600,6 @@ Profile does not contain your history.</source>
         <translation type="unfinished">상태 메시지 입력</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">연락처에 표시되는 상태 메시지</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">귀하의 Tox ID</translation>
@@ -1662,6 +1658,10 @@ Share it with your friends to begin chatting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">이 ID를 사용하면 다른 Tox 사용자가 귀하를 추가하고 연락할 수 있습니다.
 채팅을 시작하려면 친구들과 공유하세요.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">다른 사람에게 표시될 상태 메시지를 설정하세요.</translation>
     </message>
 </context>
 <context>
@@ -1753,11 +1753,6 @@ Share it with your friends to begin chatting.</source>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">비밀번호로 보호된 프로필은 자동으로 로드할 수 없습니다.</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">프로필을 로드할 수 없습니다.</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1867,6 +1862,10 @@ Press Shift+F1 for more information.</source>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">여기에 입력하는 비밀번호는 선택사항이며 메시지 데이터와 Tox 비밀 키를 암호화합니다. 수신된 파일은 암호화하지 않습니다. 귀하의 프로필 데이터는 어떤 서버로도 전송되지 않습니다. 이것은 원격 로그인이 아니며, 귀하의 컴퓨터에만 로컬로 로그인됩니다. qTox 개발자는 비밀번호를 분실한 경우 복구할 수 없습니다.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">비밀번호 입력 필드, 최소 6자 길이</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1877,16 +1876,6 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Your status</source>
         <translation type="unfinished">상태</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">...</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">친구 추가</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -2004,6 +1993,10 @@ Press Shift+F1 for more information.</source>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">디버거 열기</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">친구 추가</translation>
     </message>
 </context>
 <context>
@@ -2324,12 +2317,6 @@ Please use another image.</source>
         <translation type="unfinished">프로필 이름을 &quot;%1&quot;(으)로 바꿀 수 없습니다.</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">위치를 쓸 수 없음</translation>
-    </message>
-    <message>
         <source>Nothing to remove</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">제거할 항목 없음</translation>
@@ -2453,12 +2440,6 @@ Please use another image.</source>
         <comment>filetype filter</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">이미지(%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">해당 위치에 쓸 수 있는 권한이 없습니다. 다른 것을 선택하거나 저장 대화 상자를 취소하세요.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -3016,11 +2997,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">비밀번호를 설정하세요</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">확인하다:</translation>
@@ -3065,6 +3041,10 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">비밀번호가 너무 짧습니다.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">프로필 비밀번호 설정</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -3092,11 +3072,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation type="unfinished">친구 추가</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1을(를) 친구로 추가하시겠습니까?</translation>
@@ -3121,6 +3096,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">취소</translation>
     </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">친구 추가</translation>
+    </message>
 </context>
 <context>
     <name>UserInterfaceForm</name>
@@ -3143,11 +3123,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Base font:</source>
         <translation>기본폰트:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">px</translation>
     </message>
     <message>
         <source>Size: </source>

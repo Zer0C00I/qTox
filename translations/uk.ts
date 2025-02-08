@@ -330,10 +330,6 @@ which may lead to problems with video calls.</source>
         <translation>Не можемо додати друга</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation>Додати друга</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translation>Запити на додавання в друзі</translation>
     </message>
@@ -436,6 +432,10 @@ which may lead to problems with video calls.</source>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
         <translation>76 шестнадцатиричних (hex) символів</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Додати друга</translation>
     </message>
 </context>
 <context>
@@ -800,6 +800,19 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translation type="unfinished">Немає прав на запис</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">У вас немає дозволу щоб записувати в цю папку. Виберіть іншу, або скасуйте збереження діалогу.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -955,16 +968,6 @@ so you can save the file on Windows.</source>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translation>Підтвердіть щоб прийняти файл</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Немає прав на запис</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>Ви не маєте прав на запис за цим розташуванням. Оберіть інше місце призначення, або скасуйте передачу.</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1440,10 +1443,6 @@ Profile does not contain your history.</source>
         <translation>Поле ввода статуса</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translation>Статус, що буде показаний контактам</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translation>Ваш Tox ID</translation>
     </message>
@@ -1493,6 +1492,10 @@ Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
         <translation>Цей ідентифікатор дозволяє іншим користувачам Tox додавати вас у друзі та зв&apos;язуватися з вами.
 Поділіться ним з друзями, щоб почати спілкуватися.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">Встановіть Ваш статус, який буде показано іншим</translation>
     </message>
 </context>
 <context>
@@ -1569,10 +1572,6 @@ So I think in this case more appropriate is &quot;Увійти&quot;, which mean
     <message>
         <source>A profile with this name already exists.</source>
         <translation>Профіль з таким іменем уже існує.</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translation>Неможливо завантажити профіль</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1668,6 +1667,10 @@ Press Shift+F1 for more information.</source>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation>Пароль, який ви вводите тут, є необов&apos;язковим і шифрує дані повідомлень і ваш приватний (закритий) ключ Tox. Але він не шифрує отримані файли. Дані вашого профілю ніколи не надсилаються куди-небудь. І це не віддалений вхід у профіль, він відбувається лише локально, на вашому комп&apos;ютері. Розробники qTox не зможуть відновити ваш пароль, якщо він буде втрачений.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">Поле введення пароля, мінімальна довжина 6 символів</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1678,14 +1681,6 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Your status</source>
         <translation>Ваш статус</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translation>Додати друзів</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -1782,6 +1777,10 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Open Debugger</source>
         <translation>Відкрити Налагоджувач</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Додати друга</translation>
     </message>
 </context>
 <context>
@@ -2056,11 +2055,6 @@ Please use another image.</source>
         <translation>Неможливо перейменувати профіль в &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Немає прав на запис</translation>
-    </message>
-    <message>
         <source>Nothing to remove</source>
         <translation>Немає що видаляти</translation>
     </message>
@@ -2162,11 +2156,6 @@ Please use another image.</source>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
         <translation>Зображення (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>У вас немає дозволу щоб записувати в цю папку. Виберіть іншу, або скасуйте збереження діалогу.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -2643,10 +2632,6 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translation>Встановіть свій пароль</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translation>Підтвердження:</translation>
     </message>
@@ -2682,6 +2667,10 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
         <source>The password is too short.</source>
         <translation>Пароль занадто короткий.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">Встановити пароль</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -2705,11 +2694,6 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation>Додати друга</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translation>Бажаєте додати %1 як друга?</translation>
     </message>
@@ -2730,6 +2714,11 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
         <translation>Скасувати</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">Додати друга</translation>
     </message>
 </context>
 <context>
@@ -2752,10 +2741,6 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     <message>
         <source>Base font:</source>
         <translation>Основний шрифт:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation>пікселів</translation>
     </message>
     <message>
         <source>Size: </source>

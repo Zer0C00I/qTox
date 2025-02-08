@@ -378,10 +378,6 @@ which may lead to problems with video calls.</source>
         <translation>ⴰⵣⵏ ⵜⵓⵜⵔⴰ ⵏ ⵜⵉⴷⴷⵓⴽⴽⵍⴰ</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation>ⵔⵏⵓ ⵢⴰⵏ ⵓⵎⴷⴷⴰⴽⴽⵯⵍ</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ⵉⵙⵓⵜⴻⵔ ⵏ ⵉⵎⴷⵓⴽⴰⵍ</translation>
@@ -511,6 +507,10 @@ which may lead to problems with video calls.</source>
         <extracomment>Tox ID format description</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">76 ⵏ ⵢⵉⵙⴻⴽⴽⵉⵍⴻⵏ ⵏ ⵙⴹⵉⵙ ⵏ ⵜⵎⴻⵔⵡⵉⵏ</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">ⵔⵏⵓ ⴰⵎⴻⴷⴷⴰⴽⴻⵍ</translation>
     </message>
 </context>
 <context>
@@ -939,6 +939,19 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translation type="unfinished">ⴰⵎⴹⵉⵇ ⵓⵔ ⵢⴻⵜⵜⵡⴰⵔⵓ ⴰⵔⴰ</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">ⵓⵔ ⵜⴻⵙⵄⵉⴹ ⴰⵔⴰ ⵜⵜⴻⵙⵔⵉⵃ ⴰⴽⴽⴻⵏ ⴰⴷ ⵜⴰⵔⵓⴹ ⴷⴻⴳ ⵓⵎⴹⵉⵇⵏⵏⵉ. ⴼⵔⴻⵏ ⵡⴰⵢⴻⴹ, ⵏⴻⵖ ⴱⵟⴻⵍ ⴰⴷⵉⵡⴻⵏⵏⵉ ⵏ ⵓⵙⴻⵍⴽⴻⵎ.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -1116,18 +1129,6 @@ so you can save the file on Windows.</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ⵇⴱⴻⵍ ⴰⴷ ⵜⴽⴻⵛⵎⴻⴹ ⴰⴼⴰⵢⵍⵓⴰ</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ⴰⵎⴹⵉⵇ ⵓⵔ ⵢⴻⵜⵜⵡⴰⵔⵓ ⴰⵔⴰ</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ⵓⵔ ⵜⴻⵙⵄⵉⴹ ⴰⵔⴰ ⵜⵜⴻⵙⵔⵉⵃ ⴰⴽⴽⴻⵏ ⴰⴷ ⵜⴰⵔⵓⴹ ⴰⵎⴽⴰⵏⵏⵏⵉ. ⴼⵔⴻⵏ ⵡⴰⵢⴻⴹ, ⵏⴻⵖ ⴱⵟⴻⵍ ⴰⴷⵉⵡⴻⵏⵏⵉ ⵏ ⵓⵙⴻⵍⴽⴻⵎ.</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1704,11 +1705,6 @@ Profile does not contain your history.</source>
         <translation type="unfinished">ⴰⵙⴻⴽⵛⴻⵎ ⵏ ⵢⵉⵣⴻⵏ ⵏ ⵜⴻⴳⵏⵉⵜ</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ⵉⵣⴻⵏ ⵏ ⵜⴻⴳⵏⵉⵜ ⵉⴱⴰⵏⴻⵏ ⵉ ⵢⵉⵎⴻⵙⵍⴰⵢⴻⵏ</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ⵜⴰⵎⴰⴳⵉⵜⵉⴽ ⵏ Tox</translation>
@@ -1770,6 +1766,10 @@ Share it with your friends to begin chatting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">IDagi ⵢⴻⵜⵜⴰⴵⴵⴰ ⵉⵙⴻⵇⴷⴰⵛⴻⵏ ⵏⵏⵉⴹⴻⵏ ⵏ Tox ⴰⴷ ⵔⵏⵓⵏ ⵢⴻⵔⵏⴰ ⴰⴷ ⴽⵉⴷⵙⵙⵉⵡⴹⴻⵏ.
 ⴱⴹⵓⵜ ⴷ ⵉⵎⴷⵓⴽⴰⵍⵉⴽ ⴰⴽⴽⴻⵏ ⴰⴷ ⵜⴻⴱⴷⵓⴹ ⴰⵎⴻⵙⵍⴰⵢ.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">ⵙⴱⴻⴷⴷ ⵉⵣⴻⵏ ⵏ ⵜⴻⴳⵏⵉⵜⵉⴽ ⴰⵔⴰ ⴷⵢⴻⵜⵜⵡⴰⵙⴱⴻⴳⵏⴻⵏ ⵉ ⵡⵉⵢⴰⴹ</translation>
     </message>
 </context>
 <context>
@@ -1861,11 +1861,6 @@ Share it with your friends to begin chatting.</source>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ⵉⴼⴻⵔⴷⵉⵙⴻⵏ ⵢⴻⵜⵜⵡⴰⵃⴻⵔⵣⴻⵏ ⵙ ⵡⴰⵡⴰⵍ ⵓⴼⴼⵉⵔ ⵓⵔ ⵣⵎⵉⵔⴻⵏ ⴰⵔⴰ ⴰⴷ ⵜⵜⵡⴰⴹⴻⴳⴳⵔⴻⵏ ⵙ ⵡⵓⴷⴻⵎ ⴰⵡⵓⵔⵎⴰⵏ.</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ⵓⵔ ⵢⴻⵣⵎⵉⵔ ⴰⵔⴰ ⴰⴷ ⵢⴻⵔⴼⴻⴷ ⴰⴳⴱⵓⵔ</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1977,6 +1972,10 @@ Press Shift+F1 for more information.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ⴰⵡⴰⵍ ⵓⴼⴼⵉⵔ ⴰⵔⴰ ⵜⴻⵙⵙⴻⴽⵛⴻⵎⴹ ⴷⴰⴳⵉ ⴷ ⴰⴼⴻⵔⴷⵉⵙ ⵢⴻⵔⵏⴰ ⵢⴻⵜⵜⵚⴻⵔⵔⵉⴼ ⵉⵙⴻⴼⴽⴰ ⵏ ⵢⵉⵣⴻⵏ ⴷ ⵜⵎⴻⵥⴷⵉⵜⵉⴽ ⵏ ⵜⵓⴼⴼⵔⴰ ⵏ Tox. ⵓⵔ ⵢⴻⵜⵜⵛⴻⴳⴳⵉⵄ ⴰⵔⴰ ⵉⴼⵓⵢⵍⴰ ⵉ ⴷⵢⴻⵜⵜⵡⴰⵙⵇⴻⴷⵛⴻⵏ. ⵉⵙⴻⴼⴽⴰ ⵏ ⵓⴼⴻⵔⴷⵉⵙⵉⴽ ⵓⵔ ⵜⵜⵡⴰⵣⴻⵏ ⴰⵔⴰ ⵖⴻⵔ ⴽⵔⴰ ⵏ ⵢⵉⵇⴻⴷⴷⴰⵛⴻⵏ. ⵡⴰⴳⵉ ⵎⴰⵞⵞⵉ ⴷ ⴰⵙⴻⴽⵛⴻⵎ ⵙ ⵜⵖⴻⵔⵖⴻⵔⵜ, ⴷ ⴰⴷⵉⴳⴰⵏ ⵉ ⵓⵙⴻⵍⴽⵉⵎⵉⴽ ⴽⴰⵏ. ⵉⵎⵙⵓⴷⴷⵙⴻⵏ ⵏ qTox ⵓⵔ ⵣⵎⵉⵔⴻⵏ ⴰⵔⴰ ⴰⴷ ⴷⵙⴼⴰⵢⴷⵉⵏ ⵙⴻⴳ ⵡⴰⵡⴰⵍ ⵓⴼⴼⵉⵔⵉⴽ ⵎⴰ ⵢⴻⵍⵍⴰ ⵢⴻⵖⵍⵉ.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">ⴰⵃⵔⵉⵛ ⵏ ⵓⵙⴻⴽⵛⴻⵎ ⵏ ⵡⴰⵡⴰⵍ ⵓⴼⴼⵉⵔ, ⵙ ⵜⴻⵖⵣⵉ ⵏ 6 ⵏ ⵢⵉⵙⴻⴽⴽⵉⵍⴻⵏ</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1989,16 +1988,6 @@ Press Shift+F1 for more information.</source>
         <source>Your status</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ⴰⴷⴷⵓⴷⵉⴽ</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">...</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ⵔⵏⵓ ⵉⵎⴷⵓⴽⴰⵍ</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -2118,6 +2107,10 @@ Press Shift+F1 for more information.</source>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ⵍⴷⵉ Asenqed</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">ⵔⵏⵓ ⴰⵎⴻⴷⴷⴰⴽⴻⵍ</translation>
     </message>
 </context>
 <context>
@@ -2430,12 +2423,6 @@ Please use another image.</source>
         <translation type="unfinished">ⵓⵔ ⵢⴻⵣⵎⵉⵔ ⴰⵔⴰ ⴰⴷ ⵉⴱⴻⴷⴷⴻⵍ ⵉⵙⴻⵎ ⵏ ⵓⴼⴰⵢⵍⵓ ⵖⴻⵔ &quot;%1&quot;.</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ⴰⵎⴹⵉⵇ ⵓⵔ ⵢⴻⵜⵜⵡⴰⵔⵓ ⴰⵔⴰ</translation>
-    </message>
-    <message>
         <source>Nothing to remove</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ⵓⵍⴰⵛ ⴷ ⴰⵛⵓ ⴰⵔⴰ ⵏⴻⴽⴽⴻⵙ</translation>
@@ -2560,12 +2547,6 @@ Please use another image.</source>
         <comment>filetype filter</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ⵜⵓⴳⵏⵉⵡⵉⵏ (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ⵓⵔ ⵜⴻⵙⵄⵉⴹ ⴰⵔⴰ ⵜⵜⴻⵙⵔⵉⵃ ⴰⴽⴽⴻⵏ ⴰⴷ ⵜⴰⵔⵓⴹ ⴷⴻⴳ ⵓⵎⴹⵉⵇⵏⵏⵉ. ⴼⵔⴻⵏ ⵡⴰⵢⴻⴹ, ⵏⴻⵖ ⴱⵟⴻⵍ ⴰⴷⵉⵡⴻⵏⵏⵉ ⵏ ⵓⵙⴻⵍⴽⴻⵎ.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -3117,11 +3098,6 @@ IDa ⵢⴻⵙⵄⴰ ⴰⴽⴰⵔⴰⵎ ⵏ NoSpam (ⵙ ⵜⴼⴻⵍⵡⵉⵜ), �
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ⵙⴱⴻⴷⴷ ⴰⵡⴰⵍⵉⴽ ⵓⴼⴼⵉⵔ</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ⵙⵙⴻⴽⵏⴻⵖⵜ:</translation>
@@ -3166,6 +3142,10 @@ IDa ⵢⴻⵙⵄⴰ ⴰⴽⴰⵔⴰⵎ ⵏ NoSpam (ⵙ ⵜⴼⴻⵍⵡⵉⵜ), �
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ⴰⵡⴰⵍ ⵓⴼⴼⵉⵔ ⴷ ⴰⵡⴻⵣⵍⴰⵏ ⴰⵟⴰⵙ.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">ⵙⴱⴻⴷⴷ ⴰⵡⴰⵍ ⵓⴼⴼⵉⵔ ⵏ ⵓⴳⴱⵓⵔ</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -3193,12 +3173,6 @@ IDa ⵢⴻⵙⵄⴰ ⴰⴽⴰⵔⴰⵎ ⵏ NoSpam (ⵙ ⵜⴼⴻⵍⵡⵉⵜ), �
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ⵔⵏⵓ ⴰⵎⴻⴷⴷⴰⴽⴻⵍ</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ⵜⴻⴱⵖⵉⴹ ⴰⴷ ⵜⴻⵔⵏⵓⴹ %1 ⴷ ⴰⵎⴻⴷⴷⴰⴽⴻⵍ?</translation>
@@ -3225,6 +3199,11 @@ IDa ⵢⴻⵙⵄⴰ ⴰⴽⴰⵔⴰⵎ ⵏ NoSpam (ⵙ ⵜⴼⴻⵍⵡⵉⵜ), �
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ⵢⴻⴽⴽⴻⵙ</translation>
     </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">ⵔⵏⵓ ⴰⵎⴻⴷⴷⴰⴽⴻⵍ</translation>
+    </message>
 </context>
 <context>
     <name>UserInterfaceForm</name>
@@ -3250,11 +3229,6 @@ IDa ⵢⴻⵙⵄⴰ ⴰⴽⴰⵔⴰⵎ ⵏ NoSpam (ⵙ ⵜⴼⴻⵍⵡⵉⵜ), �
         <source>Base font:</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ⵜⵉⵔⴰ ⵏ ⵍⵍⵙⴰⵙ:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">px</translation>
     </message>
     <message>
         <source>Size: </source>

@@ -376,10 +376,6 @@ kio povas konduki al problemoj kun videovokoj.</translation>
         <translation type="unfinished">Sendu amikpeton</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation>Aldoni amikon</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translation>Amikiĝpetoj</translation>
     </message>
@@ -497,6 +493,10 @@ kio povas konduki al problemoj kun videovokoj.</translation>
         <extracomment>Tox ID format description</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">76 deksesuma signoj</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Aldoni amikon</translation>
     </message>
 </context>
 <context>
@@ -905,6 +905,19 @@ do vi povas konservi la dosieron en Vindozo.</translation>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translation type="unfinished">Loko ne skribebla</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">Vi ne havas permeson skribi al tiu loko. Elektu alian, aŭ nuligi la konservan dialogon.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -1072,18 +1085,6 @@ do vi povas konservi la dosieron en Vindozo.</translation>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translation>Akceptu por ricevi ĉi tiun dosieron</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Loko ne skribebla</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vi ne havas permeson skribi tiun lokon. Elektu alian, aŭ nuligi la konservan dialogon.</translation>
     </message>
     <message>
         <source>Paused</source>
@@ -1626,11 +1627,6 @@ Profilo ne enhavas vian historion.</translation>
         <translation type="unfinished">Enigo de stato-mesaĝo</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Statusa mesaĝo videbla por kontaktoj</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Via Tox-ID</translation>
@@ -1690,6 +1686,10 @@ Share it with your friends to begin chatting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ĉi tiu identigilo permesas al aliaj uzantoj de Tox aldoni kaj kontakti vin.
 Kunhavigu ĝin kun viaj amikoj por komenci babili.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">Agordu vian statusmesaĝon, kiu estos montrita al aliaj</translation>
     </message>
 </context>
 <context>
@@ -1781,11 +1781,6 @@ Kunhavigu ĝin kun viaj amikoj por komenci babili.</translation>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Pasvortprotektitaj profiloj ne povas esti aŭtomate ŝargitaj.</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ne eblis ŝargi profilon</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1889,6 +1884,10 @@ Premu Shift+F1 por pliaj informoj.</translation>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">La pasvorto, kiun vi enigas ĉi tie, estas laŭvola kaj ĉifras mesaĝdatenojn kaj vian sekretan ŝlosilon de Tox. Ĝi ne ĉifras dosierojn ricevitajn. Viaj profilaj datumoj neniam estas senditaj al iuj serviloj. Ĉi tio ne estas fora ensaluto, ĝi estas loka al via komputilo nur. qTox-programistoj ne povos reakiri vian pasvorton se perdita.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">Pasvorta enigokampo, minimume 6 signojn longa</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1899,14 +1898,6 @@ Premu Shift+F1 por pliaj informoj.</translation>
     <message>
         <source>Your status</source>
         <translation>Via stato</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation>...</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translation>Aldoni amikojn</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -2022,6 +2013,10 @@ Premu Shift+F1 por pliaj informoj.</translation>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Malfermu Erarserĉilon</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Aldoni amikon</translation>
     </message>
 </context>
 <context>
@@ -2334,12 +2329,6 @@ Bonvolu uzi alian bildon.</translation>
         <translation type="unfinished">Ne eblis renomi la profilon al &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Loko ne skribebla</translation>
-    </message>
-    <message>
         <source>Are you sure you want to delete this profile?</source>
         <comment>deletion confirmation text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
@@ -2456,12 +2445,6 @@ Bonvolu uzi alian bildon.</translation>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
         <translation type="unfinished">Bildoj (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vi ne havas permeson skribi al tiu loko. Elektu alian, aŭ nuligi la konservan dialogon.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -3013,11 +2996,6 @@ Kunhavigu ĝin kun viaj amikoj por komenci babili.
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Agordu vian pasvorton</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translation>Konfirmu:</translation>
     </message>
@@ -3060,6 +3038,10 @@ Kunhavigu ĝin kun viaj amikoj por komenci babili.
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">La pasvorto estas tro mallonga.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">Agordi profilan pasvorton</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -3086,11 +3068,6 @@ Kunhavigu ĝin kun viaj amikoj por komenci babili.
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation>Aldoni amikon</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translation>Ĉu vi volas aldoni %1 kiel amiko?</translation>
     </message>
@@ -3111,6 +3088,11 @@ Kunhavigu ĝin kun viaj amikoj por komenci babili.
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
         <translation>Nuligi</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">Aldoni amikon</translation>
     </message>
 </context>
 <context>
@@ -3133,10 +3115,6 @@ Kunhavigu ĝin kun viaj amikoj por komenci babili.
     <message>
         <source>Base font:</source>
         <translation>Defaŭlta tiparo:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation>rastrumeroj</translation>
     </message>
     <message>
         <source>Size: </source>

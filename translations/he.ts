@@ -383,11 +383,6 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">לא ניתן להוסיף חבר</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הוסף חבר</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">בקשות חברות</translation>
@@ -511,6 +506,10 @@ which may lead to problems with video calls.</source>
         <extracomment>Tox ID format description</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">76 תווים הקסדצימליים</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">הוסף חבר</translation>
     </message>
 </context>
 <context>
@@ -948,6 +947,19 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translation type="unfinished">מיקום לא ניתן לכתיבה</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">אין לך הרשאה לכתוב למיקום זה. בחר אחר, או בטל את תיבת הדו-שיח של השמירה.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -1127,18 +1139,6 @@ so you can save the file on Windows.</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">קבל לקבלת קובץ זה</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">מיקום לא ניתן לכתיבה</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">אין לך הרשאה לכתוב את המיקום הזה. בחר אחר, או בטל את תיבת הדו-שיח של השמירה.</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1716,11 +1716,6 @@ Profile does not contain your history.</source>
         <translation type="unfinished">קלט הודעת סטטוס</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הודעת סטטוס גלויה לאנשי קשר</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">מזהה הטוקס שלך</translation>
@@ -1782,6 +1777,10 @@ Share it with your friends to begin chatting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">מזהה זה מאפשר למשתמשי Tox אחרים להוסיף וליצור איתך קשר.
 שתף אותו עם חבריך כדי להתחיל בצ&apos;אט.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">הגדר את הודעת הסטטוס שלך שתוצג לאחרים</translation>
     </message>
 </context>
 <context>
@@ -1868,11 +1867,6 @@ Share it with your friends to begin chatting.</source>
         <source>A profile with this name already exists.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">פרופיל בשם זה כבר קיים.</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לא ניתן היה לטעון את הפרופיל</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1987,6 +1981,10 @@ Press Shift+F1 for more information.</source>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">הסיסמה שתזין כאן היא אופציונלית ומצפינה את נתוני ההודעות ואת המפתח הסודי שלך ב-Tox. זה לא מצפין קבצים שהתקבלו. נתוני הפרופיל שלך לעולם לא נשלחים לאף שרת. זו לא התחברות מרחוק, היא מקומית רק למחשב שלך. מפתחי qTox לא יוכלו לשחזר את הסיסמה שלך אם תאבד.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">שדה הזנת סיסמה, אורך מינימום 6 תווים</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1999,16 +1997,6 @@ Press Shift+F1 for more information.</source>
         <source>Your status</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">הסטטוס שלך</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">...</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הוסף חברים</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -2129,6 +2117,10 @@ Press Shift+F1 for more information.</source>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">פתח את Debugger</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">הוסף חבר</translation>
     </message>
 </context>
 <context>
@@ -2454,12 +2446,6 @@ Please use another image.</source>
         <translation type="unfinished">לא ניתן לשנות את שם הפרופיל ל&quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">מיקום לא ניתן לכתיבה</translation>
-    </message>
-    <message>
         <source>Nothing to remove</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">אין מה להסיר</translation>
@@ -2584,12 +2570,6 @@ Please use another image.</source>
         <comment>filetype filter</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">תמונות (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">אין לך הרשאה לכתוב למיקום זה. בחר אחר, או בטל את תיבת הדו-שיח של השמירה.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -3162,11 +3142,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הגדר את הסיסמה שלך</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">לְאַשֵׁר:</translation>
@@ -3211,6 +3186,10 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">הסיסמה קצרה מדי.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">הגדר את סיסמת הפרופיל</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -3238,12 +3217,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הוסף חבר</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">האם אתה רוצה להוסיף את %1 כחבר?</translation>
@@ -3270,6 +3243,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">לְבַטֵל</translation>
     </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">הוסף חבר</translation>
+    </message>
 </context>
 <context>
     <name>UserInterfaceForm</name>
@@ -3294,11 +3272,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Base font:</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">גופן בסיס:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">פיקסלים</translation>
     </message>
     <message>
         <source>Size: </source>

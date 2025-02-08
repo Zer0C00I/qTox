@@ -354,10 +354,6 @@ kar lahko povzroči težave z video klici.</translation>
         <translation>Format Tox ID ni veljaven</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation type="unfinished">Dodaj stik</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translation>Prošnje prijateljstva</translation>
     </message>
@@ -464,6 +460,10 @@ kar lahko povzroči težave z video klici.</translation>
         <extracomment>Tox ID format description</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">76 šestnajstiških znakov</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Dodaj stik</translation>
     </message>
 </context>
 <context>
@@ -844,6 +844,19 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translation type="unfinished">Lokacija zaščitena</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">Nimate dovoljenja za pisanje na to lokacijo. Izberite drugega ali prekličite pogovorno okno za shranjevanje.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -1008,16 +1021,6 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translation>Sprejmi to datoteko</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Lokacija zaščitena</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>Nimaš dovoljenja za pisanje na to lokacijo. Prosim izberi drugo ali prekliči shranjevanje.</translation>
     </message>
     <message>
         <source>Save a file</source>
@@ -1512,10 +1515,6 @@ Profil ne vsebuje tvoje zgodovine pogovorov.</translation>
         <translation>Sporočilo o stanju</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translation>Statusno sporočilo vidno v imenik</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translation>Vaš Tox ID</translation>
     </message>
@@ -1566,6 +1565,10 @@ Share it with your friends to begin chatting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ta ID omogoča drugim uporabnikom Toxa, da dodajo in stopijo v stik z vami.
 Delite ga s prijatelji, da začnete klepetati.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">Nastavite svoje statusno sporočilo, ki bo prikazano drugim</translation>
     </message>
 </context>
 <context>
@@ -1646,10 +1649,6 @@ Delite ga s prijatelji, da začnete klepetati.</translation>
     <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
         <translation>Z geslom zaščitenih profilov ni mogoče samodejno naložiti.</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translation>Ni mogoče naložiti profil</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1750,6 +1749,10 @@ Za več informacij pritisnite Shift+F1.</translation>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">Geslo, ki ga vnesete tukaj, ni obvezno in šifrira podatke sporočila in vaš skrivni ključ Tox. Prejetih datotek ne šifrira. Vaši profilni podatki se nikoli ne pošljejo nobenemu strežniku. To ni prijava na daljavo, je le lokalna v vašem računalniku. Razvijalci qTox ne bodo mogli obnoviti vašega gesla, če ga izgubite.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">Polje za vnos gesla, dolgo najmanj 6 znakov</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1760,10 +1763,6 @@ Za več informacij pritisnite Shift+F1.</translation>
     <message>
         <source>Your status</source>
         <translation>Tvoje stanje</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translation>Dodaj stike</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -1780,11 +1779,6 @@ Za več informacij pritisnite Shift+F1.</translation>
     <message>
         <source>Close</source>
         <translation>Zapri</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">...</translation>
     </message>
     <message>
         <source>Open profile</source>
@@ -1881,6 +1875,10 @@ Za več informacij pritisnite Shift+F1.</translation>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Odprite program za odpravljanje napak</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Dodaj stik</translation>
     </message>
 </context>
 <context>
@@ -2194,11 +2192,6 @@ Uporabite drugo sliko.</translation>
         <translation type="unfinished">Profila ni bilo mogoče preimenovati v »%1«</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation type="unfinished">Lokacija zaščitena</translation>
-    </message>
-    <message>
         <source>Are you sure you want to delete this profile?</source>
         <comment>deletion confirmation text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
@@ -2318,12 +2311,6 @@ Uporabite drugo sliko.</translation>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
         <translation type="unfinished">Slike (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nimate dovoljenja za pisanje na to lokacijo. Izberite drugega ali prekličite pogovorno okno za shranjevanje.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -2859,10 +2846,6 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translation>Nastavi geslo</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translation type="unfinished">Potrdi:</translation>
     </message>
@@ -2904,6 +2887,10 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Geslo je prekratko.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">Nastavite geslo za profil</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -2931,11 +2918,6 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation>Dodaj stik</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translation>Želiš dodati %1 med stike?</translation>
     </message>
@@ -2956,6 +2938,11 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
         <translation>Prekliči</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">Dodaj stik</translation>
     </message>
 </context>
 <context>
@@ -2980,11 +2967,6 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
         <source>Base font:</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Osnovna pisava:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">px</translation>
     </message>
     <message>
         <source>Size: </source>

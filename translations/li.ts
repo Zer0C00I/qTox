@@ -509,11 +509,6 @@ wat kin leie tot probleme mit videogesprekke.</translation>
         </translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Voeg un vrund toe</translation>
-    </message>
-    <message>
         <source>Import contacts</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Contacte importere</translation>
@@ -532,6 +527,10 @@ wat kin leie tot probleme mit videogesprekke.</translation>
         <source>Reject</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Aafsjloon</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Voeg vrund toe</translation>
     </message>
 </context>
 <context>
@@ -970,6 +969,19 @@ zodet geer ut bestand op Windows kin opsjlaon.</translation>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translation type="unfinished">Locatie neet te sjrieve</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">Geer höb gein toestemming um nao dee locatie te sjrieve. Kies ‘n aander, of annuleer ‘t opsjlaonvenster.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -1140,18 +1152,6 @@ zodet geer ut bestand op Windows kin opsjlaon.</translation>
 </context>
 <context>
     <name>FileTransferWidget</name>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Locatie neet te sjrieve</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Geer höb gein toestemming um dee locatie te sjrieve. Kies ‘n aander, of annuleer ‘t opsjlaonvenster.</translation>
-    </message>
     <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
@@ -1659,11 +1659,6 @@ in plaats vaan gans te slete.</translation>
         <translation type="unfinished">Invoer vaan statusberiech</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Statusberiech zichtbaar veur kontakte</translation>
-    </message>
-    <message>
         <source>Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Tox ID</translation>
@@ -1806,6 +1801,10 @@ Profile does not contain your history.</source>
         <source>Change password</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Wachtwoord verandere</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">Stel eur statusberiech in die aon andere weert getoend</translation>
     </message>
 </context>
 <context>
@@ -1981,11 +1980,6 @@ Zörg d’r veur dat ge twie kier ‘tzelfde wachtwoord invoert.</translation>
         <translation type="unfinished">Wachtwoord besjermde profiele kinne neet automatisch weure gelaod.</translation>
     </message>
     <message>
-        <source>Couldn&apos;t load profile</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kon profiel neet lade</translation>
-    </message>
-    <message>
         <source>There is no selected profile.
 
 You may want to create one.</source>
@@ -2012,6 +2006,10 @@ Druk op Shift+F1 veur mie informatie.</translation>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">‘t Wachwoord dat geer hei invoert is optioneel en versleut berichtgegeves en eur Tox-geheime sleutel. ‘t Versleutelt ontvange bestande neet. Uw profielgegevens weure noets nao servers gestuurd. Dit is gein externe inlog, dit is allein lokaal veur eur computer. qTox-ontwikkeleers kinne eur wachtwoord neet hersjtèlle es ‘t verlore geit.</translation>
+    </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">Wachwoordinvoerveld, minimum 6 teiken laank</translation>
     </message>
 </context>
 <context>
@@ -2075,16 +2073,6 @@ Druk op Shift+F1 veur mie informatie.</translation>
         <source>Set friends sorting and visibility</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Stel sorteer en zichtbaarheid vaan vrun</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">...</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Voeg vrun toe</translation>
     </message>
     <message>
         <source>Open Add friends page</source>
@@ -2155,6 +2143,10 @@ Druk op Shift+F1 veur mie informatie.</translation>
         <source>Close</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Sjleete</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Voeg vrund toe</translation>
     </message>
 </context>
 <context>
@@ -2483,18 +2475,6 @@ Gebruuk aub un aandere aafbeelding.</translation>
         <source>Empty name is unavailable</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Lege naam is neet besjikbaar</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Locatie neet te sjrieve</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Geer höb gein toestemming um nao dee locatie te sjrieve. Kies ‘n aander, of annuleer ‘t opsjlaonvenster.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -3190,11 +3170,6 @@ Deze ID umvat de NoSpam-code (in blauw) en de checksum (in gries).</translation>
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Stel eur wachtwoord in</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Bevestige:</translation>
@@ -3239,6 +3214,10 @@ Deze ID umvat de NoSpam-code (in blauw) en de checksum (in gries).</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">‘t Wachwoord kump neet euverein.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">Profielwachwoord insjtèlle</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -3271,12 +3250,6 @@ Deze ID umvat de NoSpam-code (in blauw) en de checksum (in gries).</translation>
         <translation type="unfinished">Wilste %1 toevoege es vrund?</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Voeg un vrund toe</translation>
-    </message>
-    <message>
         <source>User ID:</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Gebruikers-ID:</translation>
@@ -3297,6 +3270,11 @@ Deze ID umvat de NoSpam-code (in blauw) en de checksum (in gries).</translation>
         <comment>Don&apos;t send a friend request</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Annulere</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">Voeg vrund toe</translation>
     </message>
 </context>
 <context>
@@ -3323,11 +3301,6 @@ Deze ID umvat de NoSpam-code (in blauw) en de checksum (in gries).</translation>
         <source>Base font:</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Basislettertype:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">px</translation>
     </message>
     <message>
         <source>Size: </source>

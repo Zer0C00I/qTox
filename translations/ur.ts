@@ -372,11 +372,6 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">دوستی کی درخواست بھیجیں۔</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ایک دوست شامل کریں۔</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">دوستی کی درخواست</translation>
@@ -505,6 +500,10 @@ which may lead to problems with video calls.</source>
         <extracomment>Tox ID format description</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">76 ہیکسا ڈیسیمل حروف</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">دوست شامل کریں۔</translation>
     </message>
 </context>
 <context>
@@ -943,6 +942,19 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translation type="unfinished">مقام قابل تحریر نہیں ہے۔</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">آپ کو اس مقام پر لکھنے کی اجازت نہیں ہے۔ کوئی دوسرا منتخب کریں، یا محفوظ ڈائیلاگ کو منسوخ کریں۔</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -1122,18 +1134,6 @@ so you can save the file on Windows.</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">اس فائل کو وصول کرنا قبول کریں۔</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">مقام قابل تحریر نہیں ہے۔</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">آپ کو وہ مقام لکھنے کی اجازت نہیں ہے۔ کوئی دوسرا منتخب کریں، یا محفوظ ڈائیلاگ کو منسوخ کریں۔</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1711,11 +1711,6 @@ Profile does not contain your history.</source>
         <translation type="unfinished">اسٹیٹس میسج ان پٹ</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">اسٹیٹس پیغام رابطوں کے لیے نظر آتا ہے۔</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">آپ کی Tox ID</translation>
@@ -1777,6 +1772,10 @@ Share it with your friends to begin chatting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">یہ ID دوسرے Tox صارفین کو شامل کرنے اور آپ سے رابطہ کرنے کی اجازت دیتی ہے۔
 چیٹنگ شروع کرنے کے لیے اسے اپنے دوستوں کے ساتھ شیئر کریں۔</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">اپنا اسٹیٹس میسج سیٹ کریں جو دوسروں کو دکھایا جائے گا۔</translation>
     </message>
 </context>
 <context>
@@ -1868,11 +1867,6 @@ Share it with your friends to begin chatting.</source>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">پاس ورڈ سے محفوظ پروفائلز خود بخود لوڈ نہیں ہو سکتے۔</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پروفائل لوڈ نہیں ہو سکا</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1982,6 +1976,10 @@ Press Shift+F1 for more information.</source>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">آپ جو پاس ورڈ یہاں درج کرتے ہیں وہ اختیاری ہے اور پیغام کے ڈیٹا اور آپ کی Tox خفیہ کلید کو خفیہ کرتا ہے۔ یہ موصول ہونے والی فائلوں کو خفیہ نہیں کرتا ہے۔ آپ کا پروفائل ڈیٹا کبھی بھی کسی سرور کو نہیں بھیجا جاتا ہے۔ یہ ریموٹ لاگ ان نہیں ہے، یہ صرف آپ کے کمپیوٹر کے لیے مقامی ہے۔ qTox ڈویلپرز آپ کا پاس ورڈ کھو جانے کی صورت میں بازیافت نہیں کر سکیں گے۔</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">پاس ورڈ ان پٹ فیلڈ، کم از کم 6 حروف طویل</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1994,16 +1992,6 @@ Press Shift+F1 for more information.</source>
         <source>Your status</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">آپ کی حیثیت</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">...</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">دوستوں کو شامل کریں۔</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -2124,6 +2112,10 @@ Press Shift+F1 for more information.</source>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ڈیبگر کھولیں۔</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">دوست شامل کریں۔</translation>
     </message>
 </context>
 <context>
@@ -2449,12 +2441,6 @@ Please use another image.</source>
         <translation type="unfinished">پروفائل کا نام بدل کر &quot;%1&quot; نہیں کیا جا سکا</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">مقام قابل تحریر نہیں ہے۔</translation>
-    </message>
-    <message>
         <source>Nothing to remove</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ہٹانے کے لیے کچھ نہیں۔</translation>
@@ -2579,12 +2565,6 @@ Please use another image.</source>
         <comment>filetype filter</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">تصاویر (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">آپ کو اس مقام پر لکھنے کی اجازت نہیں ہے۔ کوئی دوسرا منتخب کریں، یا محفوظ ڈائیلاگ کو منسوخ کریں۔</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -3158,11 +3138,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">اپنا پاس ورڈ سیٹ کریں۔</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">تصدیق کریں:</translation>
@@ -3207,6 +3182,10 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">پاس ورڈ بہت چھوٹا ہے۔</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">پروفائل کا پاس ورڈ سیٹ کریں۔</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -3234,12 +3213,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ایک دوست شامل کریں۔</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">کیا آپ %1 کو بطور دوست شامل کرنا چاہتے ہیں؟</translation>
@@ -3266,6 +3239,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">منسوخ کریں۔</translation>
     </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">دوست شامل کریں۔</translation>
+    </message>
 </context>
 <context>
     <name>UserInterfaceForm</name>
@@ -3291,11 +3269,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Base font:</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">بنیادی فونٹ:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">px</translation>
     </message>
     <message>
         <source>Size: </source>

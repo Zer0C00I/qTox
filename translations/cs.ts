@@ -331,10 +331,6 @@ může dojít během video hovoru k výpadkům či jiným problémům.</translat
         <translation>Neplatný formát Tox ID</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation>Přidat kontakt</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translation>Žádosti o přidání</translation>
     </message>
@@ -437,6 +433,10 @@ může dojít během video hovoru k výpadkům či jiným problémům.</translat
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
         <translation>76 hexadecimálních znaků</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Přidat kontakty</translation>
     </message>
 </context>
 <context>
@@ -802,6 +802,20 @@ takže můžete soubor uložit i v systému Windows.</translation>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Poloha není zapisována</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">Nemáte oprávnění k zápisu do tohoto umístění. Zvolte jiné umístění nebo zavřete dialogové okno.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -961,16 +975,6 @@ takže můžete soubor uložit i v systému Windows.</translation>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translation>Potvrďte pro přijetí souboru</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Nelze zapsat do cíle</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>Nemáte povolení pro zápis do cíle. Vyberte prosím jiný nebo zruště přenos souboru.</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1448,10 +1452,6 @@ Při exportu nebude nahrána vaše historie.</translation>
         <translation>Nastavení vašeho statusu</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translation>Váš status viditelný pro kontakty</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translation>Vaše Tox ID</translation>
     </message>
@@ -1501,6 +1501,10 @@ Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
         <translation>Toto ID umožňuje ostatním uživatelům Toxu, aby si Vás přidali mezi své kontakty.
 Zašlete ho svým přátelům a navažte kontakt.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">Nastavte svůj status, který se zobrazí ostatním</translation>
     </message>
 </context>
 <context>
@@ -1594,10 +1598,6 @@ Zašlete ho svým přátelům a navažte kontakt.</translation>
         <translation>Heslem chráněné profily nelze načíst automaticky.</translation>
     </message>
     <message>
-        <source>Couldn&apos;t load profile</source>
-        <translation>Nelze načíst profil</translation>
-    </message>
-    <message>
         <source>There is no selected profile.
 
 You may want to create one.</source>
@@ -1671,6 +1671,10 @@ Stiskněte Shift+F1 pro další informace.</translation>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">Heslo, které zde zadáte, je volitelné a šifruje data zpráv a váš tajný klíč Tox. Nešifruje přijaté soubory. Údaje o vašem profilu se nikdy neodesílají na žádné servery. Toto není vzdálené přihlášení, je to pouze místní pro váš počítač. Vývojáři qTox nebudou schopni obnovit vaše heslo, pokud jej ztratíte.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">Pole pro zadání hesla, minimálně 6 znaků</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1681,14 +1685,6 @@ Stiskněte Shift+F1 pro další informace.</translation>
     <message>
         <source>Your status</source>
         <translation>Váš status</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation>...</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translation>Přidat kontakty</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -1787,6 +1783,10 @@ Stiskněte Shift+F1 pro další informace.</translation>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Otevřete Debugger</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Přidat kontakty</translation>
     </message>
 </context>
 <context>
@@ -2053,11 +2053,6 @@ Prosím použijte jiný.</translation>
         <translation>Nelze přejmenovat profil na &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Nelze zapsat do cílového souboru</translation>
-    </message>
-    <message>
         <source>Are you sure you want to delete this profile?</source>
         <comment>deletion confirmation text</comment>
         <translation>Opravdu chcete odstranit profil?</translation>
@@ -2167,11 +2162,6 @@ Prosím použijte jiný.</translation>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
         <translation>Obrázky (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>Nemáte oprávnění k zápisu do tohoto umístění. Zvolte jiné umístění nebo zavřete dialogové okno.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -2662,10 +2652,6 @@ ID zahrnuje kód NoSpam (modře) a kontrolní součet (šedě).</translation>
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translation>Nastavení hesla</translation>
-    </message>
-    <message>
         <source>The password doesn&apos;t match.</source>
         <translation>Hesla si neodpovídají.</translation>
     </message>
@@ -2701,6 +2687,10 @@ ID zahrnuje kód NoSpam (modře) a kontrolní součet (šedě).</translation>
         <source>The password is too short.</source>
         <translation>Délka hesla je příliš krátká.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">Nastavit heslo profilu</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -2727,11 +2717,6 @@ ID zahrnuje kód NoSpam (modře) a kontrolní součet (šedě).</translation>
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation>Přidat kontakt</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translation>Přejete si přidat %1 mezi kontakty?</translation>
     </message>
@@ -2752,6 +2737,11 @@ ID zahrnuje kód NoSpam (modře) a kontrolní součet (šedě).</translation>
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
         <translation>Zrušit</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">Přidat kontakty</translation>
     </message>
 </context>
 <context>
@@ -2774,10 +2764,6 @@ ID zahrnuje kód NoSpam (modře) a kontrolní součet (šedě).</translation>
     <message>
         <source>Base font:</source>
         <translation>Základní písmo:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation>px</translation>
     </message>
     <message>
         <source>Size: </source>

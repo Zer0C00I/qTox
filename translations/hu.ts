@@ -343,10 +343,6 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
         <translation>Érvénytelen ToxID formátum</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation>Partner hozzáadása</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translation>Partnerkérelmek</translation>
     </message>
@@ -450,6 +446,10 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
         <extracomment>Tox ID format description</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">76 hexadecimális karakter</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Partner hozzáadása</translation>
     </message>
 </context>
 <context>
@@ -825,6 +825,19 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translation type="unfinished">A hely írásvédett</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">Nincs engedélye arra, hogy erre a helyre írjon. Válasszon másikat, vagy törölje a mentési párbeszédpanelt.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -982,16 +995,6 @@ so you can save the file on Windows.</source>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translation>Egyezzen bele a fájl fogadásához</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>A hely írásvédett</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>Nincs írási jogosultsága a megadott helyre! Válasszon másikat, vagy zárja be a dialógusablakot.</translation>
     </message>
     <message>
         <source>Save a file</source>
@@ -1478,10 +1481,6 @@ A profil nem tartalmazza az Ön előzményeit.</translation>
         <translation>Állapotüzenet bevitel</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translation>Állapotüzenet látható a partnereknek</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translation>Az Ön Tox-azonosítója</translation>
     </message>
@@ -1532,6 +1531,10 @@ Share it with your friends to begin chatting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ez az azonosító lehetővé teszi a többi Tox-felhasználó számára, hogy hozzáadjanak és kapcsolatba léphessenek Önnel.
 Oszd meg barátaiddal a csevegés megkezdéséhez.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">Állítsa be állapotüzenetét, mely másoknak megjelenik</translation>
     </message>
 </context>
 <context>
@@ -1612,10 +1615,6 @@ Oszd meg barátaiddal a csevegés megkezdéséhez.</translation>
     <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
         <translation>A jelszóval védett profilok automatikusan nem tölthetőek be.</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translation>A profil betöltése nem sikerült</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1704,6 +1703,10 @@ További információért nyomja meg a Shift+F1 billentyűkombinációt.</transl
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">Az itt megadott jelszó nem kötelező, és titkosítja az üzenetadatokat és a titkos Tox kulcsot. Nem titkosítja a fogadott fájlokat. Profiladatait soha nem küldik el egyetlen szerverre sem. Ez nem távoli bejelentkezés, csak az Ön számítógépére vonatkozik. A qTox fejlesztői nem tudják visszaállítani jelszavát, ha elveszik.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">Jelszó beviteli mező, minimum 6 karakter hosszú</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1714,10 +1717,6 @@ További információért nyomja meg a Shift+F1 billentyűkombinációt.</transl
     <message>
         <source>Your status</source>
         <translation>Az Ön állapotüzenete</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translation>Partnerek hozzáadása</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -1734,10 +1733,6 @@ További információért nyomja meg a Shift+F1 billentyűkombinációt.</transl
     <message>
         <source>Close</source>
         <translation>Bezárás</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation>...</translation>
     </message>
     <message>
         <source>Open profile</source>
@@ -1820,6 +1815,10 @@ További információért nyomja meg a Shift+F1 billentyűkombinációt.</transl
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Nyissa meg a Debuggert</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Partner hozzáadása</translation>
     </message>
 </context>
 <context>
@@ -2099,11 +2098,6 @@ Válasszon egy másik képet.</translation>
         <translation>A profilt nem sikerült átnevezni erre: &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>A hely írásvédett</translation>
-    </message>
-    <message>
         <source>Are you sure you want to delete this profile?</source>
         <comment>deletion confirmation text</comment>
         <translation>Valóban törölni szeretné ezt a profilt?</translation>
@@ -2205,12 +2199,6 @@ Válasszon egy másik képet.</translation>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
         <translation>Képek (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nincs engedélye arra, hogy erre a helyre írjon. Válasszon másikat, vagy törölje a mentési párbeszédpanelt.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -2711,10 +2699,6 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel) és az ellenőrző
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translation>Állítsa be jelszavát</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translation>Megerősítés:</translation>
     </message>
@@ -2751,6 +2735,10 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel) és az ellenőrző
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">A jelszó túl rövid.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">Profil jelszó létrehozása</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -2777,11 +2765,6 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel) és az ellenőrző
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation>Partner hozzáadása</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translation>Szeretné hozzáadni %1 felhasználót partnerének?</translation>
     </message>
@@ -2802,6 +2785,11 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel) és az ellenőrző
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
         <translation>Mégsem</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">Partner hozzáadása</translation>
     </message>
 </context>
 <context>
@@ -2824,10 +2812,6 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel) és az ellenőrző
     <message>
         <source>Base font:</source>
         <translation>Betűtípus:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation>pixel</translation>
     </message>
     <message>
         <source>Size: </source>

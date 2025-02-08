@@ -349,10 +349,6 @@ which may lead to problems with video calls.</source>
         <translation>Μη έγκυρη μορφή Tox Ταυτότητας (ID)</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation>Προσθέστε ένα φίλο</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translation>Αιτήματα φιλίας</translation>
     </message>
@@ -457,6 +453,10 @@ which may lead to problems with video calls.</source>
         <extracomment>Tox ID format description</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">76 δεκαεξαδικοί χαρακτήρες</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Προσθήκη φίλου</translation>
     </message>
 </context>
 <context>
@@ -835,6 +835,19 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translation type="unfinished">Η τοποθεσία δεν είναι εγγράψιμη</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">Δεν έχετε άδεια να γράψετε σε αυτήν την τοποθεσία. Επιλέξτε άλλο ή ακυρώστε το παράθυρο διαλόγου αποθήκευσης.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -993,16 +1006,6 @@ so you can save the file on Windows.</source>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translation>Αποδοχή λήψης του αρχείου</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Η τοποθεσία δεν είναι εγγράψιμη</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>Δεν έχετε άδεια να γράψετε σε αυτή την θέση. Επιλέξτε μία άλλη, ή ακυρώστε την αποθήκευση.</translation>
     </message>
     <message>
         <source>Paused</source>
@@ -1494,10 +1497,6 @@ Profile does not contain your history.</source>
         <translation>Εισαγωγή μηνύματος κατάστασης</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translation>Μήνυμα κατάστασης ορατό στις επαφές</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translation>Η Τοx Ταυτότητα (ID) σας</translation>
     </message>
@@ -1548,6 +1547,10 @@ Share it with your friends to begin chatting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Αυτό το αναγνωριστικό επιτρέπει σε άλλους χρήστες του Tox να προσθέτουν και να επικοινωνούν μαζί σας.
 Μοιραστείτε το με τους φίλους σας για να ξεκινήσετε τη συνομιλία.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">Ορίστε το μήνυμα κατάστασης σας που θα εμφανίζεται στους άλλους</translation>
     </message>
 </context>
 <context>
@@ -1642,10 +1645,6 @@ Share it with your friends to begin chatting.</source>
         <translation>Τα προφίλ που προστατεύονται με κωδικό πρόσβασης δεν μπορούν να φορτώσουν αυτόματα.</translation>
     </message>
     <message>
-        <source>Couldn&apos;t load profile</source>
-        <translation>Αδυναμία φόρτωσης προφίλ</translation>
-    </message>
-    <message>
         <source>There is no selected profile.
 
 You may want to create one.</source>
@@ -1720,17 +1719,13 @@ Press Shift+F1 for more information.</source>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">Ο κωδικός πρόσβασης που εισάγετε εδώ είναι προαιρετικός και κρυπτογραφεί τα δεδομένα μηνυμάτων και το μυστικό κλειδί Tox σας. Δεν κρυπτογραφεί τα αρχεία που λαμβάνονται. Τα δεδομένα του προφίλ σας δεν αποστέλλονται ποτέ σε κανέναν διακομιστή. Δεν πρόκειται για απομακρυσμένη σύνδεση, είναι τοπική μόνο στον υπολογιστή σας. Οι προγραμματιστές qTox δεν θα μπορούν να ανακτήσουν τον κωδικό πρόσβασής σας εάν χαθεί.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">Πεδίο εισαγωγής κωδικού πρόσβασης, ελάχιστο μήκος 6 χαρακτήρες</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
-    <message>
-        <source>...</source>
-        <translation>...</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translation>Προσθήκη φίλων</translation>
-    </message>
     <message>
         <source>Create a conference</source>
         <translation type="unfinished">Δημιουργήστε μια ομάδα συνομιλίας</translation>
@@ -1836,6 +1831,10 @@ Press Shift+F1 for more information.</source>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ανοίξτε το πρόγραμμα εντοπισμού σφαλμάτων</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Προσθήκη φίλου</translation>
     </message>
 </context>
 <context>
@@ -2124,11 +2123,6 @@ Please use another image.</source>
         <translation>Αδυναμία μετονομασίας του προφίλ σε &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Η τοποθεσία δεν είναι εγγράψιμη</translation>
-    </message>
-    <message>
         <source>Are you sure you want to delete this profile?</source>
         <comment>deletion confirmation text</comment>
         <translation>Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτό το προφίλ;</translation>
@@ -2230,12 +2224,6 @@ Please use another image.</source>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
         <translation type="unfinished">Εικόνες (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Δεν έχετε άδεια να γράψετε σε αυτήν την τοποθεσία. Επιλέξτε άλλο ή ακυρώστε το παράθυρο διαλόγου αποθήκευσης.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -2756,10 +2744,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translation>Ορίστε τον κωδικό πρόσβασής σας</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translation>Επιβεβαίωση:</translation>
     </message>
@@ -2796,6 +2780,10 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ο κωδικός πρόσβασης είναι πολύ σύντομος.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">Ορισμός κωδικού πρόσβασης προφίλ</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -2822,11 +2810,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation>Προσθέστε ένα φίλο</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translation>Θέλετε να προσθέσετε τον/ην %1 ως φίλο;</translation>
     </message>
@@ -2847,6 +2830,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
         <translation>Άκυρο</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">Προσθήκη φίλου</translation>
     </message>
 </context>
 <context>
@@ -2869,10 +2857,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Base font:</source>
         <translation>Βασική γραμματοσειρά:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation>εικονοστοιχεία</translation>
     </message>
     <message>
         <source>Size: </source>

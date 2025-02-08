@@ -70,6 +70,7 @@ qt_moc(
         "widget/categorywidget.h",
         "widget/chatformheader.h",
         "widget/circlewidget.h",
+        "widget/commondialogs.h",
         "widget/conferencewidget.h",
         "widget/contentdialog.h",
         "widget/contentdialogmanager.h",

@@ -326,10 +326,6 @@ Take heed, fer higher qualities demand clearer skies and use more bandwidth. If 
         <translation>Fire off</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation>Join up with a mate</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translation>Awaitin&apos; hearties</translation>
     </message>
@@ -435,6 +431,10 @@ Take heed, fer higher qualities demand clearer skies and use more bandwidth. If 
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
         <translation type="unfinished">76 hex-a-dessamull characters</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Befriend a scallywag</translation>
     </message>
 </context>
 <context>
@@ -795,6 +795,19 @@ so ye can stash th&apos; file on Windows.</translation>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translation type="unfinished">Yaain&apos;t got permission ta store there</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">Ye ain&apos;t allowed ta write there. Choose another spot, or give up th&apos; save.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -947,16 +960,6 @@ so ye can stash th&apos; file on Windows.</translation>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translation>Arr to receive this parcel</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Yaain&apos;t got permission ta store there</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>That ain&apos;t yer chest. Pick another, or give up.</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1428,10 +1431,6 @@ Don&apos;t be holdin&apos; yer past deeds.</translation>
         <translation type="unfinished">Where ye write yer status</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translation type="unfinished">Status message shown ta yer hearties</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translation type="unfinished">Yer Tox ID</translation>
     </message>
@@ -1481,6 +1480,10 @@ Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
         <translation type="unfinished">This ID lets other Tox users add &apos;n&apos; contact ye.
 Share it with yer mateys ta start jawin&apos;.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">Set a message fer others ta see</translation>
     </message>
 </context>
 <context>
@@ -1555,10 +1558,6 @@ Share it with yer mateys ta start jawin&apos;.</translation>
     <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
         <translation type="unfinished">Profiles with passwords can&apos;t load themselves.</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translation type="unfinished">Couldn&apos;t load yer face</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1649,6 +1648,10 @@ Press Shift+F1 fer more information.</translation>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">Th&apos; secret word ye enter here be optional &apos;n&apos; hides yer messages &apos;n&apos; yer Tox secret key. It doesna hide files ye receive. Yer face data be never sent ta any servers. This be not a remote login, it be only on yer computer. qTox developers won&apos;t be able ta recover yer secret word if lost.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">Where ye write yer secret word, needs at least 6 bits o&apos; ink</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1659,15 +1662,6 @@ Press Shift+F1 fer more information.</translation>
     <message>
         <source>Your status</source>
         <translation type="unfinished">Yer Status</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation type="unfinished">Hmm...</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translation type="unfinished">Find new hearties</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -1764,6 +1758,10 @@ Press Shift+F1 fer more information.</translation>
     <message>
         <source>Open Debugger</source>
         <translation type="unfinished">Open th&apos; bug net</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Befriend a scallywag</translation>
     </message>
 </context>
 <context>
@@ -2035,11 +2033,6 @@ Please use another image.</source>
         <translation type="unfinished">Couldn&apos;t rename th&apos; profile ta &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation type="unfinished">Yaain&apos;t got permission ta store there</translation>
-    </message>
-    <message>
         <source>Nothing to remove</source>
         <translation type="unfinished">Nothin&apos; ta make walk th&apos; plank</translation>
     </message>
@@ -2141,11 +2134,6 @@ Please use another image.</source>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
         <translation type="unfinished">Pictures (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation type="unfinished">Ye ain&apos;t allowed ta write there. Choose another spot, or give up th&apos; save.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -2619,10 +2607,6 @@ This ID has th&apos; NoSpam code (in blue), &apos;n&apos; th&apos; checksum (in 
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translation type="unfinished">Set yer secret word</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translation type="unfinished">Aye, that be it:</translation>
     </message>
@@ -2658,6 +2642,10 @@ This ID has th&apos; NoSpam code (in blue), &apos;n&apos; th&apos; checksum (in 
         <source>The password is too short.</source>
         <translation type="unfinished">That secret word be too short.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">Give yer face a secret word</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -2681,11 +2669,6 @@ This ID has th&apos; NoSpam code (in blue), &apos;n&apos; th&apos; checksum (in 
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation>Join up with a mate</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translation type="unfinished">Do ye want ta make %1 a hearty?</translation>
     </message>
@@ -2706,6 +2689,11 @@ This ID has th&apos; NoSpam code (in blue), &apos;n&apos; th&apos; checksum (in 
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
         <translation type="unfinished">Belay that</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">Befriend a scallywag</translation>
     </message>
 </context>
 <context>
@@ -2728,10 +2716,6 @@ This ID has th&apos; NoSpam code (in blue), &apos;n&apos; th&apos; checksum (in 
     <message>
         <source>Base font:</source>
         <translation type="unfinished">Main letterin&apos;:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation type="unfinished">pix</translation>
     </message>
     <message>
         <source>Size: </source>

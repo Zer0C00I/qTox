@@ -322,10 +322,6 @@ which may lead to problems with video calls.</source>
         <translation>发送好友请求</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation>添加好友</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translation>好友请求</translation>
     </message>
@@ -434,6 +430,10 @@ which may lead to problems with video calls.</source>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
         <translation>76 个十六进制字符</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">添加好友</translation>
     </message>
 </context>
 <context>
@@ -798,6 +798,19 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translation type="unfinished">目录无法写入</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">您没有写入该位置的权限。选择另一个，或取消“保存”对话框。</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -949,16 +962,6 @@ so you can save the file on Windows.</source>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translation>同意接收此文件</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>目录无法写入</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>您没有写入此目录的权限。请选择其它目录或取消。</translation>
     </message>
     <message>
         <source>Paused</source>
@@ -1434,10 +1437,6 @@ Profile does not contain your history.</source>
         <translation>输入状态消息</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translation>状态消息对联系人可见</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translation>您的 Tox ID</translation>
     </message>
@@ -1487,6 +1486,10 @@ Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
         <translation>此 ID 允许其他 Tox 用户添加和联系您。
 与您的朋友分享以开始聊天。</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">设置您要展示给他人的个人状态消息</translation>
     </message>
 </context>
 <context>
@@ -1561,10 +1564,6 @@ Share it with your friends to begin chatting.</source>
     <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
         <translation>不能自动加载密码保护的配置。</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translation>无法加载配置</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1656,6 +1655,10 @@ Press Shift+F1 for more information.</source>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">您在此处输入的密码是可选的，它会对消息数据和您的 Tox 密钥进行加密。它不会加密收到的文件。您的个人资料数据永远不会发送到任何服务器。这不是远程登录，它仅适用于您的计算机本地。如果您的密码丢失，qTox 开发人员将无法恢复。</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">密码输入框，最小长度为 6 个字符</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1666,14 +1669,6 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Your status</source>
         <translation>您的状态</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation>...</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translation>添加好友</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -1770,6 +1765,10 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Open Debugger</source>
         <translation>打开调试器</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">添加好友</translation>
     </message>
 </context>
 <context>
@@ -2069,11 +2068,6 @@ Please use another image.</source>
         <translation>无法重命名该账户为“%1”</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>目录无法写入</translation>
-    </message>
-    <message>
         <source>Files could not be deleted!</source>
         <comment>deletion failed title</comment>
         <translation>无法删除文件！</translation>
@@ -2148,11 +2142,6 @@ Please use another image.</source>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
         <translation>图片 (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>您没有写入该位置的权限。选择另一个，或取消“保存”对话框。</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -2626,10 +2615,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translation>设置密码</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translation>确认：</translation>
     </message>
@@ -2665,6 +2650,10 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>The password is too short.</source>
         <translation>密码太短。</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">设置账户密码</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -2688,11 +2677,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation>添加好友</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translation>您想加 %1 为好友吗？</translation>
     </message>
@@ -2713,6 +2697,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
         <translation>取消</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">添加好友</translation>
     </message>
 </context>
 <context>
@@ -2735,10 +2724,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Base font:</source>
         <translation>基础字体：</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation>px</translation>
     </message>
     <message>
         <source>Size: </source>

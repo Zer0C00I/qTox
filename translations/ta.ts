@@ -352,10 +352,6 @@ which may lead to problems with video calls.</source>
         <translation>தோழராக்க வேண்டுகோளை அனுப்புக</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation>ஒரு நண்பரைச் சேர்க்கவும்</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translation>தோழராக்க வேண்டுகோள்கள்</translation>
     </message>
@@ -473,6 +469,10 @@ which may lead to problems with video calls.</source>
         <extracomment>Tox ID format description</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>76 எக்சாடெசிமல் எழுத்துக்கள்</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">நண்பரைச் சேர்க்கவும்</translation>
     </message>
 </context>
 <context>
@@ -858,6 +858,19 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translation type="unfinished">இடம் எழுத முடியாது</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">அந்த இடத்திற்கு எழுத உங்களுக்கு இசைவு இல்லை. மற்றொன்றைத் தேர்வுசெய்க, அல்லது சேமி உரையாடலை ரத்துசெய்.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -1018,16 +1031,6 @@ so you can save the file on Windows.</source>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translation>இந்த கோப்பைப் பெறவேண்டின் ஏற்புதல் அளியுங்கள்</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>தங்கள் கோப்பகத்தில் எழுதுதல் இயலாது</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>அந்தக் கோப்பகத்தில் எழுத உங்களுக்கு அனுமதி இல்லை. வேறொன்றைத் தேர்வுசெய்யவும் அல்லது சேமிப்புப் பெட்டகத்தை ரத்துசெய்யவும்.</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1526,11 +1529,6 @@ Profile does not contain your history.</source>
         <translation>நிலை செய்தி உள்ளீடு</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation>நிலை செய்தி தொடர்புகளுக்கு தெரியும்</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>உங்கள் டாக்ச் ஐடி</translation>
@@ -1590,6 +1588,10 @@ Share it with your friends to begin chatting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>இந்த ஐடி மற்ற டக்ச் பயனர்களை உங்களைச் சேர்க்கவும் தொடர்பு கொள்ளவும் அனுமதிக்கிறது.
  அரட்டையடிக்கத் தொடங்க அதை உங்கள் நண்பர்களுடன் பகிர்ந்து கொள்ளுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">மற்றவர்களுக்கு காண்பிக்கப்படும் உங்கள் நிலை செய்தியை அமைக்கவும்</translation>
     </message>
 </context>
 <context>
@@ -1681,11 +1683,6 @@ Share it with your friends to begin chatting.</source>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>கடவுச்சொல் பாதுகாக்கப்பட்ட சுயவிவரங்களை தானாக ஏற்ற முடியாது.</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation>சுயவிவரத்தை ஏற்ற முடியவில்லை</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1795,6 +1792,10 @@ Press Shift+F1 for more information.</source>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation>நீங்கள் இங்கே உள்ளிடும் கடவுச்சொல் விருப்பமானது மற்றும் செய்தி தரவு மற்றும் உங்கள் டக்ச் ரகசிய விசையை குறியாக்குகிறது. இது பெறப்பட்ட கோப்புகளை குறியாக்காது. உங்கள் சுயவிவர தரவு ஒருபோதும் எந்த சேவையகங்களுக்கும் அனுப்பப்படாது. இது தொலைநிலை உள்நுழைவு அல்ல, இது உங்கள் கணினிக்கு மட்டுமே உள்ளக. QTOX உருவாக்குபவர்கள் இழந்தால் உங்கள் கடவுச்சொல்லை மீட்டெடுக்க முடியாது.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">கடவுச்சொல் உள்ளீட்டு புலம், குறைந்தபட்சம் 6 எழுத்துக்கள் நீளம்</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1807,16 +1808,6 @@ Press Shift+F1 for more information.</source>
         <source>Your status</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>உங்கள் நிலை</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation>...</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation>நண்பர்களைச் சேர்க்கவும்</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -1936,6 +1927,10 @@ Press Shift+F1 for more information.</source>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>திறந்த பிழைத்திருத்தம்</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">நண்பரைச் சேர்க்கவும்</translation>
     </message>
 </context>
 <context>
@@ -2257,11 +2252,6 @@ Please use another image.</source>
         <translation>சுயவிவரத்தை &quot;%1&quot; என்று மறுபெயரிட முடியவில்லை</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>இடம் எழுத முடியாது</translation>
-    </message>
-    <message>
         <source>Nothing to remove</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>அகற்ற எதுவும் இல்லை</translation>
@@ -2385,12 +2375,6 @@ Please use another image.</source>
         <comment>filetype filter</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>படங்கள் (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation>அந்த இடத்திற்கு எழுத உங்களுக்கு இசைவு இல்லை. மற்றொன்றைத் தேர்வுசெய்க, அல்லது சேமி உரையாடலை ரத்துசெய்.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -2945,11 +2929,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation>உங்கள் கடவுச்சொல்லை அமைக்கவும்</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>உறுதிப்படுத்தவும்:</translation>
@@ -2994,6 +2973,10 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>கடவுச்சொல் மிகக் குறைவு.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">சுயவிவர கடவுச்சொல்லை அமைக்கவும்</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -3021,11 +3004,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation>ஒரு நண்பரைச் சேர்க்கவும்</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>நண்பராக %1 ஐ சேர்க்க விரும்புகிறீர்களா?</translation>
@@ -3049,6 +3027,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <comment>Don&apos;t send a friend request</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>ரத்துசெய்</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">நண்பரைச் சேர்க்கவும்</translation>
     </message>
 </context>
 <context>
@@ -3074,11 +3057,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Base font:</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>அடிப்படை எழுத்துரு:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation>பி.எக்ச்</translation>
     </message>
     <message>
         <source>Size: </source>

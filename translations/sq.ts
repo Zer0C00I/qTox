@@ -391,11 +391,6 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
         <translation type="unfinished">Dërgo kërkesë për miqësi</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Shto një mik</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Kërkesat për miqësi</translation>
@@ -524,6 +519,10 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
         <extracomment>Tox ID format description</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">76 karaktere heksadecimal</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Shto mik</translation>
     </message>
 </context>
 <context>
@@ -962,6 +961,19 @@ kështu që mund ta ruani skedarin në Windows.</translation>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translation type="unfinished">Vendndodhja nuk mund të shkruhet</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">Ju nuk keni leje për të shkruar në atë vend. Zgjidhni një tjetër ose anuloni dialogun e ruajtjes.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -1141,18 +1153,6 @@ kështu që mund ta ruani skedarin në Windows.</translation>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Pranoni të merrni këtë skedar</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vendndodhja nuk mund të shkruhet</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ju nuk keni leje për të shkruar atë vendndodhje. Zgjidhni një tjetër ose anuloni dialogun e ruajtjes.</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1730,11 +1730,6 @@ Profili nuk përmban historikun tuaj.</translation>
         <translation type="unfinished">Hyrja e mesazhit të statusit</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Mesazhi i statusit i dukshëm për kontaktet</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ID juaj Tox</translation>
@@ -1796,6 +1791,10 @@ Share it with your friends to begin chatting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ky ID lejon përdoruesit e tjerë të Tox të shtojnë dhe t&apos;ju kontaktojnë.
 Ndani atë me miqtë tuaj për të filluar bisedën.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">Vendosni mesazhin tuaj të statusit që do t&apos;u shfaqet të tjerëve</translation>
     </message>
 </context>
 <context>
@@ -1887,11 +1886,6 @@ Ndani atë me miqtë tuaj për të filluar bisedën.</translation>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Profilet e mbrojtura me fjalëkalim nuk mund të ngarkohen automatikisht.</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Profili nuk mund të ngarkohej</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -2001,6 +1995,10 @@ Shtypni Shift+F1 për më shumë informacion.</translation>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">Fjalëkalimi që futni këtu është opsional dhe kodon të dhënat e mesazhit dhe çelësin tuaj sekret Tox. Nuk i kodon skedarët e marrë. Të dhënat e profilit tuaj nuk dërgohen kurrë në asnjë server. Ky nuk është një hyrje në distancë, është vetëm lokal në kompjuterin tuaj. Zhvilluesit e qTox nuk do të jenë në gjendje të rikuperojnë fjalëkalimin tuaj nëse humbet.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">Fusha e futjes së fjalëkalimit, të paktën 6 karaktere e gjatë</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -2013,16 +2011,6 @@ Shtypni Shift+F1 për më shumë informacion.</translation>
         <source>Your status</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Statusi juaj</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">...</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Shto miq</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -2143,6 +2131,10 @@ Shtypni Shift+F1 për më shumë informacion.</translation>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Hap Debugger</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Shto mik</translation>
     </message>
 </context>
 <context>
@@ -2468,12 +2460,6 @@ Ju lutemi përdorni një imazh tjetër.</translation>
         <translation type="unfinished">Nuk mundi ta riemërtonte profilin në &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vendndodhja nuk mund të shkruhet</translation>
-    </message>
-    <message>
         <source>Nothing to remove</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Asgjë për të hequr</translation>
@@ -2598,12 +2584,6 @@ Ju lutemi përdorni një imazh tjetër.</translation>
         <comment>filetype filter</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Imazhe (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ju nuk keni leje për të shkruar në atë vend. Zgjidhni një tjetër ose anuloni dialogun e ruajtjes.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -3177,11 +3157,6 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vendosni fjalëkalimin tuaj</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Konfirmo:</translation>
@@ -3226,6 +3201,10 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Fjalëkalimi është shumë i shkurtër.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">Vendos fjalëkalimin e profilit</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -3253,12 +3232,6 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Shto një mik</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Dëshiron të shtosh %1 si mik?</translation>
@@ -3285,6 +3258,11 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Anulo</translation>
     </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">Shto mik</translation>
+    </message>
 </context>
 <context>
     <name>UserInterfaceForm</name>
@@ -3310,11 +3288,6 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
         <source>Base font:</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Fonti bazë:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">px</translation>
     </message>
     <message>
         <source>Size: </source>

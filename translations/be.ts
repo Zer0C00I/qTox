@@ -339,10 +339,6 @@ which may lead to problems with video calls.</source>
         <translation>Адправіць запыт сяброўства</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation>Дадаць сябра</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translation>Запыты сяброўства</translation>
     </message>
@@ -452,6 +448,10 @@ which may lead to problems with video calls.</source>
         <extracomment>Tox ID format description</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">76 шаснаццатковых знакаў</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Дадаць сябра</translation>
     </message>
 </context>
 <context>
@@ -829,6 +829,20 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Размяшчэнне не пішацца</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">У вас няма дазволу пісаць у гэта месца. Выберыце іншы або адмяніце дыялогавае акно захавання.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -989,16 +1003,6 @@ so you can save the file on Windows.</source>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translation>Прыняць гэты файл</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Размяшчэнне не даступна для запісу</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>У вас няма дазволу на запіс у гэта размяшчэнне. Выберыце іншае, або адмяніце дыялог захавання.</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1487,10 +1491,6 @@ Profile does not contain your history.</source>
         <translation>Увод паведамлення аб стане</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translation>Паведамленне аб стане бачна кантактам</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translation>Ваш Tox ID</translation>
     </message>
@@ -1541,6 +1541,10 @@ Share it with your friends to begin chatting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Гэты ідэнтыфікатар дазваляе іншым карыстальнікам Tox дадаваць і звязвацца з вамі.
 Падзяліцеся з сябрамі, каб пачаць размаўляць.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">Задаць ваша паведамленне аб стане, якое будзе бачна іншым</translation>
     </message>
 </context>
 <context>
@@ -1617,10 +1621,6 @@ Share it with your friends to begin chatting.</source>
     <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
         <translation>Профілі, абароненыя паролем, не могуць быць загружаны аўтаматычна.</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translation>Не атрамалася загрузіць профіль</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1713,6 +1713,10 @@ Press Shift+F1 for more information.</source>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">Пароль, які вы ўводзіце тут, не з&apos;яўляецца абавязковым і шыфруе даныя паведамлення і ваш сакрэтны ключ Tox. Ён не шыфруе атрыманыя файлы. Даныя вашага профілю ніколі не адпраўляюцца ні на якія серверы. Гэта не аддалены ўваход, ён толькі лакальны для вашага кампутара. Распрацоўшчыкі qTox не змогуць аднавіць ваш пароль у выпадку страты.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">Поле ўводу пароля, не менш, чым 6 знакаў</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1723,15 +1727,6 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Your status</source>
         <translation>Ваш стан</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>…</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translation>Дадаць сяброў</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -1830,6 +1825,10 @@ Press Shift+F1 for more information.</source>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Адкрыйце адладчык</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Дадаць сябра</translation>
     </message>
 </context>
 <context>
@@ -2115,11 +2114,6 @@ Please use another image.</source>
         <translation>Не ўдалося перайменаваць профіль у «%1»</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Размяшчэнне недаступна для запісу</translation>
-    </message>
-    <message>
         <source>Nothing to remove</source>
         <translation>Няма чаго выдаляць</translation>
     </message>
@@ -2221,12 +2215,6 @@ Please use another image.</source>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
         <translation>Малюнкі (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">У вас няма дазволу пісаць у гэта месца. Выберыце іншы або адмяніце дыялогавае акно захавання.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -2727,10 +2715,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translation>Задайце ваш пароль</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translation>Паўтор:</translation>
     </message>
@@ -2767,6 +2751,10 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Пароль занадта кароткі.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">Усталяваць пароль профіля</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -2793,11 +2781,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation>Дадаць сябра</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translation>Вы хочаце дадаць %1 сябрам?</translation>
     </message>
@@ -2818,6 +2801,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
         <translation>Адмяніць</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">Дадаць сябра</translation>
     </message>
 </context>
 <context>
@@ -2840,10 +2828,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Base font:</source>
         <translation>Базавы шрыфт:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation>px</translation>
     </message>
     <message>
         <source>Size: </source>

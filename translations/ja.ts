@@ -350,10 +350,6 @@ which may lead to problems with video calls.</source>
         <translation>友達リクエストを送信</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation>友達を追加</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translation>友達の承認要求</translation>
     </message>
@@ -457,6 +453,10 @@ which may lead to problems with video calls.</source>
         <extracomment>Tox ID format description</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>16 進数 76 文字</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">友達を追加</translation>
     </message>
 </context>
 <context>
@@ -838,6 +838,20 @@ Windows にファイルを保存できるようになります。</translation>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">場所は書かれていません</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">その場所に書き込む権限がありません。別のものを選択するか、保存ダイアログをキャンセルしてください。</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -998,16 +1012,6 @@ Windows にファイルを保存できるようになります。</translation>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translation>承認してファイルを受け取る</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>保存先に書き込めません</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>書き込むのに必要な権限がありません！他の場所を選択するか、キャンセルしてください。</translation>
     </message>
     <message>
         <source>Paused</source>
@@ -1499,10 +1503,6 @@ Profile does not contain your history.</source>
         <translation>ステータスメッセージ入力</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translation>連絡先に表示されるステータスメッセージ</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translation>自分の Tox ID</translation>
     </message>
@@ -1553,6 +1553,10 @@ Share it with your friends to begin chatting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>この ID を使用すると、他の Tox ユーザーがあなたを追加して連絡できるようになります。
 友達と共有してチャットを始めましょう。</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">他の人に表示されるステータスメッセージを設定してください</translation>
     </message>
 </context>
 <context>
@@ -1633,10 +1637,6 @@ Share it with your friends to begin chatting.</source>
     <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
         <translation>パスワードで保護されたプロファイルを自動的に読み込めません。</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translation>プロファイルを読み込めませんでした</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1725,6 +1725,10 @@ Press Shift+F1 for more information.</source>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation>ここで入力するパスワードはオプションで、メッセージ データと Tox 秘密キーを暗号化します。受信したファイルは暗号化されません。あなたのプロフィール データがサーバーに送信されることはありません。これはリモート ログインではなく、お使いのコンピュータのローカルに対してのみです。 qTox 開発者は、パスワードを紛失した場合は回復できません。</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">パスワードの入力欄、最低でも 6 文字</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1735,14 +1739,6 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Your status</source>
         <translation>ステータス</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation>…</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translation>友達を追加</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -1841,6 +1837,10 @@ Press Shift+F1 for more information.</source>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>デバッガーを開く</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">友達を追加</translation>
     </message>
 </context>
 <context>
@@ -2128,11 +2128,6 @@ Please use another image.</source>
         <translation>プロファイル名を &quot;%1&quot; に変更できませんでした</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>場所が書き込み可能ではありません</translation>
-    </message>
-    <message>
         <source>Are you sure you want to delete this profile?</source>
         <comment>deletion confirmation text</comment>
         <translation>このプロファイルを削除してもよろしいですか？</translation>
@@ -2234,12 +2229,6 @@ Please use another image.</source>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
         <translation>画像 (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation>その場所に書き込む権限がありません。別のものを選択するか、保存ダイアログをキャンセルしてください。</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -2760,10 +2749,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translation>パスワードを設定</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translation>確認:</translation>
     </message>
@@ -2800,6 +2785,10 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>パスワードが短すぎます。</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">プロファイルにパスワードを設定</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -2826,11 +2815,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation>友達を追加</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translation>%1 を友達に追加しますか？</translation>
     </message>
@@ -2851,6 +2835,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
         <translation>キャンセル</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">友達を追加</translation>
     </message>
 </context>
 <context>
@@ -2873,10 +2862,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Base font:</source>
         <translation>基本のフォント:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation>px</translation>
     </message>
     <message>
         <source>Size: </source>

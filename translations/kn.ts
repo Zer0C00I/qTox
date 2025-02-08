@@ -391,10 +391,6 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">ಸ್ನೇಹಿತರ ವಿನಂತಿಯನ್ನು ಕಳುಹಿಸಿ</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation>ನಿನ್ನ ಗೆಳೆಯನನ್ನು ಸೇರಿಸು</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ಸ್ನೇಹಿತರ ವಿನಂತಿಗಳು</translation>
@@ -523,6 +519,10 @@ which may lead to problems with video calls.</source>
         <extracomment>Tox ID format description</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">76 ಹೆಕ್ಸಾಡೆಸಿಮಲ್ ಅಕ್ಷರಗಳು</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">ಸ್ನೇಹಿತನನ್ನು ಸೇರಿಸಿ</translation>
     </message>
 </context>
 <context>
@@ -961,6 +961,19 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translation type="unfinished">ಸ್ಥಳವನ್ನು ಬರೆಯಲಾಗುವುದಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">ಆ ಸ್ಥಳಕ್ಕೆ ಬರೆಯಲು ನೀವು ಅನುಮತಿಯನ್ನು ಹೊಂದಿಲ್ಲ. ಇನ್ನೊಂದನ್ನು ಆರಿಸಿ ಅಥವಾ ಉಳಿಸುವ ಸಂವಾದವನ್ನು ರದ್ದುಮಾಡಿ.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -1139,18 +1152,6 @@ so you can save the file on Windows.</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ಈ ಫೈಲ್ ಸ್ವೀಕರಿಸಲು ಒಪ್ಪಿಕೊಳ್ಳಿ</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ಸ್ಥಳವನ್ನು ಬರೆಯಲಾಗುವುದಿಲ್ಲ</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ಆ ಸ್ಥಳವನ್ನು ಬರೆಯಲು ನೀವು ಅನುಮತಿಯನ್ನು ಹೊಂದಿಲ್ಲ. ಇನ್ನೊಂದನ್ನು ಆರಿಸಿ ಅಥವಾ ಉಳಿಸುವ ಸಂವಾದವನ್ನು ರದ್ದುಮಾಡಿ.</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1723,11 +1724,6 @@ Profile does not contain your history.</source>
         <translation type="unfinished">ಸ್ಥಿತಿ ಸಂದೇಶ ಇನ್‌ಪುಟ್</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ಸಂಪರ್ಕಗಳಿಗೆ ಗೋಚರಿಸುವ ಸ್ಥಿತಿ ಸಂದೇಶ</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ನಿಮ್ಮ ಟಾಕ್ಸ್ ಐಡಿ</translation>
@@ -1789,6 +1785,10 @@ Share it with your friends to begin chatting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ಈ ಐಡಿ ಇತರ ಟಾಕ್ಸ್ ಬಳಕೆದಾರರನ್ನು ಸೇರಿಸಲು ಮತ್ತು ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಲು ಅನುಮತಿಸುತ್ತದೆ.
 ಚಾಟ್ ಮಾಡಲು ಇದನ್ನು ನಿಮ್ಮ ಸ್ನೇಹಿತರೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳಿ.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">ಇತರರಿಗೆ ತೋರಿಸಲಾಗುವ ನಿಮ್ಮ ಸ್ಥಿತಿ ಸಂದೇಶವನ್ನು ಹೊಂದಿಸಿ</translation>
     </message>
 </context>
 <context>
@@ -1880,11 +1880,6 @@ Share it with your friends to begin chatting.</source>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ಪಾಸ್‌ವರ್ಡ್ ಸಂರಕ್ಷಿತ ಪ್ರೊಫೈಲ್‌ಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ.</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ಪ್ರೊಫೈಲ್ ಅನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1994,6 +1989,10 @@ Press Shift+F1 for more information.</source>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">ನೀವು ಇಲ್ಲಿ ನಮೂದಿಸುವ ಪಾಸ್‌ವರ್ಡ್ ಐಚ್ಛಿಕವಾಗಿರುತ್ತದೆ ಮತ್ತು ಸಂದೇಶ ಡೇಟಾ ಮತ್ತು ನಿಮ್ಮ ಟಾಕ್ಸ್ ರಹಸ್ಯ ಕೀಲಿಯನ್ನು ಎನ್‌ಕ್ರಿಪ್ಟ್ ಮಾಡುತ್ತದೆ. ಇದು ಸ್ವೀಕರಿಸಿದ ಫೈಲ್‌ಗಳನ್ನು ಎನ್‌ಕ್ರಿಪ್ಟ್ ಮಾಡುವುದಿಲ್ಲ. ನಿಮ್ಮ ಪ್ರೊಫೈಲ್ ಡೇಟಾವನ್ನು ಎಂದಿಗೂ ಯಾವುದೇ ಸರ್ವರ್‌ಗಳಿಗೆ ಕಳುಹಿಸಲಾಗುವುದಿಲ್ಲ. ಇದು ರಿಮೋಟ್ ಲಾಗಿನ್ ಅಲ್ಲ, ಇದು ನಿಮ್ಮ ಕಂಪ್ಯೂಟರ್‌ಗೆ ಮಾತ್ರ ಸ್ಥಳೀಯವಾಗಿದೆ. qTox ಡೆವಲಪರ್‌ಗಳು ಕಳೆದುಹೋದರೆ ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಮರುಪಡೆಯಲು ಸಾಧ್ಯವಾಗುವುದಿಲ್ಲ.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">ಪಾಸ್‌ವರ್ಡ್ ಇನ್‌ಪುಟ್ ಕ್ಷೇತ್ರ, ಕನಿಷ್ಠ 6 ಅಕ್ಷರಗಳ ಉದ್ದ</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -2006,16 +2005,6 @@ Press Shift+F1 for more information.</source>
         <source>Your status</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ನಿಮ್ಮ ಸ್ಥಿತಿ</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">...</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ಸ್ನೇಹಿತರನ್ನು ಸೇರಿಸಿ</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -2136,6 +2125,10 @@ Press Shift+F1 for more information.</source>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ಡೀಬಗರ್ ತೆರೆಯಿರಿ</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">ಸ್ನೇಹಿತನನ್ನು ಸೇರಿಸಿ</translation>
     </message>
 </context>
 <context>
@@ -2460,12 +2453,6 @@ Please use another image.</source>
         <translation type="unfinished">ಪ್ರೊಫೈಲ್ ಅನ್ನು &quot;%1&quot; ಗೆ ಮರುಹೆಸರಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ಸ್ಥಳವನ್ನು ಬರೆಯಲಾಗುವುದಿಲ್ಲ</translation>
-    </message>
-    <message>
         <source>Nothing to remove</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ತೆಗೆದುಹಾಕಲು ಏನೂ ಇಲ್ಲ</translation>
@@ -2590,12 +2577,6 @@ Please use another image.</source>
         <comment>filetype filter</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ಚಿತ್ರಗಳು (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ಆ ಸ್ಥಳಕ್ಕೆ ಬರೆಯಲು ನೀವು ಅನುಮತಿಯನ್ನು ಹೊಂದಿಲ್ಲ. ಇನ್ನೊಂದನ್ನು ಆರಿಸಿ ಅಥವಾ ಉಳಿಸುವ ಸಂವಾದವನ್ನು ರದ್ದುಮಾಡಿ.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -3168,11 +3149,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ನಿಮ್ಮ ಗುಪ್ತಪದವನ್ನು ಹೊಂದಿಸಿ</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ದೃಢೀಕರಿಸಿ:</translation>
@@ -3217,6 +3193,10 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ಪಾಸ್ವರ್ಡ್ ತುಂಬಾ ಚಿಕ್ಕದಾಗಿದೆ.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">ಪ್ರೊಫೈಲ್ ಪಾಸ್ವರ್ಡ್ ಹೊಂದಿಸಿ</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -3244,11 +3224,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation type="unfinished">ನಿನ್ನ ಗೆಳೆಯನನ್ನು ಸೇರಿಸು</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ನೀವು %1 ಅವರನ್ನು ಸ್ನೇಹಿತರಂತೆ ಸೇರಿಸಲು ಬಯಸುವಿರಾ?</translation>
@@ -3275,6 +3250,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ರದ್ದುಮಾಡಿ</translation>
     </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">ಸ್ನೇಹಿತನನ್ನು ಸೇರಿಸಿ</translation>
+    </message>
 </context>
 <context>
     <name>UserInterfaceForm</name>
@@ -3300,11 +3280,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Base font:</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ಮೂಲ ಫಾಂಟ್:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">px</translation>
     </message>
     <message>
         <source>Size: </source>

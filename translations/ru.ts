@@ -323,10 +323,6 @@ which may lead to problems with video calls.</source>
         <translation>Отправить запрос на добавление в друзья</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation>Добавить друга</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translation>Запросы на добавление в друзья</translation>
     </message>
@@ -437,6 +433,10 @@ which may lead to problems with video calls.</source>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
         <translation>76 шестнадцатиричных (hex) символов</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Добавить друга</translation>
     </message>
 </context>
 <context>
@@ -802,6 +802,20 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Местоположение не для записи</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">У вас нет разрешения чтобы записывать в эту папку. Выберите другую, или отмените сохранение диалога.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -957,16 +971,6 @@ so you can save the file on Windows.</source>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translation>Разрешить получение этого файла</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Невозможно записать в указанный путь</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>У вас нет прав для записи в эту папку. Выберите другую или выйдите из диалога сохранения.</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1443,10 +1447,6 @@ Profile does not contain your history.</source>
         <translation>Ввод сообщения статуса</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translation>Сообщение статуса видимоее для контактов</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translation>Ваш Tox ID</translation>
     </message>
@@ -1496,6 +1496,10 @@ Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
         <translation>Этот идентификатор позволяет другим пользователям Tox добавлять вас в друзья и общаться с вами.
 Поделитесь им с вашими друзьями, чтобы начать общаться.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">Установить ваше сообщения статуса видимое другим пользователям</translation>
     </message>
 </context>
 <context>
@@ -1580,10 +1584,6 @@ Share it with your friends to begin chatting.</source>
         <translation>Неверный пароль.</translation>
     </message>
     <message>
-        <source>Couldn&apos;t load profile</source>
-        <translation>Невозможно загрузить профиль</translation>
-    </message>
-    <message>
         <source>There is no selected profile.
 
 You may want to create one.</source>
@@ -1665,17 +1665,13 @@ Press Shift+F1 for more information.</source>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation>Пароль, который вы вводите здесь, является необязательным и шифрует данные сообщений и ваш приватный (закрытый) ключ Tox. Но он не шифрует полученные файлы. Данные вашего профиля никогда не отправляются куда-либо. И это не удалённый вход в профиль, он происходит лишь локально, на вашем компьютере. Разработчики qTox не смогут восстановить ваш пароль, если он будет утерян.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">Поле ввода пароля, длиной минимум 6 символов</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
-    <message>
-        <source>...</source>
-        <translation>...</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translation>Добавить друзей</translation>
-    </message>
     <message>
         <source>Create a conference</source>
         <translation>Создать конференцию</translation>
@@ -1779,6 +1775,10 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Open Debugger</source>
         <translation>Открыть Отладчик</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Добавить друга</translation>
     </message>
 </context>
 <context>
@@ -2053,11 +2053,6 @@ Please use another image.</source>
         <translation>Не удалось переименовать профиль в &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Путь недоступен для записи</translation>
-    </message>
-    <message>
         <source>Save</source>
         <comment>save qr image</comment>
         <translation>Сохранить</translation>
@@ -2159,11 +2154,6 @@ Please use another image.</source>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
         <translation>Изображения (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>У вас нет разрешения чтобы записывать в эту папку. Выберите другую, или отмените сохранение диалога.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -2637,10 +2627,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translation>Установите ваш пароль</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translation>Подтверждение:</translation>
     </message>
@@ -2676,6 +2662,10 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>The password is too short.</source>
         <translation>Пароль слишком короткий.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">Установить пароль для профиля</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -2699,11 +2689,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation>Добавить друга</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translation>Хотите добавить %1 в друзья?</translation>
     </message>
@@ -2724,6 +2709,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
         <translation>Отмена</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">Добавить друга</translation>
     </message>
 </context>
 <context>
@@ -2746,10 +2736,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Base font:</source>
         <translation>Основной шрифт:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation>пикселей</translation>
     </message>
     <message>
         <source>Size: </source>

@@ -331,10 +331,6 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
         <translation>Nepavyko pridėti kontakto</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation>Pridėti kontaktą</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translation>Kontaktų užklausos</translation>
     </message>
@@ -437,6 +433,10 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
         <translation>76 šešioliktainiai simboliai</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Pridėti kontaktą</translation>
     </message>
 </context>
 <context>
@@ -802,6 +802,20 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Vieta nerašoma</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">Jūs neturite leidimo rašyti į tą vietą. Pasirinkite kitą arba atšaukite išsaugojimo dialogo langą.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -961,16 +975,6 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translation>Priimkite, kad gautumėte šį failą</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Vieta nėra skirta rašymui</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>Nėra teisių įrašyti failą šioje vietoje. Bandykite įrašyti kitur arba atsisakykite dialogo lango.</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1448,10 +1452,6 @@ Pokalbių žurnalas nebus išsaugotas.</translation>
         <translation>Būsenos žinutės įvestis</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translation>Kontaktams matoma būsenos žinutė</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translation>Jūsų Tox ID</translation>
     </message>
@@ -1501,6 +1501,10 @@ Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
         <translation>Šis ID leidžia kitiems „Tox“ vartotojams pridėti jus ir susisiekti su jumis.
 Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">Nustatykite savo būsenos žinutę, kuri bus rodoma kitiems</translation>
     </message>
 </context>
 <context>
@@ -1572,10 +1576,6 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.</translation>
     <message>
         <source>A profile with this name already exists.</source>
         <translation>Toks profilis jau yra.</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translation>Nepavyko prisijungti</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1671,6 +1671,10 @@ Norėdami gauti daugiau informacijos, paspauskite Shift + F1.</translation>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">Čia įvestas slaptažodis yra neprivalomas ir užšifruoja pranešimo duomenis bei slaptąjį Tox raktą. Jis nešifruoja gautų failų. Jūsų profilio duomenys niekada nesiunčiami į jokius serverius. Tai nėra nuotolinis prisijungimas, jis yra vietinis tik jūsų kompiuteryje. „qTox“ kūrėjai negalės atkurti slaptažodžio, jei jį pametėte.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">Slaptažodžio įvesties laukas, mažiausiai 6 simbolių ilgio</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1681,14 +1685,6 @@ Norėdami gauti daugiau informacijos, paspauskite Shift + F1.</translation>
     <message>
         <source>Your status</source>
         <translation>Jūsų būsena</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation>...</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translation>Pridėti kontaktą</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -1787,6 +1783,10 @@ Norėdami gauti daugiau informacijos, paspauskite Shift + F1.</translation>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Atidarykite Debugger</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Pridėti kontaktą</translation>
     </message>
 </context>
 <context>
@@ -2037,11 +2037,6 @@ Failo formatas dar gali pasikeisti, todėl galite prarasti sukauptus duomenis.</
         <translation>Pervadinti „%1“</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Įrašyti failą čia neleidžiama</translation>
-    </message>
-    <message>
         <source>Save</source>
         <comment>save qr image</comment>
         <translation>Išsaugoti</translation>
@@ -2169,11 +2164,6 @@ Pasirinkite kitą.</translation>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
         <translation>Paveikslai (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>Jūs neturite leidimo rašyti į tą vietą. Pasirinkite kitą arba atšaukite išsaugojimo dialogo langą.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -2663,10 +2653,6 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translation>Nustatykite slaptažodį</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translation>Patvirtinti slaptažodį:</translation>
     </message>
@@ -2702,6 +2688,10 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
         <source>The password is too short.</source>
         <translation>Slaptažodis yra per trumpas.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">Nustatyti profilio slaptažodį</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -2728,11 +2718,6 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation>Pridėti kontaktą</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translation>Ar norite pridėti %1 į kontaktus?</translation>
     </message>
@@ -2753,6 +2738,11 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
         <translation>Atšaukti</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">Pridėti kontaktą</translation>
     </message>
 </context>
 <context>
@@ -2775,10 +2765,6 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     <message>
         <source>Base font:</source>
         <translation>Numatytasis šriftas:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation>piks.</translation>
     </message>
     <message>
         <source>Size: </source>

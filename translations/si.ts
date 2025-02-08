@@ -396,11 +396,6 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">මිතුරු ඉල්ලීමක් යවන්න</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">මිතුරෙකු එකතු කරන්න</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">මිතුරු ඉල්ලීම්</translation>
@@ -529,6 +524,10 @@ which may lead to problems with video calls.</source>
         <extracomment>Tox ID format description</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ෂඩාස්රාකාර අක්ෂර 76 ක්</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">මිතුරා එක් කරන්න</translation>
     </message>
 </context>
 <context>
@@ -967,6 +966,19 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translation type="unfinished">ස්ථානය ලිවිය නොහැක</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">එම ස්ථානයට ලිවීමට ඔබට අවසර නැත. වෙනත් එකක් තෝරන්න, නැතහොත් සුරැකීමේ සංවාදය අවලංගු කරන්න.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -1146,18 +1158,6 @@ so you can save the file on Windows.</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">මෙම ගොනුව ලැබීමට පිළිගන්න</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ස්ථානය ලිවිය නොහැක</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">එම ස්ථානය ලිවීමට ඔබට අවසර නැත. වෙනත් එකක් තෝරන්න, නැතහොත් සුරැකීමේ සංවාදය අවලංගු කරන්න.</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1735,11 +1735,6 @@ Profile does not contain your history.</source>
         <translation type="unfinished">තත්ව පණිවිඩ ආදානය</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">සම්බන්ධතා සඳහා තත්ත්‍ව පණිවිඩය දෘශ්‍යමාන වේ</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ඔබේ Tox ID</translation>
@@ -1801,6 +1796,10 @@ Share it with your friends to begin chatting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">මෙම හැඳුනුම්පත වෙනත් ටොක්ස් පරිශීලකයින්ට එකතු කිරීමට සහ ඔබව සම්බන්ධ කර ගැනීමට ඉඩ සලසයි.
 කතාබස් කිරීම ආරම්භ කිරීමට එය ඔබේ මිතුරන් සමඟ බෙදා ගන්න.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">අන් අයට පෙන්වන ඔබගේ තත්ත්‍ව පණිවිඩය සකසන්න</translation>
     </message>
 </context>
 <context>
@@ -1892,11 +1891,6 @@ Share it with your friends to begin chatting.</source>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">මුරපද ආරක්ෂිත පැතිකඩ ස්වයංක්‍රීයව පූරණය කළ නොහැක.</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">පැතිකඩ පූරණය කළ නොහැකි විය</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -2006,6 +2000,10 @@ Press Shift+F1 for more information.</source>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">ඔබ මෙහි ඇතුළු කරන මුරපදය විකල්ප වන අතර පණිවිඩ දත්ත සහ ඔබේ Tox රහස් යතුර සංකේතනය කරයි. එය ලැබුණු ගොනු සංකේතනය නොකරයි. ඔබගේ පැතිකඩ දත්ත කිසිවිටෙක කිසිදු සේවාදායකයකට යවනු නොලැබේ. මෙය දුරස්ථ පිවිසුමක් නොවේ, එය ඔබගේ පරිගණකයට පමණක් දේශීය වේ. qTox සංවර්ධකයින්ට ඔබගේ මුරපදය නැති වුවහොත් ප්‍රතිසාධනය කිරීමට නොහැකි වනු ඇත.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">මුරපද ආදාන ක්ෂේත්‍රය, අවම අක්ෂර 6ක් දිග</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -2018,16 +2016,6 @@ Press Shift+F1 for more information.</source>
         <source>Your status</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ඔබේ තත්ත්වය</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">...</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">මිතුරන් එකතු කරන්න</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -2148,6 +2136,10 @@ Press Shift+F1 for more information.</source>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">නිදොස්කරණය විවෘත කරන්න</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">මිතුරා එක් කරන්න</translation>
     </message>
 </context>
 <context>
@@ -2473,12 +2465,6 @@ Please use another image.</source>
         <translation type="unfinished">පැතිකඩ &quot;%1&quot; ලෙස නැවත නම් කළ නොහැකි විය</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ස්ථානය ලිවිය නොහැක</translation>
-    </message>
-    <message>
         <source>Nothing to remove</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ඉවත් කිරීමට කිසිවක් නැත</translation>
@@ -2603,12 +2589,6 @@ Please use another image.</source>
         <comment>filetype filter</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">පින්තූර (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">එම ස්ථානයට ලිවීමට ඔබට අවසර නැත. වෙනත් එකක් තෝරන්න, නැතහොත් සුරැකීමේ සංවාදය අවලංගු කරන්න.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -3182,11 +3162,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ඔබගේ මුරපදය සකසන්න</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">තහවුරු කරන්න:</translation>
@@ -3231,6 +3206,10 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">මුරපදය කෙටි වැඩියි.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">පැතිකඩ මුරපදය සකසන්න</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -3258,12 +3237,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">මිතුරෙකු එකතු කරන්න</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ඔබට %1 මිතුරෙකු ලෙස එක් කිරීමට අවශ්‍යද?</translation>
@@ -3290,6 +3263,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">අවලංගු කරන්න</translation>
     </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">මිතුරා එක් කරන්න</translation>
+    </message>
 </context>
 <context>
     <name>UserInterfaceForm</name>
@@ -3315,11 +3293,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Base font:</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">මූලික අකුරු:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">px</translation>
     </message>
     <message>
         <source>Size: </source>

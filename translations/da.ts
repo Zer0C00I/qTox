@@ -357,10 +357,6 @@ hvilket kan føre til problemer med videoopkald.</translation>
         <translation>Kunne ikke tilføje ven</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation>Tilføj en ven</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translation>Venneanmodning</translation>
     </message>
@@ -472,6 +468,10 @@ hvilket kan føre til problemer med videoopkald.</translation>
         <extracomment>Tox ID format description</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">76 hexadecimale tegn</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Tilføj ven</translation>
     </message>
 </context>
 <context>
@@ -882,6 +882,19 @@ så du kan gemme filen på Windows.</translation>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translation type="unfinished">Stedet kan ikke skrives</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">Du har ikke tilladelse til at skrive til det pågældende sted. Vælg en anden, eller annuller gem-dialogen.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -1048,18 +1061,6 @@ så du kan gemme filen på Windows.</translation>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translation>Accepter for at modtage denne fil</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Stedet kan ikke skrives</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Du har ikke tilladelse til at skrive den placering. Vælg en anden, eller annuller gem-dialogen.</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1604,11 +1605,6 @@ Profilen indeholder ikke din historie.</translation>
         <translation type="unfinished">Indtastning af statusmeddelelse</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Statusmeddelelse synlig for kontakter</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Dit Tox ID</translation>
@@ -1667,6 +1663,10 @@ Share it with your friends to begin chatting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Dette ID giver andre Tox-brugere mulighed for at tilføje og kontakte dig.
 Del det med dine venner for at begynde at chatte.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">Indstil din statusmeddelelse, der vil blive vist til andre</translation>
     </message>
 </context>
 <context>
@@ -1748,11 +1748,6 @@ Del det med dine venner for at begynde at chatte.</translation>
         <source>A profile with this name already exists.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Der findes allerede en profil med dette navn.</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Profilen kunne ikke indlæses</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1866,6 +1861,10 @@ Tryk på Shift+F1 for at få flere oplysninger.</translation>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">Adgangskoden, du indtaster her, er valgfri og krypterer beskeddata og din hemmelige Tox-nøgle. Det krypterer ikke modtagne filer. Dine profildata sendes aldrig til nogen servere. Dette er ikke et fjernlogin, det er kun lokalt på din computer. qTox-udviklere vil ikke være i stand til at gendanne din adgangskode, hvis den går tabt.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">Indtastningsfelt for adgangskode, minimum 6 tegn langt</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1876,15 +1875,6 @@ Tryk på Shift+F1 for at få flere oplysninger.</translation>
     <message>
         <source>Your status</source>
         <translation type="unfinished">Din status</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">...</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translation>Tilføj venner</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -2000,6 +1990,10 @@ Tryk på Shift+F1 for at få flere oplysninger.</translation>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Åbn Debugger</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Tilføj ven</translation>
     </message>
 </context>
 <context>
@@ -2314,12 +2308,6 @@ Brug venligst et andet billede.</translation>
         <translation type="unfinished">Kunne ikke omdøbe profilen til &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Stedet kan ikke skrives</translation>
-    </message>
-    <message>
         <source>Nothing to remove</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Intet at fjerne</translation>
@@ -2436,12 +2424,6 @@ Brug venligst et andet billede.</translation>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
         <translation type="unfinished">Billeder (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Du har ikke tilladelse til at skrive til det pågældende sted. Vælg en anden, eller annuller gem-dialogen.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -2997,11 +2979,6 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Indstil din adgangskode</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Bekræfte:</translation>
@@ -3045,6 +3022,10 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Adgangskoden er for kort.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">Indstil profiladgangskode</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -3072,11 +3053,6 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation type="unfinished">Tilføj en ven</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Vil du tilføje %1 som en ven?</translation>
@@ -3102,6 +3078,11 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
         <comment>Don&apos;t send a friend request</comment>
         <translation type="unfinished">Annullér</translation>
     </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">Tilføj ven</translation>
+    </message>
 </context>
 <context>
     <name>UserInterfaceForm</name>
@@ -3124,11 +3105,6 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
     <message>
         <source>Base font:</source>
         <translation>Standard Skrifttype:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">px</translation>
     </message>
     <message>
         <source>Size: </source>

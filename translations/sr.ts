@@ -339,10 +339,6 @@ which may lead to problems with video calls.</source>
         <translation>Пошаљи захтев за пријатељство</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation>Додај пријатеља</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translation>Захтеви пријатељства</translation>
     </message>
@@ -452,6 +448,10 @@ which may lead to problems with video calls.</source>
         <extracomment>Tox ID format description</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">76 хексадецималних знакова</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Додавање пријатеља</translation>
     </message>
 </context>
 <context>
@@ -828,6 +828,19 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translation type="unfinished">Место није уписиво</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">Немате дозволу да пишете на ту локацију. Изаберите други или откажите дијалог за чување.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -987,16 +1000,6 @@ so you can save the file on Windows.</source>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translation>Прихатите пријем ове датотеке</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Место није уписиво</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>Немате дозволу за писање на овом месту. Изаберите друго, или откажите прозорче чувања.</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1484,10 +1487,6 @@ Profile does not contain your history.</source>
         <translation>Унос поруке стања</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translation>Порука стања је видљива контактима</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translation>Ваш Токс ИБ</translation>
     </message>
@@ -1538,6 +1537,10 @@ Share it with your friends to begin chatting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Овај ИД омогућава другим Ток корисницима да вас додају и контактирају.
 Поделите га са пријатељима да започнете ћаскање.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">Поставите поруку стања која ће се приказивати другима</translation>
     </message>
 </context>
 <context>
@@ -1614,10 +1617,6 @@ Share it with your friends to begin chatting.</source>
     <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
         <translation>Профили заштићени лозинком се не могу самостално учитати.</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translation>Не могу да учитам профил</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1710,6 +1709,10 @@ Press Shift+F1 for more information.</source>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">Лозинка коју овде унесете је опциона и шифрује податке поруке и ваш Ток тајни кључ. Не шифрује примљене датотеке. Подаци вашег профила се никада не шаљу ни на један сервер. Ово није даљинско пријављивање, већ је локално само за ваш рачунар. кТок програмери неће моћи да поврате вашу лозинку ако је изгубљена.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">Поље уноса лозинке, најмања дужина је 6 знакова</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1720,15 +1723,6 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Your status</source>
         <translation>Ваш статус</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>...</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translation>Додај пријатеље</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -1827,6 +1821,10 @@ Press Shift+F1 for more information.</source>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Отворите Дебуггер</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Додавање пријатеља</translation>
     </message>
 </context>
 <context>
@@ -2108,11 +2106,6 @@ Please use another image.</source>
         <translation>Не могу да преименујем профил у „%1“</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Место није уписиво</translation>
-    </message>
-    <message>
         <source>Nothing to remove</source>
         <translation>Нема ничега за уклањање</translation>
     </message>
@@ -2214,12 +2207,6 @@ Please use another image.</source>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
         <translation>Слике (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Немате дозволу да пишете на ту локацију. Изаберите други или откажите дијалог за чување.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -2720,10 +2707,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translation>Поставите лозинку</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translation>Потврдите:</translation>
     </message>
@@ -2760,6 +2743,10 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Лозинка је прекратка.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">Постави лозинку профила</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -2786,11 +2773,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation>Додавање пријатеља</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translation>Желите ли да додате „%1“ у пријатеље?</translation>
     </message>
@@ -2811,6 +2793,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
         <translation>Откажи</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">Додавање пријатеља</translation>
     </message>
 </context>
 <context>
@@ -2833,10 +2820,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Base font:</source>
         <translation>Основна слова:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation>тч</translation>
     </message>
     <message>
         <source>Size: </source>

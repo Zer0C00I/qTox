@@ -21,6 +21,15 @@
 #include <QMessageBox>
 #include <QToolButton>
 
+namespace {
+
+void profileLoadFailure(QWidget* parent, const QString& message)
+{
+    QMessageBox::critical(parent, LoginScreen::tr("Couldn't load this profile"), message);
+}
+
+} // namespace
+
 LoginScreen::LoginScreen(Paths& paths_, Style& style, int themeColor,
                          const QString& initialProfileName, QWidget* parent)
     : QDialog(parent)
@@ -102,7 +111,7 @@ void LoginScreen::onProfileLoaded()
 
 void LoginScreen::onProfileLoadFailed()
 {
-    QMessageBox::critical(this, tr("Couldn't load this profile"), tr("Wrong password."));
+    profileLoadFailure(this, tr("Wrong password."));
     ui->loginPassword->setFocus();
     ui->loginPassword->selectAll();
 }
@@ -142,28 +151,26 @@ void LoginScreen::onCreateNewProfile()
 {
     const QString name = ui->newUsername->text();
     const QString pass = ui->newPass->text();
+    const QString failureTitle = tr("Couldn't create a new profile");
 
     if (name.isEmpty()) {
-        emit failure(tr("Couldn't create a new profile"), tr("The username must not be empty."));
+        emit failure(failureTitle, tr("The username must not be empty."));
         return;
     }
 
     if (pass.size() != 0 && pass.size() < 6) {
-        emit failure(tr("Couldn't create a new profile"),
-                     tr("The password must be at least 6 characters long."));
+        emit failure(failureTitle, tr("The password must be at least 6 characters long."));
         return;
     }
 
     if (ui->newPassConfirm->text() != pass) {
-        emit failure(tr("Couldn't create a new profile"),
-                     tr("The passwords you've entered are different.\n"
-                        "Please make sure to enter the same password twice."));
+        emit failure(failureTitle, tr("The passwords you've entered are different.\n"
+                                      "Please make sure to enter the same password twice."));
         return;
     }
 
     if (Profile::exists(name, paths)) {
-        emit failure(tr("Couldn't create a new profile"),
-                     tr("A profile with this name already exists."));
+        emit failure(failureTitle, tr("A profile with this name already exists."));
         return;
     }
 
@@ -199,15 +206,13 @@ void LoginScreen::onLogin()
 
     // name can be empty when there are no profiles
     if (name.isEmpty()) {
-        QMessageBox::critical(this, tr("Couldn't load profile"),
-                              tr("There is no selected profile.\n\n"
-                                 "You may want to create one."));
+        profileLoadFailure(this, tr("There is no selected profile.\n\n"
+                                    "You may want to create one."));
         return;
     }
 
     if (!ProfileLocker::isLockable(name, paths)) {
-        QMessageBox::critical(this, tr("Couldn't load this profile"),
-                              tr("This profile is already in use."));
+        profileLoadFailure(this, tr("This profile is already in use."));
         return;
     }
 

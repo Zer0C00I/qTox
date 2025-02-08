@@ -357,10 +357,6 @@ which may lead to problems with video calls.</source>
         <translation>ارسال طلب اضافة</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation>إضافة صديق</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translation>قائمة الاضافات</translation>
     </message>
@@ -478,6 +474,10 @@ which may lead to problems with video calls.</source>
         <extracomment>Tox ID format description</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">76 حرفًا سداسيًا عشريًا</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">إضافة صديق</translation>
     </message>
 </context>
 <context>
@@ -862,6 +862,19 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translation type="unfinished">المسار غير قابل للكتابة</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">ليس لديك الإذن بالكتابة إلى هذا الموقع. اختر خيارًا آخر، أو قم بإلغاء مربع حوار الحفظ.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -1030,16 +1043,6 @@ so you can save the file on Windows.</source>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translation>قبول تسلم هذا الملف</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>المسار غير قابل للكتابة</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>لا يوجد لديك صلاحيات للكتابة في هذا المسار. اختر مسار اخر, او الغِ نافذة الحفظ.</translation>
     </message>
     <message>
         <source>Paused</source>
@@ -1534,10 +1537,6 @@ Profile does not contain your history.</source>
         <translation>ادخال رسالة الحالة</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translation>رسالة الحالة تظهر لجهات الاتصال</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translation>هوية Tox الخاصة بك (Tox ID)</translation>
     </message>
@@ -1588,6 +1587,10 @@ Share it with your friends to begin chatting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">يسمح هذا المعرف لمستخدمي Tox الآخرين بإضافتك والاتصال بك.
 شاركها مع أصدقائك لبدء الدردشة.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">تعيين رسالة الحالة التي سيتم عرضها للآخرين</translation>
     </message>
 </context>
 <context>
@@ -1660,10 +1663,6 @@ Share it with your friends to begin chatting.</source>
     <message>
         <source>A profile with this name already exists.</source>
         <translation>يوجد حساب آخر بهذا الاسم.</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translation>لا يمكن تحميل الملف الشخصي</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1760,6 +1759,10 @@ Press Shift+F1 for more information.</source>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">كلمة المرور التي تدخلها هنا اختيارية وتقوم بتشفير بيانات الرسالة ومفتاح Tox السري الخاص بك. لا يقوم بتشفير الملفات المستلمة. لا يتم إرسال بيانات ملفك الشخصي مطلقًا إلى أي خوادم. هذا ليس تسجيل دخول عن بعد، بل هو محلي لجهاز الكمبيوتر الخاص بك فقط. لن يتمكن مطورو qTox من استعادة كلمة المرور الخاصة بك في حالة فقدانها.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">حقل كلمة المرور ، الحد الأدنى 6 أحرف</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1770,14 +1773,6 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Your status</source>
         <translation>الحالة</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation>...</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translation>إضافة أصدقاء</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -1876,6 +1871,10 @@ Press Shift+F1 for more information.</source>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">افتح مصحح الأخطاء</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">إضافة صديق</translation>
     </message>
 </context>
 <context>
@@ -2171,11 +2170,6 @@ Please use another image.</source>
         <translation>غير قادر على اعادة تسمية الملف الشخصية لــ &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>المسار غير قابل للكتابة</translation>
-    </message>
-    <message>
         <source>Are you sure you want to delete this profile?</source>
         <comment>deletion confirmation text</comment>
         <translation>هل انت متأكد من حذف هذا الملف الشخصي؟</translation>
@@ -2282,12 +2276,6 @@ Please use another image.</source>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
         <translation type="unfinished">صور (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ليس لديك الإذن بالكتابة إلى هذا الموقع. اختر خيارًا آخر، أو قم بإلغاء مربع حوار الحفظ.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -2809,10 +2797,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translation>اختيار كلمة المرور</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translation>التأكيد:</translation>
     </message>
@@ -2849,6 +2833,10 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">كلمة المرور قصيرة جدًا.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">تعيين كلمة المرور للحساب الشخصي</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -2875,11 +2863,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation>إضافة صديق</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translation>هل تريد اضافة %1 كصديق؟</translation>
     </message>
@@ -2900,6 +2883,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
         <translation>إلغاء</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">إضافة صديق</translation>
     </message>
 </context>
 <context>
@@ -2922,10 +2910,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Base font:</source>
         <translation>نوع خط الكتابة:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation>بكسل</translation>
     </message>
     <message>
         <source>Size: </source>

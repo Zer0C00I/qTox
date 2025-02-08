@@ -327,10 +327,6 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
         <translation>Gửi lời mời kết bạn</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation>Thêm bạn</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translation>Lời mời kết bạn</translation>
     </message>
@@ -435,6 +431,10 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
         <translation>76 ký tự thập lục phân (HEX)</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Thêm bạn</translation>
     </message>
 </context>
 <context>
@@ -801,6 +801,19 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translation type="unfinished">Vị trí không thể ghi</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">Bạn không được phép ghi vào vị trí đó. Chọn khác hoặc hủy hộp thoại lưu.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -956,16 +969,6 @@ so you can save the file on Windows.</source>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translation>Chấp nhận tệp tin đến</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Vị trí không thể ghi</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>Bạn không được phép ghi đè vào vị trí đó. Chọn cái khác hoặc hủy hộp thoại lưu.</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1443,10 +1446,6 @@ Hồ sơ không bao gồm lịch sử của bạn.</translation>
         <translation>Nhập trạng thái</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translation>Trạng thái hiển thị với liên hệ</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translation>Tox ID của bạn</translation>
     </message>
@@ -1496,6 +1495,10 @@ Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
         <translation>ID này cho phép những người dùng Tox khác thêm và liên hệ với bạn.
 Chia sẻ nó với bạn bè của bạn để bắt đầu trò chuyện.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">Đặt thông báo trạng thái của bạn sẽ được hiển thị cho người khác</translation>
     </message>
 </context>
 <context>
@@ -1570,10 +1573,6 @@ Chia sẻ nó với bạn bè của bạn để bắt đầu trò chuyện.</tra
     <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
         <translation>Không thể tự động tải hồ sơ được bảo vệ bằng mật khẩu.</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translation>Không thể tải hồ sơ</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1665,6 +1664,10 @@ Nhấn Shift+F1 để biết thêm thông tin.</translation>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">Mật khẩu bạn nhập ở đây là tùy chọn và mã hóa dữ liệu tin nhắn cũng như khóa bí mật Tox của bạn. Nó không mã hóa các tập tin nhận được. Dữ liệu hồ sơ của bạn không bao giờ được gửi đến bất kỳ máy chủ nào. Đây không phải là đăng nhập từ xa, nó chỉ cục bộ trên máy tính của bạn. Các nhà phát triển qTox sẽ không thể khôi phục mật khẩu của bạn nếu bị mất.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">Nhập mật khẩu, dài tối thiểu 6 ký tự</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1675,15 +1678,6 @@ Nhấn Shift+F1 để biết thêm thông tin.</translation>
     <message>
         <source>Your status</source>
         <translation>Trạng thái</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translation>Thêm bạn</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -1782,6 +1776,10 @@ Nhấn Shift+F1 để biết thêm thông tin.</translation>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Mở trình gỡ lỗi</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Thêm bạn</translation>
     </message>
 </context>
 <context>
@@ -2054,11 +2052,6 @@ Vui lòng sử dụng hình ảnh khác.</translation>
         <translation>Không thể đổi tên hồ sơ thành &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Vị trí không thể ghi</translation>
-    </message>
-    <message>
         <source>Nothing to remove</source>
         <translation>Không có gì để gỡ bỏ</translation>
     </message>
@@ -2160,11 +2153,6 @@ Vui lòng sử dụng hình ảnh khác.</translation>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
         <translation>Hình ảnh (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>Bạn không được phép ghi vào vị trí đó. Chọn khác hoặc hủy hộp thoại lưu.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -2640,10 +2628,6 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translation>Đặt mật khẩu</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translation>Xác nhận:</translation>
     </message>
@@ -2679,6 +2663,10 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
         <source>The password is too short.</source>
         <translation>Mật khẩu quá ngắn.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">Đặt mật khẩu hồ sơ</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -2702,11 +2690,6 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation>Thêm bạn</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translation>Bạn có muốn thêm %1 làm bạn không?</translation>
     </message>
@@ -2727,6 +2710,11 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
         <translation>Hủy</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">Thêm bạn</translation>
     </message>
 </context>
 <context>
@@ -2749,10 +2737,6 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
     <message>
         <source>Base font:</source>
         <translation>Phông chữ:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation>px</translation>
     </message>
     <message>
         <source>Size: </source>

@@ -12,6 +12,7 @@
 #include "src/persistence/profile.h"
 #include "src/persistence/profilelocker.h"
 #include "src/persistence/settings.h"
+#include "src/widget/commondialogs.h"
 #include "src/widget/contentlayout.h"
 #include "src/widget/form/setpassworddialog.h"
 #include "src/widget/form/settingswidget.h"
@@ -58,13 +59,12 @@ const QMap<IProfileInfo::RenameResult, QPair<QString, QString>> RENAME_ERROR = {
      {ProfileForm::tr("Empty name"), ProfileForm::tr("Empty name is unavailable")}},
 };
 
+// TODO(iphydf): These should be functions, not static maps. qTox does this a lot
+// and it messes with retranslation when changing the language.
 const QMap<IProfileInfo::SaveResult, QPair<QString, QString>> SAVE_ERROR = {
     {
         IProfileInfo::SaveResult::NoWritePermission,
-        {ProfileForm::tr("Location not writable", "Title of permissions popup"),
-         ProfileForm::tr("You do not have permission to write to that location. Choose "
-                         "another, or cancel the save dialog.",
-                         "text of permissions popup")},
+        CommonDialogs::NoWritePermission(),
     },
     {IProfileInfo::SaveResult::Error,
      {ProfileForm::tr("Failed to save file"),

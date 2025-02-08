@@ -368,7 +368,7 @@ void AddFriendForm::retranslateUi()
 
     onIdChanged(toxId.text());
 
-    tabWidget->setTabText(AddFriend, tr("Add a friend"));
+    tabWidget->setTabText(AddFriend, tr("Add friend"));
     tabWidget->setTabText(ImportContacts, tr("Import contacts"));
     tabWidget->setTabText(FriendRequest, tr("Friend requests"));
 

@@ -330,10 +330,6 @@ kas var radīt video zvanu problēmas.</translation>
         <translation>Nosūtīt draudzības pieprasījumu</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation>Pievienot draugu</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translation>Draudzības uzaicinājums</translation>
     </message>
@@ -440,6 +436,10 @@ kas var radīt video zvanu problēmas.</translation>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
         <translation>76 heksadecimālas rakstzīmes</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Pievienojiet draugu</translation>
     </message>
 </context>
 <context>
@@ -811,6 +811,20 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Atrašanās vieta nav rakstāma</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">Jums nav atļaujas rakstīt uz šo vietu. Izvēlieties citu vai atceliet saglabāšanas dialoglodziņu.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -970,16 +984,6 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translation>Ļaut saņemt šo failu</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Nevar ierakstīt atrašanās vietu</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>Jums nav atļaujas veikt ierakstus šajā mapē. Izvēlieties citu mapi vai atceliet saglabāšanas dialoglodziņu.</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1463,10 +1467,6 @@ Profile does not contain your history.</source>
         <translation>Ierakstīt statusa ziņojumu</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translation>Statusa ziņojums redzams kontaktpersonām</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translation>Jūsu Tox ID</translation>
     </message>
@@ -1517,6 +1517,10 @@ Share it with your friends to begin chatting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Šis ID ļauj citiem Tox lietotājiem pievienot un sazināties ar jums.
 Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">Iestatiet statusa ziņojumu, kas tiks rādīts citiem</translation>
     </message>
 </context>
 <context>
@@ -1593,10 +1597,6 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.</translation>
     <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
         <translation>Ar paroli aizsargātus profilus nevar automātiski ielādēt.</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translation>Nevar ielādēt profilu</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1689,6 +1689,10 @@ Lai iegūtu papildinformāciju, nospiediet taustiņu kombināciju Shift+F1.</tra
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">Šeit ievadītā parole nav obligāta, un tā šifrē ziņojumu datus un jūsu Tox slepeno atslēgu. Tas nešifrē saņemtos failus. Jūsu profila dati nekad netiek nosūtīti nevienam serverim. Šī nav attālināta pieteikšanās, tā ir lokāla tikai jūsu datoram. qTox izstrādātāji nevarēs atgūt jūsu paroli, ja tā tiks pazaudēta.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">Paroles ievades lauks, ar vismaz 6 rakstzīmēm</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1699,15 +1703,6 @@ Lai iegūtu papildinformāciju, nospiediet taustiņu kombināciju Shift+F1.</tra
     <message>
         <source>Your status</source>
         <translation>Jūsu statuss</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>...</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translation>Pievienot draugus</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -1806,6 +1801,10 @@ Lai iegūtu papildinformāciju, nospiediet taustiņu kombināciju Shift+F1.</tra
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Atveriet atkļūdotāju</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Pievienojiet draugu</translation>
     </message>
 </context>
 <context>
@@ -2093,11 +2092,6 @@ Lūdzu, izvēlieties citu attēlu.</translation>
         <translation>Nevarēja pārdēvēt profilu uz &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Šajā mapē nevar veikt ierakstu</translation>
-    </message>
-    <message>
         <source>Nothing to remove</source>
         <translation>Nav ko dzēst</translation>
     </message>
@@ -2199,12 +2193,6 @@ Lūdzu, izvēlieties citu attēlu.</translation>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
         <translation>Attēli (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Jums nav atļaujas rakstīt uz šo vietu. Izvēlieties citu vai atceliet saglabāšanas dialoglodziņu.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -2708,10 +2696,6 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translation>Uzstādiet savu paroli</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translation>Apstiprināt:</translation>
     </message>
@@ -2748,6 +2732,10 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Parole ir pārāk īsa.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">Iestatiet profila paroli</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -2774,11 +2762,6 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation>Pievienot draugu</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translation>Vai vēlaties pievienot %1 kā draugu?</translation>
     </message>
@@ -2799,6 +2782,11 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
         <translation>Atcelt</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">Pievienojiet draugu</translation>
     </message>
 </context>
 <context>
@@ -2821,10 +2809,6 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
     <message>
         <source>Base font:</source>
         <translation>Pamatfonts:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation>px</translation>
     </message>
     <message>
         <source>Size: </source>

@@ -324,8 +324,11 @@ Press Shift+F1 for more information.</string>
          </item>
          <item>
           <widget class="PasswordEdit" name="loginPassword">
-           <property name="accessibleDescription">
+           <property name="accessibleName">
             <string>Password input</string>
+           </property>
+           <property name="accessibleDescription">
+            <string>Password input field, minimum 6 characters long</string>
            </property>
           </widget>
          </item>

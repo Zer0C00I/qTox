@@ -346,10 +346,6 @@ which may lead to problems with video calls.</source>
         <translation>دوستلۇقنى ئىلتىماس قىلىش</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation>دوست قوشۇش</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translation>دوستلۇقنى ئىلتىماس قىلىش</translation>
     </message>
@@ -458,6 +454,10 @@ which may lead to problems with video calls.</source>
         <extracomment>Tox ID format description</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">76 ئالتە خانىلىق ھەرپ</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">دوست قوشۇش</translation>
     </message>
 </context>
 <context>
@@ -837,6 +837,20 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ئورۇن يازغىلى بولمايدۇ</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">ئۇ ئورۇنغا خەت يېزىش ھوقۇقىڭىز يوق. باشقىسىنى تاللاڭ ياكى ساقلاش سۆزلىشىش رامكىسىنى بىكار قىلىڭ.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -997,16 +1011,6 @@ so you can save the file on Windows.</source>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translation>ھۆججەتنى قۇبۇل قىلىش</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>بۇ ئورۇندا سالىغىنى بولمايدۇ</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>بۇ ئورۇنغا ھۆججەت ساقلاش ھوقۇقىڭىز يوقكەن، باشقا ئورۇن تاللاڭ.</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1500,10 +1504,6 @@ Profile does not contain your history.</source>
         <translation>ئۇچۇر كىرگۈزۈش ھالىتىدە</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translation>ئۇچۇر ھالىتىنى ئالاقىداشقا كۆرسىتىش</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translation>Tox كىملىگىڭىز</translation>
     </message>
@@ -1554,6 +1554,10 @@ Share it with your friends to begin chatting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">بۇ كىملىك ​​باشقا زەھەرلىك ئىشلەتكۈچىلەرنىڭ سىز بىلەن ئالاقىلىشىشى ۋە ئالاقىلىشىشىغا يول قويىدۇ.
 دوستلىرىڭىز بىلەن ھەمبەھىرلىنىپ پاراڭلىشىشنى باشلاڭ.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">باشقىلارغا كۆرسىتىدىغان ئۇچۇر ھالىتىڭىز</translation>
     </message>
 </context>
 <context>
@@ -1630,10 +1634,6 @@ Share it with your friends to begin chatting.</source>
     <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
         <translation>پاروللانغان خاسلىقنى ئۆزلىكىدىن يۈكلىيەلمەيدۇ.</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translation>خاسلىق يۈكلەنمىدى</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1726,6 +1726,10 @@ Press Shift+F1 for more information.</source>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">بۇ يەرگە كىرگۈزگەن پارول ئىختىيارىي بولۇپ ، ئۇچۇر ئۇچۇرى ۋە زەھەرلىك مەخپى ئاچقۇچنى مەخپىيلەشتۈرىدۇ. ئۇ قوبۇل قىلىنغان ھۆججەتلەرنى مەخپىيلەشتۈرمەيدۇ. ئارخىپىڭىزنىڭ سانلىق مەلۇماتلىرى ھەرگىزمۇ ھېچقانداق مۇلازىمېتىرغا ئەۋەتىلمەيدۇ. بۇ يىراقتىن كىرىش ئەمەس ، ئۇ پەقەت كومپيۇتېرىڭىزغا يەرلىك. qTox ئاچقۇچىلار يوقاپ كەتسە پارولىڭىزنى ئەسلىگە كەلتۈرەلمەيدۇ.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">پارول رامكىسى، 6 ھەرپتىن تۆۋەن بولمىسۇن</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1736,15 +1740,6 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Your status</source>
         <translation>ھالىتىڭىز</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>...</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translation>دوست قوشۇش</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -1843,6 +1838,10 @@ Press Shift+F1 for more information.</source>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Debugger نى ئېچىڭ</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">دوست قوشۇش</translation>
     </message>
 </context>
 <context>
@@ -2131,11 +2130,6 @@ Please use another image.</source>
         <translation>&quot;%1&quot; ئارخىپ ئىسمىنى ئۆزگەرتكىنى بولمىدى</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>يېزىش چەكلەنگەن ئورۇن</translation>
-    </message>
-    <message>
         <source>Nothing to remove</source>
         <translation>ئۆچۈرىدىغان ھېچنىمە يوق</translation>
     </message>
@@ -2237,12 +2231,6 @@ Please use another image.</source>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
         <translation type="unfinished">رەسىم (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ئۇ ئورۇنغا خەت يېزىش ھوقۇقىڭىز يوق. باشقىسىنى تاللاڭ ياكى ساقلاش سۆزلىشىش رامكىسىنى بىكار قىلىڭ.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -2763,10 +2751,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translation>پارول بەلگىلەش</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translation>جەزىملەش:</translation>
     </message>
@@ -2803,6 +2787,10 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">پارول بەك قىسقا.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">پارول بەلگىلەش</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -2829,11 +2817,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation>دوست قوشۇش</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translation>%1 نى دوستقا قوشامسىز؟</translation>
     </message>
@@ -2854,6 +2837,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
         <translation>چېكىنىش</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">دوست قوشۇش</translation>
     </message>
 </context>
 <context>
@@ -2876,10 +2864,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Base font:</source>
         <translation>خەت شەكىلى:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation>px</translation>
     </message>
     <message>
         <source>Size: </source>

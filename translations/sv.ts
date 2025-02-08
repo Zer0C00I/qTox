@@ -331,10 +331,6 @@ vilket kan leda till problem med videosamtal.</translation>
         <translation>Ogiltigt format på Tox-ID</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation>Lägg till en vän</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translation>Vänförfrågningar</translation>
     </message>
@@ -436,6 +432,10 @@ vilket kan leda till problem med videosamtal.</translation>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
         <translation>76 hexadecimala tecken</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Lägg till vän</translation>
     </message>
 </context>
 <context>
@@ -802,6 +802,19 @@ så att du kan spara filen i Windows.</translation>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translation type="unfinished">Plats ej skrivbar</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">Du har inte rätt att skriva till den platsen. Välj en annan plats eller avbryt dialogrutan för att spara.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -959,16 +972,6 @@ så att du kan spara filen i Windows.</translation>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translation>Acceptera för att ta emot den här filen</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Plats ej skrivbar</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>Du har inte tillåtelse att skriva till platsen. Välj en annan, eller avbryt spara-dialogen.</translation>
     </message>
     <message>
         <source>Save a file</source>
@@ -1448,10 +1451,6 @@ Profilen innehåller inte din historik.</translation>
         <translation>Statusmeddelande-inmatning</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translation>Statusmeddelande synligt för kontakter</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translation>Ditt Tox-ID</translation>
     </message>
@@ -1501,6 +1500,10 @@ Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
         <translation>Detta ID låter andra Tox användare lägga till och kontakta dig.
 Dela det med dina vänner för att börja chatta.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">Ange ditt statusmeddelande som visas för andra</translation>
     </message>
 </context>
 <context>
@@ -1580,10 +1583,6 @@ Dela det med dina vänner för att börja chatta.</translation>
     <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
         <translation>Lösenordsskyddade profiler kan inte läsas in automatiskt.</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translation>Det gick inte att läsa in profilen</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1671,6 +1670,10 @@ Tryck på Skift+F1 för mer information.</translation>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">Lösenordet du anger här är valfritt och krypterar meddelandedata och din hemliga Tox-nyckel. Den krypterar inte mottagna filer. Din profildata skickas aldrig till några servrar. Detta är inte en fjärrinloggning, det är endast lokalt för din dator. qTox-utvecklare kommer inte att kunna återställa ditt lösenord om det tappas bort.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">Lösenordsinmatningsfält, minst 6 tecken långt</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1681,10 +1684,6 @@ Tryck på Skift+F1 för mer information.</translation>
     <message>
         <source>Your status</source>
         <translation>Din status</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translation>Lägg till vänner</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -1702,10 +1701,6 @@ Tryck på Skift+F1 för mer information.</translation>
     <message>
         <source>Close</source>
         <translation>Stäng</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation>...</translation>
     </message>
     <message>
         <source>Open profile</source>
@@ -1788,6 +1783,10 @@ Tryck på Skift+F1 för mer information.</translation>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Öppna Debugger</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Lägg till vän</translation>
     </message>
 </context>
 <context>
@@ -2061,11 +2060,6 @@ Använd en annan bild.</translation>
         <translation>Det gick inte att byta namn på profilen till &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Plats ej skrivbar</translation>
-    </message>
-    <message>
         <source>Are you sure you want to delete this profile?</source>
         <comment>deletion confirmation text</comment>
         <translation>Är du säker på att du vill ta bort denna profil?</translation>
@@ -2167,11 +2161,6 @@ Använd en annan bild.</translation>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
         <translation>Bilder (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>Du har inte rätt att skriva till den platsen. Välj en annan plats eller avbryt dialogrutan för att spara.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -2661,10 +2650,6 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translation>Ange ditt lösenord</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translation>Bekräfta:</translation>
     </message>
@@ -2701,6 +2686,10 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Lösenordet är för kort.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">Ange profillösenord</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -2727,11 +2716,6 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation>Lägga till en vän</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translation>Vill du lägga till %1 som en vän?</translation>
     </message>
@@ -2752,6 +2736,11 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
         <translation>Avbryt</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">Lägg till vän</translation>
     </message>
 </context>
 <context>
@@ -2774,10 +2763,6 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
     <message>
         <source>Base font:</source>
         <translation>Grundtypsnitt:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation>px</translation>
     </message>
     <message>
         <source>Size: </source>

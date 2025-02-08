@@ -96,7 +96,7 @@
                </sizepolicy>
               </property>
               <property name="suffix">
-               <string>px</string>
+               <string> px</string>
               </property>
               <property name="prefix">
                <string>Size: </string>

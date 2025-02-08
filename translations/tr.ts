@@ -333,10 +333,6 @@ bu da video görüşmelerinde sorunlara yol açabilir.</translation>
         <translation>Arkadaş isteği gönder</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation>Bir arkadaş ekle</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translation>Arkadaş isteği</translation>
     </message>
@@ -437,6 +433,10 @@ bu da video görüşmelerinde sorunlara yol açabilir.</translation>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
         <translation>76 tane onaltılık karakter</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Arkadaş ekle</translation>
     </message>
 </context>
 <context>
@@ -803,6 +803,20 @@ geçersiz karakterler _ olarak değiştirildi.</translation>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Konum yazılamaz</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">O konuma yazma izniniz yok. Başka bir tane seçin veya kaydetme iletişim kutusunu iptal edin.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -958,16 +972,6 @@ geçersiz karakterler _ olarak değiştirildi.</translation>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translation>Bu dosyayı almak için onaylayın</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Konum yazılabilir değil</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>Bu konuma yazmaya yetkiniz yok. Başka seçin, ya da kaydetmeyi iptal edin.</translation>
     </message>
     <message>
         <source>Paused</source>
@@ -1445,10 +1449,6 @@ Profil geçmişinizi içermez.</translation>
         <translation>Durum iletisi girişi</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translation>Kişilere görünen durum iletisi</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translation>Tox Kimliğiniz</translation>
     </message>
@@ -1498,6 +1498,10 @@ Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
         <translation>Bu kimlik, diğer Tox kullanıcılarının sizi eklemesine ve sizinle iletişim kurmasına olanak tanır.
 Sohbete başlamak için arkadaşlarınızla paylaşın.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">Diğerlerine gösterilecek durum iletinizi ayarlayın</translation>
     </message>
 </context>
 <context>
@@ -1568,10 +1572,6 @@ Sohbete başlamak için arkadaşlarınızla paylaşın.</translation>
     <message>
         <source>A profile with this name already exists.</source>
         <translation>Bu adda bir profil zaten var.</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translation>Profil yüklenemedi</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1667,6 +1667,10 @@ Daha fazla bilgi için Shift+F1 tuşlarına basın.</translation>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">Buraya gireceğiniz şifre isteğe bağlıdır ve mesaj verilerini ve Tox gizli anahtarınızı şifreler. Alınan dosyaları şifrelemez. Profil verileriniz hiçbir zaman hiçbir sunucuya gönderilmez. Bu uzaktan oturum açma değildir, yalnızca bilgisayarınız için yereldir. qTox geliştiricileri şifrenizi kaybederseniz kurtaramaz.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">Parola giriş alanı, en az 6 karakter uzunluğunda</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1677,14 +1681,6 @@ Daha fazla bilgi için Shift+F1 tuşlarına basın.</translation>
     <message>
         <source>Your status</source>
         <translation>Durumunuz</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation>...</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translation>Arkadaş ekle</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -1783,6 +1779,10 @@ Daha fazla bilgi için Shift+F1 tuşlarına basın.</translation>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Hata Ayıklayıcıyı Aç</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Arkadaş ekle</translation>
     </message>
 </context>
 <context>
@@ -2055,11 +2055,6 @@ lütfen başka bir resim kullanın.</translation>
         <translation>Profil &quot;%1&quot; olarak yeniden adlandırılamadı</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Konum, yazılabilir değil</translation>
-    </message>
-    <message>
         <source>Are you sure you want to delete this profile?</source>
         <comment>deletion confirmation text</comment>
         <translation>Bu profili silmek istediğinize emin misiniz?</translation>
@@ -2161,11 +2156,6 @@ lütfen başka bir resim kullanın.</translation>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
         <translation>Resimler (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>O konuma yazma izniniz yok. Başka bir tane seçin veya kaydetme iletişim kutusunu iptal edin.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -2639,10 +2629,6 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translation>Parolanızı ayarlayın</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translation>Onayla:</translation>
     </message>
@@ -2678,6 +2664,10 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
         <source>The password is too short.</source>
         <translation>Parola çok kısa.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">Profil parolası ayarla</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -2701,11 +2691,6 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation>Bir arkadaş ekle</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translation>%1 kişisini bir arkadaş olarak eklemek istiyor musunuz?</translation>
     </message>
@@ -2726,6 +2711,11 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
         <translation>İptal</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">Arkadaş ekle</translation>
     </message>
 </context>
 <context>
@@ -2748,10 +2738,6 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
     <message>
         <source>Base font:</source>
         <translation>Temel yazı tipi:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation>px</translation>
     </message>
     <message>
         <source>Size: </source>

@@ -331,10 +331,6 @@ mis võib põhjustada probleeme videokõnedega.</translation>
         <translation>Saada sõbrakutse</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation>Lisa sõber</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translation>Kutsed sõpradelt</translation>
     </message>
@@ -436,6 +432,10 @@ mis võib põhjustada probleeme videokõnedega.</translation>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
         <translation>76 tähemärki kuueteistkümnendsüsteemis</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Lisa sõber</translation>
     </message>
 </context>
 <context>
@@ -801,6 +801,20 @@ ja sa saad seda faili nüüd Windowsis salvestada.</translation>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Asukoht pole kirjutatav</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">Sul pole õigusi sellesse asukohta kirjutamiseks. Palun vali muu asukoht või tühista salvestamine.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -959,16 +973,6 @@ ja sa saad seda faili nüüd Windowsis salvestada.</translation>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translation>Nõustu, et faili vastu võtta</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Asukohta ei saa kirjutada</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>Sul ei ole sellesse asukohta kirjutamiseks õigusi. Vali mõni muu või katkesta salvestamine.</translation>
     </message>
     <message>
         <source>Paused</source>
@@ -1446,10 +1450,6 @@ Profiil ei sisalda vestluste ajalugu.</translation>
         <translation>Olekusõnumi sisestamine</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translation>Kontaktidele kuvatav olekusõnum</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translation>Sinu Tox ID</translation>
     </message>
@@ -1499,6 +1499,10 @@ Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
         <translation>See ID lubab teistel Toxi kasutajate sind lisada ja sinuga ühendust võtta.
 Jaga seda oma sõpradele, et nendega suhelda.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">Määra teistele kuvatav olekusõnum</translation>
     </message>
 </context>
 <context>
@@ -1570,10 +1574,6 @@ Jaga seda oma sõpradele, et nendega suhelda.</translation>
     <message>
         <source>A profile with this name already exists.</source>
         <translation>Selle nimega profiil on juba olemas.</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translation>Profiili laadimine luhtus</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1669,6 +1669,10 @@ Lisateabe saamiseks vajutage klahvikombinatsiooni Shift+F1.</translation>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">Siia sisestatav parool on valikuline ja krüpteerib sõnumiandmed ja teie Toxi salajase võtme. See ei krüpteeri vastuvõetud faile. Teie profiiliandmeid ei saadeta kunagi serveritesse. See ei ole kaugsisselogimine, see on ainult teie arvuti kohalik. qToxi arendajad ei saa teie parooli kaotamise korral taastada.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">Salasõna sisestusväli, vähemalt 6 tähemärki pikk</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1679,14 +1683,6 @@ Lisateabe saamiseks vajutage klahvikombinatsiooni Shift+F1.</translation>
     <message>
         <source>Your status</source>
         <translation>Olekuteade</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation>...</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translation>Lisa sõpru</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -1785,6 +1781,10 @@ Lisateabe saamiseks vajutage klahvikombinatsiooni Shift+F1.</translation>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Avage silur</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Lisa sõber</translation>
     </message>
 </context>
 <context>
@@ -2059,11 +2059,6 @@ Palun kasuta teist pilti.</translation>
         <translation>Ei suutnud profiili kujule &quot;%1&quot; ümber nimetada</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Asukoht pole kirjutatav</translation>
-    </message>
-    <message>
         <source>Are you sure you want to delete this profile?</source>
         <comment>deletion confirmation text</comment>
         <translation>Oled kindel, et soovid seda profiili kustutada?</translation>
@@ -2165,11 +2160,6 @@ Palun kasuta teist pilti.</translation>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
         <translation>Pildid (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>Sul pole õigusi sellesse asukohta kirjutamiseks. Palun vali muu asukoht või tühista salvestamine.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -2659,10 +2649,6 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translation>Sea salasõna</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translation>Korda salasõna:</translation>
     </message>
@@ -2698,6 +2684,10 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
         <source>The password is too short.</source>
         <translation>Salasõna on liiga lühike.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">Määra profiili salasõna</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -2724,11 +2714,6 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation>Lisa sõber</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translation>Soovid sa %1 sõbraks lisada?</translation>
     </message>
@@ -2749,6 +2734,11 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
         <translation>Katkesta</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">Lisa sõber</translation>
     </message>
 </context>
 <context>
@@ -2771,10 +2761,6 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
     <message>
         <source>Base font:</source>
         <translation>Aluskirjatüüp:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation>px</translation>
     </message>
     <message>
         <source>Size: </source>

@@ -72,7 +72,7 @@ ToxURIDialog::ToxURIDialog(QWidget* parent, Core& core_, IMessageBoxManager& mes
     const QString message = defaultMessage.arg(username);
 
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
-    setWindowTitle(tr("Add a friend", "Title of the window to add a friend through Tox URI"));
+    setWindowTitle(tr("Add friend", "Title of the window to add a friend through Tox URI"));
 
     friendsLabel = new QLabel("", this);
     userIdEdit = new QLineEdit("", this);

@@ -398,11 +398,6 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
         <translation type="unfinished">Tuma ombi la urafiki</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ongeza rafiki</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Maombi ya urafiki</translation>
@@ -531,6 +526,10 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
         <extracomment>Tox ID format description</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">herufi 76 za heksadesimali</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Ongeza rafiki</translation>
     </message>
 </context>
 <context>
@@ -969,6 +968,19 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translation type="unfinished">Mahali hapawezi kuandikwa</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">Huna ruhusa ya kuandikia eneo hilo. Chagua nyingine, au ghairi kidirisha cha kuhifadhi.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -1148,18 +1160,6 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Kubali kupokea faili hii</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Mahali hapawezi kuandikwa</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Huna ruhusa ya kuandika eneo hilo. Chagua nyingine, au ghairi kidirisha cha kuhifadhi.</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1737,11 +1737,6 @@ Wasifu hauna historia yako.</translation>
         <translation type="unfinished">Ingizo la ujumbe wa hali</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ujumbe wa hali unaonekana kwa anwani</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Kitambulisho chako cha Tox</translation>
@@ -1803,6 +1798,10 @@ Share it with your friends to begin chatting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Kitambulisho hiki huruhusu watumiaji wengine wa Tox kukuongeza na kuwasiliana nawe.
 Ishiriki na marafiki zako ili kuanza kupiga gumzo.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">Weka ujumbe wako wa hali ambao utaonyeshwa kwa wengine</translation>
     </message>
 </context>
 <context>
@@ -1894,11 +1893,6 @@ Ishiriki na marafiki zako ili kuanza kupiga gumzo.</translation>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Profaili zilizolindwa na nenosiri haziwezi kupakiwa kiotomatiki.</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Haikuweza kupakia wasifu</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -2008,6 +2002,10 @@ Bonyeza Shift+F1 kwa maelezo zaidi.</translation>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">Nenosiri unaloweka hapa ni la hiari na husimba kwa njia fiche data ya ujumbe na ufunguo wako wa siri wa Tox. Haisimbi kwa njia fiche faili zilizopokelewa. Data yako ya wasifu haitumwi kwa seva zozote. Huku si kuingia kwa mbali, ni kwa kompyuta yako pekee. Wasanidi wa qTox hawataweza kurejesha nenosiri lako likipotea.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">Sehemu ya kuingiza nenosiri, urefu wa angalau vibambo 6</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -2020,16 +2018,6 @@ Bonyeza Shift+F1 kwa maelezo zaidi.</translation>
         <source>Your status</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Hali yako</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">...</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ongeza marafiki</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -2150,6 +2138,10 @@ Bonyeza Shift+F1 kwa maelezo zaidi.</translation>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Fungua Kitatuzi</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Ongeza rafiki</translation>
     </message>
 </context>
 <context>
@@ -2475,12 +2467,6 @@ Tafadhali tumia picha nyingine.</translation>
         <translation type="unfinished">Haikuweza kubadilisha jina la wasifu kuwa &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Mahali hapawezi kuandikwa</translation>
-    </message>
-    <message>
         <source>Nothing to remove</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Hakuna cha kuondoa</translation>
@@ -2605,12 +2591,6 @@ Tafadhali tumia picha nyingine.</translation>
         <comment>filetype filter</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Picha (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Huna ruhusa ya kuandikia eneo hilo. Chagua nyingine, au ghairi kidirisha cha kuhifadhi.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -3184,11 +3164,6 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Weka nenosiri lako</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Thibitisha:</translation>
@@ -3233,6 +3208,10 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Nenosiri ni fupi mno.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">Weka nenosiri la wasifu</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -3260,12 +3239,6 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ongeza rafiki</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Je, ungependa kuongeza %1 kama rafiki?</translation>
@@ -3292,6 +3265,11 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ghairi</translation>
     </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">Ongeza rafiki</translation>
+    </message>
 </context>
 <context>
     <name>UserInterfaceForm</name>
@@ -3317,11 +3295,6 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
         <source>Base font:</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Fonti ya msingi:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">px</translation>
     </message>
     <message>
         <source>Size: </source>

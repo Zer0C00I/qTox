@@ -388,11 +388,6 @@ so&apos;o roi lo nu do jungau cu na banzu xamgu lo ka zgana lo nu zgana lo vidni
         <translation type="unfinished">ko benji lo pendo cpedu</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ko jmina lo pendo</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">pendo cpedu</translation>
@@ -521,6 +516,10 @@ so&apos;o roi lo nu do jungau cu na banzu xamgu lo ka zgana lo nu zgana lo vidni
         <extracomment>Tox ID format description</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ju&apos;u xa</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">jmina pendo</translation>
     </message>
 </context>
 <context>
@@ -950,6 +949,19 @@ e&apos;u do ka&apos;e sfaile lo nu sfaile bu&apos;u la .Windows.zoi ke&apos;a nu
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translation type="unfinished">lo tcini na ka&apos;e ciska</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">do na jai se curmi fai lo nu ciska lo va stuzi ko drata gi&apos;onai sisti lo nu nurxrugau</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -1123,18 +1135,6 @@ e&apos;u do ka&apos;e sfaile lo nu sfaile bu&apos;u la .Windows.zoi ke&apos;a nu
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ko zanru lo nu terbe le sfaile</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">lo tcini na ka&apos;e ciska</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">do na jai se curmi fai lo nu ciska lo va stuzi ko drata gi&apos;onai sisti lo nu nurxrugau</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1710,11 +1710,6 @@ lo tcima cu na cmima lo do citri</translation>
         <translation type="unfinished">tab-style</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Name</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">samselpla do .toks.</translation>
@@ -1776,6 +1771,10 @@ Share it with your friends to begin chatting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ti poi samselcmi cu curmi lo nu drata samselcmi gi&apos;e penmi do
 ko tavla lo do pendo ko lo nu co&apos;a casnu</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">.i ko setca lo se ctuca be do noi ba jarco lo drata</translation>
     </message>
 </context>
 <context>
@@ -1867,11 +1866,6 @@ ko tavla lo do pendo ko lo nu co&apos;a casnu</translation>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">lo japyvla cu ckaji lo ka sarji tu&apos;a lo samymi&apos;e ku na ka&apos;e samterci&apos;egau</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">QIBaseResult</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1983,6 +1977,10 @@ ko danre la bastyfygau+F1 tezu&apos;e lo ka datni zenba</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">lo japyvla poi do vi punji ke&apos;a cu tercu&apos;i gi&apos;e zifre lo notci datni .e lo do samselmipri ckiku pe la .toks. na benji lo sfaile poi selbenji lo do seltcidu cu noroi benji fi su&apos;o seltcidu ti na darno selcmene gi&apos;e diklo lo do skami po&apos;o la .qTox. fau lo nu fau lo nu fau lo nu fau lo nu fau lo nu fau lo nu fau lo nu facki lo japyvla na ka&apos;e rinka</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">japyvla seltce gi&apos;e xa lerfu clani</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1995,16 +1993,6 @@ ko danre la bastyfygau+F1 tezu&apos;e lo ka datni zenba</translation>
         <source>Your status</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">do niltca</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation type="unfinished">fi&apos;o nai</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">jmina pendo</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -2124,6 +2112,10 @@ ko danre la bastyfygau+F1 tezu&apos;e lo ka datni zenba</translation>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ko kargau lo samcfa pe&apos;a</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">jmina pendo</translation>
     </message>
 </context>
 <context>
@@ -2435,12 +2427,6 @@ e&apos;o ko pilno lo drata pixra</translation>
         <translation type="unfinished">na ka&apos;e renvi lo nu benji lo profila be &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">lo tcini na ka&apos;e ciska</translation>
-    </message>
-    <message>
         <source>Nothing to remove</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">no da poi nu vimcu</translation>
@@ -2565,12 +2551,6 @@ e&apos;o ko pilno lo drata pixra</translation>
         <comment>filetype filter</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">pixra (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">do na jai se curmi fai lo nu ciska lo va stuzi ko drata gi&apos;onai sisti lo nu nurxrugau</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -3133,11 +3113,6 @@ le samselcmi cu mapti le blanu zoi gy. NoSpam .gy. joi le checksum zoi gy. gray<
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">.i ko pilno lo do japyvla</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">jetnu:</translation>
@@ -3182,6 +3157,10 @@ le samselcmi cu mapti le blanu zoi gy. NoSpam .gy. joi le checksum zoi gy. gray<
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">japyvla dukse tordu</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">japyvla</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -3209,12 +3188,6 @@ le samselcmi cu mapti le blanu zoi gy. NoSpam .gy. joi le checksum zoi gy. gray<
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ko jmina lo pendo</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">xu do djica lo nu jmina la%1 lo pendo</translation>
@@ -3241,6 +3214,11 @@ le samselcmi cu mapti le blanu zoi gy. NoSpam .gy. joi le checksum zoi gy. gray<
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">sisti</translation>
     </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">jmina pendo</translation>
+    </message>
 </context>
 <context>
     <name>UserInterfaceForm</name>
@@ -3266,11 +3244,6 @@ le samselcmi cu mapti le blanu zoi gy. NoSpam .gy. joi le checksum zoi gy. gray<
         <source>Base font:</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">fi&apos;o te ga&apos;i samterci&apos;e</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">px</translation>
     </message>
     <message>
         <source>Size: </source>

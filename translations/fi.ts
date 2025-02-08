@@ -331,10 +331,6 @@ mikä voi johtaa ongelmiin videopuheluissa.</translation>
         <translation>Lähetä kontaktipyyntö</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation>Lisää kaveri</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translation>Kaveripyynnöt</translation>
     </message>
@@ -436,6 +432,10 @@ mikä voi johtaa ongelmiin videopuheluissa.</translation>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
         <translation>76 heksadesimaalimerkkiä</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Lisää kaveri</translation>
     </message>
 </context>
 <context>
@@ -801,6 +801,19 @@ joten voit tallentaa tiedoston Windowsissa.</translation>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translation type="unfinished">Kohteeseen ei voi kirjoittaa</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">Sinulla ei ole oikeutta tallentaa kohteeseen. Valitse toinen kohde, tai peruuta tallennus.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -958,16 +971,6 @@ joten voit tallentaa tiedoston Windowsissa.</translation>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translation>Hyväksy tiedoston vastaanotto</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Kohteeseen ei voi kirjoittaa</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>Käyttöoikeudet eivät riitä kohteeseen kirjoittamiseen. Valitse toinen kohde tai peru.</translation>
     </message>
     <message>
         <source>Paused</source>
@@ -1445,10 +1448,6 @@ Profiili ei sisällä historiaasi.</translation>
         <translation>Tilaviestin syöttö</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translation>Kontakteille näkyvä tilaviesti</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translation>Sinun Tox ID</translation>
     </message>
@@ -1498,6 +1497,10 @@ Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
         <translation>Tämä ID sallii muiden Tox-käyttäjien lisätä ja viestitellä kanssasi.
 Jaa se kavereillesi aloittaaksesi keskustelut.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">Aseta tilaviestisi näkymään muille</translation>
     </message>
 </context>
 <context>
@@ -1569,10 +1572,6 @@ Jaa se kavereillesi aloittaaksesi keskustelut.</translation>
     <message>
         <source>A profile with this name already exists.</source>
         <translation>Tämän niminen profiili on jo olemassa.</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translation>Ei voitu ladata profiilia</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1668,6 +1667,10 @@ Saat lisätietoja painamalla Shift+F1.</translation>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">Tässä antamasi salasana on valinnainen ja salaa viestitiedot ja Tox-salaisen avaimesi. Se ei salaa vastaanotettuja tiedostoja. Profiilitietojasi ei koskaan lähetetä palvelimille. Tämä ei ole etäkirjautuminen, se on vain paikallinen tietokoneellesi. qTox-kehittäjät eivät voi palauttaa salasanaasi, jos se katoaa.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">Salasana, vähintään 6 merkkiä</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1678,14 +1681,6 @@ Saat lisätietoja painamalla Shift+F1.</translation>
     <message>
         <source>Your status</source>
         <translation>Sinun tilasi</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation>...</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translation>Lisää kontakti</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -1784,6 +1779,10 @@ Saat lisätietoja painamalla Shift+F1.</translation>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Avaa Debugger</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Lisää kaveri</translation>
     </message>
 </context>
 <context>
@@ -2057,11 +2056,6 @@ Valitse toinen kuva.</translation>
         <translation>Profiilia ei voi nimetä uudelleen &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Kohteeseen ei voi kirjoittaa</translation>
-    </message>
-    <message>
         <source>Are you sure you want to delete this profile?</source>
         <comment>deletion confirmation text</comment>
         <translation>Haluatko varmasti poistaa tämän profiilin?</translation>
@@ -2163,11 +2157,6 @@ Valitse toinen kuva.</translation>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
         <translation>Kuvat (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>Sinulla ei ole oikeutta tallentaa kohteeseen. Valitse toinen kohde, tai peruuta tallennus.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -2657,10 +2646,6 @@ Tämä ID sisältää spammin estävän koodin(joka on sinisellä), ja tarkistus
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translation>Aseta salasanasi</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translation>Vahvista:</translation>
     </message>
@@ -2696,6 +2681,10 @@ Tämä ID sisältää spammin estävän koodin(joka on sinisellä), ja tarkistus
         <source>The password is too short.</source>
         <translation>Salasana on liian lyhyt.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">Aseta profiilin salasana</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -2722,11 +2711,6 @@ Tämä ID sisältää spammin estävän koodin(joka on sinisellä), ja tarkistus
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation>Lisää kontakti</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translation>Haluatko lisätä %1 kontaktiksesi?</translation>
     </message>
@@ -2747,6 +2731,11 @@ Tämä ID sisältää spammin estävän koodin(joka on sinisellä), ja tarkistus
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
         <translation>Peruuta</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">Lisää kaveri</translation>
     </message>
 </context>
 <context>
@@ -2769,10 +2758,6 @@ Tämä ID sisältää spammin estävän koodin(joka on sinisellä), ja tarkistus
     <message>
         <source>Base font:</source>
         <translation>Oletusfontti:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation>px</translation>
     </message>
     <message>
         <source>Size: </source>

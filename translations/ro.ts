@@ -326,10 +326,6 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
         <translation>Trimiteți cerere de prietenie</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation>Adăugați un prieten</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translation>Cereri de prietenie</translation>
     </message>
@@ -436,6 +432,10 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
         <translation>76 de caractere hexazecimale</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Adăugați prieten</translation>
     </message>
 </context>
 <context>
@@ -801,6 +801,19 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translation type="unfinished">Locația nu poate fi scrisă</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">Nu aveți permisiunea de a scrie în acea locație. Alegeți alta sau anulați dialogul de salvare.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -956,16 +969,6 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translation>Acceptați pentru a primi acest fișier</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Locația nu poate fi scrisă</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>Nu aveți permisiunea de a scrie acea locație. Alegeți altceva, sau anulați dialogul de salvare.</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1442,10 +1445,6 @@ Profilul nu conține istoricul dvs.</translation>
         <translation>Introduceți mesaj de stare</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translation>Mesaj de stare vizibil pentru contacte</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translation>Tox ID-ul dvs</translation>
     </message>
@@ -1495,6 +1494,10 @@ Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
         <translation>Acest ID permite altor utilizatori Tox să vă adauge și să vă contacteze.
 Distribuiți-l prietenilor dvs. pentru a începe să conversați.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">Setați mesajul de stare care va fi afișat altora</translation>
     </message>
 </context>
 <context>
@@ -1569,10 +1572,6 @@ Distribuiți-l prietenilor dvs. pentru a începe să conversați.</translation>
     <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
         <translation>Profilurile protejate prin parolă nu pot fi încărcate automat.</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t load profile</source>
-        <translation>Nu s-a putut încărca profilul</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1664,6 +1663,10 @@ Apăsați Shift+F1 pentru mai multe informații.</translation>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">Parola pe care o introduceți aici este opțională și criptează datele mesajului și cheia dvs. secretă Tox. Nu criptează fișierele primite. Datele dvs. de profil nu sunt trimise niciodată către niciun server. Aceasta nu este o conectare de la distanță, este locală numai pentru computerul dvs. Dezvoltatorii qTox nu vor putea să vă recupereze parola dacă este pierdută.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">Câmp de introducere a parolei, cu lungimea minimă de 6 caractere</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1674,15 +1677,6 @@ Apăsați Shift+F1 pentru mai multe informații.</translation>
     <message>
         <source>Your status</source>
         <translation>Statusul dvs</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>...</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translation>Adăugați prieteni</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -1779,6 +1773,10 @@ Apăsați Shift+F1 pentru mai multe informații.</translation>
     <message>
         <source>Open Debugger</source>
         <translation>Deschideți depanatorul</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Adăugați prieten</translation>
     </message>
 </context>
 <context>
@@ -2053,11 +2051,6 @@ Utilizați o altă imagine.</translation>
         <translation>Nu s-a putut redenumi profilul &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Locația nu poate fi scrisă</translation>
-    </message>
-    <message>
         <source>Nothing to remove</source>
         <translation>Nimic de eliminat</translation>
     </message>
@@ -2159,11 +2152,6 @@ Utilizați o altă imagine.</translation>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
         <translation>Imagini (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>Nu aveți permisiunea de a scrie în acea locație. Alegeți alta sau anulați dialogul de salvare.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -2637,10 +2625,6 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translation>Setați-vă parola</translation>
-    </message>
-    <message>
         <source>Confirm:</source>
         <translation>Confirmare:</translation>
     </message>
@@ -2676,6 +2660,10 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <source>The password is too short.</source>
         <translation>Parola este prea scurtă.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">Setați parola de profil</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -2699,11 +2687,6 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation>Adăugați un prieten</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translation>Doriți să adăugați %1 ca un prieten?</translation>
     </message>
@@ -2724,6 +2707,11 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
         <translation>Anulați</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">Adăugați prieten</translation>
     </message>
 </context>
 <context>
@@ -2746,10 +2734,6 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     <message>
         <source>Base font:</source>
         <translation>Font de bază:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation>px</translation>
     </message>
     <message>
         <source>Size: </source>

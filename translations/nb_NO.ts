@@ -331,10 +331,6 @@ noe som kan forårsake problemer i videosamtaler.</translation>
         <translation>Ugyldig format for Tox-ID</translation>
     </message>
     <message>
-        <source>Add a friend</source>
-        <translation>Legg til en venn</translation>
-    </message>
-    <message>
         <source>Friend requests</source>
         <translation>Venneforespørsler</translation>
     </message>
@@ -436,6 +432,10 @@ noe som kan forårsake problemer i videosamtaler.</translation>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
         <translation>76 heksadesimale tegn</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Legg til venn</translation>
     </message>
 </context>
 <context>
@@ -803,6 +803,20 @@ slik at du kan lagre filen på Windows.</translation>
     </message>
 </context>
 <context>
+    <name>CommonDialogs</name>
+    <message>
+        <source>Location not writable</source>
+        <comment>Title of permissions popup</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Beliggenhet ikke skrivbar</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation type="unfinished">Du har ikke skrivetilgang dit. Velg et annet sted eller avbryt.</translation>
+    </message>
+</context>
+<context>
     <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -960,16 +974,6 @@ slik at du kan lagre filen på Windows.</translation>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translation>Aksepter til å motta denne filen</translation>
-    </message>
-    <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Lokasjon ikke skrivbar</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>Du har ikke skriverettigheter til den lokasjonen. Velg en annen, eller avbryt lagringsdialogen.</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1446,10 +1450,6 @@ Profilen inneholder ikke historikken din.</translation>
         <translation>Statusmeldingsinndata</translation>
     </message>
     <message>
-        <source>Status message visible to contacts</source>
-        <translation>Statusmelding synlig for kontakter</translation>
-    </message>
-    <message>
         <source>Your Tox ID</source>
         <translation>Din Tox-ID</translation>
     </message>
@@ -1499,6 +1499,10 @@ Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
         <translation>Denne ID-en lar andre Tox-brukere legge til og kontakte deg.
 Del den med vennene dine for å begynne å sludre.</translation>
+    </message>
+    <message>
+        <source>Set your status message that will be shown to others</source>
+        <translation type="unfinished">Sett din statusmelding, slik vist til andre</translation>
     </message>
 </context>
 <context>
@@ -1591,10 +1595,6 @@ Del den med vennene dine for å begynne å sludre.</translation>
         <translation>Passordbeskyttede profiler kan ikke lastes inn automatisk.</translation>
     </message>
     <message>
-        <source>Couldn&apos;t load profile</source>
-        <translation>Kunne ikke laste inn profil</translation>
-    </message>
-    <message>
         <source>There is no selected profile.
 
 You may want to create one.</source>
@@ -1668,6 +1668,10 @@ Trykk Shift+F1 for mer informasjon.</translation>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
         <translation type="unfinished">Passordet du skriver inn her er valgfritt og krypterer meldingsdata og din hemmelige Tox-nøkkel. Den krypterer ikke mottatte filer. Profildataene dine sendes aldri til noen servere. Dette er ikke en ekstern pålogging, det er kun lokalt på datamaskinen din. qTox-utviklere vil ikke kunne gjenopprette passordet ditt hvis det går tapt.</translation>
     </message>
+    <message>
+        <source>Password input field, minimum 6 characters long</source>
+        <translation type="unfinished">Passordsinntastingsfelt, minimum 6 tegn</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -1678,14 +1682,6 @@ Trykk Shift+F1 for mer informasjon.</translation>
     <message>
         <source>Your status</source>
         <translation>Din status</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation>…</translation>
-    </message>
-    <message>
-        <source>Add friends</source>
-        <translation>Legg til kontakt</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -1784,6 +1780,10 @@ Trykk Shift+F1 for mer informasjon.</translation>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Åpne Debugger</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <translation type="unfinished">Legg til venn</translation>
     </message>
 </context>
 <context>
@@ -2049,11 +2049,6 @@ Velg et annet bilde.</translation>
         <translation>Kunne ikke endre navn på profilen til &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Location not writable</source>
-        <comment>Title of permissions popup</comment>
-        <translation>Lokasjon er ikke skrivbar</translation>
-    </message>
-    <message>
         <source>Nothing to remove</source>
         <translation>Ingenting å fjerne</translation>
     </message>
@@ -2163,11 +2158,6 @@ Velg et annet bilde.</translation>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
         <translation>Bilder (%1)</translation>
-    </message>
-    <message>
-        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation type="unfinished">Du har ikke skrivetilgang dit. Velg et annet sted eller avbryt.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
@@ -2643,10 +2633,6 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
 <context>
     <name>SetPasswordDialog</name>
     <message>
-        <source>Set your password</source>
-        <translation>Velg ditt passord</translation>
-    </message>
-    <message>
         <source>The password doesn&apos;t match.</source>
         <translation>Passordet samsvarer ikke.</translation>
     </message>
@@ -2682,6 +2668,10 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
         <source>The password is too short.</source>
         <translation>Passordet er for kort.</translation>
     </message>
+    <message>
+        <source>Set profile password</source>
+        <translation type="unfinished">Sett profilpassord</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -2706,11 +2696,6 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
 <context>
     <name>ToxURIDialog</name>
     <message>
-        <source>Add a friend</source>
-        <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation>Legg til en venn</translation>
-    </message>
-    <message>
         <source>Do you want to add %1 as a friend?</source>
         <translation>Har du lyst til å legge til %1 som en venn?</translation>
     </message>
@@ -2731,6 +2716,11 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
         <translation>Avbryt</translation>
+    </message>
+    <message>
+        <source>Add friend</source>
+        <comment>Title of the window to add a friend through Tox URI</comment>
+        <translation type="unfinished">Legg til venn</translation>
     </message>
 </context>
 <context>
@@ -2753,10 +2743,6 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
     <message>
         <source>Base font:</source>
         <translation>Standard skrift:</translation>
-    </message>
-    <message>
-        <source>px</source>
-        <translation>px</translation>
     </message>
     <message>
         <source>Size: </source>
