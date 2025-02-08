@@ -407,7 +407,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>%1 here! Tox me maybe?</source>
         <extracomment>Default message in friend requests if the field is left blank. Write something appropriate!</extracomment>
-        <translation>Здравей, %1 е! Да ми пишеш в Tox?</translation>
+        <translation>Здравей, %1 е! Добави ме като контакт в Tox?</translation>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
@@ -599,17 +599,17 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation>Задава IPv6 &lt;on&gt;/&lt;off&gt;. По подразбиране е ON.</translation>
+        <translation>Задава стойност &lt;on&gt; или &lt;off&gt; за IPv6. По подразбиране е ON.</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation>Задава UDP &lt;on&gt;/&lt;off&gt;. По подразбиране е ON.</translation>
+        <translation>Задава стойност &lt;on&gt; или &lt;off&gt; за UDP. По подразбиране е ON.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
         <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation>Задава откриване в местната мрежа на &lt;on&gt;/&lt;off&gt;. По подразбиране е ON.</translation>
+        <translation>Задава стойност &lt;on&gt; или &lt;off&gt; за откриване в местната мрежа. По подразбиране е ON.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
@@ -978,7 +978,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Paused</source>
         <comment>file transfer widget</comment>
-        <translation>Пауза</translation>
+        <translation>На пауза</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1117,7 +1117,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Away</source>
-        <translation>Отсъстващ</translation>
+        <translation>Отсъства</translation>
     </message>
     <message>
         <source>Busy</source>
@@ -1125,7 +1125,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Offline</source>
-        <translation>Извън линия</translation>
+        <translation>Изключен</translation>
     </message>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
@@ -1622,7 +1622,7 @@ You may want to create one.</source>
     </message>
     <message>
         <source>Password input</source>
-        <translation>Текстово поле за въвеждане на парола</translation>
+        <translation>Текстово поле, в което да въведете парола</translation>
     </message>
     <message>
         <source>Load automatically checkbox</source>
@@ -1899,7 +1899,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
-        <translation>Покана от %1 за присъединяване към групов разговор.</translation>
+        <translation>%1 ви кани да се присъедините към групов разговор.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -1942,14 +1942,14 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Your friends will be able to see when you are typing.</source>
         <comment>tooltip for typing notifications setting</comment>
-        <translation>Вашите кореспонденти ще виждат кога въвеждате съобщение.</translation>
+        <translation>Кореспондентите ви ще виждат кога въвеждате съобщение.</translation>
     </message>
     <message>
         <source>Chat history keeping is still in development.
 Save format changes are possible, which may result in data loss.</source>
         <comment>toolTip for Keep History setting</comment>
-        <translation>Запазването на кореспонденциите все още е в разработка.
-Възможни са промени във форма̀та на запис, което може да доведе до загуба на данни.</translation>
+        <translation>Запазването на кореспонденциите все още е в процес на разработка.
+Възможни са промени във форма̀та на съхраняване, което може да доведе до загуба на данни.</translation>
     </message>
     <message>
         <source>Send typing notifications</source>
@@ -1975,12 +1975,12 @@ People will be unable to add you with your old ID, but you will keep your curren
     <message>
         <source>NoSpam is a part of your ID that can be changed at will.
 If you are getting spammed with friend requests, change the NoSpam.</source>
-        <translation>NoSpam е част от идентификатора на Tox.
-Ако получавате нежелани покани за контакт променете вашия NoSpam.</translation>
+        <translation>Полето АнтиСпам е част от Tox ID.
+Ако получавате нежелани заявки за контакт променете стойността му.</translation>
     </message>
     <message>
         <source>Generate random NoSpam</source>
-        <translation>Генерирайте произволен NoSpam</translation>
+        <translation>Задаване на произволна стойност</translation>
     </message>
     <message>
         <source>Privacy</source>
@@ -1988,41 +1988,41 @@ If you are getting spammed with friend requests, change the NoSpam.</source>
     </message>
     <message>
         <source>Conference block list</source>
-        <translation>Черен списък</translation>
+        <translation>Списък със забрани в групови разговори</translation>
     </message>
     <message>
         <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation type="unfinished">Филтрирай групови съобщения по публични ключове на членове. Постави ключовете тук, по един на линия.</translation>
+        <translation>Филтрирайте съобщенията в груповите разговори посредством публичните ключове на членовете. Поставете по един ключ на ред.</translation>
     </message>
 </context>
 <context>
     <name>Profile</name>
     <message>
         <source>Failed to derive key from password, the profile won&apos;t use the new password.</source>
-        <translation>Неуспешно произвеждане на ключ от парола, профилът няма за използва новата парола.</translation>
+        <translation>Неуспешно извличане на ключ от паролата, профилът няма за използва новата парола.</translation>
     </message>
     <message>
         <source>Toxing on qTox</source>
-        <translation>Tox-ва в qTox</translation>
+        <translation>Използвам qTox</translation>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
-        <translation>Неуспех при промяна на паролата за базата данни, възможно е да е повредена или използвате стара парола.</translation>
+        <translation>Паролата не може да бъде променена; или хранилището е повредено, или използвате текущата парола.</translation>
     </message>
 </context>
 <context>
     <name>ProfileForm</name>
     <message>
         <source>Current profile: </source>
-        <translation>Сегашен профил: </translation>
+        <translation>Текущ профил: </translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Премахни</translation>
+        <translation>Премахване</translation>
     </message>
     <message>
         <source>Choose a profile picture</source>
-        <translation>Изберете профилна снимка</translation>
+        <translation>Избиране на профилна снимка</translation>
     </message>
     <message>
         <source>Error</source>
@@ -2034,69 +2034,69 @@ If you are getting spammed with friend requests, change the NoSpam.</source>
     </message>
     <message>
         <source>Unable to read this image.</source>
-        <translation>Неуспешно разчитане на това изображение.</translation>
+        <translation>Грешка при прочитане на изображение.</translation>
     </message>
     <message>
         <source>The supplied image is too large.
 Please use another image.</source>
-        <translation>Подаденото изображение е твърде голямо.
-Моля ползвайте друго изображение.</translation>
+        <translation>Избраното изображение е твърде голямо.
+Изберете друго изображение.</translation>
     </message>
     <message>
         <source>Rename &quot;%1&quot;</source>
         <comment>renaming a profile</comment>
-        <translation>Преименуване на &quot;%1&quot;</translation>
+        <translation>Преименуване на „%1“</translation>
     </message>
     <message>
         <source>Couldn&apos;t rename the profile to &quot;%1&quot;</source>
-        <translation>Неуспешно преименуване на профила към &quot;%1&quot;</translation>
+        <translation>Грешка при преименуване на профила на „%1“</translation>
     </message>
     <message>
         <source>Location not writable</source>
         <comment>Title of permissions popup</comment>
-        <translation>Неможе да се записва на това място</translation>
+        <translation>Грешка при запазване</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this profile?</source>
         <comment>deletion confirmation text</comment>
-        <translation>Сигурни ли сте че искате да изтриете този профил?</translation>
+        <translation>Желаете ли профилът да бъде премахнат?</translation>
     </message>
     <message>
         <source>Files could not be deleted!</source>
         <comment>deletion failed title</comment>
-        <translation>Файловете не можаха да се изтрият!</translation>
+        <translation>Файловете не са премахнати!</translation>
     </message>
     <message>
         <source>Save</source>
         <comment>save qr image</comment>
-        <translation>Запази</translation>
+        <translation>Запазване</translation>
     </message>
     <message>
         <source>Save QrCode (*.png)</source>
         <comment>save dialog filter</comment>
-        <translation>Запази QrCode (*.png)</translation>
+        <translation>QR (*.png)</translation>
     </message>
     <message>
         <source>Nothing to remove</source>
-        <translation>Няма нищо за премахване</translation>
+        <translation>Нищо не е премахнато</translation>
     </message>
     <message>
         <source>Your profile does not have a password!</source>
-        <translation>Вашия профил няма парола!</translation>
+        <translation>Профилът е без парола!</translation>
     </message>
     <message>
         <source>Please enter a new password.</source>
-        <translation>Моля въведете нова парола.</translation>
+        <translation>Въведете нова парола.</translation>
     </message>
     <message>
         <source>Change password</source>
         <comment>button text</comment>
-        <translation>Промени паролата</translation>
+        <translation>Смяна на паролата</translation>
     </message>
     <message>
         <source>Set profile password</source>
         <comment>button text</comment>
-        <translation>Задай парола на профила</translation>
+        <translation>Задаване на парола</translation>
     </message>
     <message>
         <source>Current profile location: %1</source>
@@ -2104,23 +2104,23 @@ Please use another image.</source>
     </message>
     <message>
         <source>Couldn&apos;t change password</source>
-        <translation>Неуспешна смяна на парола</translation>
+        <translation>Грешка при смяна на парола</translation>
     </message>
     <message>
         <source>Empty path is unavailable</source>
-        <translation>Празен път не е достъпен</translation>
+        <translation>Празен път е недопустим</translation>
     </message>
     <message>
         <source>Failed to rename</source>
-        <translation>Неуспешно преименуване</translation>
+        <translation>Грешка при преименуване</translation>
     </message>
     <message>
         <source>Profile already exists</source>
-        <translation>Този профил вече съществува</translation>
+        <translation>Съществуващ профил</translation>
     </message>
     <message>
         <source>A profile named &quot;%1&quot; already exists.</source>
-        <translation>Профил с име &quot;%1&quot; вече съществува.</translation>
+        <translation>Профил на име „%1“ вече съществува.</translation>
     </message>
     <message>
         <source>Empty name</source>
@@ -2128,7 +2128,7 @@ Please use another image.</source>
     </message>
     <message>
         <source>Empty name is unavailable</source>
-        <translation>Празно име не е достъпно</translation>
+        <translation>Празно име не е недопустимо</translation>
     </message>
     <message>
         <source>Empty path</source>
@@ -2142,17 +2142,17 @@ Please use another image.</source>
     <message>
         <source>Tox save file (*.tox)</source>
         <extracomment>save dialog filter</extracomment>
-        <translation>Tox запиши файл (*.tox)</translation>
+        <translation>Файл с профил на Tox(*.tox)</translation>
     </message>
     <message>
         <source>The following files could not be deleted:</source>
         <extracomment>deletion failed text part 1</extracomment>
-        <translation>Неуспешно изтриване на фаловете:</translation>
+        <translation>Следните файлове не са премахнати:</translation>
     </message>
     <message>
         <source>Please manually remove them.</source>
         <extracomment>deletion failed text part 2</extracomment>
-        <translation>Моля премахнете ги ръчно.</translation>
+        <translation>Премахнете ги ръчно.</translation>
     </message>
     <message>
         <source>Images (%1)</source>
@@ -2162,32 +2162,32 @@ Please use another image.</source>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation>Вие нямате правомощия за запис на тази локация. Изберете друга, или отмени запазването.</translation>
+        <translation>Нямате права за писане в тази папка. Изберете друга или откажете.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
-        <translation>Неуспех при запазване на файла</translation>
+        <translation>Грешка при запазване на файл</translation>
     </message>
     <message>
         <source>The file you chose could not be saved.</source>
-        <translation>Файлът, който избрахте, не може да бъде запазен.</translation>
+        <translation>Файлът, който сте избрали, не може да бъде запазен.</translation>
     </message>
     <message>
         <source>Empty path is unavailable.</source>
-        <translation>Празният път е неналичен.</translation>
+        <translation>Празен път е недопустим.</translation>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
-        <translation>Неуспех при промяна на паролата за базата данни, може да е коруприрана или използвате стара парола.</translation>
+        <translation>Паролата не може да бъде променена; или хранилището е повредено, или използвате текущата парола.</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
-        <translation>потребителски имена на Тох не могат да надвишават %1 знака/ци.</translation>
+        <translation>Потребителските имена на Тох не могат да надвишават %1 знака.</translation>
     </message>
     <message>
         <source>Delete profile</source>
         <comment>deletion confirmation title</comment>
-        <translation>Изтрий профил</translation>
+        <translation>Премахване на профил</translation>
     </message>
     <message>
         <source>Remove password</source>
@@ -2197,7 +2197,7 @@ Please use another image.</source>
     <message>
         <source>Are you sure you want to remove your password?</source>
         <extracomment>deletion confirmation text</extracomment>
-        <translation>Наистина ли желаете да премахнете паролата си?</translation>
+        <translation>Желаете ли паролата да бъде премахната?</translation>
     </message>
     <message>
         <source>This ID allows other Tox users to add and contact you.
@@ -2207,7 +2207,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>Този идентификатор позволява на други потребители на Tox да ви добавят и да се свързват с вас.
 Споделете го с приятелите си, за да започнете да общувате.
 
-Този идентификатор включва кода на NoSpam (в синьо) и контролната сума (в сиво).</translation>
+Този идентификатор включва полето АнтиСпам (в синьо) и контролната сума (в сиво).</translation>
     </message>
 </context>
 <context>
@@ -2220,27 +2220,27 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Tox save file (*.tox)</source>
         <comment>import dialog filter</comment>
-        <translation>Tox запази файл (*.tox)</translation>
+        <translation>Файл с профил на Tox(*.tox)</translation>
     </message>
     <message>
         <source>Ignoring non-Tox file</source>
         <comment>popup title</comment>
-        <translation>Не е избран Tox файл</translation>
+        <translation>Грешка при внасяне</translation>
     </message>
     <message>
         <source>Warning: You have chosen a file that is not a Tox save file; ignoring.</source>
         <comment>popup text</comment>
-        <translation>Внимание: Избрали сте файл, който не е Tox save file; игнориране.</translation>
+        <translation>Внимание: Избрали сте файл, който не е профил на Tox и ще бъде пренебрегнат.</translation>
     </message>
     <message>
         <source>Profile already exists</source>
         <comment>import confirm title</comment>
-        <translation>Този профил вече съществува</translation>
+        <translation>Съществуващ профил</translation>
     </message>
     <message>
         <source>A profile named &quot;%1&quot; already exists. Do you want to erase it?</source>
         <comment>import confirm text</comment>
-        <translation>Профил с име &quot;%1&quot; вече съществува. Искате ли да го изтриете?</translation>
+        <translation>Профил на име „%1“ вече съществува. Желаете ли да бъде премахнат?</translation>
     </message>
     <message>
         <source>File doesn&apos;t exist</source>
@@ -2252,22 +2252,22 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Profile imported</source>
-        <translation>Профилът е внесен</translation>
+        <translation>Внесен профил</translation>
     </message>
     <message>
         <source>%1.tox was successfully imported</source>
-        <translation>%1.tox бе внесен успешно</translation>
+        <translation>Файлът „%1.tox“ е внесен</translation>
     </message>
 </context>
 <context>
     <name>QApplication</name>
     <message>
         <source>Ok</source>
-        <translation>OK</translation>
+        <translation>Добре</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Отложи</translation>
+        <translation>Отказ</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -2288,23 +2288,23 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Choose an auto-accept directory</source>
         <comment>popup title</comment>
-        <translation type="unfinished">Изберете папката, в която се приемат файлове</translation>
+        <translation>Папка, в която автоматично се приемат файлове</translation>
     </message>
 </context>
 <context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
-        <translation>Неуспешно добавяне на приятел</translation>
+        <translation>Грешка при добавяне на контакт</translation>
     </message>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
         <comment>When trying to add your own Tox ID as friend</comment>
-        <translation>Не можете да добавите себе си като контакт!</translation>
+        <translation>Не трябва да добавяте себе си като контакт!</translation>
     </message>
     <message>
         <source>%1 is not a valid Tox address.</source>
-        <translation>%1 не е валиден адрес на Tox.</translation>
+        <translation>Низът „%1“ не е приемлив адрес на Tox.</translation>
     </message>
 </context>
 <context>
@@ -2327,7 +2327,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Violet</source>
-        <translation>Виолетов</translation>
+        <translation>Лилав</translation>
     </message>
     <message>
         <source>Incoming call...</source>
@@ -2336,7 +2336,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>%1 here! Tox me maybe?</source>
         <comment>Default message in Tox URI friend requests. Write something appropriate!</comment>
-        <translation>%1 е тук! Да ми пишеш в Tox?</translation>
+        <translation>Здравей, %1 е! Добави ме като контакт в Tox?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -2344,7 +2344,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>qTox couldn&apos;t open your chat logs, they will be disabled.</source>
-        <translation>qTox неуспя да отвори чат логове, те ще бъдат изключени.</translation>
+        <translation>По-ранната кореспонденция не е заредена поради грешка и ще бъде изключена.</translation>
     </message>
     <message>
         <source>None</source>
@@ -2358,7 +2358,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Dark</source>
-        <translation>Тъмен</translation>
+        <translation>Черен</translation>
     </message>
     <message>
         <source>Dark blue</source>
@@ -2366,25 +2366,25 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Dark olive</source>
-        <translation>Тъмно маслинено</translation>
+        <translation>Тъмно маслинен</translation>
     </message>
     <message>
         <source>Dark red</source>
-        <translation>Тъмно червено</translation>
+        <translation>Тъмно червен</translation>
     </message>
     <message>
         <source>Dark violet</source>
-        <translation>Тъмно виолетово</translation>
+        <translation>Тъмно лилав</translation>
     </message>
     <message>
         <source>online</source>
         <comment>contact status</comment>
-        <translation>На линия</translation>
+        <translation>на линия</translation>
     </message>
     <message>
         <source>away</source>
         <comment>contact status</comment>
-        <translation>отсъстващ</translation>
+        <translation>отсъства</translation>
     </message>
     <message>
         <source>busy</source>
@@ -2394,7 +2394,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>offline</source>
         <comment>contact status</comment>
-        <translation>Извън линия</translation>
+        <translation>изключен</translation>
     </message>
     <message>
         <source>blocked</source>
@@ -2404,19 +2404,19 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
-        <translation>Преформатиране на текст…</translation>
+        <translation>Форматиране на текст…</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
-        <translation>Неуспешно изпратен файл „%1“</translation>
+        <translation>Грешка при изпращане на файла „%1“</translation>
     </message>
     <message>
         <source>%1 has joined the conference</source>
-        <translation type="unfinished">%1 се присъедини към групата</translation>
+        <translation>%1 се присъедини към груповия разговор</translation>
     </message>
     <message>
         <source>%1 has left the conference</source>
-        <translation type="unfinished">%1 напусна групата</translation>
+        <translation>%1 напусна груповия разговор</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
@@ -2445,11 +2445,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Calling %1</source>
-        <translation>Позвъняване на %1</translation>
+        <translation>Обаждане на %1</translation>
     </message>
     <message>
         <source>%1 calling</source>
-        <translation>Позвъняване от %1</translation>
+        <translation>Обаждане от %1</translation>
     </message>
     <message>
         <source>Message failed to send</source>
@@ -2457,11 +2457,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Initializing</source>
-        <translation>Подготовка</translation>
+        <translation>Подготвяне</translation>
     </message>
     <message>
         <source>Transmitting</source>
-        <translation>Предаване</translation>
+        <translation>Прехвърляне</translation>
     </message>
     <message>
         <source>Finished</source>
@@ -2469,11 +2469,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Broken</source>
-        <translation>Прекъснато</translation>
+        <translation>Частично</translation>
     </message>
     <message>
         <source>Canceled</source>
-        <translation>Отменено</translation>
+        <translation>Отказано</translation>
     </message>
     <message>
         <source>Paused</source>
@@ -2485,7 +2485,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>File Name</source>
-        <translation>Име на файл</translation>
+        <translation>Име на файла</translation>
     </message>
     <message>
         <source>Contact</source>
@@ -2497,7 +2497,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Size</source>
-        <translation>Големина</translation>
+        <translation>Размер</translation>
     </message>
     <message>
         <source>Speed</source>
@@ -2513,19 +2513,19 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>You have joined the conference</source>
-        <translation type="unfinished">Присъединихте се към групата</translation>
+        <translation>Присъединихте се към групов разговор</translation>
     </message>
     <message>
         <source>You have left the conference</source>
-        <translation type="unfinished">Напуснахте групата</translation>
+        <translation>Напуснахте групов разговор</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
-        <translation>Историята на разговора не е заредена</translation>
+        <translation>Грешка при зареждане на кореспонденцията</translation>
     </message>
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
-        <translation>Изданието не банката от данни (%1) е по-нова от поддържаната в момента (%2). Обновете qTox.</translation>
+        <translation>Изданието на хранилището (%1) е по-ново от поддържаното в момента (%2). Надградете qTox.</translation>
     </message>
 </context>
 <context>
@@ -2536,7 +2536,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Also remove chat history</source>
-        <translation>Също да се премахне хронологията на разговора</translation>
+        <translation>Премахване и кореспонденцията</translation>
     </message>
     <message>
         <source>Remove</source>
@@ -2544,11 +2544,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
-        <translation>Сигурни ли сте, че искате да премахнете %1 от вашия лист с контакти?</translation>
+        <translation>Желаете ли да контактът %1 да бъде премахнат от контактите?</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation>Ако е отметнато премахва и разговорите с приятеля</translation>
+        <translation>Когато е отметнато се премахва и кореспонденцията с контакта</translation>
     </message>
 </context>
 <context>
@@ -2556,7 +2556,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Click and drag to select a region. Press %1 to hide/show qTox window, or %2 to cancel.</source>
         <comment>Help text shown when no region has been selected yet</comment>
-        <translation>Натисни и задръж за да избереш регион. Натисни %1 за да скриеш/покажеш qTox прозорец, или %2 за отмяна.</translation>
+        <translation>Натиснете и задръжте за избиране на област от екрана. Натиснете %1 за превключване прозореца на qTox или %2 за отказ.</translation>
     </message>
     <message>
         <source>Space</source>
@@ -2566,12 +2566,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Escape</source>
         <comment>[Escape] key on the keyboard</comment>
-        <translation>Escape</translation>
+        <translation>Esc</translation>
     </message>
     <message>
         <source>Press %1 to send a screenshot of the selection, %2 to hide/show qTox window, or %3 to cancel.</source>
         <comment>Help text shown when a region has been selected</comment>
-        <translation>Натисни %1 за да изпратиш снимка от селекцията, %2 за да скриеш/покажеш qTox прозорец, или %3 за да отложиш.</translation>
+        <translation>Натиснете %1 за изпращане на снимка от избраното, %2 за превключване прозореца на qTox, или %3 за отказ.</translation>
     </message>
     <message>
         <source>Enter</source>
@@ -2583,18 +2583,18 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>SearchForm</name>
     <message>
         <source>The text could not be found.</source>
-        <translation>Текстът не може да бъде открит.</translation>
+        <translation>Текстът не е намерен.</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation>Начало</translation>
+        <translation>Търсене</translation>
     </message>
 </context>
 <context>
     <name>SearchSettingsForm</name>
     <message>
         <source>Start search:</source>
-        <translation>Започни търсене:</translation>
+        <translation>Начало на търсенето:</translation>
     </message>
     <message>
         <source>from the end</source>
@@ -2602,7 +2602,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>from the beginning</source>
-        <translation>от начало</translation>
+        <translation>от началото</translation>
     </message>
     <message>
         <source>after date</source>
@@ -2618,15 +2618,15 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Whole words only</source>
-        <translation>Само цели думи</translation>
+        <translation>Цели думи</translation>
     </message>
     <message>
         <source>Use regular expressions</source>
-        <translation>използвай регулярни изрази</translation>
+        <translation>Регулярни изрази</translation>
     </message>
     <message>
         <source>Select Date Dialog</source>
-        <translation>Диалог за избор на дата</translation>
+        <translation>Избиране на дата</translation>
     </message>
     <message>
         <source>Select a date</source>
@@ -2637,7 +2637,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>SetPasswordDialog</name>
     <message>
         <source>Set your password</source>
-        <translation>Задайте вашата парола</translation>
+        <translation>Задаване на парола</translation>
     </message>
     <message>
         <source>Confirm:</source>
@@ -2653,27 +2653,27 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>The password doesn&apos;t match.</source>
-        <translation>Паролата не съответства.</translation>
+        <translation>Паролите не съвпадат.</translation>
     </message>
     <message>
         <source>Confirm password</source>
-        <translation>Потвърждение на паролата</translation>
+        <translation>Потвърждаване на паролата</translation>
     </message>
     <message>
         <source>Confirm password input</source>
-        <translation>Въвеждане на потвърждение на парола</translation>
+        <translation>Текстово поле, в което да въведете паролата втори път за потвърждение</translation>
     </message>
     <message>
         <source>Password input</source>
-        <translation>Текстово поле за въвеждане на парола</translation>
+        <translation>Текстово поле, в което да въведете парола</translation>
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
-        <translation>Поле за въвеждане на парола, минимум 6 знака</translation>
+        <translation>Текстово поле, в което да въведете парола, минимум 6 знака</translation>
     </message>
     <message>
         <source>The password is too short.</source>
-        <translation>Паролата е твърде кратка.</translation>
+        <translation>Паролата е твърде къса.</translation>
     </message>
 </context>
 <context>
@@ -2692,7 +2692,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Failed to load global settings</source>
-        <translation>Неуспешно зареждане на общите настройки</translation>
+        <translation>Грешка при зареждане на общите настройки</translation>
     </message>
 </context>
 <context>
@@ -2708,11 +2708,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>User ID:</source>
-        <translation>Потребителски идентификатор:</translation>
+        <translation>Идентификатор на потребителя:</translation>
     </message>
     <message>
         <source>Friend request message:</source>
-        <translation>Покана за приятелство:</translation>
+        <translation>Текст на заявката за контакт:</translation>
     </message>
     <message>
         <source>Send</source>
@@ -2733,7 +2733,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>User Interface</source>
-        <translation>Интерфейс</translation>
+        <translation>Външен вид</translation>
     </message>
 </context>
 <context>
@@ -2748,7 +2748,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>px</source>
-        <translation>пиксели</translation>
+        <translation>пиксела</translation>
     </message>
     <message>
         <source>Size: </source>
@@ -2767,15 +2767,26 @@ Show formatting characters:
 Hide formatting characters:
     Apply formatting and don&apos;t show characters.
     E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</source>
-        <translation type="unfinished">Новите предпочитания за стил на текста може да не се заредят, докато не рестартирате qTox.</translation>
+        <translation>Настройките за стил на текста няма да бъдат приложени към текущите съобщения,
+докато не рестартирате qTox, но ще имат ефект върху новите съобщения.
+
+Обикновен текст:
+    Не се прилага никакво форматиране на текста са съобщенията.
+    Например &quot;**текст**&quot; ще бъде показано като &quot;**текст**&quot;, не получер.
+Видими символи за формат:
+    Прилага форматирането и оставя символите за форматиране видими.
+    Например &quot;**текст**&quot; ще бъде показано като &quot;**текст**&quot;, получер.
+Скрити символи за формат:
+    Прилага форматирането и скрива символите за форматиране.
+    Например &quot;**текст**&quot; ще бъде показано като &quot;текст&quot;, получер.</translation>
     </message>
     <message>
         <source>Text styling:</source>
-        <translation>Формат на стил на текста:</translation>
+        <translation>Формат на текста:</translation>
     </message>
     <message>
         <source>Select text styling preference.</source>
-        <translation>Изберете предпочитания за стил на текста.</translation>
+        <translation>Изберете предпочитания формат на текста.</translation>
     </message>
     <message>
         <source>Plaintext</source>
@@ -2783,11 +2794,11 @@ Hide formatting characters:
     </message>
     <message>
         <source>Show formatting characters</source>
-        <translation>Видими символи за форматиране</translation>
+        <translation>Видими символи за формат</translation>
     </message>
     <message>
         <source>Hide formatting characters</source>
-        <translation>Не показвай форматиращи символи</translation>
+        <translation>Скрити символи за формат</translation>
     </message>
     <message>
         <source>New message</source>
@@ -2796,11 +2807,11 @@ Hide formatting characters:
     <message>
         <source>Open qTox&apos;s window when you receive a new message and no window is open yet.</source>
         <comment>tooltip for Show window setting</comment>
-        <translation>Отвори прозореца на qTox, когато получиш ново съобщение и няма отворен прозорец все още.</translation>
+        <translation>При получаване на съобщение ако прозорецът на qTox е скрит да бъде показан.</translation>
     </message>
     <message>
         <source>Open window</source>
-        <translation>Отвори прозорец</translation>
+        <translation>Показване на прозореца при съобщение</translation>
     </message>
     <message>
         <source>Contact list</source>
@@ -2808,12 +2819,12 @@ Hide formatting characters:
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation type="unfinished">Груповите разговори са преди контактите</translation>
+        <translation>Груповите разговори са подредени преди контактите</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode (small avatars, tabular view).</source>
         <comment>toolTip for compact layout setting</comment>
-        <translation type="unfinished">Вашият лист с контакти ще бъде показан в компактен режим.</translation>
+        <translation>Списъкът с контакти ще бъде показан в компактен вид (умалени профилни снимки, таблично представяне).</translation>
     </message>
     <message>
         <source>Compact contact list</source>
@@ -2829,19 +2840,19 @@ Hide formatting characters:
     </message>
     <message>
         <source>Emoticons</source>
-        <translation>Емотикони</translation>
+        <translation>Емоции</translation>
     </message>
     <message>
         <source>Use emoticons</source>
-        <translation>Използване на емотикони</translation>
+        <translation>Използване на емоции</translation>
     </message>
     <message>
         <source>Emoticon size:</source>
-        <translation>Размер на емотикони:</translation>
+        <translation>Размер:</translation>
     </message>
     <message>
         <source> px</source>
-        <translation> пиксели</translation>
+        <translation> пиксела</translation>
     </message>
     <message>
         <source>Theme</source>
@@ -2853,32 +2864,32 @@ Hide formatting characters:
     </message>
     <message>
         <source>Theme color:</source>
-        <translation>Цвят на тема:</translation>
+        <translation>Основен цвят:</translation>
     </message>
     <message>
         <source>Timestamp format:</source>
-        <translation>Формат на дата и час:</translation>
+        <translation>Формат на часа̀:</translation>
     </message>
     <message>
         <source>Date format:</source>
-        <translation>Формат на дата:</translation>
+        <translation>Формат на датата:</translation>
     </message>
     <message>
         <source>Use identicons instead of empty avatars</source>
-        <translation>Използване на идентикони вместо празни аватари</translation>
+        <translation>Използване на заместващи изображения вместо празни аватари</translation>
     </message>
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
         <comment>tooltip for Notify setting</comment>
-        <translation type="unfinished">Известие при ново съобщение, а прозорецът не на фокус</translation>
+        <translation>Известие при ново съобщение, обаждане или заявка за контакт ако прозорецът не е на фокус.</translation>
     </message>
     <message>
         <source>Notify</source>
-        <translation>Известяване</translation>
+        <translation>Известия</translation>
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation type="unfinished">Груповите чатове нотифицират, само когато сте споменат</translation>
+        <translation>Известия от групови разговори само при споменаване</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -2886,7 +2897,7 @@ Hide formatting characters:
     </message>
     <message>
         <source>Play sound while Busy</source>
-        <translation>Възпроизвеждане на звук докато сте зает</translation>
+        <translation>Възпроизвеждане на звук в състояние „Зает“</translation>
     </message>
     <message>
         <source>Notify via desktop notifications</source>
@@ -2894,16 +2905,16 @@ Hide formatting characters:
     </message>
     <message>
         <source>Hide message sender and contents</source>
-        <translation>Скрий съобщител и стойности</translation>
+        <translation>Скриване на изпращача и съдържанието</translation>
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
-        <translation type="unfinished">Цветни прякори в груповите разговори</translation>
+        <translation>Цветни прякори в груповите разговори</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
-        <translation type="unfinished">Уведоми за нови съобщения в груповите чатове сомо при споменаване.</translation>
+        <translation>Груповите разговори изпращат известия само при споменаване на прякора ви.</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
@@ -3032,7 +3043,7 @@ number here may cause the scroll bar to disappear.</source>
         <source>Away</source>
         <comment>Button to set your status to &apos;Away&apos;</comment>
         <translatorcomment>Вероятно, это не столь долгое путешествие</translatorcomment>
-        <translation>Отсъстващ</translation>
+        <translation>Отсъства</translation>
     </message>
     <message>
         <source>Busy</source>
@@ -3077,7 +3088,7 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>Offline</source>
-        <translation>Извън линия</translation>
+        <translation>Изключен</translation>
     </message>
     <message>
         <source>Friends</source>
