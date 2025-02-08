@@ -17,8 +17,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-
-   build-fedora:
+   build-fedora-rpm:
      name: Build RPM package on Fedora
      runs-on: ubuntu-24.04
      steps:

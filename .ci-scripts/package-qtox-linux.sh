@@ -41,17 +41,21 @@ if [ ! -d "$SRCDIR" ]; then
 fi
 
 dnf install rpmbuild -y
-mkdir -p "$BUILD_DIR"
+
+ccache --zero-stats
+
 # Check that the rpm file was created.
-cmake "$SRCDIR" -B"$BUILD_DIR"
+cmake "$SRCDIR" -B"$BUILD_DIR" -GNinja -DBUILD_TESTING=OFF
 cmake --build "$BUILD_DIR" -- package
+
 # We add echo "" not to avoid failing on the line below if the folder does not have RPM package, we will fail gracefully afterwards.
 rpm_file="$(ls "$BUILD_DIR" | grep -E "qtox-[0-9]+\.[0-9]+\.[0-9]+(-rc\.[0-9]+)?-fc[0-9]+\.x86_64\.rpm" || echo "")"
 if [ -z "$rpm_file" ]; then
   echo "Error! The rpm package was not build!"
   exit 1
-else
-  echo "$rpm_file was successfully generated."
-  echo "$(ls -lh "$BUILD_DIR/$rpm_file")"
 fi
-exit 0
+
+echo "$rpm_file was successfully generated."
+echo "$(ls -lh "$BUILD_DIR/$rpm_file")"
+
+ccache --show-stats
