@@ -1125,7 +1125,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Offline</source>
-        <translation>Изключен</translation>
+        <translation>Извън мрежа</translation>
     </message>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
@@ -2394,7 +2394,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>offline</source>
         <comment>contact status</comment>
-        <translation>изключен</translation>
+        <translation>извън мрежа</translation>
     </message>
     <message>
         <source>blocked</source>
@@ -2876,12 +2876,12 @@ Hide formatting characters:
     </message>
     <message>
         <source>Use identicons instead of empty avatars</source>
-        <translation>Използване на заместващи изображения вместо празни аватари</translation>
+        <translation>Използване на заместващи изображения вместо липсващи аватари</translation>
     </message>
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
         <comment>tooltip for Notify setting</comment>
-        <translation>Известие при ново съобщение, обаждане или заявка за контакт ако прозорецът не е на фокус.</translation>
+        <translation>Известие при ново съобщение, входящо обаждане или заявка за контакт ако прозорецът не е на фокус.</translation>
     </message>
     <message>
         <source>Notify</source>
@@ -2919,7 +2919,7 @@ Hide formatting characters:
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
         <comment>toolTip for conference positioning</comment>
-        <translation>при отметнато, груповите чатове ще бъдат закачени на върха на листа с приятели, иначе, ще бъдат поставени под тези, които са офлайн.</translation>
+        <translation>Ако е отметнато, груповите разговори ще бъдат подредени най-горе на списъка с контакти, в противен случай – под тези, които са извън мрежа.</translation>
     </message>
     <message>
         <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
@@ -3088,7 +3088,7 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>Offline</source>
-        <translation>Изключен</translation>
+        <translation>Извън мрежа</translation>
     </message>
     <message>
         <source>Friends</source>
