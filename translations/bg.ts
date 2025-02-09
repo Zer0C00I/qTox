@@ -492,12 +492,12 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Invalid proxy address</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Невалиден прокси адрес</translation>
+        <translation>Неправилен адрес на прокси</translation>
     </message>
     <message>
         <source>Please enter a valid IP address or hostname for the proxy setting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Моля, въведете валиден IP адрес или име на хост за настройката на прокси.</translation>
+        <translation>В настройката за прокси въведете действителен адрес на IP или име на хост.</translation>
     </message>
 </context>
 <context>
@@ -2772,13 +2772,13 @@ Hide formatting characters:
 
 Обикновен текст:
     Не се прилага никакво форматиране на текста са съобщенията.
-    Например &quot;**текст**&quot; ще бъде показано като &quot;**текст**&quot;, не получер.
-Видими символи за формат:
-    Прилага форматирането и оставя символите за форматиране видими.
-    Например &quot;**текст**&quot; ще бъде показано като &quot;**текст**&quot;, получер.
-Скрити символи за формат:
-    Прилага форматирането и скрива символите за форматиране.
-    Например &quot;**текст**&quot; ще бъде показано като &quot;текст&quot;, получер.</translation>
+    Например &quot;**текст**&quot; ще бъде показано като &quot;**текст**&quot;, не получер шрифт.
+Видими знаци за форматиране:
+    Прилага форматирането и оставя знаците за форматиране видими.
+    Например &quot;**текст**&quot; ще бъде показано като &quot;**текст**&quot;, с получер шрифт.
+Скрити знаци за форматиране:
+    Прилага форматирането и скрива знаците за форматиране.
+    Например &quot;**текст**&quot; ще бъде показано като &quot;текст&quot;, с получер шрифт.</translation>
     </message>
     <message>
         <source>Text styling:</source>
@@ -2786,7 +2786,7 @@ Hide formatting characters:
     </message>
     <message>
         <source>Select text styling preference.</source>
-        <translation>Изберете предпочитания формат на текста.</translation>
+        <translation>Изберете предпочитаното оформление на текста.</translation>
     </message>
     <message>
         <source>Plaintext</source>
@@ -2794,11 +2794,11 @@ Hide formatting characters:
     </message>
     <message>
         <source>Show formatting characters</source>
-        <translation>Видими символи за формат</translation>
+        <translation>Видими знаци за форматиране</translation>
     </message>
     <message>
         <source>Hide formatting characters</source>
-        <translation>Скрити символи за формат</translation>
+        <translation>Скрити знаци за форматиране</translation>
     </message>
     <message>
         <source>New message</source>
@@ -2919,117 +2919,115 @@ Hide formatting characters:
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
         <comment>toolTip for conference positioning</comment>
-        <translation>Ако е отметнато, груповите разговори ще бъдат подредени най-горе на списъка с контакти, в противен случай – под тези, които са извън мрежа.</translation>
+        <translation>Когато е отметнато, груповите разговори ще бъдат подредени най-горе на списъка с контакти, в противен случай – под тези, които са извън мрежа.</translation>
     </message>
     <message>
         <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
         <comment>toolTip for show identicons</comment>
-        <translation>Ако е включено, всеки контакт без снимка ще има генерирана икона въз основа на неговия идентификатор на Tox вместо картинката по подразбиране. Изисква рестартиране, за прилагане.</translation>
+        <translation>Когато е отметнато, всеки контакт без профилна снимка ще получи изображение въз основа своя Tox ID вместо подразбираното. Изисква рестарт.</translation>
     </message>
     <message>
         <source>Smiley pack:</source>
         <extracomment>Text on smiley pack label</extracomment>
-        <translation>пакет с усмивки:</translation>
+        <translation>Комплект емоции:</translation>
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ако е деактивирано, заглушава звука на известието, когато състоянието е Заето (но все още показва известие)</translation>
+        <translation>Когато не е отметнато и състоянието ви е „Зает“ известията не са съпроводени със звук, но все пак се показват</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Използвайте известия на работния плот, напр. в център за уведомяване или в системната област. Без това известието ще се вижда само като мигаща икона в областта.</translation>
+        <translation>Използва известия на работния плот, например център за известия или областта за известия. Когато не е отметнато известието ще се вижда само като мигане в областта за известия.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Показвайте само „ново съобщение“, без да показвате потенциално секретна информация в известията на работния плот.</translation>
+        <translation>Известията на работния плот ще съдържат само текста „Ново съобщение“, без да бъде показвана друга, вероятно тайна информация.</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Разделете списъка с приятели и прозореца за чат на отделни подвижни прозорци.</translation>
+        <translation>Разделяне на списъка с контакти и прозореца за разговори в отделни самостоятелни прозорци.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Показвайте текстови емотикони като цветни картини вместо текст или черно-бели емотикони, изобразени с шрифт.</translation>
+        <translation>Показване на текстовите емоции като цветни изображения вместо текст или черно-бели усмивки.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Изберете кой набор от снимки да използвате, когато изобразявате емотикони.</translation>
+        <translation>Изберете набора от изображения, с които да бъдат показвани емоциите.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Размер в пиксели на емоджи картина. Изберете нещо подобно на вашия основен размер на шрифта.</translation>
+        <translation>Размер в пиксели на изображението. Изберете размер близък до размера на основния шрифт.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Основен стил, който да използвате за потребителския интерфейс. Препоръчва се Fusion, тъй като работи най-добре с оформянето на qTox.</translation>
+        <translation>Основен стил на потребителския интерфейс. Препоръчва се „Fusion“, тъй като работи най-добре с темите на qTox.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Цветна тема на потребителския интерфейс. Използвайте това, за да изберете тъмен режим.</translation>
+        <translation>Цветна тема на потребителския интерфейс. От тук можете да изберете тъмен режим.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ако е деактивирано, използвайте основните известия в системната област. В противен случай опитайте да използвате бекенда за уведомяване на вашата работна среда. Деактивирайте това, ако забележите проблеми с известията на работния плот.</translation>
+        <translation>Когато е отметнато ще бъде използван механизма за известия на работната среда. В противен случай ще бъдат използвани обикновените известия в областта за известия . Изключете ако наблюдавате проблеми с известията на работния плот.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Използвайте специфичен за системата бекенд за уведомяване, ако има такъв</translation>
+        <translation>Използване на системния механизъм за известия, ако има такъв</translation>
     </message>
     <message>
         <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
         <comment>tooltip for Image preview setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Показване на визуализации за изпратени и получени изображения в чатове. Задръжте курсора на мишката върху вградения преглед, за да покажете по-голям преглед.</translation>
+        <translation>Показване на миниатюри на изпратените и получените изображения в разговора.
+Задръжте показалеца на мишката върху прегледа, за да бъде показан по-голям размер.</translation>
     </message>
     <message>
         <source>Image preview</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Визуализация на изображението</translation>
+        <translation>Миниатюра на изображенията в разговора</translation>
     </message>
     <message>
         <source>Maximum number of messages (per conversation) loaded from chat history.
 Decrease this to improve performance. A too low number here may cause the
 scroll bar to disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Максимален брой съобщения (на разговор), заредени от хронологията на
-чата. Намалете това, за да подобрите производителността. Твърде малък
-брой тук може да доведе до изчезване на лентата за превъртане.</translation>
+        <translation>Ограничение (по разговор) на броя съобщения, заредени от хронологията на
+кореспонденцията. Намалете стойността, за да бъде подобрена производителността.
+Твърде малък брой може да доведе до изчезване на плъзгача.</translation>
     </message>
     <message>
         <source>Maximum chat log view size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Максимален размер на
-изгледа на журнала за чат</translation>
+        <translation>Ограничение на хронологията</translation>
     </message>
     <message>
         <source>Number of messages to load from the chat history when scrolling. A too low
 number here may cause the scroll bar to disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Брой съобщения за зареждане от историята на чата при превъртане. Твърде
-малък брой тук може да доведе до изчезване на лентата за превъртане.</translation>
+        <translation>Броят на съобщенията, които да бъдат заредени от хронологията при прелистване.
+Твърде малък брой може да доведе до изчезване на плъзгача.</translation>
     </message>
     <message>
         <source>Chat log chunk size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Размер на част от
-дневника на чата</translation>
+        <translation>Порция от хронологията</translation>
     </message>
     <message>
         <source>Chat log:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Дневник
-на чата:</translation>
+        <translation>Хронология:</translation>
     </message>
 </context>
 <context>
@@ -3060,7 +3058,7 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation type="unfinished">Групов разговор #%1</translation>
+        <translation>Групов разговор №%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>
@@ -3068,7 +3066,7 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>Add new circle...</source>
-        <translation>Добавяне на нов кръг...</translation>
+        <translation>Създаване на списък…</translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3076,7 +3074,7 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>By Activity</source>
-        <translation>По активност</translation>
+        <translation>По дейност</translation>
     </message>
     <message>
         <source>All</source>
@@ -3092,11 +3090,11 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>Friends</source>
-        <translation>Приятели</translation>
+        <translation>Контакти</translation>
     </message>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished">Групи</translation>
+        <translation>Групови разговори</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -3105,11 +3103,11 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Logout</source>
         <comment>Tray action menu to logout user</comment>
-        <translation>Отписване</translation>
+        <translation>Изход от профила</translation>
     </message>
     <message>
         <source>Filter...</source>
-        <translation>Филтър...</translation>
+        <translation>Филтър…</translation>
     </message>
     <message>
         <source>File</source>
@@ -3131,17 +3129,17 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Add friend</source>
         <comment>title of the window</comment>
-        <translation>Прибави приятел</translation>
+        <translation>Добавяне на контакт</translation>
     </message>
     <message>
         <source>Conference invites</source>
         <comment>title of the window</comment>
-        <translation>Покани за групи</translation>
+        <translation>Покани за групов разговор</translation>
     </message>
     <message>
         <source>File transfers</source>
         <comment>title of the window</comment>
-        <translation>Трансфери на файлове</translation>
+        <translation>Прехвърлени файлове</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -3155,29 +3153,29 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>Toxcore failed to start, the application will terminate after you close this message.</source>
-        <translation>Toxcore не стартира. Приложението ще затвори, след затваряне на съобщението.</translation>
+        <translation>Грешка при стартиране на toxcore. Със затваряне на съобщението ще затвори и приложението.</translation>
     </message>
     <message>
         <source>Toxcore failed to start with your proxy settings. qTox cannot run; please modify your settings and restart.</source>
         <comment>popup text</comment>
-        <translation>Toxcore не се стартира с вашите прохи настройки. qTox неможе да бъде стартиран; моля модифицирайте вашите настройки и рестартирайте.</translation>
+        <translation>Грешка при стартиране на toxcore с настройките за прокси. qTox не може да работи. Променете настройките и рестартирайте приложението.</translation>
     </message>
     <message>
         <source>Couldn&apos;t send friend request</source>
-        <translation>Неуспех при изпращане на покана за приятелство</translation>
+        <translation>Грешка при изпращане на заявка за контакт</translation>
     </message>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
         <translation>
-            <numerusform>%n нова приятелска покана</numerusform>
-            <numerusform>%n нови приятелски покани</numerusform>
+            <numerusform>%n нова заявка за контакт</numerusform>
+            <numerusform>%n нови заявки за контакт</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
-        <translation type="unfinished">
-            <numerusform>%n нова групова покана</numerusform>
-            <numerusform>%n нови групови покани</numerusform>
+        <translation>
+            <numerusform>%n нова покана за групов разговор</numerusform>
+            <numerusform>%n нови покани за групов разговор</numerusform>
         </translation>
     </message>
     <message>
@@ -3187,15 +3185,15 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>Change status</source>
-        <translation>Промени статут\а</translation>
+        <translation>Променяне на състояние</translation>
     </message>
     <message>
         <source>Edit profile</source>
-        <translation>Редакция на профил</translation>
+        <translation>Променяне на профил</translation>
     </message>
     <message>
         <source>Logout</source>
-        <translation>Излез</translation>
+        <translation>Изход от профила</translation>
     </message>
     <message>
         <source>Add contact...</source>
