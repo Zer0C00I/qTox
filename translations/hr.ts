@@ -3140,7 +3140,7 @@ azgovora:</translation>
         <translation type="unfinished">Stvori novu grupu …</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>Dodaj novi kružok …</translation>
     </message>
     <message>

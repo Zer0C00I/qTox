@@ -3046,7 +3046,7 @@ logg:</translation>
         <translation>Alle</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>Legg til ny sirkel…</translation>
     </message>
     <message>

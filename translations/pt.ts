@@ -3051,7 +3051,7 @@ papo:</translation>
         <translation>Conectados</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>Adicionar círculo novo...</translation>
     </message>
     <message>

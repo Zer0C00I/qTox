@@ -3051,7 +3051,7 @@ number here may cause the scroll bar to disappear.</source>
         <translation>创建新会议...</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>添加新圈子...</translation>
     </message>
     <message>

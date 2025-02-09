@@ -3134,7 +3134,7 @@ napló:</translation>
         <translation type="unfinished">Új csoport létrehozása...</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>Új kör hozzáadása...</translation>
     </message>
     <message>

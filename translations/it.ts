@@ -3041,7 +3041,7 @@ chat:</translation>
         <translation>Occupato</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>Aggiungi un nuovo circolo...</translation>
     </message>
     <message>

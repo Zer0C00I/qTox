@@ -3692,7 +3692,7 @@ number here may cause the scroll bar to disappear.</source>
         <translation type="unfinished">নতুন সম্মেলন তৈরি করুন...</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">নতুন চেনাশোনা যোগ করুন...</translation>
     </message>

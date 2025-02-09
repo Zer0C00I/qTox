@@ -3447,7 +3447,7 @@ number here may cause the scroll bar to disappear.</source>
         <translation>புதிய மாநாட்டை உருவாக்கவும் ...</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>புதிய வட்டத்தைச் சேர்க்கவும் ...</translation>
     </message>

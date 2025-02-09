@@ -2584,10 +2584,10 @@ void Widget::friendListContextMenu(const QPoint& pos)
 {
     QMenu menu(this);
     QAction* createConferenceAction = menu.addAction(tr("Create new conference..."));
-    QAction* addCircleAction = menu.addAction(tr("Add new circle..."));
+    QAction* createCircleAction = menu.addAction(tr("Create new circle..."));
     QAction* chosenAction = menu.exec(ui->friendList->mapToGlobal(pos));
 
-    if (chosenAction == addCircleAction) {
+    if (chosenAction == createCircleAction) {
         chatListWidget->addCircleWidget();
     } else if (chosenAction == createConferenceAction) {
         core->createConference();

@@ -3045,7 +3045,7 @@ number here may cause the scroll bar to disappear.</source>
         <translation>Создать новую конференцию...</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>Добавить новый список...</translation>
     </message>
     <message>

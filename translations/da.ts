@@ -3488,7 +3488,7 @@ størrelse</translation>
         <translation>Dit navn</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>Opret ny cirkel...</translation>
     </message>
     <message>

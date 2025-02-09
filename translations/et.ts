@@ -3053,7 +3053,7 @@ logi:</translation>
         <translation>Sinu nimi</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>Lisa uus suhtlusring...</translation>
     </message>
     <message>

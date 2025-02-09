@@ -3512,7 +3512,7 @@ number here may cause the scroll bar to disappear.</source>
         <translation type="unfinished">새 그룹 만들기...</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">새 서클 추가...</translation>
     </message>

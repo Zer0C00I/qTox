@@ -3053,7 +3053,7 @@ gabalo dydis</translation>
         <translation>Prisijungę</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>Sukurti naują draugų ratą...</translation>
     </message>
     <message>

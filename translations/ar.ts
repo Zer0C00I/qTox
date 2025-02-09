@@ -3215,7 +3215,7 @@ number here may cause the scroll bar to disappear.</source>
         <translation>اسمك</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>اضافة قائمة جديدة...</translation>
     </message>
     <message>

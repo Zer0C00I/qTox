@@ -3158,7 +3158,7 @@ de chat:</translation>
         <translation type="unfinished">Crear un grupo novo ...</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>Engade un novo círculo ...</translation>
     </message>
     <message>

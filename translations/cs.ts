@@ -3068,7 +3068,7 @@ chatu:</translation>
         <translation>Stav</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>Přidat nový kruh...</translation>
     </message>
     <message>

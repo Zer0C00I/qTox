@@ -3041,7 +3041,7 @@ here may cause th&apos; scroll bar ta vanish.</translation>
         <translation type="unfinished">Start a new gatherin&apos;...</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation type="unfinished">Add new guild...</translation>
     </message>
     <message>

@@ -3670,7 +3670,7 @@ number here may cause the scroll bar to disappear.</source>
         <translation type="unfinished">השם שלך</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">הוסף מעגל חדש...</translation>
     </message>

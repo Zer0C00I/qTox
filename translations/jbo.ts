@@ -3645,7 +3645,7 @@ lo nu vi cmima cu rinka lo nu lo rokci bajra cu canci</translation>
         <translation type="unfinished">ko finti lo cnino nunfermi</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ko jmina lo cnino dinju</translation>
     </message>

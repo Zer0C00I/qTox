@@ -3698,7 +3698,7 @@ number here may cause the scroll bar to disappear.</source>
         <translation type="unfinished">නව සම්මන්ත්‍රණයක් සාදන්න...</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">නව කවයක් එක් කරන්න...</translation>
     </message>

@@ -3165,7 +3165,7 @@ number here may cause the scroll bar to disappear.</source>
         <translation>Το όνομα σας</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>Προσθέστε νέο κύκλο...</translation>
     </message>
     <message>

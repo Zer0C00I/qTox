@@ -3466,7 +3466,7 @@ okolo:</translation>
         <translation type="unfinished">Krei novan grupon...</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>Aldoni novan rondon...</translation>
     </message>
     <message>

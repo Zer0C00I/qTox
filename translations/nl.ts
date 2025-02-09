@@ -3049,7 +3049,7 @@ ek:</translation>
         <translation>Status</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>Nieuwe cirkel toevoegen…</translation>
     </message>
     <message>

@@ -3070,7 +3070,7 @@ chat:</translation>
         <translation>Creați o nouă conferință...</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>Adăugați un cerc nou...</translation>
     </message>
     <message>

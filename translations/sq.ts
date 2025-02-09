@@ -3696,7 +3696,7 @@ bisedës:</translation>
         <translation type="unfinished">Krijo një konferencë të re...</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Shto rreth të ri...</translation>
     </message>

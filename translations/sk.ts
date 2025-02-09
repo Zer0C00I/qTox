@@ -3080,7 +3080,7 @@ zhovoru:</translation>
         <translation type="unfinished">Vytvoriť novú skupinu...</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>Vytvoriť nový kruh...</translation>
     </message>
     <message>

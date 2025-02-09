@@ -3065,7 +3065,7 @@ number here may cause the scroll bar to disappear.</source>
         <translation>Създаване на групов разговор…</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>Създаване на списък…</translation>
     </message>
     <message>

@@ -3701,7 +3701,7 @@ gumzo:</translation>
         <translation type="unfinished">Unda mkutano mpya...</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ongeza mduara mpya...</translation>
     </message>

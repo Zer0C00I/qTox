@@ -3215,7 +3215,7 @@ number here may cause the scroll bar to disappear.</source>
         <translation type="unfinished">Создај нова група…</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>Додај нов круг...</translation>
     </message>
     <message>

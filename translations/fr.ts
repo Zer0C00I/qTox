@@ -3070,7 +3070,7 @@ sion&#xa0;:</translation>
         <translation>Statut</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>Ajouter un nouveau cercle…</translation>
     </message>
     <message>

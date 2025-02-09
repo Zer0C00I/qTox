@@ -3072,7 +3072,7 @@ chuyện:</translation>
         <translation type="unfinished">Tạo nhóm mới...</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>Thêm kết nối...</translation>
     </message>
     <message>

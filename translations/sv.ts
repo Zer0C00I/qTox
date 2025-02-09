@@ -3083,7 +3083,7 @@ för lågt nummer här kan göra att rullningslisten försvinner.</translation>
         <translation type="unfinished">Skapa ny grupp...</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>Lägg till ny cirkel...</translation>
     </message>
     <message>

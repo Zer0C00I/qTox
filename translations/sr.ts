@@ -3160,7 +3160,7 @@ number here may cause the scroll bar to disappear.</source>
         <translation type="unfinished">Направи нову групу...</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>Додај нови круг...</translation>
     </message>
     <message>

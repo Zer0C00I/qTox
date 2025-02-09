@@ -3325,7 +3325,7 @@ klepeta:</translation>
         <translation type="unfinished">Ustvari novo konferenco ...</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Dodaj nov krog ...</translation>
     </message>

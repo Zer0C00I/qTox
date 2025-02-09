@@ -3178,7 +3178,7 @@ number here may cause the scroll bar to disappear.</source>
         <translation>新しいグループを作成…</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>新しいサークルを追加…</translation>
     </message>
     <message>

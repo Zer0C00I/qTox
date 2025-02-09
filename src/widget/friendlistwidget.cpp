@@ -382,7 +382,7 @@ void FriendListWidget::removeFriendWidget(FriendWidget* w)
 
 void FriendListWidget::addCircleWidget(int id)
 {
-    createCircleWidget(id);
+    std::ignore = createCircleWidget(id);
 }
 
 void FriendListWidget::addCircleWidget(FriendWidget* friendWidget)

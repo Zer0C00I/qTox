@@ -3064,7 +3064,7 @@ Bildlaufleiste verschwindet.</translation>
         <translation>Neue Konferenz erstellen...</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>Neuen Kreis hinzufügen...</translation>
     </message>
     <message>

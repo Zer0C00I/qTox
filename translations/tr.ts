@@ -3030,7 +3030,7 @@ günlüğü:</translation>
         <translation>Adınız</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>Yeni çevre ekle...</translation>
     </message>
     <message>

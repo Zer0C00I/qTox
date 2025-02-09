@@ -3679,7 +3679,7 @@ number here may cause the scroll bar to disappear.</source>
         <translation type="unfinished">ಹೊಸ ಸಮ್ಮೇಳನವನ್ನು ರಚಿಸಿ...</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ಹೊಸ ವಲಯವನ್ನು ಸೇರಿಸಿ...</translation>
     </message>

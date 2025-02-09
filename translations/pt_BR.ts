@@ -3077,7 +3077,7 @@ papo:</translation>
         <translation type="unfinished">Criar novo grupo...</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>Adicionar novo círculo...</translation>
     </message>
     <message>

@@ -3022,7 +3022,7 @@ number here may cause the scroll bar to disappear.</source>
         <translation type="unfinished">Napravi novu grupu...</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>Dodaj novi krug...</translation>
     </message>
     <message>

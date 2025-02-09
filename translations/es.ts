@@ -3039,7 +3039,7 @@ saciones:</translation>
         <translation>Crear un nuevo grupo...</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>Agregar un nuevo círculo...</translation>
     </message>
     <message>

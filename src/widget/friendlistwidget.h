@@ -42,7 +42,7 @@ public:
                      ConferenceList& conferenceList, Profile& profile, bool conferencesOnTop = true);
     ~FriendListWidget() override;
     void setMode(SortingMode mode);
-    SortingMode getMode() const;
+    [[nodiscard]] SortingMode getMode() const;
 
     void addConferenceWidget(ConferenceWidget* widget);
     void addFriendWidget(FriendWidget* w);
@@ -78,12 +78,12 @@ private slots:
     void dayTimeout();
 
 private:
-    CircleWidget* createCircleWidget(int id = -1);
-    CategoryWidget* getTimeCategoryWidget(const Friend* frd) const;
+    [[nodiscard]] CircleWidget* createCircleWidget(int id = -1);
+    [[nodiscard]] CategoryWidget* getTimeCategoryWidget(const Friend* frd) const;
     void sortByMode();
     void cleanMainLayout();
-    QWidget* getNextWidgetForName(IFriendListItem* currentPos, bool forward) const;
-    QVector<std::shared_ptr<IFriendListItem>> getItemsFromCircle(CircleWidget* circle) const;
+    [[nodiscard]] QWidget* getNextWidgetForName(IFriendListItem* currentPos, bool forward) const;
+    [[nodiscard]] QVector<std::shared_ptr<IFriendListItem>> getItemsFromCircle(CircleWidget* circle) const;
 
     SortingMode mode;
     QVBoxLayout* listLayout = nullptr;

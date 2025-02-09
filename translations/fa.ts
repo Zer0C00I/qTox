@@ -3153,7 +3153,7 @@ number here may cause the scroll bar to disappear.</source>
         <translation type="unfinished">ساخت یک گروه جدید...</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>اضافه کردن یک حلقه جدید...</translation>
     </message>
     <message>

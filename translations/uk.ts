@@ -3042,7 +3042,7 @@ number here may cause the scroll bar to disappear.</source>
         <translation>Зайнятий/зайнята</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>Додати нове коло...</translation>
     </message>
     <message>

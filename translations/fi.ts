@@ -3065,7 +3065,7 @@ loki:</translation>
         <translation>Tila</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>Lisää uusi piiri...</translation>
     </message>
     <message>

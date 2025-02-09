@@ -3553,7 +3553,7 @@ number here may cause the scroll bar to disappear.</source>
         <translation type="unfinished">建立新群組…</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translation>新增新圈子…</translation>
     </message>
     <message>

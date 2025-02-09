@@ -3719,7 +3719,7 @@ chatlogboek</translation>
         <translation type="unfinished">Maak nuie conferentie...</translation>
     </message>
     <message>
-        <source>Add new circle...</source>
+        <source>Create new circle...</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Voeg nuie cirkel toe...</translation>
     </message>
