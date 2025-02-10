@@ -2007,7 +2007,7 @@ If you are getting spammed with friend requests, change the NoSpam.</source>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
-        <translation>Паролата не може да бъде променена; или хранилището е повредено, или използвате текущата парола.</translation>
+        <translation>Паролата за хранилището не може да бъде променена. Възможно е хранилището да е повредено, но ако не е, използвайте текущата парола.</translation>
     </message>
 </context>
 <context>
@@ -2178,7 +2178,7 @@ Please use another image.</source>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
-        <translation>Паролата не може да бъде променена; или хранилището е повредено, или използвате текущата парола.</translation>
+        <translation>Паролата за хранилището не може да бъде променена. Възможно е хранилището да е повредено, но ако не е, използвайте текущата парола.</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
