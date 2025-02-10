@@ -524,8 +524,8 @@ async def main(config: Config) -> None:
             exit(1)
 
     if config.wait:
-        # Wait for at most 5 seconds for clangd to exit
-        await asyncio.wait_for(clangd.wait(), 5)
+        # Wait for at most 5 minutes for clangd to exit
+        await asyncio.wait_for(clangd.wait(), 300)
 
 
 if __name__ == "__main__":
