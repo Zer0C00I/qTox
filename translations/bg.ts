@@ -309,7 +309,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Currently running an untested/unstable version of qTox</source>
-        <translation>Използвате неизпитано или нестабилно издание на qTox</translation>
+        <translation>Използвате изпитателно или нестабилно издание на qTox</translation>
     </message>
 </context>
 <context>
@@ -1235,11 +1235,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Check for updates</source>
-        <translation>Проверка за обновяване</translation>
+        <translation>Проверяване за обновяване</translation>
     </message>
     <message>
         <source>Spell checking</source>
-        <translation>Проверка за правопис</translation>
+        <translation>Проверяване на правописа</translation>
     </message>
     <message>
         <source>Max autoaccept file size (0 to disable):</source>
@@ -1275,12 +1275,12 @@ instead of closing entirely.</source>
     <message>
         <source>Click here if you find errors in a translation and would like to help fix it.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Посетете ако откриете грешки в превода и искате да помогнете за поправката им.</translation>
+        <translation>Натиснете тук ако откриете грешка в превода и искате да помогнете за поправката ѝ.</translation>
     </message>
     <message>
         <source>Help translate</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Помощ с превод</translation>
+        <translation>Помощ с превода</translation>
     </message>
 </context>
 <context>
@@ -3027,7 +3027,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Chat log:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Хронология:</translation>
+        <translation>Разговори:</translation>
     </message>
 </context>
 <context>
