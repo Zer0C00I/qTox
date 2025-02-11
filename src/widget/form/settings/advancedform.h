@@ -7,6 +7,8 @@
 
 #include "genericsettings.h"
 
+#include <memory>
+
 class Core;
 class Settings;
 class Style;
@@ -48,7 +50,7 @@ private:
     void retranslateUi();
 
 private:
-    Ui::AdvancedSettings* bodyUI;
+    std::unique_ptr<Ui::AdvancedSettings> bodyUI;
     Settings& settings;
     IMessageBoxManager& messageBoxManager;
 };

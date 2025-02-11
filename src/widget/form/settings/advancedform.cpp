@@ -32,7 +32,7 @@
 
 AdvancedForm::AdvancedForm(Settings& settings_, Style& style, IMessageBoxManager& messageBoxManager_)
     : GenericForm(QPixmap(":/img/settings/general.png"), style)
-    , bodyUI(new Ui::AdvancedSettings)
+    , bodyUI(std::make_unique<Ui::AdvancedSettings>())
     , settings{settings_}
     , messageBoxManager{messageBoxManager_}
 {
@@ -61,31 +61,15 @@ AdvancedForm::AdvancedForm(Settings& settings_, Style& style, IMessageBoxManager
     bodyUI->cbEnableLanDiscovery->setChecked(settings.getEnableLanDiscovery() && udpEnabled);
     bodyUI->cbEnableLanDiscovery->setEnabled(udpEnabled);
 
-    const QString warningBody =
-        tr("Unless you %1 know what you are doing, "
-           "please do %2 change anything here. Changes "
-           "made here may lead to problems with qTox, and even "
-           "to loss of your data, e.g. history."
-           "%3")
-            .arg(QString("<b>%1</b>").arg(tr("really")))
-            .arg(QString("<b>%1</b>").arg(tr("not")))
-            .arg(QString("<p>%1</p>").arg(tr("Changes here are applied only after restarting qTox.")));
-
-    const QString warning = QString("<div style=\"color:#ff0000;\">"
-                                    "<p><b>%1</b></p><p>%2</p></div>")
-                                .arg(tr("IMPORTANT NOTE"))
-                                .arg(warningBody);
-
-    bodyUI->warningLabel->setText(warning);
-
     eventsInit();
+
+    retranslateUi();
     Translator::registerHandler([this] { retranslateUi(); }, this);
 }
 
 AdvancedForm::~AdvancedForm()
 {
     Translator::unregister(this);
-    delete bodyUI;
 }
 
 void AdvancedForm::on_cbMakeToxPortable_stateChanged()
@@ -243,6 +227,23 @@ bool AdvancedForm::validateProxyAddr()
  */
 void AdvancedForm::retranslateUi()
 {
+    const QString warningBody =
+        tr("Unless you %1 know what you are doing, "
+           "please do %2 change anything here. Changes "
+           "made here may lead to problems with qTox, and even "
+           "to loss of your data, e.g. history."
+           "%3")
+            .arg(QString("<b>%1</b>").arg(tr("really")))
+            .arg(QString("<b>%1</b>").arg(tr("not")))
+            .arg(QString("<p>%1</p>").arg(tr("Changes here are applied only after restarting qTox.")));
+
+    const QString warning = QString("<div style=\"color:#ff0000;\">"
+                                    "<p><b>%1</b></p><p>%2</p></div>")
+                                .arg(tr("IMPORTANT NOTE"))
+                                .arg(warningBody);
+
+    bodyUI->warningLabel->setText(warning);
+
     const int proxyType = bodyUI->proxyType->currentIndex();
     bodyUI->retranslateUi(this);
     bodyUI->proxyType->setCurrentIndex(proxyType);
