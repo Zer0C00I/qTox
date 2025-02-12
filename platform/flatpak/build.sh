@@ -5,11 +5,16 @@
 # Copyright © 2024-2025 The TokTok team
 
 # Fail out on error
-set -exuo pipefail
+set -euxo pipefail
+
+PROJECT_NAME=$1
+ORG_NAME=$2
+
+BINARY_NAME=$(echo "$PROJECT_NAME" | tr '[:upper:]' '[:lower:]')
 
 # use multiple cores when building
 export MAKEFLAGS="-j$(nproc)"
-FLATPAK_DESCRIPTOR=$(dirname "$(realpath "$0")")/io.github.qtox.qTox.json
+FLATPAK_DESCRIPTOR="$(dirname "$(realpath "$0")")/$ORG_NAME.$PROJECT_NAME.json"
 
 # If $FLATPAK_BUILD is set, use it as the build directory
 if [ -n "${FLATPAK_BUILD:-}" ]; then
@@ -17,15 +22,19 @@ if [ -n "${FLATPAK_BUILD:-}" ]; then
   cd "$FLATPAK_BUILD"
 fi
 
-# Build the qTox flatpak
-flatpak-builder --ccache --disable-rofiles-fuse --install-deps-from=flathub --force-clean --repo=qtox-repo _build-flatpak "$FLATPAK_DESCRIPTOR"
+# Build the flatpak
+flatpak-builder --ccache --disable-rofiles-fuse --install-deps-from=flathub --force-clean --repo="$BINARY_NAME-repo" _build-flatpak "$FLATPAK_DESCRIPTOR"
 
 # Create a bundle for distribution
-flatpak build-bundle qtox-repo qtox.flatpak io.github.qtox.qTox
+flatpak build-bundle "$BINARY_NAME-repo" "$PROJECT_NAME.flatpak" "$ORG_NAME.$PROJECT_NAME"
+
+# Generate checksum.
+sha256sum "$PROJECT_NAME.flatpak" >"$PROJECT_NAME.flatpak.sha256"
 
 # If $FLATPAK_BUILD is set, copy the bundle to the build directory
 if [ -n "${FLATPAK_BUILD:-}" ]; then
-  cp qtox.flatpak "/qtox"
+  cp "$PROJECT_NAME.flatpak" "/qtox"
+  cp "$PROJECT_NAME.flatpak.sha256" "/qtox"
 fi
 
 rm -f .flatpak-builder/cache/.lock

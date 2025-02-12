@@ -8,19 +8,31 @@
 set -exuo pipefail
 
 usage() {
-  echo "$0 --src-dir SRC_DIR"
-  echo "Builds an app image in the CWD based off qtox installation at SRC_DIR"
+  echo "$0 --src-dir SRC_DIR --project-name PROJECT_NAME [cmake args]"
+  echo "Builds an app image in the CWD based off PROJECT_NAME installation at SRC_DIR"
 }
 
 while (($# > 0)); do
   case $1 in
+    --project-name)
+      PROJECT_NAME=$2
+      shift 2
+      ;;
     --src-dir)
-      QTOX_SRC_DIR=$2
+      SRC_DIR=$2
+      shift 2
+      ;;
+    --arch)
+      ARCH=$2
       shift 2
       ;;
     --help | -h)
       usage
       exit 1
+      ;;
+    --)
+      shift
+      break
       ;;
     *)
       echo "Unexpected argument $1"
@@ -30,8 +42,20 @@ while (($# > 0)); do
   esac
 done
 
-if [ -z "${QTOX_SRC_DIR+x}" ]; then
+if [ -z "${ARCH+x}" ]; then
+  echo "--arch is a required argument"
+  usage
+  exit 1
+fi
+
+if [ -z "${SRC_DIR+x}" ]; then
   echo "--src-dir is a required argument"
+  usage
+  exit 1
+fi
+
+if [ -z "${PROJECT_NAME+x}" ]; then
+  echo "--project-name is a required argument"
   usage
   exit 1
 fi
@@ -44,7 +68,7 @@ git describe --tags --match 'v*'
 
 # directory paths
 readonly BUILD_DIR="$(realpath .)"
-readonly QTOX_APP_DIR="$BUILD_DIR/QTox.AppDir"
+readonly PROJECT_APP_DIR="$BUILD_DIR/$PROJECT_NAME.AppDir"
 
 rm -f appimagetool-*.AppImage
 wget "https://github.com/$(wget -q https://github.com/probonopd/go-appimage/releases/expanded_assets/continuous -O - | grep "appimagetool-.*-x86_64.AppImage" | head -n 1 | cut -d '"' -f 2)"
@@ -55,37 +79,42 @@ chmod +x appimagetool-*.AppImage
 ./appimagetool-*.AppImage --appimage-extract
 sed -i -e 's!/EEE!/etc!g' squashfs-root/usr/bin/appimagetool
 
-# update information to be embedded in AppImage
-#readonly UPDATE_INFO="gh-releases-zsync|TokTok|qTox|latest|qTox-*.x86_64.AppImage.zsync"
-#export GIT_VERSION=$(git -C "${QTOX_SRC_DIR}" rev-parse --short HEAD)
-
 export PKG_CONFIG_PATH=/opt/buildhome/lib/pkgconfig
 
-echo "$QTOX_APP_DIR"
-cmake "$QTOX_SRC_DIR" \
+ccache --zero-stats
+ccache --show-config
+
+echo "$PROJECT_APP_DIR"
+cmake "$SRC_DIR" \
   -G Ninja \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_PREFIX_PATH="/opt/buildhome/lib64/cmake;/opt/buildhome/qt/lib/cmake" \
   -DCMAKE_INSTALL_PREFIX=/usr \
-  -DUPDATE_CHECK=ON \
-  -B _build
+  -DCMAKE_C_COMPILER_LAUNCHER=ccache \
+  -DCMAKE_CXX_COMPILER_LAUNCHER=ccache \
+  -B _build \
+  "$@"
 cmake --build _build
-#rm -fr QTox.AppDir
-cmake --install _build --prefix QTox.AppDir/usr
+cmake --install _build --prefix "$PROJECT_NAME.AppDir/usr"
+
+ccache --show-stats
 
 export QTDIR=/opt/buildhome/qt
 export LD_LIBRARY_PATH="/opt/buildhome/lib:/opt/buildhome/lib64:$QTDIR/lib"
 
 # Copy offscreen/wayland plugins to the app dir.
-mkdir -p "$QTOX_APP_DIR/$QTDIR/plugins/platforms"
-cp -r "$QTDIR/plugins/platforms/libqoffscreen.so" "$QTOX_APP_DIR/$QTDIR/plugins/platforms/"
-cp -r "$QTDIR/plugins/platforms/libqwayland-generic.so" "$QTOX_APP_DIR/$QTDIR/plugins/platforms/"
+mkdir -p "$PROJECT_APP_DIR/$QTDIR/plugins/platforms"
+cp -r "$QTDIR/plugins/platforms/libqoffscreen.so" "$PROJECT_APP_DIR/$QTDIR/plugins/platforms/"
+cp -r "$QTDIR/plugins/platforms/libqwayland-generic.so" "$PROJECT_APP_DIR/$QTDIR/plugins/platforms/"
 # Copy the tls plugins to the app dir, needed for https connections.
-cp -r "$QTDIR/plugins/tls/" "$QTOX_APP_DIR/$QTDIR/plugins/"
+cp -r "$QTDIR/plugins/tls/" "$PROJECT_APP_DIR/$QTDIR/plugins/"
 
-squashfs-root/AppRun -s deploy "$QTOX_APP_DIR"/usr/share/applications/*.desktop
+squashfs-root/AppRun -s deploy "$PROJECT_APP_DIR"/usr/share/applications/*.desktop
 
 # print all links not contained inside the AppDir
-LD_LIBRARY_PATH='' find "$QTOX_APP_DIR" -type f -exec ldd {} \; 2>&1 | grep '=>' | grep -v "$QTOX_APP_DIR"
+LD_LIBRARY_PATH='' find "$PROJECT_APP_DIR" -type f -exec ldd {} \; 2>&1 | grep '=>' | grep -v "$PROJECT_APP_DIR"
 
-squashfs-root/AppRun "$QTOX_APP_DIR"
+squashfs-root/AppRun "$PROJECT_APP_DIR"
+
+APPIMAGE_FILE="$PROJECT_NAME-$(git rev-parse --short HEAD | head -c7)-$ARCH.AppImage"
+sha256sum "$APPIMAGE_FILE" >"$APPIMAGE_FILE.sha256"

@@ -1,4 +1,4 @@
-name: release
+name: draft
 
 on:
   push:
@@ -7,9 +7,9 @@ on:
     branches: [master]
     types: [opened, reopened, synchronize]
 
-# Cancel old PR builds when pushing new commits.
+# Cancel old builds when pushing new commits.
 concurrency:
-  group: release-${{ github.event.pull_request.number || github.ref }}
+  group: draft-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:

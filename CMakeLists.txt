@@ -22,7 +22,6 @@ option(PLATFORM_EXTENSIONS
 option(UPDATE_CHECK "Enable automatic update check" ON)
 option(USE_CCACHE "Use ccache when available" ON)
 option(SPELL_CHECK "Enable spellcheck support" ON)
-option(SVGZ_ICON "Compress the SVG icon of qTox" ON)
 option(ASAN "Compile with AddressSanitizer" OFF)
 option(TSAN "Compile with ThreadSanitizer" OFF)
 option(UBSAN "Compile with UndefinedBehaviorSanitizer" OFF)
@@ -63,7 +62,13 @@ execute_process(
   OUTPUT_VARIABLE QT_PREFIX_PATH
   OUTPUT_STRIP_TRAILING_WHITESPACE)
 
-project(qtox LANGUAGES CXX)
+project(
+  qTox
+  VERSION 1.18.2
+  LANGUAGES CXX)
+set(PROJECT_ORG "io.github.qtox")
+
+string(TOLOWER ${PROJECT_NAME} BINARY_NAME)
 
 # C++ standard.
 set(CMAKE_CXX_STANDARD 20)
@@ -166,10 +171,12 @@ add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
 
 # Use ccache when available to speed up builds.
-if(USE_CCACHE)
+if(CMAKE_CXX_COMPILER_LAUNCHER)
+  message(STATUS "Using ${CMAKE_CXX_COMPILER_LAUNCHER} as compiler launcher")
+elseif(USE_CCACHE)
   find_program(CCACHE_FOUND ccache)
   if(CCACHE_FOUND)
-    set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE ccache)
+    set(CMAKE_CXX_COMPILER_LAUNCHER ccache)
     message(STATUS "Using ccache")
   else()
     message(STATUS "Not using ccache (not found)")
@@ -193,7 +200,7 @@ include(Dependencies)
 # ##############################################################################
 
 qt6_wrap_ui(
-  ${PROJECT_NAME}_FORMS
+  ${BINARY_NAME}_FORMS
   src/chatlog/content/filetransferwidget.ui
   src/loginscreen.ui
   src/mainwindow.ui
@@ -212,7 +219,7 @@ qt6_wrap_ui(
   src/widget/form/settings/privacysettings.ui
   src/widget/form/settings/userinterfacesettings.ui)
 
-set(${PROJECT_NAME}_RESOURCES res.qrc)
+set(${BINARY_NAME}_RESOURCES res.qrc)
 
 if(SMILEYS)
   if(NOT SMILEY_PACKS)
@@ -237,7 +244,7 @@ if(SMILEYS)
   endforeach()
 endif()
 
-set(${PROJECT_NAME}_SOURCES
+set(${BINARY_NAME}_SOURCES
     ${CMAKE_CURRENT_BINARY_DIR}/src/version.cpp
     src/version.h
     src/appmanager.cpp
@@ -628,15 +635,15 @@ set(${PROJECT_NAME}_SOURCES
     src/widget/widget.h)
 
 if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
-  set(${PROJECT_NAME}_RESOURCES ${${PROJECT_NAME}_RESOURCES}
-                                platform/windows/qtox.rc)
+  set(${BINARY_NAME}_RESOURCES ${${BINARY_NAME}_RESOURCES}
+                               platform/windows/qtox.rc)
 endif()
 
 add_definitions(-DQT_MESSAGELOGCONTEXT=1)
 
 if(AVFOUNDATION_FOUND)
-  set(${PROJECT_NAME}_SOURCES
-      ${${PROJECT_NAME}_SOURCES} src/platform/camera/avfoundation.mm
+  set(${BINARY_NAME}_SOURCES
+      ${${BINARY_NAME}_SOURCES} src/platform/camera/avfoundation.mm
       src/platform/camera/avfoundation.h)
 endif()
 
@@ -678,15 +685,15 @@ add_subdirectory(audio)
 add_subdirectory(translations)
 add_subdirectory(cmake/warnings)
 
-add_library(${PROJECT_NAME}_static STATIC ${${PROJECT_NAME}_FORMS}
-                                          ${${PROJECT_NAME}_SOURCES})
-target_link_libraries(${PROJECT_NAME}_static ${CMAKE_REQUIRED_LIBRARIES}
+add_library(${BINARY_NAME}_static STATIC ${${BINARY_NAME}_FORMS}
+                                         ${${BINARY_NAME}_SOURCES})
+target_link_libraries(${BINARY_NAME}_static ${CMAKE_REQUIRED_LIBRARIES}
                       ${ALL_LIBRARIES} coverage_config)
 
-target_link_libraries(${PROJECT_NAME}_static qtox::warnings)
-target_link_libraries(${PROJECT_NAME}_static util_library)
-target_link_libraries(${PROJECT_NAME}_static audio_library)
-target_link_libraries(${PROJECT_NAME}_static translations_library)
+target_link_libraries(${BINARY_NAME}_static qtox::warnings)
+target_link_libraries(${BINARY_NAME}_static util_library)
+target_link_libraries(${BINARY_NAME}_static audio_library)
+target_link_libraries(${BINARY_NAME}_static translations_library)
 
 if(COMMAND qt_policy)
   # set QTP0002 policy: target properties that specify Android-specific paths
@@ -694,24 +701,25 @@ if(COMMAND qt_policy)
   qt_policy(SET QTP0002 NEW)
 endif()
 
-qt_add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE
-                  ${${PROJECT_NAME}_RESOURCES} ${SMILEY_RESOURCES} src/main.cpp)
+qt_add_executable(${BINARY_NAME} WIN32 MACOSX_BUNDLE
+                  ${${BINARY_NAME}_RESOURCES} ${SMILEY_RESOURCES} src/main.cpp)
 target_link_libraries(
-  ${PROJECT_NAME} PRIVATE ${PROJECT_NAME}_static ${CMAKE_REQUIRED_LIBRARIES}
-                          ${ALL_LIBRARIES})
+  ${BINARY_NAME} PRIVATE ${BINARY_NAME}_static ${CMAKE_REQUIRED_LIBRARIES}
+                         ${ALL_LIBRARIES})
 set_target_properties(
-  ${PROJECT_NAME}
-  PROPERTIES QT_ANDROID_TARGET_SDK_VERSION 34
-             QT_ANDROID_MIN_SDK_VERSION 24
-             QT_ANDROID_PACKAGE_SOURCE_DIR
-             "${CMAKE_CURRENT_SOURCE_DIR}/platform/android/${Qt6Core_VERSION}")
+  ${BINARY_NAME}
+  PROPERTIES
+    QT_ANDROID_TARGET_SDK_VERSION 34
+    QT_ANDROID_MIN_SDK_VERSION 24
+    QT_ANDROID_PACKAGE_SOURCE_DIR
+    "${CMAKE_CURRENT_SOURCE_DIR}/platform/android/qt-${Qt6Core_VERSION}")
 
 if(FULLY_STATIC)
-  target_link_options(${PROJECT_NAME} PRIVATE -static-pie)
+  target_link_options(${BINARY_NAME} PRIVATE -static-pie)
 endif()
 
 if(EMSCRIPTEN)
-  target_link_options(${PROJECT_NAME} PRIVATE -sASYNCIFY -lidbfs.js)
+  target_link_options(${BINARY_NAME} PRIVATE -sASYNCIFY -lidbfs.js)
 
   # Turn off testing, because there's no offscreen plugin.
   message(STATUS "Disabling testing for Emscripten")
@@ -728,7 +736,7 @@ if(DEFINED ENV{IN_NIX_SHELL})
   # the qtox binary must be "wrapped" to find the Qt platform plugin and other
   # dependencies at runtime
   add_custom_command(
-    TARGET ${PROJECT_NAME}
+    TARGET ${BINARY_NAME}
     POST_BUILD
-    COMMAND nix-shell --run "wrapQtApp ${PROJECT_NAME}")
+    COMMAND nix-shell --run "wrapQtApp ${BINARY_NAME}")
 endif()

@@ -14,7 +14,7 @@ function(auto_test subsystem module extra_res extra_libs)
   add_executable(test_${module}
     test/${subsystem}/${module}_test.cpp ${extra_res})
   target_link_libraries(test_${module}
-    ${PROJECT_NAME}_static
+    ${BINARY_NAME}_static
     ${CHECK_LIBRARIES}
     Qt6::Test
     ${extra_libs})
@@ -33,15 +33,15 @@ endfunction()
 add_subdirectory(test/mock)
 add_subdirectory(test/dbutility)
 
-set(TEST_RESOURCES test/resources/test_data.qrc ${${PROJECT_NAME}_RESOURCES})
+set(TEST_RESOURCES test/resources/test_data.qrc ${${BINARY_NAME}_RESOURCES})
 
-auto_test(core core "${${PROJECT_NAME}_RESOURCES}" "mock_library")
+auto_test(core core "${${BINARY_NAME}_RESOURCES}" "mock_library")
 auto_test(core chatid "" "")
 auto_test(core toxid "" "")
 auto_test(core toxstring "" "")
 auto_test(core fileprogress "" "")
 auto_test(chatlog textformatter "" "")
-auto_test(net bsu "${${PROJECT_NAME}_RESOURCES}" "") # needs nodes list
+auto_test(net bsu "${${BINARY_NAME}_RESOURCES}" "") # needs nodes list
 auto_test(chatlog chatlinestorage "" "")
 auto_test(persistence paths "" "")
 auto_test(persistence dbschema "" "dbutility_library")

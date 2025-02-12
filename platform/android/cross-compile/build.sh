@@ -14,6 +14,10 @@ while (($# > 0)); do
       BUILD_TYPE="$2"
       shift 2
       ;;
+    --)
+      shift
+      break
+      ;;
     *)
       echo "Unexpected argument $1"
       exit 1
@@ -30,12 +34,12 @@ export QT_ANDROID_KEYSTORE_KEY_PASS=aoeuaoeu
 
 /opt/buildhome/android/qt/bin/qt-cmake \
   -DCMAKE_BUILD_TYPE="$BUILD_TYPE" \
+  -DCMAKE_C_COMPILER_LAUNCHER=ccache \
+  -DCMAKE_CXX_COMPILER_LAUNCHER=ccache \
   -DQT_ANDROID_SIGN_APK=ON \
-  -DSPELL_CHECK=OFF \
-  -DUPDATE_CHECK=ON \
-  -DSTRICT_OPTIONS=ON \
   -GNinja \
   -B_build \
-  -H.
+  -H. \
+  "$@"
 
 cmake --build _build --target apk

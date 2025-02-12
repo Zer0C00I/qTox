@@ -106,8 +106,12 @@ def check_flathub_descriptor_dependencies(failures: list[str],
     with stage.Stage("Flathub dependencies",
                      "Update flathub descriptor dependencies",
                      failures) as check:
-        flathub_manifest_path = os.path.join(GIT_BASE_DIR, "flatpak",
-                                             "io.github.qtox.qTox.json")
+        flathub_manifest_path = os.path.join(
+            GIT_BASE_DIR,
+            "platform",
+            "flatpak",
+            "io.github.qtox.qTox.json",
+        )
         subprocess.run(  # nosec
             [
                 "platform/flatpak/update_flathub_descriptor_dependencies.py",
@@ -185,10 +189,10 @@ def check_package_versions(failures: list[str], config: Config) -> None:
         )
         files = (
             "README.md",
+            "platform/linux/io.github.qtox.qTox.appdata.xml",
             "platform/macos/Info.plist",
             "platform/windows/qtox.nsi",
             "platform/windows/qtox64.nsi",
-            "res/io.github.qtox.qTox.appdata.xml",
         )
         if has_diff(config, *files):
             if config.commit:
@@ -205,9 +209,9 @@ def check_package_versions(failures: list[str], config: Config) -> None:
 def check_no_version_changes(failures: list[str]) -> None:
     """Check that no version changes are made in a non-release PR.
 
-    Diff res/io.github.qtox.qTox.appdata.xml against $GITHUB_BASE_BRANCH and
-    check if there's a line starting with "+" or "-" that contains a version
-    number.
+    Diff platform/linux/io.github.qtox.qTox.appdata.xml against
+    $GITHUB_BASE_BRANCH and check if there's a line starting with "+" or "-"
+    that contains a version number.
 
     Example:
     -  <release version="1.18.0-rc.3" date="2024-12-29"/>
@@ -224,7 +228,7 @@ def check_no_version_changes(failures: list[str]) -> None:
                 "diff",
                 github.base_branch(),
                 "--",
-                "res/io.github.qtox.qTox.appdata.xml",
+                "platform/linux/io.github.qtox.qTox.appdata.xml",
             ],
             cwd=GIT_BASE_DIR,
             universal_newlines=True,
