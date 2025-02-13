@@ -26,72 +26,6 @@ jobs:
     name: Prepare
     uses: TokTok/ci-tools/.github/workflows/deploy-prepare.yml@master
 
-  validate-pr:
-    # All expensive jobs below depend on this one, so they will not run if the validation fails.
-    name: Validate PR
-    runs-on: ubuntu-24.04
-    steps:
-      - uses: actions/checkout@v4
-        if: github.event_name == 'pull_request'
-        with:
-          # Fetch all history so that we can check for changes in the entire history.
-          fetch-depth: 0
-      - name: Validate PR
-        if: github.event_name == 'pull_request'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          .ci-scripts/create-identity.sh
-          # TODO(iphydf): Re-enable when the file move is done.
-          # tools/validate_pr.py
-
-  verify-release:
-    name: Verify release/signatures
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-24.04
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
-          fetch-depth: 0  # We need "master", which we only get with a full fetch.
-      - name: Import developer public keys
-        run: .ci-scripts/import-developer-keys.sh
-      - name: Create identity and release branch
-        id: create-identity
-        run: |
-          .ci-scripts/create-identity.sh
-          if ${{ contains(github.head_ref, 'release/v') }}; then
-            VERSION=$(echo '${{ github.head_ref }}' | grep -o 'release/v.*' | grep -o 'v[^/]*$')
-            echo "next-version=$VERSION" >>$GITHUB_OUTPUT
-            git branch "release/$VERSION" HEAD
-            git branch release-head 'HEAD~1'
-            git checkout master
-            git checkout release-head
-          fi
-      - name: Verify release
-        if: steps.create-identity.outputs.next-version != ''
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: tools/create_release.py
-          --version "${{ steps.create-identity.outputs.next-version }}"
-          --upstream origin
-          --branch "release-head"
-          --resume
-          --verify
-          --dryrun
-      - name: Verify signatures
-        # We only check this on release PRs to avoid downloading our release
-        # assets too often. We're inflating our numbers a lot this way. It's
-        # easy to calculate the real number of downloads by looking at the
-        # number of .asc downloads, but it feels a bit wrong.
-        if: steps.create-identity.outputs.next-version != ''
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: tools/create_release.py
-          --version latest
-          --upstream origin
-          --dryrun
-
   ###########################################################################
   # Static analysis and other checks
   ###########################################################################
@@ -102,18 +36,24 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+      - name: Checkout ci-tools
+        uses: actions/checkout@v4
+        with:
+          repository: TokTok/ci-tools
+          path: third_party/ci-tools
+          submodules: true
       - name: Install deps
         run: sudo apt-get update && sudo apt-get install qt6-l10n-tools
       - name: Test for modified translatable strings
         run: |
           export PATH="/usr/lib/qt6/bin:$PATH"
           tools/update-translation-files.sh ALL
-          tools/translate.py
+          third_party/ci-tools/tools/translate.py
           git diff --exit-code
 
   clang-tidy:
     name: Clang-Tidy
-    needs: [validate-pr]
+    needs: [prepare]
     if: github.event_name != 'push'
     runs-on: ubuntu-24.04
     steps:
@@ -141,7 +81,7 @@ jobs:
 
   build-alpine:
     name: Alpine
-    needs: [validate-pr]
+    needs: [prepare]
     if: github.event_name != 'push'
     runs-on: ubuntu-24.04
     strategy:
@@ -164,7 +104,7 @@ jobs:
 
   build-alpine-static:
     name: Alpine (static)
-    needs: [validate-pr]
+    needs: [prepare]
     if: github.event_name != 'push'
     runs-on: ubuntu-24.04
     strategy:
@@ -185,7 +125,7 @@ jobs:
 
   build-debian:
     name: Debian
-    needs: [validate-pr]
+    needs: [prepare]
     if: github.event_name != 'push'
     runs-on: ubuntu-24.04
     strategy:
@@ -210,7 +150,7 @@ jobs:
 
   build-fedora:
     name: Fedora with ASAN
-    needs: [validate-pr]
+    needs: [prepare]
     if: github.event_name != 'push'
     runs-on: ubuntu-24.04
     strategy:
@@ -235,7 +175,7 @@ jobs:
 
   build-macos-user:
     name: macOS user
-    needs: [validate-pr]
+    needs: [prepare]
     if: github.event_name != 'push'
     strategy:
       matrix:
@@ -269,7 +209,7 @@ jobs:
 
   build-ubuntu:
     name: Ubuntu LTS
-    needs: [validate-pr]
+    needs: [prepare]
     if: github.event_name != 'push'
     runs-on: ubuntu-24.04
     strategy:
@@ -301,7 +241,7 @@ jobs:
 
   build-wasm:
     name: WebAssembly
-    needs: [validate-pr]
+    needs: [prepare]
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4

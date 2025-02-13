@@ -6,6 +6,9 @@ source "/opt/buildhome/emsdk/emsdk_env.sh"
 
 export PKG_CONFIG_PATH="/opt/buildhome/lib/pkgconfig"
 
+ccache --zero-stats
+ccache --show-config
+
 emcmake cmake \
   -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
   -DCMAKE_FIND_ROOT_PATH="/opt/buildhome;/opt/buildhome/qt" \
@@ -29,3 +32,5 @@ cp \
 cp \
   _build-wasm/qtox.html \
   _site/index.html
+
+ccache --show-stats
