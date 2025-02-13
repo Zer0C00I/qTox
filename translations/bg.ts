@@ -242,7 +242,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Public key (not ToxID):</source>
-        <translation>Публичен ключ (не е идентификатор на Tox):</translation>
+        <translation>Публичен ключ (не е Tox ID):</translation>
     </message>
     <message>
         <source>Confirmation</source>
@@ -388,7 +388,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Tox ID</source>
         <extracomment>Tox ID of the person you&apos;re sending a friend request to</extracomment>
-        <translation>Идентификатор на Tox</translation>
+        <translation>Tox ID</translation>
     </message>
     <message>
         <source>Message</source>
@@ -411,7 +411,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
-        <translation>Внасяне на списък с контакти, по един идентификатор на ред</translation>
+        <translation>Внасяне на списък с контакти, по един Tox ID на ред</translation>
     </message>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
@@ -426,12 +426,12 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Tox ID, 76 hexadecimal characters</source>
-        <translation>Идентификатор на Tox, 76 шестнадесетични знака</translation>
+        <translation>Tox ID, 76 шестнадесетични знака</translation>
     </message>
     <message>
         <source>%1 Tox ID is invalid</source>
         <comment>Tox address error</comment>
-        <translation>%1 е недействителен идентификатор на Tox</translation>
+        <translation>%1 е недействителен Tox ID</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
@@ -904,7 +904,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invalid Tox ID</source>
         <comment>Error while sending friend request</comment>
-        <translation>Неприемлив идентификатор на Tox</translation>
+        <translation>Неприемлив Tox ID</translation>
     </message>
     <message>
         <source>You need to write a message with your request</source>
