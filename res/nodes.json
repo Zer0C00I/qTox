@@ -23,7 +23,7 @@
       "location": "CA",
       "status_udp": true,
       "status_tcp": true,
-      "version": "1000002019",
+      "version": "1000002020",
       "motd": "Running https://github.com/toktok/c-toxcore v0.2.13. qTox best Tox! Contact: AC18841E56CCDEE16E93E10E6AB2765BE54277D67F1372921B5B418A6B330D3D3FAFA60B0931"
     },
     {
@@ -38,19 +38,6 @@
       "status_tcp": false,
       "version": "3000002000",
       "motd": "Hi from tox-rs!"
-    },
-    {
-      "ipv4": "205.185.115.131",
-      "ipv6": null,
-      "port": 53,
-      "tcp_ports": [53, 443, 3389, 33445],
-      "public_key": "3091C6BEB2A993F1C6300C16549FABA67098FF3D62C6D253828B531470B53D68",
-      "maintainer": "GDR!",
-      "location": "US",
-      "status_udp": true,
-      "status_tcp": true,
-      "version": "1000002018",
-      "motd": "https://gdr.name/tuntox/"
     },
     {
       "ipv4": "167.88.125.118",
@@ -119,7 +106,7 @@
     },
     {
       "ipv4": "87.202.153.79",
-      "ipv6": "2a02:587:4c0d:3e8c:2edc:1bfb:ccb6:7e38",
+      "ipv6": "2a02:587:4c0d:3e8c:a1d8:534b:e343:7ae0",
       "port": 33445,
       "tcp_ports": [33445],
       "public_key": "4B031C96673B6FF123269FF18F2847E1909A8A04642BBECD0189AC8AEEADAF64",
@@ -179,7 +166,7 @@
       "location": "CA",
       "status_udp": true,
       "status_tcp": true,
-      "version": "1000002019",
+      "version": "1000002020",
       "motd": "FrozenDev Node: tox-bootstrapd Add me on tox: A625D9E9EAAA7B40C399F50BA8B255836EE5A09B6DD0C54CF0E190E24544DC39237D6389FAED"
     },
     {
@@ -322,7 +309,7 @@
       "location": "RU",
       "status_udp": true,
       "status_tcp": true,
-      "version": "1000002019",
+      "version": "1000002020",
       "motd": "tox-bootstrapd"
     },
     {
@@ -376,6 +363,19 @@
       "status_tcp": false,
       "version": "1000002015",
       "motd": "Cody's Tox node!"
+    },
+    {
+      "ipv4": "205.185.115.131",
+      "ipv6": null,
+      "port": 53,
+      "tcp_ports": [],
+      "public_key": "3091C6BEB2A993F1C6300C16549FABA67098FF3D62C6D253828B531470B53D68",
+      "maintainer": "GDR!",
+      "location": "US",
+      "status_udp": false,
+      "status_tcp": false,
+      "version": "1000002018",
+      "motd": "https://gdr.name/tuntox/"
     },
     {
       "ipv4": "46.101.197.175",
