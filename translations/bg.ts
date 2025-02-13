@@ -798,7 +798,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Open all in new window</source>
-        <translation type="unfinished">Отваряне на всичко в прозорец</translation>
+        <translation>Отваряне на разговорите в отделен прозорец</translation>
     </message>
 </context>
 <context>
