@@ -2280,7 +2280,7 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
     <message>
         <source>LTR</source>
-        <comment>Translate this string to the string &apos;RTL&apos; in right-to-left languages (for example Hebrew and Arabic) to get proper widget layout</comment>
+        <comment>DO NOT TRANSLATE. Instead, set this string to &apos;RTL&apos; in right-to-left languages (for example Hebrew and Arabic) to get proper widget layout. This string should only ever be &apos;LTR&apos; or &apos;RTL&apos;.</comment>
         <translation>LTR</translation>
     </message>
 </context>

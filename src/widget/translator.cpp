@@ -64,9 +64,10 @@ void Translator::translate(const QString& localeName)
     // After the language is changed from RTL to LTR, the layout direction isn't
     // always restored
     const QString direction =
-        QApplication::tr("LTR", "Translate this string to the string 'RTL' in"
-                                " right-to-left languages (for example Hebrew and"
-                                " Arabic) to get proper widget layout");
+        QApplication::tr("LTR", "DO NOT TRANSLATE. Instead, set this string "
+                                "to 'RTL' in right-to-left languages (for example "
+                                "Hebrew and Arabic) to get proper widget layout. "
+                                "This string should only ever be 'LTR' or 'RTL'.");
 
     QGuiApplication::setLayoutDirection(direction == "RTL" ? Qt::RightToLeft : Qt::LeftToRight);
 
