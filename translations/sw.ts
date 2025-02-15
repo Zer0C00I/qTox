@@ -1539,6 +1539,11 @@ badala ya kufunga kabisa.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Saidia kutafsiri</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> dakika</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

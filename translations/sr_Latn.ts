@@ -1265,6 +1265,10 @@ instead of closing entirely.</source>
         <source>Help translate</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source> min</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

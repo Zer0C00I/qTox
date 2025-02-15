@@ -1282,6 +1282,11 @@ tamamen kapanmak yerine tepsiye kapanacak.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Çeviriye yardım edin</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> dk</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

@@ -1518,6 +1518,11 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">עזרה בתרגום</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> דקות</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

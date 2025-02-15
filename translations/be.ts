@@ -1322,6 +1322,11 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Дапамажыце перакласці</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> мін</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

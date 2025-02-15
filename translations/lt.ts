@@ -1285,6 +1285,11 @@ vietoje to, kad būtų visiškai uždarytas.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Padėkite išversti</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> min</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

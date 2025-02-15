@@ -1542,6 +1542,11 @@ in plaats vaan gans te slete.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Help vertaole</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> min</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

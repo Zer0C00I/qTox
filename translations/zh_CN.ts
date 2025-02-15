@@ -1271,6 +1271,11 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">帮忙翻译</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">分钟</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

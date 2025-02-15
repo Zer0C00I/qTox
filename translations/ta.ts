@@ -1355,6 +1355,11 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>மொழிபெயர்க்க உதவுங்கள்</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> நிமிடம்</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

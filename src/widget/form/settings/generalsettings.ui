@@ -274,7 +274,7 @@ instead of closing entirely.</string>
                <bool>true</bool>
               </property>
               <property name="suffix">
-               <string notr="true"> min</string>
+               <string> min</string>
               </property>
               <property name="minimum">
                <number>0</number>

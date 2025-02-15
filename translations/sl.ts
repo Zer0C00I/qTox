@@ -1345,6 +1345,11 @@ namesto da bi se popolnoma zaprl.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Pomagajte prevesti</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> min</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

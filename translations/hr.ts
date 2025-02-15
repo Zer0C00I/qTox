@@ -1318,6 +1318,11 @@ umjesto da se potpuno zatvori.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Pomozite prevesti</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> min</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

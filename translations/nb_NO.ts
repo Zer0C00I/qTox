@@ -1283,6 +1283,11 @@ istedenfor å lukke seg helt.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Hjelp til å oversette</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> min</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

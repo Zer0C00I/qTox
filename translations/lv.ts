@@ -1298,6 +1298,11 @@ vietā pilnīgi aizveroties.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Palīdziet tulkot</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> minūtes</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

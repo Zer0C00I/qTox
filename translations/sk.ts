@@ -1286,6 +1286,11 @@ namiesto toho, že by sa zavrel úplne.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Pomôžte s prekladom</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> minút</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

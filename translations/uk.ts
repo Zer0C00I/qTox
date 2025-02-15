@@ -1277,6 +1277,11 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>Допомогти перекласти</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> хв</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

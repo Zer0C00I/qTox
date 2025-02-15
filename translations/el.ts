@@ -1328,6 +1328,11 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Βοηθήστε στη μετάφραση</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> λεπτά</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

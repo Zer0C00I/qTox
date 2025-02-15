@@ -1320,6 +1320,11 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Помозите у преводу</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> мин</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

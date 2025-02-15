@@ -1534,6 +1534,11 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">অনুবাদে সাহায্য করুন</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> মিনিট</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

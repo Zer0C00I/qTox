@@ -1367,6 +1367,11 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">مساعدة في الترجمة</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> دقيقة</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

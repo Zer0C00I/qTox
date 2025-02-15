@@ -1417,6 +1417,11 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">번역을 도와주세요</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> 분</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

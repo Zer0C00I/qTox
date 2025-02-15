@@ -1520,6 +1520,11 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Hjálpaðu til við að þýða</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> mín</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

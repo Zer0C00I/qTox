@@ -1512,6 +1512,11 @@ mu&apos;i nai lo nu mulno ganlo</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ko sidju lo ka fanva</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> mentu be li</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

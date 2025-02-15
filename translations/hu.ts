@@ -1314,6 +1314,11 @@ ahelyett, hogy teljesen bezárná.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Segíts fordítani</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> perc</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

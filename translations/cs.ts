@@ -1285,6 +1285,11 @@ nedojde k jeho úplnému ukončení.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Pomozte přeložit</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> min</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

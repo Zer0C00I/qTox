@@ -1317,6 +1317,11 @@ en lugar de pechar por completo.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Axuda a traducir</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> min</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

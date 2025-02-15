@@ -1513,6 +1513,11 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ترجمہ کرنے میں مدد کریں۔</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> منٹ</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

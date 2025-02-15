@@ -1283,6 +1283,11 @@ jätab ta tööle teavituste alal.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Aidake tõlkida</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> minutit</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

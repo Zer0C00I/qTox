@@ -1441,6 +1441,11 @@ anstataŭ tute fermi.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Helpu traduki</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> min</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

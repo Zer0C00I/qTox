@@ -1527,6 +1527,11 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ಅನುವಾದಿಸಲು ಸಹಾಯ ಮಾಡಿ</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> ನಿಮಿಷ</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

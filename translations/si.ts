@@ -1537,6 +1537,11 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">පරිවර්තනයට උදව් කරන්න</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> මිනිත්තු </translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

@@ -1274,6 +1274,11 @@ in plaats van volledig te sluiten.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Help vertalen</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> min</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

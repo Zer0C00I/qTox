@@ -1280,6 +1280,11 @@ thay vì đóng hoàn toàn.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Trợ giúp dịch</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> phút</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

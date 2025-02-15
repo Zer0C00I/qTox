@@ -1420,6 +1420,11 @@ i stedet for at lukke helt.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Hjælp med at oversætte</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> min</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

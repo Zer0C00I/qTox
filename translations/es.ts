@@ -1275,6 +1275,11 @@ en lugar de cerrarse por completo.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ayuda a traducir</translation>
     </message>
+    <message>
+        <source> min</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> min</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
