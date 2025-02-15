@@ -1285,7 +1285,7 @@ instead of closing entirely.</source>
     <message>
         <source> min</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished"> мин</translation>
+        <translation> мин</translation>
     </message>
 </context>
 <context>
