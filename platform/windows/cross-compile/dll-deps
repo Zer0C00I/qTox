@@ -14,6 +14,7 @@ tls/qcertonlybackend.dll
 # Toxcore dependencies.
 libopus-0.dll
 libsodium-26.dll
+libssp-0.dll
 libtoxcore.dll
 # qTox Qt SVG dependencies.
 Qt6Svg.dll

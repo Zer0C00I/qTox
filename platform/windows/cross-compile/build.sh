@@ -124,7 +124,6 @@ cp "$PROJECT_BUILD_DIR/$BINARY_NAME.exe" "$PROJECT_PREFIX_DIR"
 
 # Always needed DLLs.
 DLL_DEPS=(
-  libssp-0.dll
   libstdc++-6.dll
   libwinpthread-1.dll
 )
