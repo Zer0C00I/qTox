@@ -1,9 +1,7 @@
 # qTox
 
-This is an unofficial fork of qTox. As noted on the official qTox repository, be careful
-about official ones. However, we do have C++ experience and some resources to maintain
-qTox going forward, so feel free to try it out, file issues against us, and make pull
-requests here.
+This is the official fork of qTox, developed by the toxcore developer team. See
+the README on https://github.com/qTox/qTox for reasoning.
 
 As [sudden6](https://github.com/sudden6) did, I also want to take the time and thank all
 original qTox [contributors](https://github.com/qTox/qTox/graphs/contributors) and
