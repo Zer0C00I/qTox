@@ -2,6 +2,8 @@
 
 ## v1.18.2 (2025-01-13)
 
+### Release notes
+
 This is a security-focussed release that also comes with some bugfixes.
 
 - We've added QOI image support and dropped some image support plugins that we haven't properly vetted.
@@ -13,6 +15,8 @@ This is a security-focussed release that also comes with some bugfixes.
 <a name="v1.18.2-rc.1"></a>
 
 ## v1.18.2-rc.1 (2025-01-12)
+
+### Release notes
 
 Getting ready for a release. Here's a release candidate.
 
@@ -39,6 +43,8 @@ Getting ready for a release. Here's a release candidate.
 
 ## v1.18.1 (2025-01-06)
 
+### Release notes
+
 A pretty quick turnaround to the next release here, fixing an issue with the release builder workflows that caused release builds from v1.18.0 to claim they are unstable and untested.
 
 Besides that, here are some highlights:
@@ -52,6 +58,8 @@ Finally, we have tightened the security of qTox by avoiding any DNS lookups in t
 <a name="v1.18.1-rc.3"></a>
 
 ## v1.18.1-rc.3 (2025-01-05)
+
+### Release notes
 
 Release candidate 3.
 
@@ -69,11 +77,15 @@ Release candidate 3.
 
 ## v1.18.1-rc.2 (2025-01-03)
 
+### Release notes
+
 Release candidate 2. RC1 didn't have binaries because the CI scripts were broken.
 
 <a name="v1.18.1-rc.1"></a>
 
 ## v1.18.1-rc.1 (2025-01-03)
+
+### Release notes
 
 Release Candidate 1.
 
@@ -98,6 +110,8 @@ Release Candidate 1.
 <a name="v1.18.0"></a>
 
 ## v1.18.0 (2025-01-01)
+
+### Release notes
 
 Happy New Year 2025!
 
@@ -124,6 +138,8 @@ As always, report any bugs or issues you find or features you'd like to see to o
 
 ## v1.18.0-rc.4 (2024-12-31)
 
+### Release notes
+
 One more release candidate before our final release.
 
 #### Features
@@ -144,6 +160,8 @@ One more release candidate before our final release.
 <a name="v1.18.0-rc.3"></a>
 
 ## v1.18.0-rc.3 (2024-12-23)
+
+### Release notes
 
 qTox version 1.18.0 release candidate 3
 
@@ -167,6 +185,8 @@ qTox version 1.18.0 release candidate 3
 <a name="v1.18.0-rc.2"></a>
 
 ## v1.18.0-rc.2 (2024-12-15)
+
+### Release notes
 
 #### Performance
 
@@ -194,6 +214,8 @@ qTox version 1.18.0 release candidate 3
 <a name="v1.18.0-rc.1"></a>
 
 ## v1.18.0-rc.1 (2024-11-23)
+
+### Release notes
 
 #### Bug Fixes
 
@@ -519,6 +541,8 @@ qTox version 1.18.0 release candidate 3
 
 ## v1.17.6 (2022-03-07)
 
+### Release notes
+
 Fix Windows installer lax permissions at non-default install locations
 
 #### Bug Fixes
@@ -529,6 +553,8 @@ Fix Windows installer lax permissions at non-default install locations
 <a name="v1.17.5"></a>
 
 ## v1.17.5 (2022-03-05)
+
+### Release notes
 
 Fix Windows installer lax permissions at non-default install locations
 
@@ -550,11 +576,15 @@ Fix Windows installer lax permissions at non-default install locations
 
 ## v1.17.4 (2021-12-15)
 
+### Release notes
+
 This release only updates dependency versions including toktok/c-toxcore to v0.2.13 to address CVE-2021-44847. No code changes.
 
 <a name="v1.17.3"></a>
 
 ## v1.17.3 (2020-11-24)
+
+### Release notes
 
 Fix failing to start on macOS Big Sur. Update deps for Windows, macOS, flatpak.
 
@@ -592,11 +622,15 @@ Fix failing to start on macOS Big Sur. Update deps for Windows, macOS, flatpak.
 
 ## v1.17.2 (2020-04-26)
 
+### Release notes
+
 This is a release to fix our automatic deployment scripts, no code changes.
 
 <a name="v1.17.1"></a>
 
 ## v1.17.1 (2020-04-23)
+
+### Release notes
 
 qTox v1.17.1 release. For details see CHANGELOG.md.
 
@@ -607,6 +641,8 @@ qTox v1.17.1 release. For details see CHANGELOG.md.
 <a name="v1.17.0"></a>
 
 ## v1.17.0 (2020-04-20)
+
+### Release notes
 
 Since this is the first release in more than a year the changelog is quite huge.
 The most notable user facing changes are group chats that stay intact after
@@ -980,11 +1016,15 @@ For v1.17.0 binaries, see v1.17.1.
 
 ## v1.16.3 (2018-07-20)
 
+### Release notes
+
 This point release fixes flatpak build. No feature changes.
 
 <a name="v1.16.2"></a>
 
 ## v1.16.2 (2018-07-15)
+
+### Release notes
 
 This point release fixes dialog spam from receiving invalid filenames and logs
 spam. No feature changes.
@@ -997,6 +1037,8 @@ spam. No feature changes.
 <a name="v1.16.1"></a>
 
 ## v1.16.1 (2018-07-04)
+
+### Release notes
 
 This point release fixes our deployment of Flapak and AppImage on Github. No
 feature changes.
@@ -1012,6 +1054,8 @@ feature changes.
 <a name="v1.16.0"></a>
 
 ## v1.16.0 (2018-07-03)
+
+### Release notes
 
 The most notable additions in this release are a new fullscreen mode for
 video calls, a new call end sound and support for more camera resolutions. To
@@ -1073,6 +1117,8 @@ AppImage packages.
 
 ## v1.15.0 (2018-04-19)
 
+### Release notes
+
 qTox v1.15.0 release. For details see CHANGELOG.md.
 
 #### Performance
@@ -1118,6 +1164,8 @@ qTox v1.15.0 release. For details see CHANGELOG.md.
 <a name="v1.14.0"></a>
 
 ## v1.14.0 (2018-03-12)
+
+### Release notes
 
 qTox 1.14.0 release
 
@@ -1200,6 +1248,8 @@ For details see CHANGELOG.md
 <a name="v1.13.0"></a>
 
 ## v1.13.0 (2017-11-26)
+
+### Release notes
 
 In this release we added microphone voice activation and the long-awaited
 Github-like Identicon instead of default avatars. Of course also some bugs were
@@ -1301,6 +1351,8 @@ fixed and new ones added :P
 
 ## v1.12.0 (2017-10-01)
 
+### Release notes
+
 This release provides many handy new features, most notable are mass import of
 contacts from a file, improvements around images in the chatlog and an
 experimental audio backend with echo cancelling.
@@ -1389,6 +1441,8 @@ experimental audio backend with echo cancelling.
 
 ## v1.11.0 (2017-07-16)
 
+### Release notes
+
 The most interesting new features that were added in this release are export of
 history to plaintext file and outgoing call sound.
 
@@ -1472,6 +1526,8 @@ history to plaintext file and outgoing call sound.
 
 ## v1.10.0 (2017-05-07)
 
+### Release notes
+
 The more prominent new features are an option to autojoin groupchats and
 ability to select messages with triple click. More about new stuff below.
 
@@ -1533,6 +1589,8 @@ ability to select messages with triple click. More about new stuff below.
 <a name="v1.9.0"></a>
 
 ## v1.9.0 (2017-03-19)
+
+### Release notes
 
 The most noticeable change to UI are moved buttons in file transfer widget,
 lessening chance of an accidental cancellation of a file transfer.
@@ -1597,6 +1655,8 @@ lessening chance of an accidental cancellation of a file transfer.
 
 ## v1.8.1 (2017-02-05)
 
+### Release notes
+
 qTox 1.8.1 release.
 
 Fixes OSX deployment.
@@ -1604,6 +1664,8 @@ Fixes OSX deployment.
 <a name="v1.8.0"></a>
 
 ## v1.8.0 (2017-02-05)
+
+### Release notes
 
 With this version build system has been migrated to `cmake` and `qmake`
 support is now deprecated and will be removed in the `v1.9.0` release.
@@ -1681,6 +1743,8 @@ support is now deprecated and will be removed in the `v1.9.0` release.
 
 ## v1.7.0 (2016-12-25)
 
+### Release notes
+
 qTox v1.7.0 release
 
 More information in the CHANGELOG.md.
@@ -1746,6 +1810,8 @@ More information in the CHANGELOG.md.
 <a name="v1.6.0"></a>
 
 ## v1.6.0 (2016-11-13)
+
+### Release notes
 
 qTox v1.6.0 release
 
@@ -1851,11 +1917,15 @@ More information in the CHANGELOG.md.
 
 ## v1.5.2 (2016-09-29)
 
+### Release notes
+
 Rebuilt binaries to fix a FFmpeg bug
 
 <a name="v1.5.1"></a>
 
 ## v1.5.1 (2016-08-09)
+
+### Release notes
 
 No changes in qTox itself.
 
@@ -1866,6 +1936,8 @@ No changes in qTox itself.
 <a name="v1.5.0"></a>
 
 ## v1.5.0 (2016-08-09)
+
+### Release notes
 
 The most important change is video improvements. Bored by waiting minutes for
 video call to start? Fixed.
@@ -2092,6 +2164,8 @@ More information on features / fixes / changes below.
 <a name="v1.4.0"></a>
 
 ## v1.4.0 (2016-04-24)
+
+### Release notes
 
 Time flows, and with the flow come new features, new bugfixes, and hopefully no
 new bugs.
