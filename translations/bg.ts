@@ -436,7 +436,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Add friend</source>
-        <translation type="unfinished">Прибави приятел</translation>
+        <translation>Добавяне на контакт</translation>
     </message>
 </context>
 <context>
@@ -806,12 +806,12 @@ so you can save the file on Windows.</source>
     <message>
         <source>Location not writable</source>
         <comment>Title of permissions popup</comment>
-        <translation type="unfinished">Грешка при запазване</translation>
+        <translation>Грешка при запазване</translation>
     </message>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation type="unfinished">Нямате права за писане в тази папка. Изберете друга или откажете.</translation>
+        <translation>Нямате права за писане в тази папка. Изберете друга или откажете.</translation>
     </message>
 </context>
 <context>
@@ -1500,7 +1500,7 @@ Share it with your friends to begin chatting.</source>
     </message>
     <message>
         <source>Set your status message that will be shown to others</source>
-        <translation type="unfinished">Задайте съобщението за състояние, което ще бъде показано на другите</translation>
+        <translation>Задайте съобщение за състоянието, което ще бъде показано на другите</translation>
     </message>
 </context>
 <context>
@@ -1669,7 +1669,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
-        <translation type="unfinished">Текстово поле, в което да въведете парола, минимум 6 знака</translation>
+        <translation>Текстово поле, в което да въведете парола, минимум 6 знака</translation>
     </message>
 </context>
 <context>
@@ -1712,7 +1712,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Set your status message that will be shown to others</source>
-        <translation>Задайте съобщението за състояние, което ще бъде показано на другите</translation>
+        <translation>Задайте съобщение за състоянието, което ще бъде показано на другите</translation>
     </message>
     <message>
         <source>Status</source>
@@ -1782,7 +1782,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Add friend</source>
-        <translation type="unfinished">Прибави приятел</translation>
+        <translation>Добавяне на контакт</translation>
     </message>
 </context>
 <context>
@@ -2667,7 +2667,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Set profile password</source>
-        <translation type="unfinished">Задаване на парола</translation>
+        <translation>Задаване на парола</translation>
     </message>
 </context>
 <context>
@@ -2716,7 +2716,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Add friend</source>
         <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation type="unfinished">Прибави приятел</translation>
+        <translation>Добавяне на контакт</translation>
     </message>
 </context>
 <context>
