@@ -435,7 +435,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Add friend</source>
-        <translation type="unfinished">Додати друга</translation>
+        <translation>Додати друга</translation>
     </message>
 </context>
 <context>
@@ -796,7 +796,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Open all in new window</source>
-        <translation>Відкрити всі в новому вікні</translation>
+        <translation>Відкрити все в новому вікні</translation>
     </message>
 </context>
 <context>
@@ -804,12 +804,12 @@ so you can save the file on Windows.</source>
     <message>
         <source>Location not writable</source>
         <comment>Title of permissions popup</comment>
-        <translation type="unfinished">Немає прав на запис</translation>
+        <translation>Місце недоступне для запису</translation>
     </message>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation type="unfinished">У вас немає дозволу щоб записувати в цю папку. Виберіть іншу, або скасуйте збереження діалогу.</translation>
+        <translation>У вас немає дозволу для запису в це місце. Виберіть інше, або скасуйте збереження діалогу.</translation>
     </message>
 </context>
 <context>
@@ -1283,7 +1283,7 @@ instead of closing entirely.</source>
     <message>
         <source> min</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished"> хв</translation>
+        <translation> хв</translation>
     </message>
 </context>
 <context>
@@ -1495,7 +1495,7 @@ Share it with your friends to begin chatting.</source>
     </message>
     <message>
         <source>Set your status message that will be shown to others</source>
-        <translation type="unfinished">Встановіть Ваш статус, який буде показано іншим</translation>
+        <translation>Встановити ваше повідомлення в статусі, яке буде показуватися іншим людям</translation>
     </message>
 </context>
 <context>
@@ -1669,7 +1669,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
-        <translation type="unfinished">Поле введення пароля, мінімальна довжина 6 символів</translation>
+        <translation>Поле введення пароля, мінімальна довжина 6 символів</translation>
     </message>
 </context>
 <context>
@@ -1780,7 +1780,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Add friend</source>
-        <translation type="unfinished">Додати друга</translation>
+        <translation>Додати друга</translation>
     </message>
 </context>
 <context>
@@ -2669,14 +2669,14 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     </message>
     <message>
         <source>Set profile password</source>
-        <translation type="unfinished">Встановити пароль</translation>
+        <translation>Встановити пароль профілю</translation>
     </message>
 </context>
 <context>
     <name>Settings</name>
     <message>
         <source>Circle #%1</source>
-        <translation>Коло №%1</translation>
+        <translation>Коло #%1</translation>
     </message>
     <message>
         <source>Failed to load personal settings</source>
@@ -2718,7 +2718,7 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     <message>
         <source>Add friend</source>
         <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation type="unfinished">Додати друга</translation>
+        <translation>Додати друга</translation>
     </message>
 </context>
 <context>
@@ -3033,7 +3033,7 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>Create new circle...</source>
-        <translation>Додати нове коло...</translation>
+        <translation>Створити нове коло...</translation>
     </message>
     <message>
         <source>By Name</source>
