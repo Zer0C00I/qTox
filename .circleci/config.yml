@@ -5,13 +5,13 @@ workflows:
   version: 2
   circleci:
     jobs:
-      - bazel-opt
+      - bazel-release
 
 jobs:
-  bazel-opt:
+  bazel-release:
     working_directory: /tmp/cirrus-ci-build
     docker:
-      - image: toxchat/toktok-stack:latest-release
+      - image: toxchat/toktok-stack:latest
 
     steps:
       - checkout
