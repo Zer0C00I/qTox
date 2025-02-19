@@ -2697,7 +2697,7 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     <name>Settings</name>
     <message>
         <source>Circle #%1</source>
-        <translation>Draugų ratas Nr. %1</translation>
+        <translation>Draugų ratas #%1</translation>
     </message>
     <message>
         <source>Failed to load personal settings</source>
