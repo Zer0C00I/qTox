@@ -436,7 +436,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Add friend</source>
-        <translation type="unfinished">Добавить друга</translation>
+        <translation>Добавить друга</translation>
     </message>
 </context>
 <context>
@@ -789,16 +789,16 @@ so you can save the file on Windows.</source>
     <message>
         <source>Rename circle</source>
         <comment>Menu for renaming a circle</comment>
-        <translation>Переименовать список</translation>
+        <translation>Переименовать круг</translation>
     </message>
     <message>
         <source>Remove circle</source>
         <comment>Menu for removing a circle</comment>
-        <translation>Удалить список</translation>
+        <translation>Удалить круг</translation>
     </message>
     <message>
         <source>Open all in new window</source>
-        <translation>Открыть весь список в новом окне</translation>
+        <translation>Открыть всё в новом окне</translation>
     </message>
 </context>
 <context>
@@ -807,12 +807,12 @@ so you can save the file on Windows.</source>
         <source>Location not writable</source>
         <comment>Title of permissions popup</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Местоположение не для записи</translation>
+        <translation>Место недоступно для записи</translation>
     </message>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation type="unfinished">У вас нет разрешения чтобы записывать в эту папку. Выберите другую, или отмените сохранение диалога.</translation>
+        <translation>У вас нет разрешения для записи в это место. Выберите другое, или отмените сохранение диалога.</translation>
     </message>
 </context>
 <context>
@@ -1091,15 +1091,15 @@ so you can save the file on Windows.</source>
     <message>
         <source>Move to circle...</source>
         <comment>Menu to move a friend into a different circle</comment>
-        <translation>Поместить в список...</translation>
+        <translation>Переместить в круг...</translation>
     </message>
     <message>
         <source>To new circle</source>
-        <translation>В новый список</translation>
+        <translation>В новый круг</translation>
     </message>
     <message>
         <source>Remove from circle &apos;%1&apos;</source>
-        <translation>Переместить из списка &apos;%1&apos;</translation>
+        <translation>Удалить из круга &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1132,7 +1132,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
-        <translation>Переместить к кругу &quot;%1&quot;</translation>
+        <translation>Переместить в круг &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Remove friend</source>
@@ -1287,7 +1287,7 @@ instead of closing entirely.</source>
     <message>
         <source> min</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished"> мин</translation>
+        <translation> мин</translation>
     </message>
 </context>
 <context>
@@ -1499,7 +1499,7 @@ Share it with your friends to begin chatting.</source>
     </message>
     <message>
         <source>Set your status message that will be shown to others</source>
-        <translation type="unfinished">Установить ваше сообщения статуса видимое другим пользователям</translation>
+        <translation>Установить ваше сообщение в статусе, которое будет показываться другим людям</translation>
     </message>
 </context>
 <context>
@@ -1667,7 +1667,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
-        <translation type="unfinished">Поле ввода пароля, длиной минимум 6 символов</translation>
+        <translation>Поле ввода пароля, минимальная длина 6 символов</translation>
     </message>
 </context>
 <context>
@@ -1778,7 +1778,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Add friend</source>
-        <translation type="unfinished">Добавить друга</translation>
+        <translation>Добавить друга</translation>
     </message>
 </context>
 <context>
@@ -2664,14 +2664,14 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Set profile password</source>
-        <translation type="unfinished">Установить пароль для профиля</translation>
+        <translation>Установить пароль профиля</translation>
     </message>
 </context>
 <context>
     <name>Settings</name>
     <message>
         <source>Circle #%1</source>
-        <translation>Список #%1</translation>
+        <translation>Круг #%1</translation>
     </message>
     <message>
         <source>Failed to load personal settings</source>
@@ -2713,7 +2713,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Add friend</source>
         <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation type="unfinished">Добавить друга</translation>
+        <translation>Добавить друга</translation>
     </message>
 </context>
 <context>
@@ -3037,7 +3037,7 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>Create new circle...</source>
-        <translation>Добавить новый список...</translation>
+        <translation>Создать новый круг...</translation>
     </message>
     <message>
         <source>By Name</source>
