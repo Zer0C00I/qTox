@@ -2673,7 +2673,7 @@ Cet identifiant comprend le code NoSpam (en bleu) et la somme de contrôle (en g
     <name>Settings</name>
     <message>
         <source>Circle #%1</source>
-        <translation>Cercle nᵒ%1</translation>
+        <translation>Cercle #%1</translation>
     </message>
     <message>
         <source>Failed to load personal settings</source>
