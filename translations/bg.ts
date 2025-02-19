@@ -2674,7 +2674,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>Settings</name>
     <message>
         <source>Circle #%1</source>
-        <translation>Списък №%1</translation>
+        <translation>Списък #%1</translation>
     </message>
     <message>
         <source>Failed to load personal settings</source>
