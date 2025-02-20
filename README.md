@@ -111,7 +111,7 @@ idea of the general look and features.
 
 This screenshot is taken on every merged pull-request, so will be up-to-date, but less interesting:
 
-![Nightly screenshot](https://github.com/TokTok/qTox/releases/download/nightly/qtox-macos-arm64.png)
+![Nightly screenshot](https://github.com/TokTok/qTox/releases/download/nightly/qTox-macos-arm64-12.0.png)
 
 ### Features
 
