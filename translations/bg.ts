@@ -1148,7 +1148,7 @@ so you can save the file on Windows.</source>
     <name>GeneralForm</name>
     <message>
         <source>General</source>
-        <translation>Общи</translation>
+        <translation>Общи настройки</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
