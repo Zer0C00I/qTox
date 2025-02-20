@@ -15,4 +15,4 @@ jobs:
 
     steps:
       - checkout
-      - run: .circleci/bazel-test
+      - run: bash <(curl -s https://raw.githubusercontent.com/TokTok/ci-tools/refs/heads/master/tools/circleci-bazel-test)
