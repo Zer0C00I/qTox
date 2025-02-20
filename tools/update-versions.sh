@@ -27,14 +27,14 @@ readonly VERSION_PATTERN='[0-9]+\.[0-9]+\.[0-9]+(-rc\.[0-9]+)?'
 
 update_windows() {
   (
-    cd "$BASE_DIR/windows"
+    cd "$BASE_DIR/platform/windows"
     ./qtox-nsi-version.sh "$@"
   )
 }
 
 update_macos() {
   (
-    cd "$BASE_DIR/macos"
+    cd "$BASE_DIR/platform/macos"
     ./update-plist-version.sh "$@"
   )
 }
@@ -47,7 +47,7 @@ update_readme() {
 }
 
 update_appdata() {
-  cd "$BASE_DIR"/res/
+  cd "$BASE_DIR"
   local isodate="$(date --iso-8601)"
   sed -ri "s|(<release version=\")$VERSION_PATTERN|\1$@|g" platform/linux/io.github.qtox.qTox.appdata.xml
   sed -ri "s|(<release version=\"$VERSION_PATTERN\" date=\").{10}\"|\1$isodate\"|g" platform/linux/io.github.qtox.qTox.appdata.xml
@@ -55,7 +55,8 @@ update_appdata() {
 
 update_package_cmake() {
   cd "$BASE_DIR"/cmake/
-  IFS="." read -ra version_parts <<<"$@"
+  VERSION="${1%-*}"
+  IFS="." read -ra version_parts <<<"$VERSION"
   sed -ri "s|(set\(CPACK_PACKAGE_VERSION_MAJOR ).+|\1${version_parts[0]}\)|g" "Package.cmake"
   sed -ri "s|(set\(CPACK_PACKAGE_VERSION_MINOR ).+|\1${version_parts[1]}\)|g" "Package.cmake"
   sed -ri "s|(set\(CPACK_PACKAGE_VERSION_PATCH ).+|\1${version_parts[2]}\)|g" "Package.cmake"
@@ -63,8 +64,8 @@ update_package_cmake() {
 
 update_cmake() {
   cd "$BASE_DIR"
-  IFS="." read -ra version_parts <<<"$@"
-  sed -i "s/^  VERSION [0-9.]*$/  VERSION ${version_parts[0]}.${version_parts[1]}.${version_parts[2]}/" "CMakeLists.txt"
+  VERSION="${1%-*}"
+  sed -i "s/^  VERSION [0-9.]*$/  VERSION $VERSION/" "CMakeLists.txt"
 }
 
 # exit if supplied arg is not a version
