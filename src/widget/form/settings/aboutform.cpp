@@ -113,7 +113,7 @@ void AboutForm::replaceVersions()
         QStringLiteral(                        //
             "https://github.com/TokTok/qTox/issues/new"
             "?labels=bug"
-            "&template=bug.yaml"
+            "&template=bug.yml"
             "&contact=%1"
             "&title=%2"
             "&qtox_version=%3"
