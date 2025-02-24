@@ -202,7 +202,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Default directory to save files:</source>
-        <translation>Подразбирана папка за файлове:</translation>
+        <translation>Подразбирана папка за приемане на файлове:</translation>
     </message>
     <message>
         <source>Manual</source>
@@ -1234,7 +1234,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Default directory to save files:</source>
-        <translation>Подразбирана папка за приетите на файлове:</translation>
+        <translation>Подразбирана папка за приемане на файлове:</translation>
     </message>
     <message>
         <source>Check for updates</source>
@@ -1481,7 +1481,7 @@ Profile does not contain your history.</source>
     </message>
     <message>
         <source>My name:</source>
-        <translation>Моето име:</translation>
+        <translation>Вашето име:</translation>
     </message>
     <message>
         <source>My status:</source>
@@ -2507,11 +2507,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>You have joined the conference</source>
-        <translation>Присъединихте се към групов разговор</translation>
+        <translation>Присъединихте се към груповия разговор</translation>
     </message>
     <message>
         <source>You have left the conference</source>
-        <translation>Напуснахте групов разговор</translation>
+        <translation>Напуснахте груповия разговор</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
