@@ -1,3 +1,25 @@
+<a name="v1.18.3"></a>
+
+## v1.18.3 (2025-02-25)
+
+### Release notes
+
+Translations, UI improvements, notifications, and some bugfixes.
+
+This release is bringing several UI improvements and translation fixes thanks to
+contributions and suggestions from our users. Also, we've merged with another
+fork of qTox and the maintainer of that fork has contributed all their
+improvements, making this the most stable version of qTox in years.
+
+There are still many things on our TODO list, most notably we'll be focussing on
+adding new group chat support with moderation, roles, and group ownership. As
+always, if you find any issues with this release, please let us know by filing
+an issue.
+
+#### Bug Fixes
+
+- Use correct bug template in report bug button. ([d2842696](https://github.com/TokTok/qTox/commit/d2842696399fbe26474655175a5221d960055606))
+
 <a name="v1.18.3-rc.1"></a>
 
 ## v1.18.3-rc.1 (2025-02-20)
