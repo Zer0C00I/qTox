@@ -32,8 +32,8 @@ ToxPk::ToxPk(QByteArray rawId)
     : ChatId(std::move(rawId))
 {
     if (id.length() != size) {
-        qFatal("ToxPk constructed with invalid length (%u instead of %d)",
-               static_cast<uint>(id.length()), size);
+        qCritical("ToxPk constructed with invalid length (%u instead of %d)",
+                  static_cast<uint>(id.length()), size);
     }
 }
 
@@ -57,8 +57,8 @@ ToxPk::ToxPk(const uint8_t* rawId)
 ToxPk::ToxPk(const QString& pk)
     : ToxPk([&pk]() {
         if (pk.length() != numHexChars) {
-            qFatal("ToxPk constructed with invalid length string (%u instead of %d)",
-                   static_cast<uint>(pk.length()), numHexChars);
+            qCritical("ToxPk constructed with invalid length string (%u instead of %d)",
+                      static_cast<uint>(pk.length()), numHexChars);
         }
         return QByteArray::fromHex(pk.toLatin1());
     }())
