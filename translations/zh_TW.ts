@@ -151,11 +151,11 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>You are using qTox version %1.</source>
-        <translation type="unfinished">你正在使用 qTox 的 %1 版本。</translation>
+        <translation>你正在使用 qTox 的 %1 版本。</translation>
     </message>
     <message>
         <source>Commit hash: %1</source>
-        <translation>認可雜湊：%1</translation>
+        <translation>提交雜湊值：%1</translation>
     </message>
     <message>
         <source>toxcore version: %1</source>
@@ -179,28 +179,28 @@ which may lead to problems with video calls.</source>
         <source>See a full list of %1 at Github</source>
         <comment>`%1` is replaced with translation of word `contributors`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">在 Github 上查看 %1 的完整列表</translation>
+        <translation>在 Github 上查看 %1 的完整列表</translation>
     </message>
     <message>
         <source>bug-tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
-        <translation type="unfinished">Bug 追蹤器</translation>
+        <translation>程式錯誤追蹤器</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
         <comment>Replaces `%2` in the `A list of all known…`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">編寫有用的錯誤報告</translation>
+        <translation>撰寫有用的錯誤報告</translation>
     </message>
     <message>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
-        <translation type="unfinished">參與者</translation>
+        <translation>參與者</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">此版本的 qTox 由 TokTok 團隊在原始 qTox 專案歸檔後進行維護。</translation>
+        <translation>此版本的 qTox 由 TokTok 團隊維護，原始 qTox 專案已被封存。</translation>
     </message>
 </context>
 <context>
@@ -208,15 +208,15 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Automatically accept files from contact if set</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">如果設置，自動接受聯絡人的文件</translation>
+        <translation>如果啟用，自動接受聯絡人發送的檔案</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
-        <translation type="unfinished">預設檔案儲存目錄：</translation>
+        <translation>預設檔案儲存目錄：</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished">手動</translation>
+        <translation>手動</translation>
     </message>
     <message>
         <source>Audio</source>
@@ -441,7 +441,7 @@ which may lead to problems with video calls.</source>
         <source>%1 here! Tox me maybe?</source>
         <extracomment>Default message in friend requests if the field is left blank. Write something appropriate!</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 在這裡！也許是毒害我？</translation>
+        <translation>%1 在這裡！要不要 Tox 我一下？</translation>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
@@ -1315,23 +1315,23 @@ so you can save the file on Windows.</source>
         <source>Enable light tray icon.</source>
         <comment>toolTip for light icon setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">啟用光托盤圖示。</translation>
+        <translation>啟用亮色圖示。</translation>
     </message>
     <message>
         <source>Light icon</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">光圖示</translation>
+        <translation>亮色圖示</translation>
     </message>
     <message>
         <source>qTox will start minimized in tray.</source>
         <comment>toolTip for Start in tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">qTox 將在托盤中最小化。</translation>
+        <translation>qTox 將在啟動時最小化至系統匣。</translation>
     </message>
     <message>
         <source>Start in tray</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">從托盤開始</translation>
+        <translation>啟動時最小化到系統匣</translation>
     </message>
     <message>
         <source>Close to tray</source>
@@ -1341,7 +1341,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Minimize to tray</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">最小化到托盤</translation>
+        <translation>最小化到系統匣</translation>
     </message>
     <message>
         <source>Autostart</source>
@@ -1412,7 +1412,7 @@ so you can save the file on Windows.</source>
 instead of system taskbar.</source>
         <comment>toolTip for minimize to tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">按最小化 (_) qTox 後將最小化到托盤，
+        <translation>按最小化(_)按鈕後， qTox 將最小化到系統匣，
 而不是系統工作列。</translation>
     </message>
     <message>
@@ -1420,7 +1420,7 @@ instead of system taskbar.</source>
 instead of closing entirely.</source>
         <comment>toolTip for close to tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">按下關閉（X）後，qTox 將關閉托盤，
+        <translation>按下關閉（X）按鈕後，qTox 將最小化至系統匣，
 而不是完全關閉。</translation>
     </message>
     <message>
@@ -2681,7 +2681,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>%1 here! Tox me maybe?</source>
         <comment>Default message in Tox URI friend requests. Write something appropriate!</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 在這裡！也許是毒害我？</translation>
+        <translation>%1 在這裡！要不要 Tox 我一下？</translation>
     </message>
     <message>
         <source>None</source>
