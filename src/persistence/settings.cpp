@@ -46,19 +46,30 @@ void inGroup(T& ps, const QString& group, F&& f)
     ps.endGroup();
 }
 
-template <typename T, typename F>
-void inArray(T& ps, const QString& array, int size, F&& f)
+template <typename T, typename C, typename F>
+void inArray(T& ps, const QString& array, const C& container, F&& f)
 {
+    const qsizetype size = container.size();
     ps.beginWriteArray(array, size);
-    f();
+    qsizetype index = 0;
+    for (const auto& item : container) {
+        ps.setArrayIndex(index);
+        f(item);
+        ++index;
+    }
     ps.endArray();
 }
 
-template <typename T, typename F>
-void inArray(T& ps, const QString& array, F&& f)
+template <typename T, typename C, typename F>
+void inArray(T& ps, const QString& array, C* container, F&& f)
 {
     const int size = ps.beginReadArray(array);
-    f(size);
+    container->clear();
+    container->reserve(size);
+    for (int i = 0; i < size; i++) {
+        ps.setArrayIndex(i);
+        f();
+    }
     ps.endArray();
 }
 } // namespace
@@ -499,7 +510,6 @@ void Settings::loadPersonal(const Profile& profile, bool newProfile)
 
     SettingsSerializer ps(filePath, profile.getPasskey());
     ps.load();
-    friendLst.clear();
 
     inGroup(ps, "Version", [this, &ps, newProfile] {
         const auto defaultVersion = newProfile ? PERSONAL_SETTINGS_VERSION : 0;
@@ -525,42 +535,33 @@ void Settings::loadPersonal(const Profile& profile, bool newProfile)
     });
 
     inGroup(ps, "Friends", [this, &ps] {
-        inArray(ps, "Friend", [this, &ps](int size) {
-            friendLst.reserve(size);
-            for (int i = 0; i < size; i++) {
-                ps.setArrayIndex(i);
-                friendProp fp{ps.value("addr").toString()};
-                fp.alias = ps.value("alias").toString();
-                fp.note = ps.value("note").toString();
-                fp.autoAcceptDir = ps.value("autoAcceptDir").toString();
+        inArray(ps, "Friend", &friendLst, [this, &ps] {
+            FriendProp fp{ps.value("addr").toString()};
+            fp.alias = ps.value("alias").toString();
+            fp.note = ps.value("note").toString();
+            fp.autoAcceptDir = ps.value("autoAcceptDir").toString();
 
-                if (fp.autoAcceptDir == "")
-                    fp.autoAcceptDir = ps.value("autoAccept").toString();
+            if (fp.autoAcceptDir == "")
+                fp.autoAcceptDir = ps.value("autoAccept").toString();
 
-                fp.autoAcceptCall =
-                    Settings::AutoAcceptCallFlags(QFlag(ps.value("autoAcceptCall", 0).toInt()));
-                fp.autoConferenceInvite = ps.value("autoConferenceInvite").toBool();
-                fp.circleID = ps.value("circle", -1).toInt();
+            fp.autoAcceptCall =
+                Settings::AutoAcceptCallFlags(QFlag(ps.value("autoAcceptCall", 0).toInt()));
+            fp.autoConferenceInvite = ps.value("autoConferenceInvite").toBool();
+            fp.circleID = ps.value("circle", -1).toInt();
 
-                if (getEnableLogging())
-                    fp.activity = ps.value("activity", QDateTime()).toDateTime();
-                friendLst.insert(ToxPk(fp.addr.mid(0, ToxPk::numHexChars)).getByteArray(), fp);
-            }
+            if (getEnableLogging())
+                fp.activity = ps.value("activity", QDateTime()).toDateTime();
+            friendLst.insert(ToxPk(fp.addr.mid(0, ToxPk::numHexChars)).getByteArray(), fp);
         });
     });
 
     inGroup(ps, "Requests", [this, &ps] {
-        inArray(ps, "Request", [this, &ps](int size) {
-            friendRequests.clear();
-            friendRequests.reserve(size);
-            for (int i = 0; i < size; i++) {
-                ps.setArrayIndex(i);
-                Request request;
-                request.address = ps.value("addr").toString();
-                request.message = ps.value("message").toString();
-                request.read = ps.value("read").toBool();
-                friendRequests.push_back(request);
-            }
+        inArray(ps, "Request", &friendRequests, [this, &ps] {
+            Request request;
+            request.address = ps.value("addr").toString();
+            request.message = ps.value("message").toString();
+            request.read = ps.value("read").toBool();
+            friendRequests.push_back(request);
         });
     });
 
@@ -578,16 +579,11 @@ void Settings::loadPersonal(const Profile& profile, bool newProfile)
     });
 
     inGroup(ps, "Circles", [this, &ps] {
-        inArray(ps, "Circle", [this, &ps](int size) {
-            circleLst.clear();
-            circleLst.reserve(size);
-            for (int i = 0; i < size; i++) {
-                ps.setArrayIndex(i);
-                circleProp cp;
-                cp.name = ps.value("name").toString();
-                cp.expanded = ps.value("expanded", true).toBool();
-                circleLst.push_back(cp);
-            }
+        inArray(ps, "Circle", &circleLst, [this, &ps] {
+            CircleProp cp;
+            cp.name = ps.value("name").toString();
+            cp.expanded = ps.value("expanded", true).toBool();
+            circleLst.push_back(cp);
         });
     });
 }
@@ -757,37 +753,25 @@ void Settings::savePersonal(QString profileName, const ToxEncrypt* passkey)
 
     SettingsSerializer ps(path, passkey);
     inGroup(ps, "Friends", [this, &ps] {
-        inArray(ps, "Friend", friendLst.size(), [this, &ps] {
-            int index = 0;
-            for (auto& frnd : friendLst) {
-                ps.setArrayIndex(index);
-                ps.setValue("addr", frnd.addr);
-                ps.setValue("alias", frnd.alias);
-                ps.setValue("note", frnd.note);
-                ps.setValue("autoAcceptDir", frnd.autoAcceptDir);
-                ps.setValue("autoAcceptCall", static_cast<int>(frnd.autoAcceptCall));
-                ps.setValue("autoConferenceInvite", frnd.autoConferenceInvite);
-                ps.setValue("circle", frnd.circleID);
+        inArray(ps, "Friend", friendLst, [this, &ps](const FriendProp& frnd) {
+            ps.setValue("addr", frnd.addr);
+            ps.setValue("alias", frnd.alias);
+            ps.setValue("note", frnd.note);
+            ps.setValue("autoAcceptDir", frnd.autoAcceptDir);
+            ps.setValue("autoAcceptCall", static_cast<int>(frnd.autoAcceptCall));
+            ps.setValue("autoConferenceInvite", frnd.autoConferenceInvite);
+            ps.setValue("circle", frnd.circleID);
 
-                if (getEnableLogging())
-                    ps.setValue("activity", frnd.activity);
-
-                ++index;
-            }
+            if (getEnableLogging())
+                ps.setValue("activity", frnd.activity);
         });
     });
 
     inGroup(ps, "Requests", [this, &ps] {
-        inArray(ps, "Request", friendRequests.size(), [this, &ps] {
-            int index = 0;
-            for (auto& request : friendRequests) {
-                ps.setArrayIndex(index);
-                ps.setValue("addr", request.address);
-                ps.setValue("message", request.message);
-                ps.setValue("read", request.read);
-
-                ++index;
-            }
+        inArray(ps, "Request", friendRequests, [&ps](const Request& request) {
+            ps.setValue("addr", request.address);
+            ps.setValue("message", request.message);
+            ps.setValue("read", request.read);
         });
     });
 
@@ -803,14 +787,9 @@ void Settings::savePersonal(QString profileName, const ToxEncrypt* passkey)
     });
 
     inGroup(ps, "Circles", [this, &ps] {
-        inArray(ps, "Circle", circleLst.size(), [this, &ps] {
-            int index = 0;
-            for (auto& circle : circleLst) {
-                ps.setArrayIndex(index);
-                ps.setValue("name", circle.name);
-                ps.setValue("expanded", circle.expanded);
-                ++index;
-            }
+        inArray(ps, "Circle", circleLst, [&ps](const CircleProp& circle) {
+            ps.setValue("name", circle.name);
+            ps.setValue("expanded", circle.expanded);
         });
     });
 
@@ -2068,7 +2047,7 @@ int Settings::addCircle(const QString& name)
 {
     const QMutexLocker<QRecursiveMutex> locker{&bigLock};
 
-    circleProp cp;
+    CircleProp cp;
     cp.expanded = false;
 
     if (name.isEmpty())
@@ -2259,7 +2238,8 @@ void Settings::createPersonal(const Paths& paths, const QString& basename)
 
     QSettings ps(path, QSettings::IniFormat);
     inGroup(ps, "Friends", [&ps] { //
-        inArray(ps, "Friend", 0, [] {});
+        inArray(ps, "Friend", QHash<QByteArray, FriendProp>{},
+                [](const FriendProp& frnd) { std::ignore = frnd; });
     });
 
     inGroup(ps, "Privacy", [] {});
@@ -2292,7 +2272,7 @@ void Settings::sync()
     qApp->processEvents();
 }
 
-Settings::friendProp& Settings::getOrInsertFriendPropRef(const ToxPk& id)
+Settings::FriendProp& Settings::getOrInsertFriendPropRef(const ToxPk& id)
 {
     // No mutex lock, this is a private fn that should only be called by other
     // public functions that already locked the mutex
@@ -2301,7 +2281,7 @@ Settings::friendProp& Settings::getOrInsertFriendPropRef(const ToxPk& id)
         return *it;
     }
 
-    return *friendLst.insert(id.getByteArray(), friendProp{id.toString()});
+    return *friendLst.insert(id.getByteArray(), FriendProp{id.toString()});
 }
 
 ICoreSettings::ProxyType Settings::fixInvalidProxyType(ICoreSettings::ProxyType proxyType)

@@ -583,8 +583,8 @@ public:
     static uint32_t makeProfileId(const QString& profile);
 
 private:
-    struct friendProp;
-    friendProp& getOrInsertFriendPropRef(const ToxPk& id);
+    struct FriendProp;
+    FriendProp& getOrInsertFriendPropRef(const ToxPk& id);
     static ICoreSettings::ProxyType fixInvalidProxyType(ICoreSettings::ProxyType proxyType);
 
     template <typename T>
@@ -700,10 +700,10 @@ private:
     bool screenGrabbed;
     float camVideoFPS;
 
-    struct friendProp
+    struct FriendProp
     {
-        friendProp() = delete;
-        explicit friendProp(QString addr_)
+        FriendProp() = delete;
+        explicit FriendProp(QString addr_)
             : addr(std::move(addr_))
         {
         }
@@ -717,15 +717,15 @@ private:
         bool autoConferenceInvite = false;
     };
 
-    struct circleProp
+    struct CircleProp
     {
         QString name;
         bool expanded;
     };
 
-    QHash<QByteArray, friendProp> friendLst;
+    QHash<QByteArray, FriendProp> friendLst;
 
-    QVector<circleProp> circleLst;
+    QVector<CircleProp> circleLst;
 
     int themeColor;
 
