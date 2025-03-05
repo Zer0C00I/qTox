@@ -3,9 +3,24 @@
  * Copyright © 2024-2025 The TokTok team.
  */
 
+#include "cameradevice.h"
+
+#include "scopedavdictionary.h"
+
+#include "src/persistence/settings.h"
+#include "src/platform/camera/avfoundation.h" // IWYU pragma: keep
+#include "src/platform/camera/directshow.h"   // IWYU pragma: keep
+#include "src/platform/camera/v4l2.h"         // IWYU pragma: keep
+
 #include <QApplication>
 #include <QDebug>
+#include <QMutex>
+#include <QMutexLocker>
 #include <QScreen>
+#include <QVector>
+
+#include <utility>
+
 extern "C"
 {
 #pragma GCC diagnostic push
@@ -14,23 +29,6 @@ extern "C"
 #include <libavformat/avformat.h>
 #pragma GCC diagnostic pop
 }
-#include "cameradevice.h"
-#include "scopedavdictionary.h"
-
-#include "src/persistence/settings.h"
-
-#include <QMutex>
-#include <QMutexLocker>
-#include <QVector>
-
-#include <utility>
-
-// no longer needed when avformat version < 59 is no longer supported
-using AvFindInputFormatRet = decltype(av_find_input_format(""));
-
-#include "src/platform/camera/avfoundation.h" // IWYU pragma: keep
-#include "src/platform/camera/directshow.h"   // IWYU pragma: keep
-#include "src/platform/camera/v4l2.h"         // IWYU pragma: keep
 
 /**
  * @class CameraDevice
@@ -54,6 +52,9 @@ using AvFindInputFormatRet = decltype(av_find_input_format(""));
  */
 
 namespace {
+// no longer needed when avformat version < 59 is no longer supported
+using AvFindInputFormatRet = decltype(av_find_input_format(""));
+
 AvFindInputFormatRet idesktopFormat{nullptr};
 AvFindInputFormatRet iformat{nullptr};
 
@@ -542,9 +543,9 @@ bool CameraDevice::getDefaultInputFormat()
 #endif
 
 #ifdef Q_OS_MACOS
-    if ((iformat = av_find_input_format("avfoundation")))
+    if ((iformat = av_find_input_format("avfoundation")) != nullptr)
         return true;
-    if ((iformat = av_find_input_format("qtkit")))
+    if ((iformat = av_find_input_format("qtkit")) != nullptr)
         return true;
 #endif
 

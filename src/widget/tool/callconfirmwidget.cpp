@@ -20,8 +20,6 @@
 #include <QRect>
 #include <QVBoxLayout>
 
-#include <cassert>
-
 /**
  * @class CallConfirmWidget
  * @brief This is a widget with dialog buttons to accept/reject a call

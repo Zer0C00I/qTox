@@ -104,6 +104,8 @@ class Preprocessor:
         print("Loading files...", flush=True)
         for root, _, files in os.walk(config.root_path):
             for filename in files:
+                if "third_party" in root:
+                    continue
                 if filename.endswith((".cpp", ".h", ".mm", ".moc")):
                     if filename.startswith("qrc_") or filename in (
                             "moc_predefs.h",
@@ -253,6 +255,8 @@ class Clangd:
             raise RuntimeError("Process has no stdout")
         line = await self._process.stdout.readline()
         while not line.startswith(b"Content-Length: "):
+            if self._process.returncode is not None:
+                return {}
             line = await self._process.stdout.readline()
         content_length = int(line[len(b"Content-Length: "):])
         await self._process.stdout.readline()
@@ -327,8 +331,10 @@ class Clangd:
 
     async def receive_diagnostics(
         self, ) -> AsyncGenerator[tuple[str, list[Diagnostic]], None]:
-        while True:
+        while self._process.returncode is None:
             response = await self._receive()
+            if not response:
+                break
             if response["method"] == "textDocument/publishDiagnostics":
                 uri = response["params"]["uri"]
                 diags = [

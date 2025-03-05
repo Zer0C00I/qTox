@@ -1,6 +1,5 @@
 #include "src/persistence/serialize.h"
 
-#include <cassert>
 #include <cstdlib>
 #include <cstring>
 

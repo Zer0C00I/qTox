@@ -17,8 +17,6 @@
 
 #include <AL/al.h>
 #include <AL/alc.h>
-#include <cassert>
-#include <cmath>
 #include <memory>
 #include <unordered_set>
 

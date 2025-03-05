@@ -4,13 +4,13 @@
 
 #pragma once
 
-#include "src/widget/tool/abstractscreenshotgrabber.h"
+#include "src/widget/tool/abstractscreenshotgrabber.h" // IWYU pragma: keep
 
 #include <QVariantMap>
 
+#if QT_CONFIG(dbus)
 #include <memory>
 
-#if QT_CONFIG(dbus)
 /** @brief Grabs screenshot using org.freedesktop.portal.Screenshot.
  *
  * https://docs.flatpak.org/en/latest/portal-api-reference.html#gdbus-org.freedesktop.portal.Screenshot

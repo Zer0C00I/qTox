@@ -9,9 +9,6 @@
 #include <QString>
 #include <QtTest/QtTest>
 
-#include <ctime>
-
-
 class TestPaths : public QObject
 {
     Q_OBJECT

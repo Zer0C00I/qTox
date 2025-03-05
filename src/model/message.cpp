@@ -5,8 +5,6 @@
 
 #include "message.h"
 
-#include <cassert>
-
 namespace {
 QStringList splitMessage(const QString& message, uint64_t maxLength)
 {

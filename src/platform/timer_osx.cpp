@@ -9,7 +9,7 @@
  * <https://hg.pidgin.im/pidgin/main/file/13e4ae613a6a/COPYRIGHT> ).
  */
 
-#include "src/platform/timer.h" // IWYU pragma: associated
+#include "src/platform/timer.h" // IWYU pragma: keep, associated
 
 #ifdef QTOX_PLATFORM_EXT
 #include <QtCore/qsystemdetection.h>
@@ -29,7 +29,7 @@ uint32_t Platform::getIdleTime()
     // https://hg.pidgin.im/pidgin/main/diff/8ff1c408ef3e/src/gtkidle.c
     static io_service_t service{};
 
-    if (!service) {
+    if (service == 0) {
         mach_port_t main_port;
         if (__builtin_available(macOS 12.0, *)) {
             IOMainPort(MACH_PORT_NULL, &main_port);
@@ -39,16 +39,16 @@ uint32_t Platform::getIdleTime()
             IOMasterPort(MACH_PORT_NULL, &main_port);
 #pragma clang diagnostic pop
         }
-        const auto mdict = IOServiceMatching(kIOHIDSystemClass);
+        auto* const mdict = IOServiceMatching(kIOHIDSystemClass);
         service = IOServiceGetMatchingService(main_port, mdict);
     }
 
-    if (!service) {
+    if (service == 0) {
         qWarning("IOServiceGetMatchingService() failed");
         return 0;
     }
 
-    const auto property =
+    const auto* const property =
         IORegistryEntryCreateCFProperty(service, CFSTR("HIDIdleTime"), kCFAllocatorDefault, 0);
     uint64_t idleTime_ns = 0;
     CFNumberGetValue(static_cast<CFNumberRef>(property), kCFNumberSInt64Type, &idleTime_ns);

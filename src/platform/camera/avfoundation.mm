@@ -132,7 +132,7 @@ QVector<VideoMode> avfoundation::getDeviceModes(const QString& devName)
     }
 
     for (AVCaptureDeviceFormat* format in [device formats]) {
-        CMFormatDescriptionRef formatDescription =
+        const auto *formatDescription =
             static_cast<CMFormatDescriptionRef>([format performSelector:@selector(formatDescription)]);
         CMVideoDimensions dimensions = CMVideoFormatDescriptionGetDimensions(formatDescription);
 

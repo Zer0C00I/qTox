@@ -529,11 +529,11 @@ void CameraSource::stream()
 
         // Forward packets to the decoder and grab the decoded frame
         const bool isVideo = packet.stream_index == videoStreamIndex;
-        const bool readyToReceive = isVideo && !avcodec_send_packet(cctx, &packet);
+        const bool readyToReceive = isVideo && avcodec_send_packet(cctx, &packet) == 0;
 
         if (readyToReceive) {
             AVFrame* frame = av_frame_alloc();
-            if (frame && !avcodec_receive_frame(cctx, frame)) {
+            if (frame != nullptr && avcodec_receive_frame(cctx, frame) == 0) {
                 emit frameAvailable(VideoFrame::fromAVFrame(id, frame));
             } else {
                 av_frame_free(&frame);

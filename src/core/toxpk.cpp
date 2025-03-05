@@ -10,8 +10,6 @@
 #include <QByteArray>
 #include <QString>
 
-#include <cassert>
-
 /**
  * @class ToxPk
  * @brief This class represents a Tox Public Key, which is a part of Tox ID.

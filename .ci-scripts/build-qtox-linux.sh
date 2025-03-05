@@ -142,7 +142,7 @@ if [ ! -z "${TIDY+x}" ]; then
       util/include/ \
       util/src/
   else
-    tools/lsp_tidy.py --compile-commands-dir "$BUILD_DIR"
+    tools/lsp_tidy.py --compile-commands-dir "$BUILD_DIR" --wait
   fi
 else
   ctest -j"$(nproc)" --test-dir "$BUILD_DIR" --output-on-failure

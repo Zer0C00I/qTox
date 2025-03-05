@@ -12,8 +12,6 @@
 #include "src/model/friend.h"
 #include "src/model/status.h"
 
-#include <cassert>
-
 FriendListLayout::FriendListLayout()
     : QVBoxLayout()
 {

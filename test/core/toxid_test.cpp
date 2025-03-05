@@ -8,8 +8,6 @@
 #include <QString>
 #include <QtTest/QtTest>
 
-#include <ctime>
-
 const QString corrupted =
     QStringLiteral("A369865720756105C324F27C20093F26BEEB2655F803977D5C2EB6B408B8E404AFC201CC15D2");
 const QString testToxId =

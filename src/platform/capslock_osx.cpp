@@ -3,7 +3,7 @@
  * Copyright © 2024-2025 The TokTok team.
  */
 
-#include "capslock.h" // IWYU pragma: associated
+#include "capslock.h" // IWYU pragma: keep, associated
 
 #ifdef QTOX_PLATFORM_EXT
 #include <QtCore/qsystemdetection.h>
@@ -19,7 +19,7 @@ bool Platform::capsLockEnabled()
 {
     static io_service_t service{};
 
-    if (!service) {
+    if (service == 0) {
         mach_port_t main_port;
         if (__builtin_available(macOS 12.0, *)) {
             IOMainPort(MACH_PORT_NULL, &main_port);
@@ -29,11 +29,11 @@ bool Platform::capsLockEnabled()
             IOMasterPort(MACH_PORT_NULL, &main_port);
 #pragma clang diagnostic pop
         }
-        const auto mdict = IOServiceMatching(kIOHIDSystemClass);
+        auto* const mdict = IOServiceMatching(kIOHIDSystemClass);
         service = IOServiceGetMatchingService(main_port, mdict);
     }
 
-    if (!service) {
+    if (service == 0) {
         qWarning("IOServiceGetMatchingService() failed");
         return false;
     }

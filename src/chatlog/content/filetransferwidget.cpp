@@ -27,8 +27,6 @@
 #include <QVariantAnimation>
 
 #include <cassert>
-#include <cmath>
-
 
 // The leftButton is used to accept, pause, or resume a file transfer, as well as to open a
 // received file.

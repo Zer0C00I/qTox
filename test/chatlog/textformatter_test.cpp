@@ -8,7 +8,6 @@
 #include <QString>
 #include <QtTest/QtTest>
 
-#include <ctime>
 #include <functional>
 
 #define PAIR_FORMAT(input, output) {QStringLiteral(input), QStringLiteral(output)}

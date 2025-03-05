@@ -33,7 +33,6 @@
 #include <QMenu>
 #include <QMimeData>
 
-#include <cassert>
 #include <utility>
 
 /**

@@ -4,7 +4,11 @@
 
 #include "screenshot.h"
 
+#include <QtGlobal>
+
+#if QT_CONFIG(dbus)
 #include "screenshot_dbus.h"
+#endif
 
 #include "src/widget/tool/abstractscreenshotgrabber.h"
 

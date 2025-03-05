@@ -2,7 +2,7 @@
  * Copyright © 2025 The TokTok team.
  */
 
-#include "screenshot_dbus.h"
+#include "screenshot_dbus.h" // IWYU pragma: keep
 
 #include <QtGlobal>
 

@@ -12,8 +12,6 @@
 #include "src/widget/searchtypes.h"
 #include "util/strongtype.h"
 
-#include <cassert>
-
 using ChatLogIdx =
     NamedType<size_t, struct ChatLogIdxTag, Orderable, UnderlyingAddable, UnitlessSubtractable, Incrementable>;
 Q_DECLARE_METATYPE(ChatLogIdx)
