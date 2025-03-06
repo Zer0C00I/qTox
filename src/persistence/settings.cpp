@@ -236,7 +236,7 @@ void Settings::loadGlobal()
         imagePreview = s.value("imagePreview", true).toBool();
         chatMaxWindowSize = s.value("chatMaxWindowSize", 100).toInt();
         chatWindowChunkSize = s.value("chatWindowChunkSize", 50).toInt();
-        hideTrifaSuffix = s.value("hideTrifaSuffix", true).toBool();
+        hidePostNullSuffix = s.value("hidePostNullSuffix", false).toBool();
     });
 
     inGroup(s, "Chat", [this, &s] {
@@ -691,7 +691,7 @@ void Settings::saveGlobal()
         s.setValue("statusChangeNotificationEnabled", statusChangeNotificationEnabled);
         s.setValue("showConferenceJoinLeaveMessages", showConferenceJoinLeaveMessages);
         s.setValue("spellCheckingEnabled", spellCheckingEnabled);
-        s.setValue("hideTrifaSuffix", hideTrifaSuffix);
+        s.setValue("hidePostNullSuffix", hidePostNullSuffix);
     });
 
     inGroup(s, "Chat", [this, &s] { //
@@ -1445,16 +1445,16 @@ void Settings::setChatMessageFont(const QFont& font)
     }
 }
 
-bool Settings::getHideTrifaSuffix() const
+bool Settings::getHidePostNullSuffix() const
 {
     const QMutexLocker<QRecursiveMutex> locker(&bigLock);
-    return hideTrifaSuffix;
+    return hidePostNullSuffix;
 }
 
-void Settings::setHideTrifaSuffix(bool hide)
+void Settings::setHidePostNullSuffix(bool hide)
 {
-    if (setVal(hideTrifaSuffix, hide)) {
-        emit hideTrifaSuffixChanged(hide);
+    if (setVal(hidePostNullSuffix, hide)) {
+        emit hidePostNullSuffixChanged(hide);
     }
 }
 

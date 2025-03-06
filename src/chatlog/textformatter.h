@@ -5,12 +5,12 @@
 
 #pragma once
 
-#include <QString>
+class QString;
 
 namespace TextFormatter {
 QString highlightURI(const QString& message);
 
 QString applyMarkdown(const QString& message, bool showFormattingSymbols);
 
-QString processTrifaSuffixes(const QString& message, bool hideTrifaSuffix);
+QString processPostNullSuffix(QString message, bool html);
 } // namespace TextFormatter

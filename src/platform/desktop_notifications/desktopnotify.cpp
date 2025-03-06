@@ -6,6 +6,7 @@
 
 #include "desktopnotifybackend.h"
 
+#include "src/chatlog/textformatter.h"
 #include "src/persistence/inotificationsettings.h"
 
 #include <QDebug>
@@ -45,10 +46,14 @@ void DesktopNotify::notifyMessage(const NotificationData& notificationData)
         return;
     }
 
+    const QString message = d->settings.getHidePostNullSuffix()
+                                ? TextFormatter::processPostNullSuffix(notificationData.message, false)
+                                : notificationData.message;
+
     // Try system-backends first.
     if (d->settings.getNotifySystemBackend()) {
-        if (d->dbus->showMessage(notificationData.title, notificationData.message,
-                                 notificationData.category, notificationData.pixmap)) {
+        if (d->dbus->showMessage(notificationData.title, message, notificationData.category,
+                                 notificationData.pixmap)) {
             return;
         }
     }
@@ -64,5 +69,5 @@ void DesktopNotify::notifyMessage(const NotificationData& notificationData)
     }
 
     // Fallback to QSystemTrayIcon.
-    d->icon->showMessage(notificationData.title, notificationData.message, notificationData.pixmap);
+    d->icon->showMessage(notificationData.title, message, notificationData.pixmap);
 }

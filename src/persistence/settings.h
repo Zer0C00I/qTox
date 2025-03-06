@@ -222,7 +222,7 @@ signals:
     void dateFormatChanged(const QString& format);
     void statusChangeNotificationEnabledChanged(bool enabled);
     void spellCheckingEnabledChanged(bool enabled);
-    void hideTrifaSuffixChanged(bool show);
+    void hidePostNullSuffixChanged(bool show);
 
     // Privacy
     void typingNotificationChanged(bool enabled);
@@ -459,8 +459,8 @@ public:
     bool getSpellCheckingEnabled() const;
     void setSpellCheckingEnabled(bool newValue);
 
-    bool getHideTrifaSuffix() const;
-    void setHideTrifaSuffix(bool hide);
+    bool getHidePostNullSuffix() const override;
+    void setHidePostNullSuffix(bool hide) override;
 
     // Privacy
     bool getTypingNotification() const;
@@ -675,7 +675,7 @@ private:
     bool statusChangeNotificationEnabled;
     bool showConferenceJoinLeaveMessages;
     bool spellCheckingEnabled;
-    bool hideTrifaSuffix;
+    bool hidePostNullSuffix;
 
     // Privacy
     bool typingNotification;

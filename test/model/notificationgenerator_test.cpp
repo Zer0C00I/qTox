@@ -88,6 +88,15 @@ class MockNotificationSettings : public INotificationSettings
         std::ignore = newValue;
     }
 
+    bool getHidePostNullSuffix() const override
+    {
+        return true;
+    }
+    void setHidePostNullSuffix(bool newValue) override
+    {
+        std::ignore = newValue;
+    }
+
 private:
     bool notifyHide = false;
 };

@@ -51,8 +51,11 @@ ChatMessage::Ptr ChatMessage::createChatMessage(const QString& sender, const QSt
     QString senderText = sender;
 
     auto textType = Text::NORMAL;
-    // TRIfA suffixes
-    text = TextFormatter::processTrifaSuffixes(text, settings.getHideTrifaSuffix());
+
+    // garbage after \0
+    if (settings.getHidePostNullSuffix()) {
+        text = TextFormatter::processPostNullSuffix(text, true);
+    }
 
     // smileys
     if (settings.getUseEmoticons())

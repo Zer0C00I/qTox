@@ -11,9 +11,6 @@
 
 namespace {
 
-const QRegularExpression TRIFA_WRAPPER(QStringLiteral("[[]TRIfA_SUFFIX[]](.+)[[]/TRIfA_SUFFIX[]]$"),
-                                       QRegularExpression::DotMatchesEverythingOption);
-
 QString generateContent(const QHash<const Conference*, size_t>& conferenceNotifications,
                         QString lastMessage, const ToxPk& sender)
 {
@@ -54,9 +51,7 @@ NotificationData NotificationGenerator::friendMessageNotification(const Friend* 
     }
 
     ret.title = f->getDisplayedName();
-    // Make sure we have removed the TRIfA suffix if any.
-
-    ret.message = QString(message).remove(TRIFA_WRAPPER);
+    ret.message = message;
     ret.pixmap = getSenderAvatar(profile, f->getPublicKey());
 
     return ret;

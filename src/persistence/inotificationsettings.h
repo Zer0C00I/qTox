@@ -40,4 +40,7 @@ public:
 
     virtual bool getConferenceAlwaysNotify() const = 0;
     virtual void setConferenceAlwaysNotify(bool newValue) = 0;
+
+    virtual bool getHidePostNullSuffix() const = 0;
+    virtual void setHidePostNullSuffix(bool newValue) = 0;
 };

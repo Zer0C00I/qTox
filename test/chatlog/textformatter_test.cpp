@@ -259,53 +259,15 @@ const QVector<QPair<QString, QString>> URL_CASES{
         "[&quot;" MAKE_LINK("https://en.wikipedia.org/wiki/Seal_(East_Asia)") "&quot;]?"),
 };
 
-const QVector<StringPair> TRIFA_CASE{
-    // Test case when user decided to hide TRIfA suffixes.
-    PAIR_FORMAT(
-        "Hello[TRIfA_SUFFIX]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z[/TRIfA_SUFFIX]",
-        "Hello<font color=#228B22>[...]</font>"),
-    PAIR_FORMAT("Hello[TRIfA_SUFFIX]xxxxxxxxxxxxx[/HTML]xxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z[/"
-                "TRIfA_SUFFIX]",
-                "Hello<font color=#228B22>[...]</font>"),
-    PAIR_FORMAT(
-        "Hello[TRIfA_SUFFIX]xxxxxxx\nxxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z[/TRIfA_SUFFIX]",
-        "Hello<font color=#228B22>[...]</font>"),
-    PAIR_FORMAT(
-        "Hello[TRIfA_SUFFIX]xxxxxxx\rxxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z[/TRIfA_SUFFIX]",
-        "Hello<font color=#228B22>[...]</font>"),
-    PAIR_FORMAT(
-        "Hello[TRIfA_SUFFIX]xxxxxxx\n\rxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z[/TRIfA_SUFFIX]",
-        "Hello<font color=#228B22>[...]</font>")};
+const QVector<StringPair> POST_NULL_HTML_CASE{
+    // Test case for HTML output (in chat log).
+    PAIR_FORMAT("Hello\x00\x00some garbage here", "Hello<font color=\"#228B22\">[...]</font>"),
+};
 
-const QVector<StringPair> TRIFA_CASE_OPT_OUT{
-    // Test case when user decided to show TRIfA suffixes as is.
-    PAIR_FORMAT(
-        "Hello[TRIfA_SUFFIX]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z[/TRIfA_SUFFIX]",
-        "Helloxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z"),
-    PAIR_FORMAT("Hello[TRIfA_SUFFIX]xxxxxxxxxxxxx[/HTML]xxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z[/"
-                "TRIfA_SUFFIX]",
-                "Helloxxxxxxxxxxxxx[/HTML]xxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z"),
-    PAIR_FORMAT(
-        "Hello[TRIfA_SUFFIX]xxxxxxx\nxxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z[/TRIfA_SUFFIX]",
-        "Helloxxxxxxx\nxxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z"),
-    PAIR_FORMAT(
-        "Hello[TRIfA_SUFFIX]xxxxxxx\rxxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z[/TRIfA_SUFFIX]",
-        "Helloxxxxxxx\rxxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z"),
-    PAIR_FORMAT(
-        "Hello[TRIfA_SUFFIX]xxxxxxx\n\rxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z[/TRIfA_SUFFIX]",
-        "Helloxxxxxxx\n\rxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z")};
-
-const QVector<StringPair> TRIFA_CASES_NEGATIVE{
-    // Test cases when TRIfA suffix is not formed correctly
-    PAIR_FORMAT(
-        "Hello[TRIfA_SUFFIX]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z[/TRIfA_SUFFIX]x",
-        "Hello[TRIfA_SUFFIX]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z[/TRIfA_SUFFIX]x"),
-    PAIR_FORMAT(
-        "Hello[TRIfA_SUFFIX]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z[TRIfA_SUFFIX]",
-        "Hello[TRIfA_SUFFIX]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z[TRIfA_SUFFIX]")};
-
-const QVector<StringPair> ALL_TRIFA_CASES = concat(TRIFA_CASE, TRIFA_CASES_NEGATIVE);
-const QVector<StringPair> ALL_TRIFA_OPT_OUT_CASES = concat(TRIFA_CASE_OPT_OUT, TRIFA_CASES_NEGATIVE);
+const QVector<StringPair> POST_NULL_PLAIN_CASE{
+    // Test case for plain text output (in notifications).
+    PAIR_FORMAT("Hello\x00\x00some garbage here", "Hello[...]"),
+};
 
 #undef PAIR_FORMAT
 
@@ -343,12 +305,12 @@ void workCasesTest(MarkdownFunction applyMarkdown, const QVector<MarkdownToTags>
 /*
  * @brief Testing cases for TRIfA suffix.
  * @param testData Test data - string pairs "Source message - Message after formatting"
- * @param True if suffixes  should be replaced by [...]
+ * @param True if suffixes should be replaced by [...]
  */
-void trifaCasesTest(const QVector<StringPair>& testData, bool hideTrifaSuffix)
+void postNullCasesTest(const QVector<StringPair>& testData, bool html)
 {
     for (const StringPair& data : testData) {
-        QString result = TextFormatter::processTrifaSuffixes(data.first, hideTrifaSuffix);
+        QString result = TextFormatter::processPostNullSuffix(data.first, html);
         QCOMPARE(data.second, result);
     }
 }
@@ -469,8 +431,8 @@ private slots:
     void singleAndDoubleMarkdownExceptionsShowSymbols();
     void singleAndDoubleMarkdownExceptionsHideSymbols();
     void mixedFormattingSpecialCases();
-    void trifaTags();
-    void trifaTagsOptOut();
+    void postNullTagsHtml();
+    void postNullTagsPlain();
     void urlTest();
 
 private:
@@ -568,14 +530,14 @@ void TestTextFormatter::urlTest()
     urlHighlightTest(urlHighlightFunction, URL_CASES);
 }
 
-void TestTextFormatter::trifaTags()
+void TestTextFormatter::postNullTagsHtml()
 {
-    trifaCasesTest(ALL_TRIFA_CASES, true);
+    postNullCasesTest(POST_NULL_HTML_CASE, true);
 }
 
-void TestTextFormatter::trifaTagsOptOut()
+void TestTextFormatter::postNullTagsPlain()
 {
-    trifaCasesTest(ALL_TRIFA_OPT_OUT_CASES, false);
+    postNullCasesTest(POST_NULL_PLAIN_CASE, false);
 }
 
 QTEST_GUILESS_MAIN(TestTextFormatter)

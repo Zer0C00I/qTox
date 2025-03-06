@@ -232,7 +232,7 @@ number here may cause the scroll bar to disappear.</string>
            </layout>
           </item>
           <item row="4" column="1">
-           <widget class="QCheckBox" name="cbHideTrifaSuffix">
+           <widget class="QCheckBox" name="cbHidePostNullSuffix">
             <property name="text">
              <string>Hide suffix after NULL symbol</string>
             </property>

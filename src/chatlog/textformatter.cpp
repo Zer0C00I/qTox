@@ -42,6 +42,9 @@ const QString MULTILINE_CODE = QStringLiteral("(?<=^|\\s)"
                                               "```"
                                               "(?=$|\\s)");
 
+const QRegularExpression POST_NULL_PATTERN(QStringLiteral(R"(\x00\x00.+$)"),
+                                           QRegularExpression::DotMatchesEverythingOption);
+
 #define REGEXP_WRAPPER_PAIR(pattern, wrapper)                                     \
     {QRegularExpression(pattern, QRegularExpression::UseUnicodePropertiesOption), \
      QStringLiteral(wrapper)}
@@ -80,9 +83,6 @@ const QVector<QRegularExpression> URI_WORD_PATTERNS = {
     QRegularExpression(QStringLiteral(R"((?<=^|\s)\S*(ed2k://\|file\|\S+))")),
 };
 
-const QRegularExpression TRIFA_WRAPPER(QStringLiteral("[[]TRIfA_SUFFIX[]](.+)[[]/TRIfA_SUFFIX[]]$"),
-                                       QRegularExpression::DotMatchesEverythingOption);
-const QString TRIFA_PLACEHOLDER = QStringLiteral("<font color=#228B22>[...]</font>");
 
 struct MatchingUri
 {
@@ -246,22 +246,17 @@ QString TextFormatter::applyMarkdown(const QString& message, bool showFormatting
     return result;
 }
 
-/**
- * @brief Remove or show suffixes added by TRIfA
- * @param message Formatting string
- * @param hideTrifaSuffix True if suffixes  should be replaced by [...]
- * @return Copy of message where <TRIfA_SUFFIX> tags are removed and and suffix
- * is replaced by [...], or remained as is.
- */
-QString TextFormatter::processTrifaSuffixes(const QString& message, bool hideTrifaSuffix)
+QString TextFormatter::processPostNullSuffix(QString message, bool html)
 {
-    QString result = message;
-    if (hideTrifaSuffix) {
-        return result.replace(TRIFA_WRAPPER, TRIFA_PLACEHOLDER);
-    }
-    QRegularExpressionMatch match = TRIFA_WRAPPER.match(result);
+    const auto match = POST_NULL_PATTERN.match(message);
     if (match.hasMatch()) {
-        result = result.replace(TRIFA_WRAPPER, match.captured(match.lastCapturedIndex()));
+        qDebug() << "Found null byte in message";
+        if (html) {
+            message.replace(match.captured(match.lastCapturedIndex()),
+                            QStringLiteral("<font color=\"#228B22\">[...]</font>"));
+        } else {
+            message.replace(match.captured(match.lastCapturedIndex()), QStringLiteral("[...]"));
+        }
     }
-    return result;
+    return message;
 }
