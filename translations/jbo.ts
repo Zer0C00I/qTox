@@ -1473,7 +1473,7 @@ e&apos;u do ka&apos;e sfaile lo nu sfaile bu&apos;u la .Windows.zoi ke&apos;a nu
     <message>
         <source> MB</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">MB</translation>
+        <translation type="unfinished"> MB</translation>
     </message>
     <message>
         <source>After pressing minimize (_) qTox will minimize to tray,
@@ -3373,7 +3373,7 @@ e.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</translation>
     <message>
         <source> px</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">px</translation>
+        <translation type="unfinished"> px</translation>
     </message>
     <message>
         <source>Theme</source>

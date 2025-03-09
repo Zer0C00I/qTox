@@ -1277,7 +1277,7 @@ instead of closing entirely.</source>
     <message>
         <source> min</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">分钟</translation>
+        <translation type="unfinished"> 分钟</translation>
     </message>
 </context>
 <context>

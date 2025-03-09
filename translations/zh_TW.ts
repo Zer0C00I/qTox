@@ -1405,7 +1405,7 @@ so you can save the file on Windows.</source>
     <message>
         <source> MB</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">MB</translation>
+        <translation type="unfinished"> MB</translation>
     </message>
     <message>
         <source>After pressing minimize (_) qTox will minimize to tray,
@@ -1447,7 +1447,7 @@ instead of closing entirely.</source>
     <message>
         <source> min</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">分鐘</translation>
+        <translation type="unfinished"> 分鐘</translation>
     </message>
 </context>
 <context>
@@ -3293,7 +3293,7 @@ Hide formatting characters:
     <message>
         <source> px</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">像素</translation>
+        <translation type="unfinished"> 像素</translation>
     </message>
     <message>
         <source>Theme</source>

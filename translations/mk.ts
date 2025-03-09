@@ -1301,7 +1301,7 @@ so you can save the file on Windows.</source>
     <message>
         <source> MB</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">МБ</translation>
+        <translation type="unfinished"> МБ</translation>
     </message>
     <message>
         <source>After pressing minimize (_) qTox will minimize to tray,
