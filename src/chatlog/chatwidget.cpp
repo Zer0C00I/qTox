@@ -158,14 +158,14 @@ void forEachLineIn(ChatLine::Ptr first, ChatLine::Ptr last, ChatLineStorage& sto
 ChatLogIdx clampedAdd(ChatLogIdx idx, int val, IChatLog& chatLog)
 {
     if (val < 0) {
-        auto distToEnd = idx - chatLog.getFirstIdx();
+        const auto distToEnd = idx - chatLog.getFirstIdx();
         if (static_cast<size_t>(std::abs(val)) > distToEnd) {
             return chatLog.getFirstIdx();
         }
 
         return idx - std::abs(val);
     }
-    auto distToEnd = chatLog.getNextIdx() - idx;
+    const auto distToEnd = chatLog.getNextIdx() - idx;
     if (static_cast<size_t>(val) > distToEnd) {
         return chatLog.getNextIdx();
     }
@@ -328,8 +328,14 @@ void ChatWidget::layout(int start, int end, qreal width)
 
     // Line at start-1 is considered to have the correct position. All following lines are
     // positioned in respect to this line.
-    if (start - 1 >= 0)
+    if (start - 1 >= 0) {
+        if (static_cast<size_t>(start - 1) >= chatLineStorage->size()) {
+            qCritical() << "ChatWidget::layout: start index out of bounds:" << start - 1
+                        << ">=" << chatLineStorage->size();
+            return;
+        }
         h = (*chatLineStorage)[start - 1]->sceneBoundingRect().bottom() + lineSpacing;
+    }
 
     start = std::clamp<int>(start, 0, chatLineStorage->size());
     end = std::clamp<int>(end + 1, 0, chatLineStorage->size());
