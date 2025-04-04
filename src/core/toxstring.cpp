@@ -90,7 +90,9 @@ QString ToxString::getQString() const
         removed.insert({category, c});
         // Add a formatted escape sequence so non-printable characters are still
         // visible in chat logs and can be easily identified.
-        cleaned += QStringLiteral("\\x%1").arg(c, 2, 16, QChar('0')).toStdU32String();
+        cleaned += QStringLiteral("\\x%1")
+                       .arg(static_cast<std::uint_least32_t>(c), 2, 16, QChar('0'))
+                       .toStdU32String();
     }
     if (!removed.isEmpty()) {
         qWarning() << "Removed non-printable characters from a string:" << removed;
