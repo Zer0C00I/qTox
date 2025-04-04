@@ -67,24 +67,40 @@ QImage applyTransformation(QImage image, Orientation orientation)
     case Orientation::TopLeft:
         break;
     case Orientation::TopRight:
+#if QT_VERSION >= QT_VERSION_CHECK(6, 9, 0)
+        image = image.flipped(Qt::Horizontal);
+#else
         image = image.mirrored(true, false);
+#endif
         break;
     case Orientation::BottomRight:
         exifTransform.rotate(180);
         break;
     case Orientation::BottomLeft:
+#if QT_VERSION >= QT_VERSION_CHECK(6, 9, 0)
+        image = image.flipped(Qt::Vertical);
+#else
         image = image.mirrored(false, true);
+#endif
         break;
     case Orientation::LeftTop:
         exifTransform.rotate(-90);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 9, 0)
+        image = image.flipped(Qt::Horizontal);
+#else
         image = image.mirrored(true, false);
+#endif
         break;
     case Orientation::RightTop:
         exifTransform.rotate(90);
         break;
     case Orientation::RightBottom:
         exifTransform.rotate(90);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 9, 0)
+        image = image.flipped(Qt::Horizontal);
+#else
         image = image.mirrored(true, false);
+#endif
         break;
     case Orientation::LeftBottom:
         exifTransform.rotate(-90);
