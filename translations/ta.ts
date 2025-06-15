@@ -250,7 +250,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">இது உங்கள் நண்பரின் பொது விசை, இதைப் பயன்படுத்தி மற்றொரு சேனல் மூலம் அவரது அடையாளத்தைச் சரிபார்க்கவும். நீங்கள் இதை மற்றவர்களுக்கு அனுப்ப முடியாது, அதனால் அவர்கள் இந்தத் தொடர்பைச் சேர்க்கலாம்.</translation>
+        <translation>இது உங்கள் நண்பரின் பொது திறவுகோல், மற்றொரு சேனல் வழியாக அவர்களின் அடையாளத்தை சரிபார்க்க இதைப் பயன்படுத்தவும். இதை நீங்கள் மற்றவர்களிடம் அனுப்ப முடியாது, எனவே அவர்கள் இந்த தொடர்பைச் சேர்க்கலாம்.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>
@@ -472,7 +472,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Add friend</source>
-        <translation type="unfinished">நண்பரைச் சேர்க்கவும்</translation>
+        <translation>நண்பரைச் சேர்க்கவும்</translation>
     </message>
 </context>
 <context>
@@ -531,12 +531,12 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Invalid proxy address</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">தவறான ப்ராக்ஸி முகவரி</translation>
+        <translation>தவறான பதிலாள் முகவரி</translation>
     </message>
     <message>
         <source>Please enter a valid IP address or hostname for the proxy setting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ப்ராக்ஸி அமைப்பிற்கு செல்லுபடியாகும் ஐபி முகவரி அல்லது ஹோஸ்ட்பெயரை உள்ளிடவும்.</translation>
+        <translation>பதிலாள் அமைப்பிற்கு செல்லுபடியாகும் ஐபி முகவரி அல்லது ஓச்ட்பெயரை உள்ளிடவும்.</translation>
     </message>
 </context>
 <context>
@@ -690,7 +690,7 @@ which may lead to problems with video calls.</source>
         <source>path</source>
         <comment>directory in file system</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">பாதை</translation>
+        <translation>பாதை</translation>
     </message>
 </context>
 <context>
@@ -862,12 +862,12 @@ so you can save the file on Windows.</source>
     <message>
         <source>Location not writable</source>
         <comment>Title of permissions popup</comment>
-        <translation type="unfinished">இடம் எழுத முடியாது</translation>
+        <translation>இடம் எழுத முடியாது</translation>
     </message>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation type="unfinished">அந்த இடத்திற்கு எழுத உங்களுக்கு இசைவு இல்லை. மற்றொன்றைத் தேர்வுசெய்க, அல்லது சேமி உரையாடலை ரத்துசெய்.</translation>
+        <translation>அந்த இடத்திற்கு எழுத உங்களுக்கு இசைவு இல்லை. மற்றொன்றைத் தேர்வுசெய்க, அல்லது சேமி உரையாடலை நீக்கறல்.</translation>
     </message>
 </context>
 <context>
@@ -1361,7 +1361,7 @@ instead of closing entirely.</source>
     <message>
         <source> min</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished"> நிமிடம்</translation>
+        <translation> மணித்துளி</translation>
     </message>
 </context>
 <context>
@@ -1591,7 +1591,7 @@ Share it with your friends to begin chatting.</source>
     </message>
     <message>
         <source>Set your status message that will be shown to others</source>
-        <translation type="unfinished">மற்றவர்களுக்கு காண்பிக்கப்படும் உங்கள் நிலை செய்தியை அமைக்கவும்</translation>
+        <translation>மற்றவர்களுக்கு காண்பிக்கப்படும் உங்கள் நிலை செய்தியை அமைக்கவும்</translation>
     </message>
 </context>
 <context>
@@ -1794,7 +1794,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
-        <translation type="unfinished">கடவுச்சொல் உள்ளீட்டு புலம், குறைந்தபட்சம் 6 எழுத்துக்கள் நீளம்</translation>
+        <translation>கடவுச்சொல் உள்ளீட்டு புலம், குறைந்தபட்சம் 6 எழுத்துக்கள் நீளம்</translation>
     </message>
 </context>
 <context>
@@ -1930,7 +1930,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Add friend</source>
-        <translation type="unfinished">நண்பரைச் சேர்க்கவும்</translation>
+        <translation>நண்பரைச் சேர்க்கவும்</translation>
     </message>
 </context>
 <context>
@@ -2975,7 +2975,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Set profile password</source>
-        <translation type="unfinished">சுயவிவர கடவுச்சொல்லை அமைக்கவும்</translation>
+        <translation>சுயவிவர கடவுச்சொல்லை அமைக்கவும்</translation>
     </message>
 </context>
 <context>
@@ -3031,7 +3031,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Add friend</source>
         <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation type="unfinished">நண்பரைச் சேர்க்கவும்</translation>
+        <translation>நண்பரைச் சேர்க்கவும்</translation>
     </message>
 </context>
 <context>
@@ -3078,17 +3078,17 @@ Hide formatting characters:
     E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>QTOX மறுதொடக்கம் செய்யும் வரை புதிய உரை ச்டைலிங் விருப்பம் அரட்டை வரலாற்றில் ஏற்றப்படாது.
- இது உடனடியாக புதிய செய்திகளை பாதிக்கும்.
+இது உடனடியாகப் புதிய செய்திகளைப் பாதிக்கும்.
 
- எளிய உரை:
- செய்திகளுக்கு எந்த வடிவமைப்பையும் பயன்படுத்த வேண்டாம்.
- எ.கா. &quot;** உரை **&quot; &quot;** உரை **&quot; என்று காண்பிக்கப்படும், தைரியமாக இல்லை.
- வடிவமைக்கும் எழுத்துக்களைக் காட்டு:
- வடிவமைப்பைப் பயன்படுத்துங்கள் மற்றும் எழுத்துக்களைக் காட்டுங்கள்.
- எ.கா. &quot;** உரை **&quot; &quot;** உரை **&quot;, தைரியமாக காண்பிக்கப்படும்.
- வடிவ எழுத்துக்களை மறைக்க:
- வடிவமைப்பைப் பயன்படுத்துங்கள் மற்றும் எழுத்துக்களைக் காட்ட வேண்டாம்.
- எ.கா. &quot;** உரை **&quot; &quot;உரை&quot; என்று காண்பிக்கப்படும், தைரியமாக இருக்கும்.</translation>
+எளிய உரை:
+    செய்திகளுக்கு எந்த வடிவமைப்பையும் பயன்படுத்த வேண்டாம்.
+    எ.கா. &quot;**உரை**&quot; என்பது &quot;** உரை **&quot; என்று காண்பிக்கப்படும், தடியாக இல்லை.
+வடிவமைக்கும் எழுத்துக்களைக் காட்டு:
+    வடிவமைப்பைப் பயன்படுத்துங்கள் மற்றும் எழுத்துக்களைக் காட்டுங்கள்.
+    எ.கா. &quot;** உரை **&quot; என்பது &quot;** உரை **&quot;, தைரியமாகக் காண்பிக்கப்படும்.
+வடிவ எழுத்துக்களை மறைக்க:
+    வடிவமைப்பைப் பயன்படுத்துங்கள் மற்றும் எழுத்துக்களைக் காட்ட வேண்டாம்.
+    எ.கா. &quot;** உரை **&quot; என்பது &quot;உரை&quot; என்று காண்பிக்கப்படும், தைரியமாக இருக்கும்.</translation>
     </message>
     <message>
         <source>Text styling:</source>
@@ -3374,7 +3374,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Hide suffix after NULL symbol</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">பூஜ்ய சின்னத்திற்குப் பிறகு பின்னொட்டு மறைக்கவும்</translation>
+        <translation>சுழிய சின்னத்திற்குப் பிறகு பின்னொட்டு மறைக்கவும்</translation>
     </message>
 </context>
 <context>
