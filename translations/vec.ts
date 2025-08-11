@@ -2919,12 +2919,10 @@ Hide formatting characters:
         <translation>Ła nova preferensa de stiłe de&apos;l testo no ła po mìa èsar cargar nte ła cronołozìa de&apos;l chat fin che&apos;l qTox scumisia da novo.
 &apos;Sto influensarà suito i novi mesaji.
 
-
 Testo ciaro: 
-    Doparar mìa nesuna formatasion mesaji. 
-    E.z. &quot;**testo**&quot; mostrararse come &quot;**testo**&quot;, mìa in groso.
+    Doparar mìa nesuna formatasion mesaji.
+ E.z. &quot;**testo**&quot; mostrararse come &quot;**testo**&quot;, mìa in groso.
 Far vèdar łe caractere de formatasion:
-
     Far sù ła formatasion e far vèdar łe caractere. 
     E.z.&quot;**testo**&quot; mostrararse come &quot;**testo**&quot;, in groso.
 Far scondar łe caractere de formatasion:  
@@ -3073,327 +3071,319 @@ Far scondar łe caractere de formatasion:
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">قم بالإخطار فقط بالرسائل الجديدة في المؤتمرات عندما يتم ذكر لقبك.</translation>
+        <translation>Notìfega solche so&apos; un novo mesajo nte i sciapi co&apos; che el to nickname l&apos;è mentioned.</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
         <comment>toolTip for conference positioning</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">في حالة تحديد هذا الخيار، سيتم وضع المؤتمرات في أعلى قائمة الأصدقاء، وإلا فسيتم وضعها أسفل الأصدقاء المتصلين بالإنترنت.</translation>
+        <translation>Se controłà, i sciapi i sarà postà nte&apos;l alt de ła łista de amighi, senò, i sarà postà soto i amighi in łinea.</translation>
     </message>
     <message>
         <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
         <comment>toolTip for show identicons</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">إذا تم تمكينه، فإن كل جهة اتصال لا تحتوي على صورة رمزية سيكون لها رمز تم إنشاؤه بناءً على معرف Tox الخاص بها بدلاً من الصورة الافتراضية. يتطلب إعادة التشغيل للتطبيق.</translation>
+        <translation>Se abiłità, onji contat sensa un avatar el gavarà un icon zenerà d&apos;acord co&apos;l só Tox ID invese de na pùblega someja. Bezonja da restart par aplegar.</translation>
     </message>
     <message>
         <source>Smiley pack:</source>
         <extracomment>Text on smiley pack label</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">حزمة مبتسم:</translation>
+        <translation>Inbal de muzeti:</translation>
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">في حالة التعطيل، يصدر إشعار كتم الصوت عندما تكون الحالة مشغولة (ولكن لا يزال يظهر إشعارًا)</translation>
+        <translation>Se dezabiłità, far tàzar son de notifegasion co&apos; che&apos;l status l&apos;è Ocupà (ma ncora far vèdar na notifegasion)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">استخدم إشعارات سطح المكتب، على سبيل المثال. في مركز الإشعارات أو في علبة النظام. بدون ذلك، لن يكون الإشعار مرئيًا إلا على شكل رمز درج وامض.</translation>
+        <translation>Doparar dispozidif notifegasion, e.z. nte&apos;l sentro de notifegasion o nte ła vantiera de&apos;l sistema. Sensa &apos;sto, ła notifegasion sarà vardà soła come un łanpizada icon.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">قم بعرض &quot;الرسالة الجديدة&quot; فقط دون إظهار المعلومات السرية المحتملة في إشعارات سطح المكتب.</translation>
+        <translation>Far vèdar solche &quot;novo mesajo&quot; sensa mostrar informasion potensiałe secrete nte&apos;l dispozidivo de notifegasion.</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تقسيم قائمة الأصدقاء ونافذة الدردشة إلى نوافذ متحركة بشكل منفصل.</translation>
+        <translation>Spacà ła łista de amighi e ła fenestra de&apos;l chat come fenestre spartà e moveable.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">عرض الرموز التعبيرية النصية كصور ملونة بدلاً من الرموز التعبيرية النصية أو الخطوط السوداء/البيضاء.</translation>
+        <translation>Mostra textual emojis cofà someje cołorà invese de un testo o font-rendered negro/bianc emojis.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">حدد مجموعة الصور التي تريد استخدامها عند عرض الرموز التعبيرية.</translation>
+        <translation>Sfiora coal set de someje pol da doparar co che i emojis ze drio rendering.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">الحجم بالبكسل لصورة الرموز التعبيرية. حدد شيئًا مشابهًا لحجم الخط الأساسي الخاص بك.</translation>
+        <translation>Grosesa in pixels de na someja de emoji. Sfiora calcosa simiłe come el groses de ła to base font size.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">النمط الأساسي الذي سيتم استخدامه لواجهة المستخدم. يوصى باستخدام برنامج Fusion لأنه يعمل بشكل أفضل مع سمات qTox.</translation>
+        <translation>Base style par doparar nte&apos;l UI. Fusion l&apos;è consejà parché el łaora pułito co&apos;l qTox theming.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">موضوع لون واجهة المستخدم. استخدم هذا لتحديد الوضع المظلم.</translation>
+        <translation>Cołor theme de&apos;l UI. Dopara &apos;sto par sfiorar el muò scur.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">إذا تم تعطيله، استخدم إعلامات علبة النظام الأساسية. بخلاف ذلك، حاول استخدام الواجهة الخلفية للإشعارات لبيئة سطح المكتب لديك. قم بتعطيل هذا إذا لاحظت مشكلات تتعلق بإشعارات سطح المكتب.</translation>
+        <translation>Se dezabiłità, dopara el basic sistema de notifegasion. Senò, proa da doperar el backend de łe notifegasion de&apos;l to dispozidivo. Dezabiłita se vardarghe che gh&apos;è scaronje co&apos;l dispozidivo de notifegasion.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">استخدم الواجهة الخلفية للإشعارات الخاصة بالنظام إذا كانت متوفرة</translation>
+        <translation>Dopara system-specific notifegasion backend se prezente</translation>
     </message>
     <message>
         <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
         <comment>tooltip for Image preview setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">عرض معاينات للصور المرسلة والمستلمة في الدردشات. قم بالتمرير فوق المعاينة المضمنة لعرض معاينة أكبر.</translation>
+        <translation>Far vèdar previews de łe imàzine par mandar e riservar. Meta el mouse so el inline preview par vardar na preview granda.</translation>
     </message>
     <message>
         <source>Image preview</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">معاينة الصورة</translation>
+        <translation>Imàzine preview</translation>
     </message>
     <message>
         <source>Maximum number of messages (per conversation) loaded from chat history.
 Decrease this to improve performance. A too low number here may cause the
 scroll bar to disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">الحد الأقصى لعدد الرسائل (لكل محادثة) التي تم تحميلها من سجل الدردشة. قم
-بتقليل هذا لتحسين الأداء. قد يؤدي الرقم المنخفض جدًا هنا إلى اختفاء شريط
-التمرير.</translation>
+        <translation>Nùmaro alto de mesajo (per convarsasion) cargà de ła cronołozìa de&apos;l chat.
+Cała &apos;sto par gaver na mejo perfomance. Un strabas nùmaro cuà pol èsar mìa pułito e
+far el scroll bar sfantar.</translation>
     </message>
     <message>
         <source>Maximum chat log view size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished"></translation>
+        <translation>Groseso de&apos;l chat log l&apos;è łimità</translation>
     </message>
     <message>
         <source>Number of messages to load from the chat history when scrolling. A too low
 number here may cause the scroll bar to disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">عدد الرسائل التي سيتم تحميلها من سجل الدردشة عند التمرير. قد يؤدي الرقم
-المنخفض جدًا هنا إلى اختفاء شريط التمرير.</translation>
+        <translation>Nùmari de mesaji da cargar da&apos;l cronołozìa de&apos;l chat co che te scroll. Un strabas
+nùmaro cuà pol far el scroll bar sfantar.</translation>
     </message>
     <message>
         <source>Chat log chunk size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">حجم قطعة سجل
-الدردشة</translation>
+        <translation>Dimension de&apos;l chat log chunk</translation>
     </message>
     <message>
         <source>Chat log:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">سجل
-الدردشة:</translation>
+        <translation>Chat log:</translation>
     </message>
     <message>
         <source>Hide suffix after NULL symbol</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">إخفاء اللاحقة بعد رمز فارغ</translation>
+        <translation>Far scondar el suffix dopo de&apos;l NULL symbol</translation>
     </message>
 </context>
 <context>
     <name>Widget</name>
     <message>
         <source>Status</source>
-        <translation type="unfinished"></translation>
+        <translation>Status</translation>
     </message>
     <message>
         <source>Your name</source>
-        <translation type="unfinished"></translation>
+        <translation>El to nome</translation>
     </message>
     <message>
         <source>Create new circle...</source>
-        <translation type="unfinished"></translation>
+        <translation>Far sù un novo sircol...</translation>
     </message>
     <message>
         <source>By Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Par Nome</translation>
     </message>
     <message>
         <source>By Activity</source>
-        <translation type="unfinished"></translation>
+        <translation>Par Atività</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuto</translation>
     </message>
     <message>
         <source>Online</source>
-        <translation type="unfinished"></translation>
+        <translation>In łinea</translation>
     </message>
     <message>
         <source>Offline</source>
-        <translation type="unfinished"></translation>
+        <translation>Fora de łinea</translation>
     </message>
     <message>
         <source>Friends</source>
-        <translation type="unfinished"></translation>
+        <translation>Amighi</translation>
     </message>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished">المجموعات</translation>
+        <translation>Sciapi</translation>
     </message>
     <message>
         <source>Search Contacts</source>
-        <translation type="unfinished"></translation>
+        <translation>Sercar Contati</translation>
     </message>
     <message>
         <source>Online</source>
         <comment>Button to set your status to &apos;Online&apos;</comment>
-        <translation type="unfinished"></translation>
+        <translation>In łinea</translation>
     </message>
     <message>
         <source>Away</source>
         <comment>Button to set your status to &apos;Away&apos;</comment>
-        <translation type="unfinished"></translation>
+        <translation>Dałons</translation>
     </message>
     <message>
         <source>Busy</source>
         <comment>Button to set your status to &apos;Busy&apos;</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ocupà</translation>
     </message>
     <message>
         <source>Logout</source>
         <comment>Tray action menu to logout user</comment>
-        <translation type="unfinished"></translation>
+        <translation>Va&apos; fora</translation>
     </message>
     <message>
         <source>Filter...</source>
-        <translation type="unfinished"></translation>
+        <translation>Filter...</translation>
     </message>
     <message>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>File</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Modìfegar</translation>
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished"></translation>
+        <translation>Contati</translation>
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation type="unfinished">محادثة جماعية #%1</translation>
+        <translation>Sciapo #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation type="unfinished">إنشاء مجموعة جديدة...</translation>
+        <translation>Far sù un novo sciapo...</translation>
     </message>
     <message>
         <source>Show</source>
         <comment>Tray action menu to show qTox window</comment>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar</translation>
     </message>
     <message>
         <source>Add friend</source>
         <comment>title of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation>Zontar amigo</translation>
     </message>
     <message>
         <source>Conference invites</source>
         <comment>title of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation>Inviti de i sciapi</translation>
     </message>
     <message>
         <source>File transfers</source>
         <comment>title of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation>Traslocasion de file</translation>
     </message>
     <message>
         <source>Settings</source>
         <comment>title of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation>Inpostasion</translation>
     </message>
     <message>
         <source>My profile</source>
         <comment>title of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation>El me profiło</translation>
     </message>
     <message>
         <source>Toxcore failed to start, the application will terminate after you close this message.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">فشل تشغيل Toxcore، وسيتم إنهاء التطبيق بعد إغلاق هذه الرسالة.</translation>
+        <translation>Toxcore no l&apos;è stà mìa bon da scumisiar, ła aplegasion se fenìa dopo che te serar &apos;sto mesajo.</translation>
     </message>
     <message>
         <source>Toxcore failed to start with your proxy settings. qTox cannot run; please modify your settings and restart.</source>
         <comment>popup text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">فشل Toxcore في البدء بإعدادات الوكيل لديك. لا يمكن تشغيل qTox؛ يرجى تعديل الإعدادات الخاصة بك وإعادة التشغيل.</translation>
+        <translation>Toxcore no l&apos;è stà mìa bon da scumisiar co łe inpostasion de&apos;l to proxy. qTox l&apos;è mìa bon da łaorar; par faor modìfegar łe to inpostasion e scumisiar da novo.</translation>
     </message>
     <message>
         <source>Couldn&apos;t send friend request</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تعذر إرسال طلب الصداقة</translation>
+        <translation>L&apos;è mìa bon da mandar sołisitasion de amigo</translation>
     </message>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n novo amigo mandà</numerusform>
+            <numerusform>%n novi amighi mandà</numerusform>
+            <numerusform>%n novi amighi mandà</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n novo invito de sciapo</numerusform>
+            <numerusform>%n novi inviti de sciapo</numerusform>
+            <numerusform>%n novi inviti de sciapo</numerusform>
         </translation>
     </message>
     <message>
         <source>Exit</source>
         <comment>Tray action menu to exit Tox</comment>
-        <translation type="unfinished">خروج</translation>
+        <translation>Insir</translation>
     </message>
     <message>
         <source>Change status</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تغيير الحالة</translation>
+        <translation>Canbiar status</translation>
     </message>
     <message>
         <source>Edit profile</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تحرير الملف الشخصي</translation>
+        <translation>Modìfegar profiło</translation>
     </message>
     <message>
         <source>Logout</source>
-        <translation type="unfinished">تسجيل خروج</translation>
+        <translation>Va&apos; fora</translation>
     </message>
     <message>
         <source>Add contact...</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">إضافة جهة اتصال...</translation>
+        <translation>Zontar contato...</translation>
     </message>
     <message>
         <source>Next conversation</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">المحادثة التالية</translation>
+        <translation>Prosima convarsasion</translation>
     </message>
     <message>
         <source>Previous conversation</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">المحادثة السابقة</translation>
+        <translation>Anteata convarsasion</translation>
     </message>
     <message>
         <source>Debug</source>
         <comment>title of the window</comment>
-        <translation type="unfinished">تصحيح الأخطاء</translation>
+        <translation>Debug</translation>
     </message>
 </context>
 </TS>
