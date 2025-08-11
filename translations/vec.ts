@@ -5,51 +5,51 @@
     <name>AVForm</name>
     <message>
         <source>Default resolution</source>
-        <translation type="unfinished"></translation>
+        <translation>Rezołusion predefenìa</translation>
     </message>
     <message>
         <source>Audio/Video</source>
-        <translation type="unfinished"></translation>
+        <translation>Son/Video</translation>
     </message>
     <message>
         <source>Disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Dezabiłità</translation>
     </message>
     <message>
         <source>Select region</source>
-        <translation type="unfinished"></translation>
+        <translation>Sièltarghe rezion</translation>
     </message>
     <message>
         <source>Screen %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Schermo %1</translation>
     </message>
     <message>
         <source>Audio Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Inpostasion Audio</translation>
     </message>
     <message>
         <source>Gain</source>
-        <translation type="unfinished"></translation>
+        <translation>Davanjo</translation>
     </message>
     <message>
         <source>Playback device</source>
-        <translation type="unfinished"></translation>
+        <translation>Playback dispozidivo</translation>
     </message>
     <message>
         <source>Capture device</source>
-        <translation type="unfinished"></translation>
+        <translation>Catar dispozidivo</translation>
     </message>
     <message>
         <source>Volume</source>
-        <translation type="unfinished"></translation>
+        <translation>Vołume</translation>
     </message>
     <message>
         <source>Video Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Inpostasion Video</translation>
     </message>
     <message>
         <source>Video device</source>
-        <translation type="unfinished"></translation>
+        <translation>Video dispozidivo</translation>
     </message>
     <message>
         <source>Set resolution of your camera.
@@ -57,59 +57,63 @@ The higher values, the better video quality your friends may get.
 Note though that with better video quality there is needed better internet connection.
 Sometimes your connection may not be good enough to handle higher video quality,
 which may lead to problems with video calls.</source>
-        <translation type="unfinished"></translation>
+        <translation>Setar rezołusion de ła to camera.
+Co i alti inporti, ła sarà meja ła razon de&apos;l video par i to amighi.
+Varda, anca, par na meja razon de&apos;l video, A te bezonja de na pułita internet.
+Altre &apos;olte i so conecsion podarìa da èsar mìa bona par manezar na alta razon de&apos;l video,
+coal ła pol da èsar na scaronja co łe to video ciamade.</translation>
     </message>
     <message>
         <source>Resolution</source>
-        <translation type="unfinished"></translation>
+        <translation>Rezołusion</translation>
     </message>
     <message>
         <source>Rescan devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Peretarghe trapełi</translation>
     </message>
     <message>
         <source>Test Sound</source>
-        <translation type="unfinished"></translation>
+        <translation>Intestar Son</translation>
     </message>
     <message>
         <source>Audio quality</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">جودة الصوت</translation>
+        <translation>Razon de&apos;l son</translation>
     </message>
     <message>
         <source>High (64 kBps)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">عالية (64 كيلوبت في الثانية)</translation>
+        <translation>Alt (64 kBps)</translation>
     </message>
     <message>
         <source>Medium (32 kBps)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">متوسطة (32 كيلو بايت في الثانية)</translation>
+        <translation>Medan (32 kBps)</translation>
     </message>
     <message>
         <source>Low (16 kBps)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">منخفض (16 كيلوبت في الثانية)</translation>
+        <translation>Bas (16 kBps)</translation>
     </message>
     <message>
         <source>Very low (8 kBps)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">منخفض جدًا (8 كيلوبت في الثانية)</translation>
+        <translation>Stra bas (8 kBps)</translation>
     </message>
     <message>
         <source>Threshold</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">عتبة</translation>
+        <translation>Soja</translation>
     </message>
     <message>
         <source>Use slider to set the volume of your speakers.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">استخدم شريط التمرير لضبط مستوى صوت مكبرات الصوت.</translation>
+        <translation>Doparàrteghe i controłi par setar el vołume de i to parlatori.</translation>
     </message>
     <message>
         <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to reduce bandwidth usage.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">جودة الصوت المنقولة. قم بخفض هذا الإعداد إذا لم يكن النطاق الترددي الخاص بك مرتفعًا بدرجة كافية أو إذا كنت تريد تقليل استخدام النطاق الترددي.</translation>
+        <translation>Razon de&apos;l audio trames. Basàrteghe &apos;sta inpostasion se ła so larghesa l&apos;è mìa alta o se A te vol far bas ła larghesa.</translation>
     </message>
     <message>
         <source>Set resolution of your camera.
@@ -118,426 +122,423 @@ Note that with better video quality, you use more bandwidth.
 Sometimes your connection may not be good enough to handle higher video quality,
 which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ضبط دقة الكاميرا الخاصة بك.
-كلما زادت القيم، زادت جودة الفيديو التي قد يحصل عليها أصدقاؤك.
-لاحظ أنه مع جودة فيديو أفضل، يمكنك استخدام نطاق ترددي أكبر.
-في بعض الأحيان، قد لا يكون اتصالك جيدًا بما يكفي للتعامل مع جودة فيديو أعلى،
-مما قد يؤدي إلى مشاكل في مكالمات الفيديو.</translation>
+        <translation>Setar ła resołusion de ła to camera.
+I alti inporti, ła sarà meja ła razon de&apos;l video par i to amighi.
+Varda che co ła meja razon de&apos;l video, ti te dopara larghesa de pì.
+Altre &apos;olte i so conecson podarìa no èsar mìa bona par manezar na alta razon de&apos;l video,
+coal ła pode èsar na scaronja co i to video ciamade.</translation>
     </message>
     <message>
         <source>Play a test sound while changing the output volume.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">قم بتشغيل صوت اختبار أثناء تغيير مستوى صوت الإخراج.</translation>
+        <translation>Sonar na prova sona intanto el ze drio canbiar el vołume de insida.</translation>
     </message>
     <message>
         <source>Use slider to set the gain of your input device ranging from %1dB to %2dB.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">استخدم شريط التمرير لتعيين كسب جهاز الإدخال لديك الذي يتراوح من %1dB إلى %2dB.</translation>
+        <translation>Doparàrteghe i controłi par setar el devanjo de&apos;l to trapel de intrada, intra %1dB e %2dB.</translation>
     </message>
     <message>
         <source>Use slider to set the activation volume for your input device.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">استخدم شريط التمرير لتعيين مستوى صوت التنشيط لجهاز الإدخال الخاص بك.</translation>
+        <translation>Doparàrteghe i controłi par inpisar el vołume par el to trapel de intrada.</translation>
     </message>
 </context>
 <context>
     <name>AboutForm</name>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Sora</translation>
     </message>
     <message>
         <source>Original author: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ver autor: %1</translation>
     </message>
     <message>
         <source>You are using qTox version %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>A te si drio doparar qTox version %1.</translation>
     </message>
     <message>
         <source>Commit hash: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Łaudar el hash: %1</translation>
     </message>
     <message>
         <source>toxcore version: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>toxtors version: %1</translation>
     </message>
     <message>
         <source>Qt version: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Qt version: %1</translation>
     </message>
     <message>
         <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
-        <translation type="unfinished"></translation>
+        <translation>Łe scaronje conjosà łe pol catarse fóra nte&apos;l nostro %1 Github. Se ti te cata fóra un bug o scaronja de seguransa nte&apos;l qTox, par faor raportàrteghe d&apos;acord co łe guize nte&apos;l nostro %2 wiki artìgol.</translation>
     </message>
     <message>
         <source>Click here to report a bug.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zogar cuà par reportar un bug.</translation>
     </message>
     <message>
         <source>See a full list of %1 at Github</source>
         <comment>`%1` is replaced with translation of word `contributors`</comment>
-        <translation type="unfinished"></translation>
+        <translation>Vardar el rol de i %1 nte&apos;l Github</translation>
     </message>
     <message>
         <source>bug-tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
-        <translation type="unfinished">متتبع الأخطاء</translation>
+        <translation>bao-persecudor</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
         <comment>Replaces `%2` in the `A list of all known…`</comment>
-        <translation type="unfinished">كتابة تقارير مفيدة بالأخطاء</translation>
+        <translation>Drio scrìvar Utiłi Bug Raporti</translation>
     </message>
     <message>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
-        <translation type="unfinished">المساهمين</translation>
+        <translation>azutanti</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تتم صيانة هذا الإصدار من qTox بواسطة فريق TokTok بعد أرشفة مشروع qTox الأصلي.</translation>
+        <translation>&apos;Sta version de&apos;l qTox ła ze drio sostentar co łe man de&apos;l sciapo de&apos;l TokTok dopo ła interusion de&apos;l prozet orizinal de&apos;l qTox.</translation>
     </message>
 </context>
 <context>
     <name>AboutFriendForm</name>
     <message>
         <source>Automatically accept files from contact if set</source>
-        <translation type="unfinished">قبول الملفات تلقائيا من جهة الاتصال المسجلة</translation>
+        <translation>Asetar i file de i contati se setàrteghe</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
-        <translation type="unfinished">مسار حفظ الملفات:</translation>
+        <translation>Predefinìo diretòrio par salvar i file:</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished">يدوي</translation>
+        <translation>Manual</translation>
     </message>
     <message>
         <source>Audio</source>
-        <translation type="unfinished">الصوت</translation>
+        <translation>Son</translation>
     </message>
     <message>
         <source>Audio + Video</source>
-        <translation type="unfinished">الصوت + التسجيل المرئي</translation>
+        <translation>Son + Video</translation>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">قبول دعوات المؤتمر تلقائيًا من جهة الاتصال هذه إذا تم تعيينها.</translation>
+        <translation>Asetar i sciapo invidi de &apos;sto contat se setàrteghe.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
-        <translation type="unfinished">حذف السجل (العملية لا يمكن التراجع عنها)</translation>
+        <translation>Destacar ła istoria (operasion pol mìa da èsar deznotà!)</translation>
     </message>
     <message>
         <source>Notes</source>
-        <translation type="unfinished">ملاحظات</translation>
+        <translation>Node</translation>
     </message>
     <message>
         <source>Input field for notes about the contact</source>
-        <translation type="unfinished">حقل لادخال للملاحظات عن جهة الاتصار</translation>
+        <translation>Canp de intrada par łe node so&apos; el contat</translation>
     </message>
     <message>
         <source>History removed</source>
-        <translation type="unfinished">تم مسح السجل</translation>
+        <translation>Istoria deznotà</translation>
     </message>
     <message>
         <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">هذا هو المفتاح العام لصديقك، استخدمه للتحقق من هويته عبر قناة أخرى. لا يمكنك إرسال هذا إلى أشخاص آخرين حتى يتمكنوا من إضافة جهة الاتصال هذه.</translation>
+        <translation>&apos;Sta l&apos;è ła ciave pùblega de&apos;l to amigo. Doparàrteghe par verifegar ła identità suo. A te pol mìa inviarla par łe altre parsone par łe zontar &apos;sto contat.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">المفتاح العام (وليس ToxID):</translation>
+        <translation>Ciave pùblega (mìa ToxID):</translation>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished">تأكيد</translation>
+        <translation>Laud</translation>
     </message>
     <message>
         <source>Are you sure to remove %1 chat history?</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">هل أنت متأكد من إزالة سجل الدردشة %1؟</translation>
+        <translation>Sito ti segur da dezontar %1 istoria de&apos;l chat?</translation>
     </message>
     <message>
         <source>Failed to remove chat history with %1!</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">فشلت إزالة سجل الدردشة مع %1!</translation>
+        <translation>Fałio da dezontar ła istoria de&apos;l chat co %1!</translation>
     </message>
     <message>
         <source>Auto-accept files</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">قبول الملفات تلقائيًا</translation>
+        <translation>Auto-asetar file</translation>
     </message>
     <message>
         <source>Auto-accept for this contact is disabled</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تم تعطيل القبول التلقائي لجهة الاتصال هذه</translation>
+        <translation>Auto-asetar par &apos;sto contat l&apos;è dezabiłità</translation>
     </message>
     <message>
         <source>Auto-accept call:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">قبول المكالمة تلقائيًا:</translation>
+        <translation>Auto-asetar call:</translation>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">قبول دعوات المؤتمر تلقائيًا</translation>
+        <translation>Auto-asetar sciapo inviti</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يمكنك حفظ التعليقات حول جهة الاتصال هذه هنا.</translation>
+        <translation>Ti A te pol sparanjarte parołe so&apos; sto contat cuà.</translation>
     </message>
 </context>
 <context>
     <name>AboutSettings</name>
     <message>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Version</translation>
     </message>
     <message>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation>Łisensa</translation>
     </message>
     <message>
         <source>Authors</source>
-        <translation type="unfinished"></translation>
+        <translation>Paroni</translation>
     </message>
     <message>
         <source>Known Issues</source>
-        <translation type="unfinished"></translation>
+        <translation>Scaronje Conjosà</translation>
     </message>
     <message>
         <source>Open update download link</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">افتح رابط تحميل التحديث</translation>
+        <translation>Verzar el link da metarse in dì</translation>
     </message>
     <message>
         <source>Update available</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">التحديث متاح</translation>
+        <translation>Metarse in dì</translation>
     </message>
     <message>
         <source>qTox is up to date ✓</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">qTox محدث ✓</translation>
+        <translation>qTox l&apos;è meta in dì ✓</translation>
     </message>
     <message>
         <source>Currently running an untested/unstable version of qTox</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يتم حاليًا تشغيل إصدار غير مُختبر/غير مستقر من qTox</translation>
+        <translation>Des doparando na bałarina version de&apos;l qTox</translation>
     </message>
 </context>
 <context>
     <name>AddFriendForm</name>
     <message>
         <source>Couldn&apos;t add friend</source>
-        <translation type="unfinished"></translation>
+        <translation>Pol mìa zontar amigo</translation>
     </message>
     <message>
         <source>Invalid Tox ID format</source>
-        <translation type="unfinished"></translation>
+        <translation>No l&apos;è segur el Tox ID tajo</translation>
     </message>
     <message>
         <source>Add Friends</source>
-        <translation type="unfinished"></translation>
+        <translation>Zontar Amighi</translation>
     </message>
     <message>
         <source>Send friend request</source>
-        <translation type="unfinished"></translation>
+        <translation>Mandar invit de amigo</translation>
     </message>
     <message>
         <source>Friend requests</source>
-        <translation type="unfinished"></translation>
+        <translation>Inviti de amighi</translation>
     </message>
     <message>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Asetar</translation>
     </message>
     <message>
         <source>Reject</source>
-        <translation type="unfinished"></translation>
+        <translation>Refudar</translation>
     </message>
     <message>
         <source>Type in Tox ID of your friend</source>
-        <translation type="unfinished"></translation>
+        <translation>Scrìvate el Tox ID de&apos;l to amigo</translation>
     </message>
     <message>
         <source>Friend request message</source>
-        <translation type="unfinished"></translation>
+        <translation>Testo de ła sołisitasion de&apos;l amigo</translation>
     </message>
     <message>
         <source>Type message to send with the friend request or leave empty to send a default message</source>
-        <translation type="unfinished"></translation>
+        <translation>Scrìvate un testo come na sołisitasion de&apos;l amigo o ło łàsate zvodà par un testo predefinìo</translation>
     </message>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
         <extracomment>When trying to add your own Tox ID as friend</extracomment>
-        <translation type="unfinished">لا تستطيع اضافة نفسك كصديق!</translation>
+        <translation>A no te pol mìa zontarte come amigo!</translation>
     </message>
     <message>
         <source>Open contact list</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">فتح قائمة الاتصال</translation>
+        <translation>Verzar łista de&apos;l contat</translation>
     </message>
     <message>
         <source>Couldn&apos;t open file</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">لا يمكن فتح الملف</translation>
+        <translation>A te pol mìa verzar el file</translation>
     </message>
     <message>
         <source>Couldn&apos;t open the contact file</source>
         <extracomment>Error message when trying to open a contact list file to import</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">لا يمكن فتح ملف الاتصال</translation>
+        <translation>A no te pol mìa verzar el contat file</translation>
     </message>
     <message>
         <source>Invalid file</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ملف غير صالح</translation>
+        <translation>No l&apos;è un file</translation>
     </message>
     <message>
         <source>We couldn&apos;t find any contacts to import in this file!</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">لم نتمكن من العثور على أي جهات اتصال لاستيرادها في هذا الملف!</translation>
+        <translation>Nuantri podem mìa catar fóra contati par inportar nte&apos;l &apos;sto file!</translation>
     </message>
     <message>
         <source>Tox ID</source>
         <extracomment>Tox ID of the person you&apos;re sending a friend request to</extracomment>
-        <translation type="unfinished">حساب التوكس &quot;Tox ID&quot;</translation>
+        <translation>Tox ID de&apos;l/ła</translation>
     </message>
     <message>
         <source>Message</source>
         <extracomment>The message you send in friend requests</extracomment>
-        <translation type="unfinished">رسالة طلب الاضافة</translation>
+        <translation>Testo</translation>
     </message>
     <message>
         <source>Open</source>
         <extracomment>Button to choose a file with a list of contacts to import</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يفتح</translation>
+        <translation>Verzar</translation>
     </message>
     <message>
         <source>Send friend requests</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">إرسال طلبات الصداقة</translation>
+        <translation>Mandar sołisitasion de i amighi</translation>
     </message>
     <message>
         <source>%1 here! Tox me maybe?</source>
         <extracomment>Default message in friend requests if the field is left blank. Write something appropriate!</extracomment>
-        <translation type="unfinished">%1 هنا! هل تود التواصل بالتوكس معي؟</translation>
+        <translation>%1 cuà! Tox me fursi?</translation>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">قم باستيراد قائمة جهات الاتصال، معرف Tox واحد لكل سطر</translation>
+        <translation>Inportar na łista de contati, un Tox ID, na fiła</translation>
     </message>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Fat da inportar %n contat, click mandar par łaudar</numerusform>
+            <numerusform>Fat da inportar %n contati, click mandar par łaudar</numerusform>
+            <numerusform>Fat da inportar %n contati, click mandar par łaudar</numerusform>
         </translation>
     </message>
     <message>
         <source>Import contacts</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">استيراد جهات الاتصال</translation>
+        <translation>Inportar contati</translation>
     </message>
     <message>
         <source>Tox ID, 76 hexadecimal characters</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">معرف Tox، 76 حرفًا سداسيًا عشريًا</translation>
+        <translation>Tox ID, 76 hexadecimal caracteri</translation>
     </message>
     <message>
         <source>%1 Tox ID is invalid</source>
         <comment>Tox address error</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 معرف Tox غير صالح</translation>
+        <translation>%1 Tox ID l&apos;è mìa justo</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">76 حرفًا سداسيًا عشريًا</translation>
+        <translation>76 hexadecimal caracteri</translation>
     </message>
     <message>
         <source>Add friend</source>
-        <translation type="unfinished">إضافة صديق</translation>
+        <translation>Zontar amigo</translation>
     </message>
 </context>
 <context>
     <name>AdvancedForm</name>
     <message>
         <source>Advanced</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasadin</translation>
     </message>
     <message>
         <source>really</source>
-        <translation type="unfinished"></translation>
+        <translation>dasen</translation>
     </message>
     <message>
         <source>not</source>
-        <translation type="unfinished"></translation>
+        <translation>nò</translation>
     </message>
     <message>
         <source>IMPORTANT NOTE</source>
-        <translation type="unfinished"></translation>
+        <translation>NODA INPORTANTA</translation>
     </message>
     <message>
         <source>Reset settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Reset inpostasioni</translation>
     </message>
     <message>
         <source>All settings will be reset to default. Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuti i inpostasioni i sarà reset par predefinìo. Sito ti segur?</translation>
     </message>
     <message>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>Sì</translation>
     </message>
     <message>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>Nò</translation>
     </message>
     <message>
         <source>Logs (*.log)</source>
-        <translation type="unfinished"></translation>
+        <translation>Logs (*.log)</translation>
     </message>
     <message>
         <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ما لم تكن %1 تعرف ما تفعله، يرجى القيام %2 بتغيير أي شيء هنا. التغييرات التي تم إجراؤها هنا قد تؤدي إلى مشاكل مع qTox، وحتى إلى فقدان البيانات الخاصة بك، على سبيل المثال. التاريخ.%3</translation>
+        <translation>Se A te %1 sa che cosa te drio far, par faor, %2 canbiar mìa njente cuà. Canbiade cuà łe pol da èsar scaronje co&apos;l qTox e anca ła batosta de i to dati, e.z. istoria.%3</translation>
     </message>
     <message>
         <source>Changes here are applied only after restarting qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يتم تطبيق التغييرات هنا فقط بعد إعادة تشغيل qTox.</translation>
+        <translation>Łe canbiade cuà łe sarà aplicà solche dopo restart qTox.</translation>
     </message>
     <message>
         <source>Save file</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">احفظ الملف</translation>
+        <translation>Salvar file</translation>
     </message>
     <message>
         <source>Invalid proxy address</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">عنوان الوكيل غير صالح</translation>
+        <translation>Indiriso de&apos;l proxy l&apos;è mìa justo</translation>
     </message>
     <message>
         <source>Please enter a valid IP address or hostname for the proxy setting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">الرجاء إدخال عنوان IP صالح أو اسم مضيف لإعداد الوكيل.</translation>
+        <translation>Par faor scrìvar un justo indiriso de&apos;l IP o un nome de paron par inpostar el proxy.</translation>
     </message>
 </context>
 <context>
@@ -545,299 +546,299 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Save settings to the working directory instead of the usual conf dir</source>
         <extracomment>describes makeToxPortable checkbox</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Salvar inpostasion par el łaoro directorio inpè de&apos;l sołito conf dir</translation>
     </message>
     <message>
         <source>Make Tox portable</source>
-        <translation type="unfinished"></translation>
+        <translation>Far Tox portable</translation>
     </message>
     <message>
         <source>Reset to default settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Reset par predefenìo inpostasion</translation>
     </message>
     <message>
         <source>Portable</source>
-        <translation type="unfinished"></translation>
+        <translation>Portable</translation>
     </message>
     <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Far sù IPv6 (sołito)</translation>
     </message>
     <message>
         <source>Enable UDP (recommended)</source>
         <extracomment>Text on checkbox to disable UDP</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Far sù UDP (sołito)</translation>
     </message>
     <message>
         <source>Proxy type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sorto de&apos;l Proxy:</translation>
     </message>
     <message>
         <source>Address:</source>
         <extracomment>Text on proxy addr label</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Indiriso:</translation>
     </message>
     <message>
         <source>Port:</source>
         <extracomment>Text on proxy port label</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Portadura:</translation>
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>Nesun</translation>
     </message>
     <message>
         <source>Debug</source>
-        <translation type="unfinished"></translation>
+        <translation>Debug</translation>
     </message>
     <message>
         <source>Export Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation>Estrazer Debug Log</translation>
     </message>
     <message>
         <source>Copy Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation>Recavar Debug Log</translation>
     </message>
     <message>
         <source>Enable LAN discovery</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تمكين اكتشاف الشبكة المحلية</translation>
+        <translation>Far vèdar LAN par altri</translation>
     </message>
     <message>
         <source>Connection settings</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">إعدادات الاتصال</translation>
+        <translation>Conecsion inpostasion</translation>
     </message>
     <message>
         <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يتيح تعطيل هذا، على سبيل المثال، Tox over Tor. ومع ذلك، فهو يضيف حملاً على شبكة Tox، لذا قم بإلغاء تحديده فقط عند الضرورة.</translation>
+        <translation>Dezabiłità &apos;sta opsion dà parmes, e.z., Tox so el Tor. Intanto, &apos;sto farà sù Tox network, łora revezar solche co ch&apos;A te bezonja.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تمكين أدوات التصحيح (للمطورين فقط)</translation>
+        <translation>Far sù Debug strumenti (developers soło)</translation>
     </message>
 </context>
 <context>
     <name>AppManager</name>
     <message>
         <source>Tox URI to parse</source>
-        <translation type="unfinished"></translation>
+        <translation>Revezar Tox URI</translation>
     </message>
     <message>
         <source>Starts new instance and loads specified profile.</source>
-        <translation type="unfinished"></translation>
+        <translation>Scumisia na niova instance e carga el profil.</translation>
     </message>
     <message>
         <source>profile</source>
-        <translation type="unfinished"></translation>
+        <translation>profil</translation>
     </message>
     <message>
         <source>Starts new instance and opens the login screen.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يبدأ مثيلًا جديدًا ويفتح شاشة تسجيل الدخول.</translation>
+        <translation>Scumisia na niova instance e verza el login scherm.</translation>
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يضبط IPv6 على &lt;on&gt;/&lt;off&gt;. الافتراضي قيد التشغيل.</translation>
+        <translation>Seta IPv6 &lt;on&gt;/&lt;off&gt;. Predefinìo l&apos;è ON.</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يضبط UDP على &lt;on&gt;/&lt;off&gt;. الافتراضي قيد التشغيل.</translation>
+        <translation>Seta UDP &lt;on&gt;/&lt;off&gt;. Predefinìo l&apos;è ON.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
         <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يضبط اكتشاف الشبكة المحلية (LAN) على &lt;on&gt;/&lt;off&gt;. تجاوزات UDP. الافتراضي قيد التشغيل.</translation>
+        <translation>Far vèdar LAN &lt;on&gt;/&lt;off&gt;. UDP off overrides. Predefinìo l&apos;è ON.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
         <comment>NONE should not be translated, it is a flag value</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يضبط إعدادات الوكيل. الافتراضي هو لا شيء.</translation>
+        <translation>Seta proxy inpostasion. Predefinìo l&apos;è NONE.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">خطأ</translation>
+        <translation>Fało</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">فشل في تحميل الملف الشخصي تلقائيا.</translation>
+        <translation>Fałìo da cargar el profil automàtego.</translation>
     </message>
     <message>
         <source>Checks whether this program is running the latest qTox version.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يتحقق مما إذا كان هذا البرنامج يعمل بأحدث إصدار من qTox.</translation>
+        <translation>Reveza se &apos;sto programa el ze drio doparar l&apos;ultima qTox version.</translation>
     </message>
     <message>
         <source>Starts in portable mode; loads profile from this directory.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يبدأ في الوضع المحمول. تحميل الملف الشخصي من هذا الدليل.</translation>
+        <translation>Scumisia in portable mùo; carga el profil da &apos;sto directorio.</translation>
     </message>
     <message>
         <source>path</source>
         <comment>directory in file system</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">المسار</translation>
+        <translation>strozo</translation>
     </message>
 </context>
 <context>
     <name>ChatForm</name>
     <message>
         <source>Send a file</source>
-        <translation type="unfinished"></translation>
+        <translation>Mandar un file</translation>
     </message>
     <message>
         <source>Unable to open</source>
-        <translation type="unfinished"></translation>
+        <translation>No l&apos;è mìa bon da verzar</translation>
     </message>
     <message>
         <source>qTox wasn&apos;t able to open %1</source>
-        <translation type="unfinished"></translation>
+        <translation>qTox no zera mìa bon da verzar %1</translation>
     </message>
     <message>
         <source>Bad idea</source>
-        <translation type="unfinished"></translation>
+        <translation>Bruta idea</translation>
     </message>
     <message>
         <source>Failed to open temporary file</source>
         <comment>Temporary file for screenshot</comment>
-        <translation type="unfinished"></translation>
+        <translation>Fałìo da verzar provizorio file</translation>
     </message>
     <message>
         <source>qTox wasn&apos;t able to save the screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation>qTox no l&apos;è mìa bon da salvar ła imàzene de&apos;l schermo</translation>
     </message>
     <message>
         <source>Call duration: </source>
-        <translation type="unfinished"></translation>
+        <translation>Ciamada durada: </translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Recavar</translation>
     </message>
     <message>
         <source>You&apos;re trying to send a sequential file, which is not going to work!</source>
-        <translation type="unfinished"></translation>
+        <translation>A te si drio proar da mandar un sequential file, coal no łaora mìa!</translation>
     </message>
     <message>
         <source>Filename contained illegal characters</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يحتوي اسم الملف على أحرف غير قانونية</translation>
+        <translation>Filename ga brute caractere</translation>
     </message>
     <message>
         <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تم تغيير الأحرف غير القانونية إلى _
-حتى تتمكن من حفظ الملف على نظام التشغيل Windows.</translation>
+        <translation>Brute caractere łe ze deso _
+łora A te pol salvar el file in Windows.</translation>
     </message>
 </context>
 <context>
     <name>ChatFormHeader</name>
     <message>
         <source>Can&apos;t start audio call</source>
-        <translation type="unfinished">لا يمكن بدء المكالمة الصوتية</translation>
+        <translation>Mìa bon da scumisiar na audio ciamada</translation>
     </message>
     <message>
         <source>Start audio call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ابدأ المكالمة الصوتية</translation>
+        <translation>Scumisiar na audio ciamada</translation>
     </message>
     <message>
         <source>End audio call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">إنهاء المكالمة الصوتية</translation>
+        <translation>Fenir ła audio ciamada</translation>
     </message>
     <message>
         <source>Cancel audio call</source>
-        <translation type="unfinished">الغاء المكالمة الصوتية</translation>
+        <translation>Deznotar ła audio ciamada</translation>
     </message>
     <message>
         <source>Accept audio call</source>
-        <translation type="unfinished">قبول مكالمة صوتية</translation>
+        <translation>Asetar ła audio ciamada</translation>
     </message>
     <message>
         <source>Can&apos;t start video call</source>
-        <translation type="unfinished">لا يمكن بدء مكالمة فيديو</translation>
+        <translation>Mìa bon da scumisiar ła video ciamada</translation>
     </message>
     <message>
         <source>Start video call</source>
-        <translation type="unfinished">بدء مكالمة فيديو</translation>
+        <translation>Scumisiar ła video ciamada</translation>
     </message>
     <message>
         <source>End video call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">إنهاء مكالمة الفيديو</translation>
+        <translation>Fernir ła video ciamada</translation>
     </message>
     <message>
         <source>Cancel video call</source>
-        <translation type="unfinished">الغاء المكالمة المرئية</translation>
+        <translation>Deznotar ła video ciamada</translation>
     </message>
     <message>
         <source>Accept video call</source>
-        <translation type="unfinished">قبول مكالمة فيديو</translation>
+        <translation>Asetar ła video ciamada</translation>
     </message>
     <message>
         <source>Sound can be disabled only during a call</source>
-        <translation type="unfinished">يمكن تعطيل الصوت فقط أثناء المكالمة</translation>
+        <translation>Son pol da zmorsar solche drio na ciamada</translation>
     </message>
     <message>
         <source>Unmute call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">إلغاء كتم المكالمة</translation>
+        <translation>Unmute ciamada</translation>
     </message>
     <message>
         <source>Mute call</source>
-        <translation type="unfinished">كتم المكالمة</translation>
+        <translation>Far sordina ła ciamada</translation>
     </message>
     <message>
         <source>Microphone can be muted only during a call</source>
-        <translation type="unfinished">يمكن كتم صوت الميكروفون فقط أثناء المكالمة</translation>
+        <translation>Microfon pol da èsar sordin solche drio na ciamada</translation>
     </message>
     <message>
         <source>Unmute microphone</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">إلغاء كتم صوت الميكروفون</translation>
+        <translation>Unmute microfon</translation>
     </message>
     <message>
         <source>Mute microphone</source>
-        <translation type="unfinished">كتم المايكروفون</translation>
+        <translation>Far sordin el microfon</translation>
     </message>
 </context>
 <context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
-        <translation type="unfinished"></translation>
+        <translation>Scrìvar el to testo cuà...</translation>
     </message>
 </context>
 <context>
     <name>ChatWidget</name>
     <message>
         <source>pending</source>
-        <translation type="unfinished">قيد الانتظار</translation>
+        <translation>spetando</translation>
     </message>
     <message>
         <source>%1 is typing</source>
-        <translation type="unfinished">%1 يجري الكتابة</translation>
+        <translation>%1 el ze drio scrìvar</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">نسخ</translation>
+        <translation>Recavar</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="unfinished">تحديد الكل</translation>
+        <translation>Sernir tuto</translation>
     </message>
 </context>
 <context>
@@ -845,16 +846,16 @@ so you can save the file on Windows.</source>
     <message>
         <source>Rename circle</source>
         <comment>Menu for renaming a circle</comment>
-        <translation type="unfinished"></translation>
+        <translation>Intitołar danovo el sircol</translation>
     </message>
     <message>
         <source>Remove circle</source>
         <comment>Menu for removing a circle</comment>
-        <translation type="unfinished"></translation>
+        <translation>Dezontar el sircol</translation>
     </message>
     <message>
         <source>Open all in new window</source>
-        <translation type="unfinished"></translation>
+        <translation>Verzar tuto nte ła niova fenestra</translation>
     </message>
 </context>
 <context>
@@ -862,12 +863,12 @@ so you can save the file on Windows.</source>
     <message>
         <source>Location not writable</source>
         <comment>Title of permissions popup</comment>
-        <translation type="unfinished">المسار غير قابل للكتابة</translation>
+        <translation>Local no l&apos;è mìa bon da scrìvar</translation>
     </message>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation type="unfinished">ليس لديك الإذن بالكتابة إلى هذا الموقع. اختر خيارًا آخر، أو قم بإلغاء مربع حوار الحفظ.</translation>
+        <translation>A no te pol scrìvar nte&apos;l &apos;sto local. Sernir altro o dezonotar el testo par salvar.</translation>
     </message>
 </context>
 <context>
@@ -875,131 +876,125 @@ so you can save the file on Windows.</source>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n parsona nte&apos;l chat</numerusform>
+            <numerusform>%n parsoni nte&apos;l chat</numerusform>
+            <numerusform>%n parsoni nte&apos;l chat</numerusform>
         </translation>
     </message>
     <message>
         <source>mute</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">صامت</translation>
+        <translation>far sordin</translation>
     </message>
     <message>
         <source>unmute</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">إلغاء كتم الصوت</translation>
+        <translation>far sentir</translation>
     </message>
     <message>
         <source>copy peer ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">نسخ معرف النظير</translation>
+        <translation>recavar isteso ID</translation>
     </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished">المجموعات</translation>
+        <translation>Sciapi</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation type="unfinished">إنشاء مجموعة جديدة</translation>
+        <translation>Far sù un niovo sciapo</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation type="unfinished">إضافات المجموعة</translation>
+        <translation>Sciapo inviti</translation>
     </message>
 </context>
 <context>
     <name>ConferenceInviteWidget</name>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
-        <translation type="unfinished"></translation>
+        <translation>Invità da %1 par %2 nte&apos;l %3.</translation>
     </message>
     <message>
         <source>Join</source>
-        <translation type="unfinished"></translation>
+        <translation>Zontar</translation>
     </message>
     <message>
         <source>Decline</source>
-        <translation type="unfinished"></translation>
+        <translation>Rifudar</translation>
     </message>
 </context>
 <context>
     <name>ConferenceWidget</name>
     <message>
         <source>Open chat in new window</source>
-        <translation type="unfinished"></translation>
+        <translation>Verzar el chat nte ła niova fenestra</translation>
     </message>
     <message>
         <source>Remove chat from this window</source>
-        <translation type="unfinished"></translation>
+        <translation>Dezontar chat da &apos;sta fenestra</translation>
     </message>
     <message>
         <source>Set title...</source>
-        <translation type="unfinished"></translation>
+        <translation>Setar tìtol...</translation>
     </message>
     <message>
         <source>Quit conference</source>
         <comment>Menu to quit a conference</comment>
-        <translation type="unfinished"></translation>
+        <translation>Zbandona sciapo</translation>
     </message>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n menbro nte&apos;l chat</numerusform>
+            <numerusform>%n menbri nte&apos;l chat</numerusform>
+            <numerusform>%n menbri nte&apos;l chat</numerusform>
         </translation>
     </message>
     <message>
         <source>New message</source>
-        <translation type="unfinished">رسالة جديدة</translation>
+        <translation>Mesajo novo</translation>
     </message>
     <message>
         <source>Online</source>
-        <translation type="unfinished">متصل</translation>
+        <translation>In łinea</translation>
     </message>
 </context>
 <context>
     <name>Core</name>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>/me vol da èsar amigo, &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Conference %1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">المؤتمر %1</translation>
+        <translation>Sciapo %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">معرف Tox غير صالح</translation>
+        <translation>Tox ID no l&apos;è justo</translation>
     </message>
     <message>
         <source>You need to write a message with your request</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">تحتاج كتابة رسالة مع الطلب</translation>
+        <translation>Te bezonja da scrìvar un novo mesajo co&apos;l to request</translation>
     </message>
     <message>
         <source>Your message is too long!</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">رسالتك طويلة جدا!</translation>
+        <translation>El to mesajo l&apos;è stra grando!</translation>
     </message>
     <message>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">تمت الاضافة فعلاً</translation>
+        <translation>Amigo l&apos;è zontà belche</translation>
     </message>
 </context>
 <context>
@@ -1007,17 +1002,17 @@ so you can save the file on Windows.</source>
     <message>
         <source>Debug Log</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">سجل التصحيح</translation>
+        <translation>Debug Log</translation>
     </message>
     <message>
         <source>Auto-reload</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">إعادة التحميل التلقائي</translation>
+        <translation>Auto-recarga</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">التمرير التلقائي</translation>
+        <translation>Auto-scroll</translation>
     </message>
 </context>
 <context>
@@ -1025,7 +1020,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Debug Log</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">سجل التصحيح</translation>
+        <translation>Debug Log</translation>
     </message>
 </context>
 <context>
@@ -1033,559 +1028,560 @@ so you can save the file on Windows.</source>
     <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
-        <translation type="unfinished"></translation>
+        <translation>Drio spetar par mandar...</translation>
     </message>
     <message>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
-        <translation type="unfinished"></translation>
+        <translation>Asetar par risevar &apos;sto file</translation>
     </message>
     <message>
         <source>Paused</source>
         <comment>file transfer widget</comment>
-        <translation type="unfinished"></translation>
+        <translation>Fermà</translation>
     </message>
     <message>
         <source>Resuming...</source>
         <comment>file transfer widget</comment>
-        <translation type="unfinished"></translation>
+        <translation>Drio tornar...</translation>
     </message>
     <message>
         <source>Open file</source>
-        <translation type="unfinished"></translation>
+        <translation>Verzar file</translation>
     </message>
     <message>
         <source>Open file directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Verzar file directory</translation>
     </message>
     <message>
         <source>Pause transfer</source>
-        <translation type="unfinished"></translation>
+        <translation>Fermar traslocasion</translation>
     </message>
     <message>
         <source>Cancel transfer</source>
-        <translation type="unfinished"></translation>
+        <translation>Dezontar traslocasion</translation>
     </message>
     <message>
         <source>Resume transfer</source>
-        <translation type="unfinished"></translation>
+        <translation>Tornar ła traslocasion</translation>
     </message>
     <message>
         <source>Accept transfer</source>
-        <translation type="unfinished"></translation>
+        <translation>Asetar ła traslocasion</translation>
     </message>
     <message>
         <source>Save a file</source>
         <comment>Title of the file saving dialog</comment>
-        <translation type="unfinished"></translation>
+        <translation>Salvar un file</translation>
     </message>
     <message>
         <source>Remote paused</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">توقف عن بعد</translation>
+        <translation>Dałons fermà</translation>
     </message>
 </context>
 <context>
     <name>FilesForm</name>
     <message>
         <source>Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Downloadi</translation>
     </message>
     <message>
         <source>Uploads</source>
-        <translation type="unfinished"></translation>
+        <translation>Uploadi</translation>
     </message>
     <message>
         <source>Transferred files</source>
         <comment>&quot;Headline&quot; of the window</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">الملفات المنقولة</translation>
+        <translation>Traslocà files</translation>
     </message>
 </context>
 <context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
-        <translation type="unfinished">اليوم</translation>
+        <translation>Ncòi</translation>
     </message>
     <message>
         <source>Yesterday</source>
-        <translation type="unfinished">امس</translation>
+        <translation>Jeri</translation>
     </message>
     <message>
         <source>Last 7 days</source>
-        <translation type="unfinished">اخر سبع أيام</translation>
+        <translation>Ultimi 7 dì</translation>
     </message>
     <message>
         <source>This month</source>
-        <translation type="unfinished">هذا الشهر</translation>
+        <translation>&apos;Sto meze</translation>
     </message>
     <message>
         <source>Never</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">أبداً</translation>
+        <translation>Mai</translation>
     </message>
     <message>
         <source>Older than 6 months</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">أقدم من 6 أشهر</translation>
+        <translation>Vecio de 6 mezi</translation>
     </message>
 </context>
 <context>
     <name>FriendWidget</name>
     <message>
         <source>Open chat in new window</source>
-        <translation type="unfinished"></translation>
+        <translation>Verzar chat nte ła nova fenestra</translation>
     </message>
     <message>
         <source>Remove chat from this window</source>
-        <translation type="unfinished"></translation>
+        <translation>Dezontar chat da &apos;sta fenestra</translation>
     </message>
     <message>
         <source>Invite to conference</source>
         <comment>Menu to invite a friend to a conference</comment>
-        <translation type="unfinished"></translation>
+        <translation>Mandar sciapo</translation>
     </message>
     <message>
         <source>Move to circle...</source>
         <comment>Menu to move a friend into a different circle</comment>
-        <translation type="unfinished"></translation>
+        <translation>Movar sircol...</translation>
     </message>
     <message>
         <source>To new circle</source>
-        <translation type="unfinished"></translation>
+        <translation>Par novo sircol</translation>
     </message>
     <message>
         <source>Remove from circle &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Deznotar da sircol &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Set alias...</source>
-        <translation type="unfinished"></translation>
+        <translation>Setar nome...</translation>
     </message>
     <message>
         <source>Auto accept files from this friend</source>
         <comment>context menu entry</comment>
-        <translation type="unfinished"></translation>
+        <translation>Auto asetar file da &apos;sto amigo</translation>
     </message>
     <message>
         <source>Show details</source>
-        <translation type="unfinished"></translation>
+        <translation>Far vedar detałi</translation>
     </message>
     <message>
         <source>New message</source>
-        <translation type="unfinished"></translation>
+        <translation>Novo mesajo</translation>
     </message>
     <message>
         <source>Online</source>
-        <translation type="unfinished"></translation>
+        <translation>In łinea</translation>
     </message>
     <message>
         <source>Away</source>
-        <translation type="unfinished"></translation>
+        <translation>Dałons</translation>
     </message>
     <message>
         <source>Busy</source>
-        <translation type="unfinished"></translation>
+        <translation>Bizeghin</translation>
     </message>
     <message>
         <source>Offline</source>
-        <translation type="unfinished"></translation>
+        <translation>Fora da łinea</translation>
     </message>
     <message>
         <source>To new conference</source>
-        <translation type="unfinished">إلى مجموعة جديدة</translation>
+        <translation>Nte&apos;l novo sciapo</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation type="unfinished">إضافة إلى مجموعة &apos;%1&apos;</translation>
+        <translation>Invita nte&apos;l sciapo &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">الانتقال إلى الدائرة &quot;%1&quot;</translation>
+        <translation>Movar nte&apos;l sircol &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Remove friend</source>
         <comment>Menu to remove the friend from the friend list</comment>
-        <translation type="unfinished">ازالة صديق</translation>
+        <translation>Cava via de i amighi</translation>
     </message>
     <message>
         <source>Blocked</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">محظور</translation>
+        <translation>Bloca utente</translation>
     </message>
 </context>
 <context>
     <name>GeneralForm</name>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeneral</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 (بدون خطوط)</translation>
+        <translation>%1 (sensa fonti)</translation>
     </message>
 </context>
 <context>
     <name>GeneralSettings</name>
     <message>
         <source>General Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Inpostasion Zenerałe</translation>
     </message>
     <message>
         <source>The translation may not load until qTox restarts.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ła volta pol mìa cargar fin che&apos;l qTox el rescumisia.</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Łengua:</translation>
     </message>
     <message>
         <source>Start qTox on operating system startup (current profile).</source>
-        <translation type="unfinished"></translation>
+        <translation>Scumisiar qTox in operating system startup (prezente profil).</translation>
     </message>
     <message>
         <source>Autostart</source>
-        <translation type="unfinished"></translation>
+        <translation>Autoscumisiar</translation>
     </message>
     <message>
         <source>Enable light tray icon.</source>
         <comment>toolTip for light icon setting</comment>
-        <translation type="unfinished"></translation>
+        <translation>Zmorsar ła ciara vantiera de&apos;l icon.</translation>
     </message>
     <message>
         <source>Light icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Ciaro icon</translation>
     </message>
     <message>
         <source>Show system tray icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Far vedar el ciaro icon de&apos;l sistema</translation>
     </message>
     <message>
         <source>qTox will start minimized in tray.</source>
         <comment>toolTip for Start in tray setting</comment>
-        <translation type="unfinished"></translation>
+        <translation>qTox el scumisiarà picol nte ła vantiera.</translation>
     </message>
     <message>
         <source>Start in tray</source>
-        <translation type="unfinished"></translation>
+        <translation>Scumisiar in vantiera</translation>
     </message>
     <message>
         <source>Minimize to tray</source>
-        <translation type="unfinished"></translation>
+        <translation>Łasar nte ła vantiera</translation>
     </message>
     <message>
         <source>Close to tray</source>
-        <translation type="unfinished"></translation>
+        <translation>Sarar nte ła vantiera</translation>
     </message>
     <message>
         <source>Your status is changed to Away after set period of inactivity.</source>
-        <translation type="unfinished"></translation>
+        <translation>I to status el canbia par Dałons dopo un fiatin de inasion.</translation>
     </message>
     <message>
         <source>Auto away after (0 to disable):</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto dałons dopo (0 par dezabiłità):</translation>
     </message>
     <message>
         <source>Set to 0 to disable</source>
-        <translation type="unfinished"></translation>
+        <translation>Set 0 par dezabiłitar</translation>
     </message>
     <message>
         <source>Set where files will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Set ndóe files sarà salvài.</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
-        <translation type="unfinished"></translation>
+        <translation>Predefinìo directory par salvar files:</translation>
     </message>
     <message>
         <source>Autoaccept files</source>
-        <translation type="unfinished"></translation>
+        <translation>Autoasetar files</translation>
     </message>
     <message>
         <source>Show contacts&apos; status changes</source>
-        <translation type="unfinished"></translation>
+        <translation>Far vèdar el status de i contati canbiar</translation>
     </message>
     <message>
         <source>Check for updates</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">التحقق من وجود تحديثات</translation>
+        <translation>Revedar par azorne</translation>
     </message>
     <message>
         <source>Spell checking</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">التدقيق الإملائي</translation>
+        <translation>Verifegasion de ła gramàtega</translation>
     </message>
     <message>
         <source>Max autoaccept file size (0 to disable):</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">الحد الأقصى لحجم ملف القبول التلقائي (0 للتعطيل):</translation>
+        <translation>Max autoasetar file size (0 par dezabiłitar):</translation>
     </message>
     <message>
         <source> MB</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished"> ميغابايت</translation>
+        <translation> MB</translation>
     </message>
     <message>
         <source>After pressing minimize (_) qTox will minimize to tray,
 instead of system taskbar.</source>
         <comment>toolTip for minimize to tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">بعد الضغط على زر التصغير (_) سيتم تصغير qTox إلى الدرج،
-بدلاً من شريط مهام النظام.</translation>
+        <translation>Dopo calcar minimize (_) qTox sarà minimize nte ła vantiera,
+invese de&apos;l taskbar de&apos;l sistema.</translation>
     </message>
     <message>
         <source>After pressing close (X) qTox will close to tray,
 instead of closing entirely.</source>
         <comment>toolTip for close to tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">بعد الضغط على زر الإغلاق (X)، سيغلق qTox في الدرج،
-بدلاً من الإغلاق بالكامل.</translation>
+        <translation>Dopo calcar serar(X) qTox sarà serar nte ła vantiera 
+invese de ła sarada tuta.</translation>
     </message>
     <message>
         <source>You can set this on a per-friend basis by right clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يمكنك تعيين هذا على أساس كل صديق عن طريق النقر بزر الماوس الأيمن على الأصدقاء الفرديين.</translation>
+        <translation>A te pol set &apos;sto in un per-friend basis calcando dreto nte i sołi amighi.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">إضافة رسالة محادثة عندما ينضم المستخدم إلى مؤتمر أو يغادره</translation>
+        <translation>Zontar un chat mesajo co&apos; che un menbro zonta o łasa el sciapo</translation>
     </message>
     <message>
         <source>Click here if you find errors in a translation and would like to help fix it.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">انقر هنا إذا وجدت أخطاء في الترجمة وترغب في المساعدة في إصلاحها.</translation>
+        <translation>Click cuà se A te cata fóra scaronje nte ła volte e se te podarìa dar na man e far mejo.</translation>
     </message>
     <message>
         <source>Help translate</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">مساعدة في الترجمة</translation>
+        <translation>Dar na man co łe volte</translation>
     </message>
     <message>
         <source> min</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished"> دقيقة</translation>
+        <translation> min</translation>
     </message>
 </context>
 <context>
     <name>GenericChatForm</name>
     <message>
         <source>Save chat log</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvar ła cronołozìa chat</translation>
     </message>
     <message>
         <source>Send message</source>
-        <translation type="unfinished"></translation>
+        <translation>Mandar mesajo</translation>
     </message>
     <message>
         <source>Smileys</source>
-        <translation type="unfinished"></translation>
+        <translation>Muzeti</translation>
     </message>
     <message>
         <source>Send file(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mandar file(s)</translation>
     </message>
     <message>
         <source>Send a screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Mandar na imàzene de&apos;l schermo</translation>
     </message>
     <message>
         <source>Clear displayed messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Ełimenar i mesaji mostrà</translation>
     </message>
     <message>
         <source>Quote selected text</source>
-        <translation type="unfinished"></translation>
+        <translation>Sita el testo</translation>
     </message>
     <message>
         <source>Copy link address</source>
-        <translation type="unfinished"></translation>
+        <translation>Recavar indiriso link</translation>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished">تأكيد</translation>
+        <translation>Łaudo</translation>
     </message>
     <message>
         <source>Search in text</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">البحث في النص</translation>
+        <translation>Serca nte&apos;l testo</translation>
     </message>
     <message>
         <source>Go to current date</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">انتقل إلى التاريخ الحالي</translation>
+        <translation>Ndar nte ła prezente data</translation>
     </message>
     <message>
         <source>Load chat history...</source>
-        <translation type="unfinished">تحميل سجل الرسائل...</translation>
+        <translation>Cargar cronołozìa chat...</translation>
     </message>
     <message>
         <source>Export to file</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تصدير إلى ملف</translation>
+        <translation>Estrazer par file</translation>
     </message>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">هل أنت متأكد أنك تريد مسح كافة الرسائل المعروضة؟</translation>
+        <translation>Sito ti segur ch&apos;A te vol ełimenar tuti i mesaji?</translation>
     </message>
 </context>
 <context>
     <name>IdentitySettings</name>
     <message>
         <source>Public Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informasion pùblega</translation>
     </message>
     <message>
         <source>Tox ID</source>
-        <translation type="unfinished"></translation>
+        <translation>Tox ID</translation>
     </message>
     <message>
         <source>Your Tox ID (click to copy)</source>
-        <translation type="unfinished"></translation>
+        <translation>El to Tox ID (click par recavar)</translation>
     </message>
     <message>
         <source>This QR code contains your Tox ID. You may share this with your friends as well.</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;Sto QR code el tenja el to Tox ID. A te pol sconpartir &apos;sto co i so amighi anca.</translation>
     </message>
     <message>
         <source>Save image</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvar imàzene</translation>
     </message>
     <message>
         <source>Copy image</source>
-        <translation type="unfinished"></translation>
+        <translation>Recavar imàzene</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Profiło</translation>
     </message>
     <message>
         <source>Rename profile.</source>
         <comment>tooltip for renaming profile button</comment>
-        <translation type="unfinished"></translation>
+        <translation>Modìfegar el nome de&apos;l profiło.</translation>
     </message>
     <message>
         <source>Rename</source>
         <comment>rename profile button</comment>
-        <translation type="unfinished"></translation>
+        <translation>Modìefegar el nome</translation>
     </message>
     <message>
         <source>Delete profile.</source>
         <comment>delete profile button tooltip</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ełimenar profiło.</translation>
     </message>
     <message>
         <source>Delete</source>
         <comment>delete profile button</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ełimenar</translation>
     </message>
     <message>
         <source>Allows you to export your Tox profile to a file.
 Profile does not contain your history.</source>
         <comment>tooltip for profile exporting button</comment>
-        <translation type="unfinished"></translation>
+        <translation>Darghe parmes par estrazer el to Tox profiło nte un file.
+Profiło tien mìa ła só cornołozìa.</translation>
     </message>
     <message>
         <source>Export</source>
         <comment>export profile button</comment>
-        <translation type="unfinished"></translation>
+        <translation>Estrazer</translation>
     </message>
     <message>
         <source>Go back to the login screen</source>
         <comment>tooltip for logout button</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ndar nte&apos;l login schermo</translation>
     </message>
     <message>
         <source>Logout</source>
         <comment>import profile button</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ndar fóra</translation>
     </message>
     <message>
         <source>Remove password</source>
-        <translation type="unfinished"></translation>
+        <translation>Ełimenar password</translation>
     </message>
     <message>
         <source>Change password</source>
-        <translation type="unfinished"></translation>
+        <translation>Canbiar password</translation>
     </message>
     <message>
         <source>Remove your password and encryption from your profile.</source>
         <comment>Tooltip for the `Remove password` button.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ełimenar el to password e encryption da&apos;l to profiło.</translation>
     </message>
     <message>
         <source>Name input</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome de intrada</translation>
     </message>
     <message>
         <source>Name visible to contacts</source>
-        <translation type="unfinished"></translation>
+        <translation>Far vèdar el to nome par i altri contati</translation>
     </message>
     <message>
         <source>Status message input</source>
-        <translation type="unfinished"></translation>
+        <translation>Status mesajo intrada</translation>
     </message>
     <message>
         <source>Your Tox ID</source>
-        <translation type="unfinished"></translation>
+        <translation>El to Tox ID</translation>
     </message>
     <message>
         <source>Save QR image as file</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvar QR imàzine come file</translation>
     </message>
     <message>
         <source>Copy QR image to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar QR imàzine nte&apos;l clipboard</translation>
     </message>
     <message>
         <source>Rename profile.</source>
-        <translation type="unfinished"></translation>
+        <translation>Modìfegar el nome de&apos;l profiło.</translation>
     </message>
     <message>
         <source>Delete profile.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ełimenar profiło.</translation>
     </message>
     <message>
         <source>Export profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Estrazer profiło</translation>
     </message>
     <message>
         <source>Remove password from profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Ełimenar password da&apos;l profiło</translation>
     </message>
     <message>
         <source>Change profile password</source>
-        <translation type="unfinished"></translation>
+        <translation>Canbiar el password de&apos;l profiło</translation>
     </message>
     <message>
         <source>My name:</source>
-        <translation type="unfinished"></translation>
+        <translation>El me nome:</translation>
     </message>
     <message>
         <source>My status:</source>
-        <translation type="unfinished"></translation>
+        <translation>El me status:</translation>
     </message>
     <message>
         <source>My profile</source>
-        <translation type="unfinished"></translation>
+        <translation>El me profiło</translation>
     </message>
     <message>
         <source>This ID allows other Tox users to add and contact you.
 Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يسمح هذا المعرف لمستخدمي Tox الآخرين بإضافتك والاتصال بك.
-شاركها مع أصدقائك لبدء الدردشة.</translation>
+        <translation>&apos;Sto ID dà parmes par altri Tox uzuari da zontar e mandarte mesaji.
+Sconpartir &apos;sto co i to amighi par scumisiar ciacołar.</translation>
     </message>
     <message>
         <source>Set your status message that will be shown to others</source>
-        <translation type="unfinished">تعيين رسالة الحالة التي سيتم عرضها للآخرين</translation>
+        <translation>Set el to status mesajo che&apos;l farà vèdar par i altri</translation>
     </message>
 </context>
 <context>
@@ -1593,281 +1589,283 @@ Share it with your friends to begin chatting.</source>
     <message>
         <source>Load history dialog</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تحميل مربع الحوار التاريخ</translation>
+        <translation>Cargar ła cronołozìa ciacołar</translation>
     </message>
     <message>
         <source>Load history from:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تحميل التاريخ من:</translation>
+        <translation>Cargar ła cronołozìa da&apos;l:</translation>
     </message>
 </context>
 <context>
     <name>LoginScreen</name>
     <message>
         <source>Username:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome:</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Password:</translation>
     </message>
     <message>
         <source>Confirm:</source>
-        <translation type="unfinished"></translation>
+        <translation>Łaudar:</translation>
     </message>
     <message>
         <source>Password strength: %p%</source>
-        <translation type="unfinished"></translation>
+        <translation>Forsa de&apos;l password: %p%</translation>
     </message>
     <message>
         <source>Create Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Far sù Profiło</translation>
     </message>
     <message>
         <source>If the profile does not have a password, qTox can skip the login screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Se el profiło ga mìa un password, qTox pol saltusar el login schermo</translation>
     </message>
     <message>
         <source>Load automatically</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto cargar</translation>
     </message>
     <message>
         <source>Load</source>
-        <translation type="unfinished"></translation>
+        <translation>Cargar</translation>
     </message>
     <message>
         <source>New Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Novo Profiło</translation>
     </message>
     <message>
         <source>Load Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Cargar Profiło</translation>
     </message>
     <message>
         <source>Couldn&apos;t create a new profile</source>
-        <translation type="unfinished"></translation>
+        <translation>No l&apos;è bon da far sù un novo profiło</translation>
     </message>
     <message>
         <source>The username must not be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>El nome no pol mìa èsar łevro.</translation>
     </message>
     <message>
         <source>The password must be at least 6 characters long.</source>
-        <translation type="unfinished"></translation>
+        <translation>El password ga bezonja de 6 caractere.</translation>
     </message>
     <message>
         <source>A profile with this name already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gh&apos;è belche un profiło co isteso nome.</translation>
     </message>
     <message>
         <source>There is no selected profile.
 
 You may want to create one.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gh&apos;è mìa profiło selected.
+
+A te pol vołer far sù.</translation>
     </message>
     <message>
         <source>Couldn&apos;t load this profile</source>
-        <translation type="unfinished"></translation>
+        <translation>No l&apos;è bon da cargar &apos;sto profiło</translation>
     </message>
     <message>
         <source>This profile is already in use.</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;Sto profiło el ze drio doparar.</translation>
     </message>
     <message>
         <source>Wrong password.</source>
-        <translation type="unfinished"></translation>
+        <translation>Torto password.</translation>
     </message>
     <message>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Inportar</translation>
     </message>
     <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Password protega profiłi da no èsar mìa auto carga.</translation>
     </message>
     <message>
         <source>Username input field</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome łevra intrada</translation>
     </message>
     <message>
         <source>Password input field, you can leave it empty (no password), or type at least 6 characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Password łevra intrada, A te pol łasarlo łevro (sensa password), o scrìvar co 6 caractere</translation>
     </message>
     <message>
         <source>Password confirmation field</source>
-        <translation type="unfinished"></translation>
+        <translation>Password łaudo field</translation>
     </message>
     <message>
         <source>Create a new profile button</source>
-        <translation type="unfinished"></translation>
+        <translation>Far sù un novo buton profiło</translation>
     </message>
     <message>
         <source>Profile list</source>
-        <translation type="unfinished"></translation>
+        <translation>Profiło list</translation>
     </message>
     <message>
         <source>List of profiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Profiłi list</translation>
     </message>
     <message>
         <source>Password input</source>
-        <translation type="unfinished"></translation>
+        <translation>Password intrada</translation>
     </message>
     <message>
         <source>Load automatically checkbox</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto cargar checkbox</translation>
     </message>
     <message>
         <source>Import profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Inportar profiło</translation>
     </message>
     <message>
         <source>Load selected profile button</source>
-        <translation type="unfinished"></translation>
+        <translation>Cargar selected buton profiło</translation>
     </message>
     <message>
         <source>New profile creation page</source>
-        <translation type="unfinished"></translation>
+        <translation>Pàzena de creasion de&apos;l profiło</translation>
     </message>
     <message>
         <source>Loading existing profile page</source>
-        <translation type="unfinished"></translation>
+        <translation>Cargando pàzena de&apos;l profiło</translation>
     </message>
     <message>
         <source>The passwords you&apos;ve entered are different.
 Please make sure to enter the same password twice.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">كلمات المرور التي أدخلتها مختلفة.
-يرجى التأكد من إدخال نفس كلمة المرور مرتين.</translation>
+        <translation>I password i ze altri.
+Par faor, far segur da scrìvar i istesi password.</translation>
     </message>
     <message>
         <source>This optional password is used to encrypt local message data and your profile.
 If you lose this password, there is no way to recover it.
 Press Shift+F1 for more information.</source>
-        <translation type="unfinished">يتم استخدام كلمة المرور الاختيارية هذه لتشفير بيانات الرسائل المحلية وملفك الشخصي.
-إذا فقدت كلمة المرور هذه، فلا توجد طريقة لاستعادتها.
-اضغط على Shift+F1 لمزيد من المعلومات.</translation>
+        <translation>&apos;Sto opsional password l&apos;è dopara to encrypt local mesajo data e el to profiło.
+Se A te parder &apos;sto password, no ghe ze mìa come revenjer.
+Press Shift+F1 par informasion de pì.</translation>
     </message>
     <message>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
-        <translation type="unfinished">كلمة المرور التي تدخلها هنا اختيارية وتقوم بتشفير بيانات الرسالة ومفتاح Tox السري الخاص بك. لا يقوم بتشفير الملفات المستلمة. لا يتم إرسال بيانات ملفك الشخصي مطلقًا إلى أي خوادم. هذا ليس تسجيل دخول عن بعد، بل هو محلي لجهاز الكمبيوتر الخاص بك فقط. لن يتمكن مطورو qTox من استعادة كلمة المرور الخاصة بك في حالة فقدانها.</translation>
+        <translation>El password che A te ga scrivesto cuà l&apos;è opsional e encrypts mesajo data e ła to Tox secreta ciave. &apos;Sto encrypts mìa files riservà. El to profiło data l&apos;è mìa mandar nesun servers. &apos;Sto no&apos;l ze mìa un remote login, &apos;sto el ze local par el to computer soło. qTox developer i no sarà mìa boni da catar fóra el to password se A te parderla.</translation>
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
-        <translation type="unfinished">حقل كلمة المرور ، الحد الأدنى 6 أحرف</translation>
+        <translation>Password intrada canpo, minimum 6 caractere long</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
         <source>Your name</source>
-        <translation type="unfinished"></translation>
+        <translation>El to nome</translation>
     </message>
     <message>
         <source>Your status</source>
-        <translation type="unfinished"></translation>
+        <translation>El to status</translation>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation type="unfinished">إنشاء محادثة جماعية</translation>
+        <translation>Far sù un sciapo</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
-        <translation type="unfinished"></translation>
+        <translation>Far vèdar i traslocà fati file</translation>
     </message>
     <message>
         <source>Change your settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Canbiar łe to inpostasion</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Serar</translation>
     </message>
     <message>
         <source>Open profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Verzar profiło</translation>
     </message>
     <message>
         <source>Open profile page when clicked</source>
-        <translation type="unfinished"></translation>
+        <translation>Verzar pàzena de&apos;l profiło co&apos; clicked</translation>
     </message>
     <message>
         <source>Status message input</source>
-        <translation type="unfinished"></translation>
+        <translation>Status mesajo intrada</translation>
     </message>
     <message>
         <source>Set your status message that will be shown to others</source>
-        <translation type="unfinished"></translation>
+        <translation>Set el to status mesajo el sarà vèdar par i altri</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished"></translation>
+        <translation>Status</translation>
     </message>
     <message>
         <source>Set availability status</source>
-        <translation type="unfinished"></translation>
+        <translation>Set status èsar bon</translation>
     </message>
     <message>
         <source>Contact search</source>
-        <translation type="unfinished"></translation>
+        <translation>Serca contato</translation>
     </message>
     <message>
         <source>Contact search input for known friends</source>
-        <translation type="unfinished"></translation>
+        <translation>Serca contato intrada par conjosà amighi</translation>
     </message>
     <message>
         <source>Sorting and visibility</source>
-        <translation type="unfinished"></translation>
+        <translation>Sorti e vizibiłità</translation>
     </message>
     <message>
         <source>Set friends sorting and visibility</source>
-        <translation type="unfinished"></translation>
+        <translation>Set friends sorti e vizibiłità</translation>
     </message>
     <message>
         <source>Open Add friends page</source>
-        <translation type="unfinished"></translation>
+        <translation>Verzar Zontar amighi pàzena</translation>
     </message>
     <message>
         <source>Conference</source>
-        <translation type="unfinished">دردشة جماعية</translation>
+        <translation>Sciapo</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation type="unfinished">فتح صفحة ادارة الدردشة الجماعية</translation>
+        <translation>Verzar sciapo paron pàzena</translation>
     </message>
     <message>
         <source>File transfers history</source>
-        <translation type="unfinished"></translation>
+        <translation>File traslocà cronołozìa</translation>
     </message>
     <message>
         <source>Open File transfers history</source>
-        <translation type="unfinished"></translation>
+        <translation>Verzar File traslocà cronołozìa</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Inpostasion</translation>
     </message>
     <message>
         <source>Open Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Verzar Inpostasion</translation>
     </message>
     <message>
         <source>Open internal debugging tools</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">افتح أدوات التصحيح الداخلية</translation>
+        <translation>Verzar internal debuggin strumenti</translation>
     </message>
     <message>
         <source>Debug</source>
-        <translation type="unfinished">تصحيح الأخطاء</translation>
+        <translation>Debug</translation>
     </message>
     <message>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">افتح مصحح الأخطاء</translation>
+        <translation>Verzar Debugger</translation>
     </message>
     <message>
         <source>Add friend</source>
-        <translation type="unfinished">إضافة صديق</translation>
+        <translation>Zontar amigo</translation>
     </message>
 </context>
 <context>
@@ -1875,58 +1873,58 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Executable file</source>
         <comment>popup title</comment>
-        <translation type="unfinished">ملف تنفيدي</translation>
+        <translation>Executable archivo</translation>
     </message>
     <message>
         <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished">هل انت متأكد من فتح الملف ؟</translation>
+        <translation>Te ghè dimandà qTox verzar un executable file. Executable files pol da danezar el to computer. Sito ti segur da verzar &apos;sto file?</translation>
     </message>
 </context>
 <context>
     <name>NetCamView</name>
     <message>
         <source>Tox video</source>
-        <translation type="unfinished">فيديو التوكس &quot;Tox&quot;</translation>
+        <translation>Tox video</translation>
     </message>
     <message>
         <source>Full Screen</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">شاشة كاملة</translation>
+        <translation>Schermo Łevro</translation>
     </message>
     <message>
         <source>Toggle video preview</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تبديل معاينة الفيديو</translation>
+        <translation>Canbiar video preview</translation>
     </message>
     <message>
         <source>Mute audio</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">كتم الصوت</translation>
+        <translation>Far tazar audio</translation>
     </message>
     <message>
         <source>Mute microphone</source>
-        <translation type="unfinished">كتم المايكروفون</translation>
+        <translation>Far tazar microfon</translation>
     </message>
     <message>
         <source>End video call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">إنهاء مكالمة الفيديو</translation>
+        <translation>Fenir video ciamada</translation>
     </message>
     <message>
         <source>Exit full screen</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">الخروج من وضع ملء الشاشة</translation>
+        <translation>Ndar fóra łevro schermo</translation>
     </message>
     <message>
         <source>Hide messages</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">إخفاء الرسائل</translation>
+        <translation>Scondar mesaji</translation>
     </message>
     <message>
         <source>Show messages</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">إظهار الرسائل</translation>
+        <translation>Far vèdar mesaji</translation>
     </message>
 </context>
 <context>
@@ -1934,40 +1932,40 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>View</source>
         <comment>macOS Menu bar</comment>
-        <translation type="unfinished"></translation>
+        <translation>Vardar</translation>
     </message>
     <message>
         <source>Window</source>
         <comment>macOS Menu bar</comment>
-        <translation type="unfinished"></translation>
+        <translation>Fenestra</translation>
     </message>
     <message>
         <source>Minimize</source>
         <comment>macOS Menu bar</comment>
-        <translation type="unfinished"></translation>
+        <translation>Minimizar</translation>
     </message>
     <message>
         <source>Bring All to Front</source>
         <comment>macOS Menu bar</comment>
-        <translation type="unfinished"></translation>
+        <translation>Portar Tuti in Frent</translation>
     </message>
     <message>
         <source>Exit Full Screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Ndar fóra Łevro Schermo</translation>
     </message>
     <message>
         <source>Enter Full Screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Intrar Łevro Schermo</translation>
     </message>
 </context>
 <context>
     <name>NotificationEdgeWidget</name>
     <message numerus="yes">
         <source>Unread message(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Mesaji mìa łezesto</numerusform>
+            <numerusform>Mesaji mìa łezesti</numerusform>
+            <numerusform>Mesaji mìa łezesti</numerusform>
         </translation>
     </message>
 </context>
@@ -1975,70 +1973,70 @@ Press Shift+F1 for more information.</source>
     <name>NotificationGenerator</name>
     <message>
         <source>New message</source>
-        <translation type="unfinished">رسالة جديدة</translation>
+        <translation>Novo mesajo</translation>
     </message>
     <message>
         <source>New conference message</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">رسالة المؤتمر الجديدة</translation>
+        <translation>Novo sciapo mesajo</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">نقل الملفات الواردة</translation>
+        <translation>Intrada traslocà file</translation>
     </message>
     <message>
         <source>%1 - file transfer</source>
         <extracomment>e.g. Bob - file transfer</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 - نقل الملفات</translation>
+        <translation>%1 - file traslocà</translation>
     </message>
     <message>
         <source>Conference invite received</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تم استلام دعوة المؤتمر</translation>
+        <translation>Sciapo invito riservà</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 يدعوك للانضمام إلى مؤتمر.</translation>
+        <translation>%1 ga invitarte nte&apos;l sciapo.</translation>
     </message>
     <message>
         <source>Friend request received</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تم استلام طلب الصداقة</translation>
+        <translation>Invito de&apos;l Amigo</translation>
     </message>
     <message>
         <source>Friend request received from %1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تم تلقي طلب الصداقة من %1</translation>
+        <translation>Invito de&apos;l Amigo riservà da&apos;l %1</translation>
     </message>
     <message>
         <source>Incoming call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">مكالمة واردة</translation>
+        <translation>Drio ciamar</translation>
     </message>
 </context>
 <context>
     <name>PasswordEdit</name>
     <message>
         <source>Caps-lock enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Caps-lock far vèdar</translation>
     </message>
 </context>
 <context>
     <name>PrivacyForm</name>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation>Łaudo</translation>
     </message>
     <message>
         <source>Do you want to permanently delete all chat history?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vuto ti ełimenar permanente tuta ła cronołozìa chat?</translation>
     </message>
     <message>
         <source>Privacy</source>
-        <translation type="unfinished"></translation>
+        <translation>Privacy</translation>
     </message>
 </context>
 <context>
@@ -2046,55 +2044,59 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Your friends will be able to see when you are typing.</source>
         <comment>tooltip for typing notifications setting</comment>
-        <translation type="unfinished"></translation>
+        <translation>I to amighi i sarà boni da vardar co&apos; ch&apos;A te si drio scrìvar.</translation>
     </message>
     <message>
         <source>Send typing notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Mandar scrìvar notifegasion</translation>
     </message>
     <message>
         <source>Chat history keeping is still in development.
 Save format changes are possible, which may result in data loss.</source>
         <comment>toolTip for Keep History setting</comment>
-        <translation type="unfinished"></translation>
+        <translation>Tenjer ła cronołozìa chat el ze drio far sù ncora.
+Save format changes i ze posibiłi, ma i pol da result in data loss.</translation>
     </message>
     <message>
         <source>Keep chat history</source>
-        <translation type="unfinished"></translation>
+        <translation>Tenjer ła cronołozìa chat</translation>
     </message>
     <message>
         <source>NoSpam is part of your Tox ID.
 If you are being spammed with friend requests, you should change your NoSpam.
 People will be unable to add you with your old ID, but you will keep your current friends.</source>
         <comment>toolTip for nospam</comment>
-        <translation type="unfinished"></translation>
+        <translation>NoSpam l&apos;è na banda de&apos;l to Tox ID.
+Se A te si drio spammed co inviti de amighi, te bezonja da canbiar el to NoSpam.
+Parsone łe sarà bone da zontarte co&apos;l to vecio ID, mo te tien i to prezenti amighi.</translation>
     </message>
     <message>
         <source>NoSpam</source>
-        <translation type="unfinished"></translation>
+        <translation>NoSpam</translation>
     </message>
     <message>
         <source>NoSpam is a part of your ID that can be changed at will.
 If you are getting spammed with friend requests, change the NoSpam.</source>
-        <translation type="unfinished"></translation>
+        <translation>NoSpam l&apos;è na banda de&apos;l to Tox ID che&apos;l pol canbiar se A te vol.
+Se A te si drio spammed co inviti de amighi, te bezonja da canbiar el to NoSpam.</translation>
     </message>
     <message>
         <source>Generate random NoSpam</source>
-        <translation type="unfinished"></translation>
+        <translation>Far sù random NoSpam</translation>
     </message>
     <message>
         <source>Privacy</source>
-        <translation type="unfinished"></translation>
+        <translation>Privacy</translation>
     </message>
     <message>
         <source>Conference block list</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">قائمة حظر المؤتمر</translation>
+        <translation>Sciapo bloca list</translation>
     </message>
     <message>
         <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تصفية رسائل المؤتمر حسب المفاتيح العامة لأعضاء المؤتمر. ضع المفاتيح العامة هنا، واحد في كل سطر.</translation>
+        <translation>Pasar i mesaji de&apos;l sciapo menbri ciave pùbleghe. Metar pùbleghe ciave cuà, na par łina.</translation>
     </message>
 </context>
 <context>
@@ -2102,207 +2104,208 @@ If you are getting spammed with friend requests, change the NoSpam.</source>
     <message>
         <source>Failed to derive key from password, the profile won&apos;t use the new password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">فشل في استخلاص المفتاح من كلمة المرور، ولن يستخدم ملف التعريف كلمة المرور الجديدة.</translation>
+        <translation>Fałìo da derivar ciave da&apos;l password, el profiło no sarà mìa doparar el novo password.</translation>
     </message>
     <message>
         <source>Toxing on qTox</source>
-        <translation type="unfinished">استخدم التوكس على كيوتوكس</translation>
+        <translation>Drio tox on qTox</translation>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تعذر تغيير كلمة مرور قاعدة البيانات، ربما تكون تالفة أو تستخدم كلمة المرور القديمة.</translation>
+        <translation>No l&apos;è bon da canbiar database password, &apos;sto pol da scronpar o doparar el vecio password.</translation>
     </message>
 </context>
 <context>
     <name>ProfileForm</name>
     <message>
         <source>Current profile: </source>
-        <translation type="unfinished"></translation>
+        <translation>Prezente profiło: </translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Cavar via</translation>
     </message>
     <message>
         <source>Choose a profile picture</source>
-        <translation type="unfinished"></translation>
+        <translation>Sernar na someja de&apos;l profiło</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fało</translation>
     </message>
     <message>
         <source>Unable to open this file.</source>
-        <translation type="unfinished"></translation>
+        <translation>L&apos;è mìa bon da verzar &apos;sto file.</translation>
     </message>
     <message>
         <source>Unable to read this image.</source>
-        <translation type="unfinished"></translation>
+        <translation>L&apos;è mìa bon da łèzar &apos;sta imàzine.</translation>
     </message>
     <message>
         <source>The supplied image is too large.
 Please use another image.</source>
-        <translation type="unfinished"></translation>
+        <translation>El fornìo mesajo l&apos;è stra gran.
+Par faor doparar altra imàzine.</translation>
     </message>
     <message>
         <source>Rename &quot;%1&quot;</source>
         <comment>renaming a profile</comment>
-        <translation type="unfinished"></translation>
+        <translation>Modifegar &quot;%1&quot; nome</translation>
     </message>
     <message>
         <source>Couldn&apos;t rename the profile to &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>L&apos;è mìa bon da modifegar el nome de&apos;l profiło par &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this profile?</source>
         <comment>deletion confirmation text</comment>
-        <translation type="unfinished"></translation>
+        <translation>Sito ti segur ch&apos;A te vol ełimenar &apos;sto profiło?</translation>
     </message>
     <message>
         <source>Save</source>
         <comment>save qr image</comment>
-        <translation type="unfinished"></translation>
+        <translation>Salvar</translation>
     </message>
     <message>
         <source>Save QrCode (*.png)</source>
         <comment>save dialog filter</comment>
-        <translation type="unfinished"></translation>
+        <translation>Salvar QrCode (*.png)</translation>
     </message>
     <message>
         <source>Nothing to remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Njente par ełimenar</translation>
     </message>
     <message>
         <source>Your profile does not have a password!</source>
-        <translation type="unfinished"></translation>
+        <translation>El to profiło gh&apos;è mìa un password!</translation>
     </message>
     <message>
         <source>Please enter a new password.</source>
-        <translation type="unfinished"></translation>
+        <translation>Par faor scrìvar un novo password.</translation>
     </message>
     <message>
         <source>Files could not be deleted!</source>
         <comment>deletion failed title</comment>
-        <translation type="unfinished"></translation>
+        <translation>Files pol mìa èsar ełimenà!</translation>
     </message>
     <message>
         <source>Change password</source>
         <comment>button text</comment>
-        <translation type="unfinished"></translation>
+        <translation>Canbiar password</translation>
     </message>
     <message>
         <source>Set profile password</source>
         <comment>button text</comment>
-        <translation type="unfinished"></translation>
+        <translation>Set profiło password</translation>
     </message>
     <message>
         <source>Current profile location: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Prezente profiło local: %1</translation>
     </message>
     <message>
         <source>Couldn&apos;t change password</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تعذر تغيير كلمة المرور</translation>
+        <translation>Pol mìa canbiar password</translation>
     </message>
     <message>
         <source>Empty path is unavailable</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">المسار الفارغ غير متوفر</translation>
+        <translation>Zvodo trozo no l&apos;è mìa bon</translation>
     </message>
     <message>
         <source>Failed to rename</source>
-        <translation type="unfinished">فشلة اعادة التسمية</translation>
+        <translation>Fałìo da modifegar el nome</translation>
     </message>
     <message>
         <source>Profile already exists</source>
-        <translation type="unfinished">الملف الشخصي موجود مسبقاً</translation>
+        <translation>Gh&apos;è profiło belche</translation>
     </message>
     <message>
         <source>A profile named &quot;%1&quot; already exists.</source>
-        <translation type="unfinished">الملف الشخصي باسم &quot;%1&quot; موجود فعلا.</translation>
+        <translation>Gh&apos;è un profiło co&apos;l nome &quot;%1&quot;.</translation>
     </message>
     <message>
         <source>Empty name</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">اسم فارغ</translation>
+        <translation>Zvodo nome</translation>
     </message>
     <message>
         <source>Empty name is unavailable</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">الاسم الفارغ غير متوفر</translation>
+        <translation>Zvodo nome l&apos;è mìa bon</translation>
     </message>
     <message>
         <source>Empty path</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">مسار فارغ</translation>
+        <translation>Zvodo trozo</translation>
     </message>
     <message>
         <source>Export profile</source>
         <extracomment>save dialog title</extracomment>
-        <translation type="unfinished">تصدير الملف الشخصي</translation>
+        <translation>Estrazer profiło</translation>
     </message>
     <message>
         <source>Tox save file (*.tox)</source>
         <extracomment>save dialog filter</extracomment>
-        <translation type="unfinished">(*.tox) حفظ ملف الحساب الشخصي للتوكس</translation>
+        <translation>Tox salvar file (*.tox)</translation>
     </message>
     <message>
         <source>The following files could not be deleted:</source>
         <extracomment>deletion failed text part 1</extracomment>
-        <translation type="unfinished">لا يمكن حذف الملفات التالية:</translation>
+        <translation>&apos;Sti files pol mìa èsar ełimenà:</translation>
     </message>
     <message>
         <source>Please manually remove them.</source>
         <extracomment>deletion failed text part 2</extracomment>
-        <translation type="unfinished">الرجاء إزالتها يدويا.</translation>
+        <translation>Par faor ełìmenarli co łe to man.</translation>
     </message>
     <message>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
-        <translation type="unfinished">صور (%1)</translation>
+        <translation>Imàzine (%1)</translation>
     </message>
     <message>
         <source>Failed to save file</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">فشل حفظ الملف</translation>
+        <translation>Fałìo da salvar file</translation>
     </message>
     <message>
         <source>The file you chose could not be saved.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">لا يمكن حفظ الملف الذي اخترته.</translation>
+        <translation>File sernà pol mìa èsar salvà.</translation>
     </message>
     <message>
         <source>Empty path is unavailable.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">المسار الفارغ غير متوفر.</translation>
+        <translation>Zvodo trozo l&apos;è mìa bon.</translation>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تعذر تغيير كلمة مرور قاعدة البيانات، ربما تكون تالفة أو تستخدم كلمة المرور القديمة.</translation>
+        <translation>Pol mìa canbiar database password, &apos;sto pol da scronpar o doparar el vecio password.</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">لا يمكن لأسماء مستخدمي Tox أن تتجاوز %1 حرفًا.</translation>
+        <translation>Tox user names pol mìa ronper %1 caractere.</translation>
     </message>
     <message>
         <source>Delete profile</source>
         <comment>deletion confirmation title</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">حذف الملف الشخصي</translation>
+        <translation>Ełimenar profiło</translation>
     </message>
     <message>
         <source>Remove password</source>
         <comment>deletion confirmation title</comment>
-        <translation type="unfinished">ازالة كلمة المرور</translation>
+        <translation>Ełimenar password</translation>
     </message>
     <message>
         <source>Are you sure you want to remove your password?</source>
         <extracomment>deletion confirmation text</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">هل أنت متأكد أنك تريد إزالة كلمة المرور الخاصة بك؟</translation>
+        <translation>Sito ti segur da ełimenar el to password?</translation>
     </message>
     <message>
         <source>This ID allows other Tox users to add and contact you.
@@ -2310,10 +2313,10 @@ Share it with your friends to begin chatting.
 
 This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يسمح هذا المعرف لمستخدمي Tox الآخرين بإضافتك والاتصال بك.
-شاركها مع أصدقائك لبدء الدردشة.
+        <translation>&apos;Sto dà parmes par altri Tox user zontarte e contatarte.
+Sconpartir &apos;sto co i to amighi par scumisiar a ciacołar.
 
-يتضمن هذا المعرف رمز NoSpam (باللون الأزرق)، والمجموع الاختباري (باللون الرمادي).</translation>
+&apos;Sto ID pol tenjer el NoSpam code (in sełeste), e el checksum (in gris).</translation>
     </message>
 </context>
 <context>
@@ -2321,48 +2324,48 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Import profile</source>
         <comment>import dialog title</comment>
-        <translation type="unfinished"></translation>
+        <translation>Inportar profiło</translation>
     </message>
     <message>
         <source>Tox save file (*.tox)</source>
         <comment>import dialog filter</comment>
-        <translation type="unfinished"></translation>
+        <translation>Tox salvar file (*.tox)</translation>
     </message>
     <message>
         <source>Ignoring non-Tox file</source>
         <comment>popup title</comment>
-        <translation type="unfinished"></translation>
+        <translation>Rifudando nò-Tox file</translation>
     </message>
     <message>
         <source>Warning: You have chosen a file that is not a Tox save file; ignoring.</source>
         <comment>popup text</comment>
-        <translation type="unfinished"></translation>
+        <translation>Darghe n&apos;ocio: Te ghè sernà un file che&apos;l no l&apos;è un Tox save file; rifudando.</translation>
     </message>
     <message>
         <source>Profile already exists</source>
         <comment>import confirm title</comment>
-        <translation type="unfinished"></translation>
+        <translation>Gh&apos;è &apos;sto profiło belche</translation>
     </message>
     <message>
         <source>A profile named &quot;%1&quot; already exists. Do you want to erase it?</source>
         <comment>import confirm text</comment>
-        <translation type="unfinished"></translation>
+        <translation>Gh&apos;è un profiło co&apos;l nome &quot;%1&quot; belche. Vuto ti ełimenarlo?</translation>
     </message>
     <message>
         <source>File doesn&apos;t exist</source>
-        <translation type="unfinished"></translation>
+        <translation>Gh&apos;è mìa &apos;sto file</translation>
     </message>
     <message>
         <source>Profile doesn&apos;t exist</source>
-        <translation type="unfinished"></translation>
+        <translation>Gh&apos;è mìa &apos;sto profiło</translation>
     </message>
     <message>
         <source>Profile imported</source>
-        <translation type="unfinished"></translation>
+        <translation>Profiło inportà</translation>
     </message>
     <message>
         <source>%1.tox was successfully imported</source>
-        <translation type="unfinished"></translation>
+        <translation>%1.tox inportà</translation>
     </message>
 </context>
 <context>
@@ -2370,23 +2373,23 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>LTR</source>
         <comment>DO NOT TRANSLATE. Instead, set this string to &apos;RTL&apos; in right-to-left languages (for example Hebrew and Arabic) to get proper widget layout. This string should only ever be &apos;LTR&apos; or &apos;RTL&apos;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>LTR</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished"></translation>
+        <translation>Pułito</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Scansełar</translation>
     </message>
     <message>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>Sì</translation>
     </message>
     <message>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>Nò</translation>
     </message>
 </context>
 <context>
@@ -2394,24 +2397,24 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Choose an auto-accept directory</source>
         <comment>popup title</comment>
-        <translation type="unfinished">اختر دليل القبول التلقائي</translation>
+        <translation>Sernar un auto-asetar directory</translation>
     </message>
 </context>
 <context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
-        <translation type="unfinished"></translation>
+        <translation>L&apos;è mìa bon da zontar amigo</translation>
     </message>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
         <comment>When trying to add your own Tox ID as friend</comment>
-        <translation type="unfinished"></translation>
+        <translation>Te pol mìa zontarte come amigo!</translation>
     </message>
     <message>
         <source>%1 is not a valid Tox address.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 ليس عنوان Tox صالحًا.</translation>
+        <translation>%1 l&apos;è mìa un justo Tox indiriso.</translation>
     </message>
 </context>
 <context>
@@ -2419,270 +2422,270 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>%1 here! Tox me maybe?</source>
         <comment>Default message in Tox URI friend requests. Write something appropriate!</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 cuà! Tox me fursi?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fałìo</translation>
     </message>
     <message>
         <source>qTox couldn&apos;t open your chat logs, they will be disabled.</source>
-        <translation type="unfinished"></translation>
+        <translation>qTox no pol mìa verzar i to chat logs, i sarà dezabiłità.</translation>
     </message>
     <message>
         <source>None</source>
         <comment>No camera device set</comment>
-        <translation type="unfinished"></translation>
+        <translation>Nesun</translation>
     </message>
     <message>
         <source>Desktop</source>
         <comment>Desktop as a camera input for screen sharing</comment>
-        <translation type="unfinished"></translation>
+        <translation>Dispozidivi</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Predefinìo</translation>
     </message>
     <message>
         <source>Blue</source>
-        <translation type="unfinished"></translation>
+        <translation>Sełeste</translation>
     </message>
     <message>
         <source>Olive</source>
-        <translation type="unfinished"></translation>
+        <translation>Ołiva</translation>
     </message>
     <message>
         <source>Red</source>
-        <translation type="unfinished"></translation>
+        <translation>Roso</translation>
     </message>
     <message>
         <source>Violet</source>
-        <translation type="unfinished"></translation>
+        <translation>Vioła</translation>
     </message>
     <message>
         <source>Incoming call...</source>
-        <translation type="unfinished"></translation>
+        <translation>Drio ciamar...</translation>
     </message>
     <message>
         <source>Dark</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">مظلم</translation>
+        <translation>Scur</translation>
     </message>
     <message>
         <source>Dark blue</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">أزرق غامق</translation>
+        <translation>Sełeste scur</translation>
     </message>
     <message>
         <source>Dark olive</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">الزيتون الداكن</translation>
+        <translation>Ołiva scura</translation>
     </message>
     <message>
         <source>Dark red</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">أحمر غامق</translation>
+        <translation>Roso scur</translation>
     </message>
     <message>
         <source>Dark violet</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">البنفسجي الداكن</translation>
+        <translation>Vioła scura</translation>
     </message>
     <message>
         <source>online</source>
         <comment>contact status</comment>
-        <translation type="unfinished">متصل</translation>
+        <translation>in łinea</translation>
     </message>
     <message>
         <source>away</source>
         <comment>contact status</comment>
-        <translation type="unfinished">في الخارج</translation>
+        <translation>dałons</translation>
     </message>
     <message>
         <source>busy</source>
         <comment>contact status</comment>
-        <translation type="unfinished">مشغول</translation>
+        <translation>ocupà</translation>
     </message>
     <message>
         <source>offline</source>
         <comment>contact status</comment>
-        <translation type="unfinished">غير متصل</translation>
+        <translation>fora de łinea</translation>
     </message>
     <message>
         <source>blocked</source>
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">محظور</translation>
+        <translation>blocà</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">إعادة تنسيق النص...</translation>
+        <translation>Scrivando danovo el testo...</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
-        <translation type="unfinished">فشل ارسال الملف &quot;%1&quot;</translation>
+        <translation>Fałio mandar file &quot;%1&quot;</translation>
     </message>
     <message>
         <source>%1 has joined the conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">لقد انضم %1 إلى المؤتمر</translation>
+        <translation>%1 ga zontà nte&apos;l sciapo</translation>
     </message>
     <message>
         <source>%1 has left the conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">لقد غادر %1 المؤتمر</translation>
+        <translation>%1 ndà fora de&apos;l sciapo</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يُعرف %1 الآن باسم %2</translation>
+        <translation>%1 l&apos;è conjosà des come %2</translation>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
-        <translation type="unfinished">%1 قد وضع عنوان على %2</translation>
+        <translation>%1 ga canbià el tìtol par %2</translation>
     </message>
     <message>
         <source>Cleared</source>
-        <translation type="unfinished">تم التنظيف</translation>
+        <translation>Espurgà</translation>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">انتهت المكالمة مع %1 بشكل غير متوقع. %2</translation>
+        <translation>Ciamada co %1 ga fenìo inpensada. %2</translation>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation type="unfinished">المكالمة مع %1 انتهت. %2</translation>
+        <translation>Ciamada co %1 fenìo. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation type="unfinished">%1 الأن %2</translation>
+        <translation>%1 l&apos;è des %2</translation>
     </message>
     <message>
         <source>Calling %1</source>
-        <translation type="unfinished">يتصل %1</translation>
+        <translation>Drio ciamar %1</translation>
     </message>
     <message>
         <source>%1 calling</source>
-        <translation type="unfinished">%1 يتصل</translation>
+        <translation>%1 l&apos;è drio ciamar</translation>
     </message>
     <message>
         <source>Message failed to send</source>
-        <translation type="unfinished">فشل ارسال الرسالة</translation>
+        <translation>Mesajo fałìo da mandar</translation>
     </message>
     <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">التهيئة</translation>
+        <translation>Drio scumisiar</translation>
     </message>
     <message>
         <source>Transmitting</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">الإرسال</translation>
+        <translation>Drio trasmeter</translation>
     </message>
     <message>
         <source>Finished</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">انتهى</translation>
+        <translation>Fenìo</translation>
     </message>
     <message>
         <source>Broken</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">مكسور</translation>
+        <translation>Spacà</translation>
     </message>
     <message>
         <source>Canceled</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تم الإلغاء</translation>
+        <translation>Scansełà</translation>
     </message>
     <message>
         <source>Paused</source>
-        <translation type="unfinished">موقَف</translation>
+        <translation>Fermada</translation>
     </message>
     <message>
         <source>Remote paused</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">توقف عن بعد</translation>
+        <translation>Remote fermada</translation>
     </message>
     <message>
         <source>File Name</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">اسم الملف</translation>
+        <translation>Nome de&apos;l file</translation>
     </message>
     <message>
         <source>Contact</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">اتصال</translation>
+        <translation>Contato</translation>
     </message>
     <message>
         <source>Progress</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تقدم</translation>
+        <translation>Progreso</translation>
     </message>
     <message>
         <source>Size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">مقاس</translation>
+        <translation>Dimension</translation>
     </message>
     <message>
         <source>Speed</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">سرعة</translation>
+        <translation>Zvelto</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished">الحالة</translation>
+        <translation>Status</translation>
     </message>
     <message>
         <source>Control</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يتحكم</translation>
+        <translation>Controło</translation>
     </message>
     <message>
         <source>You have joined the conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">لقد انضممت إلى المؤتمر</translation>
+        <translation>Te ghè zontà nte&apos;l sciapo</translation>
     </message>
     <message>
         <source>You have left the conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">لقد غادرت المؤتمر</translation>
+        <translation>Te ghè ndà fóra de&apos;l sciapo</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">فشل تحميل سجل الدردشة</translation>
+        <translation>Fałìo da cargar ła cronołozìa chat</translation>
     </message>
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">إصدار قاعدة البيانات (%1) أحدث مما ندعمه حاليًا (%2). الرجاء ترقية qTox.</translation>
+        <translation>Database version (%1) l&apos;è masa nova che ła semo drio suportar (%2). Par faor metarse in dì el qTox.</translation>
     </message>
 </context>
 <context>
     <name>RemoveChatDialog</name>
     <message>
         <source>Remove friend</source>
-        <translation type="unfinished">ازالة صديق</translation>
+        <translation>Cavar via amigo</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation type="unfinished">ازالة تاريخ جمبيع المحادثات مع الصديق اذا وجد</translation>
+        <translation>Cavar via tuta ła cronołozìa chat co&apos;l amigo se A te set</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
-        <translation type="unfinished">ايضا حذف سجل المحادثة</translation>
+        <translation>Cavar via anca ła cronołozìa chat</translation>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
-        <translation type="unfinished">هل انت متأكد من ازالة %1 من جهات الاتصال ؟</translation>
+        <translation>Sito ti segur da cavar via %1 de ła to contati łista?</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished">ازالة</translation>
+        <translation>Cavar via</translation>
     </message>
 </context>
 <context>
@@ -2690,27 +2693,27 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Click and drag to select a region. Press %1 to hide/show qTox window, or %2 to cancel.</source>
         <comment>Help text shown when no region has been selected yet</comment>
-        <translation type="unfinished"></translation>
+        <translation>Click e drag par sernar un local. Press %1 par far scondar/vèdar qTox fenestra, o %2 par scansełar.</translation>
     </message>
     <message>
         <source>Space</source>
         <comment>[Space] key on the keyboard</comment>
-        <translation type="unfinished"></translation>
+        <translation>Spasio</translation>
     </message>
     <message>
         <source>Escape</source>
         <comment>[Escape] key on the keyboard</comment>
-        <translation type="unfinished"></translation>
+        <translation>Scapołar</translation>
     </message>
     <message>
         <source>Press %1 to send a screenshot of the selection, %2 to hide/show qTox window, or %3 to cancel.</source>
         <comment>Help text shown when a region has been selected</comment>
-        <translation type="unfinished"></translation>
+        <translation>Press %1 par mandar na imàzine de&apos;l schermo sernà, %2 par far scondar/vèdar qTox fenestra, o %3 par scansełar.</translation>
     </message>
     <message>
         <source>Enter</source>
         <comment>[Enter] key on the keyboard</comment>
-        <translation type="unfinished"></translation>
+        <translation>Intrar</translation>
     </message>
 </context>
 <context>
@@ -2718,12 +2721,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>The text could not be found.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">لا يمكن العثور على النص.</translation>
+        <translation>No pol mìa catar fóra el testo.</translation>
     </message>
     <message>
         <source>Start</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يبدأ</translation>
+        <translation>Scumisiar</translation>
     </message>
 </context>
 <context>
@@ -2731,174 +2734,174 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Start search:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ابدأ البحث:</translation>
+        <translation>Scumisiar ła serca:</translation>
     </message>
     <message>
         <source>from the end</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">من النهاية</translation>
+        <translation>da&apos;l fenìo</translation>
     </message>
     <message>
         <source>from the beginning</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">منذ البداية</translation>
+        <translation>da&apos;l scumisio</translation>
     </message>
     <message>
         <source>after date</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">بعد التاريخ</translation>
+        <translation>dopo ła data</translation>
     </message>
     <message>
         <source>before date</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">قبل التاريخ</translation>
+        <translation>prima ła data</translation>
     </message>
     <message>
         <source>Case sensitive</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">حساسية الموضوع</translation>
+        <translation>Sensibiłe case</translation>
     </message>
     <message>
         <source>Whole words only</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">كلام كامل فقط</translation>
+        <translation>Intreghe parołe solche</translation>
     </message>
     <message>
         <source>Use regular expressions</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">استخدم التعبيرات العادية</translation>
+        <translation>Doparar espresion regołar</translation>
     </message>
     <message>
         <source>Select Date Dialog</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">حدد مربع حوار التاريخ</translation>
+        <translation>Sernar Data Dialog</translation>
     </message>
     <message>
         <source>Select a date</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">حدد تاريخا</translation>
+        <translation>Sernar na data</translation>
     </message>
 </context>
 <context>
     <name>SetPasswordDialog</name>
     <message>
         <source>Confirm:</source>
-        <translation type="unfinished"></translation>
+        <translation>Łaudar:</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Password:</translation>
     </message>
     <message>
         <source>Password strength: %p%</source>
-        <translation type="unfinished"></translation>
+        <translation>Forsa de&apos;l password: %p%</translation>
     </message>
     <message>
         <source>The password doesn&apos;t match.</source>
-        <translation type="unfinished"></translation>
+        <translation>El password no l&apos;è mìa justo.</translation>
     </message>
     <message>
         <source>Confirm password</source>
-        <translation type="unfinished"></translation>
+        <translation>Łaudar password</translation>
     </message>
     <message>
         <source>Confirm password input</source>
-        <translation type="unfinished"></translation>
+        <translation>Łaudar password intrada</translation>
     </message>
     <message>
         <source>Password input</source>
-        <translation type="unfinished"></translation>
+        <translation>Password intrada</translation>
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
-        <translation type="unfinished"></translation>
+        <translation>Password intrada canpo, minimum 6 carectere</translation>
     </message>
     <message>
         <source>The password is too short.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">كلمة المرور قصيرة جدًا.</translation>
+        <translation>El password l&apos;è stra curto.</translation>
     </message>
     <message>
         <source>Set profile password</source>
-        <translation type="unfinished">تعيين كلمة المرور للحساب الشخصي</translation>
+        <translation>Set profiło password</translation>
     </message>
 </context>
 <context>
     <name>Settings</name>
     <message>
         <source>Circle #%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Sircol #%1</translation>
     </message>
     <message>
         <source>Failed to load personal settings</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">فشل تحميل الإعدادات الشخصية</translation>
+        <translation>Fałìo da cargar parsonal inpostasion</translation>
     </message>
     <message>
         <source>Unable to upgrade settings from version %1 to version %2. Cannot start qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">غير قادر على ترقية الإعدادات من الإصدار %1 إلى الإصدار %2. لا يمكن بدء كيوتوكس.</translation>
+        <translation>L&apos;è mìa bon da metarse in dì da&apos;l version %1 par version %2. Pol mìa zmorsar qTox.</translation>
     </message>
     <message>
         <source>Failed to load global settings</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">فشل تحميل الإعدادات العامة</translation>
+        <translation>Fałìo da cargar inpostasion global</translation>
     </message>
 </context>
 <context>
     <name>ToxURIDialog</name>
     <message>
         <source>Do you want to add %1 as a friend?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vuto ti zontar %1 come amigo?</translation>
     </message>
     <message>
         <source>User ID:</source>
-        <translation type="unfinished"></translation>
+        <translation>User ID:</translation>
     </message>
     <message>
         <source>Friend request message:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mesajo de sołisitasion de&apos;l amigo:</translation>
     </message>
     <message>
         <source>Send</source>
         <comment>Send a friend request</comment>
-        <translation type="unfinished"></translation>
+        <translation>Mandar</translation>
     </message>
     <message>
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
-        <translation type="unfinished"></translation>
+        <translation>Scansełar</translation>
     </message>
     <message>
         <source>Add friend</source>
         <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation type="unfinished">إضافة صديق</translation>
+        <translation>Zontar amigo</translation>
     </message>
 </context>
 <context>
     <name>UserInterfaceForm</name>
     <message>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>Nesun</translation>
     </message>
     <message>
         <source>User Interface</source>
-        <translation type="unfinished"></translation>
+        <translation>User Intramuzo</translation>
     </message>
 </context>
 <context>
     <name>UserInterfaceSettings</name>
     <message>
         <source>Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Chat</translation>
     </message>
     <message>
         <source>Base font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Base fòntego:</translation>
     </message>
     <message>
         <source>Size: </source>
-        <translation type="unfinished"></translation>
+        <translation>Dimension: </translation>
     </message>
     <message>
         <source>New text styling preference may not load on chat history until qTox restarts.
@@ -2913,145 +2916,158 @@ Show formatting characters:
 Hide formatting characters:
     Apply formatting and don&apos;t show characters.
     E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</source>
-        <translation type="unfinished">قد لا يتم إستعمال تصميم النص الجديد حتى يتم إعادة تشغيل qTox.</translation>
+        <translation>Ła nova preferensa de stiłe de&apos;l testo no ła po mìa èsar cargar nte ła cronołozìa de&apos;l chat fin che&apos;l qTox scumisia da novo.
+&apos;Sto influensarà suito i novi mesaji.
+
+
+Testo ciaro: 
+    Doparar mìa nesuna formatasion mesaji. 
+    E.z. &quot;**testo**&quot; mostrararse come &quot;**testo**&quot;, mìa in groso.
+Far vèdar łe caractere de formatasion:
+
+    Far sù ła formatasion e far vèdar łe caractere. 
+    E.z.&quot;**testo**&quot; mostrararse come &quot;**testo**&quot;, in groso.
+Far scondar łe caractere de formatasion:  
+    Far sù ła formatasion e far vèdar mìa łe caractere. 
+    E.z. &quot;**testo**&quot; mostrararse come &quot;testo&quot;, in groso.</translation>
     </message>
     <message>
         <source>Text styling:</source>
-        <translation type="unfinished"></translation>
+        <translation>Testo sorto:</translation>
     </message>
     <message>
         <source>Select text styling preference.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sernar el testo sorto preferensa.</translation>
     </message>
     <message>
         <source>Plaintext</source>
-        <translation type="unfinished"></translation>
+        <translation>Testo ciaro</translation>
     </message>
     <message>
         <source>Show formatting characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Far vèdar caractere formtasion</translation>
     </message>
     <message>
         <source>Hide formatting characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Far scondar caractere formatasion</translation>
     </message>
     <message>
         <source>New message</source>
-        <translation type="unfinished"></translation>
+        <translation>Novo mesajo</translation>
     </message>
     <message>
         <source>Open qTox&apos;s window when you receive a new message and no window is open yet.</source>
         <comment>tooltip for Show window setting</comment>
-        <translation type="unfinished"></translation>
+        <translation>Verzar ła fenestra de&apos;l qTox co ch&apos;A te ga un novo mesajo e ła fenestra no l&apos;è verzà ncora.</translation>
     </message>
     <message>
         <source>Open window</source>
-        <translation type="unfinished"></translation>
+        <translation>Verzar fenestra</translation>
     </message>
     <message>
         <source>Contact list</source>
-        <translation type="unfinished"></translation>
+        <translation>Contato łista</translation>
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation type="unfinished">ضع المحادثات الجماعية اعلى قائمه الاصدقاء</translation>
+        <translation>Postar i sciapi nte&apos;l alto de ła lista de amighi</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode (small avatars, tabular view).</source>
         <comment>toolTip for compact layout setting</comment>
-        <translation type="unfinished">سيتم عرض جهات الاتصال بوضع مضغوط.</translation>
+        <translation>I to contati łista ła sarà far vedar in mùo compacto (picenin avatar, vizion tabular).</translation>
     </message>
     <message>
         <source>Compact contact list</source>
-        <translation type="unfinished"></translation>
+        <translation>Compacto contato łista</translation>
     </message>
     <message>
         <source>Multiple windows mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Mùo de na mucia de fenestre</translation>
     </message>
     <message>
         <source>Open each chat in an individual window</source>
-        <translation type="unfinished"></translation>
+        <translation>Verzar onji chat in na singoła fenestra</translation>
     </message>
     <message>
         <source>Emoticons</source>
-        <translation type="unfinished"></translation>
+        <translation>Emoticoni</translation>
     </message>
     <message>
         <source>Use emoticons</source>
-        <translation type="unfinished"></translation>
+        <translation>Doparar emoticoni</translation>
     </message>
     <message>
         <source>Emoticon size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimension de&apos;l emoticon:</translation>
     </message>
     <message>
         <source> px</source>
-        <translation type="unfinished"></translation>
+        <translation> px</translation>
     </message>
     <message>
         <source>Theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Theme</translation>
     </message>
     <message>
         <source>Style:</source>
-        <translation type="unfinished"></translation>
+        <translation>Stiło:</translation>
     </message>
     <message>
         <source>Theme color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Theme cołor:</translation>
     </message>
     <message>
         <source>Timestamp format:</source>
-        <translation type="unfinished"></translation>
+        <translation>Timestamp format:</translation>
     </message>
     <message>
         <source>Date format:</source>
-        <translation type="unfinished"></translation>
+        <translation>Data format:</translation>
     </message>
     <message>
         <source>Use identicons instead of empty avatars</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">استخدم الأيقونات بدلاً من الصور الرمزية الفارغة</translation>
+        <translation>Doparar identicons ipese de i łevri avatars</translation>
     </message>
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
         <comment>tooltip for Notify setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">إظهار إشعار عندما تتلقى رسالة جديدة أو مكالمة أو طلب صداقة ولم يتم تحديد النافذة.</translation>
+        <translation>Far vèdar na notifegasion co ch&apos;A te ga un novo mesajo, ciamada, o na sołisitasion de&apos;l amigo e ła fenestra no l&apos;è cuà.</translation>
     </message>
     <message>
         <source>Notify</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يخطر</translation>
+        <translation>Notifegar</translation>
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يتم إعلام المؤتمرات فقط عند ذكرها</translation>
+        <translation>Sciapi notifega solche co&apos; che i ze mentioned</translation>
     </message>
     <message>
         <source>Play sound</source>
-        <translation type="unfinished">تشغيل صوت</translation>
+        <translation>Sonar son</translation>
     </message>
     <message>
         <source>Play sound while Busy</source>
-        <translation type="unfinished">تشغيل الصوت في حين الحالة مشغول</translation>
+        <translation>Sonar son intanto Ocupà</translation>
     </message>
     <message>
         <source>Notify via desktop notifications</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">الإخطار عبر إشعارات سطح المكتب</translation>
+        <translation>Notifega via dispozidivi notifegasion</translation>
     </message>
     <message>
         <source>Hide message sender and contents</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">إخفاء مرسل الرسالة ومحتوياتها</translation>
+        <translation>Far scondar mesajo sender e contenjudi</translation>
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">استخدم الألقاب الملونة في المؤتمرات</translation>
+        <translation>Doparar nicknames cołori nte i sciapi</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
@@ -3155,8 +3171,7 @@ scroll bar to disappear.</source>
     <message>
         <source>Maximum chat log view size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">الحد الأقصى لحجم عرض سجل
-الدردشة</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Number of messages to load from the chat history when scrolling. A too low
