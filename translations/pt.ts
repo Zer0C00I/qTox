@@ -617,7 +617,7 @@ o que pode levar a problemas com as vídeo-chamadas.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Erro</translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
@@ -849,7 +849,7 @@ de forma que possa guardar o ficheiro no Windows.</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation type="unfinished">Convites a grupos</translation>
+        <translation>Convites a grupos</translation>
     </message>
 </context>
 <context>
@@ -1500,7 +1500,7 @@ Partilhe-o com os seus amigos para começar a conversar.</translation>
     </message>
     <message>
         <source>Set your status message that will be shown to others</source>
-        <translation type="unfinished">Defina a sua mensagem de estado que será mostrada aos outros</translation>
+        <translation>Defina a sua mensagem de estado que será exibia aos outros</translation>
     </message>
 </context>
 <context>
@@ -1512,7 +1512,7 @@ Partilhe-o com os seus amigos para começar a conversar.</translation>
     <message>
         <source>Load history from:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Carregar histórico de:</translation>
+        <translation>Carregar histórico de:</translation>
     </message>
 </context>
 <context>
@@ -1669,7 +1669,7 @@ Pressione Shift+F1 para obter mais informações.</translation>
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
-        <translation type="unfinished">Campo de entrada da palavra-passe, mínimo de 6 caracteres</translation>
+        <translation>Campo de entrada da palavra-passe, mínimo 6 caracteres</translation>
     </message>
 </context>
 <context>
@@ -1790,12 +1790,12 @@ Pressione Shift+F1 para obter mais informações.</translation>
     <message>
         <source>Executable file</source>
         <comment>popup title</comment>
-        <translation type="unfinished">Ficheiro executável</translation>
+        <translation>Ficheiro executável</translation>
     </message>
     <message>
         <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished">Pediu ao qTox para abrir um ficheiro executável. Os executáveis podem potencialmente danificar o seu computador. Tem a certeza que quer abrir este ficheiro?</translation>
+        <translation>Pediu ao qTox para abrir um ficheiro executável. Executáveis podem potencialmente danificar o seu computador. Tem certeza que deseja abrir este ficheiro?</translation>
     </message>
 </context>
 <context>
@@ -2402,7 +2402,7 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
-        <translation type="unfinished">Falha ao enviar o ficheiro &quot;%1&quot;</translation>
+        <translation>Falha ao enviar o ficheiro &quot;%1&quot;</translation>
     </message>
     <message>
         <source>%1 has joined the conference</source>
@@ -2414,150 +2414,150 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
     </message>
     <message>
         <source>%1 is now known as %2</source>
-        <translation type="unfinished">%1 é conhecido agora como %2</translation>
+        <translation>%1 agora chama-se %2</translation>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
-        <translation type="unfinished">%1 definiu o título como %2</translation>
+        <translation>%1 definiu o título como %2</translation>
     </message>
     <message>
         <source>Cleared</source>
-        <translation type="unfinished">Removidas</translation>
+        <translation>Removidas</translation>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
-        <translation type="unfinished">A chamada com %1 terminou inesperadamente. %2</translation>
+        <translation>A chamada com %1 terminou inesperadamente. %2</translation>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation type="unfinished">Chamada para %1 terminada. %2</translation>
+        <translation>Chamada para %1 terminada. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation type="unfinished">%1 agora é %2</translation>
+        <translation>%1 agora é %2</translation>
     </message>
     <message>
         <source>Calling %1</source>
-        <translation type="unfinished">A chamar %1</translation>
+        <translation>A chamar %1</translation>
     </message>
     <message>
         <source>%1 calling</source>
-        <translation type="unfinished">%1 a chamar</translation>
+        <translation>%1 a chamar</translation>
     </message>
     <message>
         <source>Message failed to send</source>
-        <translation type="unfinished">O envio da mensagem falhou</translation>
+        <translation>Falha no envio da mensagem</translation>
     </message>
     <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Inicializando</translation>
+        <translation>A inicializar</translation>
     </message>
     <message>
         <source>Transmitting</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Transmitindo</translation>
+        <translation>Transmitindo</translation>
     </message>
     <message>
         <source>Finished</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Finalizado</translation>
+        <translation>Terminado</translation>
     </message>
     <message>
         <source>Broken</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Quebrado</translation>
+        <translation>Rompido</translation>
     </message>
     <message>
         <source>Canceled</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Cancelado</translation>
+        <translation>Cancelado</translation>
     </message>
     <message>
         <source>Paused</source>
-        <translation type="unfinished">Pausado</translation>
+        <translation>Pausado</translation>
     </message>
     <message>
         <source>Remote paused</source>
-        <translation type="unfinished">Pausa no remoto</translation>
+        <translation>Pausa no remoto</translation>
     </message>
     <message>
         <source>File Name</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nome do arquivo</translation>
+        <translation>Nome do Ficheiro</translation>
     </message>
     <message>
         <source>Contact</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Contato</translation>
+        <translation>Contacto</translation>
     </message>
     <message>
         <source>Progress</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Progresso</translation>
+        <translation>Progresso</translation>
     </message>
     <message>
         <source>Size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tamanho</translation>
+        <translation>Tamanho</translation>
     </message>
     <message>
         <source>Speed</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Velocidade</translation>
+        <translation>Velocidade</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished">Estado</translation>
+        <translation>Estado</translation>
     </message>
     <message>
         <source>Control</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Controlar</translation>
+        <translation>Controlo</translation>
     </message>
     <message>
         <source>You have joined the conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Você entrou na conferência</translation>
+        <translation>Entrou na conferência</translation>
     </message>
     <message>
         <source>You have left the conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Você saiu da conferência</translation>
+        <translation>Saiu da conferência</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Falha ao carregar o histórico de bate-papo</translation>
+        <translation>Falha ao carregar o histórico de bate-papos</translation>
     </message>
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">A versão do banco de dados (%1) é mais recente do que a suportada atualmente (%2). Atualize o qTox.</translation>
+        <translation>A versão da base de dados (%1) é mais recente do que a que suportamos atualmente (%2). Favor atualizar o qTox.</translation>
     </message>
 </context>
 <context>
     <name>RemoveChatDialog</name>
     <message>
         <source>Remove friend</source>
-        <translation type="unfinished">Remover contacto</translation>
+        <translation>Remover amigo</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation type="unfinished">Se definido, remove todo o histórico de conversas com o contacto</translation>
+        <translation>Se marcado, remove todo o histórico de bate-papo com o amigo</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
-        <translation type="unfinished">Remover também o histórico de conversas</translation>
+        <translation>Também remover histórico de bate-papo</translation>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
-        <translation type="unfinished">Tem a certeza que quer remover %1 da sua lista de contactos?</translation>
+        <translation>Tem certeza que deseja remover %1 da sua lista de contactos?</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished">Remover</translation>
+        <translation>Remover</translation>
     </message>
 </context>
 <context>
@@ -2636,11 +2636,11 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
     <message>
         <source>Select Date Dialog</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Caixa de diálogo Selecionar data</translation>
+        <translation>Caixa de diálogo Selecionar data</translation>
     </message>
     <message>
         <source>Select a date</source>
-        <translation type="unfinished">Selecione uma data</translation>
+        <translation>Selecione uma data</translation>
     </message>
 </context>
 <context>
@@ -2683,7 +2683,7 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
     </message>
     <message>
         <source>Set profile password</source>
-        <translation type="unfinished">Definir a palavra-passe do perfil</translation>
+        <translation>Definir palavra-passe do perfil</translation>
     </message>
 </context>
 <context>
@@ -2695,17 +2695,17 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
     <message>
         <source>Failed to load personal settings</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Falha ao carregar configurações pessoais</translation>
+        <translation>Falha no carregamento de configurações pessoais</translation>
     </message>
     <message>
         <source>Unable to upgrade settings from version %1 to version %2. Cannot start qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Não foi possível atualizar as configurações da versão %1 para a versão %2. Não é possível iniciar o qTox.</translation>
+        <translation>Não foi possível atualizar as configurações da versão %1 para a versão %2. Não é possível iniciar o qTox.</translation>
     </message>
     <message>
         <source>Failed to load global settings</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Falha ao carregar configurações globais</translation>
+        <translation>Falha ao carregar configurações globais</translation>
     </message>
 </context>
 <context>
@@ -2735,7 +2735,7 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
     <message>
         <source>Add friend</source>
         <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation type="unfinished">Adicionar contacto</translation>
+        <translation>Adicionar contacto</translation>
     </message>
 </context>
 <context>
@@ -3218,7 +3218,7 @@ papo:</translation>
     <message>
         <source>Debug</source>
         <comment>title of the window</comment>
-        <translation type="unfinished">Depurar</translation>
+        <translation>Depurar</translation>
     </message>
 </context>
 </TS>
