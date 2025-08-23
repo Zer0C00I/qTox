@@ -101,11 +101,11 @@ wat tot problemen kan leiden met videogesprekken.</translation>
     </message>
     <message>
         <source>Use slider to set the volume of your speakers.</source>
-        <translation type="unfinished"></translation>
+        <translation>Beweeg de schuifregelaar om het volume aan te passen.</translation>
     </message>
     <message>
         <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to reduce bandwidth usage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Verzonden geluidskwaliteit. Verlaag deze instelling als uw Internet bandbreedte niet toereikend is of u louter uw datagebruik wil verlagen.</translation>
     </message>
     <message>
         <source>Set resolution of your camera.
