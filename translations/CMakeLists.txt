@@ -31,6 +31,7 @@ qt6_add_translation(
   it.ts
   ja.ts
   jbo.ts
+  kmr.ts
   kn.ts
   ko.ts
   li.ts
@@ -59,6 +60,7 @@ qt6_add_translation(
   ug.ts
   uk.ts
   ur.ts
+  vec.ts
   vi.ts
   zh_CN.ts
   zh_TW.ts)

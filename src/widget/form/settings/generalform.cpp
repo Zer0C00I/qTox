@@ -48,6 +48,7 @@ const QStringList locales = {
     "it",      // Italian
     "ja",      // Japanese
     "jbo",     // Lojban
+    "kmr",     // Kurdish (Northern)
     "kn",      // Kannada
     "ko",      // Korean
     "li",      // Limburgish
@@ -76,6 +77,7 @@ const QStringList locales = {
     "ug",      // Uyghur
     "uk",      // Ukrainian
     "ur",      // Urdu
+    "vec",     // Venetian
     "vi",      // Vietnamese
     "zh_CN",   // Simplified Chinese
     "zh_TW",   // Traditional Chinese
