@@ -13,7 +13,7 @@
     </message>
     <message>
         <source>Disabled</source>
-        <translation>Отсутствует</translation>
+        <translation>Отключено</translation>
     </message>
     <message>
         <source>Select region</source>
@@ -49,7 +49,7 @@
     </message>
     <message>
         <source>Video device</source>
-        <translation>Видео устройство</translation>
+        <translation>Видеоустройство</translation>
     </message>
     <message>
         <source>Set resolution of your camera.
