@@ -905,7 +905,7 @@ bool Profile::rename(QString newName)
     QFile::rename(path + ".tox", newPath + ".tox");
     QFile::rename(path + ".ini", newPath + ".ini");
     if (database) {
-        database->rename(newName);
+        database->rename(newPath + ".db");
     }
 
     const bool resetAutorun = settings.getAutorun();
