@@ -1,55 +1,30 @@
-<a name="v1.18.4-rc.4"></a>
+<a name="v1.18.4"></a>
 
-## v1.18.4-rc.4 (2026-02-23)
-
-### Release notes
-
-Another RC with multiple graphical glitch fixes and updated flatpak.
-
-#### Bug Fixes
-
-- **Chat:**
-  - Prevent chat messages from disappearing when switching chats. ([29c73f6b](https://github.com/TokTok/qTox/commit/29c73f6b0a21c89aa0f17748debb12179147bcd4))
-  - Prevent file transfer widget from briefly reappearing when scrolling. ([61b7b4bb](https://github.com/TokTok/qTox/commit/61b7b4bbdd3e643f0a709c3c5b818505d2d10e86))
-  - Keep file transfer widget bounds within chat history. ([7755f980](https://github.com/TokTok/qTox/commit/7755f9803172e01803cb5f558afd59ca06d10038))
-  - Restore chat history visibility after hiding window. ([79f7d14b](https://github.com/TokTok/qTox/commit/79f7d14b53e9f07f2461a45e690ca33a55afe8cd), closes [#572](https://github.com/TokTok/qTox/issues/572))
-
-<a name="v1.18.4-rc.3"></a>
-
-## v1.18.4-rc.3 (2026-02-22)
+## v1.18.4 (2026-02-24)
 
 ### Release notes
 
-Landed another fix for an edge case where multiple qtox instances could be started, and have side effects.
+We are pleased to present the 1.18.4 release of qTox, with a number of significant fixes.
+The friend list now indicates on-going calls.
+Translation has also significantly improved.
 
-#### Bug Fixes
-
-- Prevent multiple qTox instances when opening profile files. ([4ff5f184](https://github.com/TokTok/qTox/commit/4ff5f18420168706087e3b2489401bf9e156f3a3), closes [#661](https://github.com/TokTok/qTox/issues/661))
-- **Settings:** Auto-save settings on change. ([e15c9a54](https://github.com/TokTok/qTox/commit/e15c9a54f8e2c1d59a4b144813bf06b6f0d7a022), closes [#604](https://github.com/TokTok/qTox/issues/604))
-
-<a name="v1.18.4-rc.2"></a>
-
-## v1.18.4-rc.2 (2026-02-21)
-
-### Release notes
-
-Quick second release candidate. There should be no changes for the user in comparison to the first, but we had issues during the release of rc1 and this release candidate is here to test the resolution.
-
-<a name="v1.18.4-rc.1"></a>
-
-## v1.18.4-rc.1 (2026-02-21)
-
-### Release notes
-
-We are pleased to present the first release candidate of qTox 1.18.4 with a number of significant fixes and quality of life improvements.
 Communicate privately, love, and take care of each other.
 ❤️‍🩹
 
 #### Bug Fixes
 
+- db renaming ([d0940acd](https://github.com/TokTok/qTox/commit/d0940acda593830093f5f24f4af0219c08fb4bb6))
+- Undo performance regression change on chat visibility check. ([0ea45212](https://github.com/TokTok/qTox/commit/0ea45212d98ec937041bb479de203104d43c9968))
+- Prevent multiple qTox instances when opening profile files. ([4ff5f184](https://github.com/TokTok/qTox/commit/4ff5f18420168706087e3b2489401bf9e156f3a3), closes [#661](https://github.com/TokTok/qTox/issues/661))
 - `QImage::mirrored()` is deprecated in Qt 6.9 ([f06e66e5](https://github.com/TokTok/qTox/commit/f06e66e556843057871339142935b7d34126bc6f))
 - Call the correct `QString::args()` overload in Qt 6.9 ([5e09f325](https://github.com/TokTok/qTox/commit/5e09f325d31e649831e7a0b25676e4c5d0097d6d))
 - Don't crash on chat log layout errors. ([c2d63dae](https://github.com/TokTok/qTox/commit/c2d63dae1346efd558ddaa8aef9f94b7a130bf2e))
+- **Chat:**
+  - Prevent chat messages from disappearing when switching chats. ([29c73f6b](https://github.com/TokTok/qTox/commit/29c73f6b0a21c89aa0f17748debb12179147bcd4))
+  - Prevent file transfer widget from briefly reappearing when scrolling. ([61b7b4bb](https://github.com/TokTok/qTox/commit/61b7b4bbdd3e643f0a709c3c5b818505d2d10e86))
+  - Keep file transfer widget bounds within chat history. ([7755f980](https://github.com/TokTok/qTox/commit/7755f9803172e01803cb5f558afd59ca06d10038))
+  - Restore chat history visibility after hiding window. ([79f7d14b](https://github.com/TokTok/qTox/commit/79f7d14b53e9f07f2461a45e690ca33a55afe8cd), closes [#572](https://github.com/TokTok/qTox/issues/572))
+- **Settings:** Auto-save settings on change. ([e15c9a54](https://github.com/TokTok/qTox/commit/e15c9a54f8e2c1d59a4b144813bf06b6f0d7a022), closes [#604](https://github.com/TokTok/qTox/issues/604))
 - **Startup:** Allow Tox Address in the friend address settings. ([cab4cee0](https://github.com/TokTok/qTox/commit/cab4cee05d82a75379fc3764ef5a4656fde13307), closes [#562](https://github.com/TokTok/qTox/issues/562), closes [#567](https://github.com/TokTok/qTox/issues/567))
 - **apparmor:** Import nvidia abstraction ([ceff71f0](https://github.com/TokTok/qTox/commit/ceff71f0e37ca82233d23802a6cd4f55ff2c0936))
 - **chatform:**
