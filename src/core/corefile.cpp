@@ -606,6 +606,10 @@ void CoreFile::onConnectionStatusChanged(uint32_t friendId, Status::Status state
     
     // Remove files after iteration
     for (const uint64_t key : keysToRemove) {
-        removeFile(friendId, fileMap[key].fileNum);
+        // Check if key still exists in fileMap
+        auto it = fileMap.find(key);
+        if (it != fileMap.end()) {
+            removeFile(friendId, it->fileNum);
+        }
     }
 }
