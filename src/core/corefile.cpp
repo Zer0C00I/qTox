@@ -476,7 +476,8 @@ void CoreFile::onFileDataCallback(Tox* tox, uint32_t friendId, uint32_t fileId, 
     if (length == 0u) {
         file->status = ToxFile::FINISHED;
         if (file->fileKind != TOX_FILE_KIND_AVATAR) {
-            emit coreFile->fileTransferFinished(*file);
+            ToxFile fileCopy = *file;  // Make a copy before removal
+            emit coreFile->fileTransferFinished(fileCopy);
         }
         coreFile->removeFile(friendId, fileId);
         return;
@@ -495,7 +496,8 @@ void CoreFile::onFileDataCallback(Tox* tox, uint32_t friendId, uint32_t fileId, 
         if (nread <= 0) {
             qWarning("onFileDataCallback: Failed to read from file");
             file->status = ToxFile::CANCELED;
-            emit coreFile->fileTransferCancelled(*file);
+            ToxFile fileCopy = *file;  // Make a copy before removal
+            emit coreFile->fileTransferCancelled(fileCopy);
             Tox_Err_File_Send_Chunk err;
             tox_file_send_chunk(tox, friendId, fileId, pos, nullptr, 0, &err);
             PARSE_ERR(err);
@@ -539,7 +541,8 @@ void CoreFile::onFileRecvChunkCallback(Tox* tox, uint32_t friendId, uint32_t fil
         qWarning("onFileRecvChunkCallback: Received a chunk out-of-order, aborting transfer");
         if (file->fileKind != TOX_FILE_KIND_AVATAR) {
             file->status = ToxFile::CANCELED;
-            emit coreFile->fileTransferCancelled(*file);
+            ToxFile fileCopy = *file;  // Make a copy before removal
+            emit coreFile->fileTransferCancelled(fileCopy);
         }
         Tox_Err_File_Control err;
         tox_file_control(tox, friendId, fileId, TOX_FILE_CONTROL_CANCEL, &err);
@@ -558,7 +561,8 @@ void CoreFile::onFileRecvChunkCallback(Tox* tox, uint32_t friendId, uint32_t fil
                 emit core->friendAvatarChanged(friendId, file->avatarData);
             }
         } else {
-            emit coreFile->fileTransferFinished(*file);
+            ToxFile fileCopy = *file;  // Make a copy before removal
+            emit coreFile->fileTransferFinished(fileCopy);
         }
         coreFile->removeFile(friendId, fileId);
         return;
