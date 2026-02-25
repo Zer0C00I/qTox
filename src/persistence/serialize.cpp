@@ -34,11 +34,17 @@ int dataToVInt(const QByteArray& data)
             return 0;
         }
         num3 = data[i++];
-        num |= static_cast<int>(num3 & 0x7f) << num2;
-        num2 += 7;
-        if (num2 > intWidth) {
+        // Check for overflow before shifting
+        if (num2 >= 32) {
             return 0;
         }
+        int shifted = static_cast<int>(num3 & 0x7f) << num2;
+        // Check if shift overflowed
+        if (shifted >> num2 != static_cast<int>(num3 & 0x7f)) {
+            return 0;
+        }
+        num |= shifted;
+        num2 += 7;
     } while ((num3 & 0x80) != 0);
     return num;
 }
