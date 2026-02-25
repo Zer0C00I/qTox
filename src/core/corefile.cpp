@@ -554,7 +554,7 @@ void CoreFile::onFileRecvChunkCallback(Tox* tox, uint32_t friendId, uint32_t fil
             pic.loadFromData(file->avatarData);
             if (!pic.isNull()) {
                 qDebug() << "Got" << file->avatarData.size() << "bytes of avatar data from" << friendId;
-                emit core->friendAvatarChanged(core->getFriendPublicKey(friendId), file->avatarData);
+                emit core->friendAvatarChanged(friendId, file->avatarData);
             }
         } else {
             emit coreFile->fileTransferFinished(*file);
