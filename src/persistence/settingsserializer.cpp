@@ -75,13 +75,37 @@ QDataStream& readStream(QDataStream& dataStream, QByteArray& data)
     char num3;
     int num = 0;
     int num2 = 0;
+    constexpr int MAX_VINT_BYTES = 5; // Maximum bytes for a 32-bit varint
+    int bytesRead = 0;
     do {
+        if (bytesRead >= MAX_VINT_BYTES) {
+            // Malformed data, prevent infinite loop and overflow
+            dataStream.setStatus(QDataStream::ReadCorruptData);
+            return dataStream;
+        }
         dataStream.readRawData(&num3, 1);
+        if (dataStream.status() != QDataStream::Ok) {
+            return dataStream;
+        }
+        // Check for overflow before shifting
+        if (num2 >= 32 || ((num3 & 0x7f) << num2) >> num2 != (num3 & 0x7f)) {
+            dataStream.setStatus(QDataStream::ReadCorruptData);
+            return dataStream;
+        }
         num |= (num3 & 0x7f) << num2;
         num2 += 7;
+        ++bytesRead;
     } while ((num3 & 0x80) != 0);
+    // Limit maximum allocation size to prevent memory exhaustion
+    constexpr qint64 MAX_ALLOC_SIZE = 100 * 1024 * 1024; // 100 MB
+    if (num < 0 || num > MAX_ALLOC_SIZE) {
+        dataStream.setStatus(QDataStream::ReadCorruptData);
+        return dataStream;
+    }
     data.resize(num);
-    dataStream.readRawData(data.data(), num);
+    if (dataStream.readRawData(data.data(), num) != num) {
+        dataStream.setStatus(QDataStream::ReadPastEnd);
+    }
     return dataStream;
 }
 } // namespace

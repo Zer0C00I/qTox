@@ -576,6 +576,7 @@ void CoreFile::onFileRecvChunkCallback(Tox* tox, uint32_t friendId, uint32_t fil
 
 void CoreFile::onConnectionStatusChanged(uint32_t friendId, Status::Status state)
 {
+    const QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
     const bool isOffline = state == Status::Status::Offline;
     // TODO: Actually resume broken file transfers
     // We need to:
@@ -585,11 +586,19 @@ void CoreFile::onConnectionStatusChanged(uint32_t friendId, Status::Status state
     // - Update the users of our signals to check the 32byte tox file ID, not the uint32_t file_num
     // (fileId)
     const ToxFile::FileStatus status = !isOffline ? ToxFile::TRANSMITTING : ToxFile::BROKEN;
-    for (const uint64_t key : fileMap.keys()) {
-        if (key >> 32 != friendId)
+    
+    // Collect keys first to avoid iterator invalidation
+    QList<uint64_t> keysToRemove;
+    for (auto it = fileMap.begin(); it != fileMap.end(); ++it) {
+        if ((it.key() >> 32) != friendId)
             continue;
-        fileMap[key].status = status;
-        emit fileTransferBrokenUnbroken(fileMap[key], isOffline);
+        it->status = status;
+        emit fileTransferBrokenUnbroken(*it, isOffline);
+        keysToRemove.append(it.key());
+    }
+    
+    // Remove files after iteration
+    for (const uint64_t key : keysToRemove) {
         removeFile(friendId, fileMap[key].fileNum);
     }
 }
