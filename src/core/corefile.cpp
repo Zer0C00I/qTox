@@ -327,8 +327,13 @@ void CoreFile::onFileReceiveCallback(Tox* tox, uint32_t friendId, uint32_t fileI
     Core* core = static_cast<Core*>(vCore);
     CoreFile* coreFile = core->getCoreFile();
     auto filename = ToxString(fname, fnameLen);
-    const ToxPk friendPk = core->getFriendPublicKey(friendId);
-
+    // Get friend's public key without causing deadlock
+    // We need to be careful because coreLoopLock may already be held
+    // Since we're in a callback from tox_iterate, which holds coreLoopLock,
+    // we can't call core->getFriendPublicKey which also tries to acquire it
+    // Instead, we'll emit the signal without the friendPk for now
+    // Or we can store the friendId and let the slot get the public key
+    
     if (kind == TOX_FILE_KIND_AVATAR) {
         if (filesize == 0u) {
             qDebug("Received empty avatar request %u:%u", friendId, fileId);
@@ -336,7 +341,8 @@ void CoreFile::onFileReceiveCallback(Tox* tox, uint32_t friendId, uint32_t fileI
             Tox_Err_File_Control err;
             tox_file_control(tox, friendId, fileId, TOX_FILE_CONTROL_CANCEL, &err);
             PARSE_ERR(err);
-            emit core->friendAvatarRemoved(core->getFriendPublicKey(friendId));
+            // Emit with friendId, let the slot get the public key
+            emit core->friendAvatarRemoved(friendId);
             return;
         }
         if (!ToxClientStandards::IsValidAvatarSize(filesize)) {
@@ -365,7 +371,8 @@ void CoreFile::onFileReceiveCallback(Tox* tox, uint32_t friendId, uint32_t fileI
     if (cleanFileName != filename.getQString()) {
         qDebug() << "Cleaned invalid incoming filename";
         filename = ToxString(cleanFileName);
-        emit coreFile->fileNameChanged(friendPk);
+        // Emit with friendId instead of friendPk to avoid deadlock
+        emit coreFile->fileNameChanged(friendId);
     }
     qDebug("Received file request %u:%u kind %u", friendId, fileId, kind);
 
