@@ -237,7 +237,7 @@ std::unique_ptr<ToxEncrypt> ToxEncrypt::makeToxEncrypt(const QString& password)
                             static_cast<size_t>(pass.length()), &error);
 
     if (error != TOX_ERR_KEY_DERIVATION_OK) {
-        tox_pass_key_free(passKey);
+        // passKey is nullptr on error, no need to free
         qCritical() << getKeyDerivationError(error);
         return std::unique_ptr<ToxEncrypt>{};
     }
@@ -277,7 +277,7 @@ std::unique_ptr<ToxEncrypt> ToxEncrypt::makeToxEncrypt(const QString& password, 
                                       static_cast<size_t>(pass.length()), salt, &keyError);
 
     if (keyError != TOX_ERR_KEY_DERIVATION_OK) {
-        tox_pass_key_free(passKey);
+        // passKey is nullptr on error, no need to free
         qWarning() << getKeyDerivationError(keyError);
         return std::unique_ptr<ToxEncrypt>{};
     }

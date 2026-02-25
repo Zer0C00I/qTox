@@ -29,7 +29,7 @@ Orientation getOrientation(QByteArray imageData)
         return Orientation::TopLeft;
     }
 
-    if (exifEntry->size < 2) {
+    if (exifEntry->size < 2 || exifEntry->data == nullptr) {
         exif_data_free(exifData);
         return Orientation::TopLeft;
     }
