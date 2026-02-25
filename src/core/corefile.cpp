@@ -438,8 +438,9 @@ void CoreFile::onFileControlCallback(Tox* tox, uint32_t friendId, uint32_t fileI
     if (control == TOX_FILE_CONTROL_CANCEL) {
         if (file->fileKind != TOX_FILE_KIND_AVATAR)
             qDebug() << "File transfer" << friendId << ":" << fileId << "cancelled by friend";
+        ToxFile fileCopy = *file;  // Make a copy before removal
         file->status = ToxFile::CANCELED;
-        emit coreFile->fileTransferCancelled(*file);
+        emit coreFile->fileTransferCancelled(fileCopy);
         coreFile->removeFile(friendId, fileId);
     } else if (control == TOX_FILE_CONTROL_PAUSE) {
         qDebug() << "onFileControlCallback: Received pause for file" << friendId << ":" << fileId;
@@ -609,7 +610,8 @@ void CoreFile::onConnectionStatusChanged(uint32_t friendId, Status::Status state
         // Check if key still exists in fileMap
         auto it = fileMap.find(key);
         if (it != fileMap.end()) {
-            removeFile(friendId, it->fileNum);
+            uint32_t fileNum = it->fileNum;  // Store before potential invalidation
+            removeFile(friendId, fileNum);
         }
     }
 }

@@ -650,20 +650,30 @@ void VideoFrame::deleteFrameBuffer()
         return;
     }
 
+    // Use a set to track which buffers have been freed to avoid double-free
+    std::unordered_set<void*> freedBuffers;
+    
     for (const auto& frameIterator : frameBuffer) {
         AVFrame* frame = frameIterator.second;
+        if (!frame) {
+            continue;
+        }
 
         // Treat source frame and derived frames separately
         if (sourceFrameKey == frameIterator.first) {
-            if (freeSourceFrame) {
+            if (freeSourceFrame && frame->data[0] && freedBuffers.find(frame->data[0]) == freedBuffers.end()) {
                 av_freep(&frame->data[0]);
+                freedBuffers.insert(frame->data[0]);
             }
 #if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(57, 48, 101)
             av_frame_unref(frame);
 #endif
             av_frame_free(&frame);
         } else {
-            av_freep(&frame->data[0]);
+            if (frame->data[0] && freedBuffers.find(frame->data[0]) == freedBuffers.end()) {
+                av_freep(&frame->data[0]);
+                freedBuffers.insert(frame->data[0]);
+            }
 #if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(57, 48, 101)
             av_frame_unref(frame);
 #endif

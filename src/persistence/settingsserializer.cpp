@@ -88,11 +88,23 @@ QDataStream& readStream(QDataStream& dataStream, QByteArray& data)
             return dataStream;
         }
         // Check for overflow before shifting
-        if (num2 >= 32 || ((num3 & 0x7f) << num2) >> num2 != (num3 & 0x7f)) {
+        if (num2 >= 32) {
             dataStream.setStatus(QDataStream::ReadCorruptData);
             return dataStream;
         }
-        num |= (num3 & 0x7f) << num2;
+        int shifted = static_cast<int>(num3 & 0x7f);
+        // Check if shift would overflow
+        if (shifted > (INT_MAX >> num2)) {
+            dataStream.setStatus(QDataStream::ReadCorruptData);
+            return dataStream;
+        }
+        shifted <<= num2;
+        // Check if addition would overflow
+        if (num > INT_MAX - shifted) {
+            dataStream.setStatus(QDataStream::ReadCorruptData);
+            return dataStream;
+        }
+        num |= shifted;
         num2 += 7;
         ++bytesRead;
     } while ((num3 & 0x80) != 0);
