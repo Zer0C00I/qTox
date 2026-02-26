@@ -47,7 +47,7 @@ jobs:
       - name: Test for modified translatable strings
         run: |
           export PATH="/usr/lib/qt6/bin:$PATH"
-          tools/update-translation-files.sh ALL
+          scripts/update-translation-files.sh ALL
           third_party/ci-tools/tools/translate.py
           git diff --exit-code
 
@@ -204,7 +204,7 @@ jobs:
           key: ${{ github.job }}-${{ matrix.arch }}-ccache
       - name: Homebrew
         run: |
-          brew bundle --file platform/macos/Brewfile
+          brew bundle --file packaging/macos/Brewfile
           sed -i '' -e 's/MAXIMUM_UNMOUNTING_ATTEMPTS=3/MAXIMUM_UNMOUNTING_ATTEMPTS=15/' "$(realpath "$(which create-dmg)")"
       - name: Set up ccache
         run: ccache --set-config=max_size=200M --set-config=cache_dir="$PWD/.cache/ccache" && ccache --show-config
@@ -263,7 +263,7 @@ jobs:
           path: ".cache/ccache"
           key: ${{ github.job }}-ccache
       - name: Run build
-        run: docker compose run --rm wasm_builder platform/wasm/build.sh
+        run: docker compose run --rm wasm_builder packaging/wasm/build.sh
       - name: Upload zip
         uses: actions/upload-artifact@v4
         with:
