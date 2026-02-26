@@ -11,10 +11,10 @@ qt_rcc(
 )
 
 COPTS = ["-Iqtox"] + select({
-    "//tools/config:freebsd": [],
-    "//tools/config:linux": ["-fPIC"],
-    "//tools/config:osx": [],
-    "//tools/config:windows": [],
+    "//scripts/config:freebsd": [],
+    "//scripts/config:linux": ["-fPIC"],
+    "//scripts/config:osx": [],
+    "//scripts/config:windows": [],
 })
 
 qt_moc(
@@ -23,12 +23,12 @@ qt_moc(
     srcs = ["mock/include/mock/mockcoresettings.h"],
     mocopts = [
         "-Iqtox",
-        "-Iqtox/util/include",
+        "-Iqtox/src/util/include",
     ],
     tags = ["qt"],
     deps = [
         "//qtox/src",
-        "//qtox/util",
+        "//qtox/src/util",
     ],
 )
 
@@ -79,7 +79,7 @@ UI_TESTS = ["loginscreen_test"]
         "//c-toxcore",
         "//qtox:res_lib",
         "//qtox/src",
-        "//qtox/util",
+        "//qtox/src/util",
         "@qt//:qt_core",
         "@qt//:qt_gui",
         "@qt//:qt_network",
@@ -108,7 +108,7 @@ qt_test(
         ":mock",
         "//qtox:res_lib",
         "//qtox/src",
-        "//qtox/util",
+        "//qtox/src/util",
         "@qt//:qt_core",
         "@qt//:qt_gui",
         "@qt//:qt_widgets",
