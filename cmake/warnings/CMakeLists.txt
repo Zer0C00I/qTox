@@ -21,6 +21,34 @@ include(CheckCXXCompilerFlag)
 check_cxx_compiler_flag(-Wweak-vtables COMPILER_SUPPORTS_WARNING_WEAK_VTABLES)
 check_cxx_compiler_flag(-Wdate-time COMPILER_SUPPORTS_WDATE_TIME)
 
+check_cxx_compiler_flag(-Wconversion             COMPILER_SUPPORTS_WCONVERSION)
+check_cxx_compiler_flag(-Wsign-conversion        COMPILER_SUPPORTS_WSIGN_CONVERSION)
+check_cxx_compiler_flag(-Wimplicit-fallthrough   COMPILER_SUPPORTS_WIMPLICIT_FALLTHROUGH)
+check_cxx_compiler_flag(-Wcast-qual             COMPILER_SUPPORTS_WCAST_QUAL)
+check_cxx_compiler_flag(-Walloca               COMPILER_SUPPORTS_WALLOCA)
+check_cxx_compiler_flag(-Wvla                  COMPILER_SUPPORTS_WVLA)
+check_cxx_compiler_flag(-Wstrict-aliasing=2    COMPILER_SUPPORTS_WSTRICT_ALIASING)
+check_cxx_compiler_flag(-Wzero-as-null-pointer-constant COMPILER_SUPPORTS_WNULL_PTR)
+
+# GCC-specific
+check_cxx_compiler_flag(-Wformat-overflow=2    COMPILER_SUPPORTS_WFORMAT_OVERFLOW)
+check_cxx_compiler_flag(-Wformat-truncation=2  COMPILER_SUPPORTS_WFORMAT_TRUNCATION)
+check_cxx_compiler_flag(-Warray-bounds=2       COMPILER_SUPPORTS_WARRAY_BOUNDS)
+check_cxx_compiler_flag(-Wshift-overflow=2     COMPILER_SUPPORTS_WSHIFT_OVERFLOW)
+check_cxx_compiler_flag(-Wstringop-overflow=4  COMPILER_SUPPORTS_WSTRINGOP_OVERFLOW)
+check_cxx_compiler_flag(-Wstringop-truncation  COMPILER_SUPPORTS_WSTRINGOP_TRUNCATION)
+check_cxx_compiler_flag(-Winit-self            COMPILER_SUPPORTS_WINIT_SELF)
+check_cxx_compiler_flag(-Wduplicated-branches  COMPILER_SUPPORTS_WDUPLICATED_BRANCHES)
+
+# Clang-specific
+check_cxx_compiler_flag(-Wunreachable-code            COMPILER_SUPPORTS_WUNREACHABLE)
+check_cxx_compiler_flag(-Wunreachable-code-break      COMPILER_SUPPORTS_WUNREACHABLE_BREAK)
+check_cxx_compiler_flag(-Wcovered-switch-default      COMPILER_SUPPORTS_WCOVERED_SWITCH)
+check_cxx_compiler_flag(-Wcomma                       COMPILER_SUPPORTS_WCOMMA)
+check_cxx_compiler_flag(-Wextra-semi                  COMPILER_SUPPORTS_WEXTRA_SEMI)
+check_cxx_compiler_flag(-Wthread-safety               COMPILER_SUPPORTS_WTHREAD_SAFETY)
+check_cxx_compiler_flag(-Wdeprecated-copy-dtor        COMPILER_SUPPORTS_WDEPRECATED_COPY_DTOR)
+
 target_compile_options(
   ${PROJECT_NAME}
   INTERFACE
@@ -42,6 +70,7 @@ target_compile_options(
     -Wshadow;
     -Wsign-compare;
     -Wundef;
+    -Wuninitialized;
     >
     $<$<CXX_COMPILER_ID:GNU>:
     -Wduplicated-cond;
@@ -90,9 +119,35 @@ target_compile_options(
     -Wweak-vtables; # https://llvm.org/docs/CodingStandards.html#provide-a-virtual-method-anchor-for-classes-in-headers
     >
     $<$<BOOL:${COMPILER_SUPPORTS_WDATE_TIME}>:
-    -Wdate-time; # avoid timestamps in binary for reproducible builds, not added
-                 # until GCC 4.9
+    -Wdate-time; # avoid timestamps in binary for reproducible builds
     >
     $<$<AND:$<NOT:$<BOOL:${WIN32}>>,$<NOT:$<BOOL:${HAIKU}>>>:
     -Wstack-protector;
-    >)
+    >
+    # Conversion / type-safety
+    $<$<BOOL:${COMPILER_SUPPORTS_WCONVERSION}>:         -Wconversion;>
+    $<$<BOOL:${COMPILER_SUPPORTS_WSIGN_CONVERSION}>:    -Wsign-conversion;>
+    $<$<BOOL:${COMPILER_SUPPORTS_WIMPLICIT_FALLTHROUGH}>:-Wimplicit-fallthrough;>
+    $<$<BOOL:${COMPILER_SUPPORTS_WCAST_QUAL}>:          -Wcast-qual;>
+    $<$<BOOL:${COMPILER_SUPPORTS_WNULL_PTR}>:           -Wzero-as-null-pointer-constant;>
+    $<$<BOOL:${COMPILER_SUPPORTS_WSTRICT_ALIASING}>:    -Wstrict-aliasing=2;>
+    # Dangerous constructs
+    $<$<BOOL:${COMPILER_SUPPORTS_WALLOCA}>:             -Walloca;>
+    $<$<BOOL:${COMPILER_SUPPORTS_WVLA}>:                -Wvla;>
+    # GCC-specific overflow / bounds checks
+    $<$<BOOL:${COMPILER_SUPPORTS_WFORMAT_OVERFLOW}>:    -Wformat-overflow=2;>
+    $<$<BOOL:${COMPILER_SUPPORTS_WFORMAT_TRUNCATION}>:  -Wformat-truncation=2;>
+    $<$<BOOL:${COMPILER_SUPPORTS_WARRAY_BOUNDS}>:       -Warray-bounds=2;>
+    $<$<BOOL:${COMPILER_SUPPORTS_WSHIFT_OVERFLOW}>:     -Wshift-overflow=2;>
+    $<$<BOOL:${COMPILER_SUPPORTS_WSTRINGOP_OVERFLOW}>:  -Wstringop-overflow=4;>
+    $<$<BOOL:${COMPILER_SUPPORTS_WSTRINGOP_TRUNCATION}>:-Wstringop-truncation;>
+    $<$<BOOL:${COMPILER_SUPPORTS_WINIT_SELF}>:          -Winit-self;>
+    $<$<BOOL:${COMPILER_SUPPORTS_WDUPLICATED_BRANCHES}>:-Wduplicated-branches;>
+    # Clang-specific
+    $<$<BOOL:${COMPILER_SUPPORTS_WUNREACHABLE}>:        -Wunreachable-code;>
+    $<$<BOOL:${COMPILER_SUPPORTS_WUNREACHABLE_BREAK}>:  -Wunreachable-code-break;>
+    $<$<BOOL:${COMPILER_SUPPORTS_WCOVERED_SWITCH}>:     -Wcovered-switch-default;>
+    $<$<BOOL:${COMPILER_SUPPORTS_WCOMMA}>:              -Wcomma;>
+    $<$<BOOL:${COMPILER_SUPPORTS_WEXTRA_SEMI}>:         -Wextra-semi;>
+    $<$<BOOL:${COMPILER_SUPPORTS_WTHREAD_SAFETY}>:      -Wthread-safety;>
+    $<$<BOOL:${COMPILER_SUPPORTS_WDEPRECATED_COPY_DTOR}>:-Wdeprecated-copy-dtor;>)

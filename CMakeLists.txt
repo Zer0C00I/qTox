@@ -10,8 +10,8 @@
 #
 # ##############################################################################
 
-cmake_minimum_required(VERSION 3.16)
-cmake_policy(VERSION 3.16)
+cmake_minimum_required(VERSION 3.20)
+cmake_policy(VERSION 3.20)
 
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
@@ -26,6 +26,7 @@ option(ASAN "Compile with AddressSanitizer" OFF)
 option(TSAN "Compile with ThreadSanitizer" OFF)
 option(UBSAN "Compile with UndefinedBehaviorSanitizer" OFF)
 option(STRICT_OPTIONS "Error on compile warning, used by CI" OFF)
+option(CLANG_TIDY "Run clang-tidy static analysis during build" OFF)
 option(BUILD_TESTING "Enable tests (turn OFF for static builds)" ON)
 option(FULLY_STATIC
        "Produce a fully statically linked qTox binary (experimental)" OFF)
@@ -70,8 +71,10 @@ set(PROJECT_ORG "io.github.qtox")
 
 string(TOLOWER ${PROJECT_NAME} BINARY_NAME)
 
-# C++ standard.
-set(CMAKE_CXX_STANDARD 20)
+# C++ standard: require C++23, no GNU extensions (-std=c++23 not -std=gnu++23).
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fcolor-diagnostics")
@@ -161,7 +164,25 @@ endif()
 if(UNIX AND NOT APPLE)
   set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-z,now")
   set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-z,relro")
+  set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-z,noexecstack")
 endif()
+
+# Additional hardening: stack clash protection and Intel CET (x86 only).
+if(UNIX AND NOT APPLE AND CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fstack-clash-protection")
+  if(CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64|i[3-6]86")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fcf-protection=full")
+  endif()
+endif()
+
+# Enable libstdc++ contract/bounds assertions in debug builds.
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -D_GLIBCXX_ASSERTIONS")
+
+# _FORTIFY_SOURCE=3 requires at least -O1; only enable in optimised configs.
+foreach(_build_type RELEASE RELWITHDEBINFO MINSIZEREL)
+  set("CMAKE_CXX_FLAGS_${_build_type}"
+      "${CMAKE_CXX_FLAGS_${_build_type}} -D_FORTIFY_SOURCE=3")
+endforeach()
 
 add_definitions(-DQT_NO_CAST_FROM_BYTEARRAY)
 add_definitions(-DQT_NO_CAST_TO_ASCII)
@@ -191,6 +212,7 @@ endif()
 include_directories(${CMAKE_BINARY_DIR})
 include_directories(${CMAKE_SOURCE_DIR})
 
+include(ClangTidy)
 include(Dependencies)
 
 # ##############################################################################
@@ -219,14 +241,14 @@ qt6_wrap_ui(
   src/widget/form/settings/privacysettings.ui
   src/widget/form/settings/userinterfacesettings.ui)
 
-set(${BINARY_NAME}_RESOURCES res.qrc)
+set(${BINARY_NAME}_RESOURCES assets/res.qrc)
 
 if(SMILEYS)
   if(NOT SMILEY_PACKS)
     file(
       GLOB SMILEY_QRCS
       RELATIVE ${CMAKE_SOURCE_DIR}
-      smileys/*/emoticons.qrc)
+      assets/smileys/*/emoticons.qrc)
     # smileys/$PACK/emoticons.qrc -> $PACK
     set(SMILEY_PACKS "")
     foreach(SMILEY_PACK ${SMILEY_QRCS})
@@ -240,7 +262,7 @@ if(SMILEYS)
   set(SMILEY_RESOURCES "")
   foreach(SMILEY_PACK ${SMILEY_PACKS})
     set(SMILEY_RESOURCES ${SMILEY_RESOURCES}
-                         smileys/${SMILEY_PACK}/emoticons.qrc)
+                         assets/smileys/${SMILEY_PACK}/emoticons.qrc)
   endforeach()
 endif()
 
@@ -640,7 +662,7 @@ set(${BINARY_NAME}_SOURCES
 
 if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
   set(${BINARY_NAME}_RESOURCES ${${BINARY_NAME}_RESOURCES}
-                               platform/windows/qtox.rc)
+                               packaging/windows/qtox.rc)
 endif()
 
 add_definitions(-DQT_MESSAGELOGCONTEXT=1)
@@ -684,8 +706,8 @@ endif()
 
 link_libraries(coverage_config)
 
-add_subdirectory(util)
-add_subdirectory(audio)
+add_subdirectory(src/util)
+add_subdirectory(src/audio)
 add_subdirectory(translations)
 add_subdirectory(cmake/warnings)
 
@@ -716,7 +738,7 @@ set_target_properties(
     QT_ANDROID_TARGET_SDK_VERSION 34
     QT_ANDROID_MIN_SDK_VERSION 24
     QT_ANDROID_PACKAGE_SOURCE_DIR
-    "${CMAKE_CURRENT_SOURCE_DIR}/platform/android/qt-${Qt6Core_VERSION}")
+    "${CMAKE_CURRENT_SOURCE_DIR}/packaging/android/qt-${Qt6Core_VERSION}")
 
 if(FULLY_STATIC)
   target_link_options(${BINARY_NAME} PRIVATE -static-pie)
