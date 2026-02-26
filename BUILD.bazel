@@ -1,7 +1,7 @@
 load("@rules_cc//cc:defs.bzl", "cc_library")
 load("//third_party/python:build_defs.bzl", "mypy_test")
 load("//third_party/qt:build_defs.bzl", "qt_binary", "qt_lconvert", "qt_rcc")
-load("//tools/project:build_defs.bzl", "project")
+load("//scripts/project:build_defs.bzl", "project")
 
 project(license = "gpl3-https")
 
@@ -35,14 +35,14 @@ qt_rcc(
 
 qt_rcc(
     name = "res",
-    srcs = ["res.qrc"] + glob(["smileys/*/emoticons.qrc"]),
+    srcs = ["assets/res.qrc"] + glob(["assets/smileys/*/emoticons.qrc"]),
     data = glob([
-        "img/**/*",
-        "res/**/*",
-        "smileys/*/*.png",
-        "smileys/*/*.svg",
-        "smileys/*/*.xml",
-        "themes/**/*",
+        "assets/img/**/*",
+        "assets/res/**/*",
+        "assets/smileys/*/*.png",
+        "assets/smileys/*/*.svg",
+        "assets/smileys/*/*.xml",
+        "assets/themes/**/*",
     ]),
     tags = ["qt"],
 )

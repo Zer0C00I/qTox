@@ -1,0 +1,34 @@
+# cmake-format: off
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Copyright © 2020 by The qTox Project Contributors
+# Copyright © 2024-2025 The TokTok team
+# cmake-format: on
+
+set(SOURCE_FILES
+    "include/audio/audio.h"
+    "include/audio/iaudiocontrol.h"
+    "include/audio/iaudiosettings.h"
+    "include/audio/iaudiosink.h"
+    "include/audio/iaudiosource.h"
+    "src/iaudiosettings.cpp"
+    "src/iaudiosink.cpp"
+    "src/audio.cpp"
+    "src/backend/alsink.cpp"
+    "src/backend/alsink.h"
+    "src/backend/alsource.cpp"
+    "src/backend/alsource.h"
+    "src/backend/openal.cpp"
+    "src/backend/openal.h")
+
+add_library(audio_library STATIC ${SOURCE_FILES} resources/audio_res.qrc)
+
+# Public API headers: consumers include as "audio/audio.h" etc.
+target_include_directories(audio_library PUBLIC include/)
+# Private: allows internal files to use their original "audio/src/backend/foo.h" paths
+# after the directory was moved from the project root into src/
+target_include_directories(audio_library PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/..)
+
+target_link_libraries(audio_library util_library)
+target_link_libraries(audio_library Qt6::Core)
+target_link_libraries(audio_library ${OPENAL_LIBRARIES})
+target_link_libraries(audio_library qtox::warnings)
