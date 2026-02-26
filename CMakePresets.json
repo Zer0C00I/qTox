@@ -2,6 +2,28 @@
   "version": 3,
   "configurePresets": [
     {
+      "name": "dev",
+      "displayName": "Local Development (system Qt)",
+      "description": "Debug build using system-installed Qt and dependencies",
+      "binaryDir": "${sourceDir}/_build",
+      "generator": "Ninja",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": true
+      }
+    },
+    {
+      "name": "release",
+      "displayName": "Local Release (system Qt)",
+      "description": "Release build using system-installed Qt and dependencies",
+      "binaryDir": "${sourceDir}/_build-release",
+      "generator": "Ninja",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": true
+      }
+    },
+    {
       "name": "static-release",
       "binaryDir": "${sourceDir}/_build-release",
       "generator": "Ninja",

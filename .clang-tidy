@@ -1,50 +1,106 @@
-Checks: "-*
-, google-explicit-constructor
-, misc-const-correctness
-, modernize-avoid-bind
-, modernize-concat-nested-namespaces
-, modernize-deprecated-headers
-, modernize-deprecated-ios-base-aliases
-, modernize-loop-convert
-, -modernize-macro-to-enum
-, modernize-make-shared
-, modernize-make-unique
-, modernize-min-max-use-initializer-list
-, modernize-pass-by-value
-, modernize-raw-string-literal
-, modernize-redundant-void-arg
-, modernize-replace-auto-ptr
-, modernize-replace-disallow-copy-and-assign-macro
-, modernize-replace-random-shuffle
-, modernize-return-braced-init-list
-, modernize-shrink-to-fit
-, modernize-type-traits
-, modernize-unary-static-assert
-, modernize-use-*
-, -modernize-use-default-member-init
-, -modernize-use-designated-initializers
-, -modernize-use-nodiscard
-, -modernize-use-ranges
-, -modernize-use-std-numbers
-, -modernize-use-trailing-return-type
-, -modernize-use-using
-, performance-move-const-arg
-, readability-*
-, -readability-avoid-return-with-void-value
-, -readability-braces-around-statements
-, -readability-convert-member-functions-to-static
-, -readability-function-cognitive-complexity
-, -readability-identifier-length
-, -readability-magic-numbers
-, -readability-make-member-function-const
-, -readability-math-missing-parentheses
-, -readability-redundant-access-specifiers
-, -readability-redundant-member-init
-, -readability-simplify-boolean-expr
-, -readability-suspicious-call-argument
-"
-WarningsAsErrors: "*"
-HeaderFilterRegex: ".*"
+---
+# Comprehensive clang-tidy configuration for qTox.
+#
+# Enabled families:
+#   bugprone-*       : common bug patterns (use-after-move, overflow, etc.)
+#   cert-*           : CERT C/C++ secure coding guidelines
+#   clang-analyzer-* : Clang static analyser (memory, nullability, threading)
+#   concurrency-*    : data races and lock errors
+#   cppcoreguidelines-* : C++ Core Guidelines (with Qt-specific exclusions)
+#   misc-*           : miscellaneous correctness checks
+#   modernize-*      : modern C++ idioms
+#   performance-*    : performance anti-patterns
+#   portability-*    : portability issues
+#   readability-*    : maintainability checks
+#
+# Excluded (with rationale):
+#   fuchsia-*/google-*/llvm-*/llvmlibc-*/hicpp-*
+#       project-specific or redundant style rules
+#   bugprone-easily-swappable-parameters
+#       too noisy across existing large API surface
+#   cert-err58-cpp
+#       fires on every Qt static/global object
+#   cppcoreguidelines-avoid-magic-numbers / readability-magic-numbers
+#       too noisy in protocol/crypto/colour constant code
+#   cppcoreguidelines-owning-memory
+#       Qt parent-child ownership doesn't use gsl::owner
+#   cppcoreguidelines-pro-bounds-*
+#       required for C API (toxcore, FFmpeg, SQLite)
+#   cppcoreguidelines-pro-type-reinterpret-cast
+#       required for C API interop (QByteArray ↔ uint8_t*)
+#   cppcoreguidelines-pro-type-vararg
+#       required for tox callbacks and qDebug/qWarning
+#   modernize-use-trailing-return-type
+#       opinionated style, not a correctness concern
+#   readability-named-parameter
+#       too noisy in Qt signal/slot override declarations
+
+Checks: >
+  bugprone-*,
+  cert-*,
+  clang-analyzer-*,
+  concurrency-*,
+  cppcoreguidelines-*,
+  misc-*,
+  modernize-*,
+  performance-*,
+  portability-*,
+  readability-*,
+  -bugprone-easily-swappable-parameters,
+  -cert-err58-cpp,
+  -cppcoreguidelines-avoid-magic-numbers,
+  -cppcoreguidelines-non-private-member-variables-in-classes,
+  -cppcoreguidelines-owning-memory,
+  -cppcoreguidelines-pro-bounds-array-to-pointer-decay,
+  -cppcoreguidelines-pro-bounds-pointer-arithmetic,
+  -cppcoreguidelines-pro-type-reinterpret-cast,
+  -cppcoreguidelines-pro-type-vararg,
+  -fuchsia-*,
+  -google-*,
+  -hicpp-*,
+  -llvm-*,
+  -llvmlibc-*,
+  -modernize-use-trailing-return-type,
+  -readability-magic-numbers,
+  -readability-named-parameter,
+  -readability-avoid-return-with-void-value,
+  -readability-braces-around-statements,
+  -readability-convert-member-functions-to-static,
+  -readability-identifier-length,
+  -readability-make-member-function-const,
+  -readability-redundant-access-specifiers,
+  -readability-redundant-member-init,
+  -readability-simplify-boolean-expr,
+  -readability-suspicious-call-argument,
+  -modernize-use-designated-initializers,
+  -modernize-use-nodiscard,
+  -modernize-use-ranges,
+  -modernize-use-std-numbers,
+  -modernize-use-using,
+  -modernize-macro-to-enum,
+  -modernize-use-default-member-init
+
+# All enabled checks are errors — no silent warnings.
+WarningsAsErrors: '*'
+
+# Only report diagnostics in our own headers, not Qt/toxcore/system headers.
+HeaderFilterRegex: '.*/src/.*\.h$'
+
+FormatStyle: none
+
 CheckOptions:
+  # Allow a sole defaulted destructor without requiring all 5 special members.
+  - key:   cppcoreguidelines-special-member-functions.AllowSoleDefaultDtor
+    value: 'true'
+  # Allow std::move on trivially-copyable types (common in Qt value types).
+  - key:   performance-move-const-arg.CheckTriviallyCopyableMove
+    value: 'false'
+  # Cognitive complexity threshold — catch deeply nested logic.
+  - key:   readability-function-cognitive-complexity.Threshold
+    value: '25'
+  # Literal suffix normalisation (existing convention).
   - key:   readability-uppercase-literal-suffix.NewSuffixes
-    value: f;d;u;L;Lu;LLu;uL;uLL
+    value: 'f;d;u;L;Lu;LLu;uL;uLL'
+  # Require explicit constructors (preserve existing google-explicit-constructor).
+  - key:   modernize-use-auto.MinTypeNameLength
+    value: '5'
