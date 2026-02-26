@@ -361,7 +361,9 @@ void Core::bootstrapDht()
         }
         if (dhtServer.statusTcp) {
             const auto ports = dhtServer.tcpPorts.size();
-            const auto tcpPort = dhtServer.tcpPorts[rand() % ports];
+            std::mt19937 rng(std::chrono::high_resolution_clock::now().time_since_epoch().count());
+            std::uniform_int_distribution<size_t> dist(0, ports - 1);
+            const auto tcpPort = dhtServer.tcpPorts[dist(rng)];
             tox_add_tcp_relay(tox.get(), address.constData(), tcpPort, pkPtr, &error);
             PARSE_ERR(error);
         }

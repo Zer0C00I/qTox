@@ -341,8 +341,13 @@ void CoreFile::onFileReceiveCallback(Tox* tox, uint32_t friendId, uint32_t fileI
             Tox_Err_File_Control err;
             tox_file_control(tox, friendId, fileId, TOX_FILE_CONTROL_CANCEL, &err);
             PARSE_ERR(err);
-            // Emit with friendId, let the slot get the public key
-            emit core->friendAvatarRemoved(friendId);
+            std::vector<uint8_t> rawPk(tox_public_key_size());
+            Tox_Err_Friend_Get_Public_Key pkErr;
+            tox_friend_get_public_key(tox, friendId, rawPk.data(), &pkErr);
+            if (!PARSE_ERR(pkErr)) {
+                return;
+            }
+            emit core->friendAvatarRemoved(ToxPk(rawPk.data()));
             return;
         }
         if (!ToxClientStandards::IsValidAvatarSize(filesize)) {
@@ -371,8 +376,13 @@ void CoreFile::onFileReceiveCallback(Tox* tox, uint32_t friendId, uint32_t fileI
     if (cleanFileName != filename.getQString()) {
         qDebug() << "Cleaned invalid incoming filename";
         filename = ToxString(cleanFileName);
-        // Emit with friendId instead of friendPk to avoid deadlock
-        emit coreFile->fileNameChanged(friendId);
+        std::vector<uint8_t> rawPk(tox_public_key_size());
+        Tox_Err_Friend_Get_Public_Key pkErr;
+        tox_friend_get_public_key(tox, friendId, rawPk.data(), &pkErr);
+        if (!PARSE_ERR(pkErr)) {
+            return;
+        }
+        emit coreFile->fileNameChanged(ToxPk(rawPk.data()));
     }
     qDebug("Received file request %u:%u kind %u", friendId, fileId, kind);
 
@@ -438,8 +448,8 @@ void CoreFile::onFileControlCallback(Tox* tox, uint32_t friendId, uint32_t fileI
     if (control == TOX_FILE_CONTROL_CANCEL) {
         if (file->fileKind != TOX_FILE_KIND_AVATAR)
             qDebug() << "File transfer" << friendId << ":" << fileId << "cancelled by friend";
-        ToxFile fileCopy = *file;  // Make a copy before removal
         file->status = ToxFile::CANCELED;
+        ToxFile fileCopy = *file;
         emit coreFile->fileTransferCancelled(fileCopy);
         coreFile->removeFile(friendId, fileId);
     } else if (control == TOX_FILE_CONTROL_PAUSE) {
@@ -558,7 +568,13 @@ void CoreFile::onFileRecvChunkCallback(Tox* tox, uint32_t friendId, uint32_t fil
             pic.loadFromData(file->avatarData);
             if (!pic.isNull()) {
                 qDebug() << "Got" << file->avatarData.size() << "bytes of avatar data from" << friendId;
-                emit core->friendAvatarChanged(friendId, file->avatarData);
+                std::vector<uint8_t> rawPk(tox_public_key_size());
+                Tox_Err_Friend_Get_Public_Key pkErr;
+                tox_friend_get_public_key(tox, friendId, rawPk.data(), &pkErr);
+                if (!PARSE_ERR(pkErr)) {
+                    return;
+                }
+                emit core->friendAvatarChanged(ToxPk(rawPk.data()), file->avatarData);
             }
         } else {
             ToxFile fileCopy = *file;  // Make a copy before removal
@@ -598,7 +614,7 @@ void CoreFile::onConnectionStatusChanged(uint32_t friendId, Status::Status state
     // - Update the users of our signals to check the 32byte tox file ID, not the uint32_t file_num
     // (fileId)
     const ToxFile::FileStatus status = !isOffline ? ToxFile::TRANSMITTING : ToxFile::BROKEN;
-    
+
     // Collect keys first to avoid iterator invalidation
     QList<uint64_t> keysToRemove;
     for (auto it = fileMap.begin(); it != fileMap.end(); ++it) {
@@ -606,15 +622,16 @@ void CoreFile::onConnectionStatusChanged(uint32_t friendId, Status::Status state
             continue;
         it->status = status;
         emit fileTransferBrokenUnbroken(*it, isOffline);
-        keysToRemove.append(it.key());
+        if (isOffline) {
+            keysToRemove.append(it.key());
+        }
     }
-    
-    // Remove files after iteration
+
+    // Only remove transfers when going offline; on reconnect leave them for resumption
     for (const uint64_t key : keysToRemove) {
-        // Check if key still exists in fileMap
         auto it = fileMap.find(key);
         if (it != fileMap.end()) {
-            uint32_t fileNum = it->fileNum;  // Store before potential invalidation
+            uint32_t fileNum = it->fileNum;
             removeFile(friendId, fileNum);
         }
     }

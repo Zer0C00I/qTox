@@ -461,7 +461,7 @@ void SettingsSerializer::readIni()
     const std::unique_ptr<int[]> groupSizes{new int[groups.size()]};
     memset(groupSizes.get(), 0, static_cast<size_t>(groups.size()) * sizeof(int));
     for (const Value& v : values) {
-        if (v.group < 0 || v.group > groups.size())
+        if (v.group < 0 || static_cast<size_t>(v.group) >= groups.size())
             continue;
         groupSizes[static_cast<size_t>(v.group)]++;
     }
@@ -470,7 +470,7 @@ void SettingsSerializer::readIni()
     QVector<int> groupsToKill;
     for (int i = values.size() - 1; i >= 0; i--) {
         const Value& v = values[i];
-        if (v.group < 0 || v.group > groups.size())
+        if (v.group < 0 || static_cast<size_t>(v.group) >= groups.size())
             continue;
         if (groupSizes[static_cast<size_t>(v.group)] != 1)
             continue;

@@ -335,10 +335,12 @@ void IPC::processEvents()
 
     const std::lock_guard<std::mutex> lock(eventHandlersMutex);
     while (IPCEvent* evt = fetchEvent()) {
-        const QString name = QString::fromUtf8(evt->name);
+        const QString name = QString::fromUtf8(evt->name, sizeof(IPCEvent::name));
         auto it = eventHandlers.find(name);
         if (it != eventHandlers.end()) {
-            evt->accepted = runEventHandler(it.value().handler, evt->data, it.value().userData);
+            evt->accepted = runEventHandler(it.value().handler,
+                                            QByteArray(evt->data, sizeof(IPCEvent::data)),
+                                            it.value().userData);
             qDebug() << "Processed event:" << name << "posted:" << evt->posted
                      << "accepted:" << evt->accepted;
             if (evt->dest == 0) {

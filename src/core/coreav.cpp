@@ -317,8 +317,9 @@ bool CoreAV::cancelCall(uint32_t friendNum)
 
 void CoreAV::timeoutCall(uint32_t friendNum)
 {
-    const QWriteLocker locker{&callsLock};
-
+    // Do not hold callsLock here: cancelCall acquires it internally and explicitly
+    // unlocks before emitting avEnd. Holding it here would make that unlock a no-op
+    // (recursive lock), causing avEnd slots to deadlock on callsLock.
     if (!cancelCall(friendNum)) {
         qWarning() << QString("Failed to timeout call with %1").arg(friendNum);
         return;
