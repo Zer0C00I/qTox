@@ -32,8 +32,8 @@ ignorePaths:
   - "_build*/**"
   - "doxygen.conf"
   - "moc_*.cpp"
-  - "platform/macos/createdmg"
-  - "platform/windows/cross-compile/check-dlls"
+  - "packaging/macos/createdmg"
+  - "packaging/windows/cross-compile/check-dlls"
   - "security/**"
   - "translations/README.md"
 words:

@@ -1,17 +1,11 @@
 # Ignore everything except sources and build scripts.
 **/*
-!audio/
+!assets/
 !cmake/
-!img/
-!platform/wasm/_headers
-!platform/wasm/build.sh
-!res/**/*
-!themes/
-!translations/
-!smileys/
+!packaging/wasm/_headers
+!packaging/wasm/build.sh
 !src/
-!util/
+!translations/
 !CMakeLists.txt
 !LICENSE
 !README.md
-!res.qrc

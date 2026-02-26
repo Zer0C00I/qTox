@@ -8,7 +8,7 @@
 *.so
 
 # Doxygen
-doc/html/*
+docs/html/*
 
 # Executables
 qtox
@@ -61,3 +61,8 @@ target/
 /.lsp_tidy_cache
 /third_party/ci-tools
 /third_party/deps
+.aider*
+
+# Local service state (auto-generated, not project config)
+/.netlify/
+/.sentry-native/
