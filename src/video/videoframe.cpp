@@ -7,6 +7,8 @@
 
 #include <QList>
 
+#include <unordered_set>
+
 extern "C"
 {
 #pragma GCC diagnostic push
@@ -191,25 +193,15 @@ std::shared_ptr<VideoFrame> VideoFrame::fromAVFrameUntracked(IDType sourceID, AV
  */
 std::shared_ptr<VideoFrame> VideoFrame::fromAVFrame(IDType sourceID, AVFrame* sourceFrame)
 {
-    // Add frame to tracked reference list
-    refsLock.lockForRead();
+    // Always take write lock: we unconditionally write refsMap[sourceID][frameID].
+    // A read lock would allow concurrent writes to the nested map (data race).
+    const QWriteLocker refsLockWriteLocker(&refsLock);
 
-    if (!refsMap.contains(sourceID)) {
-        // We need to add a new source to our reference map, obtain write lock
-        refsLock.unlock();
-        refsLock.lockForWrite();
-    }
+    const QMutexLocker<QMutex> sourceMutexLock{&mutexMap[sourceID]};
+    auto ret = fromAVFrameUntracked(sourceID, sourceFrame, false);
+    refsMap[sourceID][ret->frameID] = ret;
 
-    const auto frame = [sourceID, sourceFrame] {
-        const QMutexLocker<QMutex> sourceMutexLock{&mutexMap[sourceID]};
-        auto ret = fromAVFrameUntracked(sourceID, sourceFrame, false);
-        refsMap[sourceID][ret->frameID] = ret;
-        return ret;
-    }();
-
-    refsLock.unlock();
-
-    return frame;
+    return ret;
 }
 
 /**
@@ -662,8 +654,9 @@ void VideoFrame::deleteFrameBuffer()
         // Treat source frame and derived frames separately
         if (sourceFrameKey == frameIterator.first) {
             if (freeSourceFrame && frame->data[0] && freedBuffers.find(frame->data[0]) == freedBuffers.end()) {
+                void* bufPtr = frame->data[0];
                 av_freep(&frame->data[0]);
-                freedBuffers.insert(frame->data[0]);
+                freedBuffers.insert(bufPtr);
             }
 #if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(57, 48, 101)
             av_frame_unref(frame);
@@ -671,8 +664,9 @@ void VideoFrame::deleteFrameBuffer()
             av_frame_free(&frame);
         } else {
             if (frame->data[0] && freedBuffers.find(frame->data[0]) == freedBuffers.end()) {
+                void* bufPtr = frame->data[0];
                 av_freep(&frame->data[0]);
-                freedBuffers.insert(frame->data[0]);
+                freedBuffers.insert(bufPtr);
             }
 #if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(57, 48, 101)
             av_frame_unref(frame);

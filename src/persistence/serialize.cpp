@@ -6,6 +6,7 @@
 #include "src/persistence/serialize.h"
 
 #include <climits>
+#include <limits>
 
 /**
  * @file serialize.cpp
@@ -25,28 +26,29 @@ constexpr size_t intWidth = sizeof(int) * CHAR_BIT;
 
 int dataToVInt(const QByteArray& data)
 {
-    char num3;
-    int num = 0;
-    size_t num2 = 0;
+    uint32_t result = 0;
+    size_t shift = 0;
     int i = 0;
+    char num3;
     do {
         if (i >= data.size()) {
             return 0;
         }
         num3 = data[i++];
-        // Check for overflow before shifting
-        if (num2 >= 32) {
+        if (shift >= 32) {
             return 0;
         }
-        int shifted = static_cast<int>(num3 & 0x7f) << num2;
-        // Check if shift overflowed
-        if (shifted >> num2 != static_cast<int>(num3 & 0x7f)) {
+        // Use unsigned arithmetic to avoid signed integer overflow UB.
+        // At shift=28, only 4 bits remain before the 32-bit boundary;
+        // reject any 7-bit value that would not fit in those remaining bits.
+        const uint32_t bits = static_cast<uint8_t>(num3) & 0x7fu;
+        if (bits > (std::numeric_limits<uint32_t>::max() >> shift)) {
             return 0;
         }
-        num |= shifted;
-        num2 += 7;
+        result |= bits << shift;
+        shift += 7;
     } while ((num3 & 0x80) != 0);
-    return num;
+    return static_cast<int>(result);
 }
 
 QByteArray vintToData(int num)

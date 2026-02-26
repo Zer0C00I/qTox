@@ -38,7 +38,7 @@ protected:
 
 inline uint qHash(const ChatId& id)
 {
-    return qHash(id.getByteArray());
+    return static_cast<uint>(qHash(id.getByteArray()));
 }
 
 inline bool operator==(const std::reference_wrapper<const ChatId> lhs,

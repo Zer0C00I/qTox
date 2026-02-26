@@ -79,6 +79,9 @@ uint64_t ToxFileProgress::getBytesSent() const
 
 double ToxFileProgress::getProgress() const
 {
+    if (filesize == 0) {
+        return 0.0;
+    }
     return double(samples[activeSample].bytesSent) / filesize;
 }
 

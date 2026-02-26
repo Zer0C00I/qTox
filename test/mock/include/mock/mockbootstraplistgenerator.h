@@ -34,7 +34,7 @@ public:
     static QList<DhtServer> makeListFromSelf(const Core& core)
     {
         auto selfDhtId = core.getSelfDhtId();
-        const quint16 selfDhtPort = core.getSelfUdpPort();
+        const quint16 selfDhtPort = static_cast<quint16>(core.getSelfUdpPort());
 
         DhtServer ret;
         ret.ipv4 = "localhost";

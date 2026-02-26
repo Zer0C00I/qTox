@@ -169,7 +169,8 @@ bool RawDatabaseImpl::updateSavedCipherParameters(const QString& hexKey, SqlCiph
     if (user_version < 0) {
         return false;
     }
-    if (!execNow("ATTACH DATABASE '" + path + ".tmp' AS newParams KEY \"x'" + hexKey + "'\";")) {
+    const QString escapedPath = QString(path).replace("'", "''");
+    if (!execNow("ATTACH DATABASE '" + escapedPath + ".tmp' AS newParams KEY \"x'" + hexKey + "'\";")) {
         return false;
     }
     if (!setCipherParameters(newParams, "newParams")) {
@@ -493,7 +494,8 @@ bool RawDatabaseImpl::encryptDatabase(const QString& newHexKey)
     if (user_version < 0) {
         return false;
     }
-    if (!execNow("ATTACH DATABASE '" + path + ".tmp' AS encrypted KEY \"x'" + newHexKey + "'\";")) {
+    const QString escapedPath = QString(path).replace("'", "''");
+    if (!execNow("ATTACH DATABASE '" + escapedPath + ".tmp' AS encrypted KEY \"x'" + newHexKey + "'\";")) {
         qWarning() << "Failed to export encrypted database";
         return false;
     }
@@ -518,7 +520,8 @@ bool RawDatabaseImpl::decryptDatabase()
     if (user_version < 0) {
         return false;
     }
-    if (!execNow("ATTACH DATABASE '" + path
+    const QString escapedPath = QString(path).replace("'", "''");
+    if (!execNow("ATTACH DATABASE '" + escapedPath
                  + ".tmp' AS plaintext KEY '';"
                    "SELECT sqlcipher_export('plaintext');")) {
         qWarning() << "Failed to export decrypted database";
@@ -644,6 +647,10 @@ QString RawDatabaseImpl::deriveKey(const QString& password)
         tox_pass_key_derive_with_salt(reinterpret_cast<const uint8_t*>(passData.data()),
                                       static_cast<std::size_t>(passData.size()), expandConstant,
                                       nullptr));
+    if (!key) {
+        qWarning() << "Failed to derive database key (unsalted)";
+        return {};
+    }
     return QString::fromUtf8(QByteArray(reinterpret_cast<char*>(key.get()) + 32, 32).toHex());
 }
 
@@ -672,6 +679,10 @@ QString RawDatabaseImpl::deriveKey(const QString& password, const QByteArray& sa
         tox_pass_key_derive_with_salt(reinterpret_cast<const uint8_t*>(passData.data()),
                                       static_cast<std::size_t>(passData.size()),
                                       reinterpret_cast<const uint8_t*>(salt.constData()), nullptr));
+    if (!key) {
+        qWarning() << "Failed to derive database key (salted)";
+        return {};
+    }
     return QString::fromUtf8(QByteArray(reinterpret_cast<char*>(key.get()) + 32, 32).toHex());
 }
 
