@@ -16,7 +16,10 @@ class ToxOptions
 {
 public:
     ~ToxOptions();
-    ToxOptions(ToxOptions&& from);
+    ToxOptions(const ToxOptions&) = delete;
+    ToxOptions& operator=(const ToxOptions&) = delete;
+    ToxOptions(ToxOptions&& from) noexcept;
+    ToxOptions& operator=(ToxOptions&& from) noexcept;
     Tox_Options* get();
     const char* getProxyAddrData() const;
     static std::unique_ptr<ToxOptions> makeToxOptions(const QByteArray& savedata,

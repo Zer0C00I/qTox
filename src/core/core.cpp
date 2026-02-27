@@ -441,7 +441,6 @@ void Core::onConnectionStatusChanged(Tox* tox, uint32_t friendId, Tox_Connection
     Status::Status friendStatus = Status::Status::Offline;
     switch (status) {
     case TOX_CONNECTION_NONE:
-        friendStatus = Status::Status::Offline;
         qDebug() << "Disconnected from friend" << friendId;
         break;
     case TOX_CONNECTION_TCP:

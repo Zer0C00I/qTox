@@ -251,10 +251,10 @@ bool DbUpgrader::dbSchemaUpgrade(std::shared_ptr<RawDatabase>& db, IMessageBoxMa
                                                  dbSchema6to7,  dbSchema7to8,          dbSchema8to9,
                                                  dbSchema9to10, DbTo11::dbSchema10to11};
 
-    assert(databaseSchemaVersion < static_cast<int>(upgradeFns.size()));
+    assert(databaseSchemaVersion < static_cast<int64_t>(upgradeFns.size()));
     assert(upgradeFns.size() == SCHEMA_VERSION);
 
-    for (int64_t i = databaseSchemaVersion; i < static_cast<int>(upgradeFns.size()); ++i) {
+    for (int64_t i = databaseSchemaVersion; i < static_cast<int64_t>(upgradeFns.size()); ++i) {
         const auto newDbVersion = i + 1;
         if (!upgradeFns[i](*db)) {
             qCritical() << "Failed to upgrade db to schema version" << newDbVersion << " aborting";

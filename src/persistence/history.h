@@ -111,8 +111,8 @@ struct FileDbInsertionData
     QByteArray fileId;
     QString fileName;
     QString filePath;
-    int64_t size;
-    int direction;
+    int64_t size{0};
+    int direction{0};
 };
 Q_DECLARE_METATYPE(FileDbInsertionData)
 
