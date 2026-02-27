@@ -24,7 +24,7 @@ Conference* ConferenceList::addConference(Core& core, int conferenceNum,
     auto* newConference = new Conference(conferenceNum, conferenceId, name, isAvConference,
                                          selfName, core, core, friendList);
     conferenceList[conferenceId] = newConference;
-    id2key[conferenceNum] = conferenceId;
+    id2key[static_cast<uint32_t>(conferenceNum)] = conferenceId;
     return newConference;
 }
 
