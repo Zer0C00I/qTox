@@ -396,9 +396,7 @@ void CoreFile::onFileReceiveCallback(Tox* tox, uint32_t friendId, uint32_t fileI
         return;
     }
     coreFile->addFile(friendId, fileId, file);
-    if (kind != TOX_FILE_KIND_AVATAR) {
-        emit coreFile->fileReceiveRequested(file);
-    }
+    emit coreFile->fileReceiveRequested(file);
 }
 
 // TODO(sudden6): This whole method is a mess but needed to get stuff working for now

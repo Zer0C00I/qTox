@@ -34,12 +34,24 @@ ToxOptions::~ToxOptions()
     tox_options_free(options);
 }
 
-ToxOptions::ToxOptions(ToxOptions&& from)
+ToxOptions::ToxOptions(ToxOptions&& from) noexcept
 {
     options = from.options;
     proxyAddrData.swap(from.proxyAddrData);
     from.options = nullptr;
     from.proxyAddrData.clear();
+}
+
+ToxOptions& ToxOptions::operator=(ToxOptions&& from) noexcept
+{
+    if (this != &from) {
+        tox_options_free(options);
+        options = from.options;
+        proxyAddrData.swap(from.proxyAddrData);
+        from.options = nullptr;
+        from.proxyAddrData.clear();
+    }
+    return *this;
 }
 
 const char* ToxOptions::getProxyAddrData() const

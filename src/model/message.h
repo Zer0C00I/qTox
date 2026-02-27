@@ -24,7 +24,7 @@ enum class MessageMetadataType
 // if we wanted to add message replies and shoved a reply id in here)
 struct MessageMetadata
 {
-    MessageMetadataType type;
+    MessageMetadataType type{MessageMetadataType::selfMention};
     // Indicates start position within a Message::content
     size_t start{0};
     // Indicates end position within a Message::content

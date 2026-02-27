@@ -25,6 +25,7 @@
 
 #include <QApplication>
 #include <QBuffer>
+#include <memory>
 #include <QClipboard>
 #include <QComboBox>
 #include <QFileDialog>
@@ -430,7 +431,7 @@ void ProfileForm::onDeletePassClicked()
 void ProfileForm::onChangePassClicked()
 {
     const QString title = tr("Please enter a new password.");
-    auto* dialog = new SetPasswordDialog(title, QString{}, nullptr);
+    const std::unique_ptr<SetPasswordDialog> dialog{new SetPasswordDialog(title, QString{}, nullptr)};
     if (dialog->exec() == QDialog::Rejected) {
         return;
     }

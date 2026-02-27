@@ -330,13 +330,9 @@ IProfileInfo::SetAvatarResult ProfileInfo::byteArrayToPng(QByteArray inData, QBy
         return SetAvatarResult::CanNotRead;
     }
 
-    if (format == "png") {
-        // FIXME: re-encode the png even though inData is already valid. This strips the metadata
-        // since we don't have a good png metadata stripping method currently.
-        outPng = picToPng(image);
-    } else {
-        outPng = picToPng(image);
-    }
+    // FIXME: re-encode the png even though inData is already valid when format == "png".
+    // This strips the metadata since we don't have a good png metadata stripping method currently.
+    outPng = picToPng(image);
     return SetAvatarResult::OK;
 }
 
