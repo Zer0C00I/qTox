@@ -28,6 +28,7 @@
 
 #include <algorithm>
 #include <cassert>
+#include <limits>
 
 namespace {
 
@@ -164,14 +165,14 @@ ChatLogIdx clampedAdd(ChatLogIdx idx, int val, IChatLog& chatLog)
             return chatLog.getFirstIdx();
         }
 
-        return idx - std::abs(val);
+        return idx - static_cast<size_t>(std::abs(val));
     }
     const auto distToEnd = chatLog.getNextIdx() - idx;
     if (static_cast<size_t>(val) > distToEnd) {
         return chatLog.getNextIdx();
     }
 
-    return idx + val;
+    return idx + static_cast<size_t>(val);
 }
 
 } // namespace
@@ -337,7 +338,7 @@ void ChatWidget::layout(int start, int end, qreal width)
     // positioned in respect to this line.
     if (start - 1 >= 0) {
         if (start - 1 < storageSize) {
-            h = (*chatLineStorage)[start - 1]->sceneBoundingRect().bottom() + lineSpacing;
+            h = (*chatLineStorage)[static_cast<size_t>(start - 1)]->sceneBoundingRect().bottom() + lineSpacing;
         }
     }
 
@@ -345,7 +346,7 @@ void ChatWidget::layout(int start, int end, qreal width)
     end = std::clamp<int>(end, 0, storageSize);
 
     for (int i = start; i < end; ++i) {
-        ChatLine* l = (*chatLineStorage)[i].get();
+        ChatLine* l = (*chatLineStorage)[static_cast<size_t>(i)].get();
 
         l->layout(width, QPointF(0.0, h));
         h += l->sceneBoundingRect().height() + lineSpacing;
@@ -1167,8 +1168,8 @@ void ChatWidget::setRenderedWindowStart(ChatLogIdx begin)
 
     // Use invalid + equal ChatLogIdx to force a full re-render if we do not
     // have an indexed message to compare to
-    ChatLogIdx currentStart = ChatLogIdx(-1);
-    ChatLogIdx currentEnd = ChatLogIdx(-1);
+    ChatLogIdx currentStart = ChatLogIdx(std::numeric_limits<size_t>::max());
+    ChatLogIdx currentEnd = ChatLogIdx(std::numeric_limits<size_t>::max());
 
     if (chatLineStorage->hasIndexedMessage()) {
         currentStart = chatLineStorage->firstIdx();
@@ -1350,7 +1351,7 @@ void ChatWidget::hideEvent(QHideEvent* event)
     // one friend this could end up accumulating chat logs until they restart
     // qTox, but that isn't a regression from previously released behavior.
 
-    const std::size_t maxWindowSize = settings.getChatMaxWindowSize();
+    const std::size_t maxWindowSize = static_cast<std::size_t>(settings.getChatMaxWindowSize());
 
     if (chatLineStorage->size() > maxWindowSize) {
         while (chatLineStorage->size() > maxWindowSize) {
@@ -1594,7 +1595,7 @@ void ChatWidget::jumpToIdx(ChatLogIdx idx)
 ChatLogIdx ChatWidget::getRenderedStartIdx() const
 {
     if (!chatLineStorage->hasIndexedMessage()) {
-        return ChatLogIdx(-1);
+        return ChatLogIdx(std::numeric_limits<size_t>::max());
     }
     return chatLineStorage->firstIdx();
 }
@@ -1602,7 +1603,7 @@ ChatLogIdx ChatWidget::getRenderedStartIdx() const
 ChatLogIdx ChatWidget::getRenderedEndIdx() const
 {
     if (!chatLineStorage->hasIndexedMessage()) {
-        return ChatLogIdx(-1);
+        return ChatLogIdx(std::numeric_limits<size_t>::max());
     }
     return chatLineStorage->lastIdx();
 }

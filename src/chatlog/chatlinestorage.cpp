@@ -28,7 +28,7 @@ ChatLineStorage::iterator ChatLineStorage::insertChatMessage(ChatLogIdx idx,
 
     // Newly inserted index is insertinPoint - start
     IdxInfo info;
-    info.linePos = std::distance(lines.begin(), insertionPoint);
+    info.linePos = static_cast<size_t>(std::distance(lines.begin(), insertionPoint));
     info.timestamp = timestamp;
     idxInfoMap[idx] = info;
 
