@@ -51,7 +51,7 @@ public:
     bool isCallVideoEnabled(const Friend* f) const;
     bool sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, uint8_t chans,
                        uint32_t rate) const;
-    void sendCallVideo(uint32_t callId, std::shared_ptr<VideoFrame> frame);
+    void sendCallVideo(uint32_t callId, const std::shared_ptr<VideoFrame>& frame);
     bool sendConferenceCallAudio(int conferenceNum, const int16_t* pcm, size_t samples,
                                  uint8_t chans, uint32_t rate) const;
 
@@ -72,7 +72,7 @@ public:
     static void conferenceCallCallback(void* tox, uint32_t conference, uint32_t peer,
                                        const int16_t* data, unsigned samples, uint8_t channels,
                                        uint32_t sample_rate, void* core);
-    void invalidateConferenceCallPeerSource(const Conference& conference, ToxPk peerPk);
+    void invalidateConferenceCallPeerSource(const Conference& conference, const ToxPk& peerPk);
     bool isAnyCallActive() const;
 
 public slots:

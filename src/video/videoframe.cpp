@@ -422,10 +422,10 @@ size_t VideoFrame::FrameBufferKey::hash(const FrameBufferKey& key)
 
     size_t ret = 47;
 
-    ret = 37 * ret + key.frameWidth;
-    ret = 37 * ret + key.frameHeight;
-    ret = 37 * ret + key.pixelFormat;
-    ret = 37 * ret + static_cast<size_t>(key.linesizeAligned);
+    ret = (37 * ret) + key.frameWidth;
+    ret = (37 * ret) + key.frameHeight;
+    ret = (37 * ret) + key.pixelFormat;
+    ret = (37 * ret) + static_cast<size_t>(key.linesizeAligned);
 
     return ret;
 }
@@ -526,7 +526,7 @@ AVFrame* VideoFrame::generateAVFrame(const QSize& dimensions, const int pixelFor
      * or if the caller doesn't require frame alignment
      */
 
-    int bufSize;
+    int bufSize = 0;
 
     const bool alreadyAligned =
         dimensions.width() % dataAlignment == 0 && dimensions.height() % dataAlignment == 0;

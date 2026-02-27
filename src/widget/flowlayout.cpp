@@ -25,7 +25,7 @@ FlowLayout::FlowLayout(int margin, int hSpacing, int vSpacing)
 //! [2]
 FlowLayout::~FlowLayout()
 {
-    QLayoutItem* item;
+    QLayoutItem* item = nullptr;
     while ((item = takeAt(0)) != nullptr)
         delete item;
 }
@@ -59,7 +59,7 @@ int FlowLayout::verticalSpacing() const
 //! [5]
 int FlowLayout::count() const
 {
-    return itemList.size();
+    return static_cast<int>(itemList.size());
 }
 
 QLayoutItem* FlowLayout::itemAt(int index) const
@@ -122,10 +122,10 @@ QSize FlowLayout::minimumSize() const
 //! [9]
 int FlowLayout::doLayout(const QRect& rect, bool testOnly) const
 {
-    int left;
-    int top;
-    int right;
-    int bottom;
+    int left = 0;
+    int top = 0;
+    int right = 0;
+    int bottom = 0;
     getContentsMargins(&left, &top, &right, &bottom);
     const QRect effectiveRect = rect.adjusted(+left, +top, -right, -bottom);
     int x = effectiveRect.x();
@@ -171,9 +171,9 @@ int FlowLayout::smartSpacing(QStyle::PixelMetric pm) const
         return -1;
     }
     if (parent->isWidgetType()) {
-        auto* pw = static_cast<QWidget*>(parent);
+        auto* pw = qobject_cast<QWidget*>(parent);
         return pw->style()->pixelMetric(pm, nullptr, pw);
     }
-    return static_cast<QLayout*>(parent)->spacing();
+    return qobject_cast<QLayout*>(parent)->spacing();
 }
 //! [12]

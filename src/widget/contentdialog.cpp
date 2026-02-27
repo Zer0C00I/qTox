@@ -141,7 +141,8 @@ void ContentDialog::closeEvent(QCloseEvent* event)
     event->accept();
 }
 
-FriendWidget* ContentDialog::addFriend(std::shared_ptr<FriendChatroom> chatroom, GenericChatForm* form)
+FriendWidget* ContentDialog::addFriend(const std::shared_ptr<FriendChatroom>& chatroom,
+                                       GenericChatForm* form)
 {
     const auto compact = settings.getCompactLayout();
     auto* frnd = chatroom->getFriend();
@@ -164,7 +165,7 @@ FriendWidget* ContentDialog::addFriend(std::shared_ptr<FriendChatroom> chatroom,
     return friendWidget;
 }
 
-ConferenceWidget* ContentDialog::addConference(std::shared_ptr<ConferenceRoom> chatroom,
+ConferenceWidget* ContentDialog::addConference(const std::shared_ptr<ConferenceRoom>& chatroom,
                                                GenericChatForm* form)
 {
     auto* const g = chatroom->getConference();
@@ -295,7 +296,7 @@ int ContentDialog::getCurrentLayout(QLayout*& layout)
  */
 void ContentDialog::cycleChats(bool forward, bool inverse)
 {
-    QLayout* currentLayout;
+    QLayout* currentLayout = nullptr;
     int index = getCurrentLayout(currentLayout);
     if ((currentLayout == nullptr) || index == -1) {
         return;
@@ -632,7 +633,7 @@ void ContentDialog::setStatusMessage(const ToxPk& friendPk, const QString& messa
  * @param friendId Friend Id.
  * @param alias Alias to display on widget.
  */
-void ContentDialog::updateFriendWidget(const ToxPk& friendPk, QString alias)
+void ContentDialog::updateFriendWidget(const ToxPk& friendPk, const QString& alias)
 {
     std::ignore = alias;
     Friend* f = friendList.findFriend(friendPk);
@@ -691,13 +692,13 @@ bool ContentDialog::hasChat(const ChatId& chatId) const
  */
 QLayout* ContentDialog::nextLayout(QLayout* layout, bool forward) const
 {
-    const int index = layouts.indexOf(layout);
+    const int index = static_cast<int>(layouts.indexOf(layout));
     if (index == -1) {
         return nullptr;
     }
 
     int next = forward ? index + 1 : index - 1;
-    const size_t size = layouts.size();
+    const int size = static_cast<int>(layouts.size());
     next = (next + size) % size;
 
     return layouts[next];

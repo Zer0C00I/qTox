@@ -30,7 +30,7 @@ public:
 
     static QVector<QPair<QString, QString>> getDeviceList();
 
-    static QVector<VideoMode> getVideoModes(QString devName);
+    static QVector<VideoMode> getVideoModes(const QString& devName);
     static QString getPixelFormatString(uint32_t pixel_format);
     static bool betterPixelFormat(uint32_t a, uint32_t b);
 

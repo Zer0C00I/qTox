@@ -24,10 +24,11 @@ public:
     };
     static_assert(Rejected != Accepted && Accepted != Tertiary, "ReturnCode values must be unique");
 
-    explicit SetPasswordDialog(QString body_, QString extraButton, QWidget* parent = nullptr);
+    explicit SetPasswordDialog(const QString& body_, const QString& extraButton,
+                               QWidget* parent = nullptr);
     ~SetPasswordDialog() override;
     QString getPassword();
-    static int getPasswordStrength(QString pass);
+    static int getPasswordStrength(const QString& pass);
 
 private slots:
     void onPasswordEdit();

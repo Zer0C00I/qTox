@@ -37,7 +37,7 @@ EmoticonsWidget::EmoticonsWidget(SmileyPack& smileyPack, Settings& settings, Sty
     const int itemsPerPage = maxRows * maxCols;
 
     const QList<QStringList>& emoticons = smileyPack.getEmoticons();
-    const int itemCount = emoticons.size();
+    const int itemCount = static_cast<int>(emoticons.size());
     const int pageCount = std::ceil(float(itemCount) / float(itemsPerPage));
     int currPage = 0;
     int currItem = 0;

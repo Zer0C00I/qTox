@@ -98,7 +98,7 @@ ChatMessage::Ptr ChatMessage::createChatMessage(const QString& sender, const QSt
         const QByteArray hash = QCryptographicHash::hash(sender.toUtf8(), QCryptographicHash::Sha256);
         auto lightness = color.lightnessF();
         // Adapt as good as possible to Light/Dark themes
-        lightness = lightness * 0.5f + 0.3f;
+        lightness = ((lightness * 0.5f) + 0.3f);
 
         // Magic values
         color.setHslF(Identicon::bytesToColor(hash.left(Identicon::IDENTICON_COLOR_BYTES)), 1.0,
@@ -171,7 +171,8 @@ ChatMessage::Ptr ChatMessage::createChatInfoMessage(const QString& rawMessage,
 }
 
 ChatMessage::Ptr ChatMessage::createFileTransferMessage(const QString& sender, CoreFile& coreFile,
-                                                        ToxFile file, bool isMe, const QDateTime& date,
+                                                        const ToxFile& file, bool isMe,
+                                                        const QDateTime& date,
                                                         DocumentCache& documentCache,
                                                         Settings& settings, Style& style,
                                                         IMessageBoxManager& messageBoxManager)

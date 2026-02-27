@@ -47,8 +47,9 @@ public:
                   ConferenceList& conferenceList, Profile& profile, QWidget* parent = nullptr);
     ~ContentDialog() override;
 
-    FriendWidget* addFriend(std::shared_ptr<FriendChatroom> chatroom, GenericChatForm* form);
-    ConferenceWidget* addConference(std::shared_ptr<ConferenceRoom> chatroom, GenericChatForm* form);
+    FriendWidget* addFriend(const std::shared_ptr<FriendChatroom>& chatroom, GenericChatForm* form);
+    ConferenceWidget* addConference(const std::shared_ptr<ConferenceRoom>& chatroom,
+                                   GenericChatForm* form);
     void removeFriend(const ToxPk& friendPk) override;
     void removeConference(const ConferenceId& conferenceId) override;
     int chatroomCount() const override;
@@ -100,7 +101,7 @@ public slots:
     void activate(GenericChatroomWidget* widget);
 
 private slots:
-    void updateFriendWidget(const ToxPk& friendPk, QString alias);
+    void updateFriendWidget(const ToxPk& friendPk, const QString& alias);
     void onConferencePositionChanged(bool top);
 
 private:

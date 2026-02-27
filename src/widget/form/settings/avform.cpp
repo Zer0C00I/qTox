@@ -408,7 +408,7 @@ void AVForm::updateVideoModes(int curIndex)
         const VideoMode mode(rect);
 
         videoSettings->setScreenGrabbed(true);
-        videoModesComboBox->setCurrentIndex(videoModes.size() - 1);
+        videoModesComboBox->setCurrentIndex(static_cast<int>(videoModes.size()) - 1);
         open(devName, mode);
         return;
     }
@@ -418,7 +418,7 @@ void AVForm::updateVideoModes(int curIndex)
     // and the best FPS for that resolution.
     // If we picked the lowest resolution, the quality would be awful
     // but if we picked the largest, FPS would be bad and thus quality bad too.
-    const int mid = (videoModes.size() - 1) / 2;
+    const int mid = (static_cast<int>(videoModes.size()) - 1) / 2;
     videoModesComboBox->setCurrentIndex(mid);
 }
 
@@ -492,7 +492,7 @@ void AVForm::getAudioInDevices()
     const bool enabled = audioSettings->getAudioInDevEnabled();
     if (enabled && deviceNames.size() > 1) {
         const QString dev = audioSettings->getInDev();
-        idx = qMax(deviceNames.indexOf(dev), 1);
+        idx = qMax(static_cast<int>(deviceNames.indexOf(dev)), 1);
     }
     inDevCombobox->setCurrentIndex(idx);
 }
@@ -511,7 +511,7 @@ void AVForm::getAudioOutDevices()
     const bool enabled = audioSettings->getAudioOutDevEnabled();
     if (enabled && deviceNames.size() > 1) {
         const QString dev = audioSettings->getOutDev();
-        idx = qMax(deviceNames.indexOf(dev), 1);
+        idx = qMax(static_cast<int>(deviceNames.indexOf(dev)), 1);
     }
     outDevCombobox->setCurrentIndex(idx);
 }
@@ -565,8 +565,9 @@ void AVForm::on_outDevCombobox_currentIndexChanged(int deviceIndex)
 
 void AVForm::on_playbackSlider_valueChanged(int sliderSteps)
 {
-    const int settingsVolume = getValueFromSteps(sliderSteps, audioSettings->getOutVolumeMin(),
-                                                 audioSettings->getOutVolumeMax());
+    const int settingsVolume = static_cast<int>(getValueFromSteps(sliderSteps,
+                                                                   audioSettings->getOutVolumeMin(),
+                                                                   audioSettings->getOutVolumeMax()));
     audioSettings->setOutVolume(settingsVolume);
 
     if (audio.isOutputReady()) {
@@ -620,7 +621,7 @@ void AVForm::killVideoSurface()
     if (camVideoSurface == nullptr)
         return;
 
-    QLayoutItem* child;
+    QLayoutItem* child = nullptr;
     while ((child = gridLayout->takeAt(0)) != nullptr)
         delete child;
 
@@ -636,11 +637,11 @@ void AVForm::retranslateUi()
 
 int AVForm::getStepsFromValue(qreal val, qreal valMin, qreal valMax) const
 {
-    const float norm = (val - valMin) / (valMax - valMin);
-    return norm * totalSliderSteps;
+    const qreal norm = (val - valMin) / (valMax - valMin);
+    return static_cast<int>(norm * static_cast<qreal>(totalSliderSteps));
 }
 
 qreal AVForm::getValueFromSteps(int steps, qreal valMin, qreal valMax) const
 {
-    return (static_cast<qreal>(steps) / totalSliderSteps) * (valMax - valMin) + valMin;
+    return (((static_cast<qreal>(steps) / totalSliderSteps) * (valMax - valMin)) + valMin);
 }

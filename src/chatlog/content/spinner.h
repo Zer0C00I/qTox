@@ -31,8 +31,8 @@ private:
     static constexpr int framerate = 30; // 30Hz
     QSize size;
     QPixmap pmap;
-    float rotSpeed;
-    float curRot;
+    float rotSpeed = 0.0f;
+    float curRot = 0.0f;
     QTimer timer;
     qreal alpha = 0.0;
     QVariantAnimation* blendAnimation;

@@ -40,7 +40,7 @@ public:
                    ConferenceList& conferenceList);
     ~ConferenceForm() override;
 
-    void peerAudioPlaying(ToxPk peerPk);
+    void peerAudioPlaying(const ToxPk& peerPk);
 
 signals:
     void startConferenceCallNotification(uint32_t conferenceId);

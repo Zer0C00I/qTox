@@ -100,7 +100,7 @@ void ChatLine::reloadTheme()
 
 int ChatLine::getColumnCount()
 {
-    return content.size();
+    return static_cast<int>(content.size());
 }
 
 void ChatLine::updateBBox()
@@ -125,12 +125,12 @@ void ChatLine::addColumn(ChatLineContent* item, ColumnFormat fmt)
 
     format.push_back(fmt);
     content.push_back(item);
-    item->setIndex(0, content.size() - 1);
+    item->setIndex(0, static_cast<int>(content.size()) - 1);
 }
 
 void ChatLine::replaceContent(int col, ChatLineContent* lineContent)
 {
-    if (col >= 0 && col < content.size() && (lineContent != nullptr)) {
+    if (col >= 0 && col < static_cast<int>(content.size()) && (lineContent != nullptr)) {
         QGraphicsScene* scene = content[col]->scene();
         delete content[col];
 
@@ -154,7 +154,7 @@ void ChatLine::layout(qreal w, QPointF scenePos)
     width = w;
     bbox.setTopLeft(scenePos);
 
-    qreal fixedWidth = (content.size() - 1) * columnSpacing;
+    qreal fixedWidth = static_cast<qreal>(content.size() - 1) * columnSpacing;
     qreal varWidth = 0.0; // used for normalization
 
     for (auto& i : format) {
@@ -171,18 +171,18 @@ void ChatLine::layout(qreal w, QPointF scenePos)
 
     qreal maxVOffset = 0.0;
     qreal xOffset = 0.0;
-    QVector<qreal> xPos(content.size());
+    QVector<qreal> xPos(static_cast<int>(content.size()));
 
-    for (int i = 0; i < content.size(); ++i) {
+    for (int i = 0; i < static_cast<int>(content.size()); ++i) {
         // calculate the effective width of the current column
-        qreal contentWidth;
+        qreal contentWidth = 0.0;
         if (format[i].policy == ColumnFormat::FixedSize)
             contentWidth = format[i].size;
         else
             contentWidth = format[i].size / varWidth * leftover;
 
         // set the width of the current column
-        content[i]->setWidth(contentWidth);
+        content[i]->setWidth(static_cast<float>(contentWidth));
 
         // calculate horizontal alignment
         qreal xAlign = 0.0;
@@ -205,7 +205,7 @@ void ChatLine::layout(qreal w, QPointF scenePos)
         maxVOffset = qMax(maxVOffset, content[i]->getAscent());
     }
 
-    for (int i = 0; i < content.size(); ++i) {
+    for (int i = 0; i < static_cast<int>(content.size()); ++i) {
         // calculate vertical alignment
         // vertical alignment may depend on width, so we do it in a second pass
         const qreal yOffset = maxVOffset - content[i]->getAscent();

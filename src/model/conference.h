@@ -23,8 +23,8 @@ class Conference : public Chat
 {
     Q_OBJECT
 public:
-    Conference(int conferenceId_, ConferenceId persistentConferenceId, QString name,
-               bool isAvConference, QString selfName_, ICoreConferenceQuery& conferenceQuery_,
+    Conference(int conferenceId_, const ConferenceId& persistentConferenceId, const QString& name,
+               bool isAvConference, const QString& selfName_, ICoreConferenceQuery& conferenceQuery_,
                ICoreIdHandler& idHandler_, FriendList& friendList);
     bool isAvConference() const;
     uint32_t getId() const override;
@@ -40,7 +40,7 @@ public:
     void setMentionedFlag(bool f);
     bool getMentionedFlag() const;
 
-    void updateUsername(ToxPk pk, QString newName);
+    void updateUsername(const ToxPk& pk, const QString& newName);
     void setName(const QString& newTitle) override;
     void setTitle(const QString& author, const QString& newTitle);
     QString getName() const;

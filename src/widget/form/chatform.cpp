@@ -183,7 +183,7 @@ ChatForm::ChatForm(Profile& profile_, Friend* chatFriend, IChatLog& chatLog_,
     connect(statusMessageLabel, &CroppingLabel::customContextMenuRequested, this,
             [&](const QPoint& pos) {
                 if (!statusMessageLabel->text().isEmpty()) {
-                    auto* sender_ = static_cast<QWidget*>(sender());
+                    auto* sender_ = qobject_cast<QWidget*>(sender());
                     statusMessageMenu.exec(sender_->mapToGlobal(pos));
                 }
             });
@@ -512,7 +512,7 @@ std::unique_ptr<NetCamView> ChatForm::createNetcam()
     std::unique_ptr<NetCamView> view =
         std::make_unique<NetCamView>(f->getPublicKey(), cameraSource, settings, style, profile, this);
     CoreAV* av = core.getAv();
-    VideoSource* source = av->getVideoSourceFromCall(friendId);
+    VideoSource* source = av->getVideoSourceFromCall(static_cast<int>(friendId));
     view->show(source, f->getDisplayedName());
     connect(view.get(), &NetCamView::videoCallEnd, this, &ChatForm::onVideoCallTriggered);
     connect(view.get(), &NetCamView::volMuteToggle, this, &ChatForm::onVolMuteToggle);

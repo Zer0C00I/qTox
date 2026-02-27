@@ -67,9 +67,9 @@ public:
     static QString getSound(Sound s)
     {
         switch (s) {
-        case Sound::Test:
-            return QStringLiteral(":/audio/notification.s16le.pcm");
         case Sound::NewMessage:
+            return QStringLiteral(":/audio/notification.s16le.pcm");
+        case Sound::Test:
             return QStringLiteral(":/audio/notification.s16le.pcm");
         case Sound::IncomingCall:
             return QStringLiteral(":/audio/call_incoming.s16le.pcm");

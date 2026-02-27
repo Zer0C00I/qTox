@@ -90,7 +90,7 @@ protected slots:
     void onSendTriggered();
     virtual void onAttachClicked() = 0;
     void onEmoteButtonClicked();
-    void onEmoteInsertRequested(QString str);
+    void onEmoteInsertRequested(const QString& str);
     void onCopyLogClicked();
     void clearChatArea(bool confirm, bool inform);
     void onSelectAllClicked();

@@ -347,7 +347,7 @@ std::unique_ptr<Profile> Profile::createProfile(const QString& name, const QStri
                                                 CameraSource& cameraSource,
                                                 IMessageBoxManager& messageBoxManager)
 {
-    CreateToxDataError error;
+    CreateToxDataError error = CreateToxDataError::OK;
     Paths& paths = settings.getPaths();
     const QString path = paths.getSettingsDirPath() + name + ".tox";
     std::unique_ptr<ToxEncrypt> tmpKey = createToxData(name, password, path, error, paths);
@@ -388,7 +388,7 @@ Profile::~Profile() = default;
  * @param extension Raw extension, e.g. "jpeg" not ".jpeg".
  * @return Vector of filenames.
  */
-QStringList Profile::getFilesByExt(QString extension, Paths& paths)
+QStringList Profile::getFilesByExt(const QString& extension, Paths& paths)
 {
     QDir dir(paths.getSettingsDirPath());
     QStringList out;
@@ -611,7 +611,7 @@ QByteArray Profile::loadAvatarData(const ToxPk& owner)
     return pic;
 }
 
-void Profile::loadDatabase(QString password, IMessageBoxManager& messageBoxManager)
+void Profile::loadDatabase(const QString& password, IMessageBoxManager& messageBoxManager)
 {
     assert(core);
 
@@ -645,7 +645,7 @@ void Profile::loadDatabase(QString password, IMessageBoxManager& messageBoxManag
  * @brief Sets our own avatar
  * @param pic Picture to use as avatar, if empty an Identicon will be used depending on settings
  */
-void Profile::setAvatar(QByteArray pic)
+void Profile::setAvatar(const QByteArray& pic)
 {
     QPixmap pixmap;
     QByteArray avatarData;
@@ -676,7 +676,7 @@ void Profile::setAvatar(QByteArray pic)
  * @param pic Picture to use as avatar, if empty an Identicon will be used depending on settings
  * @param owner pk of friend
  */
-void Profile::setFriendAvatar(const ToxPk& owner, QByteArray pic)
+void Profile::setFriendAvatar(const ToxPk& owner, const QByteArray& pic)
 {
     QPixmap pixmap;
     QByteArray avatarData;
@@ -802,7 +802,7 @@ void Profile::removeAvatar(const ToxPk& owner)
     }
 }
 
-bool Profile::exists(QString name, Paths& paths)
+bool Profile::exists(const QString& name, Paths& paths)
 {
     const QString path = paths.getSettingsDirPath() + name;
     return QFile::exists(path + ".tox");
@@ -823,7 +823,7 @@ bool Profile::isEncrypted() const
  * @param name Profile name.
  * @return True if profile is encrypted, false otherwise.
  */
-bool Profile::isEncrypted(QString name, Paths& paths)
+bool Profile::isEncrypted(const QString& name, Paths& paths)
 {
     uint8_t data[TOX_PASS_ENCRYPTION_EXTRA_LENGTH] = {0};
     const QString path = paths.getSettingsDirPath() + name + ".tox";
@@ -893,7 +893,7 @@ QStringList Profile::remove()
  * @param newName New name for the profile.
  * @return False on error, true otherwise.
  */
-bool Profile::rename(QString newName)
+bool Profile::rename(const QString& newName)
 {
     const QString path = paths.getSettingsDirPath() + name;
     const QString newPath = paths.getSettingsDirPath() + newName;

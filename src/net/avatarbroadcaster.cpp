@@ -30,7 +30,7 @@ AvatarBroadcaster::AvatarBroadcaster(Core& _core)
  * @brief Set our current avatar.
  * @param data Byte array on avatar.
  */
-void AvatarBroadcaster::setAvatar(QByteArray data)
+void AvatarBroadcaster::setAvatar(const QByteArray& data)
 {
     if (avatarData == data) {
         return;

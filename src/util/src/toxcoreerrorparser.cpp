@@ -483,10 +483,6 @@ bool ToxcoreErrorParser::parseErr(Tox_Err_File_Get error, const char* file, int 
         return false;
 
     case TOX_ERR_FILE_GET_FRIEND_NOT_FOUND:
-        qCriticalFrom(file, line, func)
-            << ": The friend_number passed did not designate a valid friend.";
-        return false;
-
     case TOX_ERR_FILE_GET_NOT_FOUND:
         qCriticalFrom(file, line, func)
             << ": The friend_number passed did not designate a valid friend.";

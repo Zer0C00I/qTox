@@ -33,7 +33,7 @@
 // The rightButton is used to cancel a file transfer, or to open the directory a file was
 // downloaded to.
 
-FileTransferWidget::FileTransferWidget(QWidget* parent, CoreFile& _coreFile, ToxFile file,
+FileTransferWidget::FileTransferWidget(QWidget* parent, CoreFile& _coreFile, const ToxFile& file,
                                        Settings& settings_, Style& style_,
                                        IMessageBoxManager& messageBoxManager_)
     : QWidget(parent)
@@ -115,7 +115,7 @@ bool FileTransferWidget::tryRemoveFile(const QString& filepath)
     return writable;
 }
 
-void FileTransferWidget::onFileTransferUpdate(ToxFile file)
+void FileTransferWidget::onFileTransferUpdate(const ToxFile& file)
 {
     updateWidget(file);
 }
@@ -195,12 +195,12 @@ void FileTransferWidget::paintEvent(QPaintEvent* event)
     if (drawButtonAreaNeeded()) {
         // Draw the button background:
         QPainterPath buttonBackground;
-        buttonBackground.addRoundedRect(width() - 2 * buttonFieldWidth - lineWidth * 2, 0,
+        buttonBackground.addRoundedRect((width() - (2 * buttonFieldWidth)) - (lineWidth * 2), 0,
                                         buttonFieldWidth, buttonFieldWidth + lineWidth, 50, 50,
                                         Qt::RelativeSize);
-        buttonBackground.addRect(width() - 2 * buttonFieldWidth - lineWidth * 2, 0,
+        buttonBackground.addRect((width() - (2 * buttonFieldWidth)) - (lineWidth * 2), 0,
                                  buttonFieldWidth * 2, buttonFieldWidth / 2);
-        buttonBackground.addRect(width() - 1.5 * buttonFieldWidth - lineWidth * 2, 0,
+        buttonBackground.addRect((width() - static_cast<int>(1.5 * buttonFieldWidth)) - (lineWidth * 2), 0,
                                  buttonFieldWidth * 2, buttonFieldWidth + 1);
         buttonBackground.setFillRule(Qt::WindingFill);
         painter.setBrush(QBrush(buttonBackgroundColor));
@@ -208,12 +208,12 @@ void FileTransferWidget::paintEvent(QPaintEvent* event)
 
         // Draw the left button:
         QPainterPath leftButton;
-        leftButton.addRoundedRect(QRect(width() - 2 * buttonFieldWidth - lineWidth, 0,
+        leftButton.addRoundedRect(QRect((width() - (2 * buttonFieldWidth)) - lineWidth, 0,
                                         buttonFieldWidth, buttonFieldWidth),
                                   50, 50, Qt::RelativeSize);
-        leftButton.addRect(QRect(width() - 2 * buttonFieldWidth - lineWidth, 0,
+        leftButton.addRect(QRect((width() - (2 * buttonFieldWidth)) - lineWidth, 0,
                                  buttonFieldWidth / 2, buttonFieldWidth / 2));
-        leftButton.addRect(QRect(width() - 1.5 * buttonFieldWidth - lineWidth, 0,
+        leftButton.addRect(QRect((width() - static_cast<int>(1.5 * buttonFieldWidth)) - lineWidth, 0,
                                  buttonFieldWidth / 2, buttonFieldWidth));
         leftButton.setFillRule(Qt::WindingFill);
         painter.setBrush(QBrush(buttonColor));
@@ -268,7 +268,6 @@ void FileTransferWidget::updateWidgetText(const ToxFile& file)
         break;
     case ToxFile::BROKEN:
     case ToxFile::CANCELED:
-        break;
     case ToxFile::FINISHED:
         break;
     default:
@@ -318,7 +317,7 @@ void FileTransferWidget::updateFileProgress(const ToxFile& file)
         // update UI
         if (speed > 0) {
             // ETA
-            const QTime toGo = QTime(0, 0).addSecs(remainingTime);
+            const QTime toGo = QTime(0, 0).addSecs(static_cast<int>(remainingTime));
             const QString format =
                 toGo.hour() > 0 ? QStringLiteral("hh:mm:ss") : QStringLiteral("mm:ss");
             ui->etaLabel->setText(toGo.toString(format));
@@ -326,7 +325,7 @@ void FileTransferWidget::updateFileProgress(const ToxFile& file)
             ui->etaLabel->setText("");
         }
 
-        ui->progressLabel->setText(getHumanReadableSize(speed) + "/s");
+        ui->progressLabel->setText(getHumanReadableSize(static_cast<uint64_t>(speed)) + "/s");
         break;
     }
     case ToxFile::BROKEN:
@@ -447,22 +446,15 @@ void FileTransferWidget::setupButtons(const ToxFile& file)
 
 void FileTransferWidget::handleButton(QPushButton* btn)
 {
-    if (fileInfo.direction == ToxFile::SENDING) {
+    if (btn->objectName() == "pause" || btn->objectName() == "resume") {
+        coreFile.pauseResumeFile(fileInfo.friendId, fileInfo.fileNum);
+    } else if (fileInfo.direction == ToxFile::SENDING) {
         if (btn->objectName() == "cancel") {
             coreFile.cancelFileSend(fileInfo.friendId, fileInfo.fileNum);
-        } else if (btn->objectName() == "pause") {
-            coreFile.pauseResumeFile(fileInfo.friendId, fileInfo.fileNum);
-        } else if (btn->objectName() == "resume") {
-            coreFile.pauseResumeFile(fileInfo.friendId, fileInfo.fileNum);
         }
-    } else // receiving or paused
-    {
+    } else { // receiving or paused
         if (btn->objectName() == "cancel") {
             coreFile.cancelFileRecv(fileInfo.friendId, fileInfo.fileNum);
-        } else if (btn->objectName() == "pause") {
-            coreFile.pauseResumeFile(fileInfo.friendId, fileInfo.fileNum);
-        } else if (btn->objectName() == "resume") {
-            coreFile.pauseResumeFile(fileInfo.friendId, fileInfo.fileNum);
         } else if (btn->objectName() == "accept") {
             const QString path =
                 QFileDialog::getSaveFileName(Q_NULLPTR,

@@ -81,7 +81,7 @@ void FriendMessageDispatcher::clearOutgoingMessages()
 
 
 void FriendMessageDispatcher::sendProcessedMessage(const Message& message,
-                                                   OfflineMsgEngine::CompletionFn onOfflineMsgComplete)
+                                                   const OfflineMsgEngine::CompletionFn& onOfflineMsgComplete)
 {
     if (!Status::isOnline(f.getStatus())) {
         offlineMsgEngine.addUnsentMessage(message, onOfflineMsgComplete);
@@ -93,7 +93,7 @@ void FriendMessageDispatcher::sendProcessedMessage(const Message& message,
 
 
 void FriendMessageDispatcher::sendCoreProcessedMessage(const Message& message,
-                                                       OfflineMsgEngine::CompletionFn onOfflineMsgComplete)
+                                                       const OfflineMsgEngine::CompletionFn& onOfflineMsgComplete)
 {
     auto receipt = ReceiptNum();
 

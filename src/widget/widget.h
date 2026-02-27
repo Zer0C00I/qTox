@@ -124,7 +124,7 @@ public:
     void addFriendDialog(const Friend* frnd, ContentDialog* dialog);
     void addConferenceDialog(const Conference* conference, ContentDialog* dialog);
     bool newFriendMessageAlert(const ToxPk& friendId, const QString& text, bool sound = true,
-                               QString filename = QString(), size_t filesize = 0);
+                               const QString& filename = QString(), size_t filesize = 0);
     bool newConferenceMessageAlert(const ConferenceId& conferenceId, const ToxPk& authorPk,
                                    const QString& message, bool notify);
     bool getIsWindowMinimized();
@@ -136,7 +136,7 @@ public:
 
     void clearAllReceipts();
 
-    static inline QIcon prepareIcon(QString path, int w = 0, int h = 0);
+    static inline QIcon prepareIcon(const QString& path, int w = 0, int h = 0);
 
     bool conferencesVisible() const;
 
@@ -186,7 +186,7 @@ public slots:
     void onConferenceTitleChanged(uint32_t conferencenumber, const QString& author,
                                   const QString& title);
     void titleChangedByUser(const QString& title);
-    void onConferencePeerAudioPlaying(uint32_t conferencenumber, ToxPk peerPk);
+    void onConferencePeerAudioPlaying(uint32_t conferencenumber, const ToxPk& peerPk);
     void onConferenceSendFailed(uint32_t conferencenumber);
     void onFriendTypingChanged(uint32_t friendNumber, bool isTyping);
     void nextChat();
@@ -243,8 +243,8 @@ private slots:
     void incomingNotification(uint32_t friendNum);
     void onRejectCall(uint32_t friendId);
     void onStopNotification();
-    void dispatchFile(ToxFile file);
-    void dispatchFileWithBool(ToxFile file, bool pausedOrBroken);
+    void dispatchFile(const ToxFile& file);
+    void dispatchFileWithBool(const ToxFile& file, bool pausedOrBroken);
     void dispatchFileSendFailed(uint32_t friendId, const QString& fileName);
     void connectCircleWidget(CircleWidget& circleWidget) const;
     void connectFriendWidget(FriendWidget& friendWidget) const;
@@ -289,54 +289,54 @@ private:
     Profile& profile;
     std::unique_ptr<QSystemTrayIcon> icon;
     QMenu* trayMenu;
-    QAction* statusOnline;
-    QAction* statusAway;
-    QAction* statusBusy;
-    QAction* actionLogout;
-    QAction* actionQuit;
-    QAction* actionShow;
+    QAction* statusOnline{nullptr};
+    QAction* statusAway{nullptr};
+    QAction* statusBusy{nullptr};
+    QAction* actionLogout{nullptr};
+    QAction* actionQuit{nullptr};
+    QAction* actionShow{nullptr};
 
-    QMenu* filterMenu;
+    QMenu* filterMenu{nullptr};
 
-    QActionGroup* filterGroup;
-    QAction* filterAllAction;
-    QAction* filterOnlineAction;
-    QAction* filterOfflineAction;
-    QAction* filterFriendsAction;
-    QAction* filterGroupsAction;
+    QActionGroup* filterGroup{nullptr};
+    QAction* filterAllAction{nullptr};
+    QAction* filterOnlineAction{nullptr};
+    QAction* filterOfflineAction{nullptr};
+    QAction* filterFriendsAction{nullptr};
+    QAction* filterGroupsAction{nullptr};
 
-    QActionGroup* filterDisplayGroup;
-    QAction* filterDisplayName;
-    QAction* filterDisplayActivity;
+    QActionGroup* filterDisplayGroup{nullptr};
+    QAction* filterDisplayName{nullptr};
+    QAction* filterDisplayActivity{nullptr};
 
     Ui::MainWindow* ui;
-    QSplitter* centralLayout;
+    QSplitter* centralLayout{nullptr};
     QPoint dragPosition;
-    ContentLayout* contentLayout;
-    AddFriendForm* addFriendForm;
-    ConferenceInviteForm* conferenceInviteForm;
+    ContentLayout* contentLayout{nullptr};
+    AddFriendForm* addFriendForm{nullptr};
+    ConferenceInviteForm* conferenceInviteForm{nullptr};
 
-    ProfileInfo* profileInfo;
-    ProfileForm* profileForm;
+    ProfileInfo* profileInfo{nullptr};
+    ProfileForm* profileForm{nullptr};
 
     QPointer<DebugWidget> debugWidget;
     QPointer<SettingsWidget> settingsWidget;
     std::unique_ptr<UpdateCheck> updateCheck; // ownership should be moved outside Widget once non-singleton
-    FilesForm* filesForm;
+    FilesForm* filesForm{nullptr};
     static Widget* instance;
     GenericChatroomWidget* activeChatroomWidget;
-    FriendListWidget* chatListWidget;
-    MaskablePixmapWidget* profilePicture;
+    FriendListWidget* chatListWidget{nullptr};
+    MaskablePixmapWidget* profilePicture{nullptr};
     bool notify(QObject* receiver, QEvent* event);
     bool autoAwayActive = false;
-    QTimer* timer;
+    QTimer* timer{nullptr};
     bool eventFlag;
     bool eventIcon;
     bool wasMaximized = false;
-    QPushButton* friendRequestsButton;
-    QPushButton* conferenceInvitesButton;
-    unsigned int unreadConferenceInvites;
-    int icon_size;
+    QPushButton* friendRequestsButton{nullptr};
+    QPushButton* conferenceInvitesButton{nullptr};
+    unsigned int unreadConferenceInvites{0};
+    int icon_size{0};
 
     IAudioControl& audio;
     std::unique_ptr<IAudioSink> audioNotification;

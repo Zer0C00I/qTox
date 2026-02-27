@@ -188,7 +188,7 @@ namespace {
 std::tuple<CircleWidget*, FriendListWidget*>
 getCircleAndFriendList(const Friend* frnd, FriendWidget* fw, Settings& settings)
 {
-    const auto pk = frnd->getPublicKey();
+    const auto& pk = frnd->getPublicKey();
     const auto circleId = settings.getFriendCircleID(pk);
     auto* circleWidget = CircleWidget::getFromID(circleId);
     auto* w =
@@ -202,8 +202,8 @@ getCircleAndFriendList(const Friend* frnd, FriendWidget* fw, Settings& settings)
 void FriendWidget::moveToNewCircle()
 {
     auto* const frnd = chatroom->getFriend();
-    CircleWidget* circleWidget;
-    FriendListWidget* friendList;
+    CircleWidget* circleWidget = nullptr;
+    FriendListWidget* friendList = nullptr;
     std::tie(circleWidget, friendList) = getCircleAndFriendList(frnd, this, settings);
 
     if (circleWidget != nullptr) {
@@ -223,8 +223,8 @@ void FriendWidget::moveToNewCircle()
 void FriendWidget::removeFromCircle()
 {
     auto* const frnd = chatroom->getFriend();
-    CircleWidget* circleWidget;
-    FriendListWidget* friendList;
+    CircleWidget* circleWidget = nullptr;
+    FriendListWidget* friendList = nullptr;
     std::tie(circleWidget, friendList) = getCircleAndFriendList(frnd, this, settings);
 
     if (friendList != nullptr) {
@@ -333,7 +333,7 @@ void FriendWidget::updateStatusLight()
 
     if (event) {
         const Settings& s = settings;
-        const uint32_t circleId = s.getFriendCircleID(frnd->getPublicKey());
+        const int circleId = static_cast<int>(s.getFriendCircleID(frnd->getPublicKey()));
         CircleWidget* circleWidget = CircleWidget::getFromID(circleId);
         if (circleWidget != nullptr) {
             circleWidget->setExpanded(true);

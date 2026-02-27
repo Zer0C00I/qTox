@@ -25,7 +25,7 @@ public:
 
     bool isShown() const;
     void show(ContentLayout* contentLayout);
-    void setBodyHeadStyle(QString style);
+    void setBodyHeadStyle(const QString& style);
 
 private slots:
     void onTabChanged(int index);
@@ -34,8 +34,8 @@ private:
     void retranslateUi();
 
 private:
-    QVBoxLayout* bodyLayout;
-    QTabWidget* debugWidgets;
-    std::array<GenericForm*, 2> dbgForms;
-    int currentIndex;
+    QVBoxLayout* bodyLayout = nullptr;
+    QTabWidget* debugWidgets = nullptr;
+    std::array<GenericForm*, 2> dbgForms{nullptr, nullptr};
+    int currentIndex{0};
 };

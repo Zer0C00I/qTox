@@ -13,7 +13,7 @@ struct VideoMode;
 
 #define USING_V4L 1
 namespace v4l2 {
-QVector<VideoMode> getDeviceModes(QString devName);
+QVector<VideoMode> getDeviceModes(const QString& devName);
 QVector<QPair<QString, QString>> getDeviceList();
 QString getPixelFormatString(uint32_t pixel_format);
 bool betterPixelFormat(uint32_t a, uint32_t b);

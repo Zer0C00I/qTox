@@ -531,7 +531,7 @@ bool Widget::eventFilter(QObject* obj, QEvent* event)
         break;
 
     case QEvent::WindowStateChange:
-        ce = static_cast<QWindowStateChangeEvent*>(event);
+        ce = dynamic_cast<QWindowStateChangeEvent*>(event);
         if (state.testFlag(Qt::WindowMinimized) && (obj != nullptr)) {
             wasMaximized = ce->oldState().testFlag(Qt::WindowMaximized);
         }
@@ -1167,7 +1167,7 @@ void Widget::onStopNotification()
 /**
  * @brief Dispatches file to the appropriate chat log and accepts the transfer if necessary
  */
-void Widget::dispatchFile(ToxFile file)
+void Widget::dispatchFile(const ToxFile& file)
 {
     const auto& friendId = friendList->id2Key(file.friendId);
     Friend* f = friendList->findFriend(friendId);
@@ -1178,8 +1178,7 @@ void Widget::dispatchFile(ToxFile file)
     auto pk = f->getPublicKey();
 
     if (file.status == ToxFile::INITIALIZING && file.direction == ToxFile::RECEIVING) {
-        auto sender = pk; // direction is RECEIVING, so sender is always the remote peer
-
+        
         QString autoAcceptDir = settings.getAutoAcceptDir(f->getPublicKey());
 
         if (autoAcceptDir.isEmpty() && settings.getAutoSaveEnabled()) {
@@ -1201,7 +1200,7 @@ void Widget::dispatchFile(ToxFile file)
     filesForm->onFileUpdated(file);
 }
 
-void Widget::dispatchFileWithBool(ToxFile file, bool pausedOrBroken)
+void Widget::dispatchFileWithBool(const ToxFile& file, bool pausedOrBroken)
 {
     std::ignore = pausedOrBroken;
     dispatchFile(file);
@@ -1421,10 +1420,10 @@ void Widget::openDialog(GenericChatroomWidget* widget, bool newWindow)
     widget->resetEventFlags();
     widget->updateStatusLight();
 
-    GenericChatForm* form;
+    GenericChatForm* form = nullptr;
     const Friend* frnd = widget->getFriend();
     const Conference* conference = widget->getConference();
-    bool chatFormIsSet;
+    bool chatFormIsSet = false;
     if (frnd != nullptr) {
         form = chatForms[frnd->getPublicKey()];
         contentDialogManager->focusChat(frnd->getPersistentId());
@@ -1592,10 +1591,10 @@ void Widget::addConferenceDialog(const Conference* conference, ContentDialog* di
 }
 
 bool Widget::newFriendMessageAlert(const ToxPk& friendId, const QString& text, bool sound,
-                                   QString filename, size_t filesize)
+                                   const QString& filename, size_t filesize)
 {
-    bool hasActive;
-    QWidget* currentWindow;
+    bool hasActive = false;
+    QWidget* currentWindow = nullptr;
     ContentDialog* contentDialog = contentDialogManager->getFriendDialog(friendId);
     Friend* f = friendList->findFriend(friendId);
 
@@ -1660,8 +1659,8 @@ bool Widget::newFriendMessageAlert(const ToxPk& friendId, const QString& text, b
 bool Widget::newConferenceMessageAlert(const ConferenceId& conferenceId, const ToxPk& authorPk,
                                        const QString& message, bool notify)
 {
-    bool hasActive;
-    QWidget* currentWindow;
+    bool hasActive = false;
+    QWidget* currentWindow = nullptr;
     ContentDialog* contentDialog = contentDialogManager->getConferenceDialog(conferenceId);
     Conference* c = conferenceList->findConference(conferenceId);
     ConferenceWidget* widget = conferenceWidgets[conferenceId];
@@ -2043,7 +2042,7 @@ void Widget::onConferenceMessageReceived(uint32_t conferencenumber, uint32_t pee
     const ConferenceId& conferenceId = conferenceList->id2Key(conferencenumber);
     assert(conferenceList->findConference(conferenceId));
 
-    const ToxPk author = core->getConferencePeerPk(conferencenumber, peernumber);
+    const ToxPk author = core->getConferencePeerPk(static_cast<int>(conferencenumber), static_cast<int>(peernumber));
 
     conferenceMessageDispatchers[conferenceId]->onMessageReceived(author, isAction, message);
 }
@@ -2090,7 +2089,7 @@ void Widget::titleChangedByUser(const QString& title)
     emit changeConferenceTitle(conference->getId(), title);
 }
 
-void Widget::onConferencePeerAudioPlaying(uint32_t conferencenumber, ToxPk peerPk)
+void Widget::onConferencePeerAudioPlaying(uint32_t conferencenumber, const ToxPk& peerPk)
 {
     const ConferenceId& conferenceId = conferenceList->id2Key(conferencenumber);
     assert(conferenceList->findConference(conferenceId));
@@ -2137,7 +2136,7 @@ void Widget::removeConference(Conference* c, bool fake)
     }
 
     if (!fake) {
-        core->removeConference(conferencenumber);
+        core->removeConference(static_cast<int>(conferencenumber));
     }
     chatListWidget->removeConferenceWidget(widget); // deletes widget
 
@@ -2173,10 +2172,10 @@ Conference* Widget::createConference(uint32_t conferencenumber, const Conference
     }
 
     const auto conferenceName = tr("Conference #%1").arg(conferencenumber);
-    const bool enabled = core->getConferenceAvEnabled(conferencenumber);
+    const bool enabled = core->getConferenceAvEnabled(static_cast<int>(conferencenumber));
     Conference* newConference =
-        conferenceList->addConference(*core, conferencenumber, conferenceId, conferenceName,
-                                      enabled, core->getUsername(), *friendList);
+        conferenceList->addConference(*core, static_cast<int>(conferencenumber), conferenceId,
+                                      conferenceName, enabled, core->getUsername(), *friendList);
     assert(newConference);
 
     if (enabled) {
@@ -2547,7 +2546,7 @@ void Widget::previousChat()
 }
 
 // Preparing needed to set correct size of icons for GTK tray backend
-inline QIcon Widget::prepareIcon(QString path, int w, int h)
+inline QIcon Widget::prepareIcon(const QString& path, int w, int h)
 {
 #ifdef Q_OS_LINUX
 
@@ -2675,7 +2674,7 @@ void Widget::friendRequestsUpdate()
     }
 
     if (friendRequestsButton != nullptr) {
-        friendRequestsButton->setText(tr("%n new friend request(s)", "", unreadFriendRequests));
+        friendRequestsButton->setText(tr("%n new friend request(s)", "", static_cast<int>(unreadFriendRequests)));
     }
 }
 
@@ -2693,7 +2692,7 @@ void Widget::conferenceInvitesUpdate()
     }
 
     if (conferenceInvitesButton != nullptr) {
-        conferenceInvitesButton->setText(tr("%n new conference invite(s)", "", unreadConferenceInvites));
+        conferenceInvitesButton->setText(tr("%n new conference invite(s)", "", static_cast<int>(unreadConferenceInvites)));
     }
 }
 

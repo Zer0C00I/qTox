@@ -88,13 +88,13 @@ private:
     IAudioSettings* audioSettings;
     IVideoSettings* videoSettings;
 
-    bool subscribedToAudioIn;
+    bool subscribedToAudioIn{false};
     std::unique_ptr<IAudioSink> audioSink;
     std::unique_ptr<IAudioSource> audioSrc;
     VideoSurface* camVideoSurface;
     CameraSource& camera;
     QVector<QPair<QString, QString>> videoDeviceList;
     QVector<VideoMode> videoModes;
-    uint alSource;
-    const uint totalSliderSteps = 100; // arbitrary number of steps to give slider a good "feel"
+    uint alSource{0};
+    const int totalSliderSteps = 100; // arbitrary number of steps to give slider a good "feel"
 };

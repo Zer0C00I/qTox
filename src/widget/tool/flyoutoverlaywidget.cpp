@@ -49,8 +49,8 @@ void FlyoutOverlayWidget::setFlyoutPercent(qreal progress)
     percent = progress;
 
     const QSize self = size();
-    setMask(QRegion(0, 0, self.width() * progress + 1, self.height()));
-    move(startPos.x() + self.width() - self.width() * percent, startPos.y());
+    setMask(QRegion(0, 0, static_cast<int>((self.width() * progress) + 1), self.height()));
+    move(startPos.x() + self.width() - static_cast<int>(self.width() * percent), startPos.y());
     setVisible(progress != 0);
 }
 

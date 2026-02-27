@@ -283,13 +283,13 @@ void ScreenGrabberChooserRectItem::forwardMainRectEvent(QEvent* event)
 {
     switch (event->type()) {
     case QEvent::GraphicsSceneMousePress:
-        return mousePress(static_cast<QGraphicsSceneMouseEvent*>(event));
+        return mousePress(dynamic_cast<QGraphicsSceneMouseEvent*>(event));
     case QEvent::GraphicsSceneMouseMove:
-        return mouseMove(static_cast<QGraphicsSceneMouseEvent*>(event));
+        return mouseMove(dynamic_cast<QGraphicsSceneMouseEvent*>(event));
     case QEvent::GraphicsSceneMouseRelease:
-        return mouseRelease(static_cast<QGraphicsSceneMouseEvent*>(event));
+        return mouseRelease(dynamic_cast<QGraphicsSceneMouseEvent*>(event));
     case QEvent::GraphicsSceneMouseDoubleClick:
-        return mouseDoubleClick(static_cast<QGraphicsSceneMouseEvent*>(event));
+        return mouseDoubleClick(dynamic_cast<QGraphicsSceneMouseEvent*>(event));
     default:
         return;
     }
@@ -305,13 +305,13 @@ void ScreenGrabberChooserRectItem::forwardHandleEvent(QGraphicsItem* watched, QE
     switch (event->type()) {
     case QEvent::GraphicsSceneMousePress:
         return mousePressHandle(multiplier.x(), multiplier.y(),
-                                static_cast<QGraphicsSceneMouseEvent*>(event));
+                                dynamic_cast<QGraphicsSceneMouseEvent*>(event));
     case QEvent::GraphicsSceneMouseMove:
         return mouseMoveHandle(multiplier.x(), multiplier.y(),
-                               static_cast<QGraphicsSceneMouseEvent*>(event));
+                               dynamic_cast<QGraphicsSceneMouseEvent*>(event));
     case QEvent::GraphicsSceneMouseRelease:
         return mouseReleaseHandle(multiplier.x(), multiplier.y(),
-                                  static_cast<QGraphicsSceneMouseEvent*>(event));
+                                  dynamic_cast<QGraphicsSceneMouseEvent*>(event));
     default:
         return;
     }

@@ -52,7 +52,7 @@ QImage* QRWidget::getImage()
  * @param path Full path to the file with extension.
  * @return indicate if saving was successful.
  */
-bool QRWidget::saveImage(QString path)
+bool QRWidget::saveImage(const QString& path)
 {
     // 0 - image format same as file extension, 75-quality, png file is ~6.3kb
     return image->save(path, nullptr, 75);

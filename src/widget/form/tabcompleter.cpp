@@ -69,7 +69,7 @@ void TabCompleter::buildCompletionList()
     }
 
     nextCompletion = completionMap.begin();
-    lastCompletionLength = tabAbbrev.length();
+    lastCompletionLength = static_cast<int>(tabAbbrev.length());
 }
 
 
@@ -93,13 +93,13 @@ void TabCompleter::complete()
         msgEdit->insertPlainText(*nextCompletion);
 
         // remember charcount to delete next time and advance to next completion
-        lastCompletionLength = nextCompletion->length();
+        lastCompletionLength = static_cast<int>(nextCompletion->length());
         ++nextCompletion;
 
         // we're completing the first word of the line
         if (msgEdit->textCursor().position() == lastCompletionLength) {
             msgEdit->insertPlainText(nickSuffix);
-            lastCompletionLength += nickSuffix.length();
+            lastCompletionLength += static_cast<int>(nickSuffix.length());
         }
     } else { // we're at the end of the list -> start over again
         if (!completionMap.isEmpty()) {

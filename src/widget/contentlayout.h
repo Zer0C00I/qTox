@@ -22,8 +22,8 @@ public:
 
     QFrame mainHLine;
     QHBoxLayout mainHLineLayout;
-    QWidget* mainContent;
-    QWidget* mainHead;
+    QWidget* mainContent{nullptr};
+    QWidget* mainHead{nullptr};
     Settings& settings;
     Style& style;
 

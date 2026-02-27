@@ -90,7 +90,7 @@ UserInterfaceForm::UserInterfaceForm(SmileyPack& smileyPack_, Settings& settings
     bodyUI->cbShowIdenticons->setChecked(settings.getShowIdenticons());
 
     bodyUI->useEmoticons->setChecked(settings.getUseEmoticons());
-    for (auto entry : SmileyPack::listSmileyPacks())
+    for (const auto& entry : SmileyPack::listSmileyPacks())
         bodyUI->smileyPackBrowser->addItem(entry.first, entry.second);
 
     smileLabels = {bodyUI->smile1, bodyUI->smile2, bodyUI->smile3, bodyUI->smile4, bodyUI->smile5};

@@ -38,13 +38,13 @@ public:
                Style& style, IMessageBoxManager& messageBoxManager, QWidget* parent = nullptr);
     ~ChatWidget() override;
 
-    void insertChatlines(std::map<ChatLogIdx, ChatLine::Ptr> chatLines);
+    void insertChatlines(const std::map<ChatLogIdx, ChatLine::Ptr>& chatLines);
     void clearSelection();
     void clear();
     void copySelectedText(bool toSelectionBuffer = false) const;
     void setTypingNotificationVisible(bool visible);
     void setTypingNotificationName(const QString& displayName);
-    void scrollToLine(ChatLine::Ptr line);
+    void scrollToLine(const ChatLine::Ptr& line);
     void selectAll();
     void fontChanged(const QFont& font);
 
@@ -78,7 +78,7 @@ public slots:
     void startSearch(const QString& phrase, const ParameterSearch& parameter);
     void onSearchUp(const QString& phrase, const ParameterSearch& parameter);
     void onSearchDown(const QString& phrase, const ParameterSearch& parameter);
-    void handleSearchResult(SearchResult result, SearchDirection direction);
+    void handleSearchResult(const SearchResult& result, SearchDirection direction);
     void removeSearchPhrase();
 
 private slots:
@@ -134,7 +134,7 @@ protected:
     void removeLines(ChatLogIdx begin, ChatLogIdx end);
 
 protected:
-    virtual bool isActiveFileTransfer(ChatLine::Ptr l);
+    virtual bool isActiveFileTransfer(const ChatLine::Ptr& l);
 
 private:
     void retranslateUi();
@@ -149,8 +149,8 @@ private:
 
     void renderItem(const ChatLogItem& item, bool hideName, bool colorizeNames_,
                     ChatLine::Ptr& chatMessage);
-    void renderFile(QString displayName, ToxFile file, bool isSelf, QDateTime timestamp,
-                    ChatLine::Ptr& chatMessage);
+    void renderFile(const QString& displayName, const ToxFile& file, bool isSelf,
+                    const QDateTime& timestamp, ChatLine::Ptr& chatMessage);
     bool needsToHideName(ChatLogIdx idx, bool prevIdxRendered) const;
     bool shouldRenderMessage(ChatLogIdx idx) const;
     void disableSearchText();
@@ -200,7 +200,7 @@ private:
     AutoScrollDirection selectionScrollDir = AutoScrollDirection::NoDirection;
     int clickCount = 0;
     QPoint lastClickPos;
-    Qt::MouseButton lastClickButton;
+    Qt::MouseButton lastClickButton = Qt::NoButton;
 
     // worker vars
     size_t workerLastIndex = 0;
@@ -217,7 +217,7 @@ private:
     uint32_t layoutGeneration = 0;
     SearchPos searchPos;
     const ICoreIdHandler& idHandler;
-    CoreFile* coreFile;
+    CoreFile* coreFile = nullptr;
     bool scrollMonitoringEnabled = true;
 
     std::unique_ptr<ChatLineStorage> chatLineStorage;

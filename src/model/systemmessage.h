@@ -36,7 +36,7 @@ enum class SystemMessageType
 struct SystemMessage
 {
     using Args = std::array<QString, 4>;
-    SystemMessageType messageType;
+    SystemMessageType messageType{SystemMessageType::fileSendFailed};
     QDateTime timestamp;
     Args args;
 

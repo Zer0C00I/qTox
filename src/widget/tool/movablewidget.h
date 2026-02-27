@@ -43,5 +43,5 @@ private:
     QRect boundaryRect;
     QSizeF actualSize;
     QPointF actualPos;
-    float ratio;
+    float ratio{1.0f};
 };

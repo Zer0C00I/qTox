@@ -111,14 +111,14 @@ const QChar URI_ENDING_CHARS[] = {
  */
 MatchingUri stripSurroundingChars(const QStringView wrappedUri, const int startOfBareUri)
 {
-    bool matchFound;
+    bool matchFound = false;
     int curValidationStartPos = 0;
-    int curValidationEndPos = wrappedUri.length();
+    int curValidationEndPos = static_cast<int>(wrappedUri.length());
     do {
         matchFound = false;
         for (const auto& surroundChars : URI_WRAPPING_CHARS) {
-            const int openingCharLength = surroundChars.first.length();
-            const int closingCharLength = surroundChars.second.length();
+            const int openingCharLength = static_cast<int>(surroundChars.first.length());
+            const int closingCharLength = static_cast<int>(surroundChars.second.length());
             if (surroundChars.first == wrappedUri.mid(curValidationStartPos, openingCharLength)
                 && surroundChars.second
                        == wrappedUri.mid(curValidationEndPos - closingCharLength, closingCharLength)) {
@@ -160,8 +160,8 @@ QString highlight(const QString& message, const QVector<QRegularExpression>& pat
 {
     QString result = message;
     for (const QRegularExpression& exp : patterns) {
-        const int startLength = result.length();
-        int offset = 0;
+        const qsizetype startLength = result.length();
+        qsizetype offset = 0;
         QRegularExpressionMatchIterator iter = exp.globalMatch(result);
         while (iter.hasNext()) {
             const QRegularExpressionMatch match = iter.next();
@@ -176,8 +176,8 @@ QString highlight(const QString& message, const QVector<QRegularExpression>& pat
             }
             const QString wrappedURL =
                 wrapper.arg(match.captured(uriWithoutWrapMatch).left(matchUri.length));
-            result.replace(match.capturedStart(uriWithoutWrapMatch) + offset, matchUri.length,
-                           wrappedURL);
+            result.replace(static_cast<int>(match.capturedStart(uriWithoutWrapMatch) + offset),
+                           matchUri.length, wrappedURL);
             offset = result.length() - startLength;
         }
     }
@@ -236,10 +236,10 @@ QString TextFormatter::applyMarkdown(const QString& message, bool showFormatting
                 continue;
             }
 
-            const int length = match.capturedLength();
+            const qsizetype length = match.capturedLength();
             const QString wrappedText = pair.second.arg(captured);
-            const int startPos = match.capturedStart() + offset;
-            result.replace(startPos, length, wrappedText);
+            const qsizetype startPos = match.capturedStart() + offset;
+            result.replace(static_cast<int>(startPos), static_cast<int>(length), wrappedText);
             offset += wrappedText.length() - length;
         }
     }

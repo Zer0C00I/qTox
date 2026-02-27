@@ -228,7 +228,7 @@ bool ToxId::isValid() const
     QByteArray calculated(ToxId::checksumSize, 0x00);
 
     for (int i = 0; i < pkAndChecksum; i++) {
-        calculated[i % 2] = calculated[i % 2] ^ data[i];
+        calculated[i % 2] = static_cast<char>(calculated[i % 2] ^ data[i]);
     }
 
     return calculated == checksum;

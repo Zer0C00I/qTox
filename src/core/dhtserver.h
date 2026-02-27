@@ -13,13 +13,13 @@
 
 struct DhtServer
 {
-    bool statusUdp;
-    bool statusTcp;
+    bool statusUdp{false};
+    bool statusTcp{false};
     QString ipv4;
     QString ipv6;
     QString maintainer;
     ToxPk publicKey;
-    quint16 udpPort;
+    quint16 udpPort{0};
     std::vector<uint16_t> tcpPorts;
 
     bool operator==(const DhtServer& other) const;

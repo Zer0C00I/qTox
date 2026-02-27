@@ -211,8 +211,8 @@ CameraDevice* CameraDevice::open(QString devName, VideoMode mode)
             screen = defaultScreen->size();
             // Workaround https://trac.ffmpeg.org/ticket/4574 by choping 1 px bottom and right
             // Actually, let's chop two pixels, toxav hates odd resolutions (off by one stride)
-            screen.setWidth((screen.width() * pixRatio) - 2);
-            screen.setHeight((screen.height() * pixRatio) - 2);
+            screen.setWidth(static_cast<int>(screen.width() * pixRatio) - 2);
+            screen.setHeight(static_cast<int>(screen.height() * pixRatio) - 2);
         }
         const QString screenVideoSize =
             QStringLiteral("%1x%2").arg(screen.width()).arg(screen.height());
@@ -436,8 +436,10 @@ QVector<VideoMode> CameraDevice::getScreenModes()
         const QPoint p = rect.topLeft();
         const qreal pixRatio = s->devicePixelRatio();
 
-        const VideoMode mode(rect.width() * pixRatio, rect.height() * pixRatio, p.x() * pixRatio,
-                             p.y() * pixRatio);
+        const VideoMode mode(static_cast<int>(rect.width() * pixRatio),
+                             static_cast<int>(rect.height() * pixRatio),
+                             static_cast<int>(p.x() * pixRatio),
+                             static_cast<int>(p.y() * pixRatio));
         result.push_back(mode);
     });
 
@@ -449,7 +451,7 @@ QVector<VideoMode> CameraDevice::getScreenModes()
  * @param devName Device name to get nodes from.
  * @return Vector of available modes for the device.
  */
-QVector<VideoMode> CameraDevice::getVideoModes(QString devName)
+QVector<VideoMode> CameraDevice::getVideoModes(const QString& devName)
 {
     std::ignore = devName;
 

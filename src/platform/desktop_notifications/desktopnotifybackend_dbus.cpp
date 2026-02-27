@@ -39,8 +39,8 @@ const QString NOTIFY_PORTAL_DBUS_CORE_OBJECT = QStringLiteral("/org/freedesktop/
 
 struct NotificationSpecVersion
 {
-    int major;
-    int minor;
+    int major = 0;
+    int minor = 0;
 
     bool operator>=(const NotificationSpecVersion& other) const
     {
@@ -163,12 +163,12 @@ QDBusArgument& operator<<(QDBusArgument& argument, const DBusNotifyImage& image)
 Q_DECL_UNUSED
 const QDBusArgument& operator>>(const QDBusArgument& argument, DBusNotifyImage& image)
 {
-    int width;
-    int height;
-    int rowStride;
-    bool hasAlpha;
-    int bitsPerSample;
-    int channels;
+    int width = 0;
+    int height = 0;
+    int rowStride = 0;
+    bool hasAlpha = false;
+    int bitsPerSample = 0;
+    int channels = 0;
     QByteArray data;
     argument.beginStructure();
     argument >> width;

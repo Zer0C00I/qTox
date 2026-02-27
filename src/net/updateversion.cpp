@@ -24,7 +24,7 @@ std::optional<Version> tagToVersion(const QString& tagName)
         return std::nullopt;
     }
 
-    bool ok;
+    bool ok = false;
     const auto major = matches.captured(1).toInt(&ok);
     if (!ok) {
         return std::nullopt;

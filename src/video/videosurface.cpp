@@ -201,15 +201,15 @@ void VideoSurface::recalculateBounds()
         QPoint pos;
         QSize size;
         const QSize usableSize = contentsRect().size();
-        const int possibleWidth = usableSize.height() * ratio;
+        const int possibleWidth = static_cast<int>(usableSize.height() * ratio);
 
         if (possibleWidth > usableSize.width())
-            size = (QSize(usableSize.width(), usableSize.width() / ratio));
+            size = (QSize(usableSize.width(), static_cast<int>(usableSize.width() / ratio)));
         else
             size = (QSize(possibleWidth, usableSize.height()));
 
-        pos.setX(width() / 2 - size.width() / 2);
-        pos.setY(height() / 2 - size.height() / 2);
+        pos.setX((width() / 2) - (size.width() / 2));
+        pos.setY((height() / 2) - (size.height() / 2));
         boundingRect.setRect(pos.x(), pos.y(), size.width(), size.height());
     }
 

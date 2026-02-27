@@ -15,7 +15,7 @@
 
 struct ChatLogMessage
 {
-    MessageState state;
+    MessageState state{MessageState::complete};
     Message message;
 };
 

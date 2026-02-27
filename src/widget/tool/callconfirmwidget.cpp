@@ -67,7 +67,7 @@ CallConfirmWidget::CallConfirmWidget(Settings& settings, Style& style, const QWi
     const int marginSize = 12;
     const QFontMetrics fontMetrics(callLabel->font());
     const QString elidedText =
-        fontMetrics.elidedText(callLabel->text(), elideMode, rectW - marginSize * 2 - 4);
+        fontMetrics.elidedText(callLabel->text(), elideMode, (rectW - (marginSize * 2)) - 4);
     callLabel->setText(elidedText);
 
     auto* buttonBox = new QDialogButtonBox(Qt::Horizontal, this);
@@ -120,9 +120,9 @@ void CallConfirmWidget::reposition()
 
     mainRect = {0, spikeH, rectW, rectH};
     brush = QBrush(QColor(65, 65, 65));
-    spikePoly = QPolygon({{(rectW - spikeW) / 2 + xOverflow, spikeH},
-                          {rectW / 2 + xOverflow, 0},
-                          {(rectW + spikeW) / 2 + xOverflow, spikeH}});
+    spikePoly = QPolygon({{(((rectW - spikeW) / 2) + xOverflow), spikeH},
+                          {((rectW / 2) + xOverflow), 0},
+                          {(((rectW + spikeW) / 2) + xOverflow), spikeH}});
 
     move(pos);
     update();

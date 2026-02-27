@@ -46,7 +46,7 @@ bool Platform::capsLockEnabled()
         return false;
     }
 
-    bool state;
+    bool state = false;
     kr = IOHIDGetModifierLockState(ioc, kIOHIDCapsLockState, &state);
     if (kr != KERN_SUCCESS) {
         IOServiceClose(ioc);

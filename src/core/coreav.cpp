@@ -111,7 +111,7 @@ CoreAV::CoreAVPtr CoreAV::makeCoreAV(Tox* core, QRecursiveMutex& toxCoreLock,
                                      IConferenceSettings& conferenceSettings,
                                      CameraSource& cameraSource)
 {
-    Toxav_Err_New err;
+    Toxav_Err_New err = TOXAV_ERR_NEW_OK;
     std::unique_ptr<ToxAV, ToxAVDeleter> toxav{toxav_new(core, &err)};
     switch (err) {
     case TOXAV_ERR_NEW_OK:
@@ -179,7 +179,7 @@ void CoreAV::process()
 {
     assert(QThread::currentThread() == coreAvThread.get());
     toxav_iterate(toxav.get());
-    iterateTimer->start(toxav_iteration_interval(toxav.get()));
+    iterateTimer->start(static_cast<int>(toxav_iteration_interval(toxav.get())));
 }
 
 /**
@@ -201,7 +201,7 @@ bool CoreAV::isCallStarted(const Friend* f) const
 bool CoreAV::isCallStarted(const Conference* c) const
 {
     const QReadLocker locker{&callsLock};
-    return (c != nullptr) && conferenceCalls.contains(c->getId());
+    return (c != nullptr) && conferenceCalls.contains(static_cast<int>(c->getId()));
 }
 
 /**
@@ -227,7 +227,7 @@ bool CoreAV::isCallActive(const Friend* f) const
 bool CoreAV::isCallActive(const Conference* c) const
 {
     const QReadLocker locker{&callsLock};
-    auto it = conferenceCalls.find(c->getId());
+    auto it = conferenceCalls.find(static_cast<int>(c->getId()));
     if (it == conferenceCalls.end()) {
         return false;
     }
@@ -249,7 +249,7 @@ bool CoreAV::answerCall(uint32_t friendNum, bool video)
     qDebug() << "Answering call" << friendNum;
     auto it = calls.find(friendNum);
     assert(it != calls.end());
-    Toxav_Err_Answer err;
+    Toxav_Err_Answer err = TOXAV_ERR_ANSWER_OK;
 
     const uint32_t videoBitrate = video ? VIDEO_DEFAULT_BITRATE : 0;
     if (toxav_answer(toxav.get(), friendNum, audioSettings.getAudioBitrate(), videoBitrate, &err)) {
@@ -257,7 +257,7 @@ bool CoreAV::answerCall(uint32_t friendNum, bool video)
         return true;
     }
     qWarning() << "Failed to answer call with error" << err;
-    Toxav_Err_Call_Control controlErr;
+    Toxav_Err_Call_Control controlErr = TOXAV_ERR_CALL_CONTROL_OK;
     toxav_call_control(toxav.get(), friendNum, TOXAV_CALL_CONTROL_CANCEL, &controlErr);
     PARSE_ERR(controlErr);
     calls.erase(it);
@@ -277,7 +277,7 @@ bool CoreAV::startCall(uint32_t friendNum, bool video)
     }
 
     const uint32_t videoBitrate = video ? VIDEO_DEFAULT_BITRATE : 0;
-    Toxav_Err_Call err;
+    Toxav_Err_Call err = TOXAV_ERR_CALL_OK;
     toxav_call(toxav.get(), friendNum, audioSettings.getAudioBitrate(), videoBitrate, &err);
     if (!PARSE_ERR(err)) {
         return false;
@@ -301,7 +301,7 @@ bool CoreAV::cancelCall(uint32_t friendNum)
     const QMutexLocker<QRecursiveMutex> coreLocker{&coreLock};
 
     qDebug() << "Cancelling call with" << friendNum;
-    Toxav_Err_Call_Control err;
+    Toxav_Err_Call_Control err = TOXAV_ERR_CALL_CONTROL_OK;
     toxav_call_control(toxav.get(), friendNum, TOXAV_CALL_CONTROL_CANCEL, &err);
     if (!PARSE_ERR(err)) {
         return false;
@@ -354,7 +354,7 @@ bool CoreAV::sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, 
     }
 
     // TOXAV_ERR_SEND_FRAME_SYNC means toxav failed to lock, retry 5 times in this case
-    Toxav_Err_Send_Frame err;
+    Toxav_Err_Send_Frame err = TOXAV_ERR_SEND_FRAME_OK;
     int retries = 0;
     do {
         if (!toxav_audio_send_frame(toxav.get(), callId, pcm, samples, chans, rate, &err)) {
@@ -373,7 +373,7 @@ bool CoreAV::sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, 
     return true;
 }
 
-void CoreAV::sendCallVideo(uint32_t callId, std::shared_ptr<VideoFrame> vframe)
+void CoreAV::sendCallVideo(uint32_t callId, const std::shared_ptr<VideoFrame>& vframe)
 {
     const QWriteLocker locker{&callsLock};
 
@@ -394,7 +394,7 @@ void CoreAV::sendCallVideo(uint32_t callId, std::shared_ptr<VideoFrame> vframe)
     if (call.getNullVideoBitrate()) {
         qDebug() << "Restarting video stream to friend" << callId;
         const QMutexLocker<QRecursiveMutex> coreLocker{&coreLock};
-        Toxav_Err_Bit_Rate_Set err;
+        Toxav_Err_Bit_Rate_Set err = TOXAV_ERR_BIT_RATE_SET_OK;
         toxav_video_set_bit_rate(toxav.get(), callId, VIDEO_DEFAULT_BITRATE, &err);
         if (!PARSE_ERR(err)) {
             return;
@@ -410,7 +410,7 @@ void CoreAV::sendCallVideo(uint32_t callId, std::shared_ptr<VideoFrame> vframe)
 
     // TOXAV_ERR_SEND_FRAME_SYNC means toxav failed to lock, retry 5 times in this case
     // We don't want to be dropping iframes because of some lock held by toxav_iterate
-    Toxav_Err_Send_Frame err;
+    Toxav_Err_Send_Frame err = TOXAV_ERR_SEND_FRAME_OK;
     int retries = 0;
     do {
         if (!toxav_video_send_frame(toxav.get(), callId, frame.width, frame.height, frame.y,
@@ -494,7 +494,7 @@ void CoreAV::conferenceCallCallback(void* tox, uint32_t conference, uint32_t pee
 
     const QReadLocker locker{&cav->callsLock};
 
-    const ToxPk peerPk = c->getConferencePeerPk(conference, peer);
+    const ToxPk peerPk = c->getConferencePeerPk(static_cast<int>(conference), static_cast<int>(peer));
     // don't play the audio if it comes from a muted peer
     if (cav->conferenceSettings.getBlockList().contains(peerPk.toString())) {
         return;
@@ -502,7 +502,7 @@ void CoreAV::conferenceCallCallback(void* tox, uint32_t conference, uint32_t pee
 
     emit c->conferencePeerAudioPlaying(conference, peerPk);
 
-    auto it = cav->conferenceCalls.find(conference);
+    auto it = cav->conferenceCalls.find(static_cast<int>(conference));
     if (it == cav->conferenceCalls.end()) {
         return;
     }
@@ -513,7 +513,7 @@ void CoreAV::conferenceCallCallback(void* tox, uint32_t conference, uint32_t pee
         return;
     }
 
-    call.playAudioBuffer(peerPk, data, samples, channels, sample_rate);
+    call.playAudioBuffer(peerPk, data, static_cast<int>(samples), channels, static_cast<int>(sample_rate));
 }
 
 /**
@@ -521,11 +521,11 @@ void CoreAV::conferenceCallCallback(void* tox, uint32_t conference, uint32_t pee
  * @param conference Conference Index
  * @param peer Peer Index
  */
-void CoreAV::invalidateConferenceCallPeerSource(const Conference& conference, ToxPk peerPk)
+void CoreAV::invalidateConferenceCallPeerSource(const Conference& conference, const ToxPk& peerPk)
 {
     const QWriteLocker locker{&callsLock};
 
-    auto it = conferenceCalls.find(conference.getId());
+    auto it = conferenceCalls.find(static_cast<int>(conference.getId()));
     if (it == conferenceCalls.end()) {
         return;
     }
@@ -631,7 +631,7 @@ void CoreAV::muteCallInput(const Conference* c, bool mute)
     if (c == nullptr) {
         return;
     }
-    auto it = conferenceCalls.find(c->getId());
+    auto it = conferenceCalls.find(static_cast<int>(c->getId()));
     if (it != conferenceCalls.end()) {
         it->second->setMuteMic(mute);
     }
@@ -649,7 +649,7 @@ void CoreAV::muteCallOutput(const Conference* c, bool mute)
     if (c == nullptr) {
         return;
     }
-    auto it = conferenceCalls.find(c->getId());
+    auto it = conferenceCalls.find(static_cast<int>(c->getId()));
     if (it != conferenceCalls.end()) {
         it->second->setMuteVol(mute);
     }
@@ -668,7 +668,7 @@ bool CoreAV::isConferenceCallInputMuted(const Conference* c) const
         return false;
     }
 
-    const uint32_t conferenceId = c->getId();
+    const int conferenceId = static_cast<int>(c->getId());
     auto it = conferenceCalls.find(conferenceId);
     return (it != conferenceCalls.end()) && it->second->getMuteMic();
 }
@@ -686,7 +686,7 @@ bool CoreAV::isConferenceCallOutputMuted(const Conference* c) const
         return false;
     }
 
-    const uint32_t conferenceId = c->getId();
+    const int conferenceId = static_cast<int>(c->getId());
     auto it = conferenceCalls.find(conferenceId);
     return (it != conferenceCalls.end()) && it->second->getMuteVol();
 }
@@ -737,7 +737,7 @@ void CoreAV::sendNoVideo()
     qDebug() << "CoreAV: Signaling end of video sending";
     for (auto& kv : calls) {
         ToxFriendCall& call = *kv.second;
-        Toxav_Err_Bit_Rate_Set err;
+        Toxav_Err_Bit_Rate_Set err = TOXAV_ERR_BIT_RATE_SET_OK;
         toxav_video_set_bit_rate(toxav.get(), kv.first, 0, &err);
         if (!PARSE_ERR(err)) {
             continue;
@@ -763,7 +763,7 @@ void CoreAV::callCallback(ToxAV* toxav, uint32_t friendNum, bool audio, bool vid
     auto it = self->calls.emplace(friendNum, std::move(call));
     if (!it.second) {
         qWarning() << QString("Rejecting call invite from %1, we're already in that call!").arg(friendNum);
-        Toxav_Err_Call_Control err;
+        Toxav_Err_Call_Control err = TOXAV_ERR_CALL_CONTROL_OK;
         toxav_call_control(toxav, friendNum, TOXAV_CALL_CONTROL_CANCEL, &err);
         PARSE_ERR(err);
         return;
@@ -898,7 +898,7 @@ void CoreAV::audioFrameCallback(ToxAV* toxAV, uint32_t friendNum, const int16_t*
         return;
     }
 
-    call.playAudioBuffer(pcm, sampleCount, channels, samplingRate);
+    call.playAudioBuffer(pcm, static_cast<int>(sampleCount), channels, static_cast<int>(samplingRate));
 }
 
 void CoreAV::videoFrameCallback(ToxAV* toxAV, uint32_t friendNum, uint16_t w, uint16_t h,
@@ -924,7 +924,7 @@ void CoreAV::videoFrameCallback(ToxAV* toxAV, uint32_t friendNum, uint16_t w, ui
         return;
     }
 
-    vpx_image frame;
+    vpx_image frame{};
     frame.d_h = h;
     frame.d_w = w;
     frame.planes[0] = const_cast<uint8_t*>(y);

@@ -27,22 +27,23 @@ void onLogMessage(Tox* tox, Tox_Log_Level level, const char* file, uint32_t line
     std::ignore = tox;
     std::ignore = user_data;
 
+    const int lineInt = static_cast<int>(line);
     switch (level) {
     case TOX_LOG_LEVEL_TRACE:
         // trace level generates too much noise to enable by default
-        QMessageLogger(file, line, func).debug(toxcore) << message;
+        QMessageLogger(file, lineInt, func).debug(toxcore) << message;
         return;
     case TOX_LOG_LEVEL_DEBUG:
-        QMessageLogger(file, line, func).debug(toxcore) << message;
+        QMessageLogger(file, lineInt, func).debug(toxcore) << message;
         break;
     case TOX_LOG_LEVEL_INFO:
-        QMessageLogger(file, line, func).info(toxcore) << message;
+        QMessageLogger(file, lineInt, func).info(toxcore) << message;
         break;
     case TOX_LOG_LEVEL_WARNING:
-        QMessageLogger(file, line, func).warning(toxcore) << message;
+        QMessageLogger(file, lineInt, func).warning(toxcore) << message;
         break;
     case TOX_LOG_LEVEL_ERROR:
-        QMessageLogger(file, line, func).critical(toxcore) << message;
+        QMessageLogger(file, lineInt, func).critical(toxcore) << message;
         break;
     }
 }

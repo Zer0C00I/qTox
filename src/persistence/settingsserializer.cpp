@@ -72,7 +72,7 @@ QDataStream& readStream(QDataStream& dataStream, SettingsSerializer::RecordTag& 
 
 QDataStream& readStream(QDataStream& dataStream, QByteArray& data)
 {
-    char num3;
+    char num3 = '\0';
     int num = 0;
     int num2 = 0;
     constexpr int MAX_VINT_BYTES = 5; // Maximum bytes for a 32-bit varint
@@ -244,7 +244,7 @@ SettingsSerializer::Value* SettingsSerializer::findValue(const QString& key)
  * @param filePath Path to file to check.
  * @return False on error, true otherwise.
  */
-bool SettingsSerializer::isSerializedFormat(QString filePath)
+bool SettingsSerializer::isSerializedFormat(const QString& filePath)
 {
     QFile f(filePath);
     if (!f.open(QIODevice::ReadOnly))
@@ -374,7 +374,7 @@ void SettingsSerializer::readSerialized()
     stream.setVersion(QDataStream::Qt_5_0);
 
     while (!stream.atEnd()) {
-        RecordTag tag;
+        RecordTag tag{};
         readStream(stream, tag);
         if (tag == RecordTag::Value) {
             QByteArray key;
@@ -511,7 +511,7 @@ void SettingsSerializer::readIni()
         for (int g = 0; g < groups.size(); ++g) {
             if (!groups[g].startsWith(arrayPrefix))
                 continue;
-            bool ok;
+            bool ok = false;
             const int groupArrayIndex = groups[g].mid(arrayPrefix.size()).toInt(&ok);
             if (!ok)
                 continue;

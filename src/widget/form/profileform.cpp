@@ -212,8 +212,8 @@ void ProfileForm::show(ContentLayout* contentLayout)
 
 bool ProfileForm::eventFilter(QObject* object, QEvent* event)
 {
-    if (object == static_cast<QObject*>(profilePicture) && event->type() == QEvent::MouseButtonPress) {
-        auto* mouseEvent = static_cast<QMouseEvent*>(event);
+    if (object == profilePicture && event->type() == QEvent::MouseButtonPress) {
+        auto* mouseEvent = dynamic_cast<QMouseEvent*>(event);
         if (mouseEvent->button() == Qt::RightButton)
             return true;
     }
@@ -278,7 +278,7 @@ void ProfileForm::setToxId(const ToxId& id)
 QString ProfileForm::getSupportedImageFilter()
 {
     QString res;
-    for (auto type : QImageReader::supportedImageFormats()) {
+    for (const auto& type : QImageReader::supportedImageFormats()) {
         res += QString("*.%1 ").arg(QString::fromUtf8(type));
     }
 

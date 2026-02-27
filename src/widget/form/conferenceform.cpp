@@ -46,13 +46,13 @@ const auto PEER_LABEL_STYLE_SHEET_PATH = QStringLiteral("chatArea/chatHead.qss")
  */
 QString editName(const QString& name)
 {
-    const int pos = name.indexOf(QRegularExpression(QStringLiteral("[\n\r]")));
+    const int pos = static_cast<int>(name.indexOf(QRegularExpression(QStringLiteral("[\n\r]"))));
     if (pos == -1) {
         return name;
     }
 
     QString result = name;
-    const int len = result.length();
+    const int len = static_cast<int>(result.length());
     result.chop(len - pos);
     result.append(QStringLiteral("…")); // \u2026 Unicode symbol, not just three separate dots
     return result;
@@ -168,7 +168,7 @@ void ConferenceForm::onAttachClicked()
  */
 void ConferenceForm::updateUserNames()
 {
-    QLayoutItem* child;
+    QLayoutItem* child = nullptr;
     while ((child = namesListLayout->takeAt(0)) != nullptr) {
         child->widget()->hide();
         delete child->widget();
@@ -257,7 +257,7 @@ void ConferenceForm::onPeerNameChanged(const ToxPk& peer, const QString& oldName
     updateUserNames();
 }
 
-void ConferenceForm::peerAudioPlaying(ToxPk peerPk)
+void ConferenceForm::peerAudioPlaying(const ToxPk& peerPk)
 {
     peerLabels[peerPk]->setProperty("playingAudio", LABEL_PEER_PLAYING_AUDIO);
     peerLabels[peerPk]->style()->unpolish(peerLabels[peerPk]);
@@ -303,8 +303,8 @@ void ConferenceForm::dropEvent(QDropEvent* ev)
     if (frnd == nullptr)
         return;
 
-    const int friendId = frnd->getId();
-    const int conferenceId = conference->getId();
+    const int friendId = static_cast<int>(frnd->getId());
+    const int conferenceId = static_cast<int>(conference->getId());
     if (Status::isOnline(frnd->getStatus())) {
         core.conferenceInviteFriend(friendId, conferenceId);
     }
@@ -391,7 +391,7 @@ void ConferenceForm::retranslateUi()
 
 void ConferenceForm::onLabelContextMenuRequested(const QPoint& localPos)
 {
-    auto* label = static_cast<QLabel*>(QObject::sender());
+    auto* label = qobject_cast<QLabel*>(QObject::sender());
 
     if (label == nullptr) {
         return;
@@ -422,7 +422,7 @@ void ConferenceForm::onLabelContextMenuRequested(const QPoint& localPos)
     menuTitleAction->setEnabled(false); // make sure the title is not clickable
     contextMenu->addSeparator();
 
-    const QAction* toggleMuteAction;
+    const QAction* toggleMuteAction = nullptr;
     if (isPeerBlocked) {
         toggleMuteAction = contextMenu->addAction(unmuteString);
     } else {
@@ -435,7 +435,7 @@ void ConferenceForm::onLabelContextMenuRequested(const QPoint& localPos)
     const QAction* selectedItem = contextMenu->exec(pos);
     if (selectedItem == toggleMuteAction) {
         if (isPeerBlocked) {
-            const int index = blockList.indexOf(peerPk.toString());
+            const int index = static_cast<int>(blockList.indexOf(peerPk.toString()));
             if (index != -1) {
                 blockList.removeAt(index);
             }
@@ -466,7 +466,7 @@ void ConferenceForm::joinConferenceCall()
 void ConferenceForm::leaveConferenceCall()
 {
     CoreAV* av = core.getAv();
-    av->leaveConferenceCall(conference->getId());
+    av->leaveConferenceCall(static_cast<int>(conference->getId()));
     audioInputFlag = false;
     audioOutputFlag = false;
     inCall = false;

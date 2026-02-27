@@ -50,10 +50,10 @@ std::map<uint32_t, QString> createPixFmtToName()
 }
 const std::map<uint32_t, QString> pixFmtToName = createPixFmtToName();
 
-int deviceOpen(QString devName, int* error)
+int deviceOpen(const QString& devName, int* error)
 {
     struct v4l2_capability cap;
-    int fd;
+    int fd = -1;
 
     const std::string devNameString = devName.toStdString();
     fd = open(devNameString.c_str(), O_RDWR, 0);
@@ -93,7 +93,7 @@ QVector<float> getDeviceModeFrameRates(int fd, unsigned w, unsigned h, uint32_t 
     vfve.width = w;
 
     while (ioctl(fd, VIDIOC_ENUM_FRAMEINTERVALS, &vfve) == 0) {
-        float rate;
+        float rate = 0.0f;
         switch (vfve.type) {
         case V4L2_FRMSIZE_TYPE_DISCRETE:
             rate = vfve.discrete.denominator / vfve.discrete.numerator;
@@ -113,7 +113,7 @@ QVector<float> getDeviceModeFrameRates(int fd, unsigned w, unsigned h, uint32_t 
 }
 } // namespace
 
-QVector<VideoMode> v4l2::getDeviceModes(QString devName)
+QVector<VideoMode> v4l2::getDeviceModes(const QString& devName)
 {
     QVector<VideoMode> modes;
 

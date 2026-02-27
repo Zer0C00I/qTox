@@ -32,7 +32,7 @@ Identicon::Identicon(const QByteArray& data)
 
         const qreal hue = bytesToColor(hashPart);
         // change offset when COLORS != 2
-        const qreal lig = static_cast<qreal>(colorIndex) / COLORS + 0.3;
+        const qreal lig = ((static_cast<qreal>(colorIndex) / COLORS) + 0.3);
         const qreal sat = 0.5;
         colors[colorIndex].setHslF(hue, sat, lig);
     }
@@ -41,7 +41,7 @@ Identicon::Identicon(const QByteArray& data)
     // compute the block colors from the hash
     for (int row = 0; row < IDENTICON_ROWS; ++row) {
         for (int col = 0; col < ACTIVE_COLS; ++col) {
-            const int hashIdx = row * ACTIVE_COLS + col;
+            const int hashIdx = ((row * ACTIVE_COLS) + col);
             const uint8_t colorIndex = hashBytes[hashIdx] % COLORS;
             identiconColors[row][col] = colorIndex;
         }
@@ -150,7 +150,7 @@ Identicon::Matrix Identicon::Matrix::parse(std::array<QColor, COLORS> colors, co
     Data<int> matrix;
     for (int row = 0; row < IDENTICON_ROWS; ++row) {
         for (int col = 0; col < IDENTICON_ROWS; ++col) {
-            const int value = str.at(row * IDENTICON_ROWS + col).digitValue();
+            const int value = str.at(((row * IDENTICON_ROWS) + col)).digitValue();
             if (value < 0 || value >= COLORS) {
                 qWarning() << "Invalid value" << value << "at" << row << ":" << col
                            << "must be between 0 and" << (COLORS - 1);

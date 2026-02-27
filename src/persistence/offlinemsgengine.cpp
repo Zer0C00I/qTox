@@ -35,7 +35,7 @@ void OfflineMsgEngine::addUnsentMessage(const Message& message, CompletionFn com
 {
     const QMutexLocker<QRecursiveMutex> ml(&mutex);
     unsentMessages.push_back(
-        OfflineMessage{message, std::chrono::steady_clock::now(), completionCallback});
+        OfflineMessage{message, std::chrono::steady_clock::now(), std::move(completionCallback)});
 }
 
 /**
@@ -53,7 +53,7 @@ void OfflineMsgEngine::addSentCoreMessage(ReceiptNum receipt, const Message& mes
 {
     const QMutexLocker<QRecursiveMutex> ml(&mutex);
     receiptResolver.notifyMessageSent(receipt, {message, std::chrono::steady_clock::now(),
-                                                completionCallback});
+                                                std::move(completionCallback)});
 }
 
 /**

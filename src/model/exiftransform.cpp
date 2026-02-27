@@ -10,7 +10,7 @@
 #include <libexif/exif-loader.h>
 
 namespace ExifTransform {
-Orientation getOrientation(QByteArray imageData)
+Orientation getOrientation(const QByteArray& imageData)
 {
     const auto* data = imageData.constData();
     auto size = imageData.size();

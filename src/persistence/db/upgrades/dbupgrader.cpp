@@ -95,7 +95,7 @@ DuplicateAlias getDuplicateAliasRows(RawDatabase& db, RowId goodPeerRow, RowId b
 }
 
 void mergeAndDeleteAlias(std::vector<RawDatabase::Query>& upgradeQueries, RowId goodAlias,
-                         std::vector<RowId> badAliases)
+                         const std::vector<RowId>& badAliases)
 {
     for (const auto badAliasId : badAliases) {
         upgradeQueries.emplace_back(
@@ -339,7 +339,7 @@ bool DbUpgrader::createCurrentSchema(RawDatabase& db)
 
 bool DbUpgrader::isNewDb(std::shared_ptr<RawDatabase>& db, bool& success)
 {
-    bool newDb;
+    bool newDb = false;
     if (!db->execNow(RawDatabase::Query("SELECT COUNT(*) FROM sqlite_master;",
                                         [&](const QVector<QVariant>& row) {
                                             newDb = row[0].toLongLong() == 0;

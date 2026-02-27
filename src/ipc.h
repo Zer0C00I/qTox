@@ -35,23 +35,23 @@ public:
 
     struct IPCEvent
     {
-        uint32_t dest;
-        int32_t sender;
-        char name[16];
-        char data[128];
-        time_t posted;
-        time_t processed;
-        uint32_t flags;
-        bool accepted;
-        bool global;
+        uint32_t dest = 0;
+        int32_t sender = 0;
+        char name[16] = {};
+        char data[128] = {};
+        time_t posted = 0;
+        time_t processed = 0;
+        uint32_t flags = 0;
+        bool accepted = false;
+        bool global = false;
     };
 
     struct IPCMemory
     {
-        uint64_t globalId;
-        time_t lastEvent;
-        time_t lastProcessed;
-        IPCEvent events[IPC::EVENT_QUEUE_SIZE];
+        uint64_t globalId = 0;
+        time_t lastEvent = 0;
+        time_t lastProcessed = 0;
+        IPCEvent events[IPC::EVENT_QUEUE_SIZE] = {};
     };
 
     time_t postEvent(const QString& name, const QByteArray& data = QByteArray(), uint32_t dest = 0);
@@ -79,8 +79,8 @@ private:
         void* userData;
     };
     QTimer timer;
-    uint64_t globalId;
-    uint32_t profileId;
+    uint64_t globalId = 0;
+    uint32_t profileId = 0;
 #if QT_CONFIG(sharedmemory)
     QSharedMemory globalMemory;
 #endif

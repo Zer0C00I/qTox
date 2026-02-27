@@ -219,7 +219,7 @@ void ChatHistory::onFileUpdated(const ToxPk& sender, const ToxFile& file)
             // initializing. If this is changed in the session chat log we'll end up
             // with a different order when loading from history
             history->addNewFileMessage(chat.getPersistentId(), file.resumeFileId, file.fileName,
-                                       file.filePath, file.progress.getFileSize(), sender,
+                                       file.filePath, static_cast<int64_t>(file.progress.getFileSize()), sender,
                                        QDateTime::currentDateTime(), username);
             break;
         }

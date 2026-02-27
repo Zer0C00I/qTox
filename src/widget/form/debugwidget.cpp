@@ -44,7 +44,7 @@ DebugWidget::~DebugWidget()
     Translator::unregister(this);
 }
 
-void DebugWidget::setBodyHeadStyle(QString style)
+void DebugWidget::setBodyHeadStyle(const QString& style)
 {
     debugWidgets->setStyle(QStyleFactory::create(style));
 }
@@ -74,5 +74,5 @@ void DebugWidget::onTabChanged(int index)
 void DebugWidget::retranslateUi()
 {
     for (size_t i = 0; i < dbgForms.size(); ++i)
-        debugWidgets->setTabText(i, dbgForms[i]->getFormName());
+        debugWidgets->setTabText(static_cast<int>(i), dbgForms[i]->getFormName());
 }

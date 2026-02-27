@@ -29,32 +29,36 @@
 namespace {
 QRect pauseRect(const QStyleOptionViewItem& option)
 {
-    const float controlSize = option.rect.height() * 0.8f;
-    const float rectWidth = option.rect.width();
+    const float controlSize = static_cast<float>(option.rect.height()) * 0.8f;
+    const float rectWidth = static_cast<float>(option.rect.width());
     const float buttonHorizontalArea = rectWidth / 2;
 
     // To center the button, we find the horizontal center and subtract half
     // our width from it
-    const int buttonXPos = std::round(option.rect.x() + buttonHorizontalArea / 2 - controlSize / 2);
-    const int buttonYPos = std::round(option.rect.y() + option.rect.height() * 0.1f);
+    const int buttonXPos = static_cast<int>(std::round(
+        (static_cast<float>(option.rect.x()) + (buttonHorizontalArea / 2)) - (controlSize / 2)));
+    const int buttonYPos = static_cast<int>(std::round(
+        static_cast<float>(option.rect.y()) + (static_cast<float>(option.rect.height()) * 0.1f)));
     return {buttonXPos, buttonYPos, static_cast<int>(controlSize), static_cast<int>(controlSize)};
 }
 
 QRect stopRect(const QStyleOptionViewItem& option)
 {
-    const float controlSize = option.rect.height() * 0.8;
-    const float rectWidth = option.rect.width();
+    const float controlSize = static_cast<float>(option.rect.height()) * 0.8f;
+    const float rectWidth = static_cast<float>(option.rect.width());
     const float buttonHorizontalArea = rectWidth / 2;
 
     // To center the button, we find the horizontal center and subtract half
     // our width from it
-    const int buttonXPos = std::round(option.rect.x() + buttonHorizontalArea
-                                      + buttonHorizontalArea / 2 - controlSize / 2);
-    const int buttonYPos = std::round(option.rect.y() + option.rect.height() * 0.1f);
+    const int buttonXPos = static_cast<int>(std::round(
+        ((static_cast<float>(option.rect.x()) + buttonHorizontalArea)
+        + (buttonHorizontalArea / 2)) - (controlSize / 2)));
+    const int buttonYPos = static_cast<int>(std::round(
+        static_cast<float>(option.rect.y()) + (static_cast<float>(option.rect.height()) * 0.1f)));
     return {buttonXPos, buttonYPos, static_cast<int>(controlSize), static_cast<int>(controlSize)};
 }
 
-QString fileStatusString(ToxFile file)
+QString fileStatusString(const ToxFile& file)
 {
     switch (file.status) {
     case ToxFile::INITIALIZING:
@@ -202,7 +206,7 @@ void Model::onFileUpdated(const ToxFile& file)
             return;
         }
 
-        auto insertedIdx = files.size();
+        const auto insertedIdx = static_cast<int>(files.size());
 
         beginInsertRows(QModelIndex(), insertedIdx, insertedIdx);
 
@@ -234,7 +238,7 @@ void Model::onFileUpdated(const ToxFile& file)
 int Model::rowCount(const QModelIndex& parent) const
 {
     std::ignore = parent;
-    return files.size();
+    return static_cast<int>(files.size());
 }
 
 int Model::columnCount(const QModelIndex& parent) const
@@ -278,7 +282,7 @@ QVariant Model::data(const QModelIndex& index, int role) const
     case Column::size:
         return getHumanReadableSize(files[row].progress.getFileSize());
     case Column::speed:
-        return getHumanReadableSize(files[row].progress.getSpeed()) + "/s";
+        return getHumanReadableSize(static_cast<uint64_t>(files[row].progress.getSpeed())) + "/s";
     case Column::status:
         return fileStatusString(files[row]);
     case Column::control:
@@ -432,15 +436,15 @@ FilesForm::FilesForm(CoreFile& coreFile, Settings& settings, Style& style,
     recvdModel = new FileTransferList::Model(friendList, this);
     sentModel = new FileTransferList::Model(friendList, this);
 
-    auto pauseFile = [&coreFile](ToxFile file) {
+    auto pauseFile = [&coreFile](const ToxFile& file) {
         coreFile.pauseResumeFile(file.friendId, file.fileNum);
     };
 
-    auto cancelFileRecv = [&coreFile](ToxFile file) {
+    auto cancelFileRecv = [&coreFile](const ToxFile& file) {
         coreFile.cancelFileRecv(file.friendId, file.fileNum);
     };
 
-    auto cancelFileSend = [&coreFile](ToxFile file) {
+    auto cancelFileSend = [&coreFile](const ToxFile& file) {
         coreFile.cancelFileSend(file.friendId, file.fileNum);
     };
 

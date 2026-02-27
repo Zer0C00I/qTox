@@ -37,7 +37,7 @@ void NotificationScrollArea::trackWidget(Settings& settings, Style& style, Gener
                 recalculateTopEdge();
                 topEdge->show();
             }
-            topEdge->updateNotificationCount(referencesAbove);
+            topEdge->updateNotificationCount(static_cast<int>(referencesAbove));
         } else {
             if (referencesBelow++ == 0) {
                 assert(bottomEdge == nullptr);
@@ -48,7 +48,7 @@ void NotificationScrollArea::trackWidget(Settings& settings, Style& style, Gener
                 recalculateBottomEdge();
                 bottomEdge->show();
             }
-            bottomEdge->updateNotificationCount(referencesBelow);
+            bottomEdge->updateNotificationCount(static_cast<int>(referencesBelow));
         }
 
         trackedWidgets.insert(widget, visibility);
@@ -77,14 +77,14 @@ void NotificationScrollArea::updateTracking(GenericChatroomWidget* widget)
                     topEdge->deleteLater();
                     topEdge = nullptr;
                 } else {
-                    topEdge->updateNotificationCount(referencesAbove);
+                    topEdge->updateNotificationCount(static_cast<int>(referencesAbove));
                 }
             } else {
                 if (--referencesBelow == 0) {
                     bottomEdge->deleteLater();
                     bottomEdge = nullptr;
                 } else {
-                    bottomEdge->updateNotificationCount(referencesBelow);
+                    bottomEdge->updateNotificationCount(static_cast<int>(referencesBelow));
                 }
             }
             i = trackedWidgets.erase(i);

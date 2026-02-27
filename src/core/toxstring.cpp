@@ -45,7 +45,7 @@ ToxString::ToxString(QByteArray text)
 ToxString::ToxString(const uint8_t* text, size_t length)
 {
     assert(length <= INT_MAX);
-    string = QByteArray(reinterpret_cast<const char*>(text), length);
+    string = QByteArray(reinterpret_cast<const char*>(text), static_cast<qsizetype>(length));
 }
 
 /**

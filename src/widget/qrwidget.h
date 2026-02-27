@@ -17,7 +17,7 @@ public:
     ~QRWidget() override;
     void setQRData(const QString& data_);
     QImage* getImage();
-    bool saveImage(QString path);
+    bool saveImage(const QString& path);
 
 private:
     QString data;

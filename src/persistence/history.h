@@ -176,13 +176,15 @@ public:
 
         HistMessage& operator=(const HistMessage& other)
         {
-            chat = other.chat->clone();
-            sender = other.sender;
-            dispName = other.dispName;
-            timestamp = other.timestamp;
-            id = other.id;
-            state = other.state;
-            content = other.content;
+            if (this != &other) {
+                chat = other.chat->clone();
+                sender = other.sender;
+                dispName = other.dispName;
+                timestamp = other.timestamp;
+                id = other.id;
+                state = other.state;
+                content = other.content;
+            }
             return *this;
         }
 
@@ -198,7 +200,7 @@ public:
     struct DateIdx
     {
         QDate date;
-        size_t numMessagesIn;
+        size_t numMessagesIn{0};
     };
 
 public:
@@ -212,7 +214,7 @@ public:
     void eraseHistory();
     void removeChatHistory(const ChatId& chatId);
     void addNewMessage(const ChatId& chatId, const QString& message, const ToxPk& sender,
-                       const QDateTime& time, bool isDelivered, QString dispName,
+                       const QDateTime& time, bool isDelivered, const QString& dispName,
                        const std::function<void(RowId)>& insertIdCallback = {});
 
     void addNewFileMessage(const ChatId& chatId, const QByteArray& fileId, const QString& fileName,
@@ -239,7 +241,7 @@ signals:
     void fileInserted(RowId dbId, QByteArray fileId);
 
 private slots:
-    void onFileInserted(RowId dbId, QByteArray fileId);
+    void onFileInserted(RowId dbId, const QByteArray& fileId);
 
 private:
     std::vector<RawDatabase::Query>

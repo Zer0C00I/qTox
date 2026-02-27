@@ -50,15 +50,15 @@ private slots:
 
 private:
     QFuture<void> streamFuture;
-    QThread* deviceThread;
+    QThread* deviceThread = nullptr;
 
     QString deviceName;
-    CameraDevice* device;
+    CameraDevice* device = nullptr;
     VideoMode mode;
-    AVCodecContext* cctx;
+    AVCodecContext* cctx = nullptr;
     // TODO: Remove when ffmpeg version will be bumped to the 3.1.0
-    AVCodecContext* cctxOrig;
-    int videoStreamIndex;
+    AVCodecContext* cctxOrig = nullptr;
+    int videoStreamIndex = -1;
 
     QReadWriteLock deviceMutex;
     QReadWriteLock streamMutex;

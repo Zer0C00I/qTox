@@ -27,11 +27,11 @@ class FileTransferWidget : public QWidget
     Q_OBJECT
 
 public:
-    FileTransferWidget(QWidget* parent, CoreFile& _coreFile, ToxFile file, Settings& settings,
+    FileTransferWidget(QWidget* parent, CoreFile& _coreFile, const ToxFile& file, Settings& settings,
                        Style& style, IMessageBoxManager& messageBoxManager);
     ~FileTransferWidget() override;
     bool isActive() const;
-    void onFileTransferUpdate(ToxFile file);
+    void onFileTransferUpdate(const ToxFile& file);
 
 protected:
     void updateWidgetColor(const ToxFile& file);
@@ -74,7 +74,7 @@ private:
     QColor buttonColor;
     QColor buttonBackgroundColor;
 
-    bool active;
+    bool active = false;
     QTime lastTransmissionUpdate;
     ToxFile::FileStatus lastStatus = ToxFile::INITIALIZING;
     Settings& settings;

@@ -19,9 +19,10 @@ namespace {
 const int MAX_CONFERENCE_TITLE_LENGTH = 128;
 } // namespace
 
-Conference::Conference(int conferenceId_, const ConferenceId persistentConferenceId, QString name,
-                       bool isAvConference, QString selfName_, ICoreConferenceQuery& conferenceQuery_,
-                       ICoreIdHandler& idHandler_, FriendList& friendList_)
+Conference::Conference(int conferenceId_, const ConferenceId& persistentConferenceId,
+                       const QString& name, bool isAvConference, const QString& selfName_,
+                       ICoreConferenceQuery& conferenceQuery_, ICoreIdHandler& idHandler_,
+                       FriendList& friendList_)
     : conferenceQuery(conferenceQuery_)
     , idHandler(idHandler_)
     , selfName{std::move(selfName_)}
@@ -87,7 +88,7 @@ void Conference::regeneratePeerList()
     QStringList peers = conferenceQuery.getConferencePeerNames(toxConferenceNum);
     const auto oldPeerNames = peerDisplayNames;
     peerDisplayNames.clear();
-    const int nPeers = peers.size();
+    const int nPeers = static_cast<int>(peers.size());
     for (int i = 0; i < nPeers; ++i) {
         const auto pk = conferenceQuery.getConferencePeerPk(toxConferenceNum, i);
         if (pk == idHandler.getSelfPublicKey()) {
@@ -116,7 +117,7 @@ void Conference::regeneratePeerList()
     }
 }
 
-void Conference::updateUsername(ToxPk pk, const QString newName)
+void Conference::updateUsername(const ToxPk& pk, const QString& newName)
 {
     const QString displayName = friendList.decideNickname(pk, newName);
     assert(peerDisplayNames.contains(pk));
@@ -145,7 +146,7 @@ const ConferenceId& Conference::getPersistentId() const
 
 int Conference::getPeersCount() const
 {
-    return peerDisplayNames.size();
+    return static_cast<int>(peerDisplayNames.size());
 }
 
 /**

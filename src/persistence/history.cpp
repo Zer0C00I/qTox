@@ -21,7 +21,7 @@ namespace {
 MessageState getMessageState(bool isPending, bool isBroken)
 {
     assert(!(isPending && isBroken));
-    MessageState messageState;
+    MessageState messageState = MessageState::complete;
 
     if (isPending) {
         messageState = MessageState::pending;
@@ -102,8 +102,8 @@ RawDatabase::Query generateHistoryTableInsertion(char type, const QDateTime& tim
  */
 std::vector<RawDatabase::Query>
 generateNewTextMessageQueries(const ChatId& chatId, const QString& message, const ToxPk& sender,
-                              const QDateTime& time, bool isDelivered, QString dispName,
-                              std::function<void(RowId)> insertIdCallback)
+                              const QDateTime& time, bool isDelivered, const QString& dispName,
+                              const std::function<void(RowId)>& insertIdCallback)
 {
     std::vector<RawDatabase::Query> queries;
 
@@ -352,7 +352,7 @@ void History::removeChatHistory(const ChatId& chatId)
     }
 }
 
-void History::onFileInserted(RowId dbId, QByteArray fileId)
+void History::onFileInserted(RowId dbId, const QByteArray& fileId)
 {
     auto& fileInfo = fileInfos[fileId];
     if (fileInfo.finished) {
@@ -460,7 +460,7 @@ void History::addNewFileMessage(const ChatId& chatId, const QByteArray& fileId,
     // message in it, and get the id with the callback. Once we have the id we can amend
     // the data to have our newly inserted file_id as well
 
-    ToxFile::FileDirection direction;
+    ToxFile::FileDirection direction = ToxFile::RECEIVING;
     if (sender == chatId) {
         direction = ToxFile::RECEIVING;
     } else {
@@ -497,7 +497,7 @@ void History::addNewSystemMessage(const ChatId& chatId, const SystemMessage& sys
  * @param insertIdCallback Function, called after query execution.
  */
 void History::addNewMessage(const ChatId& chatId, const QString& message, const ToxPk& sender,
-                            const QDateTime& time, bool isDelivered, QString dispName,
+                            const QDateTime& time, bool isDelivered, const QString& dispName,
                             const std::function<void(RowId)>& insertIdCallback)
 {
     if (historyAccessBlocked()) {

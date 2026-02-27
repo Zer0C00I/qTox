@@ -36,14 +36,14 @@ public:
     void handleAvatarOffer(uint32_t friendId, uint32_t fileId, bool accept, uint64_t filesize);
     static CoreFilePtr makeCoreFile(Core* core, Tox* tox, QRecursiveMutex& coreLoopLock);
 
-    void sendFile(uint32_t friendId, QString filename, QString filePath, long long filesize);
+    void sendFile(uint32_t friendId, const QString& filename, const QString& filePath, long long filesize);
     void sendAvatarFile(uint32_t friendId, const QByteArray& data);
     void pauseResumeFile(uint32_t friendId, uint32_t fileId);
     void cancelFileSend(uint32_t friendId, uint32_t fileId);
 
     void cancelFileRecv(uint32_t friendId, uint32_t fileId);
     void rejectFileRecvRequest(uint32_t friendId, uint32_t fileId);
-    void acceptFileRecvRequest(uint32_t friendId, uint32_t fileId, QString path);
+    void acceptFileRecvRequest(uint32_t friendId, uint32_t fileId, const QString& path);
 
     unsigned corefileIterationInterval();
 

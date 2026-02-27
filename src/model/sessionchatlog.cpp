@@ -307,7 +307,8 @@ void SessionChatLog::addSystemMessage(const SystemMessage& message)
 }
 
 void SessionChatLog::insertCompleteMessageAtIdx(ChatLogIdx idx, const ToxPk& sender,
-                                                QString senderName, const ChatLogMessage& message)
+                                                const QString& senderName,
+                                                const ChatLogMessage& message)
 {
     auto item = ChatLogItem(sender, senderName, message);
 
@@ -317,7 +318,8 @@ void SessionChatLog::insertCompleteMessageAtIdx(ChatLogIdx idx, const ToxPk& sen
 }
 
 void SessionChatLog::insertIncompleteMessageAtIdx(ChatLogIdx idx, const ToxPk& sender,
-                                                  QString senderName, const ChatLogMessage& message,
+                                                  const QString& senderName,
+                                                  const ChatLogMessage& message,
                                                   DispatchedMessageId dispatchId)
 {
     auto item = ChatLogItem(sender, senderName, message);
@@ -329,7 +331,8 @@ void SessionChatLog::insertIncompleteMessageAtIdx(ChatLogIdx idx, const ToxPk& s
 }
 
 void SessionChatLog::insertBrokenMessageAtIdx(ChatLogIdx idx, const ToxPk& sender,
-                                              QString senderName, const ChatLogMessage& message)
+                                              const QString& senderName,
+                                              const ChatLogMessage& message)
 {
     auto item = ChatLogItem(sender, senderName, message);
 
@@ -338,8 +341,8 @@ void SessionChatLog::insertBrokenMessageAtIdx(ChatLogIdx idx, const ToxPk& sende
     items.emplace(idx, std::move(item));
 }
 
-void SessionChatLog::insertFileAtIdx(ChatLogIdx idx, const ToxPk& sender, QString senderName,
-                                     const ChatLogFile& file)
+void SessionChatLog::insertFileAtIdx(ChatLogIdx idx, const ToxPk& sender,
+                                     const QString& senderName, const ChatLogFile& file)
 {
     auto item = ChatLogItem(sender, senderName, file);
 

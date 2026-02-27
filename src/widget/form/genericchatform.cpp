@@ -398,7 +398,7 @@ bool GenericChatForm::event(QEvent* e)
 {
     // If the user accidentally starts typing outside of the msgEdit, focus it automatically
     if (e->type() == QEvent::KeyPress) {
-        auto* ke = static_cast<QKeyEvent*>(e);
+        auto* ke = dynamic_cast<QKeyEvent*>(e);
         if ((ke->modifiers() == Qt::NoModifier || ke->modifiers() == Qt::ShiftModifier)
             && !ke->text().isEmpty()) {
             if (searchForm->isHidden()) {
@@ -415,7 +415,7 @@ bool GenericChatForm::event(QEvent* e)
 
 void GenericChatForm::onChatContextMenuRequested(QPoint pos)
 {
-    auto* sender = static_cast<QWidget*>(QObject::sender());
+    auto* sender = qobject_cast<QWidget*>(QObject::sender());
     pos = sender->mapToGlobal(pos);
 
     // If we right-clicked on a link, give the option to copy it
@@ -472,7 +472,7 @@ void GenericChatForm::onEmoteButtonClicked()
     }
 }
 
-void GenericChatForm::onEmoteInsertRequested(QString str)
+void GenericChatForm::onEmoteInsertRequested(const QString& str)
 {
     // insert the emoticon
     QWidget* sender = qobject_cast<QWidget*>(QObject::sender());
@@ -576,7 +576,7 @@ bool GenericChatForm::eventFilter(QObject* object, QEvent* event)
 {
     auto* ev = qobject_cast<EmoticonsWidget*>(object);
     if ((ev != nullptr) && event->type() == QEvent::KeyPress) {
-        auto* key = static_cast<QKeyEvent*>(event);
+        auto* key = dynamic_cast<QKeyEvent*>(event);
         msgEdit->sendKeyEvent(key);
         msgEdit->setFocus();
         return false;

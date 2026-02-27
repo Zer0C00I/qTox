@@ -314,7 +314,7 @@ void AddFriendForm::deleteFriendRequest(const ToxId& toxId_)
 
 void AddFriendForm::onFriendRequestAccepted()
 {
-    auto* acceptButton = static_cast<QPushButton*>(sender());
+    auto* acceptButton = qobject_cast<QPushButton*>(sender());
     QWidget* friendWidget = acceptButton->parentWidget();
     const int index = requestsLayout->indexOf(friendWidget);
     removeFriendRequestWidget(friendWidget);
@@ -327,7 +327,7 @@ void AddFriendForm::onFriendRequestAccepted()
 
 void AddFriendForm::onFriendRequestRejected()
 {
-    auto* rejectButton = static_cast<QPushButton*>(sender());
+    auto* rejectButton = qobject_cast<QPushButton*>(sender());
     QWidget* friendWidget = rejectButton->parentWidget();
     const int index = requestsLayout->indexOf(friendWidget);
     removeFriendRequestWidget(friendWidget);
@@ -364,7 +364,8 @@ void AddFriendForm::retranslateUi()
         contactsToImport.isEmpty()
             ? tr("Import a list of contacts, one Tox ID per line")
             //: Shows the number of contacts we're about to import from a file (at least one)
-            : tr("Ready to import %n contact(s), click send to confirm", "", contactsToImport.size()));
+            : tr("Ready to import %n contact(s), click send to confirm", "",
+                  static_cast<int>(contactsToImport.size())));
 
     onIdChanged(toxId.text());
 

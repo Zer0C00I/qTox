@@ -53,7 +53,8 @@ public:
                                                   const QDateTime& date, DocumentCache& documentCache,
                                                   Settings& settings, Style& style);
     static ChatMessage::Ptr createFileTransferMessage(const QString& sender, CoreFile& coreFile,
-                                                      ToxFile file, bool isMe, const QDateTime& date,
+                                                      const ToxFile& file, bool isMe,
+                                                      const QDateTime& date,
                                                       DocumentCache& documentCache,
                                                       Settings& settings, Style& style,
                                                       IMessageBoxManager& messageBoxManager);

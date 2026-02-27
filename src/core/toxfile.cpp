@@ -36,7 +36,7 @@ ToxFile::ToxFile()
 /**
  * @brief ToxFile constructor
  */
-ToxFile::ToxFile(uint32_t fileNum_, uint32_t friendId_, QString fileName_, QString filePath_,
+ToxFile::ToxFile(uint32_t fileNum_, uint32_t friendId_, QString fileName_, const QString& filePath_,
                  uint64_t filesize, FileDirection direction_)
     : fileKind{TOX_FILE_KIND_DATA}
     , fileNum(fileNum_)
@@ -61,7 +61,7 @@ bool ToxFile::operator!=(const ToxFile& other) const
     return !(*this == other);
 }
 
-void ToxFile::setFilePath(QString path)
+void ToxFile::setFilePath(const QString& path)
 {
     filePath = path;
     file->setFileName(path);
