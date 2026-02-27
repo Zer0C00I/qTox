@@ -9,6 +9,9 @@ concurrency:
   group: ci-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+
 jobs:
   common:
     uses: TokTok/ci-tools/.github/workflows/common-ci.yml@master
