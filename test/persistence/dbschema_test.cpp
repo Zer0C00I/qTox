@@ -275,7 +275,7 @@ void TestDbSchema::test1to2()
     QVERIFY(db->execNow(std::move(brokenCountQuery)));
     QVERIFY(brokenCount == 1); // only friend 1's first message is "broken"
 
-    int fauxOfflineCount = -1;
+    qlonglong fauxOfflineCount = -1;
     RawDatabase::Query fauxOfflineCountQuery = {"SELECT COUNT(*) FROM faux_offline_pending;",
                                                 [&](const QVector<QVariant>& row) {
                                                     fauxOfflineCount = row[0].toLongLong();
@@ -285,7 +285,7 @@ void TestDbSchema::test1to2()
     // The broken message should no longer be pending.
     QVERIFY(fauxOfflineCount == 2);
 
-    int totalHistoryCount = -1;
+    qlonglong totalHistoryCount = -1;
     RawDatabase::Query totalHistoryCountQuery = {"SELECT COUNT(*) FROM history;",
                                                  [&](const QVector<QVariant>& row) {
                                                      totalHistoryCount = row[0].toLongLong();
@@ -340,7 +340,7 @@ void TestDbSchema::test2to3()
     QVERIFY(db->execNow(std::move(brokenCountQuery)));
     QVERIFY(brokenCount == 1);
 
-    int fauxOfflineCount = -1;
+    qlonglong fauxOfflineCount = -1;
     RawDatabase::Query fauxOfflineCountQuery = {"SELECT COUNT(*) FROM faux_offline_pending;",
                                                 [&](const QVector<QVariant>& row) {
                                                     fauxOfflineCount = row[0].toLongLong();
@@ -348,7 +348,7 @@ void TestDbSchema::test2to3()
     QVERIFY(db->execNow(std::move(fauxOfflineCountQuery)));
     QVERIFY(fauxOfflineCount == 1);
 
-    int totalHistoryCount = -1;
+    qlonglong totalHistoryCount = -1;
     RawDatabase::Query totalHistoryCountQuery = {"SELECT COUNT(*) FROM history;",
                                                  [&](const QVector<QVariant>& row) {
                                                      totalHistoryCount = row[0].toLongLong();
