@@ -77,7 +77,8 @@ IPC::IPC(uint32_t profileId_)
 
     // use the clock rather than std::random_device because std::random_device may return constant values, and does
     // under mingw on Windows. We don't actually need cryptographic guarantees, so using the clock in all cases.
-    static std::mt19937 rng(std::chrono::high_resolution_clock::now().time_since_epoch().count());
+    static std::mt19937 rng(static_cast<std::mt19937::result_type>(
+        std::chrono::high_resolution_clock::now().time_since_epoch().count()));
     std::uniform_int_distribution<uint64_t> distribution;
     globalId = distribution(rng);
     qDebug() << "Our global IPC ID is" << globalId;
@@ -87,7 +88,7 @@ IPC::IPC(uint32_t profileId_)
     if (globalMemory.create(sizeof(IPCMemory))) {
         if (globalMemory.lock()) {
             IPCMemory* mem = global();
-            memset(mem, 0, sizeof(IPCMemory));
+            *mem = IPCMemory{};
             mem->globalId = globalId;
             mem->lastProcessed = time(nullptr);
             globalMemory.unlock();
@@ -159,9 +160,9 @@ time_t IPC::postEvent(const QString& name, const QByteArray& data, uint32_t dest
     }
 
     if (evt != nullptr) {
-        memset(evt, 0, sizeof(IPCEvent));
-        memcpy(evt->name, binName.constData(), binName.length());
-        memcpy(evt->data, data.constData(), data.length());
+        *evt = IPCEvent{};
+        memcpy(evt->name, binName.constData(), static_cast<size_t>(binName.length()));
+        memcpy(evt->data, data.constData(), static_cast<size_t>(data.length()));
         mem->lastEvent = evt->posted = result = qMax(mem->lastEvent + 1, time(nullptr));
         evt->dest = dest;
         evt->sender = getpid();
@@ -277,7 +278,7 @@ IPC::IPCEvent* IPC::fetchEvent()
         // so sending instance has time to react to those events.
         if (((evt->processed != 0) && difftime(time(nullptr), evt->processed) > EVENT_GC_TIMEOUT)
             || ((evt->processed == 0) && difftime(time(nullptr), evt->posted) > EVENT_GC_TIMEOUT)) {
-            memset(evt, 0, sizeof(IPCEvent));
+            *evt = IPCEvent{};
         }
 
         if ((evt->posted != 0) && (evt->processed == 0) && evt->sender != getpid()
@@ -326,7 +327,7 @@ void IPC::processEvents()
             qDebug() << "Previous owner timed out, taking ownership" << mem->globalId << "->"
                      << globalId;
             // Ignore events that were not meant for this instance
-            memset(mem, 0, sizeof(IPCMemory));
+            *mem = IPCMemory{};
             mem->globalId = globalId;
             mem->lastProcessed = time(nullptr);
         }

@@ -171,7 +171,7 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
     }
 
     const QByteArray LogMsgBytes = logMsg.toUtf8();
-    fwrite(LogMsgBytes.constData(), 1, LogMsgBytes.size(), stderr);
+    fwrite(LogMsgBytes.constData(), 1, static_cast<size_t>(LogMsgBytes.size()), stderr);
 
 #ifdef LOG_TO_FILE
     FILE* logFilePtr = logFileFile.loadRelaxed(); // atomically load the file pointer
@@ -186,7 +186,7 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
         if (logBuffer != nullptr) {
             // empty logBuffer to file
             for (const QByteArray& bufferedMsg : *logBuffer) {
-                fwrite(bufferedMsg.constData(), 1, bufferedMsg.size(), logFilePtr);
+                fwrite(bufferedMsg.constData(), 1, static_cast<size_t>(bufferedMsg.size()), logFilePtr);
             }
 
             delete logBuffer; // no longer needed
@@ -194,7 +194,7 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
         }
         logBufferMutex->unlock();
 
-        fwrite(LogMsgBytes.constData(), 1, LogMsgBytes.size(), logFilePtr);
+        fwrite(LogMsgBytes.constData(), 1, static_cast<size_t>(LogMsgBytes.size()), logFilePtr);
         fflush(logFilePtr);
     }
 #endif
