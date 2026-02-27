@@ -101,8 +101,8 @@ ChatMessage::Ptr ChatMessage::createChatMessage(const QString& sender, const QSt
         lightness = ((lightness * 0.5f) + 0.3f);
 
         // Magic values
-        color.setHslF(Identicon::bytesToColor(hash.left(Identicon::IDENTICON_COLOR_BYTES)), 1.0,
-                      lightness);
+        color.setHslF(static_cast<float>(Identicon::bytesToColor(hash.left(Identicon::IDENTICON_COLOR_BYTES))),
+                      1.0f, lightness);
 
         if (!isMe && textType == Text::NORMAL) {
             textType = Text::CUSTOM;
