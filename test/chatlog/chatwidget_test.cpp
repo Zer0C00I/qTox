@@ -42,18 +42,19 @@ public:
 
 private:
     std::vector<ChatLogItem> items;
-    int messagesPerDay;
+    size_t messagesPerDay;
 };
 
 MockChatLog::MockChatLog(size_t numMessages, int messagesPerDay_)
-    : messagesPerDay(messagesPerDay_)
+    : messagesPerDay(static_cast<size_t>(messagesPerDay_))
 {
     for (size_t i = 0; i < numMessages; ++i) {
         Message msg;
         msg.content = QString("Message %1").arg(i);
         // Every messagesPerDay messages, increment the day
-        msg.timestamp = QDateTime(QDate(2020, 1, 1).addDays(i / messagesPerDay), QTime(12, 0))
-                            .addSecs(i % messagesPerDay);
+        msg.timestamp = QDateTime(QDate(2020, 1, 1).addDays(static_cast<qint64>(i / messagesPerDay)),
+                                  QTime(12, 0))
+                            .addSecs(static_cast<qint64>(i % messagesPerDay));
         items.emplace_back(ToxPk(), QString("Sender %1").arg(i % 5),
                            ChatLogMessage{MessageState::complete, msg});
     }
@@ -78,8 +79,8 @@ SearchResult MockChatLog::searchForward(SearchPos pos, const QString& phrase,
                 SearchResult result;
                 result.found = true;
                 result.pos.logIdx = ChatLogIdx(i);
-                result.start = content.indexOf(phrase);
-                result.len = phrase.length();
+                result.start = static_cast<size_t>(content.indexOf(phrase));
+                result.len = static_cast<size_t>(phrase.length());
                 return result;
             }
         }
@@ -95,15 +96,15 @@ SearchResult MockChatLog::searchBackward(SearchPos pos, const QString& phrase,
     if (start >= items.size())
         start = items.size() - 1;
     for (int i = static_cast<int>(start); i >= 0; --i) {
-        const auto& item = items[i];
+        const auto& item = items[static_cast<size_t>(i)];
         if (item.getContentType() == ChatLogItem::ContentType::message) {
             const auto& content = item.getContentAsMessage().message.content;
             if (content.contains(phrase)) {
                 SearchResult result;
                 result.found = true;
-                result.pos.logIdx = ChatLogIdx(i);
-                result.start = content.indexOf(phrase);
-                result.len = phrase.length();
+                result.pos.logIdx = ChatLogIdx(static_cast<size_t>(i));
+                result.start = static_cast<size_t>(content.indexOf(phrase));
+                result.len = static_cast<size_t>(phrase.length());
                 return result;
             }
         }
@@ -340,7 +341,7 @@ void TestChatWidget::cleanup()
 int TestChatWidget::getRenderedLineCount() const
 {
     // scene is shadowed in ChatWidget, so we need to cast to QGraphicsView
-    return static_cast<const QGraphicsView*>(chatWidget.get())->scene()->items().size();
+    return static_cast<int>(static_cast<const QGraphicsView*>(chatWidget.get())->scene()->items().size());
 }
 
 void TestChatWidget::testInitialState()
