@@ -12,7 +12,7 @@
 namespace {
 
 QString generateContent(const QHash<const Conference*, size_t>& conferenceNotifications,
-                        QString lastMessage, const ToxPk& sender)
+                        const QString& lastMessage, const ToxPk& sender)
 {
     assert(!conferenceNotifications.empty());
 

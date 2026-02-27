@@ -7,8 +7,9 @@
 
 #include <QDebug>
 
-ChatLineStorage::iterator ChatLineStorage::insertChatMessage(ChatLogIdx idx, QDateTime timestamp,
-                                                             ChatLine::Ptr line)
+ChatLineStorage::iterator ChatLineStorage::insertChatMessage(ChatLogIdx idx,
+                                                             const QDateTime& timestamp,
+                                                             const ChatLine::Ptr& line)
 {
     if (idxInfoMap.contains(idx)) {
         qWarning() << "Index is already rendered, not updating";
@@ -34,7 +35,8 @@ ChatLineStorage::iterator ChatLineStorage::insertChatMessage(ChatLogIdx idx, QDa
     return insertionPoint;
 }
 
-ChatLineStorage::iterator ChatLineStorage::insertDateLine(QDateTime timestamp, ChatLine::Ptr line)
+ChatLineStorage::iterator ChatLineStorage::insertDateLine(const QDateTime& timestamp,
+                                                          const ChatLine::Ptr& line)
 {
     // Assume we only need to render one date line per date. I.e. this does
     // not handle the case of
@@ -64,10 +66,10 @@ ChatLineStorage::iterator ChatLineStorage::insertDateLine(QDateTime timestamp, C
     return insertionPoint;
 }
 
-bool ChatLineStorage::contains(QDateTime timestamp) const
+bool ChatLineStorage::contains(const QDateTime& timestamp) const
 {
-    auto it = std::find_if(dateMap.begin(), dateMap.end(),
-                           [&](DateLineMap_t::value_type v) { return v.second == timestamp; });
+    const auto it = std::find_if(dateMap.begin(), dateMap.end(),
+                           [&](const DateLineMap_t::value_type& v) { return v.second == timestamp; });
 
     return it != dateMap.end();
 }
@@ -79,10 +81,10 @@ ChatLineStorage::iterator ChatLineStorage::find(ChatLogIdx idx)
         return lines.end();
     }
 
-    return lines.begin() + infoIt->second.linePos;
+    return lines.begin() + static_cast<ptrdiff_t>(infoIt->second.linePos);
 }
 
-ChatLineStorage::iterator ChatLineStorage::find(ChatLine::Ptr line)
+ChatLineStorage::iterator ChatLineStorage::find(const ChatLine::Ptr& line)
 {
     return std::find(lines.begin(), lines.end(), line);
 }
@@ -132,7 +134,7 @@ ChatLineStorage::iterator ChatLineStorage::equivalentLineIterator(IdxInfoMap_t::
         return lines.end();
     }
 
-    return std::next(lines.begin(), it->second.linePos);
+    return std::next(lines.begin(), static_cast<ptrdiff_t>(it->second.linePos));
 }
 
 ChatLineStorage::IdxInfoMap_t::iterator ChatLineStorage::equivalentInfoIterator(iterator it)
@@ -161,7 +163,7 @@ ChatLineStorage::IdxInfoMap_t::iterator ChatLineStorage::infoIteratorForIdx(Chat
     return it;
 }
 
-ChatLineStorage::iterator ChatLineStorage::adjustItForDate(iterator it, QDateTime timestamp)
+ChatLineStorage::iterator ChatLineStorage::adjustItForDate(iterator it, const QDateTime& timestamp)
 {
     // Continuously move back until either
     // 1. The dateline found is earlier than our timestamp

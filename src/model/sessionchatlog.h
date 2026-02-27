@@ -36,13 +36,14 @@ public:
     std::vector<DateChatLogIdxPair> getDateIdxs(const QDate& startDate, size_t maxDates) const override;
     void addSystemMessage(const SystemMessage& message) override;
 
-    void insertCompleteMessageAtIdx(ChatLogIdx idx, const ToxPk& sender, QString senderName,
+    void insertCompleteMessageAtIdx(ChatLogIdx idx, const ToxPk& sender, const QString& senderName,
                                     const ChatLogMessage& message);
-    void insertIncompleteMessageAtIdx(ChatLogIdx idx, const ToxPk& sender, QString senderName,
-                                      const ChatLogMessage& message, DispatchedMessageId dispatchId);
-    void insertBrokenMessageAtIdx(ChatLogIdx idx, const ToxPk& sender, QString senderName,
+    void insertIncompleteMessageAtIdx(ChatLogIdx idx, const ToxPk& sender,
+                                      const QString& senderName, const ChatLogMessage& message,
+                                      DispatchedMessageId dispatchId);
+    void insertBrokenMessageAtIdx(ChatLogIdx idx, const ToxPk& sender, const QString& senderName,
                                   const ChatLogMessage& message);
-    void insertFileAtIdx(ChatLogIdx idx, const ToxPk& sender, QString senderName,
+    void insertFileAtIdx(ChatLogIdx idx, const ToxPk& sender, const QString& senderName,
                          const ChatLogFile& file);
     void insertSystemMessageAtIdx(ChatLogIdx idx, SystemMessage message);
 

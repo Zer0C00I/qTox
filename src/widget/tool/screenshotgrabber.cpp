@@ -56,7 +56,7 @@ ScreenshotGrabber::~ScreenshotGrabber()
 bool ScreenshotGrabber::eventFilter(QObject* object, QEvent* event)
 {
     if (event->type() == QEvent::KeyPress)
-        return handleKeyPress(static_cast<QKeyEvent*>(event));
+        return handleKeyPress(dynamic_cast<QKeyEvent*>(event));
 
     return QObject::eventFilter(object, event);
 }

@@ -41,7 +41,7 @@ class ChatLineStorage
 
     struct IdxInfo
     {
-        size_t linePos;
+        size_t linePos = 0;
         QDateTime timestamp;
     };
     using Lines_t = std::vector<ChatLine::Ptr>;
@@ -58,8 +58,8 @@ public:
 
 
 public:
-    iterator insertChatMessage(ChatLogIdx idx, QDateTime timestamp, ChatLine::Ptr line);
-    iterator insertDateLine(QDateTime timestamp, ChatLine::Ptr line);
+    iterator insertChatMessage(ChatLogIdx idx, const QDateTime& timestamp, const ChatLine::Ptr& line);
+    iterator insertDateLine(const QDateTime& timestamp, const ChatLine::Ptr& line);
 
     ChatLogIdx firstIdx() const
     {
@@ -76,10 +76,10 @@ public:
         return idxInfoMap.contains(idx);
     }
 
-    bool contains(QDateTime timestamp) const;
+    bool contains(const QDateTime& timestamp) const;
 
     iterator find(ChatLogIdx idx);
-    iterator find(ChatLine::Ptr line);
+    iterator find(const ChatLine::Ptr& line);
 
     const_reference operator[](size_type idx) const
     {
@@ -141,7 +141,7 @@ private:
 
     IdxInfoMap_t::iterator infoIteratorForIdx(ChatLogIdx idx_);
 
-    iterator adjustItForDate(iterator it, QDateTime timestamp);
+    iterator adjustItForDate(iterator it, const QDateTime& timestamp);
 
     void incrementLinePosAfter(IdxInfoMap_t::iterator it);
     void decrementLinePosAfter(IdxInfoMap_t::iterator it);

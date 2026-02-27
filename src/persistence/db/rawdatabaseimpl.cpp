@@ -22,7 +22,8 @@
  * Otherwise we will use toxencryptsave to derive a key and encrypt the database.
  */
 RawDatabaseImpl::RawDatabaseImpl(QString path_, const QString& password, QByteArray salt)
-    : workerThread{new QThread}
+    : sqlite{nullptr}
+    , workerThread{new QThread}
     , path{std::move(path_)}
     , currentSalt{std::move(salt)} // we need the salt later if a new password should be set
     , currentHexKey{deriveKey(password, currentSalt)}
@@ -80,7 +81,7 @@ RawDatabaseImpl::~RawDatabaseImpl()
 bool RawDatabaseImpl::open(const QString& path_, const QString& hexKey)
 {
     if (QThread::currentThread() != workerThread.get()) {
-        bool ret;
+        bool ret = false;
         QMetaObject::invokeMethod(this, "open", Qt::BlockingQueuedConnection, Q_RETURN_ARG(bool, ret),
                                   Q_ARG(const QString&, path_), Q_ARG(const QString&, hexKey));
         return ret;
@@ -250,7 +251,7 @@ RawDatabaseImpl::SqlCipherParams RawDatabaseImpl::highestSupportedParams()
 
     auto majorVersion = cipherVersion.split('.')[0].toInt();
 
-    SqlCipherParams highestSupportedParams;
+    SqlCipherParams highestSupportedParams = SqlCipherParams::p3_0;
     switch (majorVersion) {
     case 3:
         highestSupportedParams = SqlCipherParams::halfUpgradedTo4;
@@ -299,7 +300,7 @@ bool RawDatabaseImpl::setKey(const QString& hexKey)
 
 int RawDatabaseImpl::getUserVersion()
 {
-    int64_t user_version;
+    int64_t user_version = 0;
     if (!execNow(RawDatabase::Query("PRAGMA user_version", [&](const QVector<QVariant>& row) {
             user_version = row[0].toLongLong();
         }))) {
@@ -446,7 +447,7 @@ bool RawDatabaseImpl::setPassword(const QString& password)
     }
 
     if (QThread::currentThread() != workerThread.get()) {
-        bool ret;
+        bool ret = false;
         QMetaObject::invokeMethod(this, "setPassword", Qt::BlockingQueuedConnection,
                                   Q_RETURN_ARG(bool, ret), Q_ARG(const QString&, password));
         return ret;
@@ -567,7 +568,7 @@ bool RawDatabaseImpl::rename(const QString& newPath)
     }
 
     if (QThread::currentThread() != workerThread.get()) {
-        bool ret;
+        bool ret = false;
         QMetaObject::invokeMethod(this, "rename", Qt::BlockingQueuedConnection,
                                   Q_RETURN_ARG(bool, ret), Q_ARG(const QString&, newPath));
         return ret;
@@ -601,7 +602,7 @@ bool RawDatabaseImpl::remove()
     }
 
     if (QThread::currentThread() != workerThread.get()) {
-        bool ret;
+        bool ret = false;
         QMetaObject::invokeMethod(this, "remove", Qt::BlockingQueuedConnection,
                                   Q_RETURN_ARG(bool, ret));
         return ret;
@@ -707,8 +708,8 @@ void RawDatabaseImpl::compileAndExecute(Transaction& trans)
         const char* compileTail = query.query.data();
         do {
             // Compile the next statement
-            sqlite3_stmt* stmt;
-            int r;
+            sqlite3_stmt* stmt = nullptr;
+            int r = 0;
             if ((r = sqlite3_prepare_v2(sqlite, compileTail,
                                         query.query.size()
                                             - static_cast<int>(compileTail - query.query.data()),
@@ -749,7 +750,7 @@ void RawDatabaseImpl::compileAndExecute(Transaction& trans)
         // Execute each statement of each query of our transaction
         for (sqlite3_stmt* stmt : query.statements) {
             const int column_count = sqlite3_column_count(stmt);
-            int result;
+            int result = 0;
             do {
                 result = sqlite3_step(stmt);
 

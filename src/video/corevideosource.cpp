@@ -82,8 +82,8 @@ void CoreVideoSource::pushFrame(const vpx_image_t* vpxFrame)
         const int size = (i == 0) ? height : height / 2;
 
         for (int j = 0; j < size; ++j) {
-            uint8_t* dst = avFrame->data[i] + dstStride * j;
-            uint8_t* src = vpxFrame->planes[i] + srcStride * j;
+            uint8_t* dst = avFrame->data[i] + (dstStride * j);
+            uint8_t* src = vpxFrame->planes[i] + (srcStride * j);
             memcpy(dst, src, minStride);
         }
     }

@@ -25,6 +25,6 @@ enum class Orientation
     LeftBottom
 };
 
-Orientation getOrientation(QByteArray imageData);
+Orientation getOrientation(const QByteArray& imageData);
 QImage applyTransformation(QImage image, Orientation orientation);
 } // namespace ExifTransform

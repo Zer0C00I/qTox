@@ -70,7 +70,7 @@ void Translator::translate(const QString& localeName)
 
     QGuiApplication::setLayoutDirection(direction == "RTL" ? Qt::RightToLeft : Qt::LeftToRight);
 
-    for (auto pair : callbacks)
+    for (const auto& pair : callbacks)
         pair.second();
 }
 

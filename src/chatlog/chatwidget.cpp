@@ -31,7 +31,7 @@
 
 namespace {
 
-ChatMessage::Ptr createDateMessage(QDateTime timestamp, DocumentCache& documentCache,
+ChatMessage::Ptr createDateMessage(const QDateTime& timestamp, DocumentCache& documentCache,
                                    Settings& settings, Style& style)
 {
     const auto date = timestamp.date();
@@ -73,7 +73,7 @@ void renderMessageRaw(const QString& displayName, bool isSelf, bool colorizeName
     // correlate ChatMessages created here, however a logic bug could turn into
     // a crash due to this dangerous cast. The alternative would be to make
     // ChatLine a QObject which I didn't think was worth it.
-    auto* chatMessage = static_cast<ChatMessage*>(chatLine.get());
+    auto* chatMessage = dynamic_cast<ChatMessage*>(chatLine.get());
 
     if (chatMessage != nullptr) {
         if (chatLogMessage.state == MessageState::complete) {
@@ -134,7 +134,7 @@ ChatLogIdx firstItemAfterDate(QDate date, const IChatLog& chatLog)
  * beginning or to the end in these cases
  */
 template <typename Fn>
-void forEachLineIn(ChatLine::Ptr first, ChatLine::Ptr last, ChatLineStorage& storage, Fn f)
+void forEachLineIn(const ChatLine::Ptr& first, const ChatLine::Ptr& last, ChatLineStorage& storage, Fn f)
 {
     auto startIt = storage.find(first);
 
@@ -504,7 +504,7 @@ qreal ChatWidget::useableWidth() const
     return width() - verticalScrollBar()->sizeHint().width() - margins.right() - margins.left();
 }
 
-void ChatWidget::insertChatlines(std::map<ChatLogIdx, ChatLine::Ptr> chatLines)
+void ChatWidget::insertChatlines(const std::map<ChatLogIdx, ChatLine::Ptr>& chatLines)
 {
     if (chatLines.empty()) {
         scrollMonitoringEnabled = true;
@@ -514,7 +514,7 @@ void ChatWidget::insertChatlines(std::map<ChatLogIdx, ChatLine::Ptr> chatLines)
 
     const bool allLinesAtEnd = !chatLineStorage->hasIndexedMessage()
                                || chatLines.begin()->first > chatLineStorage->lastIdx();
-    auto startLineSize = chatLineStorage->size();
+    auto startLineSize = static_cast<int>(chatLineStorage->size());
 
     const QGraphicsScene::ItemIndexMethod oldIndexMeth = scene->itemIndexMethod();
     scene->setItemIndexMethod(QGraphicsScene::NoIndex);
@@ -557,7 +557,7 @@ void ChatWidget::insertChatlines(std::map<ChatLogIdx, ChatLine::Ptr> chatLines)
         const bool stickToBtm = stickToBottom();
 
         // partial refresh
-        layout(startLineSize, chatLineStorage->size(), useableWidth());
+        layout(startLineSize, static_cast<int>(chatLineStorage->size()), useableWidth());
         updateSceneRect();
 
         if (stickToBtm)
@@ -612,7 +612,7 @@ void ChatWidget::startResizeWorker()
         if (txt > 500000)
             break;
         for (ChatLineContent* content : line->content)
-            txt += content->getText().size();
+            txt += static_cast<int>(content->getText().size());
     }
     if (txt > 500000)
         setScene(busyScene);
@@ -755,20 +755,20 @@ void ChatWidget::setTypingNotificationName(const QString& displayName)
         setTypingNotification();
     }
 
-    Text* text = static_cast<Text*>(typingNotification->getContent(1));
+    Text* text = qobject_cast<Text*>(typingNotification->getContent(1));
     const QString typingDiv = "<div class=typing>%1</div>";
     text->setText(typingDiv.arg(tr("%1 is typing").arg(displayName)));
 
     updateTypingNotification();
 }
 
-void ChatWidget::scrollToLine(ChatLine::Ptr line)
+void ChatWidget::scrollToLine(const ChatLine::Ptr& line)
 {
     if (line.get() == nullptr)
         return;
 
     updateSceneRect();
-    verticalScrollBar()->setValue(line->sceneBoundingRect().top());
+    verticalScrollBar()->setValue(static_cast<int>(line->sceneBoundingRect().top()));
 }
 
 void ChatWidget::selectAll()
@@ -859,7 +859,7 @@ void ChatWidget::onSearchDown(const QString& phrase, const ParameterSearch& para
     handleSearchResult(result, SearchDirection::Down);
 }
 
-void ChatWidget::handleSearchResult(SearchResult result, SearchDirection direction)
+void ChatWidget::handleSearchResult(const SearchResult& result, SearchDirection direction)
 {
     if (!result.found) {
         emit messageNotFoundShow(direction);
@@ -1028,7 +1028,7 @@ void ChatWidget::removeLines(ChatLogIdx begin, ChatLogIdx end)
     // probably be smarter and try to only re-render anything under what we
     // removed, but with the sliding window there doesn't seem to be much need
     if (chatLineStorage->hasIndexedMessage() && begin <= chatLineStorage->lastIdx()) {
-        layout(0, chatLineStorage->size(), useableWidth());
+        layout(0, static_cast<int>(chatLineStorage->size()), useableWidth());
     }
 }
 
@@ -1079,7 +1079,7 @@ void ChatWidget::onWorkerTimeout()
             break;
         }
 
-        layout(workerLastIndex, workerLastIndex + 1, useableWidth());
+        layout(static_cast<int>(workerLastIndex), static_cast<int>(workerLastIndex) + 1, useableWidth());
         workerLastIndex++;
     }
 
@@ -1287,7 +1287,7 @@ void ChatWidget::onScrollValueChanged(int value)
                 auto it = chatLineStorage->find(currentBottomIdx);
                 if (it != chatLineStorage->end()) {
                     updateSceneRect();
-                    verticalScrollBar()->setValue((*it)->sceneBoundingRect().bottom() - bottomOffset);
+                    verticalScrollBar()->setValue(static_cast<int>((*it)->sceneBoundingRect().bottom() - bottomOffset));
                 }
                 scrollMonitoringEnabled = true;
             });
@@ -1360,7 +1360,7 @@ void ChatWidget::hideEvent(QHideEvent* event)
         }
 
         if (chatLineStorage->hasIndexedMessage()) {
-            layout(0, chatLineStorage->size(), useableWidth());
+            layout(0, static_cast<int>(chatLineStorage->size()), useableWidth());
         }
 
         startResizeWorker();
@@ -1417,7 +1417,7 @@ void ChatWidget::retranslateUi()
     selectAllAction->setText(tr("Select all"));
 }
 
-bool ChatWidget::isActiveFileTransfer(ChatLine::Ptr l)
+bool ChatWidget::isActiveFileTransfer(const ChatLine::Ptr& l)
 {
     const int count = l->getColumnCount();
     for (int i = 0; i < count; ++i) {
@@ -1485,8 +1485,8 @@ void ChatWidget::renderItem(const ChatLogItem& item, bool hideName, bool coloriz
     }
 }
 
-void ChatWidget::renderFile(QString displayName, ToxFile file, bool isSelf, QDateTime timestamp,
-                            ChatLine::Ptr& chatMessage)
+void ChatWidget::renderFile(const QString& displayName, const ToxFile& file, bool isSelf,
+                            const QDateTime& timestamp, ChatLine::Ptr& chatMessage)
 {
     if (!chatMessage) {
         assert(coreFile);
@@ -1494,9 +1494,9 @@ void ChatWidget::renderFile(QString displayName, ToxFile file, bool isSelf, QDat
                                                              timestamp, documentCache, settings,
                                                              style, messageBoxManager);
     } else {
-        auto* proxy = static_cast<ChatLineContentProxy*>(chatMessage->getContent(1));
-        assert(proxy->getWidgetType() == ChatLineContentProxy::FileTransferWidgetType);
-        auto* ftWidget = static_cast<FileTransferWidget*>(proxy->getWidget());
+        auto* proxy = qobject_cast<ChatLineContentProxy*>(chatMessage->getContent(1));
+        assert(proxy != nullptr && proxy->getWidgetType() == ChatLineContentProxy::FileTransferWidgetType);
+        auto* ftWidget = qobject_cast<FileTransferWidget*>(proxy->getWidget());
         ftWidget->onFileTransferUpdate(file);
     }
 }
@@ -1545,7 +1545,9 @@ void ChatWidget::disableSearchText()
 
     auto line = (*chatLineStorage)[searchPos.logIdx];
     auto* text = qobject_cast<Text*>(line->getContent(1));
-    text->deselectText();
+    if (text != nullptr) {
+        text->deselectText();
+    }
 }
 
 void ChatWidget::removeSearchPhrase()

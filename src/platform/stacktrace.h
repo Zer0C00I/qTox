@@ -24,15 +24,15 @@ namespace Stacktrace {
 struct Frame
 {
     /** Frame number. */
-    int number;
+    int number = 0;
     /** Base address of the object containing the function. */
-    uint64_t base;
+    uint64_t base = 0;
     /** Name of the object (binary/library) containing the function. */
-    const char* object;
+    const char* object = nullptr;
     /** Name of the function. */
-    const char* function; // This is ephemeral, do not store it.
+    const char* function = nullptr; // This is ephemeral, do not store it.
     /** Offset of the program counter from the start of the function. */
-    uint64_t offset;
+    uint64_t offset = 0;
 };
 
 /** Print the frame to a debug stream (potential memory allocation). */

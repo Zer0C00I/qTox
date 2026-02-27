@@ -39,13 +39,13 @@ struct ToxFile
     };
 
     ToxFile();
-    ToxFile(uint32_t fileNum_, uint32_t friendId_, QString fileName_, QString filePath_,
+    ToxFile(uint32_t fileNum_, uint32_t friendId_, QString fileName_, const QString& filePath_,
             uint64_t filesize, FileDirection direction);
 
     bool operator==(const ToxFile& other) const;
     bool operator!=(const ToxFile& other) const;
 
-    void setFilePath(QString path);
+    void setFilePath(const QString& path);
     bool open(bool write);
 
     uint8_t fileKind;

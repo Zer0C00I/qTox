@@ -82,7 +82,7 @@ double ToxFileProgress::getProgress() const
     if (filesize == 0) {
         return 0.0;
     }
-    return double(samples[activeSample].bytesSent) / filesize;
+    return static_cast<double>(samples[activeSample].bytesSent) / static_cast<double>(filesize);
 }
 
 double ToxFileProgress::getSpeed() const
@@ -104,8 +104,8 @@ double ToxFileProgress::getSpeed() const
     const auto& active = samples[activeSample];
     const auto& inactive = samples[activeSample == 0 ? 1 : 0];
 
-    return (active.bytesSent - inactive.bytesSent)
-           / double(inactive.timestamp.msecsTo(active.timestamp)) * 1000.0;
+    return static_cast<double>(active.bytesSent - inactive.bytesSent)
+           / static_cast<double>(inactive.timestamp.msecsTo(active.timestamp)) * 1000.0;
 }
 
 double ToxFileProgress::getTimeLeftSeconds() const

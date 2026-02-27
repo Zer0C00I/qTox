@@ -92,7 +92,7 @@ const char* pathBasename(const char* path)
 
 char_ptr demangle(const char* name)
 {
-    int status;
+    int status = 0;
     char_ptr demangled{abi::__cxa_demangle(name, nullptr, nullptr, &status)};
     if (status == 0) {
         return demangled;

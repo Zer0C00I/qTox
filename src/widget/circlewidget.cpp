@@ -94,7 +94,7 @@ void CircleWidget::contextMenuEvent(QContextMenuEvent* event)
         if (selectedItem == renameAction) {
             editName();
         } else if (selectedItem == removeAction) {
-            auto* friendListWidget = static_cast<FriendListWidget*>(parentWidget());
+            auto* friendListWidget = qobject_cast<FriendListWidget*>(parentWidget());
             moveFriendWidgets(friendListWidget);
 
             FriendListWidget::removeCircleWidget(this);

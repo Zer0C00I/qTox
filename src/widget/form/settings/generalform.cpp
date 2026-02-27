@@ -210,7 +210,7 @@ GeneralForm::GeneralForm(Settings& settings_, Style& style_)
         bodyUI->transComboBox->insertItem(i + 1, langName);
     }
 
-    bodyUI->transComboBox->setCurrentIndex(locales.indexOf(settings.getTranslation()) + 1);
+    bodyUI->transComboBox->setCurrentIndex(static_cast<int>(locales.indexOf(settings.getTranslation())) + 1);
 
     bodyUI->cbAutorun->setChecked(settings.getAutorun());
 

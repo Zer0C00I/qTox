@@ -112,14 +112,14 @@ public:
     ~ToxConferenceCall() override;
 
     ToxConferenceCall& operator=(ToxConferenceCall&& other) = delete;
-    void removePeer(ToxPk peerId);
+    void removePeer(const ToxPk& peerId);
 
     void playAudioBuffer(const ToxPk& peer, const int16_t* data, int samples, unsigned channels,
                          int sampleRate);
 
 private:
-    void addPeer(ToxPk peerId);
-    bool havePeer(ToxPk peerId);
+    void addPeer(const ToxPk& peerId);
+    bool havePeer(const ToxPk& peerId);
     void clearPeers();
 
     std::map<ToxPk, std::unique_ptr<IAudioSink>> peers;
@@ -128,5 +128,5 @@ private:
 
 private slots:
     void onAudioSourceInvalidated();
-    void onAudioSinkInvalidated(ToxPk peerId);
+    void onAudioSinkInvalidated(const ToxPk& peerId);
 };

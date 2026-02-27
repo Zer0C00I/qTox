@@ -54,8 +54,8 @@ public:
     QPixmap loadAvatar();
     QPixmap loadAvatar(const ToxPk& owner);
     QByteArray loadAvatarData(const ToxPk& owner);
-    void setAvatar(QByteArray pic);
-    void setFriendAvatar(const ToxPk& owner, QByteArray pic);
+    void setAvatar(const QByteArray& pic);
+    void setFriendAvatar(const ToxPk& owner, const QByteArray& pic);
     QByteArray getAvatarHash(const ToxPk& owner);
     void removeSelfAvatar();
     void removeFriendAvatar(const ToxPk& owner);
@@ -64,13 +64,13 @@ public:
 
     QStringList remove();
 
-    bool rename(QString newName);
+    bool rename(const QString& newName);
 
     static QStringList getAllProfileNames(Paths& paths);
 
     static QString getProfilePath(const QString& name, const Paths& paths);
-    static bool exists(QString name, Paths& paths);
-    static bool isEncrypted(QString name, Paths& paths);
+    static bool exists(const QString& name, Paths& paths);
+    static bool isEncrypted(const QString& name, Paths& paths);
     static QString getDbPath(const QString& profileName, Paths& paths);
 
 signals:
@@ -90,7 +90,7 @@ public slots:
     void onRequestSent(const ToxPk& friendPk, const QString& message);
 
 private slots:
-    void loadDatabase(QString password, IMessageBoxManager& messageBoxManager);
+    void loadDatabase(const QString& password, IMessageBoxManager& messageBoxManager);
     void saveAvatar(const ToxPk& owner, const QByteArray& avatar);
     void removeAvatar(const ToxPk& owner);
     void onSaveToxSave();
@@ -100,7 +100,7 @@ private slots:
 
 private:
     Profile(QString name_, std::unique_ptr<ToxEncrypt> passkey_, Paths& paths_, Settings& settings_);
-    static QStringList getFilesByExt(QString extension, Paths& paths);
+    static QStringList getFilesByExt(const QString& extension, Paths& paths);
     QString avatarPath(const ToxPk& owner, bool forceUnencrypted = false);
     bool saveToxSave(QByteArray data);
     bool initCore(const QByteArray& toxSave, Settings& s, bool isNewProfile,

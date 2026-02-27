@@ -38,7 +38,7 @@ QString ProfileLocker::lockPathFromName(const QString& name, const Paths& paths)
  * @param profile Profile name to check.
  * @return True, if profile locked, false otherwise.
  */
-bool ProfileLocker::isLockable(QString profile, Paths& paths)
+bool ProfileLocker::isLockable(const QString& profile, Paths& paths)
 {
     // If we already have the lock, it's definitely lockable
     if (lockfile && curLockName == profile)
@@ -53,7 +53,7 @@ bool ProfileLocker::isLockable(QString profile, Paths& paths)
  * @param profile Profile to lock.
  * @return Returns true if we already own the lock.
  */
-bool ProfileLocker::lock(QString profile, Paths& paths)
+bool ProfileLocker::lock(const QString& profile, Paths& paths)
 {
     if (lockfile && curLockName == profile)
         return true;

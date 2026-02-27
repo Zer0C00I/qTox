@@ -239,7 +239,7 @@ public:
     using ChatWidget::ChatWidget;
     ~MockChatWidget() override;
     bool mockActiveTransfer = false;
-    bool isActiveFileTransfer(ChatLine::Ptr /*l*/) override
+    bool isActiveFileTransfer(const ChatLine::Ptr& /*l*/) override
     {
         return mockActiveTransfer;
     }

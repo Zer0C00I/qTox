@@ -69,7 +69,7 @@ void ContentLayout::reloadTheme()
 
 void ContentLayout::clear() const
 {
-    QLayoutItem* item;
+    QLayoutItem* item = nullptr;
     while ((item = mainHead->layout()->takeAt(0)) != nullptr) {
         item->widget()->hide();
         item->widget()->setParent(nullptr);

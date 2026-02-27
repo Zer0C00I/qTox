@@ -29,7 +29,7 @@ int dataToVInt(const QByteArray& data)
     uint32_t result = 0;
     size_t shift = 0;
     int i = 0;
-    char num3;
+    char num3 = '\0';
     do {
         if (i >= data.size()) {
             return 0;

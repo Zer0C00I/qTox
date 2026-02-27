@@ -56,7 +56,7 @@ void ConferenceRoom::inviteFriend(const ToxPk& pk)
     const auto canInvite = Status::isOnline(frnd->getStatus());
 
     if (canInvite) {
-        core.conferenceInviteFriend(friendId, conferenceId);
+        core.conferenceInviteFriend(friendId, static_cast<int>(conferenceId));
     }
 }
 

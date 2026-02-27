@@ -130,7 +130,8 @@ NetCamView::NetCamView(ToxPk friendPk_, CameraSource& cameraSource_, Settings& s
     });
 
     connections += connect(videoSurface, &VideoSurface::ratioChanged, this, [this]() {
-        selfFrame->setMinimumWidth(selfFrame->minimumHeight() * selfVideoSurface->getRatio());
+        selfFrame->setMinimumWidth(
+            static_cast<int>(selfFrame->minimumHeight() * selfVideoSurface->getRatio()));
         const QRect boundingRect = videoSurface->getBoundingRect();
         updateFrameSize(boundingRect.size());
         selfFrame->resetBoundary(boundingRect);
@@ -195,18 +196,21 @@ void NetCamView::showEvent(QShowEvent* event)
 
 void NetCamView::updateRatio()
 {
-    selfFrame->setMinimumWidth(selfFrame->minimumHeight() * selfVideoSurface->getRatio());
+    selfFrame->setMinimumWidth(
+        static_cast<int>(selfFrame->minimumHeight() * selfVideoSurface->getRatio()));
     selfFrame->setRatio(selfVideoSurface->getRatio());
 }
 
-void NetCamView::updateFrameSize(QSize size)
+void NetCamView::updateFrameSize(const QSize& size)
 {
     selfFrame->setMaximumSize(size.height() / 3, size.width() / 3);
 
     if (selfFrame->maximumWidth() > selfFrame->maximumHeight())
-        selfFrame->setMaximumWidth(selfFrame->maximumHeight() * selfVideoSurface->getRatio());
+        selfFrame->setMaximumWidth(
+            static_cast<int>(selfFrame->maximumHeight() * selfVideoSurface->getRatio()));
     else
-        selfFrame->setMaximumHeight(selfFrame->maximumWidth() / selfVideoSurface->getRatio());
+        selfFrame->setMaximumHeight(
+            static_cast<int>(selfFrame->maximumWidth() / selfVideoSurface->getRatio()));
 }
 
 QSize NetCamView::getSurfaceMinSize()
@@ -249,7 +253,7 @@ void NetCamView::enterFullScreen()
     enterFullScreenButton->hide();
     toggleMessagesButton->hide();
     const auto screenSize = QGuiApplication::screenAt(pos())->geometry();
-    buttonPanel->setGeometry((screenSize.width() / 2) - buttonPanel->width() / 2,
+    buttonPanel->setGeometry((screenSize.width() / 2) - (buttonPanel->width() / 2),
                              screenSize.height() - BTN_PANEL_HEIGHT - 25, BTN_PANEL_WIDTH,
                              BTN_PANEL_HEIGHT);
     buttonPanel->show();

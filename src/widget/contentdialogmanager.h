@@ -34,7 +34,8 @@ public:
     IDialogs* getFriendDialogs(const ToxPk& friendPk) const override;
     IDialogs* getConferenceDialogs(const ConferenceId& conferenceId) const override;
 
-    FriendWidget* addFriendToDialog(ContentDialog* dialog, std::shared_ptr<FriendChatroom> chatroom,
+    FriendWidget* addFriendToDialog(ContentDialog* dialog,
+                                    std::shared_ptr<FriendChatroom> chatroom,
                                     GenericChatForm* form);
     ConferenceWidget* addConferenceToDialog(ContentDialog* dialog,
                                             std::shared_ptr<ConferenceRoom> chatroom,

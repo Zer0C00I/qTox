@@ -50,11 +50,11 @@ private:
     void unlock();
 
     QRect boundingRect;
-    VideoSource* source;
+    VideoSource* source = nullptr;
     std::shared_ptr<VideoFrame> lastFrame;
     std::atomic_bool frameLock;
-    uint8_t hasSubscribed;
+    uint8_t hasSubscribed = 0;
     QPixmap avatar;
-    float ratio;
-    bool expanding;
+    float ratio = 1.0f;
+    bool expanding = false;
 };

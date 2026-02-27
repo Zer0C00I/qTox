@@ -387,14 +387,14 @@ void CameraSource::openDevice()
 
     // Find the first video stream, if any
     for (unsigned i = 0; i < device->context->nb_streams; ++i) {
-        AVMediaType type;
+        AVMediaType type = AVMEDIA_TYPE_UNKNOWN;
 #if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(57, 48, 101)
         type = device->context->streams[i]->codec->codec_type;
 #else
         type = device->context->streams[i]->codecpar->codec_type;
 #endif
         if (type == AVMEDIA_TYPE_VIDEO) {
-            videoStreamIndex = i;
+            videoStreamIndex = static_cast<int>(i);
             break;
         }
     }
@@ -405,7 +405,7 @@ void CameraSource::openDevice()
         return;
     }
 
-    AVCodecID codecId;
+    AVCodecID codecId = AV_CODEC_ID_NONE;
 #if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(57, 48, 101)
     cctxOrig = device->context->streams[videoStreamIndex]->codec;
     codecId = cctxOrig->codec_id;
@@ -517,7 +517,7 @@ void CameraSource::stream()
         // Only keep packets from the right stream;
         if (packet.stream_index == videoStreamIndex) {
             // Decode video frame
-            int frameFinished;
+            int frameFinished = 0;
             avcodec_decode_video2(cctx, frame, &frameFinished, &packet);
             if (!frameFinished) {
                 return;

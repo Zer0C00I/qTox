@@ -43,8 +43,8 @@ protected:
                          float widthInPercent);
 
 private:
-    QGraphicsProxyWidget* proxy;
-    float widthPercent;
-    int widthMin;
+    QGraphicsProxyWidget* proxy = nullptr;
+    float widthPercent = 0.0f;
+    int widthMin = 0;
     const ChatLineContentProxyType widgetType;
 };

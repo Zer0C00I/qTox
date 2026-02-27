@@ -63,7 +63,7 @@ private slots:
     void updateRatio();
 
 private:
-    void updateFrameSize(QSize size);
+    void updateFrameSize(const QSize& size);
     QPushButton* createButton(const QString& name, const QString& state);
     void toggleFullScreen();
     void enterFullScreen();
@@ -77,7 +77,7 @@ private:
     VideoSurface* selfVideoSurface;
     MovableWidget* selfFrame;
     ToxPk friendPk;
-    bool e;
+    bool e = false;
     QVector<QMetaObject::Connection> connections;
     QHBoxLayout* buttonLayout = nullptr;
     QPushButton* toggleMessagesButton = nullptr;

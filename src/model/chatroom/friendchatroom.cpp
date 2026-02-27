@@ -107,7 +107,7 @@ void FriendChatroom::inviteFriend(const Conference* conference)
 {
     const auto friendId = frnd->getId();
     const auto conferenceId = conference->getId();
-    core.conferenceInviteFriend(friendId, conferenceId);
+    core.conferenceInviteFriend(friendId, static_cast<int>(conferenceId));
 }
 
 QVector<ConferenceToDisplay> FriendChatroom::getConferences() const

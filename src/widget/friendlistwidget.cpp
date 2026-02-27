@@ -102,7 +102,7 @@ FriendListWidget::FriendListWidget(const Core& core_, Widget* parent, Settings& 
     , conferenceList{conferenceList_}
     , profile{profile_}
 {
-    const int countContacts = core.getFriendList().size();
+    const int countContacts = static_cast<int>(core.getFriendList().size());
     manager = new FriendListManager(countContacts, this);
     manager->setConferencesOnTop(conferencesOnTop);
     connect(manager, &FriendListManager::itemsChanged, this, &FriendListWidget::itemsChanged);
@@ -119,7 +119,7 @@ FriendListWidget::FriendListWidget(const Core& core_, Widget* parent, Settings& 
     dayTimer->setObjectName("dayTimer");
     dayTimer->setTimerType(Qt::VeryCoarseTimer);
     connect(dayTimer, &QTimer::timeout, this, &FriendListWidget::dayTimeout);
-    dayTimer->start(timeUntilTomorrow());
+    dayTimer->start(static_cast<int>(timeUntilTomorrow()));
 
     setAcceptDrops(true);
 }
@@ -282,7 +282,7 @@ void FriendListWidget::cleanMainLayout()
 {
     manager->resetParents();
 
-    QLayoutItem* itemForDel;
+    QLayoutItem* itemForDel = nullptr;
     while ((itemForDel = listLayout->takeAt(0)) != nullptr) {
         listLayout->removeWidget(itemForDel->widget());
         QWidget* wgt = itemForDel->widget();
@@ -290,7 +290,7 @@ void FriendListWidget::cleanMainLayout()
             wgt->setParent(nullptr);
         } else if (itemForDel->layout() != nullptr) {
             QLayout* layout = itemForDel->layout();
-            QLayoutItem* itemTmp;
+            QLayoutItem* itemTmp = nullptr;
             while ((itemTmp = layout->takeAt(0)) != nullptr) {
                 wgt = itemTmp->widget();
                 delete wgt;
@@ -305,13 +305,14 @@ QWidget* FriendListWidget::getNextWidgetForName(IFriendListItem* currentPos, boo
 {
     const int pos = currentPos->getNameSortedPos();
     int nextPos = forward ? pos + 1 : pos - 1;
-    if (nextPos >= manager->getItems().size()) {
+    const int itemCount = static_cast<int>(manager->getItems().size());
+    if (nextPos >= itemCount) {
         nextPos = 0;
     } else if (nextPos < 0) {
-        nextPos = manager->getItems().size() - 1;
+        nextPos = itemCount - 1;
     }
 
-    for (int i = 0; i < manager->getItems().size(); ++i) {
+    for (int i = 0; i < itemCount; ++i) {
         if (manager->getItems().at(i)->getNameSortedPos() == nextPos) {
             return manager->getItems().at(i)->getWidget();
         }
@@ -556,7 +557,7 @@ void FriendListWidget::dayTimeout()
         itemsChanged();
     }
 
-    dayTimer->start(timeUntilTomorrow());
+    dayTimer->start(static_cast<int>(timeUntilTomorrow()));
 }
 
 void FriendListWidget::itemsChanged()
@@ -598,7 +599,7 @@ void FriendListWidget::updateActivityTime(const QDateTime& time)
 
     const int timeIndex = static_cast<int>(getTimeBucket(time));
     QWidget* widget = activityLayout->itemAt(timeIndex)->widget();
-    auto* categoryWidget = static_cast<CategoryWidget*>(widget);
+    auto* categoryWidget = qobject_cast<CategoryWidget*>(widget);
     categoryWidget->updateStatus();
 
     categoryWidget->setVisible(categoryWidget->hasChatRooms());

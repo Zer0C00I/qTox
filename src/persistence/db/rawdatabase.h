@@ -46,24 +46,24 @@ public:
     class Query
     {
     public:
-        explicit Query(QString query_, QVector<QByteArray> blobs_ = {},
+        explicit Query(const QString& query_, QVector<QByteArray> blobs_ = {},
                        const std::function<void(RowId)>& insertCallback_ = {})
             : query{query_.toUtf8()}
             , blobs{std::move(blobs_)}
             , insertCallback{insertCallback_}
         {
         }
-        Query(QString query_, const std::function<void(RowId)>& insertCallback_)
+        Query(const QString& query_, const std::function<void(RowId)>& insertCallback_)
             : query{query_.toUtf8()}
             , insertCallback{insertCallback_}
         {
         }
-        Query(QString query_, const std::function<void(const QVector<QVariant>&)>& rowCallback_)
+        Query(const QString& query_, const std::function<void(const QVector<QVariant>&)>& rowCallback_)
             : query{query_.toUtf8()}
             , rowCallback{rowCallback_}
         {
         }
-        Query(QString query_, QVector<QByteArray> blobs_,
+        Query(const QString& query_, QVector<QByteArray> blobs_,
               const std::function<void(const QVector<QVariant>&)>& rowCallback_)
             : query{query_.toUtf8()}
             , blobs{std::move(blobs_)}

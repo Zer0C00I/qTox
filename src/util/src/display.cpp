@@ -14,7 +14,7 @@ QString getHumanReadableSize(uint64_t size)
 
     if (size > 0) {
         exp = std::min(static_cast<int>(log(static_cast<double>(size)) / log(1024.0)),
-                       static_cast<int>(sizeof(suffix) / sizeof(suffix[0]) - 1));
+                       static_cast<int>((sizeof(suffix) / sizeof(suffix[0])) - 1));
     }
 
     return QString()

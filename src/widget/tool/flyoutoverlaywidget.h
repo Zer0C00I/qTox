@@ -39,8 +39,8 @@ private:
     void finishedAnimation();
     void startAnimation(bool forward);
 
-    QWidget* container;
-    QPropertyAnimation* animation;
+    QWidget* container{nullptr};
+    QPropertyAnimation* animation{nullptr};
     qreal percent = 1.0;
     QPoint startPos;
 };

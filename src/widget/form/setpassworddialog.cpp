@@ -13,7 +13,7 @@
 
 const double SetPasswordDialog::reasonablePasswordLength = 8.;
 
-SetPasswordDialog::SetPasswordDialog(QString body_, QString extraButton, QWidget* parent)
+SetPasswordDialog::SetPasswordDialog(const QString& body_, const QString& extraButton, QWidget* parent)
     : QDialog(parent)
     , ui(new Ui::SetPasswordDialog)
     , body(body_ + "\n\n")
@@ -64,7 +64,7 @@ void SetPasswordDialog::onPasswordEdit()
     ui->passStrengthMeter->setValue(getPasswordStrength(password));
 }
 
-int SetPasswordDialog::getPasswordStrength(QString pass)
+int SetPasswordDialog::getPasswordStrength(const QString& pass)
 {
     if (pass.size() < 6)
         return 0;
@@ -82,7 +82,7 @@ int SetPasswordDialog::getPasswordStrength(QString pass)
     variations += pass.contains(QRegularExpression("[A-Z]")) ? 1 : 0;
     variations += pass.contains(QRegularExpression("[\\W]")) ? 1 : 0;
 
-    int score = fscore;
+    int score = static_cast<int>(fscore);
     score += variations * 10;
     score -= 20;
     score = std::min(score, 100);

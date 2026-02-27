@@ -133,7 +133,7 @@ ToxFriendCall::ToxFriendCall(uint32_t friendNum, bool VideoEnabled, CoreAV& av_,
         }
         cameraSource.subscribe();
         videoInConn = QObject::connect(&cameraSource, &VideoSource::frameAvailable, &av_,
-                                       [&av_, friendNum](std::shared_ptr<VideoFrame> frame) {
+                                       [&av_, friendNum](const std::shared_ptr<VideoFrame>& frame) {
                                            av_.sendCallVideo(friendNum, frame);
                                        });
         if (videoInConn == nullptr) {
@@ -214,7 +214,7 @@ ToxConferenceCall::ToxConferenceCall(const Conference& conference_, CoreAV& av_,
                     return;
                 }
 
-                av->sendConferenceCallAudio(conference.getId(), pcm, samples, chans, rate);
+                av->sendConferenceCallAudio(static_cast<int>(conference.getId()), pcm, samples, chans, rate);
             });
 
     connect(audioSource.get(), &IAudioSource::invalidated, this,
@@ -240,7 +240,7 @@ void ToxConferenceCall::onAudioSourceInvalidated()
                     return;
                 }
 
-                av->sendConferenceCallAudio(conference.getId(), pcm, samples, chans, rate);
+                av->sendConferenceCallAudio(static_cast<int>(conference.getId()), pcm, samples, chans, rate);
             });
 
     audioSource = std::move(newSrc);
@@ -250,13 +250,13 @@ void ToxConferenceCall::onAudioSourceInvalidated()
 }
 
 
-void ToxConferenceCall::onAudioSinkInvalidated(ToxPk peerId)
+void ToxConferenceCall::onAudioSinkInvalidated(const ToxPk& peerId)
 {
     removePeer(peerId);
     addPeer(peerId);
 }
 
-void ToxConferenceCall::removePeer(ToxPk peerId)
+void ToxConferenceCall::removePeer(const ToxPk& peerId)
 {
     const auto& source = peers.find(peerId);
     if (source == peers.cend()) {
@@ -269,7 +269,7 @@ void ToxConferenceCall::removePeer(ToxPk peerId)
     sinkInvalid.erase(peerId);
 }
 
-void ToxConferenceCall::addPeer(ToxPk peerId)
+void ToxConferenceCall::addPeer(const ToxPk& peerId)
 {
     std::unique_ptr<IAudioSink> newSink = audio.makeSink();
 
@@ -284,7 +284,7 @@ void ToxConferenceCall::addPeer(ToxPk peerId)
     sinkInvalid.insert({peerId, con});
 }
 
-bool ToxConferenceCall::havePeer(ToxPk peerId)
+bool ToxConferenceCall::havePeer(const ToxPk& peerId)
 {
     const auto& source = peers.find(peerId);
     return source != peers.cend();
@@ -293,7 +293,7 @@ bool ToxConferenceCall::havePeer(ToxPk peerId)
 void ToxConferenceCall::clearPeers()
 {
     peers.clear();
-    for (auto con : sinkInvalid) {
+    for (const auto& con : sinkInvalid) {
         QObject::disconnect(con.second);
     }
 

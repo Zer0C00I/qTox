@@ -25,9 +25,9 @@ MovableWidget::MovableWidget(QWidget* parent)
 void MovableWidget::resetBoundary(QRect newBoundary)
 {
     boundaryRect = newBoundary;
-    resize(QSize(round(actualSize.width()), round(actualSize.height())));
+    resize(QSize(static_cast<int>(round(actualSize.width())), static_cast<int>(round(actualSize.height()))));
 
-    QPoint moveTo = QPoint(round(actualPos.x()), round(actualPos.y()));
+    QPoint moveTo = QPoint(static_cast<int>(round(actualPos.x())), static_cast<int>(round(actualPos.y())));
     checkBoundary(moveTo);
     move(moveTo);
     actualPos = moveTo;
@@ -57,13 +57,13 @@ void MovableWidget::setBoundary(QRect newBoundary)
     if (actualSize.height() == 0)
         actualSize.setHeight(1);
 
-    resize(QSize(round(actualSize.width()), round(actualSize.height())));
+    resize(QSize(static_cast<int>(round(actualSize.width())), static_cast<int>(round(actualSize.height()))));
 
     actualPos = QPointF(percentageX * (newBoundary.width() - width()),
                         percentageY * (newBoundary.height() - height()));
     actualPos += QPointF(newBoundary.topLeft());
 
-    const QPoint moveTo = QPoint(round(actualPos.x()), round(actualPos.y()));
+    const QPoint moveTo = QPoint(static_cast<int>(round(actualPos.x())), static_cast<int>(round(actualPos.y())));
     move(moveTo);
 
     boundaryRect = newBoundary;
@@ -77,8 +77,8 @@ float MovableWidget::getRatio() const
 void MovableWidget::setRatio(float r)
 {
     ratio = r;
-    resize(width(), width() / ratio);
-    QPoint position = QPoint(actualPos.x(), actualPos.y());
+    resize(width(), static_cast<int>(static_cast<float>(width()) / ratio));
+    QPoint position = QPoint(static_cast<int>(actualPos.x()), static_cast<int>(actualPos.y()));
     checkBoundary(position);
     move(position);
 
@@ -182,7 +182,7 @@ void MovableWidget::mouseMoveEvent(QMouseEvent* event)
 
                 if ((mode & (ResizeLeft | ResizeRight)) != 0) {
                     if ((mode & (ResizeUp | ResizeDown)) != 0) {
-                        const int height = lastSize.width() / getRatio();
+                        const int height = static_cast<int>(static_cast<float>(lastSize.width()) / getRatio());
 
                         if ((mode & ResizeDown) == 0)
                             lastPosition.setY(lastPosition.y() - (height - lastSize.height()));
@@ -195,10 +195,10 @@ void MovableWidget::mouseMoveEvent(QMouseEvent* event)
                         if (height < minimumHeight())
                             lastPosition.setY(pos().y());
                     } else {
-                        resize(lastSize.width(), lastSize.width() / getRatio());
+                        resize(lastSize.width(), static_cast<int>(static_cast<float>(lastSize.width()) / getRatio()));
                     }
                 } else {
-                    resize(lastSize.height() * getRatio(), lastSize.height());
+                    resize(static_cast<int>(static_cast<float>(lastSize.height()) * getRatio()), lastSize.height());
                 }
 
                 updateGeometry();
@@ -239,10 +239,10 @@ void MovableWidget::mouseDoubleClickEvent(QMouseEvent* event)
 
 void MovableWidget::checkBoundary(QPoint& point) const
 {
-    int x1;
-    int y1;
-    int x2;
-    int y2;
+    int x1 = 0;
+    int y1 = 0;
+    int x2 = 0;
+    int y2 = 0;
     boundaryRect.getCoords(&x1, &y1, &x2, &y2);
 
     if (point.x() < boundaryRect.left())

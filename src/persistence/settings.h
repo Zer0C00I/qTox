@@ -159,7 +159,7 @@ public:
     {
         QString address;
         QString message;
-        bool read;
+        bool read{false};
     };
 
 public slots:
@@ -594,10 +594,10 @@ private:
     static ICoreSettings::ProxyType fixInvalidProxyType(ICoreSettings::ProxyType proxyType);
 
     template <typename T>
-    bool setVal(T& savedVal, T newVal);
+    bool setVal(T& savedVal, const T& newVal);
 
 private slots:
-    void savePersonal(QString profileName, const ToxEncrypt* passkey);
+    void savePersonal(const QString& profileName, const ToxEncrypt* passkey);
     void requestSave();
 
 private:

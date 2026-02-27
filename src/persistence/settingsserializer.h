@@ -27,7 +27,7 @@ public:
     };
     explicit SettingsSerializer(QString filePath_, const ToxEncrypt* passKey_ = nullptr);
 
-    static bool isSerializedFormat(QString filePath);
+    static bool isSerializedFormat(const QString& filePath);
 
     void load();
     void save();
@@ -71,8 +71,8 @@ private:
 
     struct Array
     {
-        qint64 group;
-        int size;
+        qint64 group{0};
+        int size{0};
         QString name;
         QVector<int> values;
     };

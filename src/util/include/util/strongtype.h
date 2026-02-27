@@ -19,6 +19,10 @@ struct Addable
 template <typename T, typename Underlying>
 struct UnderlyingAddable
 {
+protected:
+    UnderlyingAddable() = default;
+
+public:
     T operator+(const Underlying& other) const
     {
         return T(static_cast<const T&>(*this).get() + other);
@@ -28,6 +32,10 @@ struct UnderlyingAddable
 template <typename T, typename Underlying>
 struct UnitlessSubtractable
 {
+protected:
+    UnitlessSubtractable() = default;
+
+public:
     T operator-(const Underlying& other) const
     {
         return T(static_cast<const T&>(*this).get() - other);
@@ -42,6 +50,10 @@ struct UnitlessSubtractable
 template <typename T, typename>
 struct Incrementable
 {
+protected:
+    Incrementable() = default;
+
+public:
     T& operator++()
     {
         auto& underlying = static_cast<T&>(*this).get();
@@ -61,6 +73,10 @@ struct Incrementable
 template <typename T, typename>
 struct EqualityComparable
 {
+protected:
+    EqualityComparable() = default;
+
+public:
     bool operator==(const T& other) const
     {
         return static_cast<const T&>(*this).get() == other.get();
@@ -83,6 +99,10 @@ struct Hashable
 template <typename T, typename Underlying>
 struct Orderable : EqualityComparable<T, Underlying>
 {
+protected:
+    Orderable() = default;
+
+public:
     bool operator<(const T& rhs) const
     {
         return static_cast<const T&>(*this).get() < rhs.get();

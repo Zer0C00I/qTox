@@ -42,7 +42,7 @@ public:
 
     bool isShown() const;
     void show(ContentLayout* contentLayout);
-    void setBodyHeadStyle(QString style);
+    void setBodyHeadStyle(const QString& style);
 
     void showAbout();
 
@@ -59,5 +59,5 @@ private:
     std::unique_ptr<QVBoxLayout> bodyLayout;
     std::unique_ptr<QTabWidget> settingsWidgets;
     std::array<std::unique_ptr<GenericForm>, 6> cfgForms;
-    int currentIndex;
+    int currentIndex{0};
 };

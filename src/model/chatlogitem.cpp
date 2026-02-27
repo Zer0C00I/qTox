@@ -31,7 +31,7 @@ ChatLogItem::ChatLogItem(ToxPk sender_, const QString& displayName_, ChatLogFile
 }
 
 ChatLogItem::ChatLogItem(ToxPk sender_, const QString& displayName_, ChatLogMessage message_)
-    : ChatLogItem(sender_, displayName_, ContentType::message,
+    : ChatLogItem(std::move(sender_), displayName_, ContentType::message,
                   ContentPtr(new ChatLogMessage(std::move(message_)),
                              ChatLogItemDeleter<ChatLogMessage>::doDelete))
 {
@@ -122,7 +122,7 @@ QDateTime ChatLogItem::getTimestamp() const
 
 void ChatLogItem::setDisplayName(QString name)
 {
-    displayName = name;
+    displayName = std::move(name);
 }
 
 const QString& ChatLogItem::getDisplayName() const

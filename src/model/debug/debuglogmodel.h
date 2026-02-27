@@ -27,13 +27,13 @@ public:
     struct LogEntry
     {
         /// Index in the original log list.
-        int index;
+        int index{0};
 
         QString time;
         QString category;
         QString file;
-        int line;
-        QtMsgType type;
+        int line{0};
+        QtMsgType type{QtDebugMsg};
         QString message;
     };
 

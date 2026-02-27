@@ -42,9 +42,9 @@ void PasswordEdit::registerHandler()
 void PasswordEdit::unregisterHandler()
 {
 #ifdef QTOX_PLATFORM_EXT
-    int idx;
+    int idx = -1;
 
-    if (eventHandler && (idx = eventHandler->actions.indexOf(action)) >= 0) {
+    if (eventHandler && (idx = static_cast<int>(eventHandler->actions.indexOf(action))) >= 0) {
         eventHandler->actions.remove(idx);
         if (eventHandler->actions.isEmpty()) {
             eventHandler = nullptr;

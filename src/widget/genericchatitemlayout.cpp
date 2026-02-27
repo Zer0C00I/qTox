@@ -96,7 +96,7 @@ int GenericChatItemLayout::indexOfClosestSortedWidget(GenericChatItemWidget* wid
     int min = 0;
     int max = layout->count();
     while (min < max) {
-        const int mid = (max - min) / 2 + min;
+        const int mid = (((max - min) / 2) + min);
         auto* atMid = qobject_cast<GenericChatItemWidget*>(layout->itemAt(mid)->widget());
         assert(atMid != nullptr);
 

@@ -32,9 +32,9 @@ private slots:
 
 private:
     void sendProcessedMessage(const Message& message,
-                              OfflineMsgEngine::CompletionFn onOfflineMsgComplete);
+                              const OfflineMsgEngine::CompletionFn& onOfflineMsgComplete);
     void sendCoreProcessedMessage(const Message& message,
-                                  OfflineMsgEngine::CompletionFn onOfflineMsgComplete);
+                                  const OfflineMsgEngine::CompletionFn& onOfflineMsgComplete);
     OfflineMsgEngine::CompletionFn getCompletionFn(DispatchedMessageId messageId);
 
     Friend& f;

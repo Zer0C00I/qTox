@@ -16,7 +16,7 @@
 
 Spinner::Spinner(const QString& img, QSize Size, qreal speed)
     : size(Size)
-    , rotSpeed(speed)
+    , rotSpeed(static_cast<float>(speed))
 {
     pmap = PixmapCache::getInstance().get(img, size);
 
@@ -74,7 +74,7 @@ qreal Spinner::getAscent() const
 void Spinner::timeout()
 {
     // Use global time, so the animations are synced
-    const float angle = QTime::currentTime().msecsSinceStartOfDay() / 1000.0f * rotSpeed;
+    const float angle = (static_cast<float>(QTime::currentTime().msecsSinceStartOfDay()) / 1000.0f) * rotSpeed;
     // limit to the range [0.0 - 360.0]
     curRot = remainderf(angle, 360.0f);
 

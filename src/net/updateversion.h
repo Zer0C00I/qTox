@@ -11,9 +11,9 @@
 
 struct Version
 {
-    int major;
-    int minor;
-    int patch;
+    int major = 0;
+    int minor = 0;
+    int patch = 0;
 
     bool operator==(const Version& other) const
     {

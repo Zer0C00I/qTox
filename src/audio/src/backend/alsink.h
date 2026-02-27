@@ -40,7 +40,7 @@ public:
 
 private:
     OpenAL& audio;
-    uint sourceId;
+    uint sourceId = 0;
     bool killed = false;
     mutable QRecursiveMutex killLock;
 };

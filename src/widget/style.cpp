@@ -128,7 +128,7 @@ QStringList Style::getThemeColorNames()
 {
     QStringList l;
 
-    for (auto t : themeNameColors) {
+    for (const auto& t : themeNameColors) {
         l << t.name;
     }
 

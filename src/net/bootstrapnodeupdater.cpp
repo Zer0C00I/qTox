@@ -139,7 +139,7 @@ QList<DhtServer> jsonToNodeList(const QJsonDocument& nodeList)
     return result;
 }
 
-QList<DhtServer> loadNodesFile(QString file)
+QList<DhtServer> loadNodesFile(const QString& file)
 {
     QFile nodesFile{file};
     if (!nodesFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -159,7 +159,7 @@ QList<DhtServer> loadNodesFile(QString file)
     return jsonToNodeList(jsonDoc);
 }
 
-QByteArray serialize(QList<DhtServer> nodes)
+QByteArray serialize(const QList<DhtServer>& nodes)
 {
     QJsonArray jsonNodes;
     for (auto& node : nodes) {

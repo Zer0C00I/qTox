@@ -497,7 +497,7 @@ bool Settings::verifyProxySettings(const QCommandLineParser& parser)
             return false;
         }
 
-        bool ok;
+        bool ok = false;
         const int portNumber = proxySettingStrings[2].toInt(&ok);
         if (!ok) {
             qCritical() << "Invalid port number" << proxySettingStrings[2] << "(must be an integer).";
@@ -851,7 +851,7 @@ void Settings::savePersonal()
                               Q_ARG(const ToxEncrypt*, loadedProfile->getPasskey()));
 }
 
-void Settings::savePersonal(QString profileName, const ToxEncrypt* passkey)
+void Settings::savePersonal(const QString& profileName, const ToxEncrypt* passkey)
 {
     const QMutexLocker<QRecursiveMutex> locker{&bigLock};
     if (!loaded)
@@ -2235,7 +2235,7 @@ unsigned int Settings::getUnreadFriendRequests() const
 {
     const QMutexLocker<QRecursiveMutex> locker{&bigLock};
     unsigned int unreadFriendRequests = 0;
-    for (auto request : friendRequests)
+    for (const auto& request : friendRequests)
         if (!request.read)
             ++unreadFriendRequests;
 
@@ -2452,7 +2452,7 @@ void Settings::requestSave()
 }
 
 template <typename T>
-bool Settings::setVal(T& savedVal, T newVal)
+bool Settings::setVal(T& savedVal, const T& newVal)
 {
     const QMutexLocker<QRecursiveMutex> locker{&bigLock};
     if (savedVal != newVal) {

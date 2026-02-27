@@ -262,7 +262,7 @@ std::unique_ptr<IAudioSink> OpenAL::makeSink()
         return {};
     }
 
-    ALuint sid;
+    ALuint sid = 0;
     alGenSources(1, &sid);
 
     auto* const sink = new AlSink(*this, sid);
@@ -492,7 +492,7 @@ void OpenAL::playMono16Sound(AlSink& sink, const IAudioSink::Sound& sound)
     alGetSourcei(sourceId, AL_BUFFERS_PROCESSED, &processed);
     alSourcei(sourceId, AL_LOOPING, AL_FALSE);
 
-    ALuint bufid;
+    ALuint bufid = 0;
     if (processed == 0) {
         // create new buffer
         alGenBuffers(1, &bufid);
@@ -563,7 +563,7 @@ void OpenAL::playAudioBuffer(uint sourceId, const int16_t* data, int samples, un
                  samples * 2 * static_cast<int>(channels), sampleRate);
     alSourceQueueBuffers(sourceId, 1, bufids);
 
-    ALint state;
+    ALint state = 0;
     alGetSourcei(sourceId, AL_SOURCE_STATE, &state);
     if (state != AL_PLAYING) {
         alSourcePlay(sourceId);

@@ -222,9 +222,7 @@ void ChatFormHeader::updateCallButtons(bool online, bool audio, bool video)
 {
     const bool audioAvailable = online && ((mode & Mode::Audio) != 0);
     const bool videoAvailable = online && ((mode & Mode::Video) != 0);
-    if (!audioAvailable) {
-        callState = CallButtonState::Disabled;
-    } else if (video) {
+    if (!audioAvailable || video) {
         callState = CallButtonState::Disabled;
     } else if (audio) {
         callState = CallButtonState::InCall;
@@ -232,12 +230,10 @@ void ChatFormHeader::updateCallButtons(bool online, bool audio, bool video)
         callState = CallButtonState::Available;
     }
 
-    if (!videoAvailable) {
+    if (!videoAvailable || audio) {
         videoState = CallButtonState::Disabled;
     } else if (video) {
         videoState = CallButtonState::InCall;
-    } else if (audio) {
-        videoState = CallButtonState::Disabled;
     } else {
         videoState = CallButtonState::Available;
     }
