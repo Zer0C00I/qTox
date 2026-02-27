@@ -8,6 +8,9 @@ concurrency:
   group: release-${{ github.event.issue.number }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+
 jobs:
   release:
     name: Release

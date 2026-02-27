@@ -16,6 +16,9 @@ concurrency:
   group: build-package-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+
 jobs:
    build-fedora-rpm:
      name: Build RPM package on Fedora

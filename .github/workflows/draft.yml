@@ -12,6 +12,10 @@ concurrency:
   group: draft-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   release:
     uses: TokTok/ci-tools/.github/workflows/release-drafter.yml@master
