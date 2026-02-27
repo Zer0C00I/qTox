@@ -303,7 +303,7 @@ QString Style::resolve(const QString& filename, int themeColor, const QFont& bas
 
         QString fullImagePath = getThemeFolder(themeColor) + path;
         // image not in cache
-        if (!existingImagesCache.contains(fullPath)) {
+        if (!existingImagesCache.contains(fullImagePath)) {
             if (QFileInfo::exists(fullImagePath)) {
                 existingImagesCache << fullImagePath;
             } else {

@@ -436,8 +436,11 @@ void CoreAV::toggleMuteCallInput(const Friend* f)
 {
     const QWriteLocker locker{&callsLock};
 
+    if (f == nullptr) {
+        return;
+    }
     auto it = calls.find(f->getId());
-    if ((f != nullptr) && (it != calls.end())) {
+    if (it != calls.end()) {
         ToxCall& call = *it->second;
         call.setMuteMic(!call.getMuteMic());
     }
@@ -451,8 +454,11 @@ void CoreAV::toggleMuteCallOutput(const Friend* f)
 {
     const QWriteLocker locker{&callsLock};
 
+    if (f == nullptr) {
+        return;
+    }
     auto it = calls.find(f->getId());
-    if ((f != nullptr) && (it != calls.end())) {
+    if (it != calls.end()) {
         ToxCall& call = *it->second;
         call.setMuteVol(!call.getMuteVol());
     }
@@ -622,8 +628,11 @@ void CoreAV::muteCallInput(const Conference* c, bool mute)
 {
     const QWriteLocker locker{&callsLock};
 
+    if (c == nullptr) {
+        return;
+    }
     auto it = conferenceCalls.find(c->getId());
-    if ((c != nullptr) && (it != conferenceCalls.end())) {
+    if (it != conferenceCalls.end()) {
         it->second->setMuteMic(mute);
     }
 }
@@ -637,8 +646,11 @@ void CoreAV::muteCallOutput(const Conference* c, bool mute)
 {
     const QWriteLocker locker{&callsLock};
 
+    if (c == nullptr) {
+        return;
+    }
     auto it = conferenceCalls.find(c->getId());
-    if ((c != nullptr) && (it != conferenceCalls.end())) {
+    if (it != conferenceCalls.end()) {
         it->second->setMuteVol(mute);
     }
 }

@@ -1178,7 +1178,7 @@ void Widget::dispatchFile(ToxFile file)
     auto pk = f->getPublicKey();
 
     if (file.status == ToxFile::INITIALIZING && file.direction == ToxFile::RECEIVING) {
-        auto sender = (file.direction == ToxFile::SENDING) ? core->getSelfPublicKey() : pk;
+        auto sender = pk; // direction is RECEIVING, so sender is always the remote peer
 
         QString autoAcceptDir = settings.getAutoAcceptDir(f->getPublicKey());
 
