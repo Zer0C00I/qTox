@@ -141,8 +141,10 @@ const QLoggingCategory& (*avLogCategory(const AVClass* avc))()
         return logcat::ffmpegDeviceOutput;
     case AV_CLASS_CATEGORY_DEVICE_INPUT:
         return logcat::ffmpegDeviceInput;
+#ifdef AV_CLASS_CATEGORY_HWDEVICE
     case AV_CLASS_CATEGORY_HWDEVICE:
         return logcat::ffmpeg;
+#endif
     }
     return logcat::ffmpeg;
 }
