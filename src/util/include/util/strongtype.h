@@ -164,5 +164,5 @@ private:
 template <typename T, typename Tag, template <typename, typename> class... Properties>
 uint qHash(const NamedType<T, Tag, Properties...>& key, uint seed = 0)
 {
-    return qHash(key.get(), seed);
+    return static_cast<uint>(qHash(key.get(), seed));
 }

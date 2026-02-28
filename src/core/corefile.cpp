@@ -90,8 +90,8 @@ void CoreFile::sendAvatarFile(uint32_t friendId, const QByteArray& data)
     std::vector<uint8_t> avatarHash(tox_hash_length());
     if (!data.isEmpty()) {
         Q_ASSERT(tox_hash_length() <= tox_file_id_length());
-        tox_hash(avatarHash.data(), reinterpret_cast<const uint8_t*>(data.data()), data.size());
-        filesize = data.size();
+        tox_hash(avatarHash.data(), reinterpret_cast<const uint8_t*>(data.data()), static_cast<size_t>(data.size()));
+        filesize = static_cast<uint64_t>(data.size());
 
         Tox_Err_File_Send error = TOX_ERR_FILE_SEND_OK;
         fileNum = tox_file_send(tox, friendId, TOX_FILE_KIND_AVATAR, filesize, avatarHash.data(),
@@ -126,7 +126,7 @@ void CoreFile::sendFile(uint32_t friendId, const QString& filename, const QStrin
 
     const ToxString fileName(filename);
     Tox_Err_File_Send sendErr = TOX_ERR_FILE_SEND_OK;
-    const uint32_t fileNum = tox_file_send(tox, friendId, TOX_FILE_KIND_DATA, filesize, nullptr,
+    const uint32_t fileNum = tox_file_send(tox, friendId, TOX_FILE_KIND_DATA, static_cast<uint64_t>(filesize), nullptr,
                                            fileName.data(), fileName.size(), &sendErr);
 
     if (!PARSE_ERR(sendErr)) {
@@ -387,7 +387,7 @@ void CoreFile::onFileReceiveCallback(Tox* tox, uint32_t friendId, uint32_t fileI
     qDebug("Received file request %u:%u kind %u", friendId, fileId, kind);
 
     ToxFile file{fileId, friendId, filename.getQString(), "", filesize, ToxFile::RECEIVING};
-    file.fileKind = kind;
+    file.fileKind = static_cast<uint8_t>(kind);
     file.resumeFileId.resize(tox_file_id_length());
     Tox_Err_File_Get fileGetErr = TOX_ERR_FILE_GET_OK;
     tox_file_get_file_id(tox, friendId, fileId,
@@ -522,7 +522,7 @@ void CoreFile::onFileDataCallback(Tox* tox, uint32_t friendId, uint32_t fileId, 
     }
 
     Tox_Err_File_Send_Chunk err = TOX_ERR_FILE_SEND_CHUNK_OK;
-    tox_file_send_chunk(tox, friendId, fileId, pos, data.get(), nread, &err);
+    tox_file_send_chunk(tox, friendId, fileId, pos, data.get(), static_cast<size_t>(nread), &err);
     if (!PARSE_ERR(err)) {
         return;
     }

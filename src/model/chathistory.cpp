@@ -37,7 +37,7 @@ ChatLogIdx findFirstMessage(const SessionChatLog& sessionChatLog)
         }
         it++;
     }
-    return ChatLogIdx(-1);
+    return ChatLogIdx(static_cast<unsigned long>(-1));
 }
 
 /**
@@ -138,7 +138,7 @@ SearchResult ChatHistory::searchBackward(SearchPos startIdx, const QString& phra
     auto earliestMessage = findFirstMessage(sessionChatLog);
 
     auto earliestMessageDate =
-        (earliestMessage == ChatLogIdx(-1))
+        (earliestMessage == ChatLogIdx(static_cast<unsigned long>(-1)))
             ? QDateTime::currentDateTime()
             : sessionChatLog.at(earliestMessage).getContentAsMessage().message.timestamp;
 
@@ -233,7 +233,6 @@ void ChatHistory::onFileUpdated(const ToxPk& sender, const ToxFile& file)
         }
         case ToxFile::PAUSED:
         case ToxFile::TRANSMITTING:
-        default:
             break;
         }
     }
