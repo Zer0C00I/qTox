@@ -55,6 +55,7 @@ jobs:
         if: steps.cache-toxcore.outputs.cache-hit != 'true'
         run: |
           git clone --depth=1 --branch v0.2.22 \
+            --recurse-submodules --shallow-submodules \
             https://github.com/TokTok/c-toxcore.git _toxcore
           cmake -GNinja -S _toxcore -B _toxcore/_build \
             -DCMAKE_BUILD_TYPE=Release \
