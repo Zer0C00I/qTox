@@ -43,6 +43,7 @@ jobs:
               opus \
               libvpx \
               libexif \
+              libqrencode \
               libsodium \
               sqlcipher \
               ffmpeg \
