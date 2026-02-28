@@ -252,27 +252,6 @@ jobs:
             bash <(curl -s https://codecov.io/bash) -f coverage.info || echo "Codecov did not collect coverage reports"
           fi
 
-  build-wasm:
-    name: WebAssembly
-    needs: [prepare]
-    runs-on: ubuntu-24.04
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Cache compiler output
-        uses: actions/cache@v4
-        with:
-          path: ".cache/ccache"
-          key: ${{ github.job }}-ccache
-      - name: Run build
-        run: docker compose run --rm wasm_builder packaging/wasm/build.sh
-      - name: Upload zip
-        uses: actions/upload-artifact@v4
-        with:
-          name: qtox-wasm
-          path: _site
-
   ###########################################################################
   # Deploy jobs (release artifacts)
   ###########################################################################
@@ -318,15 +297,6 @@ jobs:
       test-files: |
         .ci-scripts/smoke-test.sh
         test/resources/profile
-
-  windows:
-    name: Windows
-    uses: TokTok/ci-tools/.github/workflows/deploy-windows.yml@master
-    needs: [prepare]
-    with:
-      cmake-args: -D STRICT_OPTIONS=ON
-      smoke-test: .ci-scripts/smoke-test.sh
-      test-files: .ci-scripts/smoke-test.sh
 
   ###########################################################################
   # Documentation/website jobs
