@@ -662,7 +662,7 @@ set(${BINARY_NAME}_SOURCES
 
 if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
   set(${BINARY_NAME}_RESOURCES ${${BINARY_NAME}_RESOURCES}
-                               packaging/windows/qtox.rc)
+                               platform/windows/qtox.rc)
 endif()
 
 add_definitions(-DQT_MESSAGELOGCONTEXT=1)
@@ -738,7 +738,7 @@ set_target_properties(
     QT_ANDROID_TARGET_SDK_VERSION 34
     QT_ANDROID_MIN_SDK_VERSION 24
     QT_ANDROID_PACKAGE_SOURCE_DIR
-    "${CMAKE_CURRENT_SOURCE_DIR}/packaging/android/qt-${Qt6Core_VERSION}")
+    "${CMAKE_CURRENT_SOURCE_DIR}/platform/android/qt-${Qt6Core_VERSION}")
 
 if(FULLY_STATIC)
   target_link_options(${BINARY_NAME} PRIVATE -static-pie)

@@ -17,7 +17,7 @@ if(APPLE)
     ${BUNDLE_ID_OPTION}
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
-    MACOSX_BUNDLE_INFO_PLIST "${CMAKE_SOURCE_DIR}/packaging/macos/Info.plist"
+    MACOSX_BUNDLE_INFO_PLIST "${CMAKE_SOURCE_DIR}/platform/macos/Info.plist"
     MACOSX_BUNDLE TRUE
     WIN32_EXECUTABLE TRUE
   )
@@ -32,8 +32,8 @@ if(APPLE)
   endforeach()
 
   # Search for createdmg. If it doesn't exist anywhere, download it.
-  if(EXISTS "${CMAKE_SOURCE_DIR}/packaging/macos/createdmg")
-    set(CREATE_DMG "${CMAKE_SOURCE_DIR}/packaging/macos/createdmg")
+  if(EXISTS "${CMAKE_SOURCE_DIR}/platform/macos/createdmg")
+    set(CREATE_DMG "${CMAKE_SOURCE_DIR}/platform/macos/createdmg")
   elseif(EXISTS "${CMAKE_SOURCE_DIR}/third_party/ci-tools/platform/macos/createdmg")
     set(CREATE_DMG "${CMAKE_SOURCE_DIR}/third_party/ci-tools/platform/macos/createdmg")
   elseif(EXISTS "${CMAKE_SOURCE_DIR}/../ci_tools/platform/macos/createdmg")
@@ -51,7 +51,7 @@ if(APPLE)
   )
 elseif(WIN32)
   install(CODE "
-  message(STATUS \"Installer can be created using packaging/windows/${BINARY_NAME}64.nsi\")
+  message(STATUS \"Installer can be created using platform/windows/${BINARY_NAME}64.nsi\")
   " COMPONENT Runtime
   )
 else()
@@ -62,8 +62,8 @@ else()
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
   )
-  install(FILES "packaging/linux/${PROJECT_ORG}.${PROJECT_NAME}.appdata.xml" DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/metainfo")
-  install(FILES "packaging/linux/${PROJECT_ORG}.${PROJECT_NAME}.desktop" DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/applications")
+  install(FILES "platform/linux/${PROJECT_ORG}.${PROJECT_NAME}.appdata.xml" DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/metainfo")
+  install(FILES "platform/linux/${PROJECT_ORG}.${PROJECT_NAME}.desktop" DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/applications")
 
   # Install application icons according to the XDG spec
   set(ICON_SIZES 14 16 22 24 32 36 48 64 72 96 128 192 256 512)
