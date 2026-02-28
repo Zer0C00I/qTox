@@ -44,11 +44,15 @@ jobs:
         with:
           files: build_dir/qtox-*.rpm
 
+      - name: Rename RPM for nightly
+        if: github.ref == 'refs/heads/master'
+        run: mv build_dir/qtox-*.rpm build_dir/qtox-fc41.x86_64.rpm
+
       - name: Upload RPM to nightly release
         if: github.ref == 'refs/heads/master'
         uses: softprops/action-gh-release@v2
         with:
-          files: build_dir/qtox-*.rpm
+          files: build_dir/qtox-fc41.x86_64.rpm
           tag_name: nightly
           name: "Nightly Build"
           prerelease: true
@@ -129,11 +133,15 @@ jobs:
         with:
           files: "*.deb"
 
+      - name: Rename DEB for nightly
+        if: github.ref == 'refs/heads/master'
+        run: mv *.deb qtox-amd64.deb
+
       - name: Upload DEB to nightly release
         if: github.ref == 'refs/heads/master'
         uses: softprops/action-gh-release@v2
         with:
-          files: "*.deb"
+          files: qtox-amd64.deb
           tag_name: nightly
           name: "Nightly Build"
           prerelease: true

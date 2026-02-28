@@ -122,11 +122,18 @@ jobs:
         with:
           files: qtox-*-macos-${{ matrix.arch }}.dmg
 
+      - name: Rename for nightly
+        if: github.ref == 'refs/heads/master'
+        run: |
+          VERSION=$(grep -m1 'VERSION_MAJOR' cmake/Package.cmake | grep -oE '[0-9]+').$(grep -m1 'VERSION_MINOR' cmake/Package.cmake | grep -oE '[0-9]+').$(grep -m1 'VERSION_PATCH' cmake/Package.cmake | grep -oE '[0-9]+')
+          cp "qtox-${VERSION}-macos-${{ matrix.arch }}.dmg" \
+             "qtox-macos-${{ matrix.arch }}.dmg"
+
       - name: Upload to nightly release
         if: github.ref == 'refs/heads/master'
         uses: softprops/action-gh-release@v2
         with:
-          files: qtox-*-macos-${{ matrix.arch }}.dmg
+          files: qtox-macos-${{ matrix.arch }}.dmg
           tag_name: nightly
           name: "Nightly Build"
           prerelease: true
