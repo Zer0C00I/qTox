@@ -2,452 +2,276 @@
 
 - [Dependencies](#dependencies)
 - [Linux](#linux)
-  - [Simple install](#simple-install)
-    - [Arch](#arch-easy)
-    - [Debian](#debian-easy)
-    - [Fedora](#fedora-easy)
-    - [Gentoo](#gentoo-easy)
-    - [openSUSE](#opensuse-easy)
-    - [Slackware](#slackware-easy)
-    - [Ubuntu](#ubuntu-easy)
-  - [Install git](#install-git)
-    - [Arch](#arch-git)
-    - [Debian](#debian-git)
-    - [Fedora](#fedora-git)
-    - [openSUSE](#opensuse-git)
-    - [Ubuntu](#ubuntu-git)
-  - [Clone qTox](#clone-qtox)
-  - [GCC, Qt, FFmpeg, OpenAL Soft and qrencode](#other-deps)
-    - [Arch](#arch-other-deps)
-    - [Debian](#debian-other-deps)
-    - [Fedora](#fedora-other-deps)
-    - [openSUSE](#opensuse-other-deps)
-    - [Slackware](#slackware-other-deps)
-    - [Ubuntu](#ubuntu-other-deps)
-  - [Compile dependencies](#compile-dependencies)
-    - [docker](#docker)
-    - [Compile toxcore](#compile-toxcore)
-  - [Compile qTox](#compile-qtox)
-  - [Security hardening with AppArmor](#security-hardening-with-apparmor)
-- [BSD](#bsd)
-  - [FreeBSD](#freebsd-easy)
+  - [Debian / Ubuntu](#debian--ubuntu)
+  - [Fedora](#fedora)
+  - [Arch Linux](#arch-linux)
+  - [Other distributions](#other-distributions)
+- [FreeBSD](#freebsd)
 - [macOS](#macos)
-- [Windows](#windows)
-  - [Cross-compile from Linux](#cross-compile-from-linux)
-  - [Native](#native)
 - [Compile-time switches](#compile-time-switches)
+- [CMake presets](#cmake-presets)
+
+---
 
 ## Dependencies
 
-| Name          | Version   | Modules                                          |
-| ------------- | --------- | ------------------------------------------------ |
-| [Qt]          | >= 6.2.0  | concurrent, core, gui, network, svg, widget, xml |
-| [GCC]/[MinGW] | >= 11     | C++17 enabled                                    |
-| [toxcore]     | >= 0.2.20 | core, av                                         |
-| [FFmpeg]      | >= 2.6.0  | avformat, avdevice, avcodec, avutil, swscale     |
-| [CMake]       | >= 3.10   |                                                  |
-| [OpenAL Soft] | >= 1.16.0 |                                                  |
-| [qrencode]    | >= 3.0.3  |                                                  |
-| [sqlcipher]   | >= 3.2.0  |                                                  |
-| [pkg-config]  | >= 0.28   |                                                  |
+### Required
 
-## Optional dependencies
+| Name         | Version    | Notes                                      |
+|--------------|------------|--------------------------------------------|
+| C++ compiler | GCC ≥ 13 or clang++ ≥ 16 | C++23 required              |
+| [CMake]      | ≥ 3.19     | For preset support                         |
+| [Ninja]      | any        |                                            |
+| [Qt]         | ≥ 6.2      | modules: core, gui, network, svg, widgets, xml, concurrent |
+| [toxcore]    | ≥ 0.2.20   | libtoxcore + libtoxav                      |
+| [FFmpeg]     | ≥ 4.4      | avcodec, avdevice, avformat, avutil, swscale |
+| [OpenAL Soft]| ≥ 1.16     |                                            |
+| [opus]       | ≥ 1.0      |                                            |
+| [libvpx]     | ≥ 1.6      |                                            |
+| [libexif]    | ≥ 0.6      |                                            |
+| [qrencode]   | ≥ 3.0      |                                            |
+| [sqlcipher]  | ≥ 3.2      |                                            |
+| [libsodium]  | ≥ 1.0      |                                            |
+| [pkg-config] | any        |                                            |
 
-They can be disabled/enabled by passing arguments to `cmake` command when
-building qTox.
+### Optional
 
-If they are missing, qTox is built without support for the functionality.
+| Name           | CMake flag         | Notes                        |
+|----------------|--------------------|------------------------------|
+| [KSonnet]      | `-DSPELL_CHECK=ON` | Spell checking (default: ON) |
+| [libXScrnSaver]| auto-detected      | Auto-away on X11             |
+| [libX11]       | auto-detected      | Auto-away on X11             |
 
-### Spell checking support
-
-| Name     | Version |
-| -------- | ------- |
-| [sonnet] | >= 6.0  |
-
-Use `-DSPELL_CHECK=OFF` to disable it.
-
-**Note:** Specified version was tested and works well. You can try to use older
-version, but in this case you may have some errors (including a complete lack
-of spell check).
-
-### Linux
-
-#### Auto-away support
-
-| Name            | Version  |
-| --------------- | -------- |
-| [libXScrnSaver] | >= 1.2   |
-| [libX11]        | >= 1.6.0 |
-
-Disabled if dependencies are missing during compilation.
+---
 
 ## Linux
 
-### Simple install
-
-Easy qTox install is provided for variety of distributions:
-
-- [Arch](#arch)
-- [Debian](#debian)
-- [Fedora](#fedora)
-- [Gentoo](#gentoo)
-- [Slackware](#slackware)
-- [Ubuntu](#ubuntu)
-
----
-
-<a name="arch-easy" />
-
-#### Arch
-
-PKGBUILD is available in the [AUR](https://aur.archlinux.org/packages/qtox-toktok), install `qtox-toktok` with your AUR helper.
-
-<a name="debian-easy" />
-
-#### Debian
-
-qTox is available in the [Main](https://tracker.debian.org/pkg/qtox) repo, to install:
+### Clone the repository
 
 ```bash
-sudo apt install qtox
-```
-
-<a name="fedora-easy" />
-
-#### Fedora
-
-qTox is available in the [RPM Fusion](https://rpmfusion.org/) repo, to install:
-
-```bash
-dnf install qtox
-```
-
-<a name="gentoo-easy" />
-
-#### Gentoo
-
-qTox is available in Gentoo.
-
-To install:
-
-```bash
-emerge qtox
-```
-
-<a name="opensuse-easy" />
-
-#### openSUSE
-
-qTox is available in openSUSE Factory.
-
-To install in openSUSE 15.0 or newer:
-
-```bash
-zypper in qtox
-```
-
-To install in openSUSE 42.3:
-
-```bash
-zypper ar -f https://download.opensuse.org/repositories/server:/messaging/openSUSE_Leap_42.3 server:messaging
-zypper in qtox
-```
-
-<a name="slackware-easy" />
-
-#### Slackware
-
-qTox SlackBuild and all of its dependencies can be found here:
-http://slackbuilds.org/repository/14.2/network/qTox/
-
----
-
-If your distribution is not listed, or you want / need to compile qTox, there
-are provided instructions.
-
----
-
-Most of the dependencies should be available through your package manager.
-
-<a name="ubuntu-easy" />
-
-#### Ubuntu
-
-qTox is available in the [Universe](https://packages.ubuntu.com/focal/qtox) repo, to install:
-
-```bash
-sudo apt install qtox
-```
-
-### Install git
-
-In order to clone the qTox repository you need Git.
-
-<a name="arch-git" />
-
-#### Arch Linux
-
-```bash
-sudo pacman -S --needed git
-```
-
-<a name="debian-git" />
-
-#### Debian
-
-```bash
-sudo apt-get install git
-```
-
-<a name="fedora-git" />
-
-#### Fedora
-
-```bash
-sudo dnf install git
-```
-
-<a name="opensuse-git" />
-
-#### openSUSE
-
-```bash
-sudo zypper install git
-```
-
-<a name="ubuntu-git" />
-
-#### Ubuntu
-
-```bash
-sudo apt-get install git
-```
-
-### Clone qTox
-
-Afterwards open a new terminal, change to a directory of your choice and clone
-the repository:
-
-```bash
-cd /home/$USER
-git clone https://github.com/qTox/qTox.git qTox
+git clone --recursive https://github.com/TokTok/qTox.git
 cd qTox
 ```
 
-The following steps assumes that you cloned the repository at
-`/home/$USER/qTox`. If you decided to choose another location, replace
-corresponding parts.
+### Build toxcore
 
-### Docker
-
-Development can be done within one of the many provided docker containers. See the available configurations in docker-compose.yml. These docker images have all the required dependencies for development already installed. Run `docker compose run --rm ubuntu_lts` and proceed to [compiling qTox](#compile-qtox). If you want to avoid compiling as root in the docker image, you can run `USER_ID=$(id -u) GROUP_ID=$(id -g) docker compose run --rm ubuntu_lts` instead.
-
-NOTE: qtox will not run in the docker container unless your x11 session allows connections from other users. If X11 is giving you issues in the docker image, try `xhost +` on your host machine
-
-<a name="other-deps" />
-
-### GCC, Qt, FFmpeg, OpenAL Soft and qrencode
-
-<a name="arch-other-deps" />
-
-Please see https://github.com/TokTok/dockerfiles/tree/master/qtox/docker for your distribution for an up to date list of commands to set up your build environment
-
-### Compile dependencies
-
-<a name="compile-toxcore" />
-
-#### Compile toxcore
-
-Provided that you have all required dependencies installed, you can simply run:
+toxcore is not yet available in most distribution repositories at the required
+version. Build it from source:
 
 ```bash
-git clone https://github.com/TokTok/c-toxcore.git toxcore
-cd toxcore
-# Note: See https://github.com/TokTok/dockerfiles/blob/master/qtox/download/download_toxcore.sh
-# for which version should be checked out.
-cmake -B_build -H. -GNinja -DBOOTSTRAP_DAEMON=OFF
-cmake --build _build
-sudo cmake --install _build
-
-# we don't know what whether user runs 64 or 32 bits, and on some distros
-# (Fedora, openSUSE) lib/ doesn't link to lib64/, so add both
-echo '/usr/local/lib64/' | sudo tee -a /etc/ld.so.conf.d/locallib.conf
-echo '/usr/local/lib/' | sudo tee -a /etc/ld.so.conf.d/locallib.conf
+git clone --depth=1 --recursive https://github.com/TokTok/c-toxcore.git toxcore
+cmake -S toxcore -B toxcore/_build -GNinja -DBOOTSTRAP_DAEMON=OFF
+cmake --build toxcore/_build
+sudo cmake --install toxcore/_build
 sudo ldconfig
 ```
 
-### Compile qTox
+### Debian / Ubuntu
 
-**Make sure that all the dependencies are installed.** If you experience
-problems with compiling, it's most likely due to missing dependencies, so please
-make sure that you did install _all of them_.
-
-If you are compiling on Fedora 25, you must add libtoxcore to the
-`PKG_CONFIG_PATH` environment variable manually:
-
-```
-# we don't know what whether user runs 64 or 32 bits, and on some distros
-# (Fedora, openSUSE) lib/ doesn't link to lib64/, so add both
-export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/lib64/pkgconfig"
-export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig"
-```
-
-Run in qTox directory to compile:
+Install build dependencies:
 
 ```bash
-cmake -B_build -H.
+sudo apt-get update
+sudo apt-get install -y \
+  cmake ninja-build pkg-config \
+  clang gcc g++ \
+  libavcodec-dev libavdevice-dev libavformat-dev libavutil-dev libswscale-dev \
+  libexif-dev libopenal-dev libopus-dev libvpx-dev \
+  libqrencode-dev libsodium-dev libsqlcipher-dev \
+  libgl-dev libv4l-dev libxss-dev libunwind-dev \
+  qt6-base-dev qt6-svg-dev qt6-tools-dev qt6-tools-dev-tools qt6-l10n-tools
+```
+
+Build:
+
+```bash
+cmake --preset clang-strict
+cmake --build --preset clang-strict
+```
+
+Binary is in `_build_clang_strict/qtox`.
+
+Or with GCC:
+
+```bash
+cmake -S . -B _build -GNinja -DCMAKE_BUILD_TYPE=RelWithDebInfo
 cmake --build _build
 ```
 
-Now you can start compiled qTox with `_build/qtox`
+### Fedora
 
-Congratulations, you've compiled qTox `:)`
-
-#### Debian / Ubuntu / Mint
-
-If the compiling process stops with a missing dependency like:
-`... libswscale/swscale.h missing` try:
+Install build dependencies:
 
 ```bash
-apt-file search libswscale/swscale.h
+sudo dnf install -y \
+  cmake ninja-build pkgconf-pkg-config \
+  clang gcc-c++ \
+  ffmpeg-devel \
+  openal-soft-devel opus-devel libvpx-devel \
+  libexif-devel libqrencode-devel libsodium-devel sqlcipher-devel \
+  libv4l-devel libXScrnSaver-devel mesa-libGL-devel \
+  qt6-qtbase-devel qt6-qtsvg-devel qt6-qttools-devel
 ```
 
-And install the package that provides the missing file.
-Start make again. Repeat if necessary until all dependencies are installed. If
-you can, please note down all additional dependencies you had to install that
-aren't listed here, and let us know what is missing `;)`
+Build:
+
+```bash
+cmake --preset clang-strict
+cmake --build --preset clang-strict
+```
+
+### Arch Linux
+
+Install build dependencies:
+
+```bash
+sudo pacman -S --needed \
+  cmake ninja pkgconf \
+  clang gcc \
+  ffmpeg openal opus libvpx \
+  libexif qrencode libsodium sqlcipher \
+  v4l-utils libxss \
+  qt6-base qt6-svg qt6-tools
+```
+
+toxcore is available in the AUR:
+
+```bash
+# with your AUR helper, e.g.:
+yay -S toxcore
+```
+
+Build:
+
+```bash
+cmake --preset clang-strict
+cmake --build --preset clang-strict
+```
+
+### Other distributions
+
+Install the equivalent packages for your distribution. Then:
+
+```bash
+cmake -S . -B _build -GNinja \
+  -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+  -DCMAKE_CXX_COMPILER=clang++   # or g++
+cmake --build _build
+```
 
 ---
 
-### Security hardening with AppArmor
+## FreeBSD
 
-See [AppArmor] to enable confinement for increased security.
+Pre-built `.pkg` packages are available as CI artifacts on the
+[Releases](https://github.com/TokTok/qTox/releases) page.
 
-## BSD
+To install a downloaded package:
 
-<a name="freebsd-easy" />
-
-#### FreeBSD
-
-qTox is available as a binary package. To install the qTox package:
-
-```bash
-pkg install qTox
+```sh
+pkg install ./qtox-*.pkg
 ```
 
-The qTox port is also available at `net-im/qTox`. To build and install qTox
-from sources using the port:
+To build from source:
 
-```bash
-cd /usr/ports/net-im/qTox
-make install clean
+```sh
+pkg upgrade
+pkg install -y \
+  cmake ninja pkgconf \
+  qt6-base qt6-tools qt6-svg \
+  openal-soft opus libvpx v4l_compat libexif libqrencode \
+  libsodium sqlcipher ffmpeg toxcore llvm
+
+git clone --recursive https://github.com/TokTok/qTox.git
+cd qTox
+cmake -S . -B _build -GNinja \
+  -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+  -DCMAKE_CXX_COMPILER=clang++
+cmake --build _build
 ```
 
-<a name="macos" />
+---
 
 ## macOS
 
-Supported macOS versions: >=10.15.
+Requires macOS ≥ 12 and [Homebrew](https://brew.sh).
 
-Compiling qTox on macOS for development requires 2 tools:
-[Xcode](https://developer.apple.com/xcode/) and [homebrew](https://brew.sh).
-
-### Manual Compiling
-
-#### Required Libraries
-
-Install homebrew if you don't have it:
+Install dependencies:
 
 ```bash
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install cmake ninja pkg-config \
+  qt@6 ffmpeg openal-soft opus libvpx \
+  libexif qrencode libsodium sqlcipher
 ```
 
-First, clone qTox.
+Build toxcore:
 
 ```bash
-git clone https://github.com/qTox/qTox
-cd qTox
+git clone --depth=1 --recursive https://github.com/TokTok/c-toxcore.git toxcore
+cmake -S toxcore -B toxcore/_build -GNinja -DBOOTSTRAP_DAEMON=OFF
+cmake --build toxcore/_build
+sudo cmake --install toxcore/_build
 ```
 
-Then install required dependencies available via `brew`.
+Build qTox:
 
 ```bash
-brew bundle --file platform/macos/Brewfile
-```
-
-Then, install [toxcore](https://github.com/TokTok/c-toxcore/blob/master/INSTALL.md).
-
-```bash
-git clone --depth=1 https://github.com/TokTok/dockerfiles
-dockerfiles/qtox/build_toxcore_system.sh
-```
-
-Finally, build qTox.
-
-#### Compiling
-
-```bash
-cmake -B_build -H. -GNinja -DCMAKE_PREFIX_PATH=$(brew --prefix qt@6)
+cmake -S . -B _build -GNinja \
+  -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+  -DCMAKE_PREFIX_PATH="$(brew --prefix qt@6)"
 cmake --build _build
-cmake --install _build
 ```
 
-#### Running qTox
-
-`qTox.dmg` should be in your `_build` directory. You can install qTox from the dmg
-to your Applications folder, or run qTox directly from the dmg.
-
-### Troubleshooting on macOS
-
-If you get the error: **"qTox" is damaged and can't be opened. You should move it to the Trash.** This usually happens because macOS **Gatekeeper** security blocks the unsigned application. You can fix this by removing the "quarantine" flag from the app bundle using the terminal.
-
-Run the following command, adjusting the path if you haven't moved it to `/Applications`:
-
-```bash
-xattr -drs com.apple.quarantine /Applications/qtox.app
-
-```
-
-<a name="windows" />
-
-## Windows
-
-Only cross-compiling from Linux is supported and tested in CI, but building
-under MSYS should also work.
-
-### Cross-compile from Linux
-
-See [`platform/windows/cross-compile`](platform/windows/cross-compile).
+---
 
 ## Compile-time switches
 
-They are passed as an argument to `cmake` command. E.g. with a switch `SWITCH`
-that has value `ON` it would be passed to `cmake` in a following manner:
+Pass as `-DSWITCH=ON/OFF` to `cmake`. Key options:
+
+| Switch           | Default | Description                              |
+|------------------|---------|------------------------------------------|
+| `STRICT_OPTIONS` | OFF     | Treat all warnings as errors (`-Werror`) |
+| `SPELL_CHECK`    | ON      | KSonnet spell checking                   |
+| `UPDATE_CHECK`   | ON      | Check for new versions at startup        |
+| `ASAN`           | OFF     | Address Sanitizer                        |
+| `UBSAN`          | OFF     | Undefined Behavior Sanitizer             |
+| `TSAN`           | OFF     | Thread Sanitizer                         |
+| `BUILD_TESTING`  | ON      | Build unit tests                         |
+
+---
+
+## CMake presets
+
+| Preset          | Compiler | Description                                       |
+|-----------------|----------|---------------------------------------------------|
+| `clang-strict`  | clang++  | Strict warnings, `-Werror`, security hardening (recommended for CI and development) |
+| `dev`           | system   | Debug build, no extra flags                       |
+| `release`       | system   | RelWithDebInfo build                              |
+| `asan`          | system   | Debug + ASan + UBSan                              |
+| `tsan`          | system   | Debug + TSan                                      |
+
+Usage:
 
 ```bash
-cmake -DSWITCH=ON
+cmake --preset <name>
+cmake --build --preset <name>
 ```
 
-Look at the beginning of `CMakeLists.txt` for a list of options. Options that
-are `ON` by default can be turned off by passing `-DSWITCH=OFF`.
+Binary output directories: `_build_clang_strict/`, `_build/`, `_build-asan/`, etc.
 
-[AppArmor]: /security/apparmor/README.md
-[Atk]: https://wiki.gnome.org/Accessibility
-[Cairo]: https://www.cairographics.org/
-[Check]: https://libcheck.github.io/check/
 [CMake]: https://cmake.org/
-[DBus Menu]: https://launchpad.net/libdbusmenu
 [FFmpeg]: https://www.ffmpeg.org/
-[GCC]: https://gcc.gnu.org/
+[KSonnet]: https://github.com/KDE/sonnet
+[libexif]: https://libexif.github.io/
+[libsodium]: https://libsodium.gitbook.io/
 [libX11]: https://www.x.org/wiki/
 [libXScrnSaver]: https://www.x.org/wiki/Releases/ModuleVersions/
-[MinGW]: http://www.mingw.org/
-[OpenAL Soft]: http://kcat.strangesoft.net/openal.html
-[Pango]: http://www.pango.org/
+[Ninja]: https://ninja-build.org/
+[OpenAL Soft]: https://openal-soft.org/
+[opus]: https://opus-codec.org/
 [pkg-config]: https://www.freedesktop.org/wiki/Software/pkg-config/
 [qrencode]: https://fukuchi.org/works/qrencode/
 [Qt]: https://www.qt.io/
+[sqlcipher]: https://www.zetetic.net/sqlcipher/
 [toxcore]: https://github.com/TokTok/c-toxcore/
-[sonnet]: https://github.com/KDE/sonnet
-[libnotify]: https://gitlab.gnome.org/GNOME/libnotify
-[sqlcipher]: https://github.com/sqlcipher/sqlcipher
+[libvpx]: https://www.webmproject.org/code/
