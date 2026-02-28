@@ -6,6 +6,8 @@
 
 #include "settings.h"
 
+#include <exception>
+
 #include "src/core/core.h"
 #include "src/nexus.h"
 #include "src/persistence/globalsettingsupgrader.h"
