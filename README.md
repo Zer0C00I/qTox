@@ -71,7 +71,7 @@ cmake -S . -B _build -G Ninja \
 cmake --build _build -j$(nproc)
 ```
 
-For detailed platform-specific instructions see [INSTALL.md](INSTALL.md).
+For detailed platform-specific instructions see [docs/INSTALL.md](docs/INSTALL.md).
 
 ## Features
 
