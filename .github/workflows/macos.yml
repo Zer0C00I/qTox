@@ -19,8 +19,19 @@ permissions:
 jobs:
 
   build-macos:
-    name: macOS 14 (arm64)
-    runs-on: macos-14
+    name: macOS (${{ matrix.arch }})
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-14
+            arch: arm64
+            brew_prefix: /opt/homebrew
+          - runner: macos-13
+            arch: x86_64
+            brew_prefix: /usr/local
+
     steps:
       - uses: actions/checkout@v4
         with:
@@ -30,8 +41,8 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/Library/Caches/Homebrew/downloads
-          key: homebrew-downloads-macos14-${{ hashFiles('platform/macos/Brewfile') }}
-          restore-keys: homebrew-downloads-macos14-
+          key: homebrew-downloads-${{ matrix.arch }}-${{ hashFiles('platform/macos/Brewfile') }}
+          restore-keys: homebrew-downloads-${{ matrix.arch }}-
 
       - name: Install Homebrew dependencies
         run: |
@@ -46,8 +57,8 @@ jobs:
         id: cache-toxcore
         uses: actions/cache@v4
         with:
-          path: /usr/local/lib/libtoxcore*
-          key: toxcore-0.2.22-macos14
+          path: ${{ matrix.brew_prefix }}/lib/libtoxcore*
+          key: toxcore-0.2.22-${{ matrix.arch }}
 
       - name: Build c-toxcore
         if: steps.cache-toxcore.outputs.cache-hit != 'true'
@@ -67,17 +78,17 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.ccache
-          key: ccache-macos14-${{ github.sha }}
-          restore-keys: ccache-macos14-
+          key: ccache-${{ matrix.arch }}-${{ github.sha }}
+          restore-keys: ccache-${{ matrix.arch }}-
 
       - name: Build qTox
         run: |
-          export PKG_CONFIG_PATH="/opt/homebrew/opt/openal-soft/lib/pkgconfig:$PKG_CONFIG_PATH"
+          export PKG_CONFIG_PATH="${{ matrix.brew_prefix }}/opt/openal-soft/lib/pkgconfig:$PKG_CONFIG_PATH"
           cmake -GNinja -B _build -S . \
             -DCMAKE_BUILD_TYPE=RelWithDebInfo \
             -DCMAKE_CXX_COMPILER=clang++ \
-            -DCMAKE_PREFIX_PATH=/opt/homebrew/opt/qt@6 \
-            -DCMAKE_CXX_COMPILER_LAUNCHER=/opt/homebrew/bin/ccache \
+            -DCMAKE_PREFIX_PATH=${{ matrix.brew_prefix }}/opt/qt@6 \
+            -DCMAKE_CXX_COMPILER_LAUNCHER=${{ matrix.brew_prefix }}/bin/ccache \
             -DSTRICT_OPTIONS=ON \
             -DUPDATE_CHECK=OFF \
             -DSPELL_CHECK=OFF
@@ -86,7 +97,7 @@ jobs:
       - name: Package .dmg
         run: |
           VERSION=$(grep -m1 'VERSION_MAJOR' cmake/Package.cmake | grep -oE '[0-9]+').$(grep -m1 'VERSION_MINOR' cmake/Package.cmake | grep -oE '[0-9]+').$(grep -m1 'VERSION_PATCH' cmake/Package.cmake | grep -oE '[0-9]+')
-          /opt/homebrew/opt/qt@6/bin/macdeployqt _build/qtox.app
+          ${{ matrix.brew_prefix }}/opt/qt@6/bin/macdeployqt _build/qtox.app
           create-dmg \
             --volname "qTox" \
             --background "platform/macos/backgroundImage.tiff" \
@@ -96,26 +107,26 @@ jobs:
             --icon "qtox.app" 200 190 \
             --hide-extension "qtox.app" \
             --app-drop-link 600 185 \
-            "qtox-${VERSION}-macos.dmg" \
+            "qtox-${VERSION}-macos-${{ matrix.arch }}.dmg" \
             "_build/qtox.app"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: qtox-macos
-          path: qtox-*.dmg
+          name: qtox-macos-${{ matrix.arch }}
+          path: qtox-*-macos-${{ matrix.arch }}.dmg
 
       - name: Upload to release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
-          files: qtox-*.dmg
+          files: qtox-*-macos-${{ matrix.arch }}.dmg
 
       - name: Upload to nightly release
         if: github.ref == 'refs/heads/master'
         uses: softprops/action-gh-release@v2
         with:
-          files: qtox-*.dmg
+          files: qtox-*-macos-${{ matrix.arch }}.dmg
           tag_name: nightly
           name: "Nightly Build"
           prerelease: true
