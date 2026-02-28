@@ -85,3 +85,13 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: qtox-*.pkg
+
+      - name: Upload to nightly release
+        if: github.ref == 'refs/heads/master'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: qtox-*.pkg
+          tag_name: nightly
+          name: "Nightly Build"
+          prerelease: true
+          make_latest: false

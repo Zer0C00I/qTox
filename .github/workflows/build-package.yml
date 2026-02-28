@@ -44,6 +44,16 @@ jobs:
         with:
           files: build_dir/qtox-*.rpm
 
+      - name: Upload RPM to nightly release
+        if: github.ref == 'refs/heads/master'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build_dir/qtox-*.rpm
+          tag_name: nightly
+          name: "Nightly Build"
+          prerelease: true
+          make_latest: false
+
   build-deb:
     name: DEB package (Ubuntu)
     runs-on: ubuntu-24.04
@@ -118,3 +128,13 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: "*.deb"
+
+      - name: Upload DEB to nightly release
+        if: github.ref == 'refs/heads/master'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: "*.deb"
+          tag_name: nightly
+          name: "Nightly Build"
+          prerelease: true
+          make_latest: false
