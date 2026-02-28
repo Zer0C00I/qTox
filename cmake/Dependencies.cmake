@@ -111,7 +111,7 @@ function(search_dependency pkg)
     message(STATUS ${pkg} " LIBRARIES:    " "${${pkg}${maybe_static}_LIBRARIES}" )
 
     link_directories(${${pkg}${maybe_static}_LIBRARY_DIRS})
-    include_directories(${${pkg}${maybe_static}_INCLUDE_DIRS})
+    include_directories(SYSTEM ${${pkg}${maybe_static}_INCLUDE_DIRS})
 
     foreach(flag ${${pkg}${maybe_static}_CFLAGS_OTHER})
       set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${flag}" PARENT_SCOPE)
