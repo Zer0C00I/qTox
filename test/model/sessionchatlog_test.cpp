@@ -11,6 +11,7 @@
 
 #include <QtTest/QtTest>
 
+#include <exception>
 #include <memory>
 
 namespace {
