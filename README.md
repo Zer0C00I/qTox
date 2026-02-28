@@ -24,8 +24,8 @@ attack surface of the application.
 |----------|---------|
 | Linux (Debian/Ubuntu) | `.deb` via CI artifacts |
 | Linux (Fedora) | `.rpm` via CI artifacts |
-| FreeBSD 14 | built with clang++ |
-| macOS | universal binary via CI artifacts |
+| FreeBSD 14 | `.pkg` via CI artifacts |
+| macOS | x86 and arm .dmg via CI artifacts |
 
 ## Building
 
