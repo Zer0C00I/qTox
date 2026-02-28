@@ -141,7 +141,8 @@ const QLoggingCategory& (*avLogCategory(const AVClass* avc))()
         return logcat::ffmpegDeviceOutput;
     case AV_CLASS_CATEGORY_DEVICE_INPUT:
         return logcat::ffmpegDeviceInput;
-#ifdef AV_CLASS_CATEGORY_HWDEVICE
+#if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(60, 0, 100)
+    // AV_CLASS_CATEGORY_HWDEVICE was added in FFmpeg 8.0 (libavutil 60.x)
     case AV_CLASS_CATEGORY_HWDEVICE:
         return logcat::ffmpeg;
 #endif
