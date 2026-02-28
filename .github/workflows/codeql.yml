@@ -31,6 +31,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
             build-essential \
+            clang \
             cmake \
             libavcodec-dev \
             libavdevice-dev \
@@ -72,11 +73,8 @@ jobs:
 
       - name: Build
         run: |
-          cmake -GNinja -B _build -S . \
-            -DUPDATE_CHECK=OFF \
-            -DSPELL_CHECK=OFF \
-            -DSTRICT_OPTIONS=ON
-          cmake --build _build --parallel $(nproc)
+          cmake --preset clang-strict
+          cmake --build --preset clang-strict
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3

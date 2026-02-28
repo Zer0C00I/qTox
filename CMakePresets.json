@@ -122,6 +122,32 @@
         "CMAKE_EXPORT_COMPILE_COMMANDS": true,
         "CMAKE_OSX_DEPLOYMENT_TARGET": "12"
       }
+    },
+    {
+      "name": "clang-strict",
+      "displayName": "Clang strict (max warnings + security hardening)",
+      "description": "clang++ with -Werror and full security hardening: -fno-plt, -Wthread-safety-beta, nodlopen",
+      "binaryDir": "${sourceDir}/_build_clang_strict",
+      "generator": "Ninja",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "CMAKE_CXX_COMPILER": "clang++",
+        "STRICT_OPTIONS": true,
+        "UPDATE_CHECK": false,
+        "SPELL_CHECK": false,
+        "CMAKE_COMPILE_WARNING_AS_ERROR": true,
+        "CMAKE_EXPORT_COMPILE_COMMANDS": true,
+        "CMAKE_CXX_FLAGS": "-fno-plt -Wthread-safety-beta",
+        "CMAKE_EXE_LINKER_FLAGS": "-Wl,-z,nodlopen"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "clang-strict",
+      "displayName": "Build clang-strict",
+      "configurePreset": "clang-strict",
+      "jobs": 0
     }
   ]
 }
