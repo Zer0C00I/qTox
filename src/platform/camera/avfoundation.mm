@@ -10,6 +10,8 @@
 #include <QMutex>
 #include <QObject>
 
+#include <vector>
+
 #ifdef Q_OS_MACOS
 #include "src/video/videomode.h"
 
@@ -96,15 +98,15 @@ QVector<QPair<QString, QString>> avfoundation::getDeviceList()
     NSArray* devices = getDevices();
 
     for (AVCaptureDevice* device in devices) {
-        int index = [devices indexOfObject:device];
+        NSUInteger index = [devices indexOfObject:device];
         result.append({QString::number(index), QString::fromNSString([device localizedName])});
     }
 
     uint32_t numScreens = 0;
     CGGetActiveDisplayList(0, nullptr, &numScreens);
     if (numScreens > 0) {
-        CGDirectDisplayID screens[numScreens];
-        CGGetActiveDisplayList(numScreens, screens, &numScreens);
+        std::vector<CGDirectDisplayID> screens(numScreens);
+        CGGetActiveDisplayList(numScreens, screens.data(), &numScreens);
         for (uint32_t i = 0; i < numScreens; i++) {
             result.append({QString::number(result.size()), QObject::tr("Capture screen %1").arg(i)});
         }
@@ -119,12 +121,12 @@ QVector<VideoMode> avfoundation::getDeviceModes(const QString& devName)
     NSArray* devices = getDevices();
     const int index = devName.toInt();
 
-    if (index >= [devices count]) {
+    if (index < 0 || static_cast<NSUInteger>(index) >= [devices count]) {
         // It's a desktop capture.
         return result;
     }
 
-    AVCaptureDevice* device = [devices objectAtIndex:index];
+    AVCaptureDevice* device = [devices objectAtIndex:static_cast<NSUInteger>(index)];
 
     if (device == nil) {
         qWarning() << "Device not found:" << devName;
@@ -140,7 +142,7 @@ QVector<VideoMode> avfoundation::getDeviceModes(const QString& devName)
             VideoMode mode;
             mode.width = dimensions.width;
             mode.height = dimensions.height;
-            mode.fps = range.maxFrameRate;
+            mode.fps = static_cast<float>(range.maxFrameRate);
             result.append(mode);
         }
     }

@@ -2304,6 +2304,7 @@ bool Widget::event(QEvent* e)
 
 #ifdef Q_OS_MAC
         emit windowStateChanged(windowState());
+        [[fallthrough]];
 
     case QEvent::WindowStateChange:
         nexus.updateWindowsStates();
