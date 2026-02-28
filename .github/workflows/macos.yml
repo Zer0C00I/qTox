@@ -89,6 +89,7 @@ jobs:
             -DCMAKE_CXX_COMPILER=clang++ \
             -DCMAKE_PREFIX_PATH=${{ matrix.brew_prefix }}/opt/qt@6 \
             -DCMAKE_CXX_COMPILER_LAUNCHER=${{ matrix.brew_prefix }}/bin/ccache \
+            -DCMAKE_CXX_FLAGS="-isystem ${{ matrix.brew_prefix }}/include" \
             -DSTRICT_OPTIONS=ON \
             -DUPDATE_CHECK=OFF \
             -DSPELL_CHECK=OFF
