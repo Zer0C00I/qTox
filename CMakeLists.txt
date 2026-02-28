@@ -660,10 +660,6 @@ set(${BINARY_NAME}_SOURCES
     src/widget/widget.cpp
     src/widget/widget.h)
 
-if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
-  set(${BINARY_NAME}_RESOURCES ${${BINARY_NAME}_RESOURCES}
-                               platform/windows/qtox.rc)
-endif()
 
 add_definitions(-DQT_MESSAGELOGCONTEXT=1)
 
@@ -732,13 +728,6 @@ qt_add_executable(${BINARY_NAME} WIN32 MACOSX_BUNDLE
 target_link_libraries(
   ${BINARY_NAME} PRIVATE ${BINARY_NAME}_static ${CMAKE_REQUIRED_LIBRARIES}
                          ${ALL_LIBRARIES})
-set_target_properties(
-  ${BINARY_NAME}
-  PROPERTIES
-    QT_ANDROID_TARGET_SDK_VERSION 34
-    QT_ANDROID_MIN_SDK_VERSION 24
-    QT_ANDROID_PACKAGE_SOURCE_DIR
-    "${CMAKE_CURRENT_SOURCE_DIR}/platform/android/qt-${Qt6Core_VERSION}")
 
 if(FULLY_STATIC)
   target_link_options(${BINARY_NAME} PRIVATE -static-pie)

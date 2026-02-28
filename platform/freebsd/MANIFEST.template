@@ -1,0 +1,9 @@
+name: qtox
+version: "${VERSION}"
+arch: ${ARCH}
+origin: net-im/qtox
+comment: "Feature-rich Tox client"
+www: https://github.com/TokTok/qTox
+maintainer: nobody@example.com
+prefix: /usr/local
+desc: "Feature-rich Tox client"

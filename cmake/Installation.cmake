@@ -49,11 +49,7 @@ if(APPLE)
   execute_process(COMMAND ${CREATE_DMG} ${PROJECT_NAME} ${CMAKE_SOURCE_DIR} ${BUNDLE_PATH})
   " COMPONENT Runtime
   )
-elseif(WIN32)
-  install(CODE "
-  message(STATUS \"Installer can be created using platform/windows/${BINARY_NAME}64.nsi\")
-  " COMPONENT Runtime
-  )
+
 else()
   include(GNUInstallDirs)
   # follow the xdg-desktop specification

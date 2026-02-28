@@ -4,7 +4,7 @@
 # Copyright © 2016-2019 by The qTox Project Contributors
 # Copyright © 2024-2025 The TokTok team
 
-# script to change versions in the files for macOS and windows "packages"
+# script to change versions in the files for macOS packages
 #
 # it should be run before releasing a new version
 #
@@ -25,12 +25,6 @@ readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 readonly BASE_DIR="$SCRIPT_DIR/../"
 readonly VERSION_PATTERN='[0-9]+\.[0-9]+\.[0-9]+(-rc\.[0-9]+)?'
 
-update_windows() {
-  (
-    cd "$BASE_DIR/platform/windows"
-    ./qtox-nsi-version.sh "$@"
-  )
-}
 
 update_macos() {
   (
@@ -83,7 +77,6 @@ main() {
   # macOS cannot into proper sed
   if [[ ! "$OSTYPE" == "darwin"* ]]; then
     update_macos "$@"
-    update_windows "$@"
     update_readme "$@"
     update_appdata "$@"
     update_package_cmake "$@"
