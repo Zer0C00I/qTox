@@ -28,7 +28,7 @@ jobs:
           - runner: macos-14
             arch: arm64
             brew_prefix: /opt/homebrew
-          - runner: macos-13
+          - runner: macos-15-intel
             arch: x86_64
             brew_prefix: /usr/local
 
