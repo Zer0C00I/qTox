@@ -67,17 +67,9 @@ jobs:
 
             find _pkg/usr/local -type f | sed 's|_pkg/usr/local/||' > PLIST
 
-            cat > MANIFEST << EOF
-name: qtox
-version: "${VERSION}"
-arch: ${ARCH}
-origin: net-im/qtox
-comment: "Feature-rich Tox client"
-www: https://github.com/TokTok/qTox
-maintainer: nobody@example.com
-prefix: /usr/local
-desc: "Feature-rich Tox client"
-EOF
+            sed -e "s|\${VERSION}|${VERSION}|g" \
+                -e "s|\${ARCH}|${ARCH}|g" \
+                platform/freebsd/MANIFEST.template > MANIFEST
 
             pkg create -M MANIFEST -p PLIST -r _pkg/usr/local -o .
             rm -rf _build _pkg MANIFEST PLIST
