@@ -27,14 +27,14 @@ readonly VERSION_PATTERN='[0-9]+\.[0-9]+\.[0-9]+(-rc\.[0-9]+)?'
 
 update_windows() {
   (
-    cd "$BASE_DIR/packaging/windows"
+    cd "$BASE_DIR/platform/windows"
     ./qtox-nsi-version.sh "$@"
   )
 }
 
 update_macos() {
   (
-    cd "$BASE_DIR/packaging/macos"
+    cd "$BASE_DIR/platform/macos"
     ./update-plist-version.sh "$@"
   )
 }
@@ -49,8 +49,8 @@ update_readme() {
 update_appdata() {
   cd "$BASE_DIR"
   local isodate="$(date --iso-8601)"
-  sed -ri "s|(<release version=\")$VERSION_PATTERN|\1$@|g" packaging/linux/io.github.qtox.qTox.appdata.xml
-  sed -ri "s|(<release version=\"$VERSION_PATTERN\" date=\").{10}\"|\1$isodate\"|g" packaging/linux/io.github.qtox.qTox.appdata.xml
+  sed -ri "s|(<release version=\")$VERSION_PATTERN|\1$@|g" platform/linux/io.github.qtox.qTox.appdata.xml
+  sed -ri "s|(<release version=\"$VERSION_PATTERN\" date=\").{10}\"|\1$isodate\"|g" platform/linux/io.github.qtox.qTox.appdata.xml
 }
 
 update_package_cmake() {
