@@ -14,7 +14,7 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
 
@@ -59,3 +59,37 @@ jobs:
               -DUPDATE_CHECK=OFF \
               -DSPELL_CHECK=OFF
             cmake --build _build --parallel $(sysctl -n hw.ncpu)
+
+            DESTDIR=_pkg cmake --install _build
+
+            VERSION=$(grep -m1 'VERSION_MAJOR' cmake/Package.cmake | grep -oE '[0-9]+').$(grep -m1 'VERSION_MINOR' cmake/Package.cmake | grep -oE '[0-9]+').$(grep -m1 'VERSION_PATCH' cmake/Package.cmake | grep -oE '[0-9]+')
+            ARCH=$(pkg config abi)
+
+            find _pkg/usr/local -type f | sed 's|_pkg/usr/local/||' > PLIST
+
+            cat > MANIFEST << EOF
+name: qtox
+version: "${VERSION}"
+arch: ${ARCH}
+origin: net-im/qtox
+comment: "Feature-rich Tox client"
+www: https://github.com/TokTok/qTox
+maintainer: nobody@example.com
+prefix: /usr/local
+desc: "Feature-rich Tox client"
+EOF
+
+            pkg create -M MANIFEST -p PLIST -r _pkg/usr/local -o .
+            rm -rf _build _pkg MANIFEST PLIST
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: qtox-freebsd14
+          path: qtox-*.pkg
+
+      - name: Upload to release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: qtox-*.pkg

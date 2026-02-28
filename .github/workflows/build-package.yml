@@ -17,7 +17,7 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
 
@@ -33,6 +33,16 @@ jobs:
           key: ${{ github.job }}-ccache
       - name: Build RPM package
         run: docker compose run --rm fedora .ci-scripts/package-qtox-linux.sh --source-dir . --target-dir build_dir
+      - name: Upload RPM artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: qtox-rpm
+          path: build_dir/qtox-*.rpm
+      - name: Upload RPM to release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build_dir/qtox-*.rpm
 
   build-deb:
     name: DEB package (Ubuntu)
@@ -103,3 +113,8 @@ jobs:
         with:
           name: qtox-deb
           path: "*.deb"
+      - name: Upload DEB to release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: "*.deb"
