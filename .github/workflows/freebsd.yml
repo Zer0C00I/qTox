@@ -39,7 +39,6 @@ jobs:
               qt6-base \
               qt6-tools \
               qt6-svg \
-              qt6-l10n \
               openal-soft \
               opus \
               libvpx \
@@ -47,7 +46,7 @@ jobs:
               libsodium \
               sqlcipher \
               ffmpeg \
-              c-toxcore \
+              toxcore \
               llvm
           run: |
             cmake -GNinja -B _build -S . \
