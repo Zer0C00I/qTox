@@ -400,7 +400,7 @@ void Style::applyTheme()
 QPixmap Style::scaleSvgImage(const QString& path, uint32_t width, uint32_t height)
 {
     QSvgRenderer render(path);
-    QPixmap pixmap(width, height);
+    QPixmap pixmap(static_cast<int>(width), static_cast<int>(height));
     pixmap.fill(QColor(0, 0, 0, 0));
     QPainter painter(&pixmap);
     render.render(&painter, pixmap.rect());

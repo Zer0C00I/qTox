@@ -21,7 +21,6 @@
  */
 
 namespace {
-constexpr size_t intWidth = sizeof(int) * CHAR_BIT;
 }
 
 int dataToVInt(const QByteArray& data)

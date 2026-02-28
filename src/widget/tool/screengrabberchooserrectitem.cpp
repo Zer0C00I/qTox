@@ -67,7 +67,7 @@ void ScreenGrabberChooserRectItem::beginResize(QPointF mousePos)
 
 QRect ScreenGrabberChooserRectItem::chosenRect() const
 {
-    QRect rect(x(), y(), rectWidth, rectHeight);
+    QRect rect(static_cast<int>(x()), static_cast<int>(y()), rectWidth, rectHeight);
     if (rectWidth < 0) {
         rect.setX(rect.x() + rectWidth);
         rect.setWidth(-rectWidth);
@@ -122,8 +122,8 @@ void ScreenGrabberChooserRectItem::mouseMove(QGraphicsSceneMouseEvent* event)
         prepareGeometryChange();
         const QPointF size = event->scenePos() - scenePos();
         mainRect->setRect(0, 0, size.x(), size.y());
-        rectWidth = size.x();
-        rectHeight = size.y();
+        rectWidth = static_cast<int>(size.x());
+        rectHeight = static_cast<int>(size.y());
 
         updateHandlePositions();
     } else {
@@ -199,8 +199,8 @@ void ScreenGrabberChooserRectItem::mouseMoveHandle(int x, int y, QGraphicsSceneM
     }
 
     //
-    rectWidth += delta.x();
-    rectHeight += delta.y();
+    rectWidth += static_cast<int>(delta.x());
+    rectHeight += static_cast<int>(delta.y());
     mainRect->setRect(0, 0, rectWidth, rectHeight);
     updateHandlePositions();
     emit regionChosen(chosenRect());

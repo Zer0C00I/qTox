@@ -33,7 +33,7 @@ ConferenceWidget::ConferenceWidget(std::shared_ptr<ConferenceRoom> chatroom_, bo
     , hasActiveCallSession(false)
     , conferenceId{chatroom->getConference()->getPersistentId()}
 {
-    avatar->setPixmap(Style::scaleSvgImage(":img/conference.svg", avatar->width(), avatar->height()));
+    avatar->setPixmap(Style::scaleSvgImage(":img/conference.svg", static_cast<uint32_t>(avatar->width()), static_cast<uint32_t>(avatar->height())));
     statusPic.setPixmap(QPixmap(Status::getIconPath(Status::Status::Online)));
     statusPic.setMargin(3);
 
@@ -145,13 +145,13 @@ void ConferenceWidget::setAsActiveChatroom()
 {
     setActive(true);
     avatar->setPixmap(
-        Style::scaleSvgImage(":img/conference_dark.svg", avatar->width(), avatar->height()));
+        Style::scaleSvgImage(":img/conference_dark.svg", static_cast<uint32_t>(avatar->width()), static_cast<uint32_t>(avatar->height())));
 }
 
 void ConferenceWidget::setAsInactiveChatroom()
 {
     setActive(false);
-    avatar->setPixmap(Style::scaleSvgImage(":img/conference.svg", avatar->width(), avatar->height()));
+    avatar->setPixmap(Style::scaleSvgImage(":img/conference.svg", static_cast<uint32_t>(avatar->width()), static_cast<uint32_t>(avatar->height())));
 }
 
 /*

@@ -332,7 +332,7 @@ void GeneralForm::on_maxAutoAcceptSizeMB_editingFinished()
     auto newMaxSizeMB = bodyUI->maxAutoAcceptSizeMB->value();
     auto newMaxSizeB = std::lround(newMaxSizeMB * 1024 * 1024);
 
-    settings.setMaxAutoAcceptSize(newMaxSizeB);
+    settings.setMaxAutoAcceptSize(static_cast<size_t>(newMaxSizeB));
 }
 
 void GeneralForm::on_checkUpdates_stateChanged()

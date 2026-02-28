@@ -67,9 +67,9 @@ bool toxFileIsComplete(ToxFile::FileStatus status)
     case ToxFile::BROKEN:
     case ToxFile::CANCELED:
     case ToxFile::FINISHED:
-    default:
         return true;
     }
+    return true;
 }
 
 std::map<ChatLogIdx, ChatLogItem>::const_iterator
@@ -176,9 +176,9 @@ SearchResult SessionChatLog::searchForward(SearchPos startPos, const QString& ph
             SearchResult res;
             res.found = true;
             res.pos.logIdx = key;
-            res.pos.numMatches = numMatches;
-            res.start = lastMatch.capturedStart();
-            res.len = lastMatch.capturedLength();
+            res.pos.numMatches = static_cast<size_t>(numMatches);
+            res.start = static_cast<size_t>(lastMatch.capturedStart());
+            res.len = static_cast<size_t>(lastMatch.capturedLength());
             return res;
         }
 
@@ -242,9 +242,9 @@ SearchResult SessionChatLog::searchBackward(SearchPos startPos, const QString& p
             SearchResult res;
             res.found = true;
             res.pos.logIdx = key;
-            res.pos.numMatches = numMatchesBeforePos;
-            res.start = lastMatch.capturedStart();
-            res.len = lastMatch.capturedLength();
+            res.pos.numMatches = static_cast<size_t>(numMatchesBeforePos);
+            res.start = static_cast<size_t>(lastMatch.capturedStart());
+            res.len = static_cast<size_t>(lastMatch.capturedLength());
             return res;
         }
 

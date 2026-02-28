@@ -19,7 +19,7 @@
 namespace {
 float getSizeRatio(const QSize size)
 {
-    return size.width() / static_cast<float>(size.height());
+    return static_cast<float>(size.width()) / static_cast<float>(size.height());
 }
 } // namespace
 
@@ -171,8 +171,8 @@ void VideoSurface::paintEvent(QPaintEvent* event)
         QPixmap drawnAvatar = avatar;
 
         if (drawnAvatar.isNull())
-            drawnAvatar = Style::scaleSvgImage(":/img/contact_dark.svg", boundingRect.width(),
-                                               boundingRect.height());
+            drawnAvatar = Style::scaleSvgImage(":/img/contact_dark.svg", static_cast<uint32_t>(boundingRect.width()),
+                                               static_cast<uint32_t>(boundingRect.height()));
 
         painter.drawPixmap(boundingRect, drawnAvatar, drawnAvatar.rect());
     }
@@ -201,10 +201,10 @@ void VideoSurface::recalculateBounds()
         QPoint pos;
         QSize size;
         const QSize usableSize = contentsRect().size();
-        const int possibleWidth = static_cast<int>(usableSize.height() * ratio);
+        const int possibleWidth = static_cast<int>(static_cast<float>(usableSize.height()) * ratio);
 
         if (possibleWidth > usableSize.width())
-            size = (QSize(usableSize.width(), static_cast<int>(usableSize.width() / ratio)));
+            size = (QSize(usableSize.width(), static_cast<int>(static_cast<float>(usableSize.width()) / ratio)));
         else
             size = (QSize(possibleWidth, usableSize.height()));
 

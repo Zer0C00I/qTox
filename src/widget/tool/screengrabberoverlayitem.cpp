@@ -51,9 +51,9 @@ void ScreenGrabberOverlayItem::paint(QPainter* painter, const QStyleOptionGraphi
     const qreal topY = chosenRect.y();
     const qreal bottomY = chosenRect.y() + chosenRect.height();
 
-    painter->drawRect(0, 0, leftX, self.height());                      // Left of chosen
-    painter->drawRect(rightX, 0, self.width() - rightX, self.height()); // Right of chosen
-    painter->drawRect(leftX, 0, chosenRect.width(), topY);              // Top of chosen
-    painter->drawRect(leftX, bottomY, chosenRect.width(),
-                      self.height() - bottomY); // Bottom of chosen
+    painter->drawRect(0, 0, static_cast<int>(leftX), static_cast<int>(self.height()));                                                        // Left of chosen
+    painter->drawRect(static_cast<int>(rightX), 0, static_cast<int>(self.width() - rightX), static_cast<int>(self.height())); // Right of chosen
+    painter->drawRect(static_cast<int>(leftX), 0, chosenRect.width(), static_cast<int>(topY));                                 // Top of chosen
+    painter->drawRect(static_cast<int>(leftX), static_cast<int>(bottomY), chosenRect.width(),
+                      static_cast<int>(self.height() - bottomY)); // Bottom of chosen
 }

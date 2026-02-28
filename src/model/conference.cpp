@@ -136,7 +136,7 @@ bool Conference::isAvConference() const
 
 uint32_t Conference::getId() const
 {
-    return toxConferenceNum;
+    return static_cast<uint32_t>(toxConferenceNum);
 }
 
 const ConferenceId& Conference::getPersistentId() const

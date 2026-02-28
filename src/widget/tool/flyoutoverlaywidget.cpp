@@ -102,5 +102,5 @@ void FlyoutOverlayWidget::startAnimation(bool forward)
     setAttribute(Qt::WA_TransparentForMouseEvents, !forward);
     animation->setDirection(forward ? QAbstractAnimation::Forward : QAbstractAnimation::Backward);
     animation->start();
-    animation->setCurrentTime(animation->duration() * percent);
+    animation->setCurrentTime(static_cast<int>(animation->duration() * percent));
 }

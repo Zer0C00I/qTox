@@ -111,8 +111,8 @@ void ScreenshotGrabber::acceptRegion()
         return;
 
     // Scale the accepted region from DIPs to actual pixels
-    rect.setRect(rect.x() * pixRatio, rect.y() * pixRatio, rect.width() * pixRatio,
-                 rect.height() * pixRatio);
+    rect.setRect(static_cast<int>(rect.x() * pixRatio), static_cast<int>(rect.y() * pixRatio),
+                 static_cast<int>(rect.width() * pixRatio), static_cast<int>(rect.height() * pixRatio));
 
     emit regionChosen(rect);
     qDebug() << "Screenshot accepted, chosen region" << rect;
@@ -191,7 +191,7 @@ void ScreenshotGrabber::adjustTooltipPosition()
     const QRect recGL = QGuiApplication::primaryScreen()->virtualGeometry();
     const auto rec = QGuiApplication::screenAt(QCursor::pos())->geometry();
     const QRectF ttRect = helperToolbox->childrenBoundingRect();
-    const int x = qAbs(recGL.x()) + rec.x() + ((rec.width() - ttRect.width()) / 2);
+    const int x = qAbs(recGL.x()) + rec.x() + static_cast<int>((rec.width() - ttRect.width()) / 2);
     const int y = qAbs(recGL.y()) + rec.y();
 
     helperToolbox->setX(x);
@@ -210,8 +210,8 @@ QPixmap ScreenshotGrabber::grabScreen() const
     const QRect rec = screen->virtualGeometry();
 
     // Multiply by devicePixelRatio to get actual desktop size
-    return screen->grabWindow(0, rec.x() * pixRatio, rec.y() * pixRatio, rec.width() * pixRatio,
-                              rec.height() * pixRatio);
+    return screen->grabWindow(0, static_cast<int>(rec.x() * pixRatio), static_cast<int>(rec.y() * pixRatio),
+                              static_cast<int>(rec.width() * pixRatio), static_cast<int>(rec.height() * pixRatio));
 }
 
 void ScreenshotGrabber::hideVisibleWindows()

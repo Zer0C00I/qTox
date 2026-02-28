@@ -131,7 +131,7 @@ NetCamView::NetCamView(ToxPk friendPk_, CameraSource& cameraSource_, Settings& s
 
     connections += connect(videoSurface, &VideoSurface::ratioChanged, this, [this]() {
         selfFrame->setMinimumWidth(
-            static_cast<int>(selfFrame->minimumHeight() * selfVideoSurface->getRatio()));
+            static_cast<int>(static_cast<float>(selfFrame->minimumHeight()) * selfVideoSurface->getRatio()));
         const QRect boundingRect = videoSurface->getBoundingRect();
         updateFrameSize(boundingRect.size());
         selfFrame->resetBoundary(boundingRect);
@@ -197,7 +197,7 @@ void NetCamView::showEvent(QShowEvent* event)
 void NetCamView::updateRatio()
 {
     selfFrame->setMinimumWidth(
-        static_cast<int>(selfFrame->minimumHeight() * selfVideoSurface->getRatio()));
+        static_cast<int>(static_cast<float>(selfFrame->minimumHeight()) * selfVideoSurface->getRatio()));
     selfFrame->setRatio(selfVideoSurface->getRatio());
 }
 
@@ -207,10 +207,10 @@ void NetCamView::updateFrameSize(const QSize& size)
 
     if (selfFrame->maximumWidth() > selfFrame->maximumHeight())
         selfFrame->setMaximumWidth(
-            static_cast<int>(selfFrame->maximumHeight() * selfVideoSurface->getRatio()));
+            static_cast<int>(static_cast<float>(selfFrame->maximumHeight()) * selfVideoSurface->getRatio()));
     else
         selfFrame->setMaximumHeight(
-            static_cast<int>(selfFrame->maximumWidth() / selfVideoSurface->getRatio()));
+            static_cast<int>(static_cast<float>(selfFrame->maximumWidth()) / selfVideoSurface->getRatio()));
 }
 
 QSize NetCamView::getSurfaceMinSize()

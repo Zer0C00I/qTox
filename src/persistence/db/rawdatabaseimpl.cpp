@@ -307,7 +307,7 @@ int RawDatabaseImpl::getUserVersion()
         qCritical() << "Failed to read user_version during cipher upgrade";
         return -1;
     }
-    return user_version;
+    return static_cast<int>(user_version);
 }
 
 /**
@@ -711,8 +711,8 @@ void RawDatabaseImpl::compileAndExecute(Transaction& trans)
             sqlite3_stmt* stmt = nullptr;
             int r = 0;
             if ((r = sqlite3_prepare_v2(sqlite, compileTail,
-                                        query.query.size()
-                                            - static_cast<int>(compileTail - query.query.data()),
+                                        static_cast<int>(query.query.size()
+                                            - static_cast<int>(compileTail - query.query.data())),
                                         &stmt, &compileTail))
                 != SQLITE_OK) {
                 qWarning() << "Failed to prepare statement" << anonymizeQuery(query.query)
@@ -737,7 +737,7 @@ void RawDatabaseImpl::compileAndExecute(Transaction& trans)
                 // system headers, so can't be fixed by us.
                 constexpr auto sqliteDataType = SQLITE_STATIC;
 #pragma GCC diagnostic pop
-                if (sqlite3_bind_blob(stmt, i + 1, blob.data(), blob.size(), sqliteDataType)
+                if (sqlite3_bind_blob(stmt, i + 1, blob.data(), static_cast<int>(blob.size()), sqliteDataType)
                     != SQLITE_OK) {
                     qWarning() << "Failed to bind param" << curParam + i << "to query"
                                << anonymizeQuery(query.query);

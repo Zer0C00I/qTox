@@ -41,7 +41,7 @@ bool VideoMode::operator==(const VideoMode& other) const
 
 uint32_t VideoMode::norm(const VideoMode& other) const
 {
-    return qAbs(width - other.width) + qAbs(height - other.height);
+    return static_cast<uint32_t>(qAbs(width - other.width) + qAbs(height - other.height));
 }
 
 uint32_t VideoMode::tolerance() const
@@ -49,7 +49,7 @@ uint32_t VideoMode::tolerance() const
     constexpr uint32_t minTolerance = 300; // keep wider tolerance for low res cameras
     constexpr uint32_t toleranceFactor =
         10; // video mode must be within 10% to be "close enough" to ideal
-    return std::max((width + height) / toleranceFactor, minTolerance);
+    return std::max(static_cast<uint32_t>(width + height) / toleranceFactor, minTolerance);
 }
 
 /**

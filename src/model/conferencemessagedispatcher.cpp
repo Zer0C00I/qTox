@@ -33,9 +33,9 @@ ConferenceMessageDispatcher::sendMessage(bool isAction, const QString& content)
         lastMessageId = messageId;
         if (conference.getPeersCount() != 1) {
             if (message.isAction) {
-                messageSender.sendConferenceAction(conference.getId(), message.content);
+                messageSender.sendConferenceAction(static_cast<int>(conference.getId()), message.content);
             } else {
-                messageSender.sendConferenceMessage(conference.getId(), message.content);
+                messageSender.sendConferenceMessage(static_cast<int>(conference.getId()), message.content);
             }
         }
 

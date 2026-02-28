@@ -2319,7 +2319,7 @@ bool Widget::event(QEvent* e)
 void Widget::onUserAwayCheck()
 {
 #ifdef QTOX_PLATFORM_EXT
-    const uint32_t autoAwayTime = settings.getAutoAwayTime() * 60 * 1000;
+    const uint32_t autoAwayTime = static_cast<uint32_t>(settings.getAutoAwayTime()) * 60 * 1000;
     const bool online = static_cast<Status::Status>(ui->statusButton->property("status").toInt())
                         == Status::Status::Online;
     const bool away = (autoAwayTime != 0u) && Platform::getIdleTime() >= autoAwayTime;

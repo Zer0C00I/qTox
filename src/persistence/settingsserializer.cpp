@@ -53,9 +53,9 @@ QDataStream& writeStream(QDataStream& dataStream, const SettingsSerializer::Reco
 
 QDataStream& writeStream(QDataStream& dataStream, const QByteArray& data)
 {
-    QByteArray size = vintToData(data.size());
-    dataStream.writeRawData(size.data(), size.size());
-    dataStream.writeRawData(data.data(), data.size());
+    QByteArray size = vintToData(static_cast<int>(data.size()));
+    dataStream.writeRawData(size.data(), static_cast<int>(size.size()));
+    dataStream.writeRawData(data.data(), static_cast<int>(data.size()));
     return dataStream;
 }
 
@@ -135,11 +135,11 @@ void SettingsSerializer::beginGroup(const QString& prefix)
 {
     if (prefix.isEmpty())
         endGroup();
-    const int index = groups.indexOf(prefix);
+    const int index = static_cast<int>(groups.indexOf(prefix));
     if (index >= 0) {
         group = index;
     } else {
-        group = groups.size();
+        group = static_cast<int>(groups.size());
         groups.append(prefix);
     }
 }
@@ -159,7 +159,7 @@ int SettingsSerializer::beginReadArray(const QString& prefix)
         arrayIndex = -1;
         return index->size;
     }
-    array = arrays.size();
+    array = static_cast<int>(arrays.size());
     arrays.push_back({group, 0, prefix, {}});
     arrayIndex = -1;
     return 0;
@@ -176,7 +176,7 @@ void SettingsSerializer::beginWriteArray(const QString& prefix, int size)
         if (size > 0)
             index->size = std::max(index->size, size);
     } else {
-        array = arrays.size();
+        array = static_cast<int>(arrays.size());
         arrays.push_back({group, std::max(size, 0), prefix, {}});
         arrayIndex = -1;
     }
@@ -200,7 +200,7 @@ void SettingsSerializer::setValue(const QString& key, const QVariant& value)
     } else {
         const Value nv{group, array, arrayIndex, key, value};
         if (array >= 0)
-            arrays[array].values.append(values.size());
+            arrays[array].values.append(static_cast<int>(values.size()));
         values.append(nv);
     }
 }
@@ -283,7 +283,7 @@ void SettingsSerializer::save()
     stream.setVersion(QDataStream::Qt_5_0);
 
     // prevent signed overflow and the associated warning
-    const int numGroups = std::max(QStringList::size_type(0), groups.size());
+    const int numGroups = static_cast<int>(std::max(QStringList::size_type(0), static_cast<QStringList::size_type>(groups.size())));
     for (int g = -1; g < numGroups; ++g) {
         // Save the group name, if any
         if (g != -1) {
@@ -458,19 +458,19 @@ void SettingsSerializer::readIni()
     // and its elements are all groups matching the pattern "[<group>/]<arrayName>/<arrayIndex>"
 
     // Find groups that only have 1 key
-    const std::unique_ptr<int[]> groupSizes{new int[groups.size()]};
+    const std::unique_ptr<int[]> groupSizes{new int[static_cast<size_t>(groups.size())]};
     memset(groupSizes.get(), 0, static_cast<size_t>(groups.size()) * sizeof(int));
     for (const Value& v : values) {
-        if (v.group < 0 || static_cast<size_t>(v.group) >= groups.size())
+        if (v.group < 0 || static_cast<size_t>(v.group) >= static_cast<size_t>(groups.size()))
             continue;
         groupSizes[static_cast<size_t>(v.group)]++;
     }
 
     // Find arrays, remove their size key from the values, and add them to `arrays`
     QVector<int> groupsToKill;
-    for (int i = values.size() - 1; i >= 0; i--) {
+    for (int i = static_cast<int>(values.size()) - 1; i >= 0; i--) {
         const Value& v = values[i];
-        if (v.group < 0 || static_cast<size_t>(v.group) >= groups.size())
+        if (v.group < 0 || static_cast<size_t>(v.group) >= static_cast<size_t>(groups.size()))
             continue;
         if (groupSizes[static_cast<size_t>(v.group)] != 1)
             continue;
@@ -481,7 +481,7 @@ void SettingsSerializer::readIni()
 
         Array a;
         a.size = v.value.toInt();
-        const int slashIndex = groups[static_cast<int>(v.group)].lastIndexOf('/');
+        const int slashIndex = static_cast<int>(groups[static_cast<int>(v.group)].lastIndexOf('/'));
         if (slashIndex == -1) {
             a.group = -1;
             a.name = groups[static_cast<int>(v.group)];
@@ -520,7 +520,7 @@ void SettingsSerializer::readIni()
             a.size = std::max(a.size, groupArrayIndex);
 
             // Associate the values for this array index
-            for (int vi = values.size() - 1; vi >= 0; vi--) {
+            for (int vi = static_cast<int>(values.size()) - 1; vi >= 0; vi--) {
                 Value& v = values[vi];
                 if (v.group != g)
                     continue;

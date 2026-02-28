@@ -685,7 +685,7 @@ void ChatForm::stopCounter(bool error)
     if (callDurationTimer == nullptr) {
         return;
     }
-    const QString dhms = secondsToDHMS(timeElapsed.elapsed() / 1000);
+    const QString dhms = secondsToDHMS(static_cast<quint32>(timeElapsed.elapsed() / 1000));
     const QString name = f->getDisplayedName();
     auto messageType = error ? SystemMessageType::unexpectedCallEnd : SystemMessageType::callEnd;
     // TODO: add notification once notifications are implemented
@@ -701,7 +701,7 @@ void ChatForm::stopCounter(bool error)
 
 void ChatForm::onUpdateTime()
 {
-    callDuration->setText(secondsToDHMS(timeElapsed.elapsed() / 1000));
+    callDuration->setText(secondsToDHMS(static_cast<quint32>(timeElapsed.elapsed() / 1000)));
 }
 
 void ChatForm::setFriendTyping(bool isTyping_)

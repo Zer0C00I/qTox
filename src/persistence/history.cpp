@@ -557,7 +557,7 @@ size_t History::getNumMessagesForChatBeforeDate(const ChatId& chatId, const QDat
 
     size_t numMessages = 0;
     auto rowCallback = [&numMessages](const QVector<QVariant>& row) {
-        numMessages = row[0].toLongLong();
+        numMessages = static_cast<size_t>(row[0].toLongLong());
     };
 
     db->execNow({queryText, {chatId.getByteArray()}, rowCallback});
@@ -616,7 +616,7 @@ QList<History::HistMessage> History::getMessagesForChat(const ChatId& chatId, si
             const auto direction = static_cast<ToxFile::FileDirection>((*it++).toLongLong());
             const auto status = static_cast<ToxFile::FileStatus>((*it++).toLongLong());
 
-            ToxFile file(0, 0, fileName, filePath, filesize, direction);
+            ToxFile file(0, 0, fileName, filePath, static_cast<uint64_t>(filesize), direction);
             file.fileKind = fileKind;
             file.resumeFileId = resumeFileId;
             file.status = status;
@@ -852,7 +852,7 @@ QList<History::DateIdx> History::getNumMessagesForChatBeforeDateBoundaries(const
     QList<DateIdx> dateIdxs;
     auto rowCallback = [&dateIdxs](const QVector<QVariant>& row) {
         DateIdx dateIdx;
-        dateIdx.numMessagesIn = row[0].toLongLong();
+        dateIdx.numMessagesIn = static_cast<size_t>(row[0].toLongLong());
         dateIdx.date =
             QDateTime::fromMSecsSinceEpoch(row[1].toLongLong() * 24 * 60 * 60 * 1000).date();
         dateIdxs.append(dateIdx);

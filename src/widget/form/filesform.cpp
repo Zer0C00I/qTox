@@ -216,7 +216,7 @@ void Model::onFileUpdated(const ToxFile& file)
         endInsertRows();
     } else {
         rowIdx = idxIt.value();
-        files[rowIdx] = file;
+        files[static_cast<size_t>(rowIdx)] = file;
         if (fileTransferFailed(file.status)) {
             beginRemoveRows(QModelIndex(), rowIdx, rowIdx);
 
@@ -254,9 +254,10 @@ QVariant Model::data(const QModelIndex& index, int role) const
         qWarning("Invalid file transfer row %d (files: %zu)", row, files.size());
         return {};
     }
+    const auto rowIdx2 = static_cast<size_t>(row);
 
     if (role == Qt::UserRole) {
-        return files[row].filePath;
+        return files[rowIdx2].filePath;
     }
 
     if (role != Qt::DisplayRole) {
@@ -267,9 +268,9 @@ QVariant Model::data(const QModelIndex& index, int role) const
 
     switch (column) {
     case Column::fileName:
-        return files[row].fileName;
+        return files[rowIdx2].fileName;
     case Column::contact: {
-        auto* f = friendList.findFriend(friendList.id2Key(files[row].friendId));
+        auto* f = friendList.findFriend(friendList.id2Key(files[rowIdx2].friendId));
         if (f == nullptr) {
             qWarning("Invalid friend for file transfer");
             return "Unknown";
@@ -278,15 +279,15 @@ QVariant Model::data(const QModelIndex& index, int role) const
         return f->getDisplayedName();
     }
     case Column::progress:
-        return files[row].progress.getProgress() * 100.0;
+        return files[rowIdx2].progress.getProgress() * 100.0;
     case Column::size:
-        return getHumanReadableSize(files[row].progress.getFileSize());
+        return getHumanReadableSize(files[rowIdx2].progress.getFileSize());
     case Column::speed:
-        return getHumanReadableSize(static_cast<uint64_t>(files[row].progress.getSpeed())) + "/s";
+        return getHumanReadableSize(static_cast<uint64_t>(files[rowIdx2].progress.getSpeed())) + "/s";
     case Column::status:
-        return fileStatusString(files[row]);
+        return fileStatusString(files[rowIdx2]);
     case Column::control:
-        return files[row].pauseStatus.localPaused();
+        return files[rowIdx2].pauseStatus.localPaused();
     case Column::invalid:
         break;
     }
@@ -312,10 +313,10 @@ bool Model::setData(const QModelIndex& index, const QVariant& value, int role)
 
     switch (action) {
     case EditorAction::cancel:
-        emit cancel(files[index.row()]);
+        emit cancel(files[static_cast<size_t>(index.row())]);
         break;
     case EditorAction::pause:
-        emit togglePause(files[index.row()]);
+        emit togglePause(files[static_cast<size_t>(index.row())]);
         break;
     case EditorAction::invalid:
         return false;

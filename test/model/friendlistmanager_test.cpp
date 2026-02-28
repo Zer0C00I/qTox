@@ -153,8 +153,8 @@ public:
 
         for (int i = 0; i < testNames.size(); ++i) {
             const int unsortedIndex =
-                (i % 2) != 0 ? i - 1 : testNames.size() - i - 1; // Mixes positions
-            const int sortedByActivityIndex = testNames.size() - i - 1;
+                (i % 2) != 0 ? i - 1 : static_cast<int>(testNames.size()) - i - 1; // Mixes positions
+            const int sortedByActivityIndex = static_cast<int>(testNames.size()) - i - 1;
             unsortedAllFriends.append(testNames[unsortedIndex]);
             sortedByNameOfflineFriends.append(testNames[i]);
             sortedByActivityFriends.append(testNames[sortedByActivityIndex]);
@@ -177,8 +177,8 @@ public:
                               "user with long nickname two online"};
 
         for (int i = 0; i < testNames.size(); ++i) {
-            const int unsortedIndex = (i % 2) != 0 ? i - 1 : testNames.size() - i - 1;
-            const int sortedByActivityIndex = testNames.size() - i - 1;
+            const int unsortedIndex = (i % 2) != 0 ? i - 1 : static_cast<int>(testNames.size()) - i - 1;
+            const int sortedByActivityIndex = static_cast<int>(testNames.size()) - i - 1;
             unsortedAllFriends.append(testNames[unsortedIndex]);
             sortedByNameOnlineFriends.append(testNames[i]);
             sortedByActivityFriends.append(testNames[sortedByActivityIndex]);
@@ -331,7 +331,7 @@ private:
     QDateTime getDateTime(const QString& name)
     {
         const QDateTime dateTime = QDateTime::currentDateTime();
-        const int pos = sortedByActivityFriends.indexOf(name);
+        const int pos = static_cast<int>(sortedByActivityFriends.indexOf(name));
         if (pos == -1) {
             return dateTime;
         }

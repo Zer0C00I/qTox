@@ -101,7 +101,7 @@ ConferenceForm::ConferenceForm(Core& core_, Conference* chatConference, IChatLog
 
     const QSize& size = headWidget->getAvatarSize();
     headWidget->setAvatar(
-        Style::scaleSvgImage(":/img/conference_dark.svg", size.width(), size.height()));
+        Style::scaleSvgImage(":/img/conference_dark.svg", static_cast<uint32_t>(size.width()), static_cast<uint32_t>(size.height())));
 
     msgEdit->setObjectName("conference");
 
@@ -306,7 +306,7 @@ void ConferenceForm::dropEvent(QDropEvent* ev)
     const int friendId = static_cast<int>(frnd->getId());
     const int conferenceId = static_cast<int>(conference->getId());
     if (Status::isOnline(frnd->getStatus())) {
-        core.conferenceInviteFriend(friendId, conferenceId);
+        core.conferenceInviteFriend(static_cast<uint32_t>(friendId), conferenceId);
     }
 }
 

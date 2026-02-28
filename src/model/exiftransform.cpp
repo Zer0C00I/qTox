@@ -15,7 +15,7 @@ Orientation getOrientation(const QByteArray& imageData)
     const auto* data = imageData.constData();
     auto size = imageData.size();
 
-    ExifData* exifData = exif_data_new_from_data(reinterpret_cast<const unsigned char*>(data), size);
+    ExifData* exifData = exif_data_new_from_data(reinterpret_cast<const unsigned char*>(data), static_cast<unsigned int>(size));
 
     if (exifData == nullptr) {
         return Orientation::TopLeft;

@@ -296,8 +296,8 @@ QString SmileyPack::smileyfied(const QString& msg)
 
     int replaceDiff = 0;
     for (const auto& match : smilify.globalMatch(result)) {
-        const int startPos = match.capturedStart();
-        const int keyLength = match.capturedLength();
+        const int startPos = static_cast<int>(match.capturedStart());
+        const int keyLength = static_cast<int>(match.capturedLength());
         const QString imgRichText = SmileyPack::getAsRichText(match.captured());
         result.replace(startPos + replaceDiff, keyLength, imgRichText);
         replaceDiff += imgRichText.length() - keyLength;

@@ -168,8 +168,6 @@ bool logLoadToxDataError(const LoadToxDataError& error, const QString& path)
     case LoadToxDataError::DECRYPT_UNENCRYPTED_FILE:
         qWarning() << "We have a password, but the tox save file is not encrypted";
         break;
-    default:
-        break;
     }
     return true;
 }
@@ -191,8 +189,6 @@ bool logCreateToxDataError(const CreateToxDataError& error, const QString& userN
         break;
     case CreateToxDataError::LOCK_FAILED:
         qWarning() << "Failed to lock profile" << userName;
-        break;
-    default:
         break;
     }
     return true;
@@ -240,7 +236,6 @@ bool Profile::initCore(const QByteArray& toxSave, Settings& s, bool isNewProfile
     case Core::ToxCoreErrors::ERROR_ALLOC:
     case Core::ToxCoreErrors::FAILED_TO_START:
     case Core::ToxCoreErrors::INVALID_SAVE:
-    default:
         qDebug() << "Failed to start Toxcore";
         emit failedToStart();
         return false;
@@ -542,8 +537,8 @@ QString Profile::avatarPath(const ToxPk& owner, bool forceUnencrypted)
                "avatarPath", "Key size not supported by libsodium");
     QByteArray hash(hashSize, 0);
     crypto_generichash(reinterpret_cast<uint8_t*>(hash.data()), hashSize,
-                       reinterpret_cast<uint8_t*>(idData.data()), idData.size(),
-                       reinterpret_cast<uint8_t*>(pubkeyData.data()), pubkeyData.size());
+                       reinterpret_cast<uint8_t*>(idData.data()), static_cast<unsigned long long>(idData.size()),
+                       reinterpret_cast<uint8_t*>(pubkeyData.data()), static_cast<size_t>(pubkeyData.size()));
     return paths.getSettingsDirPath() + "avatars/" + QString::fromUtf8(hash.toHex()).toUpper() + ".png";
 }
 
@@ -749,7 +744,7 @@ QByteArray Profile::getAvatarHash(const ToxPk& owner)
     QByteArray pic = loadAvatarData(owner);
     QByteArray avatarHash(tox_hash_length(), 0);
     tox_hash(reinterpret_cast<uint8_t*>(avatarHash.data()), reinterpret_cast<uint8_t*>(pic.data()),
-             pic.size());
+             static_cast<size_t>(pic.size()));
     return avatarHash;
 }
 

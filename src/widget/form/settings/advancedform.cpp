@@ -184,7 +184,7 @@ void AdvancedForm::on_proxyAddr_editingFinished()
 
 void AdvancedForm::on_proxyPort_valueChanged(int port)
 {
-    settings.setProxyPort(std::clamp(port, 1, 65535));
+    settings.setProxyPort(static_cast<quint16>(std::clamp(port, 1, 65535)));
 }
 
 void AdvancedForm::on_proxyType_currentIndexChanged(int index)

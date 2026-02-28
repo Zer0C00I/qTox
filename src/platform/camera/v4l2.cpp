@@ -96,13 +96,13 @@ QVector<float> getDeviceModeFrameRates(int fd, unsigned w, unsigned h, uint32_t 
         float rate = 0.0f;
         switch (vfve.type) {
         case V4L2_FRMSIZE_TYPE_DISCRETE:
-            rate = vfve.discrete.denominator / vfve.discrete.numerator;
+            rate = static_cast<float>(vfve.discrete.denominator) / static_cast<float>(vfve.discrete.numerator);
             if (!rates.contains(rate))
                 rates.append(rate);
             break;
         case V4L2_FRMSIZE_TYPE_CONTINUOUS:
         case V4L2_FRMSIZE_TYPE_STEPWISE:
-            rate = vfve.stepwise.min.denominator / vfve.stepwise.min.numerator;
+            rate = static_cast<float>(vfve.stepwise.min.denominator) / static_cast<float>(vfve.stepwise.min.numerator);
             if (!rates.contains(rate))
                 rates.append(rate);
         }
@@ -137,20 +137,20 @@ QVector<VideoMode> v4l2::getDeviceModes(const QString& devName)
             mode.pixel_format = vfse.pixel_format;
             switch (vfse.type) {
             case V4L2_FRMSIZE_TYPE_DISCRETE:
-                mode.width = vfse.discrete.width;
-                mode.height = vfse.discrete.height;
+                mode.width = static_cast<int>(vfse.discrete.width);
+                mode.height = static_cast<int>(vfse.discrete.height);
                 break;
             case V4L2_FRMSIZE_TYPE_CONTINUOUS:
             case V4L2_FRMSIZE_TYPE_STEPWISE:
-                mode.width = vfse.stepwise.max_width;
-                mode.height = vfse.stepwise.max_height;
+                mode.width = static_cast<int>(vfse.stepwise.max_width);
+                mode.height = static_cast<int>(vfse.stepwise.max_height);
                 break;
             default:
                 continue;
             }
 
             QVector<float> rates =
-                getDeviceModeFrameRates(fd, mode.width, mode.height, vfd.pixelformat);
+                getDeviceModeFrameRates(fd, static_cast<unsigned>(mode.width), static_cast<unsigned>(mode.height), vfd.pixelformat);
 
             // insert dummy FPS value to have the mode in the list even if we don't know the FPS
             // this fixes support for some webcams, see #5082
