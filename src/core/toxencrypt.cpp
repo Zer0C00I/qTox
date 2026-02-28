@@ -29,9 +29,8 @@ QString getKeyDerivationError(Tox_Err_Key_Derivation error)
     case TOX_ERR_KEY_DERIVATION_FAILED:
         return QStringLiteral(
             "The crypto lib was unable to derive a key from the given passphrase.");
-    default:
-        return QStringLiteral("Unknown key derivation error.");
     }
+    return QStringLiteral("Unknown key derivation error.");
 }
 
 /**
@@ -52,9 +51,8 @@ QString getEncryptionError(Tox_Err_Encryption error)
             "The crypto lib was unable to derive a key from the given passphrase.");
     case TOX_ERR_ENCRYPTION_FAILED:
         return QStringLiteral("The encryption itself failed.");
-    default:
-        return QStringLiteral("Unknown encryption error.");
     }
+    return QStringLiteral("Unknown encryption error.");
 }
 
 /**
@@ -81,9 +79,8 @@ QString getDecryptionError(Tox_Err_Decryption error)
     case TOX_ERR_DECRYPTION_FAILED:
         return QStringLiteral(
             "Decryption failed. Either the data was corrupted or the password/key was incorrect.");
-    default:
-        return QStringLiteral("Unknown decryption error.");
     }
+    return QStringLiteral("Unknown decryption error.");
 }
 
 /**
@@ -101,9 +98,8 @@ QString getSaltError(Tox_Err_Get_Salt error)
             "One of the arguments to the function was NULL when it was not expected.");
     case TOX_ERR_GET_SALT_BAD_FORMAT:
         return QStringLiteral("The input data is missing the magic number or is corrupted.");
-    default:
-        return QStringLiteral("Unknown salt error.");
     }
+    return QStringLiteral("Unknown salt error.");
 }
 } // namespace
 /**

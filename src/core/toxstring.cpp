@@ -63,7 +63,7 @@ const uint8_t* ToxString::data() const
  */
 size_t ToxString::size() const
 {
-    return string.size();
+    return static_cast<size_t>(string.size());
 }
 
 /**

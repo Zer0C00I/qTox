@@ -169,8 +169,8 @@ QString highlight(const QString& message, const QVector<QRegularExpression>& pat
             const int uriWithoutWrapMatch{1};
             const MatchingUri matchUri =
                 stripSurroundingChars(match.capturedView(uriWithWrapMatch),
-                                      match.capturedStart(uriWithoutWrapMatch)
-                                          - match.capturedStart(uriWithWrapMatch));
+                                      static_cast<int>(match.capturedStart(uriWithoutWrapMatch)
+                                          - match.capturedStart(uriWithWrapMatch)));
             if (!matchUri.valid) {
                 continue;
             }

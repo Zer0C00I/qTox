@@ -270,9 +270,6 @@ void FileTransferWidget::updateWidgetText(const ToxFile& file)
     case ToxFile::CANCELED:
     case ToxFile::FINISHED:
         break;
-    default:
-        qCritical() << "Invalid file status";
-        assert(false);
     }
 }
 
@@ -295,9 +292,6 @@ void FileTransferWidget::updatePreview(const ToxFile& file)
     case ToxFile::FINISHED:
         showPreview(file.filePath);
         break;
-    default:
-        qCritical() << "Invalid file status";
-        assert(false);
     }
 }
 
@@ -336,9 +330,6 @@ void FileTransferWidget::updateFileProgress(const ToxFile& file)
         ui->etaLabel->hide();
         break;
     }
-    default:
-        qCritical() << "Invalid file status";
-        assert(false);
     }
 }
 
@@ -359,9 +350,6 @@ void FileTransferWidget::updateSignals(const ToxFile& file)
     case ToxFile::PAUSED:
     case ToxFile::TRANSMITTING:
         break;
-    default:
-        qCritical() << "Invalid file status";
-        assert(false);
     }
 }
 
@@ -438,9 +426,6 @@ void FileTransferWidget::setupButtons(const ToxFile& file)
         ui->rightButton->show();
 
         break;
-    default:
-        qCritical() << "Invalid file status";
-        assert(false);
     }
 }
 
@@ -539,8 +524,5 @@ void FileTransferWidget::updateBackgroundColor(const ToxFile::FileStatus status)
     case ToxFile::FINISHED:
         setBackgroundColor(style.getColor(Style::ColorPalette::TransferGood), true);
         break;
-    default:
-        qCritical() << "Invalid file status";
-        assert(false);
     }
 }

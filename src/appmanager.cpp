@@ -161,9 +161,8 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
     case QtFatalMsg:
         logPrefix += "Fatal";
         break;
-    default:
-        break;
     }
+
 
     QString logMsg;
     for (const auto& line : msg.split('\n')) {

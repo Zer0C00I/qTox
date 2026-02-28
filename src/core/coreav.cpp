@@ -252,7 +252,7 @@ bool CoreAV::answerCall(uint32_t friendNum, bool video)
     Toxav_Err_Answer err = TOXAV_ERR_ANSWER_OK;
 
     const uint32_t videoBitrate = video ? VIDEO_DEFAULT_BITRATE : 0;
-    if (toxav_answer(toxav.get(), friendNum, audioSettings.getAudioBitrate(), videoBitrate, &err)) {
+    if (toxav_answer(toxav.get(), friendNum, static_cast<uint32_t>(audioSettings.getAudioBitrate()), videoBitrate, &err)) {
         it->second->setActive(true);
         return true;
     }
@@ -278,7 +278,7 @@ bool CoreAV::startCall(uint32_t friendNum, bool video)
 
     const uint32_t videoBitrate = video ? VIDEO_DEFAULT_BITRATE : 0;
     Toxav_Err_Call err = TOXAV_ERR_CALL_OK;
-    toxav_call(toxav.get(), friendNum, audioSettings.getAudioBitrate(), videoBitrate, &err);
+    toxav_call(toxav.get(), friendNum, static_cast<uint32_t>(audioSettings.getAudioBitrate()), videoBitrate, &err);
     if (!PARSE_ERR(err)) {
         return false;
     }
@@ -548,7 +548,7 @@ VideoSource* CoreAV::getVideoSourceFromCall(int friendNum) const
 {
     const QReadLocker locker{&callsLock};
 
-    auto it = calls.find(friendNum);
+    auto it = calls.find(static_cast<uint32_t>(friendNum));
     if (it == calls.end()) {
         qWarning() << "CoreAV::getVideoSourceFromCall: No such call, possibly cancelled";
         return nullptr;
@@ -612,7 +612,8 @@ bool CoreAV::sendConferenceCallAudio(int conferenceNum, const int16_t* pcm, size
         return true;
     }
 
-    if (toxav_group_send_audio(toxav_get_tox(toxav.get()), conferenceNum, pcm, samples, chans, rate)
+    if (toxav_group_send_audio(toxav_get_tox(toxav.get()), static_cast<uint32_t>(conferenceNum), pcm,
+                               static_cast<uint32_t>(samples), chans, rate)
         != 0)
         qDebug() << "toxav_group_send_audio error";
 

@@ -41,7 +41,8 @@ namespace {
 
 QList<DhtServer> shuffleBootstrapNodes(QList<DhtServer> bootstrapNodes)
 {
-    std::mt19937 rng(std::chrono::high_resolution_clock::now().time_since_epoch().count());
+    std::mt19937 rng(static_cast<std::mt19937::result_type>(
+        std::chrono::high_resolution_clock::now().time_since_epoch().count()));
     std::shuffle(bootstrapNodes.begin(), bootstrapNodes.end(), rng);
     return bootstrapNodes;
 }
@@ -165,10 +166,6 @@ std::pair<ToxCorePtr, Core::ToxCoreErrors> Core::makeToxCore(const QByteArray& s
 
     case TOX_ERR_NEW_NULL:
         qCritical() << "A parameter was null";
-        return {nullptr, ToxCoreErrors::FAILED_TO_START};
-
-    default:
-        qCritical() << "Toxcore failed to start, unknown error code:" << tox_err;
         return {nullptr, ToxCoreErrors::FAILED_TO_START};
     }
 
@@ -304,9 +301,6 @@ bool Core::checkConnection()
         toxConnected = true;
         connectionName = "the UDP DHT";
         break;
-    default:
-        qWarning() << "tox_self_get_connection_status returned unknown enum!";
-        break;
     }
 
     if (toxConnected && !isConnected) {
@@ -361,7 +355,8 @@ void Core::bootstrapDht()
         }
         if (dhtServer.statusTcp) {
             const auto ports = dhtServer.tcpPorts.size();
-            std::mt19937 rng(std::chrono::high_resolution_clock::now().time_since_epoch().count());
+            std::mt19937 rng(static_cast<std::mt19937::result_type>(
+                std::chrono::high_resolution_clock::now().time_since_epoch().count()));
             std::uniform_int_distribution<size_t> dist(0, ports - 1);
             const auto tcpPort = dhtServer.tcpPorts[dist(rng)];
             tox_add_tcp_relay(tox.get(), address.constData(), tcpPort, pkPtr, &error);
@@ -451,9 +446,6 @@ void Core::onConnectionStatusChanged(Tox* tox, uint32_t friendId, Tox_Connection
         friendStatus = Status::Status::Online;
         qDebug() << "Connected to friend" << friendId << "directly with UDP";
         break;
-    default:
-        qWarning() << "tox_callback_friend_connection_status returned unknown enum!";
-        break;
     }
 
     // Ignore Online because it will be emitted from onUserStatusChanged
@@ -481,9 +473,6 @@ void Core::onConferenceInvite(Tox* tox, uint32_t friendId, Tox_Conference_Type t
         qDebug() << "AV conference invite by" << friendId;
         emit core->conferenceInviteReceived(inviteInfo);
         break;
-
-    default:
-        qWarning() << "Conference invite with unknown type" << type;
     }
 }
 
@@ -664,9 +653,9 @@ void Core::sendConferenceMessageWithType(int conferenceId, const QString& messag
 
     const ToxString cMsg(message);
     Tox_Err_Conference_Send_Message error = TOX_ERR_CONFERENCE_SEND_MESSAGE_OK;
-    tox_conference_send_message(tox.get(), conferenceId, type, cMsg.data(), cMsg.size(), &error);
+    tox_conference_send_message(tox.get(), static_cast<uint32_t>(conferenceId), type, cMsg.data(), cMsg.size(), &error);
     if (!PARSE_ERR(error)) {
-        emit conferenceSentFailed(conferenceId);
+        emit conferenceSentFailed(static_cast<uint32_t>(conferenceId));
         return;
     }
 }
@@ -718,7 +707,7 @@ void Core::removeConference(int conferenceId)
     const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     Tox_Err_Conference_Delete error = TOX_ERR_CONFERENCE_DELETE_OK;
-    tox_conference_delete(tox.get(), conferenceId, &error);
+    tox_conference_delete(tox.get(), static_cast<uint32_t>(conferenceId), &error);
     if (PARSE_ERR(error)) {
         emit saveRequest();
 
@@ -900,7 +889,7 @@ QByteArray Core::getToxSaveData()
 {
     const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
-    const uint32_t fileSize = tox_get_savedata_size(tox.get());
+    const uint32_t fileSize = static_cast<uint32_t>(tox_get_savedata_size(tox.get()));
     QByteArray data;
     data.resize(fileSize);
     tox_get_savedata(tox.get(), reinterpret_cast<uint8_t*>(data.data()));
@@ -971,8 +960,8 @@ void Core::loadConferences()
         } else {
             name = defaultName;
         }
-        if (getConferenceAvEnabled(conferenceNumber)) {
-            if (toxav_groupchat_enable_av(tox.get(), static_cast<int>(conferenceNumber),
+        if (getConferenceAvEnabled(static_cast<int>(conferenceNumber))) {
+            if (toxav_groupchat_enable_av(tox.get(), conferenceNumber,
                                           CoreAV::conferenceCallCallback, this)
                 != 0) {
                 qCritical() << "Failed to enable audio on loaded conference" << conferenceNumber;
@@ -1001,7 +990,7 @@ QVector<uint32_t> Core::getFriendList() const
     const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     QVector<uint32_t> friends;
-    friends.resize(tox_self_get_friend_list_size(tox.get()));
+    friends.resize(static_cast<qsizetype>(tox_self_get_friend_list_size(tox.get())));
     tox_self_get_friend_list(tox.get(), friends.data());
     return friends;
 }
@@ -1027,7 +1016,7 @@ uint32_t Core::getConferenceNumberPeers(int conferenceId) const
     const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     Tox_Err_Conference_Peer_Query error = TOX_ERR_CONFERENCE_PEER_QUERY_OK;
-    const uint32_t count = tox_conference_peer_count(tox.get(), conferenceId, &error);
+    const uint32_t count = tox_conference_peer_count(tox.get(), static_cast<uint32_t>(conferenceId), &error);
     if (!PARSE_ERR(error)) {
         return std::numeric_limits<uint32_t>::max();
     }
@@ -1043,13 +1032,13 @@ QString Core::getConferencePeerName(int conferenceId, int peerId) const
     const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     Tox_Err_Conference_Peer_Query error = TOX_ERR_CONFERENCE_PEER_QUERY_OK;
-    const size_t length = tox_conference_peer_get_name_size(tox.get(), conferenceId, peerId, &error);
+    const size_t length = tox_conference_peer_get_name_size(tox.get(), static_cast<uint32_t>(conferenceId), static_cast<uint32_t>(peerId), &error);
     if (!PARSE_ERR(error) || (length == 0u)) {
         return QString{};
     }
 
     std::vector<uint8_t> nameBuf(length);
-    tox_conference_peer_get_name(tox.get(), conferenceId, peerId, nameBuf.data(), &error);
+    tox_conference_peer_get_name(tox.get(), static_cast<uint32_t>(conferenceId), static_cast<uint32_t>(peerId), nameBuf.data(), &error);
     if (!PARSE_ERR(error)) {
         return QString{};
     }
@@ -1066,7 +1055,7 @@ ToxPk Core::getConferencePeerPk(int conferenceId, int peerId) const
 
     std::vector<uint8_t> friendPk(tox_public_key_size());
     Tox_Err_Conference_Peer_Query error = TOX_ERR_CONFERENCE_PEER_QUERY_OK;
-    tox_conference_peer_get_public_key(tox.get(), conferenceId, peerId, friendPk.data(), &error);
+    tox_conference_peer_get_public_key(tox.get(), static_cast<uint32_t>(conferenceId), static_cast<uint32_t>(peerId), friendPk.data(), &error);
     if (!PARSE_ERR(error)) {
         return ToxPk{};
     }
@@ -1092,7 +1081,7 @@ QStringList Core::getConferencePeerNames(int conferenceId) const
     QStringList names;
     for (int i = 0; i < static_cast<int>(nPeers); ++i) {
         Tox_Err_Conference_Peer_Query error = TOX_ERR_CONFERENCE_PEER_QUERY_OK;
-        const size_t length = tox_conference_peer_get_name_size(tox.get(), conferenceId, i, &error);
+        const size_t length = tox_conference_peer_get_name_size(tox.get(), static_cast<uint32_t>(conferenceId), static_cast<uint32_t>(i), &error);
 
         if (!PARSE_ERR(error) || (length == 0u)) {
             names.append(QString());
@@ -1100,7 +1089,7 @@ QStringList Core::getConferencePeerNames(int conferenceId) const
         }
 
         std::vector<uint8_t> nameBuf(length);
-        tox_conference_peer_get_name(tox.get(), conferenceId, i, nameBuf.data(), &error);
+        tox_conference_peer_get_name(tox.get(), static_cast<uint32_t>(conferenceId), static_cast<uint32_t>(i), nameBuf.data(), &error);
         if (PARSE_ERR(error)) {
             names.append(ToxString(nameBuf.data(), length).getQString());
         } else {
@@ -1122,7 +1111,7 @@ bool Core::getConferenceAvEnabled(int conferenceId) const
 {
     const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
     Tox_Err_Conference_Get_Type error = TOX_ERR_CONFERENCE_GET_TYPE_OK;
-    const Tox_Conference_Type type = tox_conference_get_type(tox.get(), conferenceId, &error);
+    const Tox_Conference_Type type = tox_conference_get_type(tox.get(), static_cast<uint32_t>(conferenceId), &error);
     PARSE_ERR(error);
     // would be nice to indicate to caller that we don't actually know..
     return type == TOX_CONFERENCE_TYPE_AV;
@@ -1142,7 +1131,7 @@ uint32_t Core::joinConference(const ConferenceInvite& inviteInfo)
     const uint8_t confType = inviteInfo.getType();
     const QByteArray invite = inviteInfo.getInvite();
     const auto* const cookie = reinterpret_cast<const uint8_t*>(invite.data());
-    const size_t cookieLength = invite.length();
+    const size_t cookieLength = static_cast<size_t>(invite.length());
     uint32_t conferenceNum{std::numeric_limits<uint32_t>::max()};
     switch (confType) {
     case TOX_CONFERENCE_TYPE_TEXT: {
@@ -1156,8 +1145,8 @@ uint32_t Core::joinConference(const ConferenceInvite& inviteInfo)
     }
     case TOX_CONFERENCE_TYPE_AV: {
         qDebug() << "Trying to join AV conference invite sent by friend" << friendId;
-        conferenceNum = toxav_join_av_groupchat(tox.get(), friendId, cookie, cookieLength,
-                                                CoreAV::conferenceCallCallback, this);
+        conferenceNum = static_cast<uint32_t>(toxav_join_av_groupchat(tox.get(), friendId, cookie, static_cast<uint16_t>(cookieLength),
+                                                CoreAV::conferenceCallCallback, this));
         break;
     }
     default:
@@ -1175,7 +1164,7 @@ void Core::conferenceInviteFriend(uint32_t friendId, int conferenceId)
     const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     Tox_Err_Conference_Invite error = TOX_ERR_CONFERENCE_INVITE_OK;
-    tox_conference_invite(tox.get(), friendId, conferenceId, &error);
+    tox_conference_invite(tox.get(), friendId, static_cast<uint32_t>(conferenceId), &error);
     PARSE_ERR(error);
 }
 
@@ -1200,7 +1189,7 @@ int Core::createConference(uint8_t type)
             toxav_add_av_groupchat(tox.get(), CoreAV::conferenceCallCallback, this);
         if (conferenceId != -1) {
             emit saveRequest();
-            emit emptyConferenceCreated(conferenceId, getConferencePersistentId(conferenceId));
+            emit emptyConferenceCreated(static_cast<uint32_t>(conferenceId), getConferencePersistentId(static_cast<uint32_t>(conferenceId)));
         } else {
             qCritical() << "Unknown error creating AV conference";
         }

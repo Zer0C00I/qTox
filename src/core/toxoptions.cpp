@@ -109,7 +109,7 @@ std::unique_ptr<ToxOptions> ToxOptions::makeToxOptions(const QByteArray& savedat
     tox_options_set_savedata_type(toxOptions->get(), savedata.isNull() ? TOX_SAVEDATA_TYPE_NONE
                                                                        : TOX_SAVEDATA_TYPE_TOX_SAVE);
     tox_options_set_savedata_data(toxOptions->get(),
-                                  reinterpret_cast<const uint8_t*>(savedata.data()), savedata.size());
+                                  reinterpret_cast<const uint8_t*>(savedata.data()), static_cast<size_t>(savedata.size()));
 
     // IPv6 needed for LAN discovery, but can crash some weird routers. On by default, can be
     // disabled in options.
