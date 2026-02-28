@@ -26,14 +26,12 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Cache Homebrew packages
+      - name: Cache Homebrew downloads
         uses: actions/cache@v4
         with:
-          path: |
-            ~/Library/Caches/Homebrew
-            /opt/homebrew/Cellar
-          key: homebrew-macos14-${{ hashFiles('platform/macos/Brewfile') }}
-          restore-keys: homebrew-macos14-
+          path: ~/Library/Caches/Homebrew/downloads
+          key: homebrew-downloads-macos14-${{ hashFiles('platform/macos/Brewfile') }}
+          restore-keys: homebrew-downloads-macos14-
 
       - name: Install Homebrew dependencies
         run: |
@@ -74,11 +72,12 @@ jobs:
 
       - name: Build qTox
         run: |
-          export PATH="/opt/homebrew/opt/qt@6/bin:/opt/homebrew/opt/ccache/libexec:$PATH"
           export PKG_CONFIG_PATH="/opt/homebrew/opt/openal-soft/lib/pkgconfig:$PKG_CONFIG_PATH"
           cmake -GNinja -B _build -S . \
             -DCMAKE_BUILD_TYPE=RelWithDebInfo \
             -DCMAKE_CXX_COMPILER=clang++ \
+            -DCMAKE_PREFIX_PATH=/opt/homebrew/opt/qt@6 \
+            -DCMAKE_CXX_COMPILER_LAUNCHER=/opt/homebrew/bin/ccache \
             -DSTRICT_OPTIONS=ON \
             -DUPDATE_CHECK=OFF \
             -DSPELL_CHECK=OFF
