@@ -66,3 +66,9 @@ target/
 # Local service state (auto-generated, not project config)
 /.netlify/
 /.sentry-native/
+
+# Local analysis artifacts
+errors.txt
+clang-tidy exit: 
+pvs analyze exit: 
+echo
