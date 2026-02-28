@@ -111,22 +111,22 @@ void MovableWidget::mouseMoveEvent(QMouseEvent* event)
             if (event->position().x() < 6)
                 mode |= ResizeLeft;
             else
-                mode &= ~ResizeLeft;
+                mode = static_cast<Modes>(mode & ~ResizeLeft);
 
             if (event->position().y() < 6)
                 mode |= ResizeUp;
             else
-                mode &= ~ResizeUp;
+                mode = static_cast<Modes>(mode & ~ResizeUp);
 
             if (event->position().x() > width() - 6)
                 mode |= ResizeRight;
             else
-                mode &= ~ResizeRight;
+                mode = static_cast<Modes>(mode & ~ResizeRight);
 
             if (event->position().y() > height() - 6)
                 mode |= ResizeDown;
             else
-                mode &= ~ResizeDown;
+                mode = static_cast<Modes>(mode & ~ResizeDown);
         }
 
         if ((mode & Resize) != 0) {
