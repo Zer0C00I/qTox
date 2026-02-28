@@ -43,6 +43,7 @@ jobs:
               openal-soft \
               opus \
               libvpx \
+              v4l_compat \
               libexif \
               libqrencode \
               libsodium \
