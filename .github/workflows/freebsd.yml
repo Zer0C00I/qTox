@@ -71,7 +71,7 @@ jobs:
                 -e "s|\${ARCH}|${ARCH}|g" \
                 platform/freebsd/MANIFEST.template > MANIFEST
 
-            pkg create -M MANIFEST -p PLIST -r _pkg/usr/local -o .
+            pkg create -M MANIFEST -p PLIST -r _pkg -o .
             rm -rf _build _pkg MANIFEST PLIST
 
       - name: Upload artifact

@@ -85,9 +85,9 @@ template <uint32_t Num>
 constexpr auto toCharArray()
 {
     std::array<char, numDigits(Num) + 1> str{};
-    int cur = numDigits(Num);
+    size_t cur = static_cast<size_t>(numDigits(Num));
     for (uint32_t num = Num; num; num /= 10) {
-        str[--cur] = num % 10 + '0';
+        str[--cur] = static_cast<char>(num % 10U + '0');
     }
     return str;
 }

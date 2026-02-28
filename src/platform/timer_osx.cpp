@@ -54,7 +54,7 @@ uint32_t Platform::getIdleTime()
     CFNumberGetValue(static_cast<CFNumberRef>(property), kCFNumberSInt64Type, &idleTime_ns);
     CFRelease(property);
 
-    return idleTime_ns / 1000000;
+    return static_cast<uint32_t>(idleTime_ns / 1000000U);
 }
 #endif
 #endif
