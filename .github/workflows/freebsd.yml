@@ -1,0 +1,59 @@
+name: FreeBSD
+
+on:
+  schedule: [cron: '0 4 * * *']
+  workflow_dispatch:
+  pull_request:
+    branches: ["master"]
+  push:
+    branches: ["master"]
+    tags: ["v*"]
+
+concurrency:
+  group: freebsd-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+
+  build-freebsd:
+    name: FreeBSD 14
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Build on FreeBSD
+        uses: vmactions/freebsd-vm@v1
+        with:
+          release: "14.2"
+          usesh: true
+          prepare: |
+            pkg install -y \
+              cmake \
+              ninja \
+              pkgconf \
+              qt6-base \
+              qt6-tools \
+              qt6-svg \
+              qt6-l10n \
+              openal-soft \
+              opus \
+              libvpx \
+              libexif \
+              libsodium \
+              sqlcipher \
+              ffmpeg \
+              c-toxcore \
+              llvm
+          run: |
+            cmake -GNinja -B _build -S . \
+              -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+              -DCMAKE_CXX_COMPILER=clang++ \
+              -DSTRICT_OPTIONS=ON \
+              -DUPDATE_CHECK=OFF \
+              -DSPELL_CHECK=OFF
+            cmake --build _build --parallel $(sysctl -n hw.ncpu)
