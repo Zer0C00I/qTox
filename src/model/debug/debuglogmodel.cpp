@@ -65,7 +65,7 @@ QList<DebugLogModel::LogEntry> parse(const QStringList& logs)
         }
 
         DebugLogModel::LogEntry entry;
-        entry.index = result.size();
+        entry.index = static_cast<int>(result.size());
         entry.time = match.captured(1);
         entry.category = match.captured(2);
         if (entry.category.isEmpty()) {
@@ -119,7 +119,7 @@ int DebugLogModel::rowCount(const QModelIndex& parent) const
     if (parent.isValid()) {
         return 0;
     }
-    return filteredLogs_.size();
+    return static_cast<int>(filteredLogs_.size());
 }
 
 QVariant DebugLogModel::data(const QModelIndex& index, int role) const

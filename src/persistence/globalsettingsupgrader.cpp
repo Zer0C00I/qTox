@@ -53,7 +53,7 @@ bool GlobalSettingsUpgrader::doUpgrade(Settings& settings, int fromVer, int toVe
 
     for (int i = fromVer; i < static_cast<int>(upgradeFns.size()); ++i) {
         const auto newSettingsVersion = i + 1;
-        if (!upgradeFns[i](settings)) {
+        if (!upgradeFns[static_cast<size_t>(i)](settings)) {
             qCritical() << "Failed to upgrade settings to version" << newSettingsVersion << "aborting";
             return false;
         }

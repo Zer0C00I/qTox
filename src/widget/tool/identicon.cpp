@@ -34,7 +34,7 @@ Identicon::Identicon(const QByteArray& data)
         // change offset when COLORS != 2
         const qreal lig = ((static_cast<qreal>(colorIndex) / COLORS) + 0.3);
         const qreal sat = 0.5;
-        colors[colorIndex].setHslF(hue, sat, lig);
+        colors[static_cast<size_t>(colorIndex)].setHslF(static_cast<float>(hue), static_cast<float>(sat), static_cast<float>(lig));
     }
 
     const auto* const hashBytes = reinterpret_cast<const uint8_t*>(hash.constData());
@@ -43,7 +43,7 @@ Identicon::Identicon(const QByteArray& data)
         for (int col = 0; col < ACTIVE_COLS; ++col) {
             const int hashIdx = ((row * ACTIVE_COLS) + col);
             const uint8_t colorIndex = hashBytes[hashIdx] % COLORS;
-            identiconColors[row][col] = colorIndex;
+            identiconColors[static_cast<size_t>(row)][static_cast<size_t>(col)] = colorIndex;
         }
     }
 }
@@ -83,8 +83,8 @@ Identicon::Matrix Identicon::toMatrix() const
         for (int col = 0; col < IDENTICON_ROWS; ++col) {
             // mirror on vertical axis
             const int columnIdx = abs((col * 2 - (IDENTICON_ROWS - 1)) / 2);
-            const int colorIdx = identiconColors[row][columnIdx];
-            matrix.identicon[row][col] = colorIdx;
+            const int colorIdx = identiconColors[static_cast<size_t>(row)][static_cast<size_t>(columnIdx)];
+            matrix.identicon[static_cast<size_t>(row)][static_cast<size_t>(col)] = colorIdx;
         }
     }
     return matrix;
@@ -103,7 +103,7 @@ QImage Identicon::Matrix::toImage(int scaleFactor) const
 
     for (int row = 0; row < IDENTICON_ROWS; ++row) {
         for (int col = 0; col < IDENTICON_ROWS; ++col) {
-            pixels.setPixel(col, row, colors[identicon[row][col]].rgb());
+            pixels.setPixel(col, row, colors[static_cast<size_t>(identicon[static_cast<size_t>(row)][static_cast<size_t>(col)])].rgb());
         }
     }
 
@@ -132,7 +132,7 @@ QDebug operator<<(QDebug debug, const Identicon::Matrix& matrix)
     debug << "Colors: " << matrix.colors[0] << ", " << matrix.colors[1] << "\n";
     for (int row = 0; row < Identicon::IDENTICON_ROWS; ++row) {
         for (int col = 0; col < Identicon::IDENTICON_ROWS; ++col) {
-            debug << matrix.identicon[row][col];
+            debug << matrix.identicon[static_cast<size_t>(row)][static_cast<size_t>(col)];
         }
         debug << '\n';
     }
@@ -156,7 +156,7 @@ Identicon::Matrix Identicon::Matrix::parse(std::array<QColor, COLORS> colors, co
                            << "must be between 0 and" << (COLORS - 1);
                 return {};
             }
-            matrix[row][col] = value;
+            matrix[static_cast<size_t>(row)][static_cast<size_t>(col)] = value;
         }
     }
     return {colors, matrix};

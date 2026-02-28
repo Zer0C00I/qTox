@@ -52,8 +52,8 @@ void CoreVideoSource::pushFrame(const vpx_image_t* vpxFrame)
     const QMutexLocker<QMutex> locker(&biglock);
 
     const std::shared_ptr<VideoFrame> vframe;
-    const int width = vpxFrame->d_w;
-    const int height = vpxFrame->d_h;
+    const int width = static_cast<int>(vpxFrame->d_w);
+    const int height = static_cast<int>(vpxFrame->d_h);
 
     if (subscribers <= 0)
         return;
@@ -84,7 +84,7 @@ void CoreVideoSource::pushFrame(const vpx_image_t* vpxFrame)
         for (int j = 0; j < size; ++j) {
             uint8_t* dst = avFrame->data[i] + (dstStride * j);
             uint8_t* src = vpxFrame->planes[i] + (srcStride * j);
-            memcpy(dst, src, minStride);
+            memcpy(dst, src, static_cast<size_t>(minStride));
         }
     }
 

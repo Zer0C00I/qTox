@@ -332,7 +332,7 @@ bool DesktopNotifyBackend::showMessage(const QString& title, const QString& mess
             {QStringLiteral("action-icons"), true},
             {QStringLiteral("category"), category},
             {QStringLiteral("sender-pid"),
-             QVariant::fromValue<quint64>(QCoreApplication::applicationPid())},
+             QVariant::fromValue<quint64>(static_cast<quint64>(QCoreApplication::applicationPid()))},
         };
         hints.insert(getIconHint(pixmap, d->specVersion, d->capabilities, d->iconMutex, d->iconFile,
                                  QTOX_NOTIFY_TEMP_FILE));

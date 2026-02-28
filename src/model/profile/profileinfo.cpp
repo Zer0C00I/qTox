@@ -347,7 +347,7 @@ IProfileInfo::SetAvatarResult ProfileInfo::scalePngToAvatar(QByteArray& avatar)
     constexpr int scaleSizes[] = {256, 128, 64, 32};
 
     for (auto scaleSize : scaleSizes) {
-        if (ToxClientStandards::IsValidAvatarSize(avatar.size()))
+        if (ToxClientStandards::IsValidAvatarSize(static_cast<uint64_t>(avatar.size())))
             break;
         QImage image;
         image.loadFromData(avatar);
@@ -356,7 +356,7 @@ IProfileInfo::SetAvatarResult ProfileInfo::scalePngToAvatar(QByteArray& avatar)
     }
 
     // If this happens, you're really doing it on purpose.
-    if (!ToxClientStandards::IsValidAvatarSize(avatar.size())) {
+    if (!ToxClientStandards::IsValidAvatarSize(static_cast<uint64_t>(avatar.size()))) {
         return SetAvatarResult::TooLarge;
     }
     return SetAvatarResult::OK;

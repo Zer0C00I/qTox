@@ -7,6 +7,7 @@
 
 #include <QTest>
 
+#include <limits>
 #include <utility>
 
 namespace {
@@ -152,7 +153,7 @@ void TestChatLineStorage::testMiddleInsertion()
 
 void TestChatLineStorage::testPrependingItems()
 {
-    for (auto idx = ChatLogIdx(initialStartIdx - 1); idx != ChatLogIdx(-1); idx = idx - 1) {
+    for (auto idx = ChatLogIdx(initialStartIdx - 1); idx != ChatLogIdx(std::numeric_limits<size_t>::max()); idx = idx - 1) {
         storage.insertChatMessage(idx, initialTimestamp, std::make_shared<IdxChatLine>(idx));
         QCOMPARE(storage.firstIdx().get(), idx.get());
     }
@@ -289,7 +290,7 @@ void TestChatLineStorage::testEndOfStorageDateRemoval()
 
     QCOMPARE(storage.size(), initialEndIdx - initialStartIdx + 2);
 
-    auto it = storage.begin() + storage.size() - 2;
+    auto it = storage.begin() + static_cast<ptrdiff_t>(storage.size() - 2);
     QCOMPARE(timestampFromChatLine(*it++), tomorrow);
     QCOMPARE(idxFromChatLine(*it).get(), initialEndIdx);
 
@@ -297,7 +298,7 @@ void TestChatLineStorage::testEndOfStorageDateRemoval()
 
     QCOMPARE(storage.size(), initialEndIdx - initialStartIdx);
 
-    it = storage.begin() + storage.size() - 1;
+    it = storage.begin() + static_cast<ptrdiff_t>(storage.size() - 1);
     QCOMPARE(idxFromChatLine(*it++).get(), initialEndIdx - 1);
 }
 

@@ -454,6 +454,7 @@ bool ContentDialog::event(QEvent* event)
         }
 
         emit activated();
+        [[fallthrough]];
     default:
         break;
     }

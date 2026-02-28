@@ -36,7 +36,7 @@ uint32_t Platform::getIdleTime()
 #pragma GCC diagnostic ignored "-Wold-style-cast"
             XScreenSaverQueryInfo(display, DefaultRootWindow(display), info);
 #pragma GCC diagnostic pop
-            idleTime = info->idle;
+            idleTime = static_cast<uint32_t>(info->idle);
             XFree(info);
         } else
             qDebug() << "XScreenSaverAllocInfo() failed";

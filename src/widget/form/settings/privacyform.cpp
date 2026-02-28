@@ -72,7 +72,7 @@ void PrivacyForm::on_nospamLineEdit_editingFinished()
     const QString newNospam = bodyUI->nospamLineEdit->text();
 
     bool ok;
-    const uint32_t nospam = newNospam.toLongLong(&ok, 16);
+    const uint32_t nospam = static_cast<uint32_t>(newNospam.toLongLong(&ok, 16));
     if (ok) {
         core->setNospam(nospam);
     }
@@ -92,8 +92,9 @@ void PrivacyForm::on_randomNospamButton_clicked()
 {
     uint32_t newNospam{0};
 
-    static std::mt19937 rng(std::chrono::high_resolution_clock::now().time_since_epoch().count());
-    newNospam = rng();
+    static std::mt19937 rng(static_cast<std::mt19937::result_type>(
+        std::chrono::high_resolution_clock::now().time_since_epoch().count()));
+    newNospam = static_cast<uint32_t>(rng());
 
     core->setNospam(newNospam);
     bodyUI->nospamLineEdit->setText(core->getSelfId().getNoSpamString());

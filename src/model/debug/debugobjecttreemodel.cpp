@@ -9,7 +9,7 @@ class DebugObjectTreeModel::TreeItem
 public:
     const TreeItem* child(int row)
     {
-        return row >= 0 && row < childCount() ? children.at(row).get() : nullptr;
+        return row >= 0 && row < childCount() ? children.at(static_cast<size_t>(row)).get() : nullptr;
     }
 
     int childCount() const
@@ -47,7 +47,7 @@ public:
                                      });
 
         if (it != parent->children.cend()) {
-            return std::distance(parent->children.cbegin(), it);
+            return static_cast<int>(std::distance(parent->children.cbegin(), it));
         }
         qFatal("Parent tree item does not contain this item");
     }

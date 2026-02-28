@@ -72,7 +72,6 @@ jobs:
           curl
             --form project=TokTok/qTox
             --form token=$TOKEN
-            --form email=iphydf@gmail.com
             --form file=@qTox.tgz
             --form version="$(git rev-list --count HEAD)"
             --form description="CI build of $(git rev-parse --abbrev-ref HEAD) branch"

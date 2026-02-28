@@ -11,7 +11,7 @@ QStringList splitMessage(const QString& message, uint64_t maxLength)
     QStringList splittedMsgs;
     QByteArray ba_message{message.toUtf8()};
     while (static_cast<uint64_t>(ba_message.size()) > maxLength) {
-        int splitPos = ba_message.lastIndexOf('\n', static_cast<qsizetype>(maxLength - 1));
+        qsizetype splitPos = ba_message.lastIndexOf('\n', static_cast<qsizetype>(maxLength - 1));
 
         if (splitPos <= 0) {
             splitPos = ba_message.lastIndexOf(' ', static_cast<qsizetype>(maxLength - 1));
@@ -20,7 +20,7 @@ QStringList splitMessage(const QString& message, uint64_t maxLength)
         if (splitPos <= 0) {
             constexpr uint8_t firstOfMultiByteMask = 0xC0;
             constexpr uint8_t multiByteMask = 0x80;
-            splitPos = static_cast<int>(maxLength);
+            splitPos = static_cast<qsizetype>(maxLength);
             // don't split a utf8 character
             if ((ba_message[splitPos] & multiByteMask) == multiByteMask) {
                 while ((ba_message[splitPos] & firstOfMultiByteMask) != firstOfMultiByteMask) {
@@ -75,7 +75,7 @@ std::vector<Message> MessageProcessor::processOutgoingMessage(bool isAction, con
 
     const auto splitMsgs = splitMessage(content, maxSendingSize);
 
-    ret.reserve(splitMsgs.size());
+    ret.reserve(static_cast<size_t>(splitMsgs.size()));
 
     QDateTime timestamp = QDateTime::currentDateTime();
     std::transform(splitMsgs.begin(), splitMsgs.end(), std::back_inserter(ret),

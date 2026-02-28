@@ -422,9 +422,9 @@ size_t VideoFrame::FrameBufferKey::hash(const FrameBufferKey& key)
 
     size_t ret = 47;
 
-    ret = (37 * ret) + key.frameWidth;
-    ret = (37 * ret) + key.frameHeight;
-    ret = (37 * ret) + key.pixelFormat;
+    ret = (37 * ret) + static_cast<size_t>(key.frameWidth);
+    ret = (37 * ret) + static_cast<size_t>(key.frameHeight);
+    ret = (37 * ret) + static_cast<size_t>(key.pixelFormat);
     ret = (37 * ret) + static_cast<size_t>(key.linesizeAligned);
 
     return ret;

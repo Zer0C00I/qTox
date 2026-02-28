@@ -52,10 +52,10 @@ template <typename T, typename C, typename F>
 void inArray(T& ps, const QString& array, const C& container, F&& f)
 {
     const qsizetype size = container.size();
-    ps.beginWriteArray(array, size);
+    ps.beginWriteArray(array, static_cast<int>(size));
     qsizetype index = 0;
     for (const auto& item : container) {
-        ps.setArrayIndex(index);
+        ps.setArrayIndex(static_cast<int>(index));
         f(item);
         ++index;
     }
@@ -1288,10 +1288,6 @@ QNetworkProxy Settings::getProxy() const
     case ProxyType::ptHTTP:
         proxy.setType(QNetworkProxy::HttpProxy);
         break;
-    default:
-        proxy.setType(QNetworkProxy::NoProxy);
-        qWarning() << "Invalid proxy type, setting to NoProxy";
-        break;
     }
 
     proxy.setHostName(Settings::getProxyAddr());
@@ -2009,7 +2005,7 @@ float Settings::getCamVideoFPS() const
 void Settings::setCamVideoFPS(float newValue)
 {
     if (setVal(camVideoFPS, newValue)) {
-        emit camVideoFPSChanged(newValue);
+        emit camVideoFPSChanged(static_cast<unsigned short>(newValue));
     }
 }
 
@@ -2165,7 +2161,7 @@ void Settings::setShowIdenticons(bool value)
 int Settings::getCircleCount() const
 {
     const QMutexLocker<QRecursiveMutex> locker{&bigLock};
-    return circleLst.size();
+    return static_cast<int>(circleLst.size());
 }
 
 QString Settings::getCircleName(int id) const
@@ -2195,7 +2191,7 @@ int Settings::addCircle(const QString& name)
 
     circleLst.append(cp);
     savePersonal();
-    return circleLst.count() - 1;
+    return static_cast<int>(circleLst.count()) - 1;
 }
 
 bool Settings::getCircleExpanded(int id) const
@@ -2251,7 +2247,7 @@ Settings::Request Settings::getFriendRequest(int index) const
 int Settings::getFriendRequestSize() const
 {
     const QMutexLocker<QRecursiveMutex> locker{&bigLock};
-    return friendRequests.size();
+    return static_cast<int>(friendRequests.size());
 }
 
 void Settings::clearUnreadFriendRequests()
@@ -2281,7 +2277,7 @@ int Settings::removeCircle(int id)
     circleLst[id] = circleLst.last();
     circleLst.pop_back();
     savePersonal();
-    return circleLst.count();
+    return static_cast<int>(circleLst.count());
 }
 
 int Settings::getThemeColor() const
@@ -2436,10 +2432,9 @@ ICoreSettings::ProxyType Settings::fixInvalidProxyType(ICoreSettings::ProxyType 
     case ICoreSettings::ProxyType::ptSOCKS5:
     case ICoreSettings::ProxyType::ptHTTP:
         return proxyType;
-    default:
-        qWarning() << "Repairing invalid ProxyType, UDP will be enabled";
-        return ICoreSettings::ProxyType::ptNone;
     }
+    qWarning() << "Repairing invalid ProxyType, UDP will be enabled";
+    return ICoreSettings::ProxyType::ptNone;
 }
 
 void Settings::requestSave()

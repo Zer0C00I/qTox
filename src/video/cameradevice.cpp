@@ -140,7 +140,7 @@ CameraDevice* CameraDevice::open(QString devName, AVDictionary** options)
     const int aDuration = fctx->max_analyze_duration2;
     fctx->max_analyze_duration2 = 0;
 #else
-    const int aDuration = fctx->max_analyze_duration;
+    const int aDuration = static_cast<int>(fctx->max_analyze_duration);
     fctx->max_analyze_duration = 0;
 #endif
 
