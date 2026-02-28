@@ -46,7 +46,7 @@ jobs:
 
       - name: Rename RPM for nightly
         if: github.ref == 'refs/heads/master'
-        run: mv build_dir/qtox-*.rpm build_dir/qtox-fc41.x86_64.rpm
+        run: sudo mv build_dir/qtox-*.rpm build_dir/qtox-fc41.x86_64.rpm
 
       - name: Upload RPM to nightly release
         if: github.ref == 'refs/heads/master'
