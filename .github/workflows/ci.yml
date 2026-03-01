@@ -1,0 +1,693 @@
+name: CI
+
+on:
+  schedule: [cron: '0 2 * * *']
+  workflow_dispatch:
+  pull_request:
+    branches: ["master"]
+  push:
+    branches: ["master"]
+    tags: ["v*"]
+
+# Cancel old builds when pushing new commits.
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+
+  # ──────────────────────────────────────────────────────────────────────────
+  # Gate jobs — run in parallel; ALL must succeed before packages are built
+  # ──────────────────────────────────────────────────────────────────────────
+
+  check-clang-strict:
+    name: clang-strict (full build)
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            clang \
+            clang-tidy \
+            cmake \
+            libavcodec-dev \
+            libavdevice-dev \
+            libavformat-dev \
+            libavutil-dev \
+            libexif-dev \
+            libgl-dev \
+            libopenal-dev \
+            libopus-dev \
+            libqrencode-dev \
+            libsodium-dev \
+            libsqlcipher-dev \
+            libswscale-dev \
+            libunwind-dev \
+            libv4l-dev \
+            libvpx-dev \
+            libxss-dev \
+            ninja-build \
+            pkg-config \
+            qt6-base-dev \
+            qt6-l10n-tools \
+            libqt6svg6-dev \
+            qt6-tools-dev \
+            qt6-tools-dev-tools \
+            xvfb
+
+      - name: Cache toxcore
+        id: cache-toxcore
+        uses: actions/cache@v4
+        with:
+          path: |
+            /usr/local/lib/libtoxcore*
+            /usr/local/include/tox
+            /usr/local/lib/pkgconfig/libtoxcore.pc
+            /usr/local/lib/cmake/toxcore
+          key: toxcore-v0.2.22-ubuntu22
+
+      - name: Build toxcore
+        if: steps.cache-toxcore.outputs.cache-hit != 'true'
+        run: |
+          git clone --depth=1 --branch v0.2.22 \
+            --recurse-submodules --shallow-submodules \
+            https://github.com/TokTok/c-toxcore.git _toxcore
+          cmake -GNinja -B _toxcore/_build -S _toxcore \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DBOOTSTRAP_DAEMON=OFF
+          cmake --build _toxcore/_build
+          sudo cmake --install _toxcore/_build
+
+      - name: Update ldconfig
+        run: sudo ldconfig
+
+      - name: Configure
+        run: cmake --preset clang-strict
+
+      - name: Build
+        run: cmake --build --preset clang-strict
+
+  check-clang-tidy:
+    name: clang-tidy
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            clang \
+            clang-tidy \
+            cmake \
+            libavcodec-dev \
+            libavdevice-dev \
+            libavformat-dev \
+            libavutil-dev \
+            libexif-dev \
+            libgl-dev \
+            libopenal-dev \
+            libopus-dev \
+            libqrencode-dev \
+            libsodium-dev \
+            libsqlcipher-dev \
+            libswscale-dev \
+            libunwind-dev \
+            libv4l-dev \
+            libvpx-dev \
+            libxss-dev \
+            ninja-build \
+            pkg-config \
+            qt6-base-dev \
+            qt6-l10n-tools \
+            libqt6svg6-dev \
+            qt6-tools-dev \
+            qt6-tools-dev-tools \
+            xvfb
+
+      - name: Cache toxcore
+        id: cache-toxcore
+        uses: actions/cache@v4
+        with:
+          path: |
+            /usr/local/lib/libtoxcore*
+            /usr/local/include/tox
+            /usr/local/lib/pkgconfig/libtoxcore.pc
+            /usr/local/lib/cmake/toxcore
+          key: toxcore-v0.2.22-ubuntu22
+
+      - name: Build toxcore
+        if: steps.cache-toxcore.outputs.cache-hit != 'true'
+        run: |
+          git clone --depth=1 --branch v0.2.22 \
+            --recurse-submodules --shallow-submodules \
+            https://github.com/TokTok/c-toxcore.git _toxcore
+          cmake -GNinja -B _toxcore/_build -S _toxcore \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DBOOTSTRAP_DAEMON=OFF
+          cmake --build _toxcore/_build
+          sudo cmake --install _toxcore/_build
+
+      - name: Update ldconfig
+        run: sudo ldconfig
+
+      - name: Configure
+        run: cmake --preset clang-strict
+
+      - name: Run clang-tidy
+        run: cmake --build --preset clang-strict --target clang-tidy-check
+
+  check-asan:
+    name: ASan + UBSan
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            clang \
+            clang-tidy \
+            cmake \
+            libavcodec-dev \
+            libavdevice-dev \
+            libavformat-dev \
+            libavutil-dev \
+            libexif-dev \
+            libgl-dev \
+            libopenal-dev \
+            libopus-dev \
+            libqrencode-dev \
+            libsodium-dev \
+            libsqlcipher-dev \
+            libswscale-dev \
+            libunwind-dev \
+            libv4l-dev \
+            libvpx-dev \
+            libxss-dev \
+            ninja-build \
+            pkg-config \
+            qt6-base-dev \
+            qt6-l10n-tools \
+            libqt6svg6-dev \
+            qt6-tools-dev \
+            qt6-tools-dev-tools \
+            xvfb
+
+      - name: Cache toxcore
+        id: cache-toxcore
+        uses: actions/cache@v4
+        with:
+          path: |
+            /usr/local/lib/libtoxcore*
+            /usr/local/include/tox
+            /usr/local/lib/pkgconfig/libtoxcore.pc
+            /usr/local/lib/cmake/toxcore
+          key: toxcore-v0.2.22-ubuntu22
+
+      - name: Build toxcore
+        if: steps.cache-toxcore.outputs.cache-hit != 'true'
+        run: |
+          git clone --depth=1 --branch v0.2.22 \
+            --recurse-submodules --shallow-submodules \
+            https://github.com/TokTok/c-toxcore.git _toxcore
+          cmake -GNinja -B _toxcore/_build -S _toxcore \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DBOOTSTRAP_DAEMON=OFF
+          cmake --build _toxcore/_build
+          sudo cmake --install _toxcore/_build
+
+      - name: Update ldconfig
+        run: sudo ldconfig
+
+      - name: Configure
+        run: cmake --preset asan -DCMAKE_CXX_COMPILER=clang++
+
+      - name: Build
+        run: cmake --build --preset asan --parallel $(nproc)
+
+      - name: Run tests
+        run: |
+          ASAN_OPTIONS=detect_leaks=0:abort_on_error=0 \
+          xvfb-run --auto-servernum \
+            ctest --test-dir _build-asan --parallel $(nproc) --output-on-failure
+
+  # ──────────────────────────────────────────────────────────────────────────
+  # Package jobs — only run after all gate jobs pass
+  # ──────────────────────────────────────────────────────────────────────────
+
+  build-rpm:
+    name: RPM package (Fedora)
+    runs-on: ubuntu-24.04
+    needs: [check-clang-strict, check-clang-tidy, check-asan]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache compiler output
+        uses: actions/cache@v4
+        with:
+          path: ".cache/ccache"
+          key: ${{ github.job }}-ccache
+      - name: Build RPM package
+        run: docker compose run --rm fedora .ci-scripts/package-qtox-linux.sh --source-dir . --target-dir build_dir
+      - name: Upload RPM artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: qtox-rpm
+          path: build_dir/qtox-*.rpm
+      - name: Upload RPM to release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build_dir/qtox-*.rpm
+      - name: Rename RPM for nightly
+        if: github.ref == 'refs/heads/master'
+        run: sudo mv build_dir/qtox-*.rpm build_dir/qtox-fc41.x86_64.rpm
+      - name: Upload RPM to nightly release
+        if: github.ref == 'refs/heads/master'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build_dir/qtox-fc41.x86_64.rpm
+          tag_name: nightly
+          name: "Nightly Build"
+          prerelease: true
+          make_latest: false
+
+  build-deb:
+    name: DEB package (Ubuntu)
+    runs-on: ubuntu-24.04
+    needs: [check-clang-strict, check-clang-tidy, check-asan]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            build-essential \
+            checkinstall \
+            clang \
+            cmake \
+            libavcodec-dev \
+            libavdevice-dev \
+            libavformat-dev \
+            libavutil-dev \
+            libexif-dev \
+            libgl-dev \
+            libopenal-dev \
+            libopus-dev \
+            libqrencode-dev \
+            libsodium-dev \
+            libsqlcipher-dev \
+            libswscale-dev \
+            libunwind-dev \
+            libv4l-dev \
+            libvpx-dev \
+            libxss-dev \
+            ninja-build \
+            pkg-config \
+            qt6-base-dev \
+            qt6-l10n-tools \
+            qt6-svg-dev \
+            qt6-tools-dev \
+            qt6-tools-dev-tools
+      - name: Build toxcore
+        run: |
+          git clone --depth=1 --recursive https://github.com/TokTok/c-toxcore.git toxcore
+          cmake -B toxcore/_build -S toxcore -GNinja -DBOOTSTRAP_DAEMON=OFF
+          cmake --build toxcore/_build
+          sudo cmake --install toxcore/_build
+      - name: Build qTox
+        run: |
+          cmake --preset clang-strict
+          cmake --build --preset clang-strict
+      - name: Create DEB package
+        run: |
+          VERSION=$(git describe --tags --abbrev=0 2>/dev/null || echo "0.0.0")
+          sudo checkinstall \
+            --pkgname=qtox \
+            --pkgversion="${VERSION#v}" \
+            --pkgrelease=1 \
+            --pkggroup=net \
+            --pkglicense=GPL-3 \
+            --pkgsource="https://github.com/${{ github.repository }}" \
+            --maintainer="qTox contributors" \
+            --pakdir=. \
+            --install=no \
+            --nodoc \
+            --default \
+            cmake --install _build_clang_strict
+      - name: Upload DEB artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: qtox-deb
+          path: "*.deb"
+      - name: Upload DEB to release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: "*.deb"
+      - name: Rename DEB for nightly
+        if: github.ref == 'refs/heads/master'
+        run: mv *.deb qtox-amd64.deb
+      - name: Upload DEB to nightly release
+        if: github.ref == 'refs/heads/master'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: qtox-amd64.deb
+          tag_name: nightly
+          name: "Nightly Build"
+          prerelease: true
+          make_latest: false
+
+  build-macos:
+    name: macOS (${{ matrix.arch }})
+    runs-on: ${{ matrix.runner }}
+    needs: [check-clang-strict, check-clang-tidy, check-asan]
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-14
+            arch: arm64
+            brew_prefix: /opt/homebrew
+          - runner: macos-15-intel
+            arch: x86_64
+            brew_prefix: /usr/local
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Cache Homebrew downloads
+        uses: actions/cache@v4
+        with:
+          path: ~/Library/Caches/Homebrew/downloads
+          key: homebrew-downloads-${{ matrix.arch }}-${{ hashFiles('platform/macos/Brewfile') }}
+          restore-keys: homebrew-downloads-${{ matrix.arch }}-
+      - name: Install Homebrew dependencies
+        run: |
+          brew install \
+            cmake ninja pkgconf \
+            ffmpeg libexif libsodium libvpx \
+            openal-soft opus qrencode \
+            qt@6 sqlcipher \
+            create-dmg ccache
+      - name: Cache c-toxcore build
+        id: cache-toxcore
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ matrix.brew_prefix }}/lib/libtoxcore*
+            ${{ matrix.brew_prefix }}/include/tox
+          key: toxcore-0.2.22-${{ matrix.arch }}
+      - name: Build c-toxcore
+        if: steps.cache-toxcore.outputs.cache-hit != 'true'
+        run: |
+          git clone --depth=1 --branch v0.2.22 \
+            --recurse-submodules --shallow-submodules \
+            https://github.com/TokTok/c-toxcore.git _toxcore
+          cmake -GNinja -S _toxcore -B _toxcore/_build \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DDHT_BOOTSTRAP=OFF \
+            -DBOOTSTRAP_DAEMON=OFF \
+            -DENABLE_STATIC=OFF
+          sudo cmake --build _toxcore/_build \
+            --parallel $(sysctl -n hw.ncpu) --target install
+      - name: Cache ccache
+        uses: actions/cache@v4
+        with:
+          path: ~/.ccache
+          key: ccache-${{ matrix.arch }}-${{ github.sha }}
+          restore-keys: ccache-${{ matrix.arch }}-
+      - name: Build qTox
+        run: |
+          export PKG_CONFIG_PATH="${{ matrix.brew_prefix }}/opt/openal-soft/lib/pkgconfig:$PKG_CONFIG_PATH"
+          cmake -GNinja -B _build -S . \
+            -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+            -DCMAKE_CXX_COMPILER=clang++ \
+            -DCMAKE_PREFIX_PATH=${{ matrix.brew_prefix }}/opt/qt@6 \
+            -DCMAKE_CXX_COMPILER_LAUNCHER=${{ matrix.brew_prefix }}/bin/ccache \
+            -DCMAKE_CXX_FLAGS="-isystem ${{ matrix.brew_prefix }}/include -Wthread-safety-beta" \
+            -DSTRICT_OPTIONS=ON \
+            -DUPDATE_CHECK=ON \
+            -DSPELL_CHECK=OFF \
+            -DCMAKE_COMPILE_WARNING_AS_ERROR=ON
+          cmake --build _build --parallel $(sysctl -n hw.ncpu)
+      - name: Package .dmg
+        run: |
+          VERSION=$(grep -m1 'VERSION_MAJOR' cmake/Package.cmake | grep -oE '[0-9]+').$(grep -m1 'VERSION_MINOR' cmake/Package.cmake | grep -oE '[0-9]+').$(grep -m1 'VERSION_PATCH' cmake/Package.cmake | grep -oE '[0-9]+')
+          ${{ matrix.brew_prefix }}/opt/qt@6/bin/macdeployqt _build/qtox.app
+          create-dmg \
+            --volname "qTox" \
+            --background "platform/macos/backgroundImage.tiff" \
+            --window-pos 200 120 \
+            --window-size 800 400 \
+            --icon-size 100 \
+            --icon "qtox.app" 200 190 \
+            --hide-extension "qtox.app" \
+            --app-drop-link 600 185 \
+            "qtox-${VERSION}-macos-${{ matrix.arch }}.dmg" \
+            "_build/qtox.app"
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: qtox-macos-${{ matrix.arch }}
+          path: qtox-*-macos-${{ matrix.arch }}.dmg
+      - name: Upload to release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: qtox-*-macos-${{ matrix.arch }}.dmg
+      - name: Rename for nightly
+        if: github.ref == 'refs/heads/master'
+        run: |
+          VERSION=$(grep -m1 'VERSION_MAJOR' cmake/Package.cmake | grep -oE '[0-9]+').$(grep -m1 'VERSION_MINOR' cmake/Package.cmake | grep -oE '[0-9]+').$(grep -m1 'VERSION_PATCH' cmake/Package.cmake | grep -oE '[0-9]+')
+          cp "qtox-${VERSION}-macos-${{ matrix.arch }}.dmg" \
+             "qtox-macos-${{ matrix.arch }}.dmg"
+      - name: Upload to nightly release
+        if: github.ref == 'refs/heads/master'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: qtox-macos-${{ matrix.arch }}.dmg
+          tag_name: nightly
+          name: "Nightly Build"
+          prerelease: true
+          make_latest: false
+
+  build-freebsd:
+    name: FreeBSD 14
+    runs-on: ubuntu-24.04
+    needs: [check-clang-strict, check-clang-tidy, check-asan]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Build on FreeBSD
+        uses: vmactions/freebsd-vm@v1
+        with:
+          release: "14.2"
+          usesh: true
+          prepare: |
+            pkg upgrade -y
+            pkg install -y \
+              cmake \
+              ninja \
+              pkgconf \
+              qt6-base \
+              qt6-tools \
+              qt6-svg \
+              openal-soft \
+              opus \
+              libvpx \
+              v4l_compat \
+              libexif \
+              libqrencode \
+              libsodium \
+              sqlcipher \
+              ffmpeg \
+              toxcore \
+              llvm
+          run: |
+            cmake -GNinja -B _build -S . \
+              -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+              -DCMAKE_CXX_COMPILER=clang++ \
+              -DCMAKE_CXX_FLAGS="-fno-plt -Wthread-safety-beta" \
+              -DCMAKE_EXE_LINKER_FLAGS="-Wl,-z,nodlopen" \
+              -DSTRICT_OPTIONS=ON \
+              -DUPDATE_CHECK=ON \
+              -DSPELL_CHECK=OFF \
+              -DCMAKE_COMPILE_WARNING_AS_ERROR=ON
+            cmake --build _build --parallel $(sysctl -n hw.ncpu)
+
+            DESTDIR=_pkg cmake --install _build
+
+            VERSION=$(grep -m1 'VERSION_MAJOR' cmake/Package.cmake | grep -oE '[0-9]+').$(grep -m1 'VERSION_MINOR' cmake/Package.cmake | grep -oE '[0-9]+').$(grep -m1 'VERSION_PATCH' cmake/Package.cmake | grep -oE '[0-9]+')
+            ARCH=$(pkg config abi)
+
+            find _pkg/usr/local -type f | sed 's|_pkg/usr/local/||' > PLIST
+
+            sed -e "s|\${VERSION}|${VERSION}|g" \
+                -e "s|\${ARCH}|${ARCH}|g" \
+                platform/freebsd/MANIFEST.template > MANIFEST
+
+            pkg create -M MANIFEST -p PLIST -r _pkg -o .
+            rm -rf _build _pkg MANIFEST PLIST
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: qtox-freebsd14
+          path: qtox-*.pkg
+      - name: Upload to release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: qtox-*.pkg
+      - name: Rename for nightly
+        if: github.ref == 'refs/heads/master'
+        run: mv qtox-*.pkg qtox-freebsd14.pkg
+      - name: Upload to nightly release
+        if: github.ref == 'refs/heads/master'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: qtox-freebsd14.pkg
+          tag_name: nightly
+          name: "Nightly Build"
+          prerelease: true
+          make_latest: false
+
+  build-appimage:
+    name: AppImage (x86_64)
+    runs-on: ubuntu-22.04
+    needs: [check-clang-strict, check-clang-tidy, check-asan]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            build-essential \
+            clang \
+            cmake \
+            file \
+            libavcodec-dev \
+            libavdevice-dev \
+            libavformat-dev \
+            libavutil-dev \
+            libexif-dev \
+            libgl-dev \
+            libopenal-dev \
+            libopus-dev \
+            libqrencode-dev \
+            libsodium-dev \
+            libsqlcipher-dev \
+            libswscale-dev \
+            libunwind-dev \
+            libv4l-dev \
+            libvpx-dev \
+            libxss-dev \
+            ninja-build \
+            pkg-config \
+            qt6-base-dev \
+            qt6-l10n-tools \
+            libqt6svg6-dev \
+            qt6-tools-dev \
+            qt6-tools-dev-tools \
+            wget
+      - name: Build toxcore
+        run: |
+          git clone --depth=1 --recursive https://github.com/TokTok/c-toxcore.git toxcore
+          cmake -B toxcore/_build -S toxcore -GNinja -DBOOTSTRAP_DAEMON=OFF
+          cmake --build toxcore/_build
+          sudo cmake --install toxcore/_build
+          sudo ldconfig
+      - name: Build AppImage
+        run: ./appimage/build.sh --src-dir .
+      - name: Get version
+        id: version
+        run: |
+          VERSION=$(grep -m1 'VERSION_MAJOR' cmake/Package.cmake | grep -oE '[0-9]+').$(grep -m1 'VERSION_MINOR' cmake/Package.cmake | grep -oE '[0-9]+').$(grep -m1 'VERSION_PATCH' cmake/Package.cmake | grep -oE '[0-9]+')
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+      - name: Rename AppImage
+        run: mv io.github.qtox.qTox-*.AppImage "qtox-${{ steps.version.outputs.version }}-x86_64.AppImage"
+      - name: Upload AppImage artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: qtox-appimage
+          path: qtox-*-x86_64.AppImage
+      - name: Upload AppImage to release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: qtox-*-x86_64.AppImage
+      - name: Rename for nightly
+        if: github.ref == 'refs/heads/master'
+        run: cp "qtox-${{ steps.version.outputs.version }}-x86_64.AppImage" qtox-x86_64.AppImage
+      - name: Upload AppImage to nightly release
+        if: github.ref == 'refs/heads/master'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: qtox-x86_64.AppImage
+          tag_name: nightly
+          name: "Nightly Build"
+          prerelease: true
+          make_latest: false
+
+  build-flatpak:
+    name: Flatpak (x86_64)
+    runs-on: ubuntu-24.04
+    needs: [check-clang-strict, check-clang-tidy, check-asan]
+    if: github.event_name != 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache flatpak-builder
+        uses: actions/cache@v4
+        with:
+          path: ".flatpak-builder"
+          key: flatpak-${{ hashFiles('platform/flatpak/io.github.qtox.qTox.json') }}
+          restore-keys: flatpak-
+      - name: Build Flatpak
+        run: docker compose run --rm flatpak ./flatpak/build.sh
+      - name: Get version
+        id: version
+        run: |
+          VERSION=$(grep -m1 'VERSION_MAJOR' cmake/Package.cmake | grep -oE '[0-9]+').$(grep -m1 'VERSION_MINOR' cmake/Package.cmake | grep -oE '[0-9]+').$(grep -m1 'VERSION_PATCH' cmake/Package.cmake | grep -oE '[0-9]+')
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+      - name: Rename Flatpak
+        run: mv qtox.flatpak "qtox-${{ steps.version.outputs.version }}.x86_64.flatpak"
+      - name: Upload Flatpak artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: qtox-flatpak
+          path: qtox-*.x86_64.flatpak
+      - name: Upload Flatpak to release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: qtox-*.x86_64.flatpak
+      - name: Rename for nightly
+        if: github.ref == 'refs/heads/master'
+        run: cp "qtox-${{ steps.version.outputs.version }}.x86_64.flatpak" qtox.x86_64.flatpak
+      - name: Upload Flatpak to nightly release
+        if: github.ref == 'refs/heads/master'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: qtox.x86_64.flatpak
+          tag_name: nightly
+          name: "Nightly Build"
+          prerelease: true
+          make_latest: false
