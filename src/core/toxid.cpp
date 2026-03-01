@@ -65,7 +65,7 @@ ToxId::ToxId(const QString& id)
     if (isToxId(id)) {
         toxId = QByteArray::fromHex(id.toLatin1());
     } else {
-        assert(!"ToxId constructed with invalid length string");
+        assert(false && "ToxId constructed with invalid length string");
         toxId = QByteArray(); // invalid id string
     }
 }
@@ -107,7 +107,7 @@ void ToxId::constructToxId(const QByteArray& rawId)
     if (rawId.length() == ToxId::size && isToxId(QString::fromUtf8(rawId.toHex()).toUpper())) {
         toxId = QByteArray(rawId); // construct from full tox id
     } else {
-        assert(!"ToxId constructed with invalid input");
+        assert(false && "ToxId constructed with invalid input");
         toxId = QByteArray(); // invalid id
     }
 }
