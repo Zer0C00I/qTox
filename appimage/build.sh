@@ -42,6 +42,9 @@ cmake -GNinja -B _build_appimage -S "$QTOX_SRC_DIR" \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_CXX_COMPILER=clang++ \
   -DCMAKE_INSTALL_PREFIX=/usr \
+  -DCMAKE_CXX_FLAGS="-fno-plt -Wthread-safety-beta" \
+  -DCMAKE_EXE_LINKER_FLAGS="-Wl,-z,nodlopen" \
+  -DCMAKE_COMPILE_WARNING_AS_ERROR=ON \
   -DSTRICT_OPTIONS=ON \
   -DUPDATE_CHECK=ON \
   -DSPELL_CHECK=OFF

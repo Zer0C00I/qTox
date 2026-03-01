@@ -133,7 +133,7 @@
         "CMAKE_BUILD_TYPE": "RelWithDebInfo",
         "CMAKE_CXX_COMPILER": "clang++",
         "STRICT_OPTIONS": true,
-        "UPDATE_CHECK": false,
+        "UPDATE_CHECK": true,
         "SPELL_CHECK": false,
         "CMAKE_COMPILE_WARNING_AS_ERROR": true,
         "CMAKE_EXPORT_COMPILE_COMMANDS": true,
