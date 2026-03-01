@@ -57,7 +57,9 @@ jobs:
         id: cache-toxcore
         uses: actions/cache@v4
         with:
-          path: ${{ matrix.brew_prefix }}/lib/libtoxcore*
+          path: |
+            ${{ matrix.brew_prefix }}/lib/libtoxcore*
+            ${{ matrix.brew_prefix }}/include/tox
           key: toxcore-0.2.22-${{ matrix.arch }}
 
       - name: Build c-toxcore
