@@ -148,6 +148,12 @@
       "displayName": "Build clang-strict",
       "configurePreset": "clang-strict",
       "jobs": 0
+    },
+    {
+      "name": "asan",
+      "displayName": "Build asan",
+      "configurePreset": "asan",
+      "jobs": 0
     }
   ]
 }
