@@ -51,6 +51,9 @@ bool ConferenceRoom::friendExists(const ToxPk& pk)
 void ConferenceRoom::inviteFriend(const ToxPk& pk)
 {
     const Friend* frnd = friendList.findFriend(pk);
+    if (frnd == nullptr) {
+        return;
+    }
     const auto friendId = frnd->getId();
     const auto conferenceId = conference->getId();
     const auto canInvite = Status::isOnline(frnd->getStatus());

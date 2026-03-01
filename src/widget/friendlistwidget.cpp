@@ -128,7 +128,9 @@ FriendListWidget::~FriendListWidget()
 {
     for (int i = 0; i < settings.getCircleCount(); ++i) {
         CircleWidget* circle = CircleWidget::getFromID(i);
-        delete circle;
+        if (circle != nullptr) {
+            delete circle;
+        }
     }
 }
 

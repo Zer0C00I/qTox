@@ -39,7 +39,7 @@ CategoryWidget::CategoryWidget(bool compact_, Settings& settings_, Style& style_
     statusLabel->setObjectName("status");
     statusLabel->setTextFormat(Qt::PlainText);
 
-    statusPic.setPixmap(QPixmap(style.getImagePath("chatArea/scrollBarRightArrow.svg", settings)));
+    statusPic.setPixmap(QPixmap(style.getImagePath("chatArea/scrollBarDownArrow.svg", settings)));
 
     fullLayout = new QVBoxLayout(this);
     fullLayout->setSpacing(0);
@@ -61,7 +61,13 @@ CategoryWidget::CategoryWidget(bool compact_, Settings& settings_, Style& style_
 
     onCompactChanged(isCompact());
 
-    setExpanded(true, false);
+    // Initialise expanded state without calling setExpanded() to avoid an
+    // indirect virtual dispatch (setExpanded calls onExpand() when save=true).
+    expanded = true;
+    setMouseTracking(true);
+    listWidget->setAttribute(Qt::WA_TransparentForMouseEvents, true);
+    listWidget->setVisible(true);
+    listWidget->setAttribute(Qt::WA_TransparentForMouseEvents, false);
     updateStatus();
 }
 

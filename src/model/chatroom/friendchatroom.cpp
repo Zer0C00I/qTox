@@ -179,5 +179,8 @@ void FriendChatroom::removeFriendFromDialogs()
 {
     const auto friendPk = frnd->getPublicKey();
     auto* dialogs = dialogsManager->getFriendDialogs(friendPk);
+    if (dialogs == nullptr) {
+        return;
+    }
     dialogs->removeFriend(friendPk);
 }

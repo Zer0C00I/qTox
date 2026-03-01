@@ -123,6 +123,9 @@ void ContentDialogManager::updateFriendStatus(const ToxPk& friendPk)
     }
 
     Friend* f = friendList.findFriend(friendPk);
+    if (f == nullptr) {
+        return;
+    }
     dialog->updateFriendStatus(friendPk, f->getStatus());
 }
 

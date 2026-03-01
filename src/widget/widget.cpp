@@ -1597,6 +1597,9 @@ bool Widget::newFriendMessageAlert(const ToxPk& friendId, const QString& text, b
     QWidget* currentWindow = nullptr;
     ContentDialog* contentDialog = contentDialogManager->getFriendDialog(friendId);
     Friend* f = friendList->findFriend(friendId);
+    if (f == nullptr) {
+        return false;
+    }
 
     if (contentDialog != nullptr) {
         currentWindow = contentDialog->window();
@@ -2002,6 +2005,9 @@ void Widget::onConferenceInviteReceived(const ConferenceInvite& inviteInfo)
     const uint32_t friendId = inviteInfo.getFriendId();
     const ToxPk& friendPk = friendList->id2Key(friendId);
     const Friend* f = friendList->findFriend(friendPk);
+    if (f == nullptr) {
+        return;
+    }
     updateFriendActivity(*f);
 
     const uint8_t confType = inviteInfo.getType();

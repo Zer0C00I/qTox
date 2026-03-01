@@ -271,7 +271,7 @@ GenericChatForm::GenericChatForm(const Core& core_, const Chat* chat, IChatLog& 
 
     connect(&style, &Style::themeReload, this, &GenericChatForm::reloadTheme);
 
-    reloadTheme();
+    GenericChatForm::reloadTheme();
 
     fileFlyout->setFixedSize(FILE_FLYOUT_SIZE);
     fileFlyout->setParent(this);

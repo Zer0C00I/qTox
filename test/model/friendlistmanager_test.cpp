@@ -336,7 +336,7 @@ private:
             return dateTime;
         }
         const int dayRatio = -1;
-        return dateTime.addDays(dayRatio * pos * pos);
+        return dateTime.addDays(static_cast<qint64>(dayRatio) * pos * pos);
     }
 
     QStringList sortedByNameOfflineFriends;

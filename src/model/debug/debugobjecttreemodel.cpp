@@ -50,6 +50,7 @@ public:
             return static_cast<int>(std::distance(parent->children.cbegin(), it));
         }
         qFatal("Parent tree item does not contain this item");
+        Q_UNREACHABLE();
     }
 
     TreeItem* parentItem() const

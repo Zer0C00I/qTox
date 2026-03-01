@@ -638,6 +638,9 @@ void ContentDialog::updateFriendWidget(const ToxPk& friendPk, const QString& ali
 {
     std::ignore = alias;
     Friend* f = friendList.findFriend(friendPk);
+    if (f == nullptr) {
+        return;
+    }
     auto* friendWidget = qobject_cast<FriendWidget*>(chatWidgets[friendPk]);
 
     const Status::Status status = f->getStatus();

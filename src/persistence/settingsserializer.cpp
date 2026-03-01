@@ -15,7 +15,6 @@
 
 #include <cassert>
 #include <memory>
-#include <tox/toxencryptsave.h>
 #include <utility>
 
 /**
@@ -252,8 +251,11 @@ bool SettingsSerializer::isSerializedFormat(const QString& filePath)
     char fmagic[8];
     if (f.read(fmagic, sizeof(fmagic)) != sizeof(fmagic))
         return false;
-    return (memcmp(fmagic, magic, 4) == 0)
-           || tox_is_data_encrypted(reinterpret_cast<uint8_t*>(fmagic));
+    // "toxEsave" is the 8-byte magic used by the tox encryption library.
+    // Replicate the check inline to avoid passing an undersized buffer.
+    static const char toxEncMagic[8] = {'t', 'o', 'x', 'E', 's', 'a', 'v', 'e'};
+    return (memcmp(fmagic, magic, sizeof(magic)) == 0)
+           || (memcmp(fmagic, toxEncMagic, sizeof(toxEncMagic)) == 0);
 }
 
 /**

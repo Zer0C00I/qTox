@@ -28,6 +28,10 @@
 
 #include <memory>
 
+#ifndef Q_OS_WIN
+#include <fcntl.h>
+#endif
+
 #ifdef Q_OS_WASM
 #include <emscripten.h>
 
@@ -242,7 +246,16 @@ int AppManager::startGui(QCommandLineParser& parser)
     QDir(logFileDir).mkpath(".");
 
     const QString logfile = logFileDir + "qtox.log";
-    FILE* mainLogFilePtr = fopen(logfile.toLocal8Bit().constData(), "a");
+    auto openLogFile = [&]() -> FILE* {
+#ifndef Q_OS_WIN
+        const int fd =
+            ::open(logfile.toLocal8Bit().constData(), O_WRONLY | O_CREAT | O_APPEND, 0600);
+        return (fd >= 0) ? ::fdopen(fd, "a") : nullptr;
+#else
+        return fopen(logfile.toLocal8Bit().constData(), "a");
+#endif
+    };
+    FILE* mainLogFilePtr = openLogFile();
 
     // Trim log file if over 1MB
     if (QFileInfo(logfile).size() > 1000000) {
@@ -264,7 +277,7 @@ int AppManager::startGui(QCommandLineParser& parser)
             qCritical() << "Unable to move logs";
 
         // open a new logfile
-        mainLogFilePtr = fopen(logfile.toLocal8Bit().constData(), "a");
+        mainLogFilePtr = openLogFile();
     }
 
     if (mainLogFilePtr == nullptr) {

@@ -17,6 +17,7 @@
 #include <QtMath>
 
 #include <cassert>
+#include <new>
 
 #if defined(QT_STATIC) && !defined(Q_OS_WASM)
 extern "C"
@@ -265,7 +266,7 @@ std::unique_ptr<IAudioSink> OpenAL::makeSink()
     ALuint sid = 0;
     alGenSources(1, &sid);
 
-    auto* const sink = new AlSink(*this, sid);
+    auto* const sink = new (std::nothrow) AlSink(*this, sid);
     if (sink == nullptr) {
         return {};
     }

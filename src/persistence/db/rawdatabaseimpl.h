@@ -95,6 +95,7 @@ public:
             return "4.0 default";
         }
         qFatal("Invalid SqlCipherParams");
+        Q_UNREACHABLE();
     }
 
 public slots:
