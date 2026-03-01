@@ -77,13 +77,11 @@ protected:
     EqualityComparable() = default;
 
 public:
-    bool operator==(const T& other) const
+    // Non-member hidden friend: avoids C++20 reversed-argument ambiguity
+    // between operator== and operator!=. C++20 synthesizes != from == automatically.
+    friend bool operator==(const T& lhs, const T& rhs)
     {
-        return static_cast<const T&>(*this).get() == other.get();
-    }
-    bool operator!=(const T& other) const
-    {
-        return static_cast<const T&>(*this).get() != other.get();
+        return lhs.get() == rhs.get();
     }
 };
 
