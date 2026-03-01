@@ -65,6 +65,7 @@ jobs:
           cmake -B toxcore/_build -S toxcore -GNinja -DBOOTSTRAP_DAEMON=OFF
           cmake --build toxcore/_build
           sudo cmake --install toxcore/_build
+          sudo ldconfig
 
       - name: Build AppImage
         run: ./appimage/build.sh --src-dir .
