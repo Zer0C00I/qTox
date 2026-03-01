@@ -45,15 +45,25 @@ endif()
 # Standalone target — always registered so it works regardless of CLANG_TIDY.
 # Requires clang-tidy to be installed; fails with a clear message if not found.
 if(CLANG_TIDY_EXE)
+  # Collect hand-written sources at configure time.
+  # Using GLOB_RECURSE + a CMake variable (not a generator expression) ensures
+  # CMake expands the list into individual command arguments at build time.
+  # Generator expressions that return semicolon-separated lists are passed as a
+  # single argument in add_custom_target COMMAND, which breaks clang-tidy.
+  # CONFIGURE_DEPENDS makes CMake re-glob when new .cpp files are added.
+  file(GLOB_RECURSE CLANG_TIDY_SOURCES
+    CONFIGURE_DEPENDS
+    "${CMAKE_SOURCE_DIR}/src/*.cpp")
+
   add_custom_target(clang-tidy-check
     COMMAND
       ${CLANG_TIDY_EXE}
       "--extra-arg=-std=c++23"
       "--use-color"
       "-p=${CMAKE_BINARY_DIR}"
-      $<TARGET_PROPERTY:${BINARY_NAME}_static,SOURCES>
+      ${CLANG_TIDY_SOURCES}
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-    COMMENT "Running clang-tidy on all qtox_static sources"
+    COMMENT "Running clang-tidy on all qtox sources"
     VERBATIM)
 else()
   add_custom_target(clang-tidy-check

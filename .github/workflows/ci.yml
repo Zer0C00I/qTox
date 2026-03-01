@@ -164,6 +164,11 @@ jobs:
       - name: Configure
         run: cmake --preset clang-strict
 
+      - name: Build
+        # Full build is required so that AUTOUIC-generated headers (ui_*.h)
+        # exist before clang-tidy tries to parse source files that include them.
+        run: cmake --build --preset clang-strict --parallel $(nproc)
+
       - name: Run clang-tidy
         run: cmake --build --preset clang-strict --target clang-tidy-check
 
