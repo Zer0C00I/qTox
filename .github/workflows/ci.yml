@@ -97,7 +97,7 @@ jobs:
 
   check-clang-tidy:
     name: clang-tidy
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
         with:
@@ -130,7 +130,7 @@ jobs:
             pkg-config \
             qt6-base-dev \
             qt6-l10n-tools \
-            libqt6svg6-dev \
+            qt6-svg-dev \
             qt6-tools-dev \
             qt6-tools-dev-tools \
             xvfb
@@ -144,7 +144,7 @@ jobs:
             /usr/local/include/tox
             /usr/local/lib/pkgconfig/libtoxcore.pc
             /usr/local/lib/cmake/toxcore
-          key: toxcore-v0.2.22-ubuntu22
+          key: toxcore-v0.2.22-ubuntu24
 
       - name: Build toxcore
         if: steps.cache-toxcore.outputs.cache-hit != 'true'

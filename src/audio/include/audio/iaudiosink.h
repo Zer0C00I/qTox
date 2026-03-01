@@ -68,7 +68,6 @@ public:
     {
         switch (s) {
         case Sound::NewMessage:
-            return QStringLiteral(":/audio/notification.s16le.pcm");
         case Sound::Test:
             return QStringLiteral(":/audio/notification.s16le.pcm");
         case Sound::IncomingCall:

@@ -30,6 +30,7 @@ class IAudioSettings;
 class OpenAL : public IAudioControl
 {
     Q_OBJECT
+    Q_DISABLE_COPY_MOVE(OpenAL)
 
 public:
     explicit OpenAL(IAudioSettings& _settings);
@@ -126,9 +127,9 @@ protected:
     bool outputInitialized = false;
 
     // Qt containers need copy operators, so use stdlib containers
-    std::unordered_set<AlSink*> sinks;
-    std::unordered_set<AlSink*> soundSinks;
-    std::unordered_set<AlSource*> sources;
+    std::unordered_set<AlSink*> sinks{};
+    std::unordered_set<AlSink*> soundSinks{};
+    std::unordered_set<AlSource*> sources{};
 
     int inputChannels = 0;
     qreal gain = 0;

@@ -64,9 +64,9 @@ namespace {
 // logMessageHandler and associated data must be static due to qInstallMessageHandler's
 // inability to register a void* to get back to a class
 #ifdef LOG_TO_FILE
-QAtomicPointer<FILE> logFileFile = nullptr;
-QList<QByteArray>* logBuffer = new QList<QByteArray>(); // Store log messages until log file opened
-QMutex* logBufferMutex = new QMutex();
+QAtomicPointer<FILE> logFileFile = nullptr;                          // NOLINT(cppcoreguidelines-avoid-non-const-global-variables)
+QList<QByteArray>* logBuffer = new QList<QByteArray>(); // Store log messages until log file opened // NOLINT(cppcoreguidelines-avoid-non-const-global-variables)
+QMutex* logBufferMutex = new QMutex();                               // NOLINT(cppcoreguidelines-avoid-non-const-global-variables)
 #endif
 
 constexpr std::string_view sourceRootPath()
@@ -174,7 +174,7 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
     }
 
     const QByteArray LogMsgBytes = logMsg.toUtf8();
-    fwrite(LogMsgBytes.constData(), 1, static_cast<size_t>(LogMsgBytes.size()), stderr);
+    fwrite(LogMsgBytes.constData(), 1, static_cast<size_t>(LogMsgBytes.size()), stderr); // NOLINT(cert-err33-c)
 
 #ifdef LOG_TO_FILE
     FILE* logFilePtr = logFileFile.loadRelaxed(); // atomically load the file pointer
@@ -189,7 +189,7 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
         if (logBuffer != nullptr) {
             // empty logBuffer to file
             for (const QByteArray& bufferedMsg : *logBuffer) {
-                fwrite(bufferedMsg.constData(), 1, static_cast<size_t>(bufferedMsg.size()), logFilePtr);
+                fwrite(bufferedMsg.constData(), 1, static_cast<size_t>(bufferedMsg.size()), logFilePtr); // NOLINT(cert-err33-c)
             }
 
             delete logBuffer; // no longer needed
@@ -197,8 +197,8 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
         }
         logBufferMutex->unlock();
 
-        fwrite(LogMsgBytes.constData(), 1, static_cast<size_t>(LogMsgBytes.size()), logFilePtr);
-        fflush(logFilePtr);
+        fwrite(LogMsgBytes.constData(), 1, static_cast<size_t>(LogMsgBytes.size()), logFilePtr); // NOLINT(cert-err33-c)
+        fflush(logFilePtr); // NOLINT(cert-err33-c)
     }
 #endif
 }
@@ -224,6 +224,9 @@ AppManager::AppManager(int& argc, char** argv)
     , messageBoxManager(new MessageBoxManager(nullptr))
     , settings(new Settings(*messageBoxManager))
     , ipc(new IPC(settings->getCurrentProfileId()))
+    , uriDialog(nullptr)
+    , cameraSource(nullptr)
+    , nexus(nullptr)
 {
 }
 
@@ -263,7 +266,7 @@ int AppManager::startGui(QCommandLineParser& parser)
 
         // close old logfile (need for windows)
         if (mainLogFilePtr != nullptr)
-            fclose(mainLogFilePtr);
+            fclose(mainLogFilePtr); // NOLINT(cert-err33-c)
 
         QDir dir(logFileDir);
 
@@ -539,7 +542,7 @@ void AppManager::cleanup()
 #ifdef LOG_TO_FILE
     FILE* f = logFileFile.loadRelaxed();
     if (f != nullptr) {
-        fclose(f);
+        fclose(f); // NOLINT(cert-err33-c)
         logFileFile.storeRelaxed(nullptr); // atomically disable logging to file
     }
 #endif

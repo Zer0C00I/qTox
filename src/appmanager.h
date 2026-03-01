@@ -21,6 +21,7 @@ class CameraSource;
 class AppManager : public QObject
 {
     Q_OBJECT
+    Q_DISABLE_COPY_MOVE(AppManager)
 
 public:
     AppManager(int& argc, char** argv);

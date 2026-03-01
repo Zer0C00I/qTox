@@ -16,6 +16,7 @@
 #include <QWaitCondition>
 #include <QtMath>
 
+#include <array>
 #include <cassert>
 #include <new>
 
@@ -399,7 +400,7 @@ bool OpenAL::initInput(const QString& deviceName, uint32_t channels)
     const uint32_t safetyFactor = 2; // internal OpenAL ring buffer. must be larger than our inputBuffer
                                      // to avoid the ring from overwriting itself between captures.
     AUDIO_FRAME_SAMPLE_COUNT_TOTAL = AUDIO_FRAME_SAMPLE_COUNT_PER_CHANNEL * static_cast<uint32_t>(inputChannels);
-    const ALCsizei ringBufSize = static_cast<ALCsizei>(AUDIO_FRAME_SAMPLE_COUNT_TOTAL * bytesPerSample * safetyFactor);
+    auto ringBufSize = static_cast<ALCsizei>(AUDIO_FRAME_SAMPLE_COUNT_TOTAL * bytesPerSample * safetyFactor);
 
     const QByteArray qDevName = deviceName.toUtf8();
     const ALchar* tmpDevName = qDevName.isEmpty() ? nullptr : qDevName.constData();
@@ -539,7 +540,7 @@ void OpenAL::playAudioBuffer(uint sourceId, const int16_t* data, int samples, un
     if ((alOutDev == nullptr) || !outputInitialized)
         return;
 
-    ALuint bufids[BUFFER_COUNT];
+    std::array<ALuint, BUFFER_COUNT> bufids{};
     ALint processed = 0;
     ALint queued = 0;
     alGetSourcei(sourceId, AL_BUFFERS_PROCESSED, &processed);
@@ -552,17 +553,17 @@ void OpenAL::playAudioBuffer(uint sourceId, const int16_t* data, int samples, un
             return;
         }
         // create new buffer if none got free and we're below the limit
-        alGenBuffers(1, bufids);
+        alGenBuffers(1, bufids.data());
     } else {
         // unqueue all processed buffers
-        alSourceUnqueueBuffers(sourceId, processed, bufids);
+        alSourceUnqueueBuffers(sourceId, processed, bufids.data());
         // delete all but the first buffer, reuse first for new data
-        alDeleteBuffers(processed - 1, bufids + 1);
+        alDeleteBuffers(processed - 1, bufids.data() + 1);
     }
 
     alBufferData(bufids[0], (channels == 1) ? AL_FORMAT_MONO16 : AL_FORMAT_STEREO16, data,
                  samples * 2 * static_cast<int>(channels), sampleRate);
-    alSourceQueueBuffers(sourceId, 1, bufids);
+    alSourceQueueBuffers(sourceId, 1, bufids.data());
 
     ALint state = 0;
     alGetSourcei(sourceId, AL_SOURCE_STATE, &state);

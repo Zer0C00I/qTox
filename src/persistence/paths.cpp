@@ -93,7 +93,7 @@ bool portableFromMode(Portable mode)
         qDebug() << "Auto portable mode:" << portable;
         return portable;
     }
-    assert(!"Unhandled enum class Paths::Portable value");
+    assert(false && "Unhandled enum class Paths::Portable value");
     return false;
 }
 
@@ -103,7 +103,7 @@ QString basePathFromPortable(bool portable)
     const QString baseNonPortable = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     QString basePath = portable ? basePortable : baseNonPortable;
     if (basePath.isEmpty()) {
-        assert(!"Couldn't find writeable path");
+        assert(false && "Couldn't find writeable path");
         qCritical() << "Couldn't find writable path";
     }
     return basePath;
