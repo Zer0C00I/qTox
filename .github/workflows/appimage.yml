@@ -20,18 +20,54 @@ jobs:
 
   build-appimage:
     name: AppImage (x86_64)
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-
-      - name: Cache compiler output
-        uses: actions/cache@v4
         with:
-          path: ".cache/ccache"
-          key: ${{ github.job }}-ccache
+          submodules: recursive
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            build-essential \
+            clang \
+            cmake \
+            file \
+            libavcodec-dev \
+            libavdevice-dev \
+            libavformat-dev \
+            libavutil-dev \
+            libexif-dev \
+            libgl-dev \
+            libopenal-dev \
+            libopus-dev \
+            libqrencode-dev \
+            libsodium-dev \
+            libsqlcipher-dev \
+            libswscale-dev \
+            libunwind-dev \
+            libv4l-dev \
+            libvpx-dev \
+            libxss-dev \
+            ninja-build \
+            pkg-config \
+            qt6-base-dev \
+            qt6-l10n-tools \
+            qt6-svg-dev \
+            qt6-tools-dev \
+            qt6-tools-dev-tools \
+            wget
+
+      - name: Build toxcore
+        run: |
+          git clone --depth=1 --recursive https://github.com/TokTok/c-toxcore.git toxcore
+          cmake -B toxcore/_build -S toxcore -GNinja -DBOOTSTRAP_DAEMON=OFF
+          cmake --build toxcore/_build
+          sudo cmake --install toxcore/_build
 
       - name: Build AppImage
-        run: docker compose run --rm alpine-appimage ./appimage/build.sh --src-dir /qtox
+        run: ./appimage/build.sh --src-dir .
 
       - name: Get version
         id: version
@@ -40,7 +76,7 @@ jobs:
           echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
 
       - name: Rename AppImage
-        run: mv qTox-*.x86_64.AppImage "qtox-${{ steps.version.outputs.version }}-x86_64.AppImage"
+        run: mv io.github.qtox.qTox-*.AppImage "qtox-${{ steps.version.outputs.version }}-x86_64.AppImage"
 
       - name: Upload AppImage artifact
         uses: actions/upload-artifact@v4
