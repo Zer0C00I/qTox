@@ -67,7 +67,7 @@ public slots:
 
 private:
     IPCMemory* global();
-    bool runEventHandler(IPCEventHandler handler, const QByteArray& arg, void* userData);
+    bool runEventHandler(const IPCEventHandler& handler, const QByteArray& arg, void* userData);
     IPCEvent* fetchEvent();
     void processEvents();
     bool isCurrentOwnerNoLock();

@@ -15,7 +15,7 @@ QString TextCompose::urlEncode(const QString& str)
     return QString::fromUtf8(QUrl::toPercentEncoding(str));
 }
 
-QString TextCompose::createLink(Style& style, QString path, QString text)
+QString TextCompose::createLink(Style& style, const QString& path, const QString& text)
 {
     return QStringLiteral("<a href=\"%1\" style=\"text-decoration: underline; color:%2;\">%3</a>")
         .arg(path, style.getColor(Style::ColorPalette::Link).name(), text);

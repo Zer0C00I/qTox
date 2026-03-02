@@ -7,7 +7,7 @@
 
 #ifdef QTOX_PLATFORM_EXT
 
-typedef struct _XDisplay Display;
+typedef struct _XDisplay Display; // NOLINT(bugprone-reserved-identifier) -- _XDisplay is the X11 struct name
 
 
 namespace Platform::X11Display {

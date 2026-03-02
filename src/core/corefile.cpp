@@ -447,7 +447,7 @@ void CoreFile::onFileControlCallback(Tox* tox, uint32_t friendId, uint32_t fileI
         if (file->fileKind != TOX_FILE_KIND_AVATAR)
             qDebug() << "File transfer" << friendId << ":" << fileId << "cancelled by friend";
         file->status = ToxFile::CANCELED;
-        ToxFile fileCopy = *file;
+        const ToxFile fileCopy = *file;
         emit coreFile->fileTransferCancelled(fileCopy);
         coreFile->removeFile(friendId, fileId);
     } else if (control == TOX_FILE_CONTROL_PAUSE) {
@@ -484,7 +484,7 @@ void CoreFile::onFileDataCallback(Tox* tox, uint32_t friendId, uint32_t fileId, 
     if (length == 0u) {
         file->status = ToxFile::FINISHED;
         if (file->fileKind != TOX_FILE_KIND_AVATAR) {
-            ToxFile fileCopy = *file;  // Make a copy before removal
+            const ToxFile fileCopy = *file;  // Make a copy before removal
             emit coreFile->fileTransferFinished(fileCopy);
         }
         coreFile->removeFile(friendId, fileId);
@@ -504,7 +504,7 @@ void CoreFile::onFileDataCallback(Tox* tox, uint32_t friendId, uint32_t fileId, 
         if (nread <= 0) {
             qWarning("onFileDataCallback: Failed to read from file");
             file->status = ToxFile::CANCELED;
-            ToxFile fileCopy = *file;  // Make a copy before removal
+            const ToxFile fileCopy = *file;  // Make a copy before removal
             emit coreFile->fileTransferCancelled(fileCopy);
             Tox_Err_File_Send_Chunk err = TOX_ERR_FILE_SEND_CHUNK_OK;
             tox_file_send_chunk(tox, friendId, fileId, pos, nullptr, 0, &err);
@@ -549,7 +549,7 @@ void CoreFile::onFileRecvChunkCallback(Tox* tox, uint32_t friendId, uint32_t fil
         qWarning("onFileRecvChunkCallback: Received a chunk out-of-order, aborting transfer");
         if (file->fileKind != TOX_FILE_KIND_AVATAR) {
             file->status = ToxFile::CANCELED;
-            ToxFile fileCopy = *file;  // Make a copy before removal
+            const ToxFile fileCopy = *file;  // Make a copy before removal
             emit coreFile->fileTransferCancelled(fileCopy);
         }
         Tox_Err_File_Control err = TOX_ERR_FILE_CONTROL_OK;
@@ -575,7 +575,7 @@ void CoreFile::onFileRecvChunkCallback(Tox* tox, uint32_t friendId, uint32_t fil
                 emit core->friendAvatarChanged(ToxPk(rawPk.data()), file->avatarData);
             }
         } else {
-            ToxFile fileCopy = *file;  // Make a copy before removal
+            const ToxFile fileCopy = *file;  // Make a copy before removal
             emit coreFile->fileTransferFinished(fileCopy);
         }
         coreFile->removeFile(friendId, fileId);
@@ -629,7 +629,7 @@ void CoreFile::onConnectionStatusChanged(uint32_t friendId, Status::Status state
     for (const uint64_t key : keysToRemove) {
         auto it = fileMap.find(key);
         if (it != fileMap.end()) {
-            uint32_t fileNum = it->fileNum;
+            const uint32_t fileNum = it->fileNum;
             removeFile(friendId, fileNum);
         }
     }

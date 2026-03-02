@@ -103,7 +103,7 @@ void QRWidget::paintImage()
         const QColor error("red");
         painter.setBrush(error);
         painter.drawRect(0, 0, width(), height());
-        qDebug() << "QR FAIL:" << strerror(errno);
+        qDebug() << "QR FAIL:" << strerror(errno); // NOLINT(concurrency-mt-unsafe)
     }
 
     qr = nullptr;

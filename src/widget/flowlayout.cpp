@@ -26,6 +26,7 @@ FlowLayout::FlowLayout(int margin, int hSpacing, int vSpacing)
 FlowLayout::~FlowLayout()
 {
     QLayoutItem* item = nullptr;
+    // NOLINTNEXTLINE(clang-analyzer-optin.cplusplus.VirtualCall) -- takeAt() called in destructor is intentional
     while ((item = takeAt(0)) != nullptr)
         delete item;
 }

@@ -181,8 +181,8 @@ QVector<QPair<QString, QString>> v4l2::getDeviceList()
     if (dir == nullptr)
         return devices;
 
-    dirent* e;
-    while ((e = readdir(dir)) != nullptr)
+    dirent* e = nullptr;
+    while ((e = readdir(dir)) != nullptr) // NOLINT(concurrency-mt-unsafe)
         if ((strncmp(e->d_name, "video", 5) == 0) || (strncmp(e->d_name, "vbi", 3) == 0))
             deviceFiles += QString("/dev/") + QString::fromUtf8(e->d_name);
     closedir(dir);

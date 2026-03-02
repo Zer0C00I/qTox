@@ -53,7 +53,7 @@ Identicon::Identicon(const QByteArray& data)
  * @param bytes Bytes to convert to a color
  * @return Value in the range of 0.0..1.0
  */
-qreal Identicon::bytesToColor(QByteArray bytes)
+qreal Identicon::bytesToColor(const QByteArray& bytes)
 {
     static_assert(IDENTICON_COLOR_BYTES <= 8, "IDENTICON_COLOR max value is 8");
     const auto* const bytesChr = reinterpret_cast<const uint8_t*>(bytes.constData());
@@ -141,7 +141,7 @@ QDebug operator<<(QDebug debug, const Identicon::Matrix& matrix)
 
 Identicon::Matrix Identicon::Matrix::parse(std::array<QColor, COLORS> colors, const QString& str)
 {
-    if (str.length() != IDENTICON_ROWS * IDENTICON_ROWS) {
+    if (str.length() != static_cast<qsizetype>(IDENTICON_ROWS) * IDENTICON_ROWS) {
         qWarning() << "Invalid string length, must be" << IDENTICON_ROWS * IDENTICON_ROWS
                    << "but is" << str.length();
         return {};

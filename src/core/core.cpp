@@ -889,7 +889,7 @@ QByteArray Core::getToxSaveData()
 {
     const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
-    const uint32_t fileSize = static_cast<uint32_t>(tox_get_savedata_size(tox.get()));
+    const auto fileSize = static_cast<uint32_t>(tox_get_savedata_size(tox.get()));
     QByteArray data;
     data.resize(fileSize);
     tox_get_savedata(tox.get(), reinterpret_cast<uint8_t*>(data.data()));
@@ -1131,7 +1131,7 @@ uint32_t Core::joinConference(const ConferenceInvite& inviteInfo)
     const uint8_t confType = inviteInfo.getType();
     const QByteArray invite = inviteInfo.getInvite();
     const auto* const cookie = reinterpret_cast<const uint8_t*>(invite.data());
-    const size_t cookieLength = static_cast<size_t>(invite.length());
+    const auto cookieLength = static_cast<size_t>(invite.length());
     uint32_t conferenceNum{std::numeric_limits<uint32_t>::max()};
     switch (confType) {
     case TOX_CONFERENCE_TYPE_TEXT: {

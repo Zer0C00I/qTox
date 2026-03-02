@@ -247,13 +247,13 @@ QPoint ScreenGrabberChooserRectItem::getHandleMultiplier(QGraphicsItem* handle)
 void ScreenGrabberChooserRectItem::updateHandlePositions()
 {
     topLeft->setPos(-HandleSize, -HandleSize);
-    topCenter->setPos((rectWidth - HandleSize) / 2, -HandleSize);
+    topCenter->setPos((rectWidth - HandleSize) / 2.0, -HandleSize);
     topRight->setPos(rectWidth, -HandleSize);
-    rightCenter->setPos(rectWidth, (rectHeight - HandleSize) / 2);
+    rightCenter->setPos(rectWidth, (rectHeight - HandleSize) / 2.0);
     bottomRight->setPos(rectWidth, rectHeight);
-    bottomCenter->setPos((rectWidth - HandleSize) / 2, rectHeight);
+    bottomCenter->setPos((rectWidth - HandleSize) / 2.0, rectHeight);
     bottomLeft->setPos(-HandleSize, rectHeight);
-    leftCenter->setPos(-HandleSize, (rectHeight - HandleSize) / 2);
+    leftCenter->setPos(-HandleSize, (rectHeight - HandleSize) / 2.0);
 }
 
 QGraphicsRectItem* ScreenGrabberChooserRectItem::createHandleItem(QGraphicsScene* scene)

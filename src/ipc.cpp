@@ -22,12 +22,12 @@ namespace {
 #ifdef Q_OS_WIN
 const char* getCurUsername()
 {
-    return getenv("USERNAME");
+    return getenv("USERNAME"); // NOLINT(concurrency-mt-unsafe)
 }
 #else
 const char* getCurUsername()
 {
-    return getenv("USER");
+    return getenv("USER"); // NOLINT(concurrency-mt-unsafe)
 }
 #endif
 
@@ -290,7 +290,7 @@ IPC::IPCEvent* IPC::fetchEvent()
     return nullptr;
 }
 
-bool IPC::runEventHandler(IPCEventHandler handler, const QByteArray& arg, void* userData)
+bool IPC::runEventHandler(const IPCEventHandler& handler, const QByteArray& arg, void* userData)
 {
     bool result = false;
     if (QThread::currentThread() == qApp->thread()) {

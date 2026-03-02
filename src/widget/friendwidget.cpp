@@ -333,7 +333,7 @@ void FriendWidget::updateStatusLight()
 
     if (event) {
         const Settings& s = settings;
-        const int circleId = static_cast<int>(s.getFriendCircleID(frnd->getPublicKey()));
+        const int circleId = s.getFriendCircleID(frnd->getPublicKey());
         CircleWidget* circleWidget = CircleWidget::getFromID(circleId);
         if (circleWidget != nullptr) {
             circleWidget->setExpanded(true);

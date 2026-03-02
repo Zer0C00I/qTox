@@ -22,7 +22,9 @@ signals:
     void messageClicked();
 
 private slots:
+    // NOLINTNEXTLINE(performance-unnecessary-value-param) -- Qt DBus slot, string-based SLOT() requires by-value params
     void notificationActionInvoked(QString actionKey, QString actionValue);
+    // NOLINTNEXTLINE(performance-unnecessary-value-param)
     void notificationActionInvoked(uint actionKey, QString actionValue);
 
 private:

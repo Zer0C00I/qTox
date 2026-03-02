@@ -25,7 +25,7 @@ QString getAutostartDirPath()
     return config + "/autostart";
 }
 
-QString getAutostartFilePath(const Settings& settings, QString dir)
+QString getAutostartFilePath(const Settings& settings, const QString& dir)
 {
     return dir + "/qTox - " + settings.getCurrentProfile() + ".desktop";
 }

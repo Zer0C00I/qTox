@@ -7,6 +7,7 @@
 #include "settings.h"
 
 #include <exception>
+#include <utility>
 
 #include "src/core/core.h"
 #include "src/nexus.h"
@@ -46,12 +47,12 @@ template <typename T, typename F>
 void inGroup(T& ps, const QString& group, F&& f)
 {
     ps.beginGroup(group);
-    f();
+    std::forward<F>(f)();
     ps.endGroup();
 }
 
 template <typename T, typename C, typename F>
-void inArray(T& ps, const QString& array, const C& container, F&& f)
+void inArray(T& ps, const QString& array, const C& container, F&& f) // NOLINT(cppcoreguidelines-missing-std-forward) -- f called in loop
 {
     const qsizetype size = container.size();
     ps.beginWriteArray(array, static_cast<int>(size));
@@ -65,7 +66,7 @@ void inArray(T& ps, const QString& array, const C& container, F&& f)
 }
 
 template <typename T, typename C, typename F>
-void inArray(T& ps, const QString& array, C* container, F&& f)
+void inArray(T& ps, const QString& array, C* container, F&& f) // NOLINT(cppcoreguidelines-missing-std-forward) -- f called in loop
 {
     const int size = ps.beginReadArray(array);
     container->clear();

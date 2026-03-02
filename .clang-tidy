@@ -79,7 +79,42 @@ Checks: >
   -modernize-use-std-numbers,
   -modernize-use-using,
   -modernize-macro-to-enum,
-  -modernize-use-default-member-init
+  -modernize-use-default-member-init,
+  # --- Disabled: too noisy or impractical for this codebase ---
+  # Requires IWYU tooling across entire codebase (2000+ violations):
+  -misc-include-cleaner,
+  # Style-only: member initializers vs constructor body (76 violations):
+  -cppcoreguidelines-prefer-member-initializer,
+  # Style-only: default member init vs constructor (112 violations):
+  -cppcoreguidelines-use-default-member-init,
+  # Rule of Five: 67 Qt classes need Q_DISABLE_COPY_MOVE, deferred:
+  -cppcoreguidelines-special-member-functions,
+  # Enum base type: 53 violations, changing base may affect serialisation/ABI:
+  -performance-enum-size,
+  # at() vs []: changes throw semantics, C APIs require raw indexing:
+  -cppcoreguidelines-pro-bounds-constant-array-index,
+  # const/ref data members: valid design in Qt value types:
+  -cppcoreguidelines-avoid-const-or-ref-data-members,
+  # Qt macros (Q_OBJECT, signals, slots) are unavoidable:
+  -cppcoreguidelines-macro-usage,
+  # Cognitive complexity: startGui and others need major refactor (deferred):
+  -readability-function-cognitive-complexity,
+  # do-while: valid pattern in some macro and state-machine code:
+  -cppcoreguidelines-avoid-do-while,
+  # union access: required for C API structs (toxcore, v4l2):
+  -cppcoreguidelines-pro-type-union-access,
+  # recursion: some algorithms are naturally recursive:
+  -misc-no-recursion,
+  # global vars: legitimate use in signal handlers and Qt singletons:
+  -cppcoreguidelines-avoid-non-const-global-variables,
+  # goto: used for C-style error handling in C API wrappers:
+  -cppcoreguidelines-avoid-goto,
+  # implicit bool: common Qt pattern (e.g. pointer → bool):
+  -readability-implicit-bool-conversion,
+  # macro-to-enum: not always safe when macros cross C/C++ boundary:
+  -cppcoreguidelines-macro-to-enum,
+  # switch missing default: conflicts with -Wswitch-enum coverage:
+  -bugprone-switch-missing-default-case
 
 # All enabled checks are errors — no silent warnings.
 WarningsAsErrors: '*'

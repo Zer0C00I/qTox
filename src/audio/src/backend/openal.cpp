@@ -135,8 +135,8 @@ OpenAL::~OpenAL()
 {
     audioThread->exit();
     audioThread->wait();
-    cleanupInput();
-    cleanupOutput();
+    OpenAL::cleanupInput();   // explicit non-virtual call: safe in destructor
+    OpenAL::cleanupOutput(); // explicit non-virtual call: safe in destructor
 }
 
 void OpenAL::checkAlError() noexcept

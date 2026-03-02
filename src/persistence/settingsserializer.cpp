@@ -108,7 +108,7 @@ QDataStream& readStream(QDataStream& dataStream, QByteArray& data)
         ++bytesRead;
     } while ((num3 & 0x80) != 0);
     // Limit maximum allocation size to prevent memory exhaustion
-    constexpr qint64 MAX_ALLOC_SIZE = 100 * 1024 * 1024; // 100 MB
+    constexpr qint64 MAX_ALLOC_SIZE = 100LL * 1024 * 1024; // 100 MB
     if (num < 0 || num > MAX_ALLOC_SIZE) {
         dataStream.setStatus(QDataStream::ReadCorruptData);
         return dataStream;
@@ -235,7 +235,7 @@ const SettingsSerializer::Value* SettingsSerializer::findValue(const QString& ke
 
 SettingsSerializer::Value* SettingsSerializer::findValue(const QString& key)
 {
-    return const_cast<Value*>(const_cast<const SettingsSerializer*>(this)->findValue(key));
+    return const_cast<Value*>(const_cast<const SettingsSerializer*>(this)->findValue(key)); // NOLINT(cppcoreguidelines-pro-type-const-cast) -- const/non-const overload pattern
 }
 
 /**

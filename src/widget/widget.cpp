@@ -2557,8 +2557,10 @@ inline QIcon Widget::prepareIcon(const QString& path, int w, int h)
 {
 #ifdef Q_OS_LINUX
 
+    // NOLINTNEXTLINE(concurrency-mt-unsafe) -- called before any threads are started
     QString desktop = QString::fromUtf8(getenv("XDG_CURRENT_DESKTOP"));
     if (desktop.isEmpty()) {
+        // NOLINTNEXTLINE(concurrency-mt-unsafe)
         desktop = QString::fromUtf8(getenv("DESKTOP_SESSION"));
     }
 

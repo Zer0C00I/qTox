@@ -13,5 +13,5 @@ class Style;
  */
 namespace TextCompose {
 QString urlEncode(const QString& str);
-QString createLink(Style& style, QString path, QString text);
+QString createLink(Style& style, const QString& path, const QString& text);
 } // namespace TextCompose

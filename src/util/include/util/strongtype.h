@@ -61,7 +61,8 @@ public:
         return static_cast<T&>(*this);
     }
 
-    T operator++(int)
+    // NOLINTNEXTLINE(readability-const-return-type) -- cert-dcl21-cpp requires const T for postfix
+    const T operator++(int)
     {
         auto ret = T(static_cast<const T&>(*this));
         ++(*this);

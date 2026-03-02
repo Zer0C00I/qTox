@@ -618,7 +618,7 @@ AVFrame* VideoFrame::storeAVFrame(AVFrame* frame, const QSize& dimensions, const
         AVFrame* old_ret = it->second;
 
         // Free new frame
-        av_freep(&frame->data[0]);
+        av_freep(static_cast<void*>(&frame->data[0]));
 #if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(57, 48, 101)
         av_frame_unref(frame);
 #endif
@@ -655,7 +655,7 @@ void VideoFrame::deleteFrameBuffer()
         if (sourceFrameKey == frameIterator.first) {
             if (freeSourceFrame && frame->data[0] && freedBuffers.find(frame->data[0]) == freedBuffers.end()) {
                 void* bufPtr = frame->data[0];
-                av_freep(&frame->data[0]);
+                av_freep(static_cast<void*>(&frame->data[0]));
                 freedBuffers.insert(bufPtr);
             }
 #if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(57, 48, 101)
@@ -665,7 +665,7 @@ void VideoFrame::deleteFrameBuffer()
         } else {
             if (frame->data[0] && freedBuffers.find(frame->data[0]) == freedBuffers.end()) {
                 void* bufPtr = frame->data[0];
-                av_freep(&frame->data[0]);
+                av_freep(static_cast<void*>(&frame->data[0]));
                 freedBuffers.insert(bufPtr);
             }
 #if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(57, 48, 101)
@@ -703,7 +703,7 @@ VideoFrame::toGenericObject(const QSize& dimensions, int pixelFormat, bool requi
 {
     using ReturnType = std::invoke_result_t<F, AVFrame* const>;
 
-    AVFrame* frame;
+    AVFrame* frame = nullptr;
     {
         ReadWriteLocker frameReadLock(&frameLock, ReadWriteLocker::ReadLock);
 

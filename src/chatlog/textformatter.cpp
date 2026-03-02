@@ -228,7 +228,7 @@ QString TextFormatter::applyMarkdown(const QString& message, bool showFormatting
     QString result = message;
     for (const QPair<QRegularExpression, QString>& pair : REGEX_TO_WRAPPER) {
         QRegularExpressionMatchIterator iter = pair.first.globalMatch(result);
-        int offset = 0;
+        qsizetype offset = 0;
         while (iter.hasNext()) {
             const QRegularExpressionMatch match = iter.next();
             const QString captured = match.captured(static_cast<int>(!showFormattingSymbols));

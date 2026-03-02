@@ -77,7 +77,7 @@ bool toxFileIsComplete(ToxFile::FileStatus status)
 std::map<ChatLogIdx, ChatLogItem>::const_iterator
 firstItemAfterDate(QDate date, const std::map<ChatLogIdx, ChatLogItem>& items)
 {
-    return std::lower_bound(items.begin(), items.end(), date.startOfDay(),
+    return std::lower_bound(items.begin(), items.end(), date.startOfDay(), // NOLINT(performance-inefficient-algorithm) -- map iterator, not random access
                             [](const std::pair<const ChatLogIdx, ChatLogItem>& a,
                                const QDateTime& b) { return toDate(a) < b.date(); });
 }

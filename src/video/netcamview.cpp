@@ -141,7 +141,7 @@ NetCamView::NetCamView(ToxPk friendPk_, CameraSource& cameraSource_, Settings& s
                            [this](const QPixmap& pixmap) { selfVideoSurface->setAvatar(pixmap); });
 
     connections += connect(&profile, &Profile::friendAvatarChanged, this,
-                           [this](ToxPk friendPkArg, const QPixmap& pixmap) {
+                           [this](const ToxPk& friendPkArg, const QPixmap& pixmap) {
                                if (friendPk == friendPkArg)
                                    videoSurface->setAvatar(pixmap);
                            });

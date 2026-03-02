@@ -127,10 +127,7 @@ FriendListWidget::FriendListWidget(const Core& core_, Widget* parent, Settings& 
 FriendListWidget::~FriendListWidget()
 {
     for (int i = 0; i < settings.getCircleCount(); ++i) {
-        CircleWidget* circle = CircleWidget::getFromID(i);
-        if (circle != nullptr) {
-            delete circle;
-        }
+        delete CircleWidget::getFromID(i);
     }
 }
 

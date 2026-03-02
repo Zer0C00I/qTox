@@ -30,7 +30,7 @@ namespace {
 QRect pauseRect(const QStyleOptionViewItem& option)
 {
     const float controlSize = static_cast<float>(option.rect.height()) * 0.8f;
-    const float rectWidth = static_cast<float>(option.rect.width());
+    const auto rectWidth = static_cast<float>(option.rect.width());
     const float buttonHorizontalArea = rectWidth / 2;
 
     // To center the button, we find the horizontal center and subtract half
@@ -45,7 +45,7 @@ QRect pauseRect(const QStyleOptionViewItem& option)
 QRect stopRect(const QStyleOptionViewItem& option)
 {
     const float controlSize = static_cast<float>(option.rect.height()) * 0.8f;
-    const float rectWidth = static_cast<float>(option.rect.width());
+    const auto rectWidth = static_cast<float>(option.rect.width());
     const float buttonHorizontalArea = rectWidth / 2;
 
     // To center the button, we find the horizontal center and subtract half

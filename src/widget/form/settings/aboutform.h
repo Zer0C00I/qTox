@@ -31,7 +31,7 @@ public:
     }
 
 public slots:
-    void onUpdateAvailable(QString latestVersion, QUrl link);
+    void onUpdateAvailable(const QString& latestVersion, QUrl link);
     void onUpToDate();
     void onUpdateCheckFailed();
     void reloadTheme() override;
@@ -40,7 +40,7 @@ public slots:
 private:
     void retranslateUi();
     void replaceVersions();
-    QString createLink(QString path, QString text) const;
+    QString createLink(const QString& path, const QString& text) const;
 
 private:
     Ui::AboutSettings* bodyUI;

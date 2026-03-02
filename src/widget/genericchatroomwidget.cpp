@@ -42,6 +42,7 @@ GenericChatroomWidget::GenericChatroomWidget(bool compact_, Settings& settings_,
     connect(&settings, &Settings::compactLayoutChanged, this, &GenericChatroomWidget::compactChange);
 
     setAutoFillBackground(true);
+    // NOLINTNEXTLINE(clang-analyzer-optin.cplusplus.VirtualCall) -- Qt widget constructor pattern
     reloadTheme();
 
     compactChange(isCompact());

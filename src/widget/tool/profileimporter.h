@@ -18,6 +18,6 @@ public:
     bool importProfile();
 
 private:
-    bool askQuestion(QString title, QString message);
+    bool askQuestion(const QString& title, const QString& message);
     Paths& paths;
 };

@@ -45,7 +45,7 @@ void process(Callback* callback, void* userdata);
 } // namespace detail
 
 template <typename F>
-void process(F&& callback)
+void process(F&& callback) // NOLINT(cppcoreguidelines-missing-std-forward) -- &callback used as void* userdata, forwarding N/A
 {
     detail::process([](void* userdata, const Frame& frame) { (*static_cast<F*>(userdata))(frame); },
                     &callback);

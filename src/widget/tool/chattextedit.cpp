@@ -12,6 +12,8 @@
 #include <QKeyEvent>
 #include <QMimeData>
 
+#include <utility>
+
 ChatTextEdit::ChatTextEdit(QWidget* parent)
     : QTextEdit(parent)
 {
@@ -62,7 +64,7 @@ void ChatTextEdit::keyPressEvent(QKeyEvent* event)
 
 void ChatTextEdit::setLastMessage(QString lm)
 {
-    lastMessage = lm;
+    lastMessage = std::move(lm);
 }
 
 void ChatTextEdit::retranslateUi()

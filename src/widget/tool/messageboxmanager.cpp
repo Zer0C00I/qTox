@@ -78,7 +78,7 @@ bool MessageBoxManager::askQuestion(const QString& title, const QString& msg, bo
     if (QThread::currentThread() == qApp->thread()) {
         return _askQuestion(title, msg, defaultAns, warning, yesno);
     }
-    bool ret;
+    bool ret = false;
     QMetaObject::invokeMethod(this, "_askQuestion", Qt::BlockingQueuedConnection,
                               Q_RETURN_ARG(bool, ret), Q_ARG(const QString&, title),
                               Q_ARG(const QString&, msg), Q_ARG(bool, defaultAns),
@@ -104,7 +104,7 @@ bool MessageBoxManager::askQuestion(const QString& title, const QString& msg, co
     if (QThread::currentThread() == qApp->thread()) {
         return _askQuestion(title, msg, button1, button2, defaultAns, warning);
     }
-    bool ret;
+    bool ret = false;
     QMetaObject::invokeMethod(this, "_askQuestion", Qt::BlockingQueuedConnection,
                               Q_RETURN_ARG(bool, ret), Q_ARG(const QString&, title),
                               Q_ARG(const QString&, msg), Q_ARG(bool, defaultAns),

@@ -709,12 +709,11 @@ void RawDatabaseImpl::compileAndExecute(Transaction& trans)
         do {
             // Compile the next statement
             sqlite3_stmt* stmt = nullptr;
-            int r = 0;
-            if ((r = sqlite3_prepare_v2(sqlite, compileTail,
-                                        static_cast<int>(query.query.size()
-                                            - static_cast<int>(compileTail - query.query.data())),
-                                        &stmt, &compileTail))
-                != SQLITE_OK) {
+            int r = sqlite3_prepare_v2(sqlite, compileTail,
+                                       static_cast<int>(query.query.size()
+                                           - static_cast<int>(compileTail - query.query.data())),
+                                       &stmt, &compileTail);
+            if (r != SQLITE_OK) {
                 qWarning() << "Failed to prepare statement" << anonymizeQuery(query.query)
                            << "and returned" << r;
                 qWarning("The full error is %d: %s", sqlite3_errcode(sqlite), sqlite3_errmsg(sqlite));

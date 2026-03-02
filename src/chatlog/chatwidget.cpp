@@ -1351,7 +1351,7 @@ void ChatWidget::hideEvent(QHideEvent* event)
     // one friend this could end up accumulating chat logs until they restart
     // qTox, but that isn't a regression from previously released behavior.
 
-    const std::size_t maxWindowSize = static_cast<std::size_t>(settings.getChatMaxWindowSize());
+    const auto maxWindowSize = static_cast<std::size_t>(settings.getChatMaxWindowSize());
 
     if (chatLineStorage->size() > maxWindowSize) {
         while (chatLineStorage->size() > maxWindowSize) {

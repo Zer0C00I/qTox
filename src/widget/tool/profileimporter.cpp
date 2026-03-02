@@ -50,7 +50,7 @@ bool ProfileImporter::importProfile()
  * @param message Text in question window.
  * @return True if the answer is positive, false otherwise.
  */
-bool ProfileImporter::askQuestion(QString title, QString message)
+bool ProfileImporter::askQuestion(const QString& title, const QString& message)
 {
     const QMessageBox::Icon icon = QMessageBox::Warning;
     QMessageBox box(icon, title, message, QMessageBox::NoButton, this);

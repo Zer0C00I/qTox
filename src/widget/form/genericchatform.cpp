@@ -688,9 +688,9 @@ void GenericChatForm::onExportChat()
             continue;
         }
 
-        QString timestamp = item.getTimestamp().time().toString("hh:mm:ss");
-        QString datestamp = item.getTimestamp().date().toString("yyyy-MM-dd");
-        QString author = item.getDisplayName();
+        const QString timestamp = item.getTimestamp().time().toString("hh:mm:ss");
+        const QString datestamp = item.getTimestamp().date().toString("yyyy-MM-dd");
+        const QString author = item.getDisplayName();
 
         buffer = buffer
                  % QString{datestamp % '\t' % timestamp % '\t' % author % '\t'

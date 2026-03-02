@@ -232,7 +232,7 @@ bool toxURIEventHandler(const QByteArray& eventData, void* userData)
 } // namespace
 
 AppManager::AppManager(int& argc, char** argv)
-    : qapp((static_cast<void>(preConstructionInitialization()), new QApplication(argc, argv)))
+    : qapp((preConstructionInitialization(), new QApplication(argc, argv)))
     , messageBoxManager(new MessageBoxManager(nullptr))
     , settings(new Settings(*messageBoxManager))
     , ipc(new IPC(settings->getCurrentProfileId()))
@@ -518,7 +518,7 @@ int AppManager::run()
         updateCheck->checkForUpdate();
         connect(updateCheck, &UpdateCheck::updateCheckFailed, qapp.get(), &QApplication::quit);
         connect(updateCheck, &UpdateCheck::complete, this,
-                [](QString currentVersion, QString latestVersion, const QUrl& link) {
+                [](const QString& currentVersion, const QString& latestVersion, const QUrl& link) {
                     const QString message =
                         QStringLiteral("Current version: %1\nLatest version: %2\n%3\n")
                             .arg(currentVersion, latestVersion, link.toString());

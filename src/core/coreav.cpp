@@ -928,8 +928,11 @@ void CoreAV::videoFrameCallback(ToxAV* toxAV, uint32_t friendNum, uint16_t w, ui
     vpx_image frame{};
     frame.d_h = h;
     frame.d_w = w;
+    // NOLINTNEXTLINE(cppcoreguidelines-pro-type-const-cast) -- vpx_image C struct requires non-const planes
     frame.planes[0] = const_cast<uint8_t*>(y);
+    // NOLINTNEXTLINE(cppcoreguidelines-pro-type-const-cast)
     frame.planes[1] = const_cast<uint8_t*>(u);
+    // NOLINTNEXTLINE(cppcoreguidelines-pro-type-const-cast)
     frame.planes[2] = const_cast<uint8_t*>(v);
     frame.stride[0] = yStride;
     frame.stride[1] = uStride;

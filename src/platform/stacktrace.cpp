@@ -24,12 +24,14 @@ void Stacktrace::detail::process(Stacktrace::detail::Callback* callback, void* u
 
     int i = 0;
     while (unw_step(&cursor) > 0) {
-        unw_word_t offset, pc;
+        unw_word_t offset = 0;
+        unw_word_t pc = 0;
         unw_get_reg(&cursor, UNW_REG_IP, &pc);
         char name[256];
         unw_get_proc_name(&cursor, name, sizeof(name), &offset);
 
         Dl_info info;
+        // NOLINTNEXTLINE(performance-no-int-to-ptr) -- required for libunwind API
         if (dladdr(reinterpret_cast<void*>(pc), &info) == 0) {
             callback(userdata, Frame{i, pc, "", name, offset});
             ++i;
@@ -79,7 +81,7 @@ struct FreeDeleter
     Q_DECL_UNUSED
     void operator()(char* ptr) const
     {
-        std::free(ptr);
+        std::free(ptr); // NOLINT(cppcoreguidelines-no-malloc) -- freeing abi::__cxa_demangle output
     }
 };
 using char_ptr = std::unique_ptr<char, FreeDeleter>;

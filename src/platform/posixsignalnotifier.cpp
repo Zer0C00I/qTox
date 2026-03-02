@@ -153,7 +153,7 @@ void PosixSignalNotifier::unwatchSignal(int signum)
 {
     struct sigaction action = {}; // all zeroes by default
     action.sa_handler = [](int sig) {
-        qWarning("Signal %d received twice; terminating ungracefully", sig);
+        qWarning("Signal %d received twice; terminating ungracefully", sig); // NOLINT(concurrency-mt-unsafe)
         ::exit(EXIT_FAILURE);
     };
 

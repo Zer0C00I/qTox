@@ -25,8 +25,8 @@ Conference::Conference(int conferenceId_, const ConferenceId& persistentConferen
                        FriendList& friendList_)
     : conferenceQuery(conferenceQuery_)
     , idHandler(idHandler_)
-    , selfName{std::move(selfName_)}
-    , title{std::move(name)}
+    , selfName{selfName_}
+    , title{name}
     , toxConferenceNum(conferenceId_)
     , conferenceId{persistentConferenceId}
     , avConference{isAvConference}

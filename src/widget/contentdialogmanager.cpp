@@ -47,10 +47,10 @@ bool ContentDialogManager::chatWidgetExists(const ChatId& chatId)
 }
 
 FriendWidget* ContentDialogManager::addFriendToDialog(ContentDialog* dialog,
-                                                      std::shared_ptr<FriendChatroom> chatroom,
+                                                      const std::shared_ptr<FriendChatroom>& chatroom,
                                                       GenericChatForm* form)
 {
-    auto* friendWidget = dialog->addFriend(std::move(chatroom), form);
+    auto* friendWidget = dialog->addFriend(chatroom, form);
     const auto& friendPk = friendWidget->getFriend()->getPublicKey();
 
     ContentDialog* lastDialog = getFriendDialog(friendPk);
@@ -63,10 +63,10 @@ FriendWidget* ContentDialogManager::addFriendToDialog(ContentDialog* dialog,
 }
 
 ConferenceWidget* ContentDialogManager::addConferenceToDialog(ContentDialog* dialog,
-                                                              std::shared_ptr<ConferenceRoom> chatroom,
+                                                              const std::shared_ptr<ConferenceRoom>& chatroom,
                                                               GenericChatForm* form)
 {
-    auto* conferenceWidget = dialog->addConference(std::move(chatroom), form);
+    auto* conferenceWidget = dialog->addConference(chatroom, form);
     const auto& conferenceId = conferenceWidget->getConference()->getPersistentId();
 
     ContentDialog* lastDialog = getConferenceDialog(conferenceId);

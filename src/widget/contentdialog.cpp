@@ -115,6 +115,7 @@ ContentDialog::ContentDialog(const Core& core, Settings& settings_, Style& style
 
     setAcceptDrops(true);
 
+    // NOLINTNEXTLINE(clang-analyzer-optin.cplusplus.VirtualCall) -- Qt widget constructor pattern
     reloadTheme();
 
     new QShortcut(Qt::CTRL | Qt::Key_Q, this, this, &ContentDialog::close);

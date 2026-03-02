@@ -533,21 +533,26 @@ bool CameraDevice::getDefaultInputFormat()
 
 // Webcam input formats
 #if defined(USING_V4L)
-    if ((iformat = av_find_input_format("v4l2")) != nullptr)
+    iformat = av_find_input_format("v4l2");
+    if (iformat != nullptr)
         return true;
 #endif
 
 #ifdef Q_OS_WIN
-    if ((iformat = av_find_input_format("dshow")))
+    iformat = av_find_input_format("dshow");
+    if (iformat != nullptr)
         return true;
-    if ((iformat = av_find_input_format("vfwcap")))
+    iformat = av_find_input_format("vfwcap");
+    if (iformat != nullptr)
         return true;
 #endif
 
 #ifdef Q_OS_MACOS
-    if ((iformat = av_find_input_format("avfoundation")) != nullptr)
+    iformat = av_find_input_format("avfoundation");
+    if (iformat != nullptr)
         return true;
-    if ((iformat = av_find_input_format("qtkit")) != nullptr)
+    iformat = av_find_input_format("qtkit");
+    if (iformat != nullptr)
         return true;
 #endif
 

@@ -162,7 +162,7 @@ QList<DhtServer> loadNodesFile(const QString& file)
 QByteArray serialize(const QList<DhtServer>& nodes)
 {
     QJsonArray jsonNodes;
-    for (auto& node : nodes) {
+    for (const auto& node : nodes) {
         QJsonObject nodeJson;
         nodeJson.insert(NodeFields::status_udp, node.statusUdp);
         nodeJson.insert(NodeFields::status_tcp, node.statusTcp);

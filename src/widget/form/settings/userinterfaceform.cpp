@@ -167,7 +167,7 @@ UserInterfaceForm::~UserInterfaceForm()
     delete bodyUI;
 }
 
-void UserInterfaceForm::on_styleBrowser_currentTextChanged(QString textStyle)
+void UserInterfaceForm::on_styleBrowser_currentTextChanged(const QString& textStyle)
 {
     if (bodyUI->styleBrowser->currentIndex() == 0)
         settings.setStyle("None");

@@ -51,8 +51,7 @@ void PrivacyForm::on_cbKeepHistory_stateChanged()
     settings.setEnableLogging(bodyUI->cbKeepHistory->isChecked());
     if (!bodyUI->cbKeepHistory->isChecked()) {
         emit clearAllReceipts();
-        QMessageBox::StandardButton dialogDelHistory;
-        dialogDelHistory =
+        const QMessageBox::StandardButton dialogDelHistory =
             QMessageBox::question(nullptr, tr("Confirmation"),
                                   tr("Do you want to permanently delete all chat history?"),
                                   QMessageBox::Yes | QMessageBox::No);
@@ -71,8 +70,8 @@ void PrivacyForm::on_nospamLineEdit_editingFinished()
 {
     const QString newNospam = bodyUI->nospamLineEdit->text();
 
-    bool ok;
-    const uint32_t nospam = static_cast<uint32_t>(newNospam.toLongLong(&ok, 16));
+    bool ok = false;
+    const auto nospam = static_cast<uint32_t>(newNospam.toLongLong(&ok, 16));
     if (ok) {
         core->setNospam(nospam);
     }

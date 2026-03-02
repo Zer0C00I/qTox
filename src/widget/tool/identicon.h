@@ -51,7 +51,7 @@ public:
     explicit Identicon(const QByteArray& data);
     QImage toImage(int scaleFactor = 1) const;
     Matrix toMatrix() const;
-    static qreal bytesToColor(QByteArray bytes);
+    static qreal bytesToColor(const QByteArray& bytes);
 
 private:
     std::array<std::array<uint8_t, ACTIVE_COLS>, IDENTICON_ROWS> identiconColors;

@@ -140,7 +140,7 @@ void AboutForm::replaceVersions()
     bodyUI->authorInfo->setText(authorInfo);
 }
 
-void AboutForm::onUpdateAvailable(QString latestVersion, QUrl link)
+void AboutForm::onUpdateAvailable(const QString& latestVersion, QUrl link)
 {
     std::ignore = latestVersion;
     QObject::disconnect(linkConnection);
@@ -175,7 +175,7 @@ void AboutForm::onUnstableVersion()
  * @param text Text, which will be clickable.
  * @return Hyperlink to paste.
  */
-inline QString AboutForm::createLink(QString path, QString text) const
+inline QString AboutForm::createLink(const QString& path, const QString& text) const
 {
     return TextCompose::createLink(style, path, text);
 }

@@ -67,7 +67,7 @@ QStringList loadDefaultPaths()
                       EMOTICONS_SUB_PATH};
 
     // qTox exclusive emoticons
-    QStandardPaths::StandardLocation location = QStandardPaths::AppDataLocation;
+    const QStandardPaths::StandardLocation location = QStandardPaths::AppDataLocation;
 
     QStringList locations = QStandardPaths::standardLocations(location);
     // system wide emoticons
@@ -294,10 +294,10 @@ QString SmileyPack::smileyfied(const QString& msg)
     const QMutexLocker<QMutex> locker(&loadingMutex);
     QString result(msg);
 
-    int replaceDiff = 0;
+    qsizetype replaceDiff = 0;
     for (const auto& match : smilify.globalMatch(result)) {
-        const int startPos = static_cast<int>(match.capturedStart());
-        const int keyLength = static_cast<int>(match.capturedLength());
+        const qsizetype startPos = match.capturedStart();
+        const qsizetype keyLength = match.capturedLength();
         const QString imgRichText = SmileyPack::getAsRichText(match.captured());
         result.replace(startPos + replaceDiff, keyLength, imgRichText);
         replaceDiff += imgRichText.length() - keyLength;

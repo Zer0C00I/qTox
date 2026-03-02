@@ -72,7 +72,7 @@ Tox_Options* ToxOptions::get()
 std::unique_ptr<ToxOptions> ToxOptions::makeToxOptions(const QByteArray& savedata,
                                                        const ICoreSettings& s)
 {
-    Tox_Err_Options_New err;
+    Tox_Err_Options_New err = TOX_ERR_OPTIONS_NEW_OK;
     Tox_Options* tox_opts = tox_options_new(&err);
 
     if (!PARSE_ERR(err) || (tox_opts == nullptr)) {

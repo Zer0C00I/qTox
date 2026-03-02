@@ -803,7 +803,7 @@ QDateTime History::getDateWhereFindPhrase(const ChatId& chatId, const QDateTime&
         period = QStringLiteral("AND timestamp > '%1' ORDER BY timestamp ASC LIMIT 1;")
                      .arg(date.toMSecsSinceEpoch());
         break;
-    case PeriodSearch::BeforeDate:
+    case PeriodSearch::BeforeDate: // NOLINT(bugprone-branch-clone) -- intentionally same as default
         period = QStringLiteral("AND timestamp < '%1' ORDER BY timestamp DESC LIMIT 1;")
                      .arg(date.toMSecsSinceEpoch());
         break;
