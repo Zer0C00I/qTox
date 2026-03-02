@@ -174,7 +174,8 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
     }
 
     const QByteArray LogMsgBytes = logMsg.toUtf8();
-    fwrite(LogMsgBytes.constData(), 1, static_cast<size_t>(LogMsgBytes.size()), stderr); // NOLINT(cert-err33-c)
+    // Writing to stderr is best-effort; there is no fallback if it fails.
+    (void)fwrite(LogMsgBytes.constData(), 1, static_cast<size_t>(LogMsgBytes.size()), stderr);
 
 #ifdef LOG_TO_FILE
     FILE* logFilePtr = logFileFile.loadRelaxed(); // atomically load the file pointer
@@ -185,11 +186,20 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
 
         logBufferMutex->unlock();
     } else {
+        // Write data to the log file. If the write fails (e.g. disk full), fall back to stderr
+        // so the message is not silently lost.
+        const auto writeLog = [logFilePtr](const QByteArray& data) {
+            const size_t n = static_cast<size_t>(data.size());
+            if (fwrite(data.constData(), 1, n, logFilePtr) != n) {
+                (void)fwrite(data.constData(), 1, n, stderr);
+            }
+        };
+
         logBufferMutex->lock();
         if (logBuffer != nullptr) {
             // empty logBuffer to file
             for (const QByteArray& bufferedMsg : *logBuffer) {
-                fwrite(bufferedMsg.constData(), 1, static_cast<size_t>(bufferedMsg.size()), logFilePtr); // NOLINT(cert-err33-c)
+                writeLog(bufferedMsg);
             }
 
             delete logBuffer; // no longer needed
@@ -197,8 +207,10 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
         }
         logBufferMutex->unlock();
 
-        fwrite(LogMsgBytes.constData(), 1, static_cast<size_t>(LogMsgBytes.size()), logFilePtr); // NOLINT(cert-err33-c)
-        fflush(logFilePtr); // NOLINT(cert-err33-c)
+        writeLog(LogMsgBytes);
+        if (fflush(logFilePtr) != 0) {
+            (void)fprintf(stderr, "qtox: log file flush failed\n");
+        }
     }
 #endif
 }
@@ -265,8 +277,9 @@ int AppManager::startGui(QCommandLineParser& parser)
         qDebug() << "Log file over 1MB, rotating...";
 
         // close old logfile (need for windows)
-        if (mainLogFilePtr != nullptr)
-            fclose(mainLogFilePtr); // NOLINT(cert-err33-c)
+        if (mainLogFilePtr != nullptr && fclose(mainLogFilePtr) != 0) {
+            (void)fprintf(stderr, "qtox: failed to close log file during rotation\n");
+        }
 
         QDir dir(logFileDir);
 
@@ -542,7 +555,9 @@ void AppManager::cleanup()
 #ifdef LOG_TO_FILE
     FILE* f = logFileFile.loadRelaxed();
     if (f != nullptr) {
-        fclose(f); // NOLINT(cert-err33-c)
+        if (fclose(f) != 0) {
+            (void)fprintf(stderr, "qtox: failed to close log file during cleanup\n");
+        }
         logFileFile.storeRelaxed(nullptr); // atomically disable logging to file
     }
 #endif
