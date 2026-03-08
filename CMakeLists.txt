@@ -193,21 +193,25 @@ foreach(_build_type RELEASE RELWITHDEBINFO)
     "${CMAKE_CXX_FLAGS_${_build_type}}")
 endforeach()
 
-# Performance: Link-Time Optimisation for release builds.
-# Thin LTO (clang) compiles faster than fat LTO while giving most of the gains.
-include(CheckIPOSupported)
-check_ipo_supported(RESULT _IPO_SUPPORTED OUTPUT _IPO_ERROR)
-if(_IPO_SUPPORTED)
-  if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+# Performance: thin LTO for clang. Requires lld (same LLVM version as the
+# compiler) — gold's plugin causes bitcode version mismatches. CI installs
+# clang-20 + lld-20 together via llvm.sh to guarantee version alignment.
+if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  find_program(_LLD ld.lld)
+  if(_LLD)
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fuse-ld=lld")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -flto=thin")
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -flto=thin")
   else()
-    # GCC: let CMake handle fat LTO via INTERPROCEDURAL_OPTIMIZATION.
+    message(STATUS "lld not found — LTO disabled (install lld to enable)")
+  endif()
+elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+  include(CheckIPOSupported)
+  check_ipo_supported(RESULT _IPO_OK OUTPUT _IPO_ERR)
+  if(_IPO_OK)
     set(CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELEASE TRUE)
     set(CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELWITHDEBINFO TRUE)
   endif()
-else()
-  message(STATUS "LTO not supported: ${_IPO_ERROR}")
 endif()
 
 add_definitions(-DQT_NO_CAST_FROM_BYTEARRAY)
