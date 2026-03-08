@@ -229,9 +229,10 @@ bool toxURIEventHandler(const QByteArray& eventData, void* userData)
     uriDialog->handleToxURI(QString::fromUtf8(eventData));
     return true;
 }
+
 QApplication* makeQApplication(int& argc, char** argv)
 {
-    preConstructionInitialization();
+    AppManager::preConstructionInitialization();
     return new QApplication(argc, argv);
 }
 } // namespace
