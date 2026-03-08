@@ -193,12 +193,6 @@ foreach(_build_type RELEASE RELWITHDEBINFO)
     "${CMAKE_CXX_FLAGS_${_build_type}}")
 endforeach()
 
-# Performance: reduce exported symbol surface; improves LTO and binary size.
-if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fvisibility=hidden")
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fvisibility-inlines-hidden")
-endif()
-
 # Performance: Link-Time Optimisation for release builds.
 # Thin LTO (clang) compiles faster than fat LTO while giving most of the gains.
 include(CheckIPOSupported)
