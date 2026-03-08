@@ -67,8 +67,7 @@ public:
     static QString getSound(Sound s)
     {
         switch (s) {
-        case Sound::NewMessage: // NOLINT(bugprone-branch-clone) - intentionally same sound as Test
-            return QStringLiteral(":/audio/notification.s16le.pcm");
+        case Sound::NewMessage:
         case Sound::Test:
             return QStringLiteral(":/audio/notification.s16le.pcm");
         case Sound::IncomingCall:

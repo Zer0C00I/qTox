@@ -10,7 +10,6 @@
 #include <QThread>
 
 #include <chrono>
-#include <cstdlib>
 #include <ctime>
 #include <random>
 #ifndef _MSC_VER
@@ -19,26 +18,18 @@
 
 namespace {
 #if QT_CONFIG(sharedmemory)
-#ifdef Q_OS_WIN
-const char* getCurUsername()
-{
-    return getenv("USERNAME"); // NOLINT(concurrency-mt-unsafe)
-}
-#else
-const char* getCurUsername()
-{
-    return getenv("USER"); // NOLINT(concurrency-mt-unsafe)
-}
-#endif
-
 QString getIpcKey()
 {
-    const auto* user = getCurUsername();
-    if (user == nullptr) {
+#ifdef Q_OS_WIN
+    const QString user = qEnvironmentVariable("USERNAME");
+#else
+    const QString user = qEnvironmentVariable("USER");
+#endif
+    if (user.isEmpty()) {
         qWarning() << "Failed to get current username. Will use a global IPC.";
-        user = "";
+        return QString("qtox-" IPC_PROTOCOL_VERSION "-");
     }
-    return QString("qtox-" IPC_PROTOCOL_VERSION "-") + QString::fromUtf8(user);
+    return QString("qtox-" IPC_PROTOCOL_VERSION "-") + user;
 }
 #endif
 } // namespace
