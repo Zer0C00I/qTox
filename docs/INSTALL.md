@@ -19,9 +19,10 @@
 
 | Name         | Version    | Notes                                      |
 |--------------|------------|--------------------------------------------|
-| C++ compiler | GCC ≥ 13 or clang++ ≥ 16 | C++23 required              |
+| C++ compiler | clang++ ≥ 20 (recommended) or GCC ≥ 13 | C++23 required |
 | [CMake]      | ≥ 3.19     | For preset support                         |
 | [Ninja]      | any        |                                            |
+| [lld]        | ≥ 20       | Required for Thin LTO with clang           |
 | [Qt]         | ≥ 6.2      | modules: core, gui, network, svg, widgets, xml, concurrent |
 | [toxcore]    | ≥ 0.2.20   | libtoxcore + libtoxav                      |
 | [FFmpeg]     | ≥ 4.4      | avcodec, avdevice, avformat, avutil, swscale |
@@ -49,7 +50,7 @@
 ### Clone the repository
 
 ```bash
-git clone --recursive https://github.com/TokTok/qTox.git
+git clone --recursive https://github.com/Zer0C00I/qTox.git
 cd qTox
 ```
 
@@ -68,13 +69,23 @@ sudo ldconfig
 
 ### Debian / Ubuntu
 
+Install clang-20 from the upstream LLVM repository (required for Thin LTO):
+
+```bash
+wget -qO /tmp/llvm.sh https://apt.llvm.org/llvm.sh
+chmod +x /tmp/llvm.sh
+echo "" | sudo /tmp/llvm.sh 20
+sudo apt-get install -y clang-20 clang-tidy-20 lld-20
+sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-20 100
+sudo update-alternatives --install /usr/bin/ld ld /usr/bin/ld.lld-20 100
+```
+
 Install build dependencies:
 
 ```bash
 sudo apt-get update
 sudo apt-get install -y \
   cmake ninja-build pkg-config \
-  clang gcc g++ \
   libavcodec-dev libavdevice-dev libavformat-dev libavutil-dev libswscale-dev \
   libexif-dev libopenal-dev libopus-dev libvpx-dev \
   libqrencode-dev libsodium-dev libsqlcipher-dev \
@@ -91,13 +102,6 @@ cmake --build --preset clang-strict
 
 Binary is in `_build_clang_strict/qtox`.
 
-Or with GCC:
-
-```bash
-cmake -S . -B _build -GNinja -DCMAKE_BUILD_TYPE=RelWithDebInfo
-cmake --build _build
-```
-
 ### Fedora
 
 Install build dependencies:
@@ -105,7 +109,7 @@ Install build dependencies:
 ```bash
 sudo dnf install -y \
   cmake ninja-build pkgconf-pkg-config \
-  clang gcc-c++ \
+  clang lld gcc-c++ \
   ffmpeg-devel \
   openal-soft-devel opus-devel libvpx-devel \
   libexif-devel libqrencode-devel libsodium-devel sqlcipher-devel \
@@ -127,7 +131,7 @@ Install build dependencies:
 ```bash
 sudo pacman -S --needed \
   cmake ninja pkgconf \
-  clang gcc \
+  clang lld gcc \
   ffmpeg openal opus libvpx \
   libexif qrencode libsodium sqlcipher \
   v4l-utils libxss \
@@ -155,7 +159,7 @@ Install the equivalent packages for your distribution. Then:
 ```bash
 cmake -S . -B _build -GNinja \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
-  -DCMAKE_CXX_COMPILER=clang++   # or g++
+  -DCMAKE_CXX_COMPILER=clang++
 cmake --build _build
 ```
 
@@ -164,7 +168,7 @@ cmake --build _build
 ## FreeBSD
 
 Pre-built `.pkg` packages are available as CI artifacts on the
-[Releases](https://github.com/TokTok/qTox/releases) page.
+[Releases](https://github.com/Zer0C00I/qTox/releases) page.
 
 To install a downloaded package:
 
@@ -182,7 +186,7 @@ pkg install -y \
   openal-soft opus libvpx v4l_compat libexif libqrencode \
   libsodium sqlcipher ffmpeg toxcore llvm
 
-git clone --recursive https://github.com/TokTok/qTox.git
+git clone --recursive https://github.com/Zer0C00I/qTox.git
 cd qTox
 cmake -S . -B _build -GNinja \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
@@ -233,9 +237,6 @@ Pass as `-DSWITCH=ON/OFF` to `cmake`. Key options:
 | `STRICT_OPTIONS` | OFF     | Treat all warnings as errors (`-Werror`) |
 | `SPELL_CHECK`    | ON      | KSonnet spell checking                   |
 | `UPDATE_CHECK`   | ON      | Check for new versions at startup        |
-| `ASAN`           | OFF     | Address Sanitizer                        |
-| `UBSAN`          | OFF     | Undefined Behavior Sanitizer             |
-| `TSAN`           | OFF     | Thread Sanitizer                         |
 | `BUILD_TESTING`  | ON      | Build unit tests                         |
 
 ---
@@ -244,10 +245,10 @@ Pass as `-DSWITCH=ON/OFF` to `cmake`. Key options:
 
 | Preset          | Compiler | Description                                       |
 |-----------------|----------|---------------------------------------------------|
-| `clang-strict`  | clang++  | Strict warnings, `-Werror`, security hardening (recommended for CI and development) |
-| `dev`           | system   | Debug build, no extra flags                       |
+| `clang-strict`  | clang++  | `-Werror`, all security flags, Thin LTO, `-O3` (recommended) |
+| `asan`          | clang++  | Debug + ASan + UBSan (integer, nullability, local-bounds) |
+| `dev`           | system   | Debug build, no strict warnings                   |
 | `release`       | system   | RelWithDebInfo build                              |
-| `asan`          | system   | Debug + ASan + UBSan                              |
 | `tsan`          | system   | Debug + TSan                                      |
 
 Usage:
@@ -257,7 +258,7 @@ cmake --preset <name>
 cmake --build --preset <name>
 ```
 
-Binary output directories: `_build_clang_strict/`, `_build/`, `_build-asan/`, etc.
+Binary output directories: `_build_clang_strict/`, `_build-asan/`, `_build/`, etc.
 
 [CMake]: https://cmake.org/
 [FFmpeg]: https://www.ffmpeg.org/
@@ -266,6 +267,7 @@ Binary output directories: `_build_clang_strict/`, `_build/`, `_build-asan/`, et
 [libsodium]: https://libsodium.gitbook.io/
 [libX11]: https://www.x.org/wiki/
 [libXScrnSaver]: https://www.x.org/wiki/Releases/ModuleVersions/
+[lld]: https://lld.llvm.org/
 [Ninja]: https://ninja-build.org/
 [OpenAL Soft]: https://openal-soft.org/
 [opus]: https://opus-codec.org/
