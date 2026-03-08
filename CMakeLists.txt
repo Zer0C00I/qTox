@@ -186,6 +186,36 @@ foreach(_build_type RELEASE RELWITHDEBINFO MINSIZEREL)
       "${CMAKE_CXX_FLAGS_${_build_type}} -D_FORTIFY_SOURCE=3")
 endforeach()
 
+# Performance: use -O3 in release builds (CMake default is -O2).
+foreach(_build_type RELEASE RELWITHDEBINFO)
+  string(REPLACE "-O2" "-O3"
+    "CMAKE_CXX_FLAGS_${_build_type}"
+    "${CMAKE_CXX_FLAGS_${_build_type}}")
+endforeach()
+
+# Performance: reduce exported symbol surface; improves LTO and binary size.
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fvisibility=hidden")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fvisibility-inlines-hidden")
+endif()
+
+# Performance: Link-Time Optimisation for release builds.
+# Thin LTO (clang) compiles faster than fat LTO while giving most of the gains.
+include(CheckIPOSupported)
+check_ipo_supported(RESULT _IPO_SUPPORTED OUTPUT _IPO_ERROR)
+if(_IPO_SUPPORTED)
+  if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -flto=thin")
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -flto=thin")
+  else()
+    # GCC: let CMake handle fat LTO via INTERPROCEDURAL_OPTIMIZATION.
+    set(CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELEASE TRUE)
+    set(CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELWITHDEBINFO TRUE)
+  endif()
+else()
+  message(STATUS "LTO not supported: ${_IPO_ERROR}")
+endif()
+
 add_definitions(-DQT_NO_CAST_FROM_BYTEARRAY)
 add_definitions(-DQT_NO_CAST_TO_ASCII)
 add_definitions(-DQT_RESTRICTED_CAST_FROM_ASCII)
