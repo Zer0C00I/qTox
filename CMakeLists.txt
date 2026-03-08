@@ -104,10 +104,10 @@ if(UBSAN)
     # Add these to common flags (release and debug), because we can use the
     # runtime-less version via -fsanitize-trap=all below.
     set(CMAKE_CXX_FLAGS
-        "${CMAKE_CXX_FLAGS} -fsanitize=undefined,nullability,local-bounds,float-divide-by-zero"
+        "${CMAKE_CXX_FLAGS} -fsanitize=undefined,integer,nullability,local-bounds,float-divide-by-zero"
     )
     set(CMAKE_LINKER_FLAGS
-        "${CMAKE_LINKER_FLAGS} -fsanitize=undefined,nullability,local-bounds,float-divide-by-zero"
+        "${CMAKE_LINKER_FLAGS} -fsanitize=undefined,integer,nullability,local-bounds,float-divide-by-zero"
     )
     # In release, reduce attack surface by never calling into a runtime library,
     # and instead just aborting the program on UB.
@@ -165,11 +165,13 @@ if(UNIX AND NOT APPLE)
   set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-z,now")
   set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-z,relro")
   set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-z,noexecstack")
+  set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-z,nodlopen")
 endif()
 
 # Additional hardening: stack clash protection and Intel CET (x86 only).
 if(UNIX AND NOT APPLE AND CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fstack-clash-protection")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-plt")
   if(CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64|i[3-6]86")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fcf-protection=full")
   endif()

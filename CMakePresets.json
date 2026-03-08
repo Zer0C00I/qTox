@@ -126,7 +126,7 @@
     {
       "name": "clang-strict",
       "displayName": "Clang strict (max warnings + security hardening)",
-      "description": "clang++ with -Werror and full security hardening: -fno-plt, -Wthread-safety-beta, nodlopen",
+      "description": "clang++ with -Werror and -Wthread-safety-beta",
       "binaryDir": "${sourceDir}/_build_clang_strict",
       "generator": "Ninja",
       "cacheVariables": {
@@ -137,8 +137,7 @@
         "SPELL_CHECK": false,
         "CMAKE_COMPILE_WARNING_AS_ERROR": true,
         "CMAKE_EXPORT_COMPILE_COMMANDS": true,
-        "CMAKE_CXX_FLAGS": "-fno-plt -Wthread-safety-beta",
-        "CMAKE_EXE_LINKER_FLAGS": "-Wl,-z,nodlopen"
+        "CMAKE_CXX_FLAGS": "-Wthread-safety-beta"
       }
     }
   ],
