@@ -394,14 +394,14 @@ bool DesktopNotifyBackend::showMessage(const QString& title, const QString& mess
 #endif // QT_CONFIG(dbus)
 
 // TODO(iphydf): These should probably be more private, but then Private needs to be a QObject.
-void DesktopNotifyBackend::notificationActionInvoked(QString actionKey, QString actionValue)
+void DesktopNotifyBackend::notificationActionInvoked(const QString& actionKey, const QString& actionValue)
 {
     std::ignore = actionKey;
     std::ignore = actionValue;
     emit messageClicked();
 }
 
-void DesktopNotifyBackend::notificationActionInvoked(uint actionKey, QString actionValue)
+void DesktopNotifyBackend::notificationActionInvoked(uint actionKey, const QString& actionValue)
 {
     std::ignore = actionKey;
     std::ignore = actionValue;
