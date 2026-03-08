@@ -229,10 +229,15 @@ bool toxURIEventHandler(const QByteArray& eventData, void* userData)
     uriDialog->handleToxURI(QString::fromUtf8(eventData));
     return true;
 }
+QApplication* makeQApplication(int& argc, char** argv)
+{
+    preConstructionInitialization();
+    return new QApplication(argc, argv);
+}
 } // namespace
 
 AppManager::AppManager(int& argc, char** argv)
-    : qapp((static_cast<void>(preConstructionInitialization()), new QApplication(argc, argv)))
+    : qapp(makeQApplication(argc, argv))
     , messageBoxManager(new MessageBoxManager(nullptr))
     , settings(new Settings(*messageBoxManager))
     , ipc(new IPC(settings->getCurrentProfileId()))
