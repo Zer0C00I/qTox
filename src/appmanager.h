@@ -36,6 +36,7 @@ private slots:
 
 private:
     static void preConstructionInitialization();
+    static QApplication* makeQApplication(int& argc, char** argv);
     std::unique_ptr<QApplication> qapp;
     std::unique_ptr<MessageBoxManager> messageBoxManager;
     std::unique_ptr<Settings> settings;

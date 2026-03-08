@@ -230,12 +230,13 @@ bool toxURIEventHandler(const QByteArray& eventData, void* userData)
     return true;
 }
 
-QApplication* makeQApplication(int& argc, char** argv)
+} // namespace
+
+QApplication* AppManager::makeQApplication(int& argc, char** argv)
 {
-    AppManager::preConstructionInitialization();
+    preConstructionInitialization();
     return new QApplication(argc, argv);
 }
-} // namespace
 
 AppManager::AppManager(int& argc, char** argv)
     : qapp(makeQApplication(argc, argv))
