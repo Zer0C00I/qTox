@@ -13,27 +13,113 @@
 #   portability-*    : portability issues
 #   readability-*    : maintainability checks
 #
-# Excluded (with rationale):
+# Disabled checks (rationale):
 #   fuchsia-*/google-*/llvm-*/llvmlibc-*/hicpp-*
 #       project-specific or redundant style rules
 #   bugprone-easily-swappable-parameters
 #       too noisy across existing large API surface
+#   bugprone-switch-missing-default-case
+#       conflicts with -Wswitch-enum coverage
 #   cert-err58-cpp
 #       fires on every Qt static/global object
+#   cert-dcl37-c, cert-dcl51-cpp
+#       fires on X11 forward declarations (_XDisplay) which are external headers
+#   concurrency-mt-unsafe
+#       fires on ::exit() in signal handler — intentional, only option on double signal
+#   cppcoreguidelines-avoid-c-arrays / modernize-avoid-c-arrays
+#       C arrays required for C API (toxcore, FFmpeg, SQLite, POSIX signal)
+#   cppcoreguidelines-avoid-const-or-ref-data-members
+#       valid design in Qt value types
+#   cppcoreguidelines-avoid-do-while
+#       valid pattern in some macro and state-machine code
+#   cppcoreguidelines-avoid-goto
+#       used for C-style error handling in C API wrappers
 #   cppcoreguidelines-avoid-magic-numbers / readability-magic-numbers
 #       too noisy in protocol/crypto/colour constant code
+#   cppcoreguidelines-avoid-non-const-global-variables
+#       legitimate use in signal handlers and Qt singletons
+#   cppcoreguidelines-macro-to-enum / modernize-macro-to-enum
+#       not always safe when macros cross C/C++ boundary
+#   cppcoreguidelines-macro-usage
+#       Qt macros (Q_OBJECT, signals, slots) are unavoidable
 #   cppcoreguidelines-owning-memory
 #       Qt parent-child ownership doesn't use gsl::owner
+#   cppcoreguidelines-prefer-member-initializer
+#       style-only: member initializers vs constructor body (76 violations)
 #   cppcoreguidelines-pro-bounds-*
 #       required for C API (toxcore, FFmpeg, SQLite)
+#   cppcoreguidelines-pro-type-member-init
+#       fires for Qt widgets initialised via setupUi() — false positives
 #   cppcoreguidelines-pro-type-reinterpret-cast
-#       required for C API interop (QByteArray ↔ uint8_t*)
+#       required for C API interop (QByteArray <-> uint8_t*)
+#   cppcoreguidelines-pro-type-union-access
+#       required for C API structs (toxcore, v4l2)
 #   cppcoreguidelines-pro-type-vararg
 #       required for tox callbacks and qDebug/qWarning
+#   cppcoreguidelines-special-member-functions
+#       Rule of Five: Qt classes use Q_DISABLE_COPY_MOVE, deferred
+#   cppcoreguidelines-use-default-member-init
+#       style-only: default member init vs constructor (112 violations)
+#   cppcoreguidelines-virtual-class-destructor
+#       intentional Qt pattern: intermediate base classes use protected destructor
+#   misc-include-cleaner
+#       requires IWYU tooling across entire codebase (2000+ violations)
+#   misc-no-recursion
+#       some algorithms are naturally recursive
+#   misc-use-anonymous-namespace
+#       style preference, not a correctness concern
+#   modernize-avoid-c-arrays
+#       same rationale as cppcoreguidelines-avoid-c-arrays above
+#   modernize-pass-by-value
+#       risky with Qt types and Qt signal/slot declarations
+#   modernize-return-braced-init-list
+#       style preference; can reduce readability
+#   modernize-use-auto
+#       style preference; explicit types aid readability at call sites
+#   modernize-use-default-member-init
+#       style-only (112 violations)
+#   modernize-use-designated-initializers
+#       breaks C API struct initialization patterns
+#   modernize-use-nodiscard
+#       too noisy; many Qt return values are legitimately ignored
+#   modernize-use-ranges
+#       C++23 ranges not fully adopted yet
+#   modernize-use-std-numbers
+#       style preference
 #   modernize-use-trailing-return-type
 #       opinionated style, not a correctness concern
+#   modernize-use-using
+#       too noisy; typedef is common in Qt and C API wrappers
+#   performance-enum-size
+#       changing enum base may affect serialisation/ABI (53 violations)
+#   performance-inefficient-algorithm
+#       std::lower_bound on std::map with custom date comparator — intentional
+#   performance-unnecessary-value-param
+#       may affect Qt slot signatures; style preference
+#   readability-braces-around-statements
+#       style preference
+#   readability-convert-member-functions-to-static
+#       style preference
+#   readability-function-cognitive-complexity
+#       startGui and logMessageHandler need major refactor (deferred)
+#   readability-identifier-length
+#       style preference
+#   readability-implicit-bool-conversion
+#       common Qt pattern (pointer -> bool)
+#   readability-magic-numbers
+#       same as cppcoreguidelines-avoid-magic-numbers
+#   readability-make-member-function-const
+#       style preference
 #   readability-named-parameter
 #       too noisy in Qt signal/slot override declarations
+#   readability-redundant-access-specifiers
+#       style preference
+#   readability-redundant-member-init
+#       style preference
+#   readability-simplify-boolean-expr
+#       style preference
+#   readability-suspicious-call-argument
+#       style preference
 
 Checks: >
   bugprone-*,
@@ -47,74 +133,69 @@ Checks: >
   portability-*,
   readability-*,
   -bugprone-easily-swappable-parameters,
+  -bugprone-switch-missing-default-case,
+  -cert-dcl37-c,
+  -cert-dcl51-cpp,
   -cert-err58-cpp,
+  -concurrency-mt-unsafe,
+  -cppcoreguidelines-avoid-c-arrays,
+  -cppcoreguidelines-avoid-const-or-ref-data-members,
+  -cppcoreguidelines-avoid-do-while,
+  -cppcoreguidelines-avoid-goto,
   -cppcoreguidelines-avoid-magic-numbers,
+  -cppcoreguidelines-avoid-non-const-global-variables,
+  -cppcoreguidelines-macro-to-enum,
+  -cppcoreguidelines-macro-usage,
   -cppcoreguidelines-non-private-member-variables-in-classes,
-  -misc-non-private-member-variables-in-classes,
   -cppcoreguidelines-owning-memory,
+  -cppcoreguidelines-prefer-member-initializer,
   -cppcoreguidelines-pro-bounds-array-to-pointer-decay,
+  -cppcoreguidelines-pro-bounds-constant-array-index,
   -cppcoreguidelines-pro-bounds-pointer-arithmetic,
+  -cppcoreguidelines-pro-type-member-init,
   -cppcoreguidelines-pro-type-reinterpret-cast,
+  -cppcoreguidelines-pro-type-union-access,
   -cppcoreguidelines-pro-type-vararg,
+  -cppcoreguidelines-special-member-functions,
+  -cppcoreguidelines-use-default-member-init,
+  -cppcoreguidelines-virtual-class-destructor,
   -fuchsia-*,
   -google-*,
   -hicpp-*,
   -llvm-*,
   -llvmlibc-*,
-  -modernize-use-trailing-return-type,
-  -readability-magic-numbers,
-  -readability-named-parameter,
-  -readability-avoid-return-with-void-value,
-  -readability-braces-around-statements,
-  -readability-convert-member-functions-to-static,
-  -readability-identifier-length,
-  -readability-make-member-function-const,
-  -readability-redundant-access-specifiers,
-  -readability-redundant-member-init,
-  -readability-simplify-boolean-expr,
-  -readability-suspicious-call-argument,
+  -misc-include-cleaner,
+  -misc-no-recursion,
+  -misc-non-private-member-variables-in-classes,
+  -misc-use-anonymous-namespace,
+  -modernize-avoid-c-arrays,
+  -modernize-macro-to-enum,
+  -modernize-pass-by-value,
+  -modernize-return-braced-init-list,
+  -modernize-use-auto,
+  -modernize-use-default-member-init,
   -modernize-use-designated-initializers,
   -modernize-use-nodiscard,
   -modernize-use-ranges,
   -modernize-use-std-numbers,
+  -modernize-use-trailing-return-type,
   -modernize-use-using,
-  -modernize-macro-to-enum,
-  -modernize-use-default-member-init,
-  # --- Disabled: too noisy or impractical for this codebase ---
-  # Requires IWYU tooling across entire codebase (2000+ violations):
-  -misc-include-cleaner,
-  # Style-only: member initializers vs constructor body (76 violations):
-  -cppcoreguidelines-prefer-member-initializer,
-  # Style-only: default member init vs constructor (112 violations):
-  -cppcoreguidelines-use-default-member-init,
-  # Rule of Five: 67 Qt classes need Q_DISABLE_COPY_MOVE, deferred:
-  -cppcoreguidelines-special-member-functions,
-  # Enum base type: 53 violations, changing base may affect serialisation/ABI:
   -performance-enum-size,
-  # at() vs []: changes throw semantics, C APIs require raw indexing:
-  -cppcoreguidelines-pro-bounds-constant-array-index,
-  # const/ref data members: valid design in Qt value types:
-  -cppcoreguidelines-avoid-const-or-ref-data-members,
-  # Qt macros (Q_OBJECT, signals, slots) are unavoidable:
-  -cppcoreguidelines-macro-usage,
-  # Cognitive complexity: startGui and others need major refactor (deferred):
+  -performance-inefficient-algorithm,
+  -performance-unnecessary-value-param,
+  -readability-avoid-return-with-void-value,
+  -readability-braces-around-statements,
+  -readability-convert-member-functions-to-static,
   -readability-function-cognitive-complexity,
-  # do-while: valid pattern in some macro and state-machine code:
-  -cppcoreguidelines-avoid-do-while,
-  # union access: required for C API structs (toxcore, v4l2):
-  -cppcoreguidelines-pro-type-union-access,
-  # recursion: some algorithms are naturally recursive:
-  -misc-no-recursion,
-  # global vars: legitimate use in signal handlers and Qt singletons:
-  -cppcoreguidelines-avoid-non-const-global-variables,
-  # goto: used for C-style error handling in C API wrappers:
-  -cppcoreguidelines-avoid-goto,
-  # implicit bool: common Qt pattern (e.g. pointer → bool):
+  -readability-identifier-length,
   -readability-implicit-bool-conversion,
-  # macro-to-enum: not always safe when macros cross C/C++ boundary:
-  -cppcoreguidelines-macro-to-enum,
-  # switch missing default: conflicts with -Wswitch-enum coverage:
-  -bugprone-switch-missing-default-case
+  -readability-magic-numbers,
+  -readability-make-member-function-const,
+  -readability-named-parameter,
+  -readability-redundant-access-specifiers,
+  -readability-redundant-member-init,
+  -readability-simplify-boolean-expr,
+  -readability-suspicious-call-argument,
 
 # All enabled checks are errors — no silent warnings.
 WarningsAsErrors: '*'

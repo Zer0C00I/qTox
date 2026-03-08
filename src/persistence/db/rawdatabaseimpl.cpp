@@ -709,7 +709,7 @@ void RawDatabaseImpl::compileAndExecute(Transaction& trans)
         do {
             // Compile the next statement
             sqlite3_stmt* stmt = nullptr;
-            int r = sqlite3_prepare_v2(sqlite, compileTail,
+            const int r = sqlite3_prepare_v2(sqlite, compileTail,
                                        static_cast<int>(query.query.size()
                                            - static_cast<int>(compileTail - query.query.data())),
                                        &stmt, &compileTail);

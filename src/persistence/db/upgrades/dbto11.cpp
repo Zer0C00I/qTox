@@ -19,6 +19,7 @@ bool DbTo11::dbSchema10to11(RawDatabase& db)
     if (!db.execNow(std::move(upgradeQueries))) {
         return false;
     }
+    upgradeQueries.clear();
 
     if (!appendSplitPeersQueries(db, upgradeQueries)) {
         return false;

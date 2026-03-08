@@ -554,7 +554,8 @@ AVFrame* VideoFrame::generateAVFrame(const QSize& dimensions, const int pixelFor
                        nullptr, nullptr, nullptr);
 
     if (swsCtx == nullptr) {
-        av_freep(&ret->data[0]);
+        av_free(ret->data[0]);
+        ret->data[0] = nullptr;
 #if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(57, 48, 101)
         av_frame_unref(ret);
 #endif
@@ -565,7 +566,8 @@ AVFrame* VideoFrame::generateAVFrame(const QSize& dimensions, const int pixelFor
     auto it = frameBuffer.find(sourceFrameKey);
     if (it == frameBuffer.end() || it->second == nullptr) {
         sws_freeContext(swsCtx);
-        av_freep(&ret->data[0]);
+        av_free(ret->data[0]);
+        ret->data[0] = nullptr;
 #if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(57, 48, 101)
         av_frame_unref(ret);
 #endif
@@ -618,7 +620,8 @@ AVFrame* VideoFrame::storeAVFrame(AVFrame* frame, const QSize& dimensions, const
         AVFrame* old_ret = it->second;
 
         // Free new frame
-        av_freep(static_cast<void*>(&frame->data[0]));
+        av_free(frame->data[0]);
+        frame->data[0] = nullptr;
 #if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(57, 48, 101)
         av_frame_unref(frame);
 #endif
@@ -655,7 +658,8 @@ void VideoFrame::deleteFrameBuffer()
         if (sourceFrameKey == frameIterator.first) {
             if (freeSourceFrame && frame->data[0] && freedBuffers.find(frame->data[0]) == freedBuffers.end()) {
                 void* bufPtr = frame->data[0];
-                av_freep(static_cast<void*>(&frame->data[0]));
+                av_free(frame->data[0]);
+                frame->data[0] = nullptr;
                 freedBuffers.insert(bufPtr);
             }
 #if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(57, 48, 101)
@@ -665,7 +669,8 @@ void VideoFrame::deleteFrameBuffer()
         } else {
             if (frame->data[0] && freedBuffers.find(frame->data[0]) == freedBuffers.end()) {
                 void* bufPtr = frame->data[0];
-                av_freep(static_cast<void*>(&frame->data[0]));
+                av_free(frame->data[0]);
+                frame->data[0] = nullptr;
                 freedBuffers.insert(bufPtr);
             }
 #if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(57, 48, 101)

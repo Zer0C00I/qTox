@@ -199,7 +199,7 @@ void FileTransferWidget::paintEvent(QPaintEvent* event)
                                         buttonFieldWidth, buttonFieldWidth + lineWidth, 50, 50,
                                         Qt::RelativeSize);
         buttonBackground.addRect((width() - (2 * buttonFieldWidth)) - (lineWidth * 2), 0,
-                                 buttonFieldWidth * 2, buttonFieldWidth / 2);
+                                 buttonFieldWidth * 2, static_cast<qreal>(buttonFieldWidth) / 2);
         buttonBackground.addRect((width() - static_cast<int>(1.5 * buttonFieldWidth)) - (lineWidth * 2), 0,
                                  buttonFieldWidth * 2, buttonFieldWidth + 1);
         buttonBackground.setFillRule(Qt::WindingFill);

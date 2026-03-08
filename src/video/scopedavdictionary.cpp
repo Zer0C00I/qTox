@@ -14,19 +14,22 @@ extern "C"
 #pragma GCC diagnostic pop
 }
 
-void ScopedAVDictionary::Setter::operator=(const char* value)
+ScopedAVDictionary::Setter& ScopedAVDictionary::Setter::operator=(const char* value)
 {
     av_dict_set(dict_, key_, value, 0);
+    return *this;
 }
 
-void ScopedAVDictionary::Setter::operator=(const QString& value)
+ScopedAVDictionary::Setter& ScopedAVDictionary::Setter::operator=(const QString& value)
 {
     *this = value.toStdString().c_str();
+    return *this;
 }
 
-void ScopedAVDictionary::Setter::operator=(std::int64_t value)
+ScopedAVDictionary::Setter& ScopedAVDictionary::Setter::operator=(std::int64_t value)
 {
     av_dict_set_int(dict_, key_, value, 0);
+    return *this;
 }
 
 ScopedAVDictionary::~ScopedAVDictionary()

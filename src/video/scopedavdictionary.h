@@ -27,16 +27,17 @@ class ScopedAVDictionary
         {
         }
 
-        void operator=(const char* value);
-        void operator=(const QString& value);
+        Setter& operator=(const char* value);
+        Setter& operator=(const QString& value);
 
         template <std::size_t N>
-        void operator=(const std::array<char, N>& value)
+        Setter& operator=(const std::array<char, N>& value)
         {
             *this = value.data();
+            return *this;
         }
 
-        void operator=(std::int64_t value);
+        Setter& operator=(std::int64_t value);
     };
 
 public:

@@ -11,7 +11,7 @@
 #include <tox/tox.h>
 #include <utility>
 
-#define TOX_HEX_ID_LENGTH 2 * TOX_ADDRESS_SIZE
+#define TOX_HEX_ID_LENGTH (2 * TOX_ADDRESS_SIZE)
 
 /**
  * @file corestructs.h
