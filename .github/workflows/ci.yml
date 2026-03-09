@@ -466,7 +466,7 @@ jobs:
         run: |
           apt-get update
           apt-get install -y --no-install-recommends \
-            ca-certificates git wget sudo lsb-release
+            ca-certificates git wget sudo lsb-release gnupg
       - uses: actions/checkout@v4
         with:
           submodules: recursive
