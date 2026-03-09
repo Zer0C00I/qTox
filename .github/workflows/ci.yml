@@ -3,6 +3,11 @@ name: CI
 on:
   schedule: [cron: '0 2 * * *']
   workflow_dispatch:
+    inputs:
+      skip_gates:
+        description: 'Skip clang-strict / clang-tidy / ASan gate jobs'
+        type: boolean
+        default: false
   pull_request:
     branches: ["master"]
   push:
@@ -26,6 +31,7 @@ jobs:
   check-clang-strict:
     name: clang-strict (full build)
     runs-on: ubuntu-22.04
+    if: ${{ !inputs.skip_gates }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -107,6 +113,7 @@ jobs:
   check-clang-tidy:
     name: clang-tidy
     runs-on: ubuntu-24.04
+    if: ${{ !inputs.skip_gates }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -193,6 +200,7 @@ jobs:
   check-asan:
     name: ASan + UBSan
     runs-on: ubuntu-22.04
+    if: ${{ !inputs.skip_gates }}
     steps:
       - uses: actions/checkout@v4
         with:
