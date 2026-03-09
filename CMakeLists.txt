@@ -214,6 +214,63 @@ elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
   endif()
 endif()
 
+# PGO — Profile-Guided Optimization (Clang + lld only, two-phase workflow).
+#
+# Phase 1 – collect a profile:
+#   cmake -S . -B _build_pgo -DPGO_GENERATE=ON
+#   cmake --build _build_pgo
+#   ./_build_pgo/qtox          # use the app as representative workload
+#   llvm-profdata merge -o qtox.profdata default_*.profraw
+#
+# Phase 2 – rebuild with profile:
+#   cmake -S . -B _build -DPGO_DATA=/abs/path/to/qtox.profdata
+#   cmake --build _build
+#
+option(PGO_GENERATE "Instrument build for PGO profile collection (Clang only)" OFF)
+set(PGO_DATA "" CACHE FILEPATH "PGO .profdata file for the optimised rebuild (Clang only)")
+
+if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  if(PGO_GENERATE AND PGO_DATA)
+    message(FATAL_ERROR "Set either PGO_GENERATE or PGO_DATA, not both")
+  elseif(PGO_GENERATE)
+    message(STATUS "PGO: instrumented build (generate phase)")
+    add_compile_options(-fprofile-instr-generate)
+    add_link_options(-fprofile-instr-generate)
+  elseif(PGO_DATA)
+    if(NOT EXISTS "${PGO_DATA}")
+      message(FATAL_ERROR "PGO_DATA not found: ${PGO_DATA}")
+    endif()
+    message(STATUS "PGO: optimised build using ${PGO_DATA}")
+    add_compile_options(-fprofile-instr-use=${PGO_DATA} -fprofile-correction)
+    add_link_options(-fprofile-instr-use=${PGO_DATA})
+  endif()
+endif()
+
+# BOLT — Binary Optimization and Layout Tool (post-link, Clang + lld only).
+#
+# BOLT_PREPARE adds --emit-relocs so llvm-bolt can reorder code after linking.
+# Run after a normal (or PGO-use) build:
+#
+#   perf record -e cycles:u -j any,u -o perf.data -- ./_build/qtox
+#   perf2bolt -p perf.data -o perf.fdata _build/qtox
+#   llvm-bolt _build/qtox -o _build/qtox.bolt     \
+#     -data=perf.fdata                            \
+#     -reorder-blocks=ext-tsp                     \
+#     -reorder-functions=hfsort                   \
+#     -split-functions -split-eh -dyno-stats
+#
+# Replace the installed binary with qtox.bolt for the full speedup.
+#
+option(BOLT_PREPARE "Keep relocations for BOLT post-link optimisation (Clang + lld only)" OFF)
+if(BOLT_PREPARE)
+  if(_LLD AND CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    message(STATUS "BOLT: --emit-relocs enabled")
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--emit-relocs")
+  else()
+    message(WARNING "BOLT_PREPARE requires Clang + lld — ignored")
+  endif()
+endif()
+
 add_definitions(-DQT_NO_CAST_FROM_BYTEARRAY)
 add_definitions(-DQT_NO_CAST_TO_ASCII)
 add_definitions(-DQT_RESTRICTED_CAST_FROM_ASCII)
