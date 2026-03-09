@@ -652,7 +652,7 @@ jobs:
           VERSION=$(grep -m1 'VERSION_MAJOR' cmake/Package.cmake | grep -oE '[0-9]+').$(grep -m1 'VERSION_MINOR' cmake/Package.cmake | grep -oE '[0-9]+').$(grep -m1 'VERSION_PATCH' cmake/Package.cmake | grep -oE '[0-9]+')
           echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
       - name: Rename AppImage
-        run: mv io.github.qtox.qTox-*.AppImage "qtox-${{ steps.version.outputs.version }}-x86_64.AppImage"
+        run: mv qTox-*.AppImage "qtox-${{ steps.version.outputs.version }}-x86_64.AppImage"
       - name: Upload AppImage artifact
         uses: actions/upload-artifact@v4
         with:
