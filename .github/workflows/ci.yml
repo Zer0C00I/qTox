@@ -39,7 +39,8 @@ jobs:
           sudo apt-get install -y clang-20 clang-tidy-20 lld-20
           sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-20 100
           sudo update-alternatives --install /usr/bin/clang-tidy clang-tidy /usr/bin/clang-tidy-20 100
-          sudo update-alternatives --install /usr/bin/ld ld /usr/bin/ld.lld-20 100
+          sudo update-alternatives --install /usr/bin/ld    ld    /usr/bin/ld.lld-20 100
+          sudo update-alternatives --install /usr/bin/ld.lld ld.lld /usr/bin/ld.lld-20 100
 
       - name: Install dependencies
         run: |
@@ -119,7 +120,8 @@ jobs:
           sudo apt-get install -y clang-20 clang-tidy-20 lld-20
           sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-20 100
           sudo update-alternatives --install /usr/bin/clang-tidy clang-tidy /usr/bin/clang-tidy-20 100
-          sudo update-alternatives --install /usr/bin/ld ld /usr/bin/ld.lld-20 100
+          sudo update-alternatives --install /usr/bin/ld    ld    /usr/bin/ld.lld-20 100
+          sudo update-alternatives --install /usr/bin/ld.lld ld.lld /usr/bin/ld.lld-20 100
 
       - name: Install dependencies
         run: |
@@ -204,7 +206,8 @@ jobs:
           sudo apt-get install -y clang-20 clang-tidy-20 lld-20
           sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-20 100
           sudo update-alternatives --install /usr/bin/clang-tidy clang-tidy /usr/bin/clang-tidy-20 100
-          sudo update-alternatives --install /usr/bin/ld ld /usr/bin/ld.lld-20 100
+          sudo update-alternatives --install /usr/bin/ld    ld    /usr/bin/ld.lld-20 100
+          sudo update-alternatives --install /usr/bin/ld.lld ld.lld /usr/bin/ld.lld-20 100
 
       - name: Install dependencies
         run: |

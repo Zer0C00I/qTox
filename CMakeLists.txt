@@ -197,7 +197,7 @@ endforeach()
 # compiler) — gold's plugin causes bitcode version mismatches. CI installs
 # clang-20 + lld-20 together via llvm.sh to guarantee version alignment.
 if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-  find_program(_LLD ld.lld)
+  find_program(_LLD NAMES ld.lld lld)
   if(_LLD)
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fuse-ld=lld")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -flto=thin")
