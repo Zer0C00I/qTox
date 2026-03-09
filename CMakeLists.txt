@@ -221,43 +221,59 @@ elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
   endif()
 endif()
 
-# PGO — Profile-Guided Optimization (Clang + lld only, two-phase workflow).
+# PGO — Profile-Guided Optimization (two-phase workflow).
 #
-# Phase 1 – collect a profile:
-#   cmake -S . -B _build_pgo -DPGO_GENERATE=ON
-#   cmake --build _build_pgo
-#   ./_build_pgo/qtox          # use the app as representative workload
-#   llvm-profdata merge -o qtox.profdata default_*.profraw
+# Clang/AppleClang:
+#   Phase 1:  cmake -DPGO_GENERATE=ON && cmake --build
+#             run qtox, then: llvm-profdata merge -o qtox.profdata default_*.profraw
+#   Phase 2:  cmake -DPGO_DATA=/abs/path/to/qtox.profdata && cmake --build
 #
-# Phase 2 – rebuild with profile:
-#   cmake -S . -B _build -DPGO_DATA=/abs/path/to/qtox.profdata
-#   cmake --build _build
+# GCC:
+#   Phase 1:  cmake -DPGO_GENERATE=ON && cmake --build
+#             run qtox  (produces .gcda files next to the binary)
+#   Phase 2:  cmake -DPGO_DATA=/abs/path/to/gcda/dir && cmake --build
 #
-option(PGO_GENERATE "Instrument build for PGO profile collection (Clang only)" OFF)
-set(PGO_DATA "" CACHE FILEPATH "PGO .profdata file for the optimised rebuild (Clang only)")
+option(PGO_GENERATE "Instrument build for PGO profile collection" OFF)
+set(PGO_DATA "" CACHE PATH "PGO profile for optimised rebuild (Clang: .profdata file; GCC: directory with .gcda files)")
 
-if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-  if(PGO_GENERATE AND PGO_DATA)
-    message(FATAL_ERROR "Set either PGO_GENERATE or PGO_DATA, not both")
-  elseif(PGO_GENERATE)
-    message(STATUS "PGO: instrumented build (generate phase)")
+if(PGO_GENERATE AND PGO_DATA)
+  message(FATAL_ERROR "Set either PGO_GENERATE or PGO_DATA, not both")
+endif()
+
+if(CMAKE_CXX_COMPILER_ID MATCHES "Clang") # covers both Clang and AppleClang
+  if(PGO_GENERATE)
+    message(STATUS "PGO: Clang instrumented build (generate phase)")
     add_compile_options(-fprofile-instr-generate)
     add_link_options(-fprofile-instr-generate)
   elseif(PGO_DATA)
     if(NOT EXISTS "${PGO_DATA}")
       message(FATAL_ERROR "PGO_DATA not found: ${PGO_DATA}")
     endif()
-    message(STATUS "PGO: optimised build using ${PGO_DATA}")
+    message(STATUS "PGO: Clang optimised build using ${PGO_DATA}")
     add_compile_options(-fprofile-instr-use=${PGO_DATA} -fprofile-correction)
     add_link_options(-fprofile-instr-use=${PGO_DATA})
   endif()
+elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+  if(PGO_GENERATE)
+    message(STATUS "PGO: GCC instrumented build (generate phase)")
+    add_compile_options(-fprofile-generate)
+    add_link_options(-fprofile-generate)
+  elseif(PGO_DATA)
+    if(NOT EXISTS "${PGO_DATA}")
+      message(FATAL_ERROR "PGO_DATA directory not found: ${PGO_DATA}")
+    endif()
+    message(STATUS "PGO: GCC optimised build using ${PGO_DATA}")
+    add_compile_options(-fprofile-use=${PGO_DATA} -fprofile-correction)
+    add_link_options(-fprofile-use=${PGO_DATA})
+  endif()
 endif()
 
-# BOLT — Binary Optimization and Layout Tool (post-link, Clang + lld only).
+# BOLT — Binary Optimization and Layout Tool (post-link, ELF only).
 #
-# BOLT_PREPARE adds --emit-relocs so llvm-bolt can reorder code after linking.
-# Run after a normal (or PGO-use) build:
+# Not supported on macOS (Mach-O). Works with any compiler on Linux/FreeBSD.
+# BOLT_PREPARE adds -Wl,--emit-relocs so llvm-bolt can reorder code sections.
 #
+# After a normal (or PGO-use) build:
 #   perf record -e cycles:u -j any,u -o perf.data -- ./_build/qtox
 #   perf2bolt -p perf.data -o perf.fdata _build/qtox
 #   llvm-bolt _build/qtox -o _build/qtox.bolt     \
@@ -266,15 +282,13 @@ endif()
 #     -reorder-functions=hfsort                   \
 #     -split-functions -split-eh -dyno-stats
 #
-# Replace the installed binary with qtox.bolt for the full speedup.
-#
-option(BOLT_PREPARE "Keep relocations for BOLT post-link optimisation (Clang + lld only)" OFF)
+option(BOLT_PREPARE "Keep relocations for BOLT post-link optimisation (ELF/Linux/FreeBSD only)" OFF)
 if(BOLT_PREPARE)
-  if(_LLD AND CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  if(APPLE)
+    message(WARNING "BOLT_PREPARE: BOLT does not support Mach-O — ignored")
+  else()
     message(STATUS "BOLT: --emit-relocs enabled")
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--emit-relocs")
-  else()
-    message(WARNING "BOLT_PREPARE requires Clang + lld — ignored")
   endif()
 endif()
 
