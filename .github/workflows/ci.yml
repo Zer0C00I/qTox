@@ -339,7 +339,6 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
             build-essential \
-            checkinstall \
             cmake \
             libavcodec-dev \
             libavdevice-dev \
@@ -358,6 +357,7 @@ jobs:
             libvpx-dev \
             libxss-dev \
             ninja-build \
+            patchelf \
             pkg-config \
             qt6-base-dev \
             qt6-l10n-tools \
@@ -376,33 +376,23 @@ jobs:
           cmake --build --preset clang-strict
       - name: Create DEB package
         run: |
-          VERSION=$(git describe --tags --abbrev=0 2>/dev/null || echo "0.0.0")
-          sudo checkinstall \
-            --pkgname=qtox \
-            --pkgversion="${VERSION#v}" \
-            --pkgrelease=1 \
-            --pkggroup=net \
-            --pkglicense=GPL-3 \
-            --pkgsource="https://github.com/${{ github.repository }}" \
-            --maintainer="qTox contributors" \
-            --pakdir=. \
-            --install=no \
-            --nodoc \
-            --default \
-            cmake --install _build_clang_strict
+          sudo packaging/create-deb.sh \
+            --build-dir _build_clang_strict \
+            --src-dir . \
+            --out-dir .
       - name: Upload DEB artifact
         uses: actions/upload-artifact@v4
         with:
           name: qtox-deb
-          path: "*.deb"
+          path: qtox-*-amd64.deb
       - name: Upload DEB to release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
-          files: "*.deb"
+          files: qtox-*-amd64.deb
       - name: Rename DEB for nightly
         if: github.ref == 'refs/heads/master'
-        run: mv *.deb qtox-amd64.deb
+        run: cp qtox-*-amd64.deb qtox-amd64.deb
       - name: Upload DEB to nightly release
         if: github.ref == 'refs/heads/master'
         uses: softprops/action-gh-release@v2
@@ -440,7 +430,6 @@ jobs:
         run: |
           apt-get install -y --no-install-recommends \
             build-essential \
-            checkinstall \
             cmake \
             libavcodec-dev \
             libavdevice-dev \
@@ -459,6 +448,7 @@ jobs:
             libvpx-dev \
             libxss-dev \
             ninja-build \
+            patchelf \
             pkg-config \
             qt6-base-dev \
             qt6-l10n-tools \
@@ -477,21 +467,11 @@ jobs:
           cmake --build --preset clang-strict
       - name: Create DEB package
         run: |
-          VERSION=$(git describe --tags --abbrev=0 2>/dev/null || echo "0.0.0")
-          checkinstall \
-            --pkgname=qtox \
-            --pkgversion="${VERSION#v}" \
-            --pkgrelease=1 \
-            --pkggroup=net \
-            --pkglicense=GPL-3 \
-            --pkgsource="https://github.com/${{ github.repository }}" \
-            --maintainer="qTox contributors" \
-            --pakdir=. \
-            --install=no \
-            --nodoc \
-            --default \
-            cmake --install _build_clang_strict
-          mv qtox_*.deb qtox-debian13-amd64.deb
+          packaging/create-deb.sh \
+            --build-dir _build_clang_strict \
+            --src-dir . \
+            --out-dir .
+          mv qtox-*-amd64.deb qtox-debian13-amd64.deb
       - name: Upload DEB artifact
         uses: actions/upload-artifact@v4
         with:
