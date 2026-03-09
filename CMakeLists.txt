@@ -193,17 +193,24 @@ foreach(_build_type RELEASE RELWITHDEBINFO)
     "${CMAKE_CXX_FLAGS_${_build_type}}")
 endforeach()
 
-# Performance: thin LTO for clang. Requires lld (same LLVM version as the
-# compiler) — gold's plugin causes bitcode version mismatches. CI installs
-# clang-20 + lld-20 together via llvm.sh to guarantee version alignment.
-if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+# Performance: ThinLTO.
+# - Apple Clang: ld64 supports ThinLTO natively, no lld needed.
+# - Non-Apple Clang (Linux/FreeBSD): requires lld — gold causes bitcode
+#   version mismatches. CI installs clang-20 + lld-20 via llvm.sh.
+# - GCC: full LTO via CMake IPO support.
+if(CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang")
+  message(STATUS "LTO: ThinLTO via Apple ld64")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -flto=thin")
+  set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -flto=thin")
+elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   find_program(_LLD NAMES ld.lld lld)
   if(_LLD)
+    message(STATUS "LTO: ThinLTO via lld (${_LLD})")
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fuse-ld=lld")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -flto=thin")
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -flto=thin")
   else()
-    message(STATUS "lld not found — LTO disabled (install lld to enable)")
+    message(STATUS "LTO: disabled — lld not found (install lld to enable)")
   endif()
 elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
   include(CheckIPOSupported)
