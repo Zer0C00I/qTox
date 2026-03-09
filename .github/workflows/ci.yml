@@ -282,36 +282,67 @@ jobs:
   # ──────────────────────────────────────────────────────────────────────────
 
   build-rpm:
-    name: RPM package (Fedora)
+    name: RPM package (Fedora 41)
     runs-on: ubuntu-24.04
+    container: fedora:41
     needs: [check-clang-strict, check-clang-tidy, check-asan]
     steps:
+      - name: Install base tools
+        run: |
+          dnf install -y \
+            git wget sudo ca-certificates
       - uses: actions/checkout@v4
-      - name: Cache compiler output
-        uses: actions/cache@v4
         with:
-          path: ".cache/ccache"
-          key: ${{ github.job }}-ccache
-      - name: Build RPM package
-        run: docker compose run --rm fedora .ci-scripts/package-qtox-linux.sh --source-dir . --target-dir build_dir
+          submodules: recursive
+      - name: Install dependencies
+        run: |
+          dnf install -y \
+            clang lld \
+            cmake ninja-build pkg-config \
+            ffmpeg-devel libvpx-devel \
+            libexif-devel openal-soft-devel opus-devel \
+            qrencode-devel libsodium-devel sqlcipher-devel \
+            mesa-libGL-devel libv4l-devel libXScrnSaver-devel libunwind-devel \
+            qt6-qtbase-devel qt6-qtsvg-devel qt6-qttools-devel \
+            patchelf rpm-build
+      - name: Set up lld as linker
+        run: |
+          update-alternatives --install /usr/bin/ld ld /usr/bin/ld.lld 100
+          update-alternatives --install /usr/bin/ld.lld ld.lld /usr/bin/ld.lld 100 || true
+      - name: Build toxcore
+        run: |
+          git clone --depth=1 --recursive https://github.com/TokTok/c-toxcore.git toxcore
+          cmake -B toxcore/_build -S toxcore -GNinja -DBOOTSTRAP_DAEMON=OFF
+          cmake --build toxcore/_build
+          cmake --install toxcore/_build
+      - name: Build qTox
+        run: |
+          cmake --preset clang-strict
+          cmake --build --preset clang-strict
+      - name: Create RPM package
+        run: |
+          packaging/create-rpm.sh \
+            --build-dir _build_clang_strict \
+            --src-dir . \
+            --out-dir .
       - name: Upload RPM artifact
         uses: actions/upload-artifact@v4
         with:
           name: qtox-rpm
-          path: build_dir/qtox-*.rpm
+          path: qtox-*.rpm
       - name: Upload RPM to release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
-          files: build_dir/qtox-*.rpm
+          files: qtox-*.rpm
       - name: Rename RPM for nightly
         if: github.ref == 'refs/heads/master'
-        run: sudo mv build_dir/qtox-*.rpm build_dir/qtox-fc41.x86_64.rpm
+        run: cp qtox-*.rpm qtox-fc41.x86_64.rpm
       - name: Upload RPM to nightly release
         if: github.ref == 'refs/heads/master'
         uses: softprops/action-gh-release@v2
         with:
-          files: build_dir/qtox-fc41.x86_64.rpm
+          files: qtox-fc41.x86_64.rpm
           tag_name: nightly
           name: "Nightly Build"
           prerelease: true
