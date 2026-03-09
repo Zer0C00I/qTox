@@ -18,6 +18,11 @@
 #       project-specific or redundant style rules
 #   bugprone-easily-swappable-parameters
 #       too noisy across existing large API surface
+#   clang-analyzer-cplusplus.NewDelete
+#       false positive from Qt's QWeakPointer refcount destructor (~QWeakPointer
+#       does 'if (!weakref.deref()) delete d' — analyzer misreads the refcount
+#       branch as use-after-free); error is reported inside Qt system headers
+#       so NOLINT on user code cannot suppress it
 #   bugprone-switch-missing-default-case
 #       conflicts with -Wswitch-enum coverage
 #   cert-err58-cpp
@@ -134,6 +139,7 @@ Checks: >
   readability-*,
   -bugprone-easily-swappable-parameters,
   -bugprone-switch-missing-default-case,
+  -clang-analyzer-cplusplus.NewDelete,
   -cert-dcl37-c,
   -cert-dcl51-cpp,
   -cert-err58-cpp,

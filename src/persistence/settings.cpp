@@ -214,7 +214,13 @@ Settings::~Settings()
 
 void Settings::setSaveTimerInterval(int ms)
 {
-    QMetaObject::invokeMethod(this, [this, ms]() { saveTimer->setInterval(ms); }, Qt::BlockingQueuedConnection);
+    QMetaObject::invokeMethod(this, "doSetSaveTimerInterval", Qt::BlockingQueuedConnection,
+                              Q_ARG(int, ms));
+}
+
+void Settings::doSetSaveTimerInterval(int ms)
+{
+    saveTimer->setInterval(ms);
 }
 
 void Settings::loadGlobal()

@@ -599,6 +599,7 @@ private:
 private slots:
     void savePersonal(const QString& profileName, const ToxEncrypt* passkey);
     void requestSave();
+    void doSetSaveTimerInterval(int ms);
 
 private:
     QTimer* saveTimer{nullptr};
