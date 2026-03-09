@@ -4,8 +4,8 @@
 # Copyright © 2026 by The qTox Project Contributors
 
 # Creates a DEB package that installs qTox into /opt/qtox/ and bundles
-# FFmpeg and libvpx alongside the binary so the package works across
-# Ubuntu 22.04, Ubuntu 24.04, Debian 12, Debian 13, etc.
+# all non-system libraries so the package works across distros.
+# Only glibc and libstdc++ are left as system dependencies.
 
 set -euo pipefail
 
@@ -43,10 +43,16 @@ cmake --install "$BUILD_DIR" --prefix "$STAGING/opt/qtox"
 
 BINARY="$STAGING/opt/qtox/bin/qtox"
 
-echo "==> Bundling FFmpeg and libvpx"
+echo "==> Bundling shared libraries"
 mkdir -p "$STAGING/opt/qtox/lib"
 
-for lib in libavcodec libavformat libavutil libavdevice libswscale libvpx; do
+for lib in \
+    libavcodec libavformat libavutil libavdevice libswscale \
+    libvpx libsqlcipher libtoxcore \
+    libopenal libopus libsodium \
+    libexif libqrencode libunwind \
+    libQt6Core libQt6Gui libQt6Widgets libQt6Network \
+    libQt6Svg libQt6Xml libQt6DBus libQt6OpenGL; do
     so=$(ldd "$BINARY" | grep -o '/[^ ]*'"$lib"'[^ ]*' | head -1 || true)
     if [[ -n "$so" ]]; then
         cp -L "$so" "$STAGING/opt/qtox/lib/"
@@ -54,12 +60,34 @@ for lib in libavcodec libavformat libavutil libavdevice libswscale libvpx; do
     fi
 done
 
-echo "==> Setting RPATH to \$ORIGIN/../lib"
-patchelf --set-rpath '$ORIGIN/../lib' "$BINARY"
+echo "==> Bundling Qt6 plugins"
+QT_PLUGIN_DIR=$(qmake6 -query QT_INSTALL_PLUGINS 2>/dev/null || \
+                find /usr/lib -maxdepth 4 -name 'libqxcb.so' 2>/dev/null | \
+                head -1 | xargs -r dirname || true)
+
+if [[ -n "$QT_PLUGIN_DIR" && -d "$QT_PLUGIN_DIR" ]]; then
+    for plugin_subdir in platforms imageformats iconengines; do
+        src="$QT_PLUGIN_DIR/$plugin_subdir"
+        if [[ -d "$src" ]]; then
+            dst="$STAGING/opt/qtox/lib/qt6/plugins/$plugin_subdir"
+            mkdir -p "$dst"
+            cp "$src/"*.so "$dst/" 2>/dev/null || true
+            echo "  plugins: $plugin_subdir"
+        fi
+    done
+fi
+
+echo "==> Creating launcher wrapper"
+mv "$BINARY" "$STAGING/opt/qtox/bin/qtox-bin"
+cat > "$BINARY" << 'WRAPPER'
+#!/bin/sh
+export LD_LIBRARY_PATH=/opt/qtox/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+export QT_PLUGIN_PATH=/opt/qtox/lib/qt6/plugins
+exec /opt/qtox/bin/qtox-bin "$@"
+WRAPPER
+chmod 755 "$BINARY"
 
 echo "==> Installing desktop integration to /usr/share"
-# Desktop file, icons and appdata go to standard system paths so the app
-# appears in application menus and file managers on any distro.
 mkdir -p "$STAGING/usr/share/applications"
 mkdir -p "$STAGING/usr/share/metainfo"
 
@@ -109,25 +137,9 @@ Description: Tox-based encrypted instant messenger
  Tox protocol. Supports text chat, file transfers, audio/video calls
  and conferences.
  .
- FFmpeg and libvpx are bundled in /opt/qtox/lib/ for cross-distro
- compatibility.
+ All dependencies except glibc and libstdc++ are bundled in /opt/qtox/lib/.
 Depends: libc6 (>= 2.35),
- libstdc++6,
- libqt6core6 | libqt6core6t64,
- libqt6gui6 | libqt6gui6t64,
- libqt6widgets6 | libqt6widgets6t64,
- libqt6network6 | libqt6network6t64,
- libqt6svg6 | libqt6svg6t64,
- libqt6xml6 | libqt6xml6t64,
- libqt6dbus6 | libqt6dbus6t64,
- libopenal1,
- libopus0,
- libsodium23,
- libsqlcipher0,
- libexif12,
- libqrencode4,
- libxss1,
- libunwind8
+ libstdc++6
 EOF
 
 mkdir -p "$OUT_DIR"

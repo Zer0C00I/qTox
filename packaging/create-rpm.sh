@@ -4,8 +4,8 @@
 # Copyright © 2026 by The qTox Project Contributors
 
 # Creates an RPM package that installs qTox into /opt/qtox/ and bundles
-# FFmpeg and libvpx alongside the binary so the package works across
-# Fedora releases regardless of the system FFmpeg version.
+# all non-system libraries so the package works across Fedora releases.
+# Only glibc and libstdc++ are left as system dependencies.
 
 set -euo pipefail
 
@@ -45,10 +45,16 @@ cmake --install "$BUILD_DIR" --prefix "$STAGING/opt/qtox"
 
 BINARY="$STAGING/opt/qtox/bin/qtox"
 
-echo "==> Bundling FFmpeg and libvpx"
+echo "==> Bundling shared libraries"
 mkdir -p "$STAGING/opt/qtox/lib"
 
-for lib in libavcodec libavformat libavutil libavdevice libswscale libvpx; do
+for lib in \
+    libavcodec libavformat libavutil libavdevice libswscale \
+    libvpx libsqlcipher libtoxcore \
+    libopenal libopus libsodium \
+    libexif libqrencode libunwind \
+    libQt6Core libQt6Gui libQt6Widgets libQt6Network \
+    libQt6Svg libQt6Xml libQt6DBus libQt6OpenGL; do
     so=$(ldd "$BINARY" | grep -o '/[^ ]*'"$lib"'[^ ]*' | head -1 || true)
     if [[ -n "$so" ]]; then
         cp -L "$so" "$STAGING/opt/qtox/lib/"
@@ -56,8 +62,32 @@ for lib in libavcodec libavformat libavutil libavdevice libswscale libvpx; do
     fi
 done
 
-echo "==> Setting RPATH to \$ORIGIN/../lib"
-patchelf --set-rpath '$ORIGIN/../lib' "$BINARY"
+echo "==> Bundling Qt6 plugins"
+QT_PLUGIN_DIR=$(qmake6 -query QT_INSTALL_PLUGINS 2>/dev/null || \
+                find /usr/lib64 /usr/lib -maxdepth 4 -name 'libqxcb.so' 2>/dev/null | \
+                head -1 | xargs -r dirname || true)
+
+if [[ -n "$QT_PLUGIN_DIR" && -d "$QT_PLUGIN_DIR" ]]; then
+    for plugin_subdir in platforms imageformats iconengines; do
+        src="$QT_PLUGIN_DIR/$plugin_subdir"
+        if [[ -d "$src" ]]; then
+            dst="$STAGING/opt/qtox/lib/qt6/plugins/$plugin_subdir"
+            mkdir -p "$dst"
+            cp "$src/"*.so "$dst/" 2>/dev/null || true
+            echo "  plugins: $plugin_subdir"
+        fi
+    done
+fi
+
+echo "==> Creating launcher wrapper"
+mv "$BINARY" "$STAGING/opt/qtox/bin/qtox-bin"
+cat > "$BINARY" << 'WRAPPER'
+#!/bin/sh
+export LD_LIBRARY_PATH=/opt/qtox/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+export QT_PLUGIN_PATH=/opt/qtox/lib/qt6/plugins
+exec /opt/qtox/bin/qtox-bin "$@"
+WRAPPER
+chmod 755 "$BINARY"
 
 echo "==> Installing desktop integration to /usr/share"
 mkdir -p "$STAGING/usr/share/applications"
@@ -92,32 +122,20 @@ Summary:    Tox-based encrypted instant messenger
 License:    GPLv3+
 URL:        https://github.com/Zer0C00I/qTox
 
-# FFmpeg and libvpx are bundled in /opt/qtox/lib — exclude them from
-# automatic dependency/provides scanning to avoid conflicts.
+# All dependencies except glibc and libstdc++ are bundled in /opt/qtox/lib/.
 AutoReqProv: no
 Requires: glibc >= 2.35
 Requires: libstdc++
-Requires: qt6-qtbase >= 6.2
-Requires: qt6-qtsvg
-Requires: openal-soft
-Requires: opus
-Requires: libsodium
-Requires: sqlcipher
-Requires: libexif
-Requires: qrencode-libs
-Requires: libXScrnSaver
-Requires: libunwind
 
 %description
 qTox is an instant messaging client using the encrypted peer-to-peer
 Tox protocol. Supports text chat, file transfers, audio/video calls
 and conferences.
 
-FFmpeg and libvpx are bundled in /opt/qtox/lib/ for compatibility
-across Fedora releases.
+All dependencies except glibc and libstdc++ are bundled in /opt/qtox/lib/.
 
 %install
-cp -a "${BUILDROOT}/." %{buildroot}/
+cp -a "${BUILDROOT}/.." %{buildroot}/
 
 %post
 ln -sf /opt/qtox/bin/qtox /usr/bin/qtox
@@ -134,7 +152,7 @@ rm -f /usr/bin/qtox
 
 %changelog
 * $(date '+%a %b %d %Y') qTox contributors <noreply@github.com> - ${VERSION}-1
-- Bundled FFmpeg and libvpx for cross-release compatibility
+- Bundled all dependencies for cross-release compatibility
 SPEC
 
 echo "==> Building RPM"
