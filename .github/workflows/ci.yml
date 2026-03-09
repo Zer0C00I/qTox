@@ -307,11 +307,15 @@ jobs:
       - uses: actions/checkout@v4
         with:
           submodules: recursive
+      - name: Enable RPM Fusion (for ffmpeg-devel)
+        run: |
+          dnf install -y \
+            https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-41.noarch.rpm
       - name: Install dependencies
         run: |
           dnf install -y \
             clang lld \
-            cmake ninja-build pkg-config \
+            cmake ninja-build \
             ffmpeg-devel libvpx-devel \
             libexif-devel openal-soft-devel opus-devel \
             qrencode-devel libsodium-devel sqlcipher-devel \
