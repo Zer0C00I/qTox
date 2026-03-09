@@ -443,7 +443,7 @@ jobs:
         run: |
           apt-get update
           apt-get install -y --no-install-recommends \
-            ca-certificates git wget sudo
+            ca-certificates git wget sudo lsb-release
       - uses: actions/checkout@v4
         with:
           submodules: recursive
