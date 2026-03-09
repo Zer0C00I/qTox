@@ -286,7 +286,7 @@ jobs:
             ctest --test-dir _build-asan --parallel $(nproc) --output-on-failure
 
   # ──────────────────────────────────────────────────────────────────────────
-  # Package jobs — only run after all gate jobs pass
+  # Package jobs — run after gates pass, or immediately if skip_gates=true
   # ──────────────────────────────────────────────────────────────────────────
 
   build-rpm:
@@ -294,6 +294,11 @@ jobs:
     runs-on: ubuntu-24.04
     container: fedora:41
     needs: [check-clang-strict, check-clang-tidy, check-asan]
+    if: |
+      always() &&
+      (needs.check-clang-strict.result == 'success' || needs.check-clang-strict.result == 'skipped') &&
+      (needs.check-clang-tidy.result == 'success' || needs.check-clang-tidy.result == 'skipped') &&
+      (needs.check-asan.result == 'success' || needs.check-asan.result == 'skipped')
     steps:
       - name: Install base tools
         run: |
@@ -359,6 +364,11 @@ jobs:
     name: DEB package (Ubuntu)
     runs-on: ubuntu-22.04
     needs: [check-clang-strict, check-clang-tidy, check-asan]
+    if: |
+      always() &&
+      (needs.check-clang-strict.result == 'success' || needs.check-clang-strict.result == 'skipped') &&
+      (needs.check-clang-tidy.result == 'success' || needs.check-clang-tidy.result == 'skipped') &&
+      (needs.check-asan.result == 'success' || needs.check-asan.result == 'skipped')
     steps:
       - uses: actions/checkout@v4
         with:
@@ -446,6 +456,11 @@ jobs:
     runs-on: ubuntu-24.04
     container: debian:13
     needs: [check-clang-strict, check-clang-tidy, check-asan]
+    if: |
+      always() &&
+      (needs.check-clang-strict.result == 'success' || needs.check-clang-strict.result == 'skipped') &&
+      (needs.check-clang-tidy.result == 'success' || needs.check-clang-tidy.result == 'skipped') &&
+      (needs.check-asan.result == 'success' || needs.check-asan.result == 'skipped')
     steps:
       - name: Install base tools
         run: |
@@ -534,6 +549,11 @@ jobs:
     name: macOS (${{ matrix.arch }})
     runs-on: ${{ matrix.runner }}
     needs: [check-clang-strict, check-clang-tidy, check-asan]
+    if: |
+      always() &&
+      (needs.check-clang-strict.result == 'success' || needs.check-clang-strict.result == 'skipped') &&
+      (needs.check-clang-tidy.result == 'success' || needs.check-clang-tidy.result == 'skipped') &&
+      (needs.check-asan.result == 'success' || needs.check-asan.result == 'skipped')
     strategy:
       fail-fast: false
       matrix:
@@ -648,6 +668,11 @@ jobs:
     name: FreeBSD 14
     runs-on: ubuntu-24.04
     needs: [check-clang-strict, check-clang-tidy, check-asan]
+    if: |
+      always() &&
+      (needs.check-clang-strict.result == 'success' || needs.check-clang-strict.result == 'skipped') &&
+      (needs.check-clang-tidy.result == 'success' || needs.check-clang-tidy.result == 'skipped') &&
+      (needs.check-asan.result == 'success' || needs.check-asan.result == 'skipped')
     steps:
       - uses: actions/checkout@v4
         with:
@@ -729,6 +754,11 @@ jobs:
     name: AppImage (x86_64)
     runs-on: ubuntu-22.04
     needs: [check-clang-strict, check-clang-tidy, check-asan]
+    if: |
+      always() &&
+      (needs.check-clang-strict.result == 'success' || needs.check-clang-strict.result == 'skipped') &&
+      (needs.check-clang-tidy.result == 'success' || needs.check-clang-tidy.result == 'skipped') &&
+      (needs.check-asan.result == 'success' || needs.check-asan.result == 'skipped')
     steps:
       - uses: actions/checkout@v4
         with:
@@ -816,7 +846,12 @@ jobs:
     name: Flatpak (x86_64)
     runs-on: ubuntu-24.04
     needs: [check-clang-strict, check-clang-tidy, check-asan]
-    if: github.event_name != 'pull_request'
+    if: |
+      always() &&
+      github.event_name != 'pull_request' &&
+      (needs.check-clang-strict.result == 'success' || needs.check-clang-strict.result == 'skipped') &&
+      (needs.check-clang-tidy.result == 'success' || needs.check-clang-tidy.result == 'skipped') &&
+      (needs.check-asan.result == 'success' || needs.check-asan.result == 'skipped')
     steps:
       - uses: actions/checkout@v4
       - name: Cache flatpak-builder
