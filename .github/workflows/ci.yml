@@ -308,7 +308,6 @@ jobs:
       - name: Set up lld as linker
         run: |
           update-alternatives --install /usr/bin/ld ld /usr/bin/ld.lld 100
-          update-alternatives --install /usr/bin/ld.lld ld.lld /usr/bin/ld.lld 100 || true
       - name: Build toxcore
         run: |
           git clone --depth=1 --recursive https://github.com/TokTok/c-toxcore.git toxcore
