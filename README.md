@@ -26,12 +26,13 @@ security-relevant warnings are enabled — style warnings are excluded.
 
 ## Performance
 
-Release builds (`RelWithDebInfo`, `Release`) use:
+Release builds use `-O3` and C++23 with the following optimizations:
 
-- **`-O3`** — auto-vectorization, aggressive inlining, loop optimizations
-- **Thin LTO** (`-flto=thin` with lld) — whole-program optimization across
-  translation units; typically 10–20% speedup and smaller binary
-- C++23 standard
+| Optimization | Scope | How to enable |
+|---|---|---|
+| **LTO** | Enabled automatically | Clang+lld → ThinLTO; Apple Clang → ld64 ThinLTO; GCC → full IPO |
+| **PGO** | Optional, two-phase | `-DPGO_GENERATE=ON` to collect, `-DPGO_DATA=` to rebuild with profile |
+| **BOLT** | Optional, post-link, ELF only | `-DBOLT_PREPARE=ON` → run `llvm-bolt` on the binary after build |
 
 ## CI
 
