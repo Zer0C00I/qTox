@@ -43,22 +43,44 @@ cmake --install "$BUILD_DIR" --prefix "$STAGING/opt/qtox"
 
 BINARY="$STAGING/opt/qtox/bin/qtox"
 
-echo "==> Bundling shared libraries"
+echo "==> Bundling shared libraries (recursive)"
 mkdir -p "$STAGING/opt/qtox/lib"
 
-for lib in \
-    libavcodec libavformat libavutil libavdevice libswscale \
-    libvpx libsqlcipher libtoxcore \
-    libopenal libopus libsodium \
-    libexif libqrencode libunwind \
-    libQt6Core libQt6Gui libQt6Widgets libQt6Network \
-    libQt6Svg libQt6Xml libQt6DBus libQt6OpenGL; do
-    so=$(ldd "$BINARY" | grep -o '/[^ ]*'"$lib"'[^ ]*' | head -1 || true)
-    if [[ -n "$so" ]]; then
-        cp -L "$so" "$STAGING/opt/qtox/lib/"
-        echo "  bundled: $(basename "$so")"
-    fi
-done
+# Iterative BFS: collect ALL transitive shared-library deps.
+# Excluded: glibc family, C++ runtime, GPU drivers, display-server libs.
+bundle_deps() {
+    local outdir="$1"; shift
+    # Exclude: kernel/glibc, C++ runtime, GPU drivers, display-server,
+    #          audio-system daemons, and other system-ABI interfaces.
+    local SKIP='linux-vdso|ld-linux'
+    SKIP+='|libstdc\+\+\.so|libgcc_s\.so|libgomp\.so|libmvec\.so'
+    SKIP+='|libc\.so\b|libm\.so\b|libdl\.so\b|libpthread\.so\b|librt\.so\b|libresolv\.so|libnss_'
+    SKIP+='|libGL\.so\b|libGLX\.so|libGLdispatch\.so|libEGL\.so\b|libOpenGL\.so\b'
+    SKIP+='|libdrm\.so|libOpenCL\.so|libvulkan\.so|libva\.so\b|libva-drm|libva-x11|libvdpau\.so'
+    SKIP+='|libglslang|libSPIRV|libshaderc'
+    SKIP+='|libX11\.so\b|libX11-xcb|libxcb|libXau\.so|libXdmcp\.so'
+    SKIP+='|libXss\.so|libXext\.so|libXfixes\.so|libXrender\.so|libXv\.so'
+    SKIP+='|libxkbcommon\.so'
+    SKIP+='|libasound\.so|libpulse|libpipewire|libjack|libsndio\.so'
+    SKIP+='|libdbus|libsystemd\.so|libudev\.so|libseccomp\.so'
+    declare -A seen
+    local queue=("$@")
+    while [[ ${#queue[@]} -gt 0 ]]; do
+        local cur="${queue[0]}"
+        queue=("${queue[@]:1}")
+        while IFS= read -r so; do
+            [[ -z "$so" ]] && continue
+            local base; base=$(basename "$so")
+            [[ -n "${seen[$base]:-}" ]] && continue
+            seen["$base"]=1
+            cp -Lf "$so" "$outdir/"
+            echo "  bundled: $base"
+            queue+=("$so")
+        done < <(ldd "$cur" 2>/dev/null | grep -oP '/[^\s]+' | grep -Pv "$SKIP")
+    done
+}
+
+bundle_deps "$STAGING/opt/qtox/lib" "$BINARY"
 
 echo "==> Bundling Qt6 plugins"
 QT_PLUGIN_DIR=$(qmake6 -query QT_INSTALL_PLUGINS 2>/dev/null || \
@@ -75,14 +97,35 @@ if [[ -n "$QT_PLUGIN_DIR" && -d "$QT_PLUGIN_DIR" ]]; then
             echo "  plugins: $plugin_subdir"
         fi
     done
+    # Bundle transitive deps of the plugins too
+    # shellcheck disable=SC2046
+    bundle_deps "$STAGING/opt/qtox/lib" \
+        $(find "$STAGING/opt/qtox/lib/qt6/plugins" -name '*.so' 2>/dev/null)
 fi
+
+echo "==> Patching RPATH (linuxdeploy-style: $ORIGIN-relative)"
+# Patch the main binary to find bundled libs via RPATH so LD_LIBRARY_PATH
+# is not required (same technique as linuxdeploy / AppImage).
+patchelf --set-rpath '$ORIGIN/../lib' "$BINARY"
+# Patch all bundled libs so they find each other
+find "$STAGING/opt/qtox/lib" -maxdepth 1 -name '*.so*' -type f | while read -r lib; do
+    patchelf --set-rpath '$ORIGIN' "$lib" 2>/dev/null || true
+done
+# Patch Qt plugins: they live two levels deep (lib/qt6/plugins/<subdir>/*.so)
+find "$STAGING/opt/qtox/lib/qt6/plugins" -name '*.so' -type f | while read -r plugin; do
+    patchelf --set-rpath '$ORIGIN/../../../' "$plugin" 2>/dev/null || true
+done
 
 echo "==> Creating launcher wrapper"
 mv "$BINARY" "$STAGING/opt/qtox/bin/qtox-bin"
+# qt.conf tells Qt where to find bundled plugins (RPATH alone doesn't cover plugins)
+mkdir -p "$STAGING/opt/qtox/bin"
+cat > "$STAGING/opt/qtox/bin/qt.conf" << 'QTCONF'
+[Paths]
+Plugins = ../lib/qt6/plugins
+QTCONF
 cat > "$BINARY" << 'WRAPPER'
 #!/bin/sh
-export LD_LIBRARY_PATH=/opt/qtox/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
-export QT_PLUGIN_PATH=/opt/qtox/lib/qt6/plugins
 exec /opt/qtox/bin/qtox-bin "$@"
 WRAPPER
 chmod 755 "$BINARY"
