@@ -293,52 +293,27 @@ jobs:
     name: RPM package (Fedora 41)
     runs-on: ubuntu-24.04
     container: fedora:41
-    needs: [check-clang-strict, check-clang-tidy, check-asan]
+    needs: [check-clang-strict, check-clang-tidy, check-asan, build-appimage]
     if: |
       always() &&
       (needs.check-clang-strict.result == 'success' || needs.check-clang-strict.result == 'skipped') &&
       (needs.check-clang-tidy.result == 'success' || needs.check-clang-tidy.result == 'skipped') &&
-      (needs.check-asan.result == 'success' || needs.check-asan.result == 'skipped')
+      (needs.check-asan.result == 'success' || needs.check-asan.result == 'skipped') &&
+      needs.build-appimage.result == 'success'
     steps:
-      - name: Install base tools
-        run: |
-          dnf install -y \
-            git wget sudo ca-certificates
+      - name: Install tools
+        run: dnf install -y git rpm-build tar
       - uses: actions/checkout@v4
+      - name: Download AppDir
+        uses: actions/download-artifact@v4
         with:
-          submodules: recursive
-      - name: Enable RPM Fusion (for ffmpeg-devel)
-        run: |
-          dnf install -y \
-            https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-41.noarch.rpm
-      - name: Install dependencies
-        run: |
-          dnf install -y \
-            clang lld \
-            cmake ninja-build \
-            ffmpeg-devel libvpx-devel \
-            libexif-devel openal-soft-devel opus-devel \
-            qrencode-devel libsodium-devel sqlcipher-devel \
-            mesa-libGL-devel libv4l-devel libXScrnSaver-devel libunwind-devel \
-            qt6-qtbase-devel qt6-qtsvg-devel qt6-qttools-devel \
-            patchelf rpm-build
-      - name: Set up lld as linker
-        run: |
-          update-alternatives --install /usr/bin/ld ld /usr/bin/ld.lld 100
-      - name: Build toxcore
-        run: |
-          git clone --depth=1 --recursive https://github.com/TokTok/c-toxcore.git toxcore
-          cmake -B toxcore/_build -S toxcore -GNinja -DBOOTSTRAP_DAEMON=OFF
-          cmake --build toxcore/_build
-          cmake --install toxcore/_build
-      - name: Build qTox
-        run: |
-          cmake --preset clang-strict
-          cmake --build --preset clang-strict
+          name: qtox-appdir
+      - name: Extract AppDir
+        run: tar xzf qtox-appdir.tar.gz
       - name: Create RPM package
         run: |
           packaging/create-rpm.sh \
-            --build-dir _build_clang_strict \
+            --appdir AppDir/usr \
             --src-dir . \
             --out-dir .
       - name: Upload RPM artifact
@@ -367,69 +342,25 @@ jobs:
   build-deb:
     name: DEB package (Ubuntu)
     runs-on: ubuntu-22.04
-    needs: [check-clang-strict, check-clang-tidy, check-asan]
+    needs: [check-clang-strict, check-clang-tidy, check-asan, build-appimage]
     if: |
       always() &&
       (needs.check-clang-strict.result == 'success' || needs.check-clang-strict.result == 'skipped') &&
       (needs.check-clang-tidy.result == 'success' || needs.check-clang-tidy.result == 'skipped') &&
-      (needs.check-asan.result == 'success' || needs.check-asan.result == 'skipped')
+      (needs.check-asan.result == 'success' || needs.check-asan.result == 'skipped') &&
+      needs.build-appimage.result == 'success'
     steps:
       - uses: actions/checkout@v4
+      - name: Download AppDir
+        uses: actions/download-artifact@v4
         with:
-          submodules: recursive
-      - name: Install LLVM 20
-        run: |
-          wget -qO /tmp/llvm.sh https://apt.llvm.org/llvm.sh
-          chmod +x /tmp/llvm.sh
-          echo "" | sudo /tmp/llvm.sh 20
-          sudo apt-get install -y clang-20 lld-20
-          sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-20 100
-          sudo update-alternatives --install /usr/bin/ld    ld    /usr/bin/ld.lld-20 100
-          sudo update-alternatives --install /usr/bin/ld.lld ld.lld /usr/bin/ld.lld-20 100
-      - name: Install dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends \
-            build-essential \
-            cmake \
-            libavcodec-dev \
-            libavdevice-dev \
-            libavformat-dev \
-            libavutil-dev \
-            libexif-dev \
-            libgl-dev \
-            libopenal-dev \
-            libopus-dev \
-            libqrencode-dev \
-            libsodium-dev \
-            libsqlcipher-dev \
-            libswscale-dev \
-            libunwind-dev \
-            libv4l-dev \
-            libvpx-dev \
-            libxss-dev \
-            ninja-build \
-            patchelf \
-            pkg-config \
-            qt6-base-dev \
-            qt6-l10n-tools \
-            libqt6svg6-dev \
-            qt6-tools-dev \
-            qt6-tools-dev-tools
-      - name: Build toxcore
-        run: |
-          git clone --depth=1 --recursive https://github.com/TokTok/c-toxcore.git toxcore
-          cmake -B toxcore/_build -S toxcore -GNinja -DBOOTSTRAP_DAEMON=OFF
-          cmake --build toxcore/_build
-          sudo cmake --install toxcore/_build
-      - name: Build qTox
-        run: |
-          cmake --preset clang-strict
-          cmake --build --preset clang-strict
+          name: qtox-appdir
+      - name: Extract AppDir
+        run: tar xzf qtox-appdir.tar.gz
       - name: Create DEB package
         run: |
           sudo packaging/create-deb.sh \
-            --build-dir _build_clang_strict \
+            --appdir AppDir/usr \
             --src-dir . \
             --out-dir .
       - name: Upload DEB artifact
@@ -459,73 +390,30 @@ jobs:
     name: DEB package (Debian 13)
     runs-on: ubuntu-24.04
     container: debian:13
-    needs: [check-clang-strict, check-clang-tidy, check-asan]
+    needs: [check-clang-strict, check-clang-tidy, check-asan, build-appimage]
     if: |
       always() &&
       (needs.check-clang-strict.result == 'success' || needs.check-clang-strict.result == 'skipped') &&
       (needs.check-clang-tidy.result == 'success' || needs.check-clang-tidy.result == 'skipped') &&
-      (needs.check-asan.result == 'success' || needs.check-asan.result == 'skipped')
+      (needs.check-asan.result == 'success' || needs.check-asan.result == 'skipped') &&
+      needs.build-appimage.result == 'success'
     steps:
-      - name: Install base tools
+      - name: Install tools
         run: |
           apt-get update
           apt-get install -y --no-install-recommends \
-            ca-certificates git wget sudo lsb-release gnupg
+            ca-certificates git dpkg-dev
       - uses: actions/checkout@v4
+      - name: Download AppDir
+        uses: actions/download-artifact@v4
         with:
-          submodules: recursive
-      - name: Install LLVM 20
-        run: |
-          wget -qO /tmp/llvm.sh https://apt.llvm.org/llvm.sh
-          chmod +x /tmp/llvm.sh
-          echo "" | /tmp/llvm.sh 20
-          apt-get install -y clang-20 lld-20
-          update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-20 100
-          update-alternatives --install /usr/bin/ld    ld    /usr/bin/ld.lld-20 100
-          update-alternatives --install /usr/bin/ld.lld ld.lld /usr/bin/ld.lld-20 100
-      - name: Install dependencies
-        run: |
-          apt-get install -y --no-install-recommends \
-            build-essential \
-            cmake \
-            libavcodec-dev \
-            libavdevice-dev \
-            libavformat-dev \
-            libavutil-dev \
-            libexif-dev \
-            libgl-dev \
-            libopenal-dev \
-            libopus-dev \
-            libqrencode-dev \
-            libsodium-dev \
-            libsqlcipher-dev \
-            libswscale-dev \
-            libunwind-dev \
-            libv4l-dev \
-            libvpx-dev \
-            libxss-dev \
-            ninja-build \
-            patchelf \
-            pkg-config \
-            qt6-base-dev \
-            qt6-l10n-tools \
-            qt6-svg-dev \
-            qt6-tools-dev \
-            qt6-tools-dev-tools
-      - name: Build toxcore
-        run: |
-          git clone --depth=1 --recursive https://github.com/TokTok/c-toxcore.git toxcore
-          cmake -B toxcore/_build -S toxcore -GNinja -DBOOTSTRAP_DAEMON=OFF
-          cmake --build toxcore/_build
-          cmake --install toxcore/_build
-      - name: Build qTox
-        run: |
-          cmake --preset clang-strict
-          cmake --build --preset clang-strict
+          name: qtox-appdir
+      - name: Extract AppDir
+        run: tar xzf qtox-appdir.tar.gz
       - name: Create DEB package
         run: |
           packaging/create-deb.sh \
-            --build-dir _build_clang_strict \
+            --appdir AppDir/usr \
             --src-dir . \
             --out-dir .
           mv qtox-*-amd64.deb qtox-debian13-amd64.deb
@@ -816,6 +704,13 @@ jobs:
           sudo ldconfig
       - name: Build AppImage
         run: ./appimage/build.sh --src-dir .
+      - name: Upload AppDir artifact
+        # AppDir/usr/ is used by build-deb and build-rpm to avoid rebuilding
+        run: tar czf qtox-appdir.tar.gz AppDir/usr/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: qtox-appdir
+          path: qtox-appdir.tar.gz
       - name: Get version
         id: version
         run: |
